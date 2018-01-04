@@ -1,0 +1,7 @@
+La instalación de un paquete tiene lugar de tres maneras:
+
+| Método | Descripción | Referencia |
+| --- | --- | --- |
+| CLI de nuget.exe: `nuget install <package_name>` | Descarga el paquete identificado por \<package_name\> y expande su contenido en una carpeta del directorio actual. Si no se especifica ningún paquete, instala todos los paquetes incluidos en el archivo `packages.config` del proyecto. No se efectúa ningún cambio en ningún archivo del proyecto. Las dependencias también se descargan y se expanden. | [Referencia de la CLI](../tools/nuget-exe-CLI-Reference.md) |
+| Consola del Administrador de paquetes (Visual Studio): `Install-Package <package_name>` | Descarga e instala el paquete en el proyecto actual. Luego actualiza el archivo del proyecto para mostrar el paquete como una dependencia. | [Guía de la consola del Administrador de paquetes](../tools/Package-Manager-Console.md) |
+| Interfaz de usuario del Administrador de paquetes (Visual Studio) | Proporciona una interfaz de usuario a través de la cual puede examinar, seleccionar e instalar paquetes en un proyecto. Actualiza el archivo del proyecto para mostrar el paquete como una dependencia. | [Referencia de la interfaz de usuario del Administrador de paquetes](../tools/Package-Manager-UI.md) |
