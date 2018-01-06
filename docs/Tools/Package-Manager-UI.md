@@ -17,15 +17,15 @@ keywords: NuGet UI, el Administrador de paquetes de NuGet UI, NuGet en Visual St
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 88e987054f3c59a327f71b15330a99eb350449e5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0f08e5a36499c4481c4e0cd70738d67d65cd980a
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-package-manager-ui"></a>Interfaz de usuario de administrador de paquetes de NuGet
 
-La UI Administrador de paquetes de NuGet en Visual Studio en Windows le permite instalar, desinstalar y actualizar paquetes de NuGet en proyectos y soluciones fácilmente. Para obtener la experiencia en Visual Studio para Mac, consulte [paquete NuGet unos incluidos en el proyecto](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough). La UI del Administrador de paquetes no se incluye con Visual Studio Code.
+La UI Administrador de paquetes de NuGet en Visual Studio en Windows le permite instalar, desinstalar y actualizar paquetes de NuGet en proyectos y soluciones fácilmente. Para obtener la experiencia en Visual Studio para Mac, consulte [paquete NuGet unos incluidos en el proyecto](/visualstudio/mac/nuget-walkthrough). La UI del Administrador de paquetes no se incluye con Visual Studio Code.
 
 En este tema:
 

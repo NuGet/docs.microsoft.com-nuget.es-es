@@ -17,11 +17,11 @@ keywords: Metadatos de paquete de NuGet API, registro de la API de NuGet, API de
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 15d3c836a5748497fe33dadc17e5a44846b4a8c0
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 1aabe6ae5c661e12b2639700813946e7a9a58b24
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-metadata"></a>Metadatos de paquete
 
@@ -76,7 +76,7 @@ La dirección URL del índice de registro sea predecible y se puede determinar m
 
 ### <a name="registration-pages-and-leaves"></a>Hojas y páginas de registro
 
-Aunque no es estrictamente necesaria para una implementación del servidor almacenar registro hojas en documentos de la página de registro independientes, es una práctica recomendada para ahorrar memoria del lado cliente. En lugar de alineando todos deja de registro en el índice o el almacenamiento inmediatamente deja en documentos de página, se recomienda que la implementación del servidor define algunos aspectos heurísticos para elegir entre los dos enfoques en función del número de versiones del paquete o deja el tamaño acumulado de paquete.
+Aunque no sea estrictamente necesario para que una implementación del servidor almacenar registro hojas en documentos de la página de registro independientes, es una práctica recomendada para ahorrar memoria del lado cliente. En lugar de alineando todos deja de registro en el índice o el almacenamiento inmediatamente deja en documentos de página, se recomienda que la implementación del servidor define algunos aspectos heurísticos para elegir entre los dos enfoques en función del número de versiones del paquete o deja el tamaño acumulado de paquete.
 
 Almacenar todas las versiones de paquete (hojas) la guarda de índice de registro en el número de solicitudes HTTP que es necesario para los metadatos de paquete de captura, pero significa que se debe descargar un documento de mayor tamaño y se debe asignar más memoria de cliente. Por otro lado, si la implementación del servidor almacena inmediatamente deja de registro en documentos de página independiente, el cliente debe realizar más solicitudes HTTP para obtener la información que necesita.
 
@@ -88,17 +88,17 @@ GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name     | En     | Tipo    | Obligatorio | Notas
+nombre     | En     | Tipo    | Obligatorio | Notas
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | Dirección URL    | string  | sí      | El identificador del paquete, en minúsculas
+LOWER_ID | Dirección URL    | cadena  | sí      | El identificador del paquete, en minúsculas
 
-El `LOWER_ID` valor es el identificador de paquete deseado en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) método.
+El `LOWER_ID` valor es el identificador de paquete deseado en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
 
 ### <a name="response"></a>Respuesta
 
 La respuesta es un documento JSON que tiene un objeto raíz con las siguientes propiedades:
 
-Name  | Tipo             | Obligatorio | Notas
+nombre  | Tipo             | Obligatorio | Notas
 ----- | ---------------- | -------- | -----
 count | enteros          | sí      | El número de páginas de registro en el índice
 items | Matriz de objetos | sí      | La matriz de páginas de registro
@@ -109,14 +109,14 @@ Cada elemento en el objeto index `items` matriz es un objeto JSON que representa
 
 El objeto de página de registro se encuentra en el índice de registro tiene las siguientes propiedades:
 
-Name   | Tipo             | Obligatorio | Notas
+nombre   | Tipo             | Obligatorio | Notas
 ------ | ---------------- | -------- | -----
-@id    | string           | sí      | La dirección URL a la página de registro
+@id    | cadena           | sí      | La dirección URL a la página de registro
 count  | enteros          | sí      | El número de registro se deja en la página
 items  | Matriz de objetos | No       | La matriz de hojas de registro y sus metadatos asociados
-Inferior  | string           | sí      | La versión más antigua de SemVer 2.0.0 en la página (inclusive)
-parent | string           | No       | La dirección URL para el índice de registro
-superior  | string           | sí      | La versión de SemVer 2.0.0 más alta en la página (inclusive)
+Inferior  | cadena           | sí      | La versión más antigua de SemVer 2.0.0 en la página (inclusive)
+parent | cadena           | No       | La dirección URL para el índice de registro
+superior  | cadena           | sí      | La versión de SemVer 2.0.0 más alta en la página (inclusive)
 
 El `lower` y `upper` límites del objeto de página son útiles cuando es necesario los metadatos para una versión de la página específica.
 Estos límites se pueden utilizar para capturar la página de registro solo sea necesitada. Las cadenas de versión adhieren a [reglas de la versión de NuGet](../reference/package-versioning.md). Las cadenas de versión se normalizan y no incluyen los metadatos de compilación. Como con todas las versiones en el ecosistema de NuGet, comparación de cadenas de versión se implementa mediante [las reglas de prioridad de versión SemVer 2.0.0's](http://semver.org/spec/v2.0.0.html#spec-item-11).
@@ -133,11 +133,11 @@ Cada elemento en el objeto de página `items` matriz es un objeto JSON que repre
 
 El objeto de hoja de registro que se encuentren en una página de registro tiene las siguientes propiedades:
 
-Name           | Tipo   | Obligatorio | Notas
+nombre           | Tipo   | Obligatorio | Notas
 -------------- | ------ | -------- | -----
-@id            | string | sí      | La dirección URL de la hoja de registro
+@id            | cadena | sí      | La dirección URL de la hoja de registro
 catalogEntry   | objeto | sí      | La entrada del catálogo que contiene los metadatos de paquete
-packageContent | string | sí      | La dirección URL para el contenido del paquete (.nupkg)
+packageContent | cadena | sí      | La dirección URL para el contenido del paquete (.nupkg)
 
 Cada objeto de hoja de registro representa los datos asociados a un único paquete.
 
@@ -145,24 +145,24 @@ Cada objeto de hoja de registro representa los datos asociados a un único paque
 
 El `catalogEntry` propiedad del objeto de hoja de registro tiene las siguientes propiedades:
 
-Name                     | Tipo                       | Obligatorio | Notas
+nombre                     | Tipo                       | Obligatorio | Notas
 ------------------------ | -------------------------- | -------- | -----
-@id                      | string                     | sí      | La dirección URL para el documento que se utiliza para generar este objeto
+@id                      | cadena                     | sí      | La dirección URL para el documento que se utiliza para generar este objeto
 authors                  | cadena o matriz de cadenas | No       | 
 dependencyGroups         | Matriz de objetos           | No       | La dirección URL para el contenido del paquete (.nupkg)
-Descripción              | string                     | No       | 
-iconUrl                  | string                     | No       | 
-id                       | string                     | sí      | El identificador del paquete
-licenseUrl               | string                     | No       | 
+Descripción              | cadena                     | No       | 
+iconUrl                  | cadena                     | No       | 
+id                       | cadena                     | sí      | El identificador del paquete
+licenseUrl               | cadena                     | No       | 
 lista                   | booleano                    | No       | Se debe considerar que la lista si está ausente
-MinClientVersion         | string                     | No       | 
-projectUrl               | string                     | No       | 
-Publicado                | string                     | No       | Una cadena que contiene una marca de hora ISO 8601 de cuándo se publicó el paquete
+MinClientVersion         | cadena                     | No       | 
+projectUrl               | cadena                     | No       | 
+Publicado                | cadena                     | No       | Una cadena que contiene una marca de hora ISO 8601 de cuándo se publicó el paquete
 requireLicenseAcceptance | booleano                    | No       | 
-resumen                  | string                     | No       | 
+resumen                  | cadena                     | No       | 
 etiquetas                     | cadena o matriz de cadena  | No       | 
-título                    | string                     | No       | 
-version                  | string                     | sí      | La versión del paquete
+título                    | cadena                     | No       | 
+version                  | cadena                     | sí      | La versión del paquete
 
 El `dependencyGroups` propiedad es una matriz de objetos que representan las dependencias del paquete, agrupados por .NET framework de destino. Si el paquete no tiene dependencias, el `dependencyGroups` falta propiedad, una matriz vacía, o la `dependencies` propiedad de todos los grupos falta o está vacío.
 
@@ -170,9 +170,9 @@ El `dependencyGroups` propiedad es una matriz de objetos que representan las dep
 
 Cada objeto de grupo de dependencia tiene las siguientes propiedades:
 
-Name            | Tipo             | Obligatorio | Notas
+nombre            | Tipo             | Obligatorio | Notas
 --------------- | ---------------- | -------- | -----
-targetFramework | string           | No       | La plataforma de destino que se aplican a estas dependencias
+targetFramework | cadena           | No       | La plataforma de destino que se aplican a estas dependencias
 dependencias    | Matriz de objetos | No       |
 
 El `targetFramework` cadena usa el formato implementado por la biblioteca de .NET de NuGet [NuGet.Frameworks](https://www.nuget.org/packages/NuGet.Frameworks/). Si no hay ningún `targetFramework` se especifica, el grupo de dependencia se aplica a todos los marcos de destino.
@@ -183,11 +183,11 @@ El `dependencies` propiedad es una matriz de objetos, que representa una depende
 
 Cada dependencia del paquete tiene las siguientes propiedades:
 
-Name         | Tipo   | Obligatorio | Notas
+nombre         | Tipo   | Obligatorio | Notas
 ------------ | ------ | -------- | -----
-id           | string | sí      | El identificador de la dependencia del paquete
+id           | cadena | sí      | El identificador de la dependencia del paquete
 range        | objeto | No       | Permitido [intervalo de versiones](../reference/package-versioning.md#version-ranges-and-wildcards) de la dependencia
-registro | string | No       | La dirección URL para el índice de registro de esta dependencia
+registro | cadena | No       | La dirección URL para el índice de registro de esta dependencia
 
 Si el `range` propiedad se excluye o una cadena vacía, el cliente, de forma predeterminada el intervalo de versiones `(, )`. Es decir, se permite cualquier versión de la dependencia.
 
@@ -209,14 +209,14 @@ La página de registro contiene hojas de registro. La dirección URL para captur
 
 Cuando el `items` matriz no se proporciona en el índice de registro, solicitar un HTTP GET de la `@id` valor devolverá un documento JSON que tiene un objeto raíz. El objeto tiene las siguientes propiedades:
 
-Name   | Tipo             | Obligatorio | Notas
+nombre   | Tipo             | Obligatorio | Notas
 ------ | ---------------- | -------- | -----
-@id    | string           | sí      | La dirección URL a la página de registro
+@id    | cadena           | sí      | La dirección URL a la página de registro
 count  | enteros          | sí      | El número de registro se deja en la página
 items  | Matriz de objetos | sí      | La matriz de hojas de registro y sus metadatos asociados
-Inferior  | string           | sí      | La versión más antigua de SemVer 2.0.0 en la página (inclusive)
-parent | string           | sí      | La dirección URL para el índice de registro
-superior  | string           | sí      | La versión de SemVer 2.0.0 más alta en la página (inclusive)
+Inferior  | cadena           | sí      | La versión más antigua de SemVer 2.0.0 en la página (inclusive)
+parent | cadena           | sí      | La dirección URL para el índice de registro
+superior  | cadena           | sí      | La versión de SemVer 2.0.0 más alta en la página (inclusive)
 
 La forma de los objetos de la hoja de registro es el mismo que el índice de registro [anteriormente](#registration-leaf-object-in-a-page).
 
@@ -238,14 +238,14 @@ La dirección URL para capturar una hoja de registro se obtiene de la `@id` prop
 
 La hoja de registro es un documento JSON con un objeto raíz con las siguientes propiedades:
 
-Name           | Tipo    | Obligatorio | Notas
+nombre           | Tipo    | Obligatorio | Notas
 -------------- | ------- | -------- | -----
-@id            | string  | sí      | La dirección URL de la hoja de registro
-catalogEntry   | string  | No       | La dirección URL a la entrada de catálogo que genera estos hoja
+@id            | cadena  | sí      | La dirección URL de la hoja de registro
+catalogEntry   | cadena  | No       | La dirección URL a la entrada de catálogo que genera estos hoja
 lista         | booleano | No       | Se debe considerar que la lista si está ausente
-packageContent | string  | No       | La dirección URL para el contenido del paquete (.nupkg)
-Publicado      | string  | No       | Una cadena que contiene una marca de hora ISO 8601 de cuándo se publicó el paquete
-registro   | string  | No       | La dirección URL para el índice de registro
+packageContent | cadena  | No       | La dirección URL para el contenido del paquete (.nupkg)
+Publicado      | cadena  | No       | Una cadena que contiene una marca de hora ISO 8601 de cuándo se publicó el paquete
+registro   | cadena  | No       | La dirección URL para el índice de registro
 
 > [!Note]
 > En nuget.org, el `published` valor se establece en año 1900 cuando es que no figuran en el paquete.

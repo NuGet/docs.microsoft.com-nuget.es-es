@@ -13,11 +13,11 @@ keywords: "2.2 de NuGet notas de la versión, correcciones de errores, problemas
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 690e76a0686a5e7bb699410edef4a6e62ccd2a32
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 1f6080e01777431c4dfb2278db167bd3bc9a67ea
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-22-release-notes"></a>Notas de la versión 2.2 de NuGet
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 2.2 de NuGet se publicó en el 12 de diciembre de 2012.
 
 ## <a name="visual-studio-quick-launch"></a>Inicio rápido de Visual Studio
-Una de las nuevas características que se agregó en Visual Studio 2012 fue el [cuadro de diálogo de inicio rápido](http://msdn.microsoft.com/library/hh417697.aspx). 2.2 de NuGet extiende este cuadro de diálogo, lo que le permite inicializar el cuadro de diálogo del Administrador de paquetes con los términos de búsqueda especificados en el inicio rápido. Por ejemplo, escriba 'jquery' en Inicio rápido ahora incluye una opción en los resultados para buscar paquetes de NuGet 'jquery' de la búsqueda de coincidencias.
+Una de las nuevas características que se agregó en Visual Studio 2012 fue el [cuadro de diálogo de inicio rápido](/visualstudio/ide/reference/quick-launch-environment-options-dialog-box). 2.2 de NuGet extiende este cuadro de diálogo, lo que le permite inicializar el cuadro de diálogo del Administrador de paquetes con los términos de búsqueda especificados en el inicio rápido. Por ejemplo, escriba 'jquery' en Inicio rápido ahora incluye una opción en los resultados para buscar paquetes de NuGet 'jquery' de la búsqueda de coincidencias.
 
 ![NuGet en Inicio rápido de Visual Studio](./media/quick-launch.png)
 

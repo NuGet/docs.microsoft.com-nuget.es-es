@@ -17,11 +17,11 @@ keywords: "NuGet planos contenedor, la dirección base del paquete de NuGet, NuG
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 756001ff7376a8dd8d66bd2136408e90e6a85d19
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: a581f9854410bc1a84d65310b38928a1d889ece2
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-content"></a>Contenido del paquete
 
@@ -58,11 +58,11 @@ GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name     | En     | Tipo    | Obligatorio | Notas
+nombre     | En     | Tipo    | Obligatorio | Notas
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | Dirección URL    | string  | sí      | El identificador del paquete, en minúsculas
+LOWER_ID | Dirección URL    | cadena  | sí      | El identificador del paquete, en minúsculas
 
-El `LOWER_ID` valor es el identificador de paquete deseado en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) método.
+El `LOWER_ID` valor es el identificador de paquete deseado en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
 
 ### <a name="response"></a>Respuesta
 
@@ -70,7 +70,7 @@ Si el origen del paquete no tiene ninguna versión del identificador del paquete
 
 Si el origen del paquete tiene una o varias versiones, se devuelve un código de 200 estado. El cuerpo de respuesta es un objeto JSON con la siguiente propiedad:
 
-Name     | Tipo             | Obligatorio | Notas
+nombre     | Tipo             | Obligatorio | Notas
 -------- | ---------------- | -------- | -----
 versiones | Matriz de cadenas | sí      | El paquete identificadores disponibles
 
@@ -98,12 +98,12 @@ GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name          | En     | Tipo   | Obligatorio | Notas
+nombre          | En     | Tipo   | Obligatorio | Notas
 ------------- | ------ | ------ | -------- | -----
-LOWER_ID      | Dirección URL    | string | sí      | El identificador del paquete, en minúsculas
-LOWER_VERSION | Dirección URL    | string | sí      | La versión del paquete, normalizar y en minúsculas
+LOWER_ID      | Dirección URL    | cadena | sí      | El identificador del paquete, en minúsculas
+LOWER_VERSION | Dirección URL    | cadena | sí      | La versión del paquete, normalizar y en minúsculas
 
-Ambos `LOWER_ID` y `LOWER_VERSION` están en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) método.
+Ambos `LOWER_ID` y `LOWER_VERSION` están en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
 
 El `LOWER_VERSION` se normaliza la versión del paquete deseado mediante la versión de NuGet [las reglas de normalización](../reference/package-versioning.md#normalized-version-numbers). Esto significa que los metadatos de compilación está permitido por la especificación de SemVer 2.0.0 se deben excluir en este caso.
 
@@ -133,12 +133,12 @@ GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name          | En     | Tipo    | Obligatorio | Notas
+nombre          | En     | Tipo    | Obligatorio | Notas
 ------------- | ------ | ------- | -------- | -----
-LOWER_ID      | Dirección URL    | string  | sí      | El identificador del paquete, en minúsculas
+LOWER_ID      | Dirección URL    | cadena  | sí      | El identificador del paquete, en minúsculas
 LOWER_VERSION | Dirección URL    | enteros | sí      | La versión del paquete, normalizar y en minúsculas
 
-Ambos `LOWER_ID` y `LOWER_VERSION` están en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx) método.
+Ambos `LOWER_ID` y `LOWER_VERSION` están en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
 
 El `LOWER_VERSION` se normaliza la versión del paquete deseado mediante la versión de NuGet [las reglas de normalización](../reference/package-versioning.md#normalized-version-numbers). Esto significa que los metadatos de compilación está permitido por la especificación de SemVer 2.0.0 se deben excluir en este caso.
 

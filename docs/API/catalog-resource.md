@@ -17,11 +17,11 @@ keywords: "Catálogo de API de NuGet V3, registro de transacciones de nuget.org,
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 50e329680c5527d2a69d9c2b1421dc3aa609b478
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4c98b7cbd92575f6905e98a5bca5602a4d8ac0dd
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="catalog"></a>Catálogo
 
@@ -79,10 +79,10 @@ GET {@id}
 
 El índice del catálogo es un documento JSON que contiene un objeto con las siguientes propiedades:
 
-Name            | Tipo             | Obligatorio | Notas
+nombre            | Tipo             | Obligatorio | Notas
 --------------- | ---------------- | -------- | -----
-commitId        | string           | sí      | Un identificador único asociado a la confirmación más reciente
-commitTimeStamp | string           | sí      | Una marca de tiempo de la última confirmación
+commitId        | cadena           | sí      | Un identificador único asociado a la confirmación más reciente
+commitTimeStamp | cadena           | sí      | Una marca de tiempo de la última confirmación
 count           | enteros          | sí      | El número de páginas del índice
 items           | Matriz de objetos | sí      | Una matriz de objetos, cada objeto que representa una página
 
@@ -96,11 +96,11 @@ Cuando se agregan elementos al catálogo, el índice `commitId` cambiará y `com
 
 Los objetos de la página de catálogo que se encuentran en el índice de catálogo `items` propiedad tienen las siguientes propiedades:
 
-Name            | Tipo    | Obligatorio | Notas
+nombre            | Tipo    | Obligatorio | Notas
 --------------- | ------- | -------- | -----
-@id             | string  | sí      | La dirección URL a la página de catálogo de fetch
-commitId        | string  | sí      | Un identificador único asociado a la confirmación más reciente en esta página
-commitTimeStamp | string  | sí      | Una marca de tiempo de la confirmación más reciente en esta página
+@id             | cadena  | sí      | La dirección URL a la página de catálogo de fetch
+commitId        | cadena  | sí      | Un identificador único asociado a la confirmación más reciente en esta página
+commitTimeStamp | cadena  | sí      | Una marca de tiempo de la confirmación más reciente en esta página
 count           | enteros | sí      | El número de elementos en la página de catálogo
 
 Contrasta con la [recurso de metadatos de paquete](registration-base-url-resource.md) que en algunos casos, elementos incorporados deja en el índice, catálogo deja nunca se alinean en el índice y siempre se debe recopilar mediante la página `@id` dirección URL.
@@ -123,13 +123,13 @@ Nuevos elementos de catálogo se agregan a la página en el índice del catálog
 
 El documento de página de catálogo es un objeto JSON con las siguientes propiedades:
 
-Name            | Tipo             | Obligatorio | Notas
+nombre            | Tipo             | Obligatorio | Notas
 --------------- | ---------------- | -------- | -----
-commitId        | string           | sí      | Un identificador único asociado a la confirmación más reciente en esta página
-commitTimeStamp | string           | sí      | Una marca de tiempo de la confirmación más reciente en esta página
+commitId        | cadena           | sí      | Un identificador único asociado a la confirmación más reciente en esta página
+commitTimeStamp | cadena           | sí      | Una marca de tiempo de la confirmación más reciente en esta página
 count           | enteros          | sí      | El número de elementos en la página
 items           | Matriz de objetos | sí      | Los elementos del catálogo en esta página
-parent          | string           | sí      | Una dirección URL para el índice del catálogo
+parent          | cadena           | sí      | Una dirección URL para el índice del catálogo
 
 Cada elemento de la `items` matriz es un objeto con algunos detalles mínimos sobre el elemento de catálogo. Estos objetos de elemento no contienen todos los datos del elemento de catálogo. El orden de los elementos de la página `items` matriz no está definida. Los elementos se pueden ordenar por el cliente en la memoria con sus `commitTimeStamp` propiedad.
 
@@ -143,14 +143,14 @@ Cuando se agregan elementos a la página, el `commitId` cambios y `commitTimeSta
 
 Los objetos de elemento de catálogo que se encuentren en la página de catálogo `items` propiedad tienen las siguientes propiedades:
 
-Name            | Tipo    | Obligatorio | Notas
+nombre            | Tipo    | Obligatorio | Notas
 --------------- | ------- | -------- | -----
-@id             | string  | sí      | La dirección URL para buscar el elemento de catálogo
-@type           | string  | sí      | El tipo de elemento de catálogo
-commitId        | string  | sí      | El identificador de confirmación asociado a este elemento de catálogo
-commitTimeStamp | string  | sí      | La marca de tiempo de confirmación de este elemento de catálogo
-NuGet:Id        | string  | sí      | El identificador del paquete que está relacionado con esta hoja
-NuGet:Version   | string  | sí      | La versión del paquete que está relacionado con esta hoja
+@id             | cadena  | sí      | La dirección URL para buscar el elemento de catálogo
+@type           | cadena  | sí      | El tipo de elemento de catálogo
+commitId        | cadena  | sí      | El identificador de confirmación asociado a este elemento de catálogo
+commitTimeStamp | cadena  | sí      | La marca de tiempo de confirmación de este elemento de catálogo
+NuGet:Id        | cadena  | sí      | El identificador del paquete que está relacionado con esta hoja
+NuGet:Version   | cadena  | sí      | La versión del paquete que está relacionado con esta hoja
 
 El `@type` valor será uno de los dos valores siguientes:
 
@@ -175,14 +175,14 @@ La hoja de catálogo contiene metadatos sobre un identificador de paquete espec�
 
 El documento de hoja de catálogo es un objeto JSON con las siguientes propiedades:
 
-Name                    | Tipo                       | Obligatorio | Notas
+nombre                    | Tipo                       | Obligatorio | Notas
 ----------------------- | -------------------------- | -------- | -----
 @type                   | cadena o matriz de cadenas | sí      | Los tipos de elemento de catálogo
-catálogo: commitId        | string                     | sí      | Un identificador de confirmación asociado a este elemento de catálogo
-catálogo: commitTimeStamp | string                     | sí      | La marca de tiempo de confirmación de este elemento de catálogo
-id                      | string                     | sí      | El identificador del paquete del elemento de catálogo
-Publicado               | string                     | sí      | Elemento de catálogo de la fecha de publicación del paquete
-version                 | string                     | sí      | La versión del paquete del elemento de catálogo
+catálogo: commitId        | cadena                     | sí      | Un identificador de confirmación asociado a este elemento de catálogo
+catálogo: commitTimeStamp | cadena                     | sí      | La marca de tiempo de confirmación de este elemento de catálogo
+id                      | cadena                     | sí      | El identificador del paquete del elemento de catálogo
+Publicado               | cadena                     | sí      | Elemento de catálogo de la fecha de publicación del paquete
+version                 | cadena                     | sí      | La versión del paquete del elemento de catálogo
 
 ### <a name="item-types"></a>Tipos de elemento
 
@@ -206,28 +206,28 @@ Clientes que consumen los elementos de catálogo no deberían intentar determina
 
 Elementos del catálogo de detalles de paquete tienen las siguientes propiedades además de los [incluido en todas las ramas de catálogo](#catalog-leaf).
 
-Name                    | Tipo                       | Obligatorio | Notas
+nombre                    | Tipo                       | Obligatorio | Notas
 ----------------------- | -------------------------- | -------- | -----
-authors                 | string                     | No       |
-created                 | string                     | sí      | Una marca de tiempo de cuando se creó el paquete por primera vez
+authors                 | cadena                     | No       |
+created                 | cadena                     | sí      | Una marca de tiempo de cuando se creó el paquete por primera vez
 dependencyGroups        | Matriz de objetos           | No       | Mismo formato que el [recurso de metadatos de paquete](registration-base-url-resource.md#package-dependency-group)
-Descripción             | string                     | No       |
-iconUrl                 | string                     | No       |
+Descripción             | cadena                     | No       |
+iconUrl                 | cadena                     | No       |
 isPrerelease            | booleano                    | sí      | Si la versión del paquete es una versión preliminar
-lenguaje                | string                     | No       |
-licenseUrl              | string                     | No       |
+lenguaje                | cadena                     | No       |
+licenseUrl              | cadena                     | No       |
 lista                  | booleano                    | No       | Si no aparece el paquete
-MinClientVersion        | string                     | No       |
-packageHash             | string                     | sí      | El código hash del paquete, codificación utilizando [estándar en base 64](https://tools.ietf.org/html/rfc4648#section-4)
-packageHashAlgorithm    | string                     | sí      |
+MinClientVersion        | cadena                     | No       |
+packageHash             | cadena                     | sí      | El código hash del paquete, codificación utilizando [estándar en base 64](https://tools.ietf.org/html/rfc4648#section-4)
+packageHashAlgorithm    | cadena                     | sí      |
 packageSize             | enteros                    | sí      | El tamaño de la .nupkg de paquete en bytes
-projectUrl              | string                     | No       |
-releaseNotes            | string                     | No       |
+projectUrl              | cadena                     | No       |
+releaseNotes            | cadena                     | No       |
 requireLicenseAgreement | booleano                    | No       | Suponga `false` Si excluye
-resumen                 | string                     | No       |
+resumen                 | cadena                     | No       |
 etiquetas                    | Matriz de cadenas           | No       |
-título                   | string                     | No       |
-verbatimVersion         | string                     | No       | La cadena de versión que originalmente se encuentra en el NuSpec
+título                   | cadena                     | No       |
+verbatimVersion         | cadena                     | No       | La cadena de versión que originalmente se encuentra en el NuSpec
 
 El paquete `version` propiedad es la cadena de versión completa, normalizado. Esto significa que los datos de generación de SemVer 2.0.0 pueden incluirse aquí.
 

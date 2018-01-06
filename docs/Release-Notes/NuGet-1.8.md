@@ -13,11 +13,11 @@ keywords: "NuGet 1.8 notas de la versión, correcciones de errores, problemas, c
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 875cb752fed102c24da255a336d3f16729ca082c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 350f0d9590c1e0ef1a843fd783203b158059efa7
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-18-release-notes"></a>Notas de la versión 1.8 de NuGet
 
@@ -72,7 +72,7 @@ Hay 2 formas de proporcionar este consentimiento. La primera puede encontrarse e
 
 El segundo método consiste en establecer el entorno de variable "EnableNuGetPackageRestore" en el valor "true".  Este método está pensado para equipos desatendidos como los servidores de compilación o elemento de configuración.
 
-Ahora, como se mencionó anteriormente, nos hemos disponen solo el fundamento de esta característica en NuGet 1.8.  En la práctica, esto significa que aunque hemos agregado toda la lógica para habilitar la característica, no es obligatorio en esta versión. Se habilitarán, sin embargo, en la siguiente versión de NuGet, por lo que deseamos que sea consciente de tan pronto como sea posible para que se pueden configurar los entornos de forma adecuada y, por tanto, no se ve afectado cuando se inicia exigir la restricción de consentimiento.
+Ahora, como se mencionó anteriormente, nos hemos disponen solo el fundamento de esta característica en NuGet 1.8.  En la práctica, esto significa que, mientras que hemos agregado toda la lógica para habilitar la característica, actualmente no se aplica en esta versión. Se habilitarán, sin embargo, en la siguiente versión de NuGet, por lo que deseamos que sea consciente de tan pronto como sea posible para que se pueden configurar los entornos de forma adecuada y, por tanto, no se ve afectado cuando se inicia exigir la restricción de consentimiento.
 
 Para obtener más información, consulte el [entrada de blog del equipo](http://blog.nuget.org/20120518/package-restore-and-consent.html) en esta característica.
 

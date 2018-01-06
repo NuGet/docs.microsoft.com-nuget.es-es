@@ -13,11 +13,11 @@ keywords: "NuGet 2.8 notas de la versión, correcciones de errores, problemas, c
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0bb35e9d6ef6f3dde7919cd502b32ba5a550c689
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 182e7d1e2224c431631cddd14fdbea8dd9e14278
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-28-release-notes"></a>Notas de la versión 2,8 de NuGet
 
@@ -96,7 +96,7 @@ No es raro para instalar una versión preliminar de un paquete para investigar n
 
 ## <a name="development-dependencies"></a>Dependencias de desarrollo
 
-Muchos tipos diferentes de funciones se pueden entregar como paquetes de NuGet - incluidas las herramientas que se usan para optimizar el proceso de desarrollo. Estos componentes, mientras que pueden contribuir en el desarrollo de un nuevo paquete, no deberían considerarse publica una dependencia del nuevo paquete cuando resulta más adelante. NuGet 2.8 habilita un paquete para identificarse en el `.nuspec` archivo como un developmentDependency. Cuando instala, estos metadatos se agregará también a la `packages.config` archivo del proyecto en el que se instaló el paquete. Al que `packages.config` archivo se analiza más adelante para las dependencias de NuGet durante `nuget.exe pack`, excluirá esas dependencias marcadas como dependencias de desarrollo.
+Muchos tipos diferentes de funciones se pueden entregar como paquetes de NuGet - incluidas las herramientas que se usan para optimizar el proceso de desarrollo. Estos componentes, mientras que pueden contribuir en el desarrollo de un nuevo paquete, no deberían considerarse una dependencia del nuevo paquete cuando se publica más adelante. NuGet 2.8 habilita un paquete para identificarse en el `.nuspec` archivo como un developmentDependency. Cuando instala, estos metadatos se agregará también a la `packages.config` archivo del proyecto en el que se instaló el paquete. Al que `packages.config` archivo se analiza más adelante para las dependencias de NuGet durante `nuget.exe pack`, excluirá esas dependencias marcadas como dependencias de desarrollo.
 
 ## <a name="individual-packagesconfig-files-for-different-platforms"></a>Archivos de packages.config individuales para distintas plataformas
 

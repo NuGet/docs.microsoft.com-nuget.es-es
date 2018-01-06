@@ -17,16 +17,15 @@ keywords: "Paquete de inserción de API de NuGet, API de NuGet eliminar paquete,
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 1fa3c0e1698a11208d9ef29fdf26a4980cb60cf5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 87970a701c63bce2b74c619069ec1d231ea77ab5
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="push-and-delete"></a>Insertar y eliminar
 
-Es posible insertar y eliminar elementos (u ocultar, dependiendo de la implementación de servidor) paquetes mediante la API V3 de NuGet.
-Ambas operaciones se basan en el `PackagePublish` recurso se encuentra en la [índice servicio](service-index.md).
+Es posible insertar, eliminar (ni ocultar, dependiendo de la implementación de servidor) y poner los paquetes mediante la API V3 de NuGet. Estas operaciones se basan en el `PackagePublish` recurso se encuentra en la [índice servicio](service-index.md).
 
 ## <a name="versioning"></a>Control de versiones
 
@@ -44,9 +43,12 @@ Tenga en cuenta que esta dirección URL señala a la misma ubicación que el ext
 
 ## <a name="http-methods"></a>Métodos HTTP
 
-El `PUT` y `DELETE` métodos HTTP son compatibles con este recurso. Para los métodos que se admiten en cada punto de conexión, consulte a continuación.
+El `PUT`, `POST` y `DELETE` métodos HTTP son compatibles con este recurso. Para los métodos que se admiten en cada punto de conexión, consulte a continuación.
 
 ## <a name="push-a-package"></a>Insertar un paquete
+
+> [!Note]
+> tiene NuGet.org [requisitos adicionales](NuGet-Protocols.md) para interactuar con el punto de conexión de inserción.
 
 NuGet.org admite la inserción de nuevos paquetes mediante la siguiente API. Si ya existe el paquete con el identificador y la versión proporcionada, nuget.org rechazará la inserción. Otros orígenes de paquetes pueden admitir reemplazando un paquete existente.
 
@@ -56,9 +58,9 @@ PUT https://www.nuget.org/api/v2/package
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name           | En     | Tipo   | Obligatorio | Notas
+nombre           | En     | Tipo   | Obligatorio | Notas
 -------------- | ------ | ------ | -------- | -----
-X-NuGet-ApiKey | Header | string | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
+X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
 
 La clave de API es una cadena opaca recibido desde el origen del paquete por el usuario y configurado en el cliente. Ningún formato de cadena determinada es obligatoria, pero la longitud de la clave de API no debe superar un tamaño razonable para los valores de encabezado HTTP.
 
@@ -90,15 +92,40 @@ DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name           | En     | Tipo   | Obligatorio | Notas
+nombre           | En     | Tipo   | Obligatorio | Notas
 -------------- | ------ | ------ | -------- | -----
-Id.             | Dirección URL    | string | sí      | El identificador del paquete para eliminar
-VERSION        | Dirección URL    | string | sí      | La versión del paquete que se va a eliminar
-X-NuGet-ApiKey | Header | string | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
+Id.             | Dirección URL    | cadena | sí      | El identificador del paquete para eliminar
+VERSION        | Dirección URL    | cadena | sí      | La versión del paquete que se va a eliminar
+X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
 
 ### <a name="response"></a>Respuesta
 
 Código de estado | Significado
 ----------- | -------
 204         | Se eliminó el paquete
+404         | Ningún paquete con proporcionado `ID` y `VERSION` existe
+
+## <a name="relist-a-package"></a>Poner un paquete
+
+Si un paquete se dados de baja, es posible hacer que el paquete una vez más visible en los resultados de búsqueda con el punto de conexión de "poner en". Este punto de conexión tiene la misma forma que la [eliminar (ocultar) extremo](#delete-a-package) pero usa el `POST` método HTTP en lugar de la `DELETE` método.
+
+Si el paquete ya está disponible, la solicitud se realiza correctamente.
+
+```
+POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
+```
+
+### <a name="request-parameters"></a>Parámetros de solicitud
+
+nombre           | En     | Tipo   | Obligatorio | Notas
+-------------- | ------ | ------ | -------- | -----
+Id.             | Dirección URL    | cadena | sí      | El identificador del paquete a poner en venta
+VERSION        | Dirección URL    | cadena | sí      | La versión del paquete que se va a poner en venta
+X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
+
+### <a name="response"></a>Respuesta
+
+Código de estado | Significado
+----------- | -------
+204         | El paquete aparece ahora
 404         | Ningún paquete con proporcionado `ID` y `VERSION` existe

@@ -13,11 +13,11 @@ keywords: "NuGet 2.1 notas de la versión, correcciones de errores, problemas, c
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c45cfb9f6a46a1efd9fe4531602191973da66290
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: dafe575eedbfed215c0b1c86795bea281de97252
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-21-release-notes"></a>Notas de la versión 2.1 de NuGet
 
@@ -80,7 +80,7 @@ NuGet 2.1 proporciona más control granular sobre la ubicación de la carpeta de
 En este ejemplo, el recurso compartido `Nuget.Config` archivo especifica una carpeta compartida de paquetes para cada proyecto que se crea bajo C:\myteam, independientemente de profundidad. Tenga en cuenta que si tiene una carpeta de paquetes existente bajo la raíz de la solución, debe eliminarlo antes de NuGet colocará los paquetes en la nueva ubicación.
 
 ## <a name="support-for-portable-libraries"></a>Compatibilidad con bibliotecas portables
-[Las bibliotecas portátiles](http://msdn.microsoft.com/library/gg597391.aspx) es una característica que se introdujo por primera vez con .NET 4 que le permite compilar ensamblados que pueden funcionar sin modificaciones en distintas plataformas de Microsoft, desde las versiones de.NET Framework para Silverlight para Windows Phone y Xbox incluso 360 (aunque en este momento, NuGet no admite el destino de la biblioteca portable de Xbox).  Extendiendo la [paquete convenciones](../create-packages/supporting-multiple-target-frameworks.md) perfiles y las versiones de framework, NuGet 2.1 ahora es compatible con las bibliotecas portables por lo que le permite crear paquetes con el marco de trabajo compuesta y perfil de destino `lib` carpetas.
+[Las bibliotecas portátiles](/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library) es una característica que se introdujo por primera vez con .NET 4 que le permite compilar ensamblados que pueden funcionar sin modificaciones en distintas plataformas de Microsoft, desde las versiones de.NET Framework para Silverlight para Windows Phone y Xbox incluso 360 (aunque en este momento, NuGet no admite el destino de la biblioteca portable de Xbox).  Extendiendo la [paquete convenciones](../create-packages/supporting-multiple-target-frameworks.md) perfiles y las versiones de framework, NuGet 2.1 ahora es compatible con las bibliotecas portables por lo que le permite crear paquetes con el marco de trabajo compuesta y perfil de destino `lib` carpetas.
 
 Por ejemplo, considere la posibilidad de plataformas de destino disponibles de la biblioteca de clases portables siguientes.
 

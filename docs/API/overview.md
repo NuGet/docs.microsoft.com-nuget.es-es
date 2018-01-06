@@ -17,17 +17,17 @@ keywords: "API de NuGet V3, API de NuGet V2, NuGet JSON, API de registro de NuGe
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: a9515d90ad66d8840f575bba542f0cf887c41718
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 05ed17f12f413d29d97a253d7d55f154d4910834
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-api"></a>API de NuGet
 
 La API de NuGet es un conjunto de extremos HTTP que puede usarse para descargar los paquetes, capturar metadatos, publicar nuevos paquetes y realizar otras operaciones disponibles en los clientes de NuGet oficiales.
 
-Esta API se usa por el cliente de NuGet en Visual Studio, nuget.exe y la CLI de .NET para realizar operaciones de NuGet como [ `dotnet restore` ](https://docs.microsoft.com/dotnet/articles/core/preview3/tools/dotnet-restore), búsqueda en la IU de Visual Studio, y [ `nuget.exe push` ](../tools/cli-ref-push.md).
+Esta API se usa por el cliente de NuGet en Visual Studio, nuget.exe y la CLI de .NET para realizar operaciones de NuGet como [ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore), búsqueda en la IU de Visual Studio, y [ `nuget.exe push` ](../tools/cli-ref-push.md).
 
 Tenga en cuenta que en algunos casos, nuget.org tiene requisitos adicionales que no se aplican por otros orígenes de paquetes. Estas diferencias se documentan por la [nuget.org protocolos](nuget-protocols.md).
 
@@ -79,7 +79,7 @@ Todas las marcas de tiempo devueltos por la API son del tipo UTC o en caso contr
 
 ## <a name="http-methods"></a>Métodos HTTP
 
-Verbo   | Uso
+Verbo   | Usar
 ------ | -----------
 GET    | Realiza una operación de sólo lectura, normalmente recuperar datos.
 HEAD   | Obtiene los encabezados de respuesta correspondiente `GET` solicitud.
@@ -110,7 +110,7 @@ En el caso de un código de estado de nivel de 500, el cliente puede implementar
 
 ## <a name="http-request-headers"></a>Encabezados de solicitud HTTP
 
-Name                     | Descripción
+nombre                     | Descripción
 ------------------------ | -----------
 X-NuGet-ApiKey           | Necesario para la inserción y eliminación, consulte [ `PackagePublish` recursos](package-publish-resource.md)
 X-NuGet-versión de cliente   | **En desuso** y reemplazado por`X-NuGet-Protocol-Version`

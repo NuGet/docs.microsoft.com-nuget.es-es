@@ -13,11 +13,11 @@ keywords: Consola de administrador de paquetes de NuGet, powershell de NuGet, ad
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d9df514c6f92a3ea0841503d86c44271e70f95f2
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: cc11963a9b9bfe9aa456d8cd4c8397e1084f660b
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-manager-console"></a>Consola de administrador de paquetes
 
@@ -62,7 +62,7 @@ En este tema:
 
 ## <a name="opening-the-console-and-console-controls"></a>Abra la consola y los controles de la consola
 
-1. Abra la consola en Visual Studio mediante el **Herramientas > Administrador de paquetes de NuGet > Package Manager Console** comando. La consola es una ventana de Visual Studio que se pueden organizan y coloca sin embargo igual (vea [personalizar diseños de ventana de Visual Studio](https://docs.microsoft.com/visualstudio/ide/customizing-window-layouts-in-visual-studio)).
+1. Abra la consola en Visual Studio mediante el **Herramientas > Administrador de paquetes de NuGet > Package Manager Console** comando. La consola es una ventana de Visual Studio que se pueden organizan y coloca sin embargo igual (vea [personalizar diseños de ventana de Visual Studio](/visualstudio/ide/customizing-window-layouts-in-visual-studio)).
 
 1. De forma predeterminada, los comandos de consola operan en un origen de paquete específico y un proyecto como se establece en el control en la parte superior de la ventana:
 
@@ -171,7 +171,7 @@ En Visual Studio 2017 NuGet y el Administrador de paquetes de NuGet se instalan 
 
 Además, compruebe si faltan el Administrador de paquetes de NuGet en Visual Studio 2015 y versiones anteriores, **Herramientas > extensiones y actualizaciones...**  y busque la extensión del Administrador de paquetes de NuGet. Si no puede usar el instalador de extensiones de Visual Studio, puede descargar la extensión directamente desde [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 
-La consola de administrador de paquetes no está actualmente disponible con Visual Studio para Mac. Los comandos equivalentes, sin embargo, están disponibles a través de la [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio para Mac tiene una interfaz de usuario para administrar paquetes de NuGet. Vea [paquete NuGet unos incluidos en el proyecto](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+La consola de administrador de paquetes no está actualmente disponible con Visual Studio para Mac. Los comandos equivalentes, sin embargo, están disponibles a través de la [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio para Mac tiene una interfaz de usuario para administrar paquetes de NuGet. Vea [paquete NuGet unos incluidos en el proyecto](/visualstudio/mac/nuget-walkthrough).
 
 La consola de administrador de paquetes no se incluye con Visual Studio Code.
 
