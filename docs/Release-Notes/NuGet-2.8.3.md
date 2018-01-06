@@ -13,16 +13,16 @@ keywords: "NuGet 2.8.3 notas de la versión, correcciones de errores, problemas,
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8c0b38ea4975300af701b66266a9883eb54412c1
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: d6fbebaf02cede52a701abd31e843a077f8acbb7
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
-# <a name="nuget-283-release-notes"></a><span data-ttu-id="37af6-104">Notas de la versión de NuGet 2.8.3</span><span class="sxs-lookup"><span data-stu-id="37af6-104">NuGet 2.8.3 Release Notes</span></span>
+# <a name="nuget-283-release-notes"></a><span data-ttu-id="c1255-104">Notas de la versión de NuGet 2.8.3</span><span class="sxs-lookup"><span data-stu-id="c1255-104">NuGet 2.8.3 Release Notes</span></span>
 
-<span data-ttu-id="37af6-105">[Notas de la versión de NuGet 2.8.2](../release-notes/nuget-2.8.2.md) | [notas de la versión de NuGet 2.8.5](../release-notes/nuget-2.8.5.md)</span><span class="sxs-lookup"><span data-stu-id="37af6-105">[NuGet 2.8.2 Release Notes](../release-notes/nuget-2.8.2.md) | [NuGet 2.8.5 Release Notes](../release-notes/nuget-2.8.5.md)</span></span>
+<span data-ttu-id="c1255-105">[Notas de la versión de NuGet 2.8.2](../release-notes/nuget-2.8.2.md) | [notas de la versión de NuGet 2.8.5](../release-notes/nuget-2.8.5.md)</span><span class="sxs-lookup"><span data-stu-id="c1255-105">[NuGet 2.8.2 Release Notes](../release-notes/nuget-2.8.2.md) | [NuGet 2.8.5 Release Notes](../release-notes/nuget-2.8.5.md)</span></span>
 
-<span data-ttu-id="37af6-106">NuGet 2.8.3 se publicó el 17 de octubre de 2014.</span><span class="sxs-lookup"><span data-stu-id="37af6-106">NuGet 2.8.3 was released October 17, 2014.</span></span> <span data-ttu-id="37af6-107">Es una actualización secundaria a nuestro 2.8.1 VSIX con algunos dirigida correcciones.</span><span class="sxs-lookup"><span data-stu-id="37af6-107">It is a minor update to our 2.8.1 VSIX with some targeted fixes.</span></span>
+<span data-ttu-id="c1255-106">NuGet 2.8.3 se publicó el 17 de octubre de 2014.</span><span class="sxs-lookup"><span data-stu-id="c1255-106">NuGet 2.8.3 was released October 17, 2014.</span></span> <span data-ttu-id="c1255-107">Es una actualización secundaria a nuestro 2.8.1 VSIX con algunos dirigida correcciones.</span><span class="sxs-lookup"><span data-stu-id="c1255-107">It is a minor update to our 2.8.1 VSIX with some targeted fixes.</span></span>
 
-<span data-ttu-id="37af6-108">En esta versión, se agregó la compatibilidad de cuadro de diálogo Administrador de paquetes de NuGet para [ASP.NET vNext](http://www.asp.net/vnext), [DevExtreme](http://js.devexpress.com/) y [BizTalk (.btproj)](http://msdn.microsoft.com/library/aa577497.aspx) tipos de proyecto.</span><span class="sxs-lookup"><span data-stu-id="37af6-108">In this release, the support for NuGet Package Manager dialog was added for [ASP.NET vNext](http://www.asp.net/vnext), [DevExtreme](http://js.devexpress.com/) and [BizTalk (.btproj)](http://msdn.microsoft.com/library/aa577497.aspx) project types.</span></span> <span data-ttu-id="37af6-109">También incluye correcciones de errores de confiabilidad relacionados con los escenarios de habilitar la restauración del paquete y guardar las opciones del Administrador de paquetes.</span><span class="sxs-lookup"><span data-stu-id="37af6-109">It also includes reliability bug fixes related to the scenarios of enabling package restore and saving package manager options.</span></span>
+<span data-ttu-id="c1255-108">En esta versión, se agregó la compatibilidad de cuadro de diálogo Administrador de paquetes de NuGet para [ASP.NET vNext](http://www.asp.net/vnext), [DevExtreme](http://js.devexpress.com/) y [BizTalk (.btproj)](/biztalk/core/developing-biztalk-server-applications) tipos de proyecto.</span><span class="sxs-lookup"><span data-stu-id="c1255-108">In this release, the support for NuGet Package Manager dialog was added for [ASP.NET vNext](http://www.asp.net/vnext), [DevExtreme](http://js.devexpress.com/) and [BizTalk (.btproj)](/biztalk/core/developing-biztalk-server-applications) project types.</span></span> <span data-ttu-id="c1255-109">También incluye correcciones de errores de confiabilidad relacionados con los escenarios de habilitar la restauración del paquete y guardar las opciones del Administrador de paquetes.</span><span class="sxs-lookup"><span data-stu-id="c1255-109">It also includes reliability bug fixes related to the scenarios of enabling package restore and saving package manager options.</span></span>
