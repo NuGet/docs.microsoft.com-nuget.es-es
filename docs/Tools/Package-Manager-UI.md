@@ -17,11 +17,11 @@ keywords: NuGet UI, el Administrador de paquetes de NuGet UI, NuGet en Visual St
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0f08e5a36499c4481c4e0cd70738d67d65cd980a
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: fb2166b727dd01de0f7096535fdbc71c5ab0e2a3
+ms.sourcegitcommit: cde52deee5691d3e8bcb96f46f9645c7ba579af8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="nuget-package-manager-ui"></a>Interfaz de usuario de administrador de paquetes de NuGet
 
@@ -39,7 +39,7 @@ En este tema:
 > [!Note]
 > Compruebe si faltan el Administrador de paquetes de NuGet en Visual Studio 2015, **Herramientas > extensiones y actualizaciones...**  y busque el *Administrador de paquetes de NuGet* extensión. Si no puede usar el instalador de extensiones de Visual Studio, descargue la extensión directamente desde [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
 >
-> En Visual Studio 2017 NuGet y el Administrador de paquetes de NuGet se instalan automáticamente con cualquiera. Cargas de trabajo relacionados con la red. Instalar individuall seleccionando el **componentes individuales > herramientas de código > Administrador de paquetes de NuGet** opción en el programa de instalación de Visual Studio de 2017.
+> En Visual Studio 2017 NuGet y el Administrador de paquetes de NuGet se instalan automáticamente con cualquiera. Cargas de trabajo relacionados con la red. Instalar de forma individual seleccionando la **componentes individuales > herramientas de código > Administrador de paquetes de NuGet** opción en el programa de instalación de Visual Studio de 2017.
 
 ## <a name="finding-and-installing-a-package"></a>Búsqueda e instalación de un paquete
 
