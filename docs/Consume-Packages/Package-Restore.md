@@ -13,11 +13,11 @@ keywords: "Restauración de paquetes NuGet, instalación de paquetes NuGet, inst
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c2567f45b6bb36cdd94c4ce6f1418cb1c7ceac5e
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4e819a2bb34bbe70f0f11d5adeed82b976a8cb65
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-restore"></a>Restauración de paquetes
 
@@ -51,7 +51,7 @@ Para obtener más detalles sobre la restauración de paquetes en servidores de c
 
 En primer lugar, las referencias de paquete se mantienen en uno de los formatos de administración de paquetes siguientes, según el tipo de proyecto y la versión de NuGet. (Tenga en cuenta que NuGet 4 y MSBuild 15.1 se instalan con Visual Studio 2017).
 
-| Método | Versión de NuGet | Descripción | 
+| Método | Versión de NuGet | Description | 
 | --- | --- | --- |
 | `packages.config` | 2.x y posterior | Muestra el conjunto completo de dependencias. Los paquetes agregados a `packages.config` también se deben agregar al archivo de proyecto, así como los destinos y propiedades. Este es el método de base de referencia para todas las versiones de NuGet, pero tiene un rendimiento más lento en comparación con las otras opciones. (Vea [esquema packages.config](../schema/packages-config.md)). | 
 | `project.json` | 3.x y posteriores | Solo se usa de forma predeterminada con proyectos de UWP, pero los proyectos se pueden convertir desde `packages.config`. `project.json` muestra únicamente las dependencias de nivel superior. Las referencias, destinos y propiedades se agregan de forma dinámica al proyecto durante la compilación, lo que da lugar a un mejor rendimiento en comparación con `packages.config`. (Vea [esquema project.json](../schema/project-json.md)).|
@@ -64,7 +64,7 @@ Desde la línea de comandos o la [Consola del Administrador de paquetes](../tool
 | Comando | Escenarios aplicables |
 | --- | --- | 
 | `nuget restore` | Todas las versiones de NuGet y todos los tipos de referencia. Vea [Restauración de línea de comandos](#command-line-restore) a continuación. | 
-| `dotnet restore` | Igual que `nuget restore` para los proyectos de .NET Core. Vea [dotnet restore](https://docs.microsoft.com/dotnet/articles/core/tools/dotnet-restore). |
+| `dotnet restore` | Igual que `nuget restore` para los proyectos de .NET Core. Vea [dotnet restore](/dotnet/articles/core/tools/dotnet-restore). |
 | `msbuild /t:restore` | Solo para NuGet 4.x y versiones posteriores, y MSBuild 15.1 y versiones posteriores con [referencias de paquete en archivos de proyecto](../Consume-Packages/Package-References-in-Project-Files.md). `nuget restore` y `dotnet restore` usan este comando para los proyectos aplicables. Vea [pack y restore de NuGet como destinos de MSBuild: restaurar destino](../schema/msbuild-targets.md#restore-target).|
 
 Visual Studio también restaura paquetes en momentos diferentes:

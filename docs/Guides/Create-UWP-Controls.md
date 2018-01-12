@@ -13,11 +13,11 @@ keywords: "Controles de UWP de NuGet, diseñador XAML de Visual Studio, diseñad
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f51dbabd406199752e4f9d612b498f59ffb54021
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 8756ce472c11a05370914841245295361b3f179b
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="creating-uwp-controls-as-nuget-packages"></a>Crear controles de UWP como paquetes de NuGet
 
@@ -105,7 +105,7 @@ Por ejemplo, supongamos que ha establecido la TPMinV del paquete de controles en
 \ref\uap10.0\*
 ```
 
-Para forzar la comprobación de TPMinV adecuada, cree un [archivo de destinos de MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets) y empaquételo en la carpeta de compilación (reemplazando "your_assembly_name" por el nombre del ensamblado en cuestión):
+Para forzar la comprobación de TPMinV adecuada, cree un [archivo de destinos de MSBuild](/visualstudio/msbuild/msbuild-targets) y empaquételo en la carpeta de compilación (reemplazando "your_assembly_name" por el nombre del ensamblado en cuestión):
 
 ```
 \build
@@ -133,7 +133,7 @@ Aquí se muestra un ejemplo del aspecto que debería tener el archivo de destino
 
 ## <a name="add-design-time-support"></a>Agregar compatibilidad en tiempo de diseño
 
-Para configurar la ubicación donde se mostrarán las propiedades del control en el inspector de propiedad, agregarán adornos personalizados, etc., coloque el archivo `design.dll` dentro de la carpeta `lib\<platform>\Design`, según corresponda con la plataforma de destino. Además, para asegurarse de que la característica **[Editar plantilla > Editar una copia](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** funciona, debe incluir el archivo `Generic.xaml` y todos los diccionarios de recursos que fusione en la carpeta `<AssemblyName>\Themes` (este archivo no influye en el comportamiento en tiempo de ejecución de un control).
+Para configurar la ubicación donde se mostrarán las propiedades del control en el inspector de propiedad, agregarán adornos personalizados, etc., coloque el archivo `design.dll` dentro de la carpeta `lib\<platform>\Design`, según corresponda con la plataforma de destino. Además, para asegurarse de que la característica **[Editar plantilla > Editar una copia](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** funciona, debe incluir el archivo `Generic.xaml` y todos los diccionarios de recursos que fusione en la carpeta `<AssemblyName>\Themes` (este archivo no influye en el comportamiento en tiempo de ejecución de un control).
 
 
 ```
@@ -172,7 +172,7 @@ Para empaquetar contenido, como imágenes que el control o el proyecto UWP de co
 \tools
 ```
 
-También puede crear un [archivo de destinos de MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets) para asegurarse de que el recurso se copia en la carpeta de salida del proyecto de consumo:
+También puede crear un [archivo de destinos de MSBuild](/visualstudio/msbuild/msbuild-targets) para asegurarse de que el recurso se copia en la carpeta de salida del proyecto de consumo:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

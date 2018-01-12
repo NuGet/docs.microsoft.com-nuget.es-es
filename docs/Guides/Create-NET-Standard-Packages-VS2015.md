@@ -13,17 +13,17 @@ keywords: "crear un paquete, paquetes de .NET Standard, tabla de asignación de 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: a912c27e1873d60426f2147995f69e2dcc433ca9
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: e02888bf552997afe25e967f13e021e78e40d48d
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-net-standard-packages-with-visual-studio-2015"></a>Crear paquetes de .NET Standard con Visual Studio 2015
 
 *Se aplica a NuGet 3.x. Vea [Crear paquetes de .NET Standard con Visual Studio 2017](../guides/create-net-standard-packages-vs2017.md) para trabajar con NuGet 4.x+.*
 
-La [biblioteca .NET Standard](https://docs.microsoft.com/dotnet/articles/standard/library) es una especificación formal de las API de .NET diseñada para estar disponible en todos los runtimes de .NET, lo que establece mayor uniformidad en el ecosistema de .NET. La biblioteca de .NET Standard define un conjunto uniforme de API de BCL (biblioteca de clases base) para que todas las plataformas de .NET lo implementen, independientemente de la carga de trabajo. Permite a los desarrolladores generar PCL que se puedan usar en todos los runtimes de .NET y reduce, si no elimina, las directivas de compilación condicional específicas de la plataforma en código compartido.
+La [biblioteca .NET Standard](/dotnet/articles/standard/library) es una especificación formal de las API de .NET diseñada para estar disponible en todos los runtimes de .NET, lo que establece mayor uniformidad en el ecosistema de .NET. La biblioteca de .NET Standard define un conjunto uniforme de API de BCL (biblioteca de clases base) para que todas las plataformas de .NET lo implementen, independientemente de la carga de trabajo. Permite a los desarrolladores generar PCL que se puedan usar en todos los runtimes de .NET y reduce, si no elimina, las directivas de compilación condicional específicas de la plataforma en código compartido.
 
 En esta guía se describe la creación de un paquete de NuGet que tenga como destino la biblioteca de .NET Standard 1.4. Funcionará en .NET Framework 4.6.1, Plataforma universal de Windows 10, .NET Core y Mono/Xamarin. Para más información, vea la [tabla de asignación de .NET Standard](#net-standard-mapping-table), que aparece más adelante en este tema.
 
@@ -329,5 +329,5 @@ Para ello, cree el archivo `readme.txt`, colóquelo en la carpeta raíz del proy
 - [Compatibilidad con varias versiones de .NET Framework](../create-packages/supporting-multiple-target-frameworks.md)
 - [Incluir propiedades y destinos de MSBuild en un paquete](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
 - [Creación de paquetes localizados](../create-packages/creating-localized-packages.md)
-- [Documentación de la biblioteca de .NET Standard](https://docs.microsoft.com/dotnet/articles/standard/library)
-- [Portabilidad a .NET Core desde .NET Framework](https://docs.microsoft.com/dotnet/articles/core/porting/index)
+- [Documentación de la biblioteca de .NET Standard](/dotnet/articles/standard/library)
+- [Portabilidad a .NET Core desde .NET Framework](/dotnet/articles/core/porting/index)

@@ -13,17 +13,19 @@ keywords: "NuGet orígenes de referencia, orígenes de comando"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 52c46dba168e7395d50cb8d8f9775839389e614c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 2eca8557840c467a60f5f708efe242cd83609164
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="sources-command-nuget-cli"></a>comando de fuentes (NuGet CLI)
 
 **Se aplica a:** consumo de paquete, publicación &bullet; **versiones admitidas:** todos
 
 Administra la lista de orígenes que se encuentran en `%AppData%\NuGet\NuGet.Config` o en el archivo de configuración especificado.
+
+Tenga en cuenta que la dirección URL de origen nuget.org `https://api.nuget.org/v3/index.json`.
 
 ## <a name="usage"></a>Uso
 
@@ -32,7 +34,6 @@ nuget sources <operation> -Name <name> -Source <source>
 ```
 
 donde `<operation>` es uno de los *enumerar, agregar, quitar, habilitar, deshabilitar,* o *actualización*, `<name>` es el nombre del origen, y `<source>` es la dirección URL de la fuente.
-
 
 ## <a name="options"></a>Opciones
 

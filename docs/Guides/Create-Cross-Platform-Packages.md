@@ -13,11 +13,11 @@ keywords: crear un paquete, paquetes para Xamarin, paquetes multiplataforma
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8ee825a6299d7de375fd2f242cf456da13b777d9
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: f372856232f151efcf972881cffbe7d4bb7ed6ee
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-cross-platform-packages"></a>Crear paquetes multiplataforma
 
@@ -43,7 +43,7 @@ En este tutorial creará un paquete NuGet multiplataforma que se puede usar en p
 
 ## <a name="create-the-project-structure-and-abstraction-code"></a>Crear la estructura y el código de abstracción del proyecto
 
-1. Descargue y ejecute la [extensión Complemento para plantillas de Xamarin](https://visualstudiogallery.msdn.microsoft.com/afead421-3fbf-489a-a4e8-4a244ecdbb1e) para Visual Studio. Estas plantillas facilitan la creación de la estructura del proyecto necesaria para este tutorial.
+1. Descargue y ejecute la [extensión Complemento para plantillas de Xamarin](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates) para Visual Studio. Estas plantillas facilitan la creación de la estructura del proyecto necesaria para este tutorial.
 1. En Visual Studio, **Archivo > Nuevo > Proyecto**, busque `Plugin`, seleccione la plantilla **Complemento para Xamarin**, cambie el nombre a LoggingLibrary y haga clic en Aceptar.
 
     ![Nuevo proyecto de aplicación vacía (Xamarin.Forms Portable) en Visual Studio](media/CrossPlatform-NewProject.png)
@@ -275,7 +275,7 @@ Para que el paquete esté disponible para otros desarrolladores, siga las instru
 
 ## <a name="related-topics"></a>Temas relacionados
 
-- [Referencia de nuspec](../schema/nuspec.md)
+- [Referencia de NuSpec](../schema/nuspec.md)
 - [Paquetes de símbolos](../create-packages/symbol-packages.md)
 - [Control de versiones del paquete](../reference/package-versioning.md)
 - [Compatibilidad con varias versiones de .NET Framework](../create-packages/supporting-multiple-target-frameworks.md)

@@ -13,15 +13,15 @@ keywords: "API de NuGet, NuGet en Visual Studio, interfaces de programación de 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1d5c4cba1474f4215c6cc83497e347b2145f21ef
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: e1279f5c0c36bfdf99a6bae240c779fd0c39f04c
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-api-in-visual-studio"></a>API de NuGet en Visual Studio
 
-Además de la interfaz de usuario y la consola del Administrador de paquetes en Visual Studio, NuGet también exporta algunos servicios útiles a través de [Managed Extensibility Framework (MEF)](http://msdn.microsoft.com/library/dd460648.aspx). Esta interfaz permite que otros componentes de Visual Studio interactúen con NuGet, se puedan usar para instalar y desinstalar paquetes, y para obtener información sobre los paquetes instalados.
+Además de la interfaz de usuario y la consola del Administrador de paquetes en Visual Studio, NuGet también exporta algunos servicios útiles a través de [Managed Extensibility Framework (MEF)](/dotnet/framework/mef/index). Esta interfaz permite que otros componentes de Visual Studio interactúen con NuGet, se puedan usar para instalar y desinstalar paquetes, y para obtener información sobre los paquetes instalados.
 
 A partir de NuGet 3.3 y versiones posteriores, NuGet exporta los servicios siguientes que residen en el espacio de nombres `NuGet.VisualStudio` en el ensamblado `NuGet.VisualStudio.dll`:
 
@@ -47,7 +47,7 @@ A partir de NuGet 3.3 y versiones posteriores, NuGet exporta los servicios sigui
 > [!Warning]
 > No use ningún otro tipo aparte de las interfaces públicas en el código y no haga referencia a ningún otro ensamblado de NuGet, incluido `NuGet.Core.dll`.
 
-1. Para usar un servicio, impórtelo a través del [atributo Import de MEF](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes) o del [servicio IComponentModel](http://msdn.microsoft.com/library/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx).
+1. Para usar un servicio, impórtelo a través del [atributo Import de MEF](/dotnet/framework/mef/index#imports-and-exports-with-attributes) o del [servicio IComponentModel](/dotnet/api/microsoft.visualstudio.componentmodelhost.icomponentmodel?redirectedfrom=MSDN&view=visualstudiosdk-2017).
 
     ```cs
     //Using the Import attribute

@@ -13,17 +13,17 @@ keywords: crear un paquete, paquetes de .NET Standard, .NET Core
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 82e413119b12503336becd6019e4fa3e4ac0b1f3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 5b48ad2f062fd3a9b99985dbda6f89e6039dac4d
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-net-standard-20-packages-with-visual-studio-2017"></a>Crear paquetes de .NET Standard 2.0 con Visual Studio 2017
 
 *Se aplica a NuGet 4.x y versiones posteriores, y MSBuild 15.3 y versiones posteriores, tal y como se proporcionan con Visual Studio 2017 Update 3. Para versiones anteriores de Visual Studio 2017, estas instrucciones se aplican a .NET Standard 1.4 a 1.6 cambiando la propiedad \<TargetFramework\>. Vea también [Crear paquetes de .NET Standard con Visual Studio 2015](../guides/create-net-standard-packages-vs2015.md) para trabajar con NuGet 3.x y versiones posteriores.*
 
-La [biblioteca .NET Standard](https://docs.microsoft.com/dotnet/articles/standard/library) es una especificación formal de las API de .NET diseñada para estar disponible en todos los runtimes de .NET, lo que establece mayor uniformidad en el ecosistema de .NET. La biblioteca de .NET Standard define un conjunto uniforme de API de BCL (biblioteca de clases base) para que todas las plataformas de .NET lo implementen, independientemente de la carga de trabajo. Permite a los desarrolladores generar PCL que se puedan usar en todos los runtimes de .NET y reduce, si no elimina, las directivas de compilación condicional específicas de la plataforma en código compartido.
+La [biblioteca .NET Standard](/dotnet/articles/standard/library) es una especificación formal de las API de .NET diseñada para estar disponible en todos los runtimes de .NET, lo que establece mayor uniformidad en el ecosistema de .NET. La biblioteca de .NET Standard define un conjunto uniforme de API de BCL (biblioteca de clases base) para que todas las plataformas de .NET lo implementen, independientemente de la carga de trabajo. Permite a los desarrolladores generar PCL que se puedan usar en todos los runtimes de .NET y reduce, si no elimina, las directivas de compilación condicional específicas de la plataforma en código compartido.
 
 En esta guía se describe la creación de un paquete NuGet destinado a la biblioteca de .NET Standard 2.0 con Visual Studio 2017 Update 3 y NuGet 4.0.
 
@@ -113,5 +113,5 @@ Para que el paquete esté disponible para otros desarrolladores, siga las instru
 
 - En [Referencias de paquete en archivos de proyecto](../consume-packages/package-references-in-project-files.md) se describen todos los detalles sobre cómo describir el paquete directamente en el archivo de proyecto.
 - En [pack y restore de NuGet como destinos de MSBuild](../schema/msbuild-targets.md) se describen todas las opciones para el uso de `msbuild /t:pack` para crear el paquete.
-- [Documentación de la biblioteca de .NET Standard](https://docs.microsoft.com/dotnet/articles/standard/library)
-- [Portabilidad a .NET Core desde .NET Framework](https://docs.microsoft.com/dotnet/articles/core/porting/index)
+- [Documentación de la biblioteca de .NET Standard](/dotnet/articles/standard/library)
+- [Portabilidad a .NET Core desde .NET Framework](/dotnet/articles/core/porting/index)
