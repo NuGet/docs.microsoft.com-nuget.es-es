@@ -13,11 +13,11 @@ keywords: "Restauración de paquetes de NuGet, NuGet y TFS, NuGet y VSTS, sistem
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4be1bb83549958897a15d690439cac073c9683d1
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 82decfa1a39cb99c405840a8f13b0bc993111c09
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Configurar la restauración de paquetes con Team Foundation Build
 
@@ -29,9 +29,9 @@ ms.lasthandoff: 12/14/2017
 >
 > Si usa Visual Studio Team Services o Team Foundation Server 2013 local con sus plantillas de proceso de compilación, la restauración automática de paquetes tiene lugar como parte del proceso de compilación.
 
-En esta sección se proporciona un tutorial detallado sobre cómo restaurar los paquetes como parte de [Team Foundation Build](http://msdn.microsoft.com/library/ms181710(v=VS.90).aspx) tanto para [Git](http://en.wikipedia.org/wiki/Git_(software)) como para [Control de versiones de TF](http://msdn.microsoft.com/library/ms181237(v=vs.120).aspx).
+En esta sección se proporciona un tutorial detallado sobre cómo restaurar los paquetes como parte de [Team Services Build](/vsts/build-release/index), tanto para Git como para Control de versiones de Team Services.
 
-Aunque este tutorial es específico para el escenario de uso de [Team Foundation Service](http://tfs.visualstudio.com/), los conceptos también se aplican a otros sistemas de control de versiones y de compilación.
+Aunque este tutorial es específico para el escenario de uso de Visual Studio Team Services, los conceptos también se aplican a otros sistemas de control de versiones y de compilación.
 
 ## <a name="the-general-approach"></a>Enfoque general
 
@@ -119,7 +119,7 @@ El archivo `.gitignore` es [bastante eficaz](https://www.kernel.org/pub/software
 
 Se excluirán todas las carpetas `packages`, pero se volverán a incluir todos los archivos `.targets` incluidos. Por cierto, [aquí](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) encontrará una plantilla para archivos `.gitignore` diseñada específicamente para las necesidades de los desarrolladores de Visual Studio.
 
-El control de versiones de TF admite un mecanismo muy parecido mediante el archivo [.tfignore](http://msdn.microsoft.com/library/ms245454.aspx). La sintaxis es prácticamente la misma:
+El control de versiones de TF admite un mecanismo muy parecido mediante el archivo [.tfignore](/vsts/tfvc/add-files-server#customize-which-files-are-ignored-by-version-control). La sintaxis es prácticamente la misma:
 
     *.user
     *.suo
@@ -135,7 +135,7 @@ Este proyecto tendrá los tres destinos convencionales `Clean`, `Build` y `Rebui
 
 - Los destinos `Build` y `Rebuild` dependen de `RestorePackages`. Así se garantiza que puede ejecutar `Build` y `Rebuild` y que puede confiar en los paquetes que se están restaurando.
 - `Clean`, `Build` y `Rebuild` invocan el destino de MSBuild correspondiente en todos los archivos de la solución.
-- El destino `RestorePackages` invoca a `nuget.exe` para cada archivo de la solución. Esto se hace usando la [funcionalidad de procesamiento por lotes de MSBuild](http://msdn.microsoft.com/library/ms171473.aspx).
+- El destino `RestorePackages` invoca a `nuget.exe` para cada archivo de la solución. Esto se hace usando la [funcionalidad de procesamiento por lotes de MSBuild](/visualstudio/msbuild/msbuild-batching).
 
 El resultado es el siguiente:
 

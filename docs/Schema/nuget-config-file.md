@@ -13,11 +13,11 @@ keywords: "Archivo NuGet.Config, referencia de configuración de NuGet, opciones
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: fa471e1ad419c6a4cab99e271375d9be94c29a50
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 830c622f622b894a228b18dfdb3a790bccfde8a3
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="nugetconfig-reference"></a>Referencia de NuGet.Config
 
@@ -31,12 +31,11 @@ En este tema:
 - [Sección bindingRedirects](#bindingredirects-section)
 - [Sección packageRestore](#packagerestore-section)
 - [Sección solution](#solution-section)
-- [Secciones de origen del paquete](#package-source-sections):
-    - [packageSources](#packagesources)
-    - [packageSourceCredentials](#packagesourcecredentials)
-    - [apikeys](#apikeys)
-    - [disabledPackageSources](#disabledpackagesources)
-    - [activePackageSource](#activepackagesource)
+- [Secciones de origen del paquete](#package-source-sections): -[packageSources](#packagesources)
+  - [packageSourceCredentials](#packagesourcecredentials)
+  - [apikeys](#apikeys)
+  - [disabledPackageSources](#disabledpackagesources)
+  - [activePackageSource](#activepackagesource)
 - [Uso de variables de entorno](#using-environment-variables)
 - [Archivo de configuración de ejemplo](#example-config-file)
 
@@ -59,7 +58,6 @@ Nota: `dependencyVersion` y `repositoryPath` solo se aplican a proyectos en los 
 | defaultPushSource | Identifica la dirección URL o ruta de acceso de origen del paquete que se debe usar como valor predeterminado si no se encuentra ningún otro origen del paquete para una operación. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Configuración de proxy que se usa al conectarse a orígenes de paquetes; `http_proxy` debe tener el formato `http://<username>:<password>@<domain>`. Las contraseñas están cifradas y no se pueden agregar de forma manual. Para `no_proxy`, el valor es una lista separada por comas de dominios que omiten el servidor proxy. Como alternativa, puede usar las variables de entorno http_proxy y no_proxy para esos valores. Para obtener más información, vea [Configuración de proxy de NuGet](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
 
-
 **Ejemplo**:
 
 ```xml
@@ -70,7 +68,6 @@ Nota: `dependencyVersion` y `repositoryPath` solo se aplican a proyectos en los 
     <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
 </config>
 ```
-
 
 ## <a name="bindingredirects-section"></a>Sección bindingRedirects
 
@@ -116,7 +113,6 @@ Controla si la carpeta `packages` de una solución se incluye en el control de c
 | --- | --- |
 | disableSourceControlIntegration | Un valor booleano que indica si se debe ignorar la carpeta de paquetes cuando se trabaja con el control de código fuente. El valor predeterminado es false. |
 
-
 **Ejemplo**:
 
 ```xml
@@ -125,13 +121,13 @@ Controla si la carpeta `packages` de una solución se incluye en el control de c
 </solution>
 ```
 
-
 ## <a name="package-source-sections"></a>Secciones de origen del paquete
 
 `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource` y `disabledPackageSources` trabajan de manera conjunta para configurar el funcionamiento de NuGet con repositorios de paquetes durante las operaciones de instalación, restauración y actualización.
 
 Normalmente se usa el [comando `nuget sources`](../tools/cli-ref-sources.md) para administrar estos valores, excepto para `apikeys` que se administra con el [comando `nuget setapikey`](../tools/cli-ref-setapikey.md).
 
+Tenga en cuenta que la dirección URL de origen de nuget.org es `https://api.nuget.org/v3/index.json`.
 
 ### <a name="packagesources"></a>packageSources
 
@@ -150,7 +146,6 @@ Enumera todos los orígenes de paquetes conocidos.
     <add key="Test Source" value="c:\packages" />
 </packageSources>
 ```
-
 
 ### <a name="packagesourcecredentials"></a>packageSourceCredentials
 
@@ -190,7 +185,7 @@ Cuando se usan contraseñas sin cifrar:
     <Test_x0020_Source>
         <add key="Username" value="user" />
         <add key="ClearTextPassword" value="hal+9ooo_da!sY" />
-    </Test_x0020_Source>    
+    </Test_x0020_Source>
 </packageSourceCredentials>
 ```
 
@@ -210,7 +205,6 @@ Almacena claves para los orígenes en los que se usa autenticación de clave de 
 </apikeys>
 ```
 
-
 ### <a name="disabledpackagesources"></a>disabledPackageSources
 
 Orígenes actualmente deshabilitados identificados. Puede estar vacía.
@@ -218,8 +212,6 @@ Orígenes actualmente deshabilitados identificados. Puede estar vacía.
 | Key | Valor |
 | --- | --- |
 | (nombre del origen) | Un valor booleano que indica si el origen está deshabilitado. |
-
-
 
 **Ejemplo:**
 
@@ -263,7 +255,6 @@ Por ejemplo, si la variable de entorno `HOME` en Windows se establece en `c:\use
 De forma similar, si `HOME` en Mac/Linux se establece en `/home/myStuff`, `$HOME/NuGetRepository` en el archivo de configuración se resuelve como `/home/myStuff/NuGetRepository`.
 
 Si no se encuentra una variable de entorno, NuGet usa el valor literal del archivo de configuración.
-
 
 ## <a name="example-config-file"></a>Archivo de configuración de ejemplo
 

@@ -13,11 +13,11 @@ keywords: Gobierno de NuGet, dictador benevolente, responsabilidades del desarro
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: db2ed774b35d5698a88f9afba43fd30692001f6a
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0437b7d41f965da6a7ad44a7d0675916ed655fe1
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-governance"></a>Gobierno de NuGet
 
@@ -47,7 +47,7 @@ Normalmente, un desarrollador registrado se centra en un aspecto específico del
 
 Los desarrolladores registrados no cuentan con autoridad en lo que a la dirección general de NuGet se refiere, pero influyen al jefe de proyecto. Es tarea de un desarrollador registrado asegurarse de que el jefe de proyecto sea consciente de las necesidades y los objetivos colectivos de la comunidad, así como ayudar a desarrollar o desencadenar contribuciones adecuadas para el proyecto. A veces, a los autores se les ofrece control informal sobre sus áreas de responsabilidad específicas y se les asignan derechos para modificar directamente ciertas áreas del código fuente. Es decir, aunque los desarrolladores registrados no cuentan con autoridad explícita para tomar decisiones, muchas veces verán que sus acciones equivalen a las decisiones que ha tomado el jefe de proyecto.
 
-### <a name="contributors"></a>Contributors
+### <a name="contributors"></a>Colaboradores
 
 Los colaboradores son miembros de la comunidad que envían revisiones a NuGet. Estas revisiones pueden ser únicas o se producen con el tiempo. Se prevé que los colaboradores envíen revisiones que sean pequeñas al principio y que aumenten de tamaño cuando el colaborador, los desarrolladores registrados y el jefe de proyecto hayan ganado confianza en la calidad de las revisiones de un colaborador. Los colaboradores se reconocen en el documento de notas de la versión del producto asociado.
 

@@ -13,11 +13,11 @@ keywords: "Creación de paquetes NuGet, crear un paquete, manifiesto de nuspec, 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: e7a2c4d02afb2387161c22fe5bd443eb0991ea8c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 6675d21a2900a1b61e17c08518b328732f4472c5
+ms.sourcegitcommit: 1cb047b24b3b69d80e808c23b2ace0d98d2dfdcc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="creating-nuget-packages"></a>Creación de paquetes NuGet
 
@@ -185,7 +185,7 @@ La ventaja de este enfoque es que no es necesario especificar en el manifiesto q
 
 Las convenciones de carpeta son las siguientes:
 
-| Carpeta | Descripción | Acción tras la instalación del paquete |
+| Carpeta | Description | Acción tras la instalación del paquete |
 | --- | --- | --- |
 | (raíz) | Ubicación de Léame.txt | Visual Studio muestra un archivo Léame.txt en la raíz del paquete cuando se instala el paquete. |
 | lib/{tfm} | Archivos de ensamblado (`.dll`), documentación (`.xml`) y símbolos (`.pdb`) para el Moniker de plataforma de destino (TFM) indicado | Los ensamblados se agregan como referencias; `.xml` y `.pdb` se copian en carpetas de proyecto. Vea [Compatibilidad con varias plataformas de destino](Supporting-Multiple-Target-Frameworks.md) para obtener información sobre cómo crear subcarpetas específicas de la plataforma de destino. |
@@ -284,7 +284,7 @@ Con NuGet 3.5 y versiones posteriores, los paquetes se pueden marcar con un *tip
 
 - Los paquetes de tipo `Dependency` agregan activos de tiempo de compilación o ejecución a las aplicaciones y bibliotecas, y se pueden instalar en cualquier tipo de proyecto (suponiendo que sean compatibles).
 
-- Los paquetes de tipo `DotnetCliTool` son extensiones de la [CLI de .NET](https://docs.microsoft.com/dotnet/articles/core/tools/index) y se invocan desde la línea de comandos. Estos paquetes solo se pueden instalar en proyectos de .NET Core y no tienen ningún efecto en las operaciones de restauración. Para obtener más información sobre estas extensiones por proyecto, vea la documentación de [extensibilidad de .NET Core](https://docs.microsoft.com/dotnet/articles/core/tools/extensibility#per-project-based-extensibility).
+- Los paquetes de tipo `DotnetCliTool` son extensiones de la [CLI de .NET](/dotnet/articles/core/tools/index) y se invocan desde la línea de comandos. Estos paquetes solo se pueden instalar en proyectos de .NET Core y no tienen ningún efecto en las operaciones de restauración. Para obtener más información sobre estas extensiones por proyecto, vea la documentación de [extensibilidad de .NET Core](/dotnet/articles/core/tools/extensibility#per-project-based-extensibility).
 
     Cuando se instala un paquete DotnetCliTool, Visual Studio lo coloca en el nodo `project.json` `tools` en lugar del nodo `dependencies`.
 

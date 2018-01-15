@@ -13,11 +13,11 @@ keywords: "Creación de paquetes NuGet, publicación de paquetes NuGet, tutorial
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 36a7c2b1d056dddf07a59737de1c3e94294689ac
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: ab5235537d869047075b93f9d8255ae9e61dfedd
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="create-and-publish-a-package"></a>Crear y publicar un paquete
 
@@ -52,7 +52,7 @@ Cada paquete NuGet necesita un manifiesto (un archivo `.nuspec`) para describir 
     nuget spec
     ```
 
-1. Abra el archivo en un editor de texto. El manifiesto tiene un aspecto similar al código siguiente, donde los tokens con el formato *$`<token>`$* se reemplazan durante el proceso de empaquetado con valores del archivo Properties o AssemblyInfo.cs del proyecto. Para obtener más información sobre los tokens, vea [Creación de un archivo .nuspec](../create-packages/creating-a-package.md#creating-the-nuspec-file).
+1. Abra el archivo en un editor de texto. El manifiesto tiene un aspecto similar al código siguiente, donde los tokens con el formato `<token>` (como `$id$`) se reemplazan durante el proceso de empaquetado con valores del archivo Properties o AssemblyInfo.cs del proyecto. Para obtener más información sobre los tokens, vea [Creación de un archivo .nuspec](../create-packages/creating-a-package.md#creating-the-nuspec-file).
 
     ```xml
     <?xml version="1.0"?>
@@ -115,7 +115,6 @@ Una vez que tenga un archivo `.nupkg`, se publica en nuget.org mediante el coman
 > [!Warning]
 > Los paquetes que se publican en nuget.org son visibles públicamente para otros desarrolladores. Para hospedar paquetes de forma privada, vea [Hospedaje de paquetes](../hosting-packages/overview.md).
 
-
 1. Cree una cuenta gratuita en [nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F), o inicie sesión si ya tiene una. Al crear una cuenta se envía un correo electrónico de confirmación. Debe confirmar la cuenta para poder cargar un paquete.
 
 1. Una vez iniciada la sesión, seleccione el nombre de usuario (en la esquina superior derecha) y, después, seleccione **Claves de API**.
@@ -134,7 +133,7 @@ Una vez que tenga un archivo `.nupkg`, se publica en nuget.org mediante el coman
     ```
     nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://api.nuget.org/v3/index.json
     ```
-    
+
 1. nuget.exe muestra los resultados del proceso de publicación:
 
     ```

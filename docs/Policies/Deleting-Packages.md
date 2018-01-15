@@ -13,11 +13,11 @@ keywords: "Eliminación de paquetes de NuGet, quitar de la lista paquetes de NuG
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 331979bdc3703ddbeff18e2bd0e6b0a17551e68b
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 9e388171f83fae7deb4f20033184dfa91bfab3da
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="deleting-packages"></a>Eliminar paquetes
 
@@ -41,7 +41,7 @@ Los paquetes que cumplan cualquiera de los siguientes criterios no se admiten en
 - Vulnera los derechos de autor o infringe las licencias.
 - Incluye contenido ilegal.
 - Se usa para apropiarse de identificadores de paquetes, incluidos los paquetes que no tienen contenido productivo. Los paquetes deben contener código o bien los propietarios deben ceder el identificador a alguien que tenga un producto para enviar.
-- Intenta provocar que la galería haga algo para lo que no se ha diseñado expresamente.
+- Trata de provocar que la galería haga algo para lo que no se ha diseñado expresamente.
 
 Si encuentra un paquete que infringe cualquiera de estos puntos, haga clic en el vínculo **Notificar abuso** en la página de detalles del paquete y envíe un informe.
 

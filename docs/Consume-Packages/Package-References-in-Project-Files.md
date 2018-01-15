@@ -13,11 +13,11 @@ keywords: Dependencias de paquetes de NuGet, referencias de paquetes, archivos d
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c8fc9e558557af444d9a35ace36d043a5f6382a7
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 275957c94e4a4bb45f359cd48816acf4f286ebad
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
 
@@ -87,7 +87,7 @@ Puede que esté usando una dependencia únicamente como instrumento de desarroll
 
 Las siguientes etiquetas de metadatos controlan los recursos de dependencia:
 
-| Etiqueta | Descripción | Valor predeterminado |
+| Etiqueta | Description | Valor predeterminado |
 | --- | --- | --- |
 | IncludeAssets | Se consumirán estos recursos | todo |
 | ExcludeAssets | No se consumirán estos recursos | ninguna | 
@@ -96,7 +96,7 @@ Las siguientes etiquetas de metadatos controlan los recursos de dependencia:
 
 A continuación se muestran los valores permitidos para estas etiquetas, con varios valores separados por un punto y coma, salvo `all` y `none`, que deben aparecer por sí mismos:
 
-| Valor | Descripción |
+| Valor | Description |
 | --- | ---
 | compile | Contenido de la carpeta `lib` |
 | motor en tiempo de ejecución | Contenido de la carpeta `runtime` |

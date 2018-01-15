@@ -13,11 +13,11 @@ keywords: "Instalación de paquetes de NuGet, reinstalación de paquetes de NuGe
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 898a431af4ed2e090b87d97bf43cec965b72d3c3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 6a198b371c86166e2bcdee7f6cf2a6c971bea0a3
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>Cómo volver a instalar y actualizar paquetes
 
@@ -31,7 +31,8 @@ La actualización y la reinstalación de paquetes se llevan a cabo como se indic
 | Interfaz de usuario del administrador de paquetes | En la pestaña **Actualizaciones**, seleccione uno o varios paquetes y seleccione **Actualizar** | En la pestaña **Instalados**, seleccione un paquete, registre su nombre y seleccione **Desinstalar**. Vaya a la pestaña **Examinar**, busque el nombre del paquete, selecciónelo y, luego, seleccione **Instalar**. |
 | CLI de nuget.exe | Comando `nuget update` | Para todos los paquetes, elimine la carpeta de los paquetes y ejecute `nuget install`. Para un solo paquete, elimine la carpeta del paquete y use `nuget install <id>` para volver a instalar el mismo. |
 
-En este tema:
+En este artículo:
+
 - [Cuándo se debe volver a instalar un paquete](#when-to-reinstall-a-package)
 - [Restringir las versiones de actualización](#constraining-upgrade-versions)
 

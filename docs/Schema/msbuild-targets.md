@@ -11,11 +11,11 @@ ms.assetid: 86f7e724-2509-4d7d-aa8d-4a3fb913ded6
 description: pack y restore de NuGet pueden trabajar directamente como destinos de MSBuild con NuGet 4.0 y versiones posteriores.
 keywords: "NuGet y MSBuild, destino del comando pack de NuGet, destino de restauración de NuGet"
 ms.reviewer: karann-msft
-ms.openlocfilehash: def01380e5bc3bf878e72dd437f52cd033641ca5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: d4778a21a96de6d76d7a20ff9a305960dd6c2bf1
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -63,8 +63,8 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 | VersionSuffix | PackageVersionSuffix | vacío | $(VersionSuffix) de MSBuild. Establecer PackageVersion sobrescribirá PackageVersionSuffix | 
 | Authors | Authors | Nombre del usuario actual | |
 | Owners | N/D | No está presente en el archivo NuSpec | |
-| Título | Título | El identificador de paquete| |
-| Descripción | Descripción | "Descripción del paquete" | |
+| Title | Title | El identificador de paquete| |
+| Description | Description | "Descripción del paquete" | |
 | Copyright | Copyright | vacío | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | vacío | |
@@ -84,7 +84,7 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 - PackageVersion
 - PackageId
 - Authors
-- Descripción
+- Description
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -235,7 +235,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 Otra configuración de restauración puede proceder de propiedades de MSBuild en el archivo de proyecto. También se pueden establecer valores desde la línea de comandos mediante el modificador `/p:` (vea los ejemplos siguientes).
 
-| Propiedad | Descripción |
+| Property | Description |
 |--------|--------|
 | RestoreSources | Lista delimitada por punto y coma de orígenes de paquetes. |
 | RestorePackagesPath | Ruta de acceso de la carpeta de paquetes de usuario. |
@@ -267,7 +267,7 @@ Archivo del proyecto:
 
 La restauración crea los archivos siguientes en la carpeta `obj` de compilación:
 
-| Archivo | Descripción |
+| Archivo | Description |
 |--------|--------|
 | `project.assets.json` | Anteriormente `project.lock.json` |
 | `{projectName}.projectFileExtension.nuget.g.props` | Referencias a propiedades de MSBuild incluidas en paquetes |

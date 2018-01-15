@@ -14,11 +14,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4d1d2e6850f22306d715b1c2071ee45b0eb050dc
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 36e1f0cd6e4284a6bd272ce3c85749e9ed72cbcd
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="target-frameworks"></a>Versiones de .NET Framework de destino
 
@@ -40,7 +40,7 @@ A una plataforma normalmente se hace referencia mediante un moniker corto de la 
 
 Los clientes de NuGet admiten las plataformas indicadas en la tabla siguiente. Los equivalentes se muestran entre corchetes []. Tenga en cuenta que es posible que algunas herramientas, como `dotnet`, usen variaciones de TFM canónicos en algunos archivos. Por ejemplo, `dotnet pack` usa `.NETCoreApp2.0` en un archivo `.nuspec` en lugar de `netcoreapp2.0`. Las distintas herramientas del cliente de NuGet controlan estas variaciones sin problema, pero siempre debe usar TFM canónicos al editar archivos directamente.
 
-| Name           | Abreviatura | TFMs/TxMs |
+| nombre           | Abreviatura | TFMs/TxMs |
 | -------------  | ------------ | --------- |
 |.NET Framework  | net          | net11     |
 |                |              | net20     |
@@ -53,7 +53,7 @@ Los clientes de NuGet admiten las plataformas indicadas en la tabla siguiente. L
 |                |              | net46      |
 |                |              | net461     |
 |                |              | net462     |
-|Tienda Windows   | netcore      | netcore [netcore45] |
+|Microsoft Store (Tienda Windows) | netcore      | netcore [netcore45] |
 |                |              | netcore45 [win, win8] |
 |                |              | netcore451 [win81] |
 |                |              | netcore50 |
@@ -72,7 +72,7 @@ Windows Phone (SL) | wp | wp [wp7] |
 Windows Phone (UWP) | | wpa81 |
 Plataforma universal de Windows | uap | uap [uap10.0] |
 | | | uap10.0 |
-Estándar .NET | netstandard | netstandard1.0 |
+.NET Standard | netstandard | netstandard1.0 |
 | | | netstandard1.1 |
 | | | netstandard1.2 |
 | | | netstandard1.3 |
@@ -122,7 +122,7 @@ Hay una serie de plataformas relacionadas y compatibles entre sí, pero no neces
 
 ## <a name="net-platform-standard"></a>.NET Platform Standard
 
-[.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) simplifica las referencias entre plataformas compatibles con archivos binarios, lo que permite que una sola plataforma de destino haga referencia a una combinación de otras (para obtener información, vea el [manual de .NET](https://docs.microsoft.com/dotnet/articles/standard/index)).
+[.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) simplifica las referencias entre plataformas compatibles con archivos binarios, lo que permite que una sola plataforma de destino haga referencia a una combinación de otras (para obtener información, vea el [manual de .NET](/dotnet/articles/standard/index)).
 
 La herramienta de NuGet [Get Nearest Framework](https://aka.ms/s2m3th) simula lo que usa NuGet para seleccionar una plataforma entre los muchos recursos de plataformas disponibles en un paquete en función de la plataforma del proyecto.
 
@@ -137,7 +137,7 @@ Para definir una plataforma de destino que haga referencia a varias plataformas 
 
 Las plataformas adicionales definidas por terceros proporcionan compatibilidad con otros entornos que son accesibles de este modo. Además, existen números de perfil abreviados disponibles para hacer referencia a estas combinaciones de plataformas relacionadas como `Profile#`, pero no es una práctica recomendada para usar estos números, ya que reduce la legibilidad de las carpetas y de `.nuspec`.
 
-| Número de perfil | Marcos de trabajo | Nombre completo | Estándar .NET |
+| Número de perfil | Marcos de trabajo | Nombre completo | .NET Standard |
  --- | --- | --- | ---
  Perfil2 | .NET Framework 4.0 | portable-net40+win8+sl4+wp7 |
  | | Windows 8.0 | |
@@ -282,7 +282,7 @@ Las plataformas adicionales definidas por terceros proporcionan compatibilidad c
 
 Además, los paquetes de NuGet que tienen como destino Xamarin pueden usar otras plataformas definidas por Xamarin. Vea [Manually Creating NuGet Packages for Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/) (Crear manualmente paquetes de NuGet para Xamarin).
 
-| Name | Descripción | Estándar .NET |
+| nombre | Description | .NET Standard |
 | --- | --- | ---
 | monoandroid | Soporte mono para el sistema operativo Android | netstandard1.4 |
 | monotouch | Soporte mono para iOS | netstandard1.4 |

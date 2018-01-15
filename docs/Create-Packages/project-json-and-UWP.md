@@ -13,11 +13,11 @@ keywords: Dependencias de NuGet, NuGet y UWP, UWP y project.json, archivo projec
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 40507e541997cea368052c373a4124d9c4a00a51
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: ae49c017365e1a63622fde318d5c94b64ed1ea2e
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="projectjson-and-uwp"></a>project.json y UWP
 
@@ -70,7 +70,7 @@ Los paquetes NuGet con este formato tienen la siguiente carpeta y comportamiento
 
 Los paquetes NuGet pueden contener archivos `.targets` y `.props` que se importan en cualquier proyecto de MSBuild en el que se instale el paquete. En NuGet 2.x, esto se hacía insertando instrucciones `<Import>` en el archivo `.csproj`, en NuGet 3.0 no hay ninguna acción específica de "instalación en el proyecto". En su lugar, el proceso de restauración de paquetes escribe dos archivos `[projectname].nuget.props` y `[projectname].NuGet.targets`.
 
-MSBuild sabe buscar estos dos archivos y los importa de manera automática cerca del principio y el final del proceso de compilación del proyecto. Esto ofrece un comportamiento muy similar al de NuGet 2.x, pero con una diferencia importante: *en este caso no hay ningún orden garantizado de archivos de destino y propiedades*. Pero MSBuild proporciona formas de ordenar los destinos mediante los atributos `BeforeTargets` y `AfterTargets` de la definición de `<Target>` (vea [Elemento Target (MSBuild)](https://docs.microsoft.com/visualstudio/msbuild/target-element-msbuild).
+MSBuild sabe buscar estos dos archivos y los importa de manera automática cerca del principio y el final del proceso de compilación del proyecto. Esto ofrece un comportamiento muy similar al de NuGet 2.x, pero con una diferencia importante: *en este caso no hay ningún orden garantizado de archivos de destino y propiedades*. Pero MSBuild proporciona formas de ordenar los destinos mediante los atributos `BeforeTargets` y `AfterTargets` de la definición de `<Target>` (vea [Elemento Target (MSBuild)](/visualstudio/msbuild/target-element-msbuild).
 
 
 ## <a name="lib-and-ref"></a>Lib y Ref
@@ -93,7 +93,7 @@ En ocasiones, hay casos en los que se debe usar un ensamblado diferente durante 
 
 La mayoría de los autores de paquetes no requieren la carpeta `ref`. Es útil para los paquetes que deben proporcionar un área expuesta coherente para la compilación e IntelliSense, pero después tienen una implementación diferente para los distintos TxM. El caso de uso más importante de esto son los paquetes `System.*` que se generan como parte de la inclusión de .NET Core en NuGet. Estos paquetes tienen varias implementaciones que se unifican mediante un conjunto coherente de ensamblados de referencia.
 
-De manera mecánica, los ensamblados incluidos en la carpeta `ref` son los ensamblados de referencia que se pasan al compilador. Para los que han usado csc.exe, estos son los ensamblados que se pasan al modificador [opción /reference de C#](https://docs.microsoft.com/dotnet/articles/csharp/language-reference/compiler-options/reference-compiler-option).
+De manera mecánica, los ensamblados incluidos en la carpeta `ref` son los ensamblados de referencia que se pasan al compilador. Para los que han usado csc.exe, estos son los ensamblados que se pasan al modificador [opción /reference de C#](/dotnet/articles/csharp/language-reference/compiler-options/reference-compiler-option).
 
 La estructura de la carpeta `ref` es la misma que la de `lib`, por ejemplo:
 
@@ -121,7 +121,7 @@ En este ejemplo, todos los ensamblados de los directorios `ref` serían idéntic
 
 ## <a name="runtimes"></a>Runtimes
 
-La carpeta runtimes contiene ensamblados y bibliotecas nativas que se deben ejecutar en "runtimes" específicos, que generalmente se definen por el sistema operativo y la arquitectura de CPU. Estos tiempos de ejecución se identifican mediante [identificadores en tiempo de ejecución (RID)](https://docs.microsoft.com/dotnet/core/rid-catalog) como `win`, `win-x86`, `win7-x86`, `win8-64`, etc.
+La carpeta runtimes contiene ensamblados y bibliotecas nativas que se deben ejecutar en "runtimes" específicos, que generalmente se definen por el sistema operativo y la arquitectura de CPU. Estos tiempos de ejecución se identifican mediante [identificadores en tiempo de ejecución (RID)](/dotnet/core/rid-catalog) como `win`, `win-x86`, `win7-x86`, `win8-64`, etc.
 
 ## <a name="native-light-up"></a>Carga ligera nativa
 
@@ -157,7 +157,7 @@ Dado el paquete anterior, sucede lo siguiente:
 
 En el ejemplo anterior el ensamblado `lib/net40` es simplemente código administrado, mientras que los ensamblados en la carpeta runtimes se invocarán en el ensamblado auxiliar nativo para llamar a las API específicas de Windows 8.
 
-Solo se selecciona una carpeta `lib`, por lo que si hay una carpeta específica de runtime se elige sobre `lib` que no sea específica de runtime. La carpeta nativa es aditiva; si existe, se copia en la salida de la compilación.
+Solo se selecciona una carpeta `lib`, por lo que, si hay una carpeta específica del entorno en tiempo de ejecución, se elige sobre `lib`, que no es específica del entorno en tiempo de ejecución. La carpeta nativa es aditiva; si existe, se copia en la salida de la compilación.
 
 ## <a name="managed-wrapper"></a>Contenedor administrado
 

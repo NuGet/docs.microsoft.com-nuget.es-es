@@ -3,29 +3,28 @@ title: Paquetes NuGet en plantillas de Visual Studio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 2/8/2017
+ms.date: 1/3/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 0b2cf228-f028-475d-8792-c012dffdb26f
 description: Instrucciones para incluir paquetes NuGet como parte de las plantillas de proyecto y elemento de Visual Studio.
 keywords: NuGet en Visual Studio, plantillas de proyecto de Visual Studio, plantillas de elemento de Visual Studio, paquetes en plantillas de proyecto, paquetes en plantillas de elemento
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5b2ad7616578b5f54d917c4555e861c847814da9
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 45a2ca2c08660be650f9cf38301f628923e1f8be
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="packages-in-visual-studio-templates"></a>Paquetes en plantillas de Visual Studio
 
-Las plantillas de proyecto y elemento de Visual Studio a menudo necesitan asegurarse de que se instalan determinados paquetes cuando se crea el proyecto o elemento. Por ejemplo, la plantilla ASP.NET MVC 3 instala jQuery, Modernizr y otros paquetes.
+Las plantillas de proyecto y elemento de Visual Studio suelen necesitar asegurarse de que se instalan determinados paquetes cuando se crea el proyecto o elemento. Por ejemplo, la plantilla ASP.NET MVC 3 instala jQuery, Modernizr y otros paquetes.
 
 Para admitir esto, los autores de plantillas pueden indicar a NuGet que instale los paquetes necesarios, en lugar de bibliotecas individuales. Después, los desarrolladores pueden actualizar con facilidad esos paquetes en cualquier momento.
 
-Para obtener más información sobre la creación de las plantillas propiamente dichas, vea [Creación de plantillas de proyecto y elemento en Visual Studio](https://msdn.microsoft.com/library/s365byhx.aspx) o [Creación de plantillas de proyecto y elemento con el SDK de Visual Studio](https://msdn.microsoft.com/library/ff527340.aspx).
+Para obtener más información sobre la creación de las plantillas propiamente dichas, vea [Cómo: Crear plantillas de proyectos](/visualstudio/ide/how-to-create-project-templates) o [Creating Custom Project and Item Templates](/visualstudio/extensibility/creating-custom-project-and-item-templates) (Creación de plantillas de proyecto y elemento personalizadas).
 
 En el resto de esta sección se describen los pasos específicos para seguir al crear una plantilla a fin de incluir correctamente paquetes NuGet.
 
@@ -34,16 +33,15 @@ En el resto de esta sección se describen los pasos específicos para seguir al 
 
 Para obtener un ejemplo, vea el [ejemplo NuGetInVsTemplates](https://bitbucket.org/marcind/nugetinvstemplates).
 
-
 ## <a name="adding-packages-to-a-template"></a>Agregar paquetes a una plantilla
 
-Cuando se crea una instancia de una plantilla, se invoca un [Asistente para plantillas](https://msdn.microsoft.com/library/ms185301.aspx) para cargar la lista de paquetes que se van a instalar junto con información sobre dónde encontrarlos. Los paquetes pueden estar insertados en el VSIX, en la plantilla o ubicados en la unidad de disco duro local en cuyo caso se usa una clave del Registro para hacer referencia a la ruta de acceso del archivo. Más adelante en esta sección se proporcionan detalles sobre estas ubicaciones.
+Cuando se crea una instancia de una plantilla, se invoca un [Asistente para plantillas](/visualstudio/extensibility/how-to-use-wizards-with-project-templates) para cargar la lista de paquetes que se van a instalar junto con información sobre dónde encontrarlos. Los paquetes pueden estar insertados en el VSIX, en la plantilla o ubicados en la unidad de disco duro local en cuyo caso se usa una clave del Registro para hacer referencia a la ruta de acceso del archivo. Más adelante en esta sección se proporcionan detalles sobre estas ubicaciones.
 
-Los paquetes preinstalados funcionan con [asistentes para plantilla](http://msdn.microsoft.com/library/ms185301.aspx). Un asistente especial se invoca cuando se crea una instancia de la plantilla. El asistente carga la lista de paquetes que se deben instalar y pasa esa información a las API de NuGet adecuadas.
+Los paquetes preinstalados funcionan con [asistentes para plantilla](/visualstudio/extensibility/how-to-use-wizards-with-project-templates). Un asistente especial se invoca cuando se crea una instancia de la plantilla. El asistente carga la lista de paquetes que se deben instalar y pasa esa información a las API de NuGet adecuadas.
 
 Pasos para incluir paquetes en una plantilla:
 
-1. En el archivo `vstemplate`, agregue una referencia al Asistente para plantillas de NuGet agregando un elemento [`WizardExtension`](http://msdn.microsoft.com/library/ms171411.aspx):
+1. En el archivo `vstemplate`, agregue una referencia al Asistente para plantillas de NuGet agregando un elemento [`WizardExtension`](/visualstudio/extensibility/wizardextension-element-visual-studio-templates):
 
     ```xml
     <WizardExtension>
@@ -66,12 +64,11 @@ Pasos para incluir paquetes en una plantilla:
 
     *(NuGet 2.2.1 y versiones posteriores)*  El asistente admite varios elementos `<package>` para admitir varios orígenes de paquetes. Los atributos `id` y `version` son obligatorios, lo que significa que esa versión específica del paquete se instalará incluso si hay disponible una versión más reciente. Esto evita que las actualizaciones del paquete afecten a la plantilla, dejando la opción de actualizar el paquete al desarrollador que usa la plantilla.
 
-
 1. Especifique el repositorio donde NuGet puede encontrar los paquetes tal como se describe en las secciones siguientes.
 
 ### <a name="vsix-package-repository"></a>Repositorio de paquetes de VSIX
 
-El enfoque de implementación recomendado para las plantillas de proyecto y elemento de Visual Studio es una [extensión VSIX](http://msdn.microsoft.com/library/ff363239.aspx) porque permite empaquetar varias plantillas de proyecto o elemento, y que los desarrolladores detecten las plantillas con facilidad mediante el Administrador de extensiones de VS o la Galería de Visual Studio. Las actualizaciones de la extensión también son fáciles de implementar con el [mecanismo de actualización automática del Administrador de extensiones de Visual Studio](http://msdn.microsoft.com/library/dd997169.aspx).
+El enfoque de implementación recomendado para las plantillas de proyecto y elemento de Visual Studio es una [extensión VSIX](/visualstudio/extensibility/shipping-visual-studio-extensions) porque permite empaquetar varias plantillas de proyecto o elemento, y que los desarrolladores detecten las plantillas con facilidad mediante el Administrador de extensiones de VS o la Galería de Visual Studio. Las actualizaciones de la extensión también son fáciles de implementar con el [mecanismo de actualización automática del Administrador de extensiones de Visual Studio](/visualstudio/extensibility/how-to-update-a-visual-studio-extension).
 
 La propia extensión VSIX puede actuar como el origen de los paquetes necesarios para la plantilla:
 
@@ -83,25 +80,17 @@ La propia extensión VSIX puede actuar como el origen de los paquetes necesarios
     </packages>
     ```
 
-    El atributo `repository` especifica el tipo de repositorio como `extension` mientras que `repositoryId` es el identificador único de la propia extensión VSIX (es el valor del [atributo `ID`](http://msdn.microsoft.com/library/dd393688.aspx) del archivo `vsixmanifest` de la extensión).
+    El atributo `repository` especifica el tipo de repositorio como `extension`, mientras que `repositoryId` es el identificador único de la propia extensión VSIX (es el valor del atributo `ID` del archivo `vsixmanifest` de la extensión; consulte [VSIX Extension Schema 2.0 Reference](/visualstudio/extensibility/vsix-extension-schema-2-0-reference) [Referencia de esquema 2.0 de extensión VISX]).
 
 1. Coloque los archivos `nupkg` en una carpeta denominada `Packages` dentro de VSIX.
-1. Agregue los archivos de paquete necesarios como [contenido de extensión personalizado](http://msdn.microsoft.com/library/dd393737.aspx) en el archivo `source.extension.vsixmanifest`. Si usa el esquema 2.0 debería tener un aspecto similar a este:
+
+1. Agregue los archivos de paquete necesarios como `<Asset>` en su archivo `vsixmanifest` (consulte [VSIX Extension Schema 2.0 Reference](/visualstudio/extensibility/vsix-extension-schema-2-0-reference) [Referencia de esquema 2.0 de extensión VISX]):
 
     ```xml
     <Asset Type="Moq.4.0.10827.nupkg" d:Source="File" Path="Packages\Moq.4.0.10827.nupkg" d:VsixSubPath="Packages" />
     ```
 
-    Si usa el esquema 1.0 debería tener un aspecto similar a este:
-
-    ```xml
-    <CustomExtension Type="Moq.4.0.10827.nupkg">
-        packages/Moq.4.0.10827.nupkg
-    </CustomExtension>
-    ```
-
 1. Tenga en cuenta que puede entregar los paquetes en la misma VSIX que las plantillas de proyecto o colocarlos en una VSIX independiente si resulta más apropiado para su escenario. Pero no haga referencia a ninguna VSIX sobre la que no tenga control, porque los cambios de esa extensión pueden afectar a la plantilla.
-
 
 ### <a name="template-package-repository"></a>Repositorio de paquetes de plantilla
 
@@ -120,7 +109,6 @@ Si solo va a distribuir una plantilla de proyecto o elemento, y no es necesario 
 1. Coloque los paquetes en la carpeta raíz del archivo ZIP de la plantilla de proyecto o elemento.
 
 Tenga en cuenta que el uso de este enfoque en una extensión VSIX que contiene varias plantillas provoca un sobredimensionamiento innecesario cuando uno o más paquetes son comunes para las plantillas. En estos casos, use la [VSIX como repositorio](#vsix-package-repository), como se describe en la sección anterior.
-
 
 ### <a name="registry-specified-folder-path"></a>Ruta de acceso de la carpeta especificada por el Registro
 
@@ -159,6 +147,6 @@ Los SDK que se instalaron mediante MSI pueden instalar paquetes NuGet directamen
     <!-- ... -->
     ```
 
-1. Establezca [`<PromptForSaveOnCreation>`](http://msdn.microsoft.com/library/twfxayz5.aspx) en el archivo `.vstemplate` para que sea obligatorio que las plantillas de proyecto o elemento se guarden al crearse.
+1. Requiera que las plantillas de proyecto y elemento se guarden al crearse incluyendo [`<PromptForSaveOnCreation>true</PromptForSaveOnCreation>`](/visualstudio/extensibility/promptforsaveoncreation-element-visual-studio-templates) en el archivo `.vstemplate`.
 
 1. Las plantillas no incluyen un archivo `packages.config` o `project.json`, ni referencias o contenido que se pudiera agregar al instalar los paquetes NuGet.
