@@ -57,7 +57,7 @@ Nos gustaría gracias a los siguientes colaboradores externos para sus contribuc
 Agradecemos también las siguientes personas para encontrar errores con NuGet 2.5 Beta o RC que se han aprobado y corregir antes de la versión final:
 
 1. [Pared Tony](https://www.codeplex.com/site/users/view/CodeChief) ([@CodeChief](https://twitter.com/codechief))
-    - [&#3200;](https://nuget.codeplex.com/workitem/3200) : MSTest dividido con última 2.4 de NuGet y 2,5 compilaciones
+    - [#3200](https://nuget.codeplex.com/workitem/3200) : MSTest dividido con última 2.4 de NuGet y 2,5 compilaciones
 
 # <a name="notable-features-in-the-release"></a>Características importantes de la versión
 

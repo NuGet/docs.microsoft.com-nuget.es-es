@@ -109,7 +109,7 @@ Luego, un ensamblado satélite usa la convención de nomenclatura `{identifier}.
 
 Dado que se trata de un paquete independiente, tiene su propio archivo `.nuspec` que contiene metadatos localizados. Tenga en cuenta que el idioma del archivo `.nuspec` **debe** coincidir con el que se usa en el nombre de archivo.
 
-El ensamblado satélite también **debe** declarar una versión exacta del paquete principal como dependencia, mediante la notación de versión [] (vea [Package versioning](../reference/package-versioning.md) [Control de versiones de paquetes]). Por ejemplo, `ContosoUtilities.de.1.0.0.nupkg` debe declarar una dependencia en `ContosoUtilities.1.0.0.nupkg` mediante la notación `[1.0.0]`. El paquete satélite, por supuesto, puede tener un número de versión diferente que el paquete principal.
+El ensamblado satélite también **debe** declarar una versión exacta del paquete principal como dependencia, mediante la notación de versión [] \(vea [Package versioning](../reference/package-versioning.md) [Control de versiones de paquetes]). Por ejemplo, `ContosoUtilities.de.1.0.0.nupkg` debe declarar una dependencia en `ContosoUtilities.1.0.0.nupkg` mediante la notación `[1.0.0]`. El paquete satélite, por supuesto, puede tener un número de versión diferente que el paquete principal.
 
 Después, la estructura del paquete satélite debe incluir el ensamblado de recursos y el archivo XML de IntelliSense en una subcarpeta que coincida con `{language}` en el nombre de archivo del paquete:
 

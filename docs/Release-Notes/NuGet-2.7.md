@@ -44,7 +44,7 @@ Nos gustaría gracias a los colaboradores externos siguientes para sus contribuc
 1. [Kevin Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
     - [#3234](http://nuget.codeplex.com/workitem/3234) -habilitar la compatibilidad de proyecto Nomad
 1. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
-    - [&#3252;](http://nuget.codeplex.com/workitem/3252) -produce un error de corrección inserción comando con exit código 0 cuando no existe el archivo.
+    - [#3252](http://nuget.codeplex.com/workitem/3252) -produce un error de corrección inserción comando con exit código 0 cuando no existe el archivo.
 1. [Martin Veselý](http://www.codeplex.com/site/users/view/veselkamartin)
     - [#3226](http://nuget.codeplex.com/workitem/3226) -error de corrección con el comando Agregar redirección de enlace cuando un proyecto hace referencia a un proyecto de base de datos.
 1. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))

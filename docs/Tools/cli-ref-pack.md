@@ -13,11 +13,11 @@ keywords: "referencia al módulo de NuGet, comando pack"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 22643ee4c7d5f858da728ba9d9d2886d600d20f0
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 0dbecb8f01acf781ab8d2e77e8df7fa405f74cf1
+ms.sourcegitcommit: d576d84fb4b6a178eb2ac11f55deb08ac771ba1c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/16/2018
 ---
 # <a name="pack-command-nuget-cli"></a>comando Pack (NuGet CLI)
 
@@ -42,7 +42,7 @@ donde `<nuspecPath>` y `<projectPath>` especificar el `.nuspec` o un proyecto de
 | --- | --- |
 | BasePath | Establece la ruta de acceso base de los archivos definidos en el `.nuspec` archivo. |
 | Compilar | Especifica que se debe generar el proyecto antes de crear el paquete. |
-| Excluir | Especifica uno o varios patrones de caracteres comodín para excluir al crear un paquete. |
+| Excluir | Especifica uno o varios patrones de caracteres comodín para excluir al crear un paquete. Para especificar más de un patrón, repita-marcador de exclusión. Vea el ejemplo siguiente. |
 | ExcludeEmptyDirectories | Impide la inclusión de directorios vacíos cuando se crea el paquete. |
 | ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |
@@ -100,4 +100,6 @@ nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="
 nuget pack foo.nuspec -Version 2.1.0
 
 nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
+
+nuget pack Package.nuspec -exclude "*.exe" -exclude "*.bat"
 ```
