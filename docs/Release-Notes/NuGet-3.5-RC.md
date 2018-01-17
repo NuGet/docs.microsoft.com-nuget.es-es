@@ -109,7 +109,7 @@ versión 3.5 se centra en la mejora de la calidad y el rendimiento de los client
 
 * Quite la propiedad bloqueada el archivo de bloqueo - [#2379](https://github.com/NuGet/Home/issues/2379)
 
-* Los paquetes de símbolos no deben ser utilizados jamás en instalar o actualización &#2807;
+* Los paquetes de símbolos no deben ser utilizados jamás en instalar o actualización #2807
 
 ## <a name="features"></a>Características
 
