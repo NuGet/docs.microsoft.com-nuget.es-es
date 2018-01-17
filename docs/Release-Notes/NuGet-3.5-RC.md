@@ -49,7 +49,7 @@ versión 3.5 se centra en la mejora de la calidad y el rendimiento de los client
 
 * error de nuGet - 1.0.0-* no es una cadena de versión válida - [#3070](https://github.com/NuGet/Home/issues/3070)
 
-* Find-Package no puede mostrar, pero funciona de Install-Package - [&#3068;](https://github.com/NuGet/Home/issues/3068)
+* Find-Package no puede mostrar, pero funciona de Install-Package - [#3068](https://github.com/NuGet/Home/issues/3068)
 
 * Error al "Install-Package jquery.validation" en dev15 - [#3061](https://github.com/NuGet/Home/issues/3061)
 
@@ -69,7 +69,7 @@ versión 3.5 se centra en la mejora de la calidad y el rendimiento de los client
 
 * paquete de NuGet - dependencia del paquete falta Newtonsoft.Json - [#2876](https://github.com/NuGet/Home/issues/2876)
 
-* Error en ExecuteSynchronizedCore en Linux/MacOS + Mono - [&#2860;](https://github.com/NuGet/Home/issues/2860)
+* Error en ExecuteSynchronizedCore en Linux/MacOS + Mono - [#2860](https://github.com/NuGet/Home/issues/2860)
 
 * VS no es compatible con variables de entorno en repositoryPath (nuget.exe hace) - [#2763](https://github.com/NuGet/Home/issues/2763)
 
@@ -91,9 +91,9 @@ versión 3.5 se centra en la mejora de la calidad y el rendimiento de los client
 
 * Rendimiento: Evitar lectura `runtime.json` archivos para las restauraciones que no tienen RID [#3150](https://github.com/NuGet/Home/issues/3150). En equipos con elementos de configuración, la restauración de un ejemplo de que aplicación Web ASP.NET reduce más de 15 segundos a 3 segundos.
 
-* Rendimiento: Tiempo de carga Package Manager Console init.ps1 [&#2956;](https://github.com/NuGet/Home/issues/2956). Tiempo en Abrir PackageManagerConsole mejorado en algunos casos de 132s a 10s.
+* Rendimiento: Tiempo de carga Package Manager Console init.ps1 [#2956](https://github.com/NuGet/Home/issues/2956). Tiempo en Abrir PackageManagerConsole mejorado en algunos casos de 132s a 10s.
 
-* Solucionar problemas de rendimiento de ReSharper en actualización de NuGet - [&#3044;](https://github.com/NuGet/Home/issues/3044): en un proyecto de ejemplo, se reduce tiempo necesario para instalar paquetes de 140s a 68s.
+* Solucionar problemas de rendimiento de ReSharper en actualización de NuGet - [#3044](https://github.com/NuGet/Home/issues/3044): en un proyecto de ejemplo, se reduce tiempo necesario para instalar paquetes de 140s a 68s.
 
 ## <a name="dcrs"></a>DCR
 

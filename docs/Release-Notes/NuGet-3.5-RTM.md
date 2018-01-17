@@ -199,7 +199,7 @@ ms.lasthandoff: 12/14/2017
 
 * error de nuGet - 1.0.0-* no es una cadena de versión válida - [#3070](https://github.com/NuGet/Home/issues/3070)
 
-* Find-Package no puede mostrar, pero funciona de Install-Package - [&#3068;](https://github.com/NuGet/Home/issues/3068)
+* Find-Package no puede mostrar, pero funciona de Install-Package - [#3068](https://github.com/NuGet/Home/issues/3068)
 
 * Error al "Install-Package jquery.validation" en dev15 - [#3061](https://github.com/NuGet/Home/issues/3061)
 
@@ -264,7 +264,7 @@ ms.lasthandoff: 12/14/2017
 
 * Debe agregar compatibilidad con NuGet `runtimes/{rid}/nativeassets/{txm}/`  -  [#2782](https://github.com/NuGet/Home/issues/2782)
 
-* Agregar compatibilidad de framework que falta en NuGet 2.x (que ya están en 3.x) - [&#2720;](https://github.com/NuGet/Home/issues/2720)
+* Agregar compatibilidad de framework que falta en NuGet 2.x (que ya están en 3.x) - [#2720](https://github.com/NuGet/Home/issues/2720)
 
 * Compatibilidad con carpetas de paquete de reserva - [#2899](https://github.com/NuGet/Home/issues/2899)
 
