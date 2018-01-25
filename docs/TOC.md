@@ -1,9 +1,9 @@
-# [¿Qué es NuGet?](What-is-NuGet.md)
+# [¿Qué es NuGet?](what-is-nuget.md)
+# [Instalación de las herramientas del cliente NuGet](install-nuget-client-tools.md)
 # Inicio rápido
 ## [Creación y publicación de un paquete](Quickstart/Create-and-Publish-a-Package.md)
 ## [Uso de un paquete](Quickstart/Use-a-Package.md)
 # Guías
-## [Instalación de las herramientas del cliente NuGet](Guides/Install-NuGet.md)
 ## [Creación de paquetes .NET Standard (Visual Studio 2017)](Guides/Create-NET-Standard-Packages-VS2017.md)
 ## [Creación de paquetes .NET Standard (Visual Studio 2015)](Guides/Create-NET-Standard-Packages-VS2015.md)
 ## [Creación de paquetes UWP](Guides/Create-UWP-Packages.md)
@@ -18,9 +18,7 @@
 ## [Paquetes de versión preliminar](Create-Packages/Prerelease-Packages.md)
 ## [Paquetes nativos](Create-Packages/Native-Packages.md)
 ## [Paquetes de símbolos](Create-Packages/Symbol-Packages.md)
-## [Publicación de un paquete](Create-Packages/Publish-a-package.md)
-## [project.json y UWP](Create-Packages/project-json-and-UWP.md)
-## [Impacto de project.json](Create-Packages/project-json-Impact.md)
+## [Publicar un paquete](Create-Packages/Publish-a-package.md)
 # Consumir paquetes
 ## [Información general y flujo de trabajo](Consume-Packages/Overview-and-Workflow.md)
 ## [Búsqueda y selección de paquetes](Consume-Packages/Finding-and-Choosing-Packages.md)
@@ -71,7 +69,6 @@
 # Referencia
 ## [.nuspec](Schema/nuspec.md)
 ## [packages.config](Schema/packages-config.md)
-## [project.json](Schema/project-json.md)
 ## [Control de versiones de paquetes](reference/package-versioning.md)
 ## [Archivo Nuget.Config](Schema/nuget-config-file.md)
 ## [Objetivos de MSBuild](Schema/msbuild-targets.md)
@@ -83,6 +80,10 @@
 ## Extensibilidad
 ### [Proveedores de credenciales de NuGet para Visual Studio](Reference/extensibility/Nuget-Credential-Providers-for-Visual-Studio.md)
 ### [Proveedores de credenciales de nuget.exe](Reference/extensibility/nuget-exe-Credential-Providers.md)
+## Contenido archivado
+### [formato de referencia de Project.json](archive/project-json.md)
+### [project.json y UWP](archive/project-json-and-UWP.md)
+### [Impacto de project.json](archive/project-json-impact.md)
 # API
 ## [Información general](API/overview.md)
 ## [Consulta de todos los paquetes mediante la API](Guides/api/query-for-all-published-packages.md)
