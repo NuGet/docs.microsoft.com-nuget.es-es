@@ -9,8 +9,7 @@
 ## [Creación de paquetes UWP](Guides/Create-UWP-Packages.md)
 ## [Creación de controles UWP como paquetes NuGet](Guides/Create-UWP-Controls.md)
 ## [Creación de paquetes multiplataforma](Guides/Create-Cross-Platform-Packages.md)
-## [Consulta de todos los paquetes mediante la API](Guides/api/query-for-all-published-packages.md)
-# Creación de paquetes
+# Crear paquetes
 ## [Información general y flujo de trabajo](Create-Packages/Overview-and-Workflow.md)
 ## [Creación de un paquete](Create-Packages/Creating-a-Package.md)
 ## [Compatibilidad con varias plataformas de destino](Create-Packages/Supporting-Multiple-Target-Frameworks.md)
@@ -22,7 +21,7 @@
 ## [Publicación de un paquete](Create-Packages/Publish-a-package.md)
 ## [project.json y UWP](Create-Packages/project-json-and-UWP.md)
 ## [Impacto de project.json](Create-Packages/project-json-Impact.md)
-# Consumo de paquetes
+# Consumir paquetes
 ## [Información general y flujo de trabajo](Consume-Packages/Overview-and-Workflow.md)
 ## [Búsqueda y selección de paquetes](Consume-Packages/Finding-and-Choosing-Packages.md)
 ## [Restauración de paquetes](Consume-Packages/Package-Restore.md)
@@ -86,6 +85,7 @@
 ### [Proveedores de credenciales de nuget.exe](Reference/extensibility/nuget-exe-Credential-Providers.md)
 # API
 ## [Información general](API/overview.md)
+## [Consulta de todos los paquetes mediante la API](Guides/api/query-for-all-published-packages.md)
 ## [Índice de servicio](API/service-index.md)
 ## [Inserción y eliminación](API/package-publish-resource.md)
 ## [Búsqueda](API/search-query-service-resource.md)
@@ -132,8 +132,8 @@
 ## [NuGet 3.0.0](Release-Notes/NuGet-3.0.0.md)
 ## [NuGet 3.0 RC2](Release-Notes/NuGet-3.0-RC2.md)
 ## [NuGet 3.0 RC](Release-Notes/NuGet-3.0-RC.md)
-## [Beta de NuGet 3.0](Release-Notes/NuGet-3.0-Beta.md)
-## [Versión preliminar de NuGet 3.0](Release-Notes/NuGet-3.0-Preview.md)
+## [NuGet 3.0 Beta](Release-Notes/NuGet-3.0-Beta.md)
+## [NuGet 3.0 Preview](Release-Notes/NuGet-3.0-Preview.md)
 ## [NuGet 2.12](Release-Notes/NuGet-2.12.md)
 ## [NuGet 2.12 RC](Release-Notes/NuGet-2.12-RC.md)
 ## [NuGet 2.9 RC](Release-Notes/NuGet-2.9-RC.md)
