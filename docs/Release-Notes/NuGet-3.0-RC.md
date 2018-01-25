@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: cd0c102f-bc33-4aa2-a921-61fa21d42b28
 description: "Notas de la versión de NuGet 3.0 RC incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
 keywords: "NuGet 3.0 RC notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5d0eeae479617bc30901b599251628f72950cc67
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4693fd8884283e01d3c0a8ad74e0692c1ca00659
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-30-rc-release-notes"></a>Notas de la versión RC de NuGet 3.0
 

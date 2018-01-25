@@ -7,17 +7,16 @@ ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: b4aa92a9-ce47-4d23-ae51-d5683e08a9d5
 description: "Referencia de comandos de PowerShell de paquete de actualización en la consola de administrador de paquetes de NuGet en Visual Studio."
 keywords: "Consola de administrador, comandos de NuGet Powershell, referencia de NuGet Powershell, paquete de actualización del paquete de NuGet"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 71f5cd7061e0f765d8808db8a3798657a941ba14
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 768fdb4d7c785b4f3ed9e70958390676ea965794
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Paquete de actualización (consola de administrador de paquetes en Visual Studio)
 
@@ -52,7 +51,7 @@ NuGet 2.7 y versiones anterior, produce un error que indica que ya está instala
 | Seguridad de | Restringe las actualizaciones a solo las versiones con la misma versión de mayor y menor que el paquete instalado actualmente. |
 | Origen | La ruta de acceso URL o una carpeta de origen del paquete para buscar. Las rutas de acceso de la carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Uninstall-Package` busca en el origen del paquete seleccionado. |
 | IncludePrerelease | Incluye paquetes de versión preliminar para las actualizaciones. |
-| Vuelva a instalar | Paquetes de Resintalls con sus versiones instaladas actualmente. Vea [reinstalar y actualizar paquetes](../consume-packages/reinstalling-and-updating-packages.md). |
+| Reinstalación | Paquetes de Resintalls con sus versiones instaladas actualmente. Vea [reinstalar y actualizar paquetes](../consume-packages/reinstalling-and-updating-packages.md). |
 | FileConflictAction | La acción que se realizará cuando se le pregunte para sobrescribir u omitir los archivos existentes al que hace referencia el proyecto. Los valores posibles son *sobrescribir, omitir, None, OverwriteAll*, y *IgnoreAll* (3.0 +). |
 | DependencyVersion | La versión de los paquetes de dependencia que se va a usar, que puede ser uno de los siguientes:<br/><ul><li>*Menor* (valor predeterminado): la versión más antigua</li><li>*HighestPatch*: la versión con la revisión mínimo mayor, menor menor, más alto</li><li>*HighestMinor*: la versión con el menor principales, mayor revisión secundaria, más alto</li><li>*Mayor* (predeterminado para el paquete de actualización sin parámetros): la versión más reciente</li></ul>Puede establecer el valor predeterminado mediante la [ `dependencyVersion` ](../Schema/nuget-config-file.md#config-section) en el `Nuget.Config` archivo. |
 | ToHighestPatch | Restringe las actualizaciones a solo las versiones con la misma versión menor que el paquete instalado actualmente. |

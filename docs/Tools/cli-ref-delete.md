@@ -3,21 +3,20 @@ title: Comando de NuGet CLI delete | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: c213a07a-711d-47e0-9ee6-1d582e6cdb69
 description: "Referencia para el comando de eliminación nuget.exe"
 keywords: NuGet eliminar referencia, eliminar comando paquete
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 92af9dc356f3932347864976496e0ba1216496c9
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 3890e33ab0fc425e1c2ee39631ade57ea9b92bc9
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="delete-command-nuget-cli"></a>Eliminar comando (NuGet CLI)
 
@@ -27,7 +26,7 @@ Elimina o unlists un paquete desde un origen del paquete. Para nuget.org, el com
 
 ## <a name="usage"></a>Uso
 
-```
+```cli
 nuget delete <packageID> <packageVersion> [options]
 ```
 
@@ -38,18 +37,18 @@ donde `<packageID>` y `<packageVersion>` identificar el paquete exacto para elim
 | Opción | Descripción |
 | --- | --- |
 | apiKey | La clave de API para el repositorio de destino. Si no está presente, el especificado en *%AppData%\NuGet\NuGet.Config* se utiliza. |
-| ConfigFile | *(2.5 +)*  NuGet el archivo de configuración para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
+| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
 | ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |
 | No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
 | Origen | Especifica la dirección URL del servidor. La dirección URL de nuget.org `https://api.nuget.org/v3/index.json`. Para las fuentes privadas, sustituya el nombre de host, por ejemplo, *%hostname%/api/v3*. |
-| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada (2.5 +)*. |
+| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Ejemplos
 
-```
+```cli
 nuget delete MyPackage 1.0
 
 nuget delete MyPackage 1.0 -Source http://package.contoso.com/source -apikey A1B2C3

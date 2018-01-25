@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: e694ee1a-fe4c-4397-8d0a-7336be4dfebe
 description: "Notas de la versión para 1.8 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
 keywords: "NuGet 1.8 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 350f0d9590c1e0ef1a843fd783203b158059efa7
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: e77c8a7cc2096e11571025b2a55bc6f20dfa4351
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-18-release-notes"></a>Notas de la versión 1.8 de NuGet
 

@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 25389d8c-e7db-4920-ab5e-cff20cebee7e
 description: "Notas de la versión para 2.2 de NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
 keywords: "2.2 de NuGet notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1f6080e01777431c4dfb2278db167bd3bc9a67ea
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 63a1ae2315ea0c26fb5d26507ac0bcba8567aa9a
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-22-release-notes"></a>Notas de la versión 2.2 de NuGet
 

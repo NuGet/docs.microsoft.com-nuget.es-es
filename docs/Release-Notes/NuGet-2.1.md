@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 6f972803-9e17-43f5-b77b-973c3accf695
 description: "Notas de la versión para 2.1 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
 keywords: "NuGet 2.1 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: dafe575eedbfed215c0b1c86795bea281de97252
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 05cdb898cc674ac7eadb238d41896638d8e3488c
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-21-release-notes"></a>Notas de la versión 2.1 de NuGet
 
@@ -101,7 +100,7 @@ Para las aplicaciones de la tienda de Windows 8, los identificadores de tener el
 
 |NuGet 2.0 y versiones anterior|2.1 de NuGet|
 |----------------|-----------|
-|winRT45. NETCore45|Win de Windows, Windows8, win8|
+|winRT45, .NETCore45|Win de Windows, Windows8, win8|
 
 <br/>
 Para los proyectos de Windows Phone, los identificadores de tener el aspecto siguiente:
@@ -109,7 +108,7 @@ Para los proyectos de Windows Phone, los identificadores de tener el aspecto sig
 |Sistema operativo de teléfono|NuGet 2.0 y versiones anterior|2.1 de NuGet
 |----------------|-----------|-----------|
 |Windows Phone 7|silverlight3 wp|wp, wp7, WindowsPhone, WindowsPhone7|
-|Windows Phone 7.5 (Mango)|silverilght4 wp71|wp71, WindowsPhone71|
+|Windows Phone 7.5 (Mango)|silverilght4-wp71|wp71, WindowsPhone71|
 |Windows Phone 8|(no compatible)|wp8, WindowsPhone8|
 <br/>
 En todos los cambios mencionados anteriormente, los nombres anteriores de framework seguirá siendo totalmente compatibles con NuGet 2.1.  Más adelante, se deben utilizar los nuevos nombres ya que son más estables en versiones futuras de las plataformas respectivas. Los nuevos nombres le *no* ser admitidos en las versiones de NuGet anteriores 2.1, sin embargo, por lo que planear en consecuencia para saber cuándo realizar el cambio.

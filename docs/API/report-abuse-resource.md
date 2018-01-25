@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 148d743a-09e5-4539-8454-675be11902db
 description: "La plantilla de dirección URL de abuso de informes permite a los clientes mostrar un vínculo de abuso del informe en su interfaz de usuario."
 keywords: "Informar de abuso de API de NuGet, queja de archivo de API de NuGet, plantilla de dirección URL de informe NuGet.org"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 7b3413297f5a7fcf0e2c7757036b1f240ed0058a
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: c12be294c71547fbce421c72aa091e0eee15aacd
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="report-abuse-url-template"></a>Plantilla de dirección URL de informe abuso
 
@@ -54,21 +53,17 @@ El valor de la `@id` es una cadena de dirección URL que contengan cualquiera de
 
 ### <a name="url-placeholders"></a>Marcadores de posición de la dirección URL
 
-Name        | Tipo    | Obligatorio | Notas
+nombre        | Tipo    | Obligatorio | Notas
 ----------- | ------- | -------- | -----
-`{id}`      | string  | No       | El identificador del paquete para notificar un abuso para
-`{version}` | string  | No       | La versión del paquete para notificar un abuso para
+`{id}`      | cadena  | No       | El identificador del paquete para notificar un abuso para
+`{version}` | cadena  | No       | La versión del paquete para notificar un abuso para
 
 El `{id}` y `{version}` valores interpretados la implementación de servidor deben ser sin distinción de mayúsculas y no sensibles a si se normaliza la versión.
 
 Por ejemplo, plantilla de abuso de nuget.org informe tiene un aspecto similar al siguiente:
 
-```
-https://www.nuget.org/packages/{id}/{version}/ReportAbuse
-```
+    https://www.nuget.org/packages/{id}/{version}/ReportAbuse
 
 Si la implementación del cliente debe mostrar un vínculo a la forma de controlar el abuso de informe para NuGet.Versioning 4.3.0, se podría producir la siguiente dirección URL y proporcionar al usuario:
 
-```
-https://www.nuget.org/packages/NuGet.Versioning/4.3.0/ReportAbuse
-```
+    https://www.nuget.org/packages/NuGet.Versioning/4.3.0/ReportAbuse

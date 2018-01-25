@@ -3,21 +3,20 @@ title: Las variables de entorno de NuGet CLI | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 1f5c31ca-fa0a-4798-a906-110f2c73d00b
 description: Referencia para las variables de entorno nuget.exe
 keywords: variables de entorno de NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0a1dc2a928da657b0d222c2adc02fbd850b66704
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 516a66103d6159a3d68b5383090e8e3b519a5588
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-cli-environment-variables"></a>Variables de entorno de NuGet CLI
 

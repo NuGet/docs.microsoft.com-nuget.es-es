@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: b514da09-da1f-416b-9bfc-692f08fb6957
 description: "Notas de la versión de NuGet 3.4.2 incluidos problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
 keywords: "NuGet 3.4.2 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6761c59b6dc85b9a8503041928c2707549006d9c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 892a965e67762af2ae42c2d6ee75d2838104d1c2
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-342-release-notes"></a>Notas de la versión de NuGet 3.4.2
 
@@ -36,7 +35,7 @@ Puede descargar la versión release candidate de nuget.exe 3.4.2 [aquí](https:/
 * Además de este cambio, se ha corregido un problema donde se estábamos alcanzar la red dos veces cuando la actualización de filas cuentan en la interfaz de usuario de VS. Esto era parcialmente responsable para algunos clientes de problemas de tiempo de espera con experiencia en 3.4/3.4.1.
 * Se agregó compatibilidad para la configuración de no_proxy
 
-##<a name="fixes"></a>Correcciones
+## <a name="fixes"></a>Correcciones
 
 * Se ha corregido un problema donde nuget.org origen faltaba en valores de configuración de NuGet o configuración después de actualizar a 3.4.1.
 * Se ha corregido un problema donde un cambio de mayúsculas y minúsculas en FindPackagesById en 3.4.1 interrumpe Artifactory.

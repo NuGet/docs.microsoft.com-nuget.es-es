@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 77ba98d8-3d66-4126-b2b6-813ddd8ef192
 description: "Notas de la versión de NuGet 2.8, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
 keywords: "NuGet 2.8 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 182e7d1e2224c431631cddd14fdbea8dd9e14278
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 39b885adc9e23eb815f65639875c4a4c27d61a4c
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-28-release-notes"></a>Notas de la versión 2,8 de NuGet
 

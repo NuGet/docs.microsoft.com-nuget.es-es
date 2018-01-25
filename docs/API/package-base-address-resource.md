@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ec68b5d1-a684-4995-b1a6-6210dbb24875
 description: "La dirección base del paquete es una interfaz sencilla para capturar el propio paquete."
 keywords: "NuGet planos contenedor, la dirección base del paquete de NuGet, NuGet nupkg API, las versiones de paquetes de NuGet API, API de NuGet que no figuran en paquetes, nuspec de descarga de API de NuGet"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: a581f9854410bc1a84d65310b38928a1d889ece2
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: c2e631dc0bba95ac849430d77142f27ef591f741
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="package-content"></a>Contenido del paquete
 
@@ -52,9 +51,7 @@ Si el cliente sabe que un identificador de paquete y desea descubrir que version
 > [!Note]
 > Esta lista contiene ambas versiones de la lista y que no figuran en el paquete.
 
-```
-GET {@id}/{LOWER_ID}/index.json
-```
+    GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
@@ -80,9 +77,7 @@ La intención es que las cadenas de versión que se encuentra en esta matriz pue
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
-GET https://api.nuget.org/v3-flatcontainer/owin/index.json
-```
+    GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 
@@ -92,9 +87,7 @@ GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 
 Si el cliente sabe que un identificador de paquete y la versión y desea descargar el contenido del paquete, solo tiene construir la dirección URL siguiente:
 
-```
-GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
-```
+    GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
@@ -115,9 +108,7 @@ Si el paquete no existe en el origen del paquete, se devuelve un código de 404 
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
-GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
-```
+    GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 
@@ -127,9 +118,7 @@ La secuencia binaria que sea el .nupkg para Newtonsoft.Json 9.0.1.
 
 Si el cliente sabe que un identificador de paquete y la versión y desea descargar el manifiesto del paquete, solo tiene construir la dirección URL siguiente:
 
-```
-GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
-```
+    GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
@@ -150,9 +139,7 @@ Si el paquete no existe en el origen del paquete, se devuelve un código de 404 
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
-GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
-```
+    GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 

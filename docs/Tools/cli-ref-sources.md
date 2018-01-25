@@ -3,21 +3,20 @@ title: "NuGet CLI orígenes comando | Documentos de Microsoft"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 997ce736-91ba-4cd2-88c9-b4b168e3130a
 description: "Referencia para el nuget.exe orígenes de comando"
 keywords: "NuGet orígenes de referencia, orígenes de comando"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2eca8557840c467a60f5f708efe242cd83609164
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: c1cd909c0c35d52f0269d267367669df46f9db55
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="sources-command-nuget-cli"></a>comando de fuentes (NuGet CLI)
 
@@ -25,11 +24,11 @@ ms.lasthandoff: 01/10/2018
 
 Administra la lista de orígenes que se encuentran en `%AppData%\NuGet\NuGet.Config` o en el archivo de configuración especificado.
 
-Tenga en cuenta que la dirección URL de origen nuget.org `https://api.nuget.org/v3/index.json`.
+Tenga en cuenta que la dirección URL de origen de nuget.org es `https://api.nuget.org/v3/index.json`.
 
 ## <a name="usage"></a>Uso
 
-```
+```cli
 nuget sources <operation> -Name <name> -Source <source>
 ```
 
@@ -39,7 +38,7 @@ donde `<operation>` es uno de los *enumerar, agregar, quitar, habilitar, deshabi
 
 | Opción | Descripción |
 | --- | --- |
-| ConfigFile | *(2.5 +)*  NuGet el archivo de configuración para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
+| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
 | ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | Formato | Se aplica a la `list` acción y puede ser `Detailed` (valor predeterminado) o `Short`. |
 | Ayuda | Muestra información de ayuda para el comando. |
@@ -47,7 +46,7 @@ donde `<operation>` es uno de los *enumerar, agregar, quitar, habilitar, deshabi
 | Contraseña | Especifica la contraseña para autenticarse con el origen. |
 | StorePasswordInClearText | Indica que se guarde la contraseña en texto sin cifrar en lugar del comportamiento predeterminado de almacenar de forma cifrada. |
 | UserName | Especifica el nombre de usuario para la autenticación con el origen. |
-| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada (2.5 +)*. |
+| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 > [!Note]
 > Asegúrese de agregar la contraseña de los orígenes en el mismo contexto de usuario como el nuget.exe se utiliza posteriormente para tener acceso al origen de paquete. La contraseña se almacenarán cifrados en el archivo de configuración y sólo se puede descifrar en el mismo contexto de usuario tal y como se cifró. Así, por ejemplo cuando usa un servidor de compilación para restaurar los paquetes de NuGet que se debe cifrar la contraseña con el mismo usuario de Windows en la que se ejecutará la tarea de servidor de compilación.
@@ -56,7 +55,7 @@ Consulte también [variables de entorno](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Ejemplos
 
-```
+```cli
 nuget sources Add -Name "MyServer" -Source \\myserver\packages
 
 nuget sources Disable -Name "MyServer"

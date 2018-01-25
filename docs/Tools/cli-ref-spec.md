@@ -3,21 +3,20 @@ title: Comando de NuGet CLI spec | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 85611449-87e6-489b-8c6c-fe1d7be76c13
 description: Referencia para el comando spec nuget.exe
 keywords: "referencia de especificación de NuGet, especificaciones de comando"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c32b23e66c8eb4db1c8fa6dc615589219c00239f
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: cc7e772e737a0f74929d13e2b126f7796b6d0dc7
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="spec-command-nuget-cli"></a>comando spec (NuGet CLI)
 
@@ -27,7 +26,7 @@ Genera un `.nuspec` archivo para un nuevo paquete. Si se ejecutan en la misma ca
 
 ## <a name="usage"></a>Uso
 
-```
+```cli
 nuget spec [<packageID>] [options]
 ```
 
@@ -42,13 +41,13 @@ donde `<packageID>` es un identificador de paquete opcional para guardar en el `
 | ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |
 | No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
-| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada (2.5 +)*. |
+| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Ejemplos
 
-```
+```cli
 nuget spec
 
 nuget spec MyPackage

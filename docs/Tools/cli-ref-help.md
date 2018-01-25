@@ -3,21 +3,20 @@ title: Comandos de la Ayuda de NuGet CLI | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 780d7f52-d6c6-45cd-8a62-218ff8c0b270
 description: Referencia para el comando de ayuda nuget.exe
 keywords: NuGet ayuda referencia, comando
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 55dc263fedd7ed5a3e48b76dbc9a3ccc220655cf
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 97f72e1be0df6e97f8b06696b2b3861800e4ea08
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="help-or--command-nuget-cli"></a>¿ayudar a o? comando (NuGet CLI)
 
@@ -27,7 +26,7 @@ General muestra información de ayuda e información acerca de los comandos espe
 
 ## <a name="usage"></a>Uso
 
-```
+```cli
 nuget help [command] [options]
 nuget ? [command] [options]
 ```
@@ -42,18 +41,18 @@ donde [comando] identifica un comando específico para el que se va a mostrar la
 | Opción | Descripción |
 | --- | --- |
 | Todas | Imprimir ayuda detallada acerca de todos los comandos disponibles; se omite si no se especifica un comando específico. |
-| ConfigFile | *(2.5 +)*  NuGet el archivo de configuración para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
+| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
 | ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | Ayuda | Muestra información de ayuda para los comandos de la Ayuda. |
 | Markdown | Imprimir ayuda detallada en formato de marcado cuando se utiliza con `-All`. Tecla de método abreviado. |
 | No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
-| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada (2.5 +)*. |
+| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Ejemplos
 
-```
+```cli
 nuget help
 nuget help push
 nuget ?

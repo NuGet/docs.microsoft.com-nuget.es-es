@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 11ca2092-67dc-41a9-a7af-afe610d8febb
 description: "El servicio de búsqueda permite a los clientes para consultar los paquetes por palabra clave y a los resultados del filtro en determinados campos de paquete."
 keywords: "API de búsqueda de NuGet, NuGet detectar los paquetes, API a los paquetes de NuGet de consulta, API para examinar paquetes de NuGet"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 8b37c1bfb66290de49641a8b6197cb83cd35318a
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 612ce0f46b654335a29bb36a64b27525994162ed
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="search"></a>Buscar
 
@@ -51,19 +50,17 @@ La API de búsqueda permite que un cliente a la consulta para una página de los
 
 Un paquete que no figuran en nunca debe aparecer en los resultados de búsqueda.
 
-```
-GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
-```
+    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name        | En     | Tipo    | Obligatorio | Notas
+nombre        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
-q           | Dirección URL    | string  | No       | Términos de búsqueda usados para filtrar los paquetes
+q           | Dirección URL    | cadena  | No       | Términos de búsqueda usados para filtrar los paquetes
 skip        | Dirección URL    | enteros | No       | El número de resultados que se va a omitir, para la paginación
 Take        | Dirección URL    | enteros | No       | El número de resultados que se va a devolver para la paginación
 versión preliminar  | Dirección URL    | booleano | No       | `true`o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
-semVerLevel | Dirección URL    | string  | No       | Una cadena de versión SemVer 1.0.0 
+semVerLevel | Dirección URL    | cadena  | No       | Una cadena de versión SemVer 1.0.0 
 
 La consulta de búsqueda `q` se analiza de forma que se define mediante la implementación del servidor. NuGet.org admite el filtrado básico en una [serie de campos](../consume-packages/finding-and-choosing-packages.md#search-syntax). Si no hay ningún `q` es siempre se deben devolver todos los paquetes, dentro de los límites impuestos por skip y take. Esto permite que la ficha "Buscar" en la experiencia de NuGet Visual Studio.
 
@@ -83,7 +80,7 @@ La respuesta es documento JSON que contiene hasta `take` resultados de búsqueda
 
 El objeto JSON raíz tiene las siguientes propiedades:
 
-Name      | Tipo             | Obligatorio | Notas
+nombre      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
 totalHits | enteros          | sí      | El número total de coincidencias, sin tener en cuenta `skip` y`take`
 datos      | Matriz de objetos | sí      | Los resultados de búsqueda coincidentes con la solicitud
@@ -93,21 +90,21 @@ datos      | Matriz de objetos | sí      | Los resultados de búsqueda coincide
 Cada elemento de la `data` matriz es un objeto JSON que consta de un grupo de versiones del paquete compartir el mismo identificador de paquete.
 El objeto tiene las siguientes propiedades:
 
-Name           | Tipo                       | Obligatorio | Notas
+nombre           | Tipo                       | Obligatorio | Notas
 -------------- | -------------------------- | -------- | -----
-id             | string                     | sí      | El identificador del paquete coincidente
-version        | string                     | sí      | La cadena de versión SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
-Descripción    | string                     | No       | 
+id             | cadena                     | sí      | El identificador del paquete coincidente
+version        | cadena                     | sí      | La cadena de versión SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
+Descripción    | cadena                     | No       | 
 versiones       | Matriz de objetos           | sí      | Todas las versiones de la coincidencia del paquete el `prerelease` parámetro
 authors        | cadena o matriz de cadenas | No       | 
-iconUrl        | string                     | No       | 
-licenseUrl     | string                     | No       | 
+iconUrl        | cadena                     | No       | 
+licenseUrl     | cadena                     | No       | 
 owners         | cadena o matriz de cadenas | No       | 
-projectUrl     | string                     | No       | 
-registro   | string                     | No       | La dirección URL absoluta a la categoría asociada [índice de registro](registration-base-url-resource.md#registration-index)
-resumen        | string                     | No       | 
+projectUrl     | cadena                     | No       | 
+registro   | cadena                     | No       | La dirección URL absoluta a la categoría asociada [índice de registro](registration-base-url-resource.md#registration-index)
+resumen        | cadena                     | No       | 
 etiquetas           | cadena o matriz de cadenas | No       | 
-título          | string                     | No       | 
+título          | cadena                     | No       | 
 totalDownloads | enteros                    | No       | Este valor se puede inferir por la suma de las descargas en el `versions` matriz
 Comprobar       | booleano                    | No       | Un valor booleano JSON que indica si el paquete está [comprobado](../reference/id-prefix-reservation.md)
 
@@ -115,17 +112,15 @@ En nuget.org, un paquete comprobado es uno que tiene un identificador de paquete
 
 Los metadatos contenidos en el objeto de resultado de la búsqueda se realiza desde la versión más reciente del paquete. Cada elemento de la `versions` matriz es un objeto JSON con las siguientes propiedades:
 
-Name      | Tipo    | Obligatorio | Notas
+nombre      | Tipo    | Obligatorio | Notas
 --------- | ------- | -------- | -----
-@id       | string  | sí      | La dirección URL absoluta a la categoría asociada [hoja de registro](registration-base-url-resource.md#registration-leaf)
-version   | string  | sí      | La cadena de versión SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
+@id       | cadena  | sí      | La dirección URL absoluta a la categoría asociada [hoja de registro](registration-base-url-resource.md#registration-leaf)
+version   | cadena  | sí      | La cadena de versión SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
 Descargas | enteros | sí      | El número de descargas para esta versión de paquete específico
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
-GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
-```
+    GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 

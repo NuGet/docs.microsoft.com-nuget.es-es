@@ -3,21 +3,20 @@ title: Proveedores de credenciales de NuGet para Visual Studio | Documentos de M
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 9c7f6d16-f437-47c4-82d4-6c996e0b18ec
 description: "Proveedores de credenciales de NuGet se autentican con fuentes de distribución al implementar la interfaz IVsCredentialProvider en una extensión de Visual Studio."
 keywords: "Proveedores de credenciales de NuGet, autenticarse con la fuente, autenticar mediante la Galería de extensión de visual studio de NuGet"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8d7360205387d4813f95560018e2ac68f71f5603
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: ff143526c814c69f1a133a62c1ad1a8f5fbedd60
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>Autenticar las fuentes en Visual Studio con proveedores de credenciales de NuGet
 

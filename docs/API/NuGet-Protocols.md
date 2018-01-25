@@ -7,18 +7,17 @@ ms.date: 10/30/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ba1d9742-9f1c-42ff-8c30-8e953e23c501
 description: "Los protocolos de nuget.org en constante evolución para interactuar con los clientes de NuGet."
 ms.reviewer:
 - kraigb
 - karann-msft
-ms.openlocfilehash: 0bc71795d120256b9eb14ca64141f0b69f01e620
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 488a86a36a6bc83c91f0182bf437ddb83e707e31
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
-# <a name="nugetorg-protocols"></a>Protocolos de NuGet.org
+# <a name="nugetorg-protocols"></a>protocolos de NuGet.org
 
 Para interactuar con nuget.org, los clientes deben seguir ciertas protocolos. Dado que estos protocolos mantengan evolucionando, los clientes deben identificar la versión de protocolo que se usan cuando se llama a nuget.org específico API. Esto permite nuget.org introducir cambios de una manera poco problemático para los clientes anteriores.
 
@@ -39,9 +38,7 @@ La validación garantiza que las claves de API creados por el usuario sólo se u
 
 Los clientes tienen que pasar el encabezado siguiente cuando realicen llamadas de API a **inserción** paquetes en nuget.org:
 
-```
-X-NuGet-Protocol-Version: 4.1.0
-```
+    X-NuGet-Protocol-Version: 4.1.0
 
 Tenga en cuenta que el `X-NuGet-Client-Version` encabezado tiene una semántica similar pero está reservado solo se puede usar el cliente de NuGet oficial. Los clientes de otros fabricantes deben usar el `X-NuGet-Protocol-Version` encabezado y valor.
 
@@ -53,9 +50,7 @@ Si un cliente interactúa con servicios externos y necesidades para validar si u
 
 Esta API se utiliza para obtener una clave de comprobar el ámbito de un autor nuget.org validar un paquete de la propiedad por él mismo.
 
-```
-POST api/v2/package/create-verification-key/{ID}/{VERSION}
-```
+    POST api/v2/package/create-verification-key/{ID}/{VERSION}
 
 #### <a name="request-parameters"></a>Parámetros de solicitud
 
@@ -67,7 +62,7 @@ X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USE
 
 #### <a name="response"></a>Respuesta
 
-```
+```json
 {
     "Key": "{Verify scope key from nuget.org}",
     "Expires": "{Date}"
@@ -78,9 +73,7 @@ X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USE
 
 Esta API se utiliza para validar una clave de comprobar el ámbito de paquete propiedad por el autor de nuget.org.
 
-```
-GET api/v2/verifykey/{ID}/{VERSION}
-```
+    GET api/v2/verifykey/{ID}/{VERSION}
 
 #### <a name="request-parameters"></a>Parámetros de solicitud
 

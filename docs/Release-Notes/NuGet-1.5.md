@@ -7,19 +7,18 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 3ec1ff28-18fc-4d53-bd43-208619a7270a
 description: "Notas de la versión para 1.5 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
 keywords: "NuGet 1.5 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 29792f4c7399155bcf5fb3361d7f10ddd1b18ca1
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 261cfbbd262bad28f142b0c3dff8a541641d9fda
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
- # <a name="nuget-15-release-notes"></a>Notas de la versión 1.5 de NuGet
+# <a name="nuget-15-release-notes"></a>Notas de la versión 1.5 de NuGet
 
 [Notas de la versión de NuGet 1.4](../release-notes/nuget-1.4.md) | [notas de la versión 1.6 de NuGet](../release-notes/nuget-1.6.md)
 
@@ -35,6 +34,7 @@ La plantilla de proyecto de ASP.NET MVC 3 incluye un conjunto de paquetes de NuG
 Para obtener más información sobre esta característica, lea este [entrada de blog, el desarrollador de la característica](http://blogs.msdn.com/b/marcinon/archive/2011/07/08/project-templates-and-preinstalled-nuget-packages.aspx).
 
 ### <a name="explicit-assembly-references"></a>Referencias de ensamblado de forma explícita
+
 Agrega un nuevo `<references />` elemento utilizado para especificar explícitamente qué ensamblados dentro de la debe hacer referencia el paquete.
 
 Por ejemplo, si agrega lo siguiente:

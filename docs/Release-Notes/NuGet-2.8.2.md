@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: bb547f5d-3c0e-4721-b2c7-3fc7e09c34de
 description: "Notas de la versión de NuGet 2.8.2 incluidos problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
 keywords: "NuGet 2.8.2 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 221b8970663ca80a986fc3ee542b99971c5e2018
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: f50bd1f0c981ef293a4d2ff425e0dffbdf58036c
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-282-release-notes"></a>Notas de la versión de NuGet 2.8.2
 

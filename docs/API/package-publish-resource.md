@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 1eaa403a-5c13-4c05-9352-2f791b98aa7e
 description: "El servicio de publicación permite a los clientes publicar nuevos paquetes y ocultar o eliminar los paquetes existentes."
 keywords: "Paquete de inserción de API de NuGet, API de NuGet eliminar paquete, API de NuGet ocultar paquete, paquete de carga de la API de NuGet, API de NuGet crear paquete"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 5fbcd82b09ebd56ae21103640e7c39b482059525
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: f8051ca57fccae77917567d8c9f2f8a120a8d884
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="push-and-delete"></a>Insertar y eliminar
 
@@ -52,9 +51,7 @@ El `PUT`, `POST` y `DELETE` métodos HTTP son compatibles con este recurso. Para
 
 NuGet.org admite la inserción de nuevos paquetes mediante la siguiente API. Si ya existe el paquete con el identificador y la versión proporcionada, nuget.org rechazará la inserción. Otros orígenes de paquetes pueden admitir reemplazando un paquete existente.
 
-```
-PUT https://www.nuget.org/api/v2/package
-```
+    PUT https://www.nuget.org/api/v2/package
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
@@ -86,9 +83,7 @@ Las implementaciones de servidor varían en el código de estado correcto devuel
 
 NuGet.org interpreta la solicitud de eliminación de paquete como un "Ocultar". Esto significa que el paquete sigue estando disponible para los usuarios existentes del paquete, pero el paquete ya no aparece en los resultados de la búsqueda o en la interfaz web. Para obtener más información acerca de este procedimiento, consulte la [eliminar paquetes](../policies/deleting-packages.md) directiva. Otras implementaciones del servidor son gratuitos para interpretar esta señal como una eliminación de disco duro, eliminar temporalmente u ocultar. Por ejemplo, [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) (una implementación de servidor sólo admite la API V2 anteriores) es compatible con esta solicitud de control como un unlist o una eliminación de disco duro en función de una opción de configuración.
 
-```
-DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
-```
+    DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
@@ -111,9 +106,7 @@ Si un paquete se dados de baja, es posible hacer que el paquete una vez más vis
 
 Si el paquete ya está disponible, la solicitud se realiza correctamente.
 
-```
-POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
-```
+    POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 

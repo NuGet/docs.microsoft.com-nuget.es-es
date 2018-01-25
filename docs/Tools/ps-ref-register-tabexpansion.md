@@ -7,17 +7,16 @@ ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 8314ec69-ee8c-4933-84ef-e6d8a412d268
 description: Referencia de comandos de PowerShell de Register-TabExpansion en la consola de administrador de paquetes de NuGet en Visual Studio.
 keywords: Consola de administrador, comandos de NuGet Powershell, referencia de NuGet Powershell, Register-TabExpansion de paquete de NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 498b8638c81b800e5f20f7604b36e6af76da0283
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 5691c07f9efef4bfd12680421f3b02c5a523eb6f
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="register-tabexpansion-package-manager-console-in-visual-studio"></a>Register-TabExpansion (consola de administrador de paquetes en Visual Studio)
 
@@ -35,7 +34,7 @@ Register-TabExpansion [-Name] <String> [-Definition] <Object> [<CommonParameters
 
 | Parámetro | Descripción |
 | --- | --- |
-| Name | (Obligatorio) El comando que se va a registrar las expansiones. -Nombre propio modificador es opcional. |
+| nombre | (Obligatorio) El comando que se va a registrar las expansiones. -Nombre propio modificador es opcional. |
 | Definición | (Obligatorio) Un objeto que describe el argumento en la sintaxis `@{'<parameter>' = {'<value1>', '<value2>', ...}}` donde `<parameter>` es el nombre del parámetro para modificar y cada uno de ellos `<value>` proporciona una expansión específica. Se aceptan las comillas simples y dobles. |
 
 Ninguno de estos parámetros aceptan caracteres de entrada o el carácter comodín de canalización.

@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 4153ff3f-f97f-4e54-b638-e844f70edf22
 description: "Notas de la versión de NuGet 3.0 Beta, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
 keywords: "NuGet 3.0 Beta notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 46b2a81845f5ac06b8c80975c55fcfc33b86636e
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 618d140c443d51f4d7eb87bac2381ad961ed85d1
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-30-beta-release-notes"></a>Notas de la versión Beta 3.0 NuGet
 
@@ -27,7 +26,7 @@ NuGet 3.0 Beta se publicó en 23 de febrero de 2015 para la versión de Visual S
 
 Se recomienda encarecidamente que desinstale cualquier versión anterior de la extensión de NuGet Visual Studio 2015 antes de instalar esta nueva versión.  Si tiene problemas con esta versión de la extensión, se recomienda volver a la [versión anterior](http://nuget.codeplex.com/downloads/get/909582) para su uso con la versión preliminar de Visual Studio 2015.
 
-## <a name="visual-studio-2012"></a>Visual Studio 2012 +
+## <a name="visual-studio-2012"></a>Visual Studio 2012+
 
 Esta versión Beta 3.0 de NuGet está disponible para su instalación en la Galería de Visual Studio 2015 CTP 6 extensión. Estamos trabajando para obtener eliminaciones de vista previa de Visual Studio 2012 y Visual Studio 2013 muy pronto. Ya se compartió nuestra intención de [interrumpir las actualizaciones para Visual Studio 2010](http://blog.nuget.org/20141002/visual-studio-2010.html), y se hizo dicha decisión difícil.
 

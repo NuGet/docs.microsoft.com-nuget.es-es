@@ -11,26 +11,22 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 2f6d6cf2-53fb-417a-b1d8-e0ac591c1699
 description: "El índice de servicio es el punto de entrada de la API de HTTP de NuGet y enumera las capacidades del servidor."
 keywords: "Punto de entrada de API de NuGet, detección de punto de conexión de PI NuGetA"
 ms.reviewer:
 - karann
 - unnir
-ms.openlocfilehash: 0c43a09d8564964bd0140b9ac5deb9d3063e4dc5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 9d0bb421c163520df4a1f0e9f3f71aab823aace3
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="service-index"></a>Índice de servicio
 
 El índice de servicio es un documento JSON que es el punto de entrada para un origen de paquete de NuGet y permite que una implementación de cliente detectar las capacidades del origen del paquete. El índice de servicio es un objeto JSON con dos propiedades obligatorias: `version` (la versión de esquema del índice de servicio) y `resources` (los puntos de conexión o las capacidades del origen del paquete).
 
-índice de servicio de NuGet.org se encuentra aquí:
-```
-https://api.nuget.org/v3/index.json
-```
+índice de servicio de NuGet.org se encuentra en `https://api.nuget.org/v3/index.json`.
 
 ## <a name="versioning"></a>Control de versiones
 
@@ -53,19 +49,17 @@ El `resources` propiedad contiene una matriz de recursos admitidos por este orig
 
 Un recurso es un objeto en el `resources` matriz. Representa una función con control de versiones de un origen del paquete. Un recurso tiene las siguientes propiedades:
 
-Name          | Tipo   | Obligatorio | Notas
+nombre          | Tipo   | Obligatorio | Notas
 ------------- | ------ | -------- | -----
-@id           | string | sí      | La dirección URL del recurso
-@type         | string | sí      | Una constante de cadena que representa el tipo de recurso
-comentario       | string | No       | Una descripción legible del recurso
+@id           | cadena | sí      | La dirección URL del recurso
+@type         | cadena | sí      | Una constante de cadena que representa el tipo de recurso
+comentario       | cadena | No       | Una descripción legible del recurso
 
 El `@id` es una dirección URL que debe ser absoluto y debe tener el esquema HTTP o HTTPS.
 
 El `@type` se usa para identificar el protocolo específico que se utilizará al interactuar con los recursos. El tipo del recurso es una cadena opaca, pero normalmente no tiene el formato:
 
-```
-{RESOURCE_NAME}/{RESOURCE_VERSION}
-```
+    {RESOURCE_NAME}/{RESOURCE_VERSION}
 
 Se esperan que los clientes para codificar de forma rígida el `@type` valores que se comprenden y buscarlos en el índice de un origen paquete de servicio. Justo lo `@type` valores en la actualidad se enumeran en los documentos de referencia de recurso individual enumerados en la [Introducción a la API](overview.md#resources-and-schema).
 
@@ -75,9 +69,7 @@ No hay ningún requisito de que cada recurso tiene un único `@id` o `@type`. De
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
 GET https://api.nuget.org/v3/index.json
-```
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 

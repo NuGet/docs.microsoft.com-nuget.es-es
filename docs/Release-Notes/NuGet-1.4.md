@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: e4856d0a-b408-4c60-ac51-f80ea06d9f79
 description: "Notas de la versión de NuGet 1.4, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
 keywords: "NuGet 1.4 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c4c27861c8697c75a06712b8ca6243b3b206cbb3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: a69f4f5c7172817d711fa5e995cf6db3875c4810
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-14-release-notes"></a>Notas de la versión 1.4 de NuGet
 
@@ -150,10 +149,10 @@ Para obtener una lista completa de trabajo elementos corregidos en NuGet 1.4, po
 * [Problema 1036](http://nuget.codeplex.com/workitem/1036): agregar `NuGet Pack SomeProject.csproj` a posteriores al evento de compilación ya no provoca un bucle infinito.
 * [Problema 961](http://nuget.codeplex.com/workitem/961): `-Source` marca es compatible con rutas de acceso relativas.
 
-# <a name="nuget-14-update"></a>Actualización de NuGet 1.4
+## <a name="nuget-14-update"></a>Actualización de NuGet 1.4
 Poco después de la versión de NuGet 1.4, nos encontramos con un par de problemas que eran importantes para solucionar.
 El número de versión específica de esta actualización a 1.4 es 1.4.20615.9020.
 
-## <a name="bug-fixes"></a>Correcciones de errores
+### <a name="bug-fixes"></a>Correcciones de errores
 * [Problema 1220](http://nuget.codeplex.com/workitem/1220): paquete de actualización no ejecuta `install.ps1` / `uninstall.ps1` en todos los proyectos cuando hay más de un proyecto
 * [Problema 1156](http://nuget.codeplex.com/workitem/1156): Package Manager Console atascados en W2K3/XP (si no está instalado el 2 de Powershell)

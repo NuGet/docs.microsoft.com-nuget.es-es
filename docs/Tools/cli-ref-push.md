@@ -3,21 +3,20 @@ title: "Comando de inserción de NuGet CLI | Documentos de Microsoft"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: a9709eee-add2-47fb-98e6-eec0697087f6
 description: "Referencia del comando de inserción nuget.exe"
 keywords: "referencia de inserción de NuGet, el comando de inserción"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2828cdc41903d8a948870155b23721724bfa781e
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 50883bc85ab96cba54fb4ce0bd344e8148c4fab1
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="push-command-nuget-cli"></a>comando de inserción (NuGet CLI)
 
@@ -32,7 +31,7 @@ Configuración predeterminada de NuGet se obtiene mediante la carga de `%AppData
 
 ## <a name="usage"></a>Uso
 
-```
+```cli
 nuget push <packagePath> [options]
 ```
 
@@ -43,23 +42,23 @@ donde `<packagePath>` identifica el paquete para insertar en el servidor.
 | Opción | Descripción |
 | --- | --- |
 | apiKey | La clave de API para el repositorio de destino. Si no está presente, el especificado en *%AppData%\NuGet\NuGet.Config* se utiliza. |
-| ConfigFile | *(2.5 +)*  NuGet el archivo de configuración para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
+| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
 | DisableBuffering | Deshabilita el almacenamiento en búfer cuando se insertan en un servidor HTTP (s) para reducir los usos de la memoria. Precaución: cuando se utiliza esta opción, la autenticación integrada de Windows podría no funcionar. |
 | ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |
 | No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
 | NoSymbols | *(3.5 +)*  Si existe un paquete de símbolos, no se enviarán a un servidor de símbolos. |
-| Origen | Especifica la dirección URL del servidor. Con NuGet 2.5 +, NuGet identificará un origen de la carpeta local o UNC y simplemente copie el archivo no existe en lugar de insertar mediante HTTP.  Además, a partir de NuGet 3.4.2, esto es un parámetro obligatorio a menos que la `NuGet.Config` archivo especifica un *DefaultPushSource* valor (vea [NuGet configurar comportamiento](../Consume-Packages/Configuring-NuGet-Behavior.md)). |
+| Origen | Especifica la dirección URL del servidor. NuGet identifica un origen de la carpeta local o UNC y simplemente copia el archivo no existe en lugar de insertar mediante HTTP.  Además, a partir de NuGet 3.4.2, esto es un parámetro obligatorio a menos que la `NuGet.Config` archivo especifica un *DefaultPushSource* valor (vea [NuGet configurar comportamiento](../Consume-Packages/Configuring-NuGet-Behavior.md)). |
 | SymbolSource | *(3.5 +)*  Especifica la URL del servidor de símbolos; nuget.smbsrc.net se utiliza cuando se realiza la inserción en nuget.org |
 | SymbolApiKey | *(3.5 +)*  Especifica la clave de API de la dirección URL especificada en `-SymbolSource`. |
 | Timeout | Especifica el tiempo de espera, en segundos, para insertar a un servidor. El valor predeterminado es 300 segundos (5 minutos). |
-| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada (2.5 +)*. |
+| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Ejemplos
 
-```
+```cli
 nuget push foo.nupkg
 
 nuget push foo.symbols.nupkg

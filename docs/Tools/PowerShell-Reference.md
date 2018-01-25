@@ -3,21 +3,20 @@ title: Referencia de PowerShell de NuGet | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/2/2017
+ms.date: 10/02/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: cd08b869-44c6-480e-90f7-494a6d08e6d0
 description: La referencia completa a los comandos de PowerShell disponibles en la consola de administrador de paquetes de NuGet en Visual Studio.
 keywords: NuGet paquete consola del administrador, comandos de NuGet Powershell, referencia de NuGet Powershell
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 64450a8bcca7f6028d4ce389d51ac35e9209cfae
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 0cbd9b13b34bd93fea6c6684c03bca9cff5d9e5e
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="powershell-reference"></a>Referencia de PowerShell
 

@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ead5cf7a-e51e-4cbb-8798-58226f4c853f
 description: "El servicio de búsqueda Autocompletar admite las versiones y descubrimiento interactivo de identificadores de paquete."
 keywords: "API de Autocompletar de NuGet, Id. de paquete de búsqueda de NuGet, Id. de paquete de subcadena"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 313ceb630947b46c34b98e14044ecf121b725087
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 7c984ca61799293d7832851b80cf3fefc4734288
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="autocomplete"></a>Autocompletar
 
@@ -51,19 +50,17 @@ La primera Autocompletar API admite las búsquedas de parte de una cadena de ide
 
 Un paquete con solo las versiones que no figuran en no aparecerán en los resultados.
 
-```
-GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
-```
+    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name        | En     | Tipo    | Obligatorio | Notas
+nombre        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
-q           | Dirección URL    | string  | No       | La cadena para comparar identificadores de paquete
+q           | Dirección URL    | cadena  | No       | La cadena para comparar identificadores de paquete
 skip        | Dirección URL    | enteros | No       | El número de resultados que se va a omitir, para la paginación
 Take        | Dirección URL    | enteros | No       | El número de resultados que se va a devolver para la paginación
 versión preliminar  | Dirección URL    | booleano | No       | `true`o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
-semVerLevel | Dirección URL    | string  | No       | Una cadena de versión SemVer 1.0.0 
+semVerLevel | Dirección URL    | cadena  | No       | Una cadena de versión SemVer 1.0.0 
 
 La consulta de Autocompletar `q` se analiza de forma que se define mediante la implementación del servidor. NuGet.org admite las consultas para el prefijo de tokens de Id. de paquete, que son partes del identificador generado por spliting original, caracteres camel de caso y símbolos.
 
@@ -83,16 +80,14 @@ La respuesta es documento JSON que contiene hasta `take` resultados de Autocompl
 
 El objeto JSON raíz tiene las siguientes propiedades:
 
-Name      | Tipo             | Obligatorio | Notas
+nombre      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
 totalHits | enteros          | sí      | El número total de coincidencias, sin tener en cuenta `skip` y`take`
 datos      | Matriz de cadenas | sí      | El paquete coincidentes con la solicitud de identificadores
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
 GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
-```
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 
@@ -104,17 +99,15 @@ Una vez que se detecta un identificador de paquete mediante la API anterior, un 
 
 Una versión de paquete que no figuran en no aparecerán en los resultados.
 
-```
-GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
-```
+    GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name        | En     | Tipo    | Obligatorio | Notas
+nombre        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
-id          | Dirección URL    | string  | sí      | El identificador del paquete para capturar las versiones de
+id          | Dirección URL    | cadena  | sí      | El identificador del paquete para capturar las versiones de
 versión preliminar  | Dirección URL    | booleano | No       | `true`o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
-semVerLevel | Dirección URL    | string  | No       | Una cadena de versión SemVer 2.0.0 
+semVerLevel | Dirección URL    | cadena  | No       | Una cadena de versión SemVer 2.0.0 
 
 Si `prerelease` no es siempre, se excluyen los paquetes de versión preliminar.
 
@@ -126,7 +119,7 @@ La respuesta es documento JSON que contiene todas las versiones de paquete del i
 
 El objeto JSON raíz tiene la propiedad siguiente:
 
-Name      | Tipo             | Obligatorio | Notas
+nombre      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
 datos      | Matriz de cadenas | sí      | Las versiones del paquete coincidentes con la solicitud
 
@@ -134,9 +127,7 @@ Las versiones del paquete en el `data` matriz podría contener metadatos de comp
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
-GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
-```
+    GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 

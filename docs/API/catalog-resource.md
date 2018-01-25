@@ -11,17 +11,16 @@ ms.date: 10/30/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: cfd338b5-6253-48c0-88ba-17c6b98fc935
 description: "El catálogo es un índice de todos los paquetes creados y eliminados en nuget.org."
 keywords: "Catálogo de API de NuGet V3, registro de transacciones de nuget.org, replique NuGet.org, clonar NuGet.org, registro solo de adición de NuGet.org"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 4c98b7cbd92575f6905e98a5bca5602a4d8ac0dd
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: d1a24be68a60085a40361c374ffb34dc221f09c4
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="catalog"></a>Catálogo
 
@@ -73,9 +72,7 @@ Elementos de catálogo siempre se agregan al catálogo en un orden cronológico 
 
 La siguiente solicitud de captura el índice del catálogo.
 
-```
-GET {@id}
-```
+    GET {@id}
 
 El índice del catálogo es un documento JSON que contiene un objeto con las siguientes propiedades:
 
@@ -107,9 +104,7 @@ Contrasta con la [recurso de metadatos de paquete](registration-base-url-resourc
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
-GET https://api.nuget.org/v3/catalog0/index.json
-```
+    GET https://api.nuget.org/v3/catalog0/index.json
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 
@@ -161,9 +156,7 @@ Para obtener más detalles sobre cada tipo de qué significa, consulte el [corre
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
-GET https://api.nuget.org/v3/catalog0/page2926.json
-```
+    GET https://api.nuget.org/v3/catalog0/page2926.json
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 
@@ -178,8 +171,8 @@ El documento de hoja de catálogo es un objeto JSON con las siguientes propiedad
 nombre                    | Tipo                       | Obligatorio | Notas
 ----------------------- | -------------------------- | -------- | -----
 @type                   | cadena o matriz de cadenas | sí      | Los tipos de elemento de catálogo
-catálogo: commitId        | cadena                     | sí      | Un identificador de confirmación asociado a este elemento de catálogo
-catálogo: commitTimeStamp | cadena                     | sí      | La marca de tiempo de confirmación de este elemento de catálogo
+catalog:commitId        | cadena                     | sí      | Un identificador de confirmación asociado a este elemento de catálogo
+catalog:commitTimeStamp | cadena                     | sí      | La marca de tiempo de confirmación de este elemento de catálogo
 id                      | cadena                     | sí      | El identificador del paquete del elemento de catálogo
 Publicado               | cadena                     | sí      | Elemento de catálogo de la fecha de publicación del paquete
 version                 | cadena                     | sí      | La versión del paquete del elemento de catálogo
@@ -217,7 +210,7 @@ isPrerelease            | booleano                    | sí      | Si la versió
 lenguaje                | cadena                     | No       |
 licenseUrl              | cadena                     | No       |
 lista                  | booleano                    | No       | Si no aparece el paquete
-MinClientVersion        | cadena                     | No       |
+minClientVersion        | cadena                     | No       |
 packageHash             | cadena                     | sí      | El código hash del paquete, codificación utilizando [estándar en base 64](https://tools.ietf.org/html/rfc4648#section-4)
 packageHashAlgorithm    | cadena                     | sí      |
 packageSize             | enteros                    | sí      | El tamaño de la .nupkg de paquete en bytes
@@ -242,9 +235,7 @@ El `published` marca de tiempo es la hora en que se incluyó por última cuando 
 
 #### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
 GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
-```
 
 #### <a name="sample-response"></a>Respuesta de ejemplo
 
@@ -265,9 +256,7 @@ El `published` propiedad es el tiempo cuando se eliminó el paquete, que normalm
 
 #### <a name="sample-request"></a>Solicitud de ejemplo
 
-```
 GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
-```
 
 #### <a name="sample-response"></a>Respuesta de ejemplo
 

@@ -7,17 +7,16 @@ ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 0c81dbc4-2c14-4ec8-b87a-b802a899c3ea
 description: "Una referencia breve para los comandos relacionados con NuGet mediante la interfaz de línea de comandos de dotnet."
 keywords: "comandos de NuGet dotnet, dotnet pack, restauración dotnet, variables locales de nuget dotnet, dotnet nuget inserción, dotnet nuget delete"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d020e62b8bd04c8f4a75756fb30ebcf13ffdb1b3
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: d06e4590ab87b68e7846a13b2eba0f59eb9529d6
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="dotnet-commands"></a>comandos de dotNet.
 

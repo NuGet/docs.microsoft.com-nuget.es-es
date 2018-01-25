@@ -3,23 +3,22 @@ title: Comando de variables locales de NuGet CLI | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 7f672c7c-74c9-4296-bc27-4d47882b541c
 description: Referencia del comando de variables locales nuget.exe
 keywords: referencia de variables locales de NuGet, comandos de variables locales
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8cc06eedc20507e2bdd210e40c471ff551b89563
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: b2f62a9ab5699bfb486eee146ab7046f5240aa50
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
-## <a name="locals-command-nuget-cli"></a>comando de variables locales (NuGet CLI)
+# <a name="locals-command-nuget-cli"></a>comando de variables locales (NuGet CLI)
 
 **Se aplica a:** paquete consumo &bullet; **versiones admitidas:** 3.3 +
 
@@ -27,7 +26,7 @@ Borra o listas de recursos locales de NuGet, como la memoria caché de la solici
 
 ## <a name="usage"></a>Uso
 
-```
+```cli
 nuget locals <cache> [options]
 ```
 
@@ -49,7 +48,7 @@ Consulte también [variables de entorno](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Ejemplos
 
-```
+```cli
 nuget locals all -list
 nuget locals http-cache -clear
 ```

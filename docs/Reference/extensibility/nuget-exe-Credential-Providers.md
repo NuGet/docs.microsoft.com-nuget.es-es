@@ -7,17 +7,16 @@ ms.date: 12/12/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 3cf592de-39f2-4e7f-a597-62635fdcedfa
 description: "los proveedores de credenciales NuGet.exe autentican con una fuente de distribución y se implementan como archivos ejecutables de línea de comandos que siguen las convenciones específicas."
 keywords: "NuGet.exe los proveedores de credenciales, el proveedor de credenciales API, autenticarse con la fuente, autenticarse con la Galería"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 82ab4d6e9be0736e008f5bd27d46e1db166d7bb4
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 88ce0106ad4e628ba8120f94b7951c7746ab67f3
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>Fuentes con nuget.exe los proveedores de credenciales de autenticación
 
@@ -73,7 +72,7 @@ Un proveedor debe hacer lo siguiente:
 
 ### <a name="standard-output"></a>Salida estándar
 
-| Propiedad |Notas|
+| Property |Notas|
 |----------------|-----------|
 | Nombre de usuario | Nombre de usuario para las solicitudes autenticadas.|
 | Contraseña | Contraseña para las solicitudes autenticadas.|

@@ -3,21 +3,20 @@ title: "Referencia de la interfaz de línea de comandos (CLI) de NuGet | Documen
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
 description: "Índice de la referencia de línea de comandos para la nuget.exe CLI"
 keywords: "índice de referencia NuGet.exe, interfaz de línea de comandos nuget.exe, nuget.exe CLI, comando de nuget"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5dba358b1dda46f551721461e0460219f8210f9a
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: 8b1ee17702f5a54a77dc2cd663e13729a9b4a39f
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-cli-reference"></a>Referencia de NuGet CLI
 
@@ -31,11 +30,16 @@ Esta documentación refleja la versión más reciente de NuGet CLI. Para obtener
 
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
+> [!Tip]
+> Para disponer de la CLI de NuGet dentro de la consola de administrador de paquetes en Visual Studio, vea [mediante la CLI nuget.exe en la consola de](package-manager-console.md#using-the-nugetexe-cli-in-the-console).
+
 ## <a name="availability"></a>Disponibilidad
 
+Vea [disponibilidad de las funciones](../install-nuget-client-tools.md#feature-availability) para obtener detalles exactos.
+
 - Todos los comandos están disponibles en Windows.
-- Todos los comandos funcionan con [nuget.exe quedando Mono](../guides/install-nuget.md#mac-osx-and-linux) excepto donde se indica para `pack`, `restore`, y `update`.
-- El `pack`, `restore`, `delete`, `locals`, y `push` comandos también están disponibles en Mac y Linux a través de la [dotnet CLI](dotnet-Commands.md).
+- Todos los comandos funcionan con nuget.exe quedando Mono excepto cuando se indique para `pack`, `restore`, y `update`.
+- El `pack`, `restore`, `delete`, `locals`, y `push` comandos también están disponibles en Mac y Linux a través de la CLI de dotnet.
 
 ## <a name="commands-and-applicability"></a>Comandos y aplicabilidad
 
@@ -51,7 +55,6 @@ Comandos disponibles y aplicabilidad a la creación del paquete, el consumo de p
 | [restore](cli-ref-restore.md) | Consumo | 2.7+ | Restaura todos los paquetes al que hace referencia el formato de referencia de paquete en uso. Cuando se ejecuta en Mono, no se admite la restauración de paquetes con el formato PackageReference. |
 | [setapikey](cli-ref-setapikey.md) | Publicación de consumo | Todas | Guarda una clave de API para un determinado paquete de origen cuando ese origen del paquete requiere una clave de acceso. |
 | [spec](cli-ref-spec.md) | Creación | Todas | Genera un `.nuspec` archivo, utilizando tokens si genera el archivo desde un proyecto de Visual Studio. |
-
 
 | Comandos secundarios | Roles aplicables | Versión de NuGet | Descripción |
 | --- | --- | --- | --- |
