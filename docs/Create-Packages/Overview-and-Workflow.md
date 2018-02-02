@@ -7,17 +7,16 @@ ms.date: 07/26/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: feb7918c-4709-48a4-a106-8d65c41014dc
 description: "Información general del proceso de creación y publicación de un paquete de NuGet, con vínculos a otras partes específicas del proceso."
 keywords: "Creación de paquetes de NuGet, información general sobre la creación en NuGet, flujo de trabajo de creación en NuGet, flujo de trabajo de creación de paquetes, información general sobre la creación de paquetes."
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 25822d22c53c07e4c1a2f4ab310c4a5da09b7661
-ms.sourcegitcommit: 122bf7ce308365ea45da018b0768f0536de76a1f
+ms.openlocfilehash: 46d7737d57a91ee7b0434f4695c393423730c7bc
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="package-creation-workflow"></a>Flujo de trabajo de creación de paquetes
 
@@ -30,22 +29,22 @@ Un paquete también puede servir para solo sacar una determinada cifra de depend
 
 En cualquier caso, el proceso de creación de un paquete comienza por decidir qué ensamblados y otros archivos se van a empaquetar. Luego se crea un archivo de manifiesto, conocido como archivo `.nuspec`, para describir el contenido del paquete junto con su identificador, el número de versión, la información de copyright, los destinos y propiedades de MSBuild, etc.
 
-Cuando haya preparado todos los archivos necesarios en las carpetas adecuadas y haya creado el archivo `.nuspec` correspondiente, deberá usar el comando `nuget pack` (o el [destino pack de MSBuild](../Schema/msbuild-targets.md)) para ponerlo todo en un archivo `.nupkg`. Entonces estará a punto para implementar el paquete en cualquier host que lo ponga a disposición de otros desarrolladores.
+Cuando haya preparado todos los archivos necesarios en las carpetas adecuadas y haya creado el archivo `.nuspec` correspondiente, deberá usar el comando `nuget pack` (o el [destino pack de MSBuild](../reference/msbuild-targets.md)) para ponerlo todo en un archivo `.nupkg`. Entonces estará a punto para implementar el paquete en cualquier host que lo ponga a disposición de otros desarrolladores.
 
 > [!Tip]
 > Un paquete de NuGet con la extensión `.nupkg` es un simple archivo ZIP. Para examinar fácilmente el contenido de cualquier paquete, cambie la extensión a `.zip` y expanda su contenido como de costumbre. Asegúrese de volver a cambiar la extensión a `.nupkg` antes de intentar cargarla en un host.
 
-Para aprender y entender el proceso de creación, comience [creando un paquete](../create-packages/creating-a-package.md), que le guiará a través de los procesos básicos comunes para todos los paquetes. 
+Para aprender y entender el proceso de creación, comience [creando un paquete](../create-packages/creating-a-package.md), que le guiará a través de los procesos básicos comunes para todos los paquetes.
 
 Desde ahí podrá plantearse una serie de opciones más para el paquete:
 
--  En [Compatibilidad con varias plataformas de destino](../create-packages/supporting-multiple-target-frameworks.md) se describe cómo crear un paquete con varias variantes para diferentes versiones de .NET Framework.
--  En [Creación de paquetes localizados](../create-packages/creating-localized-packages.md) se describe cómo estructurar un paquete con varios recursos de idioma y cómo usar paquetes satélite localizados e independientes.
--  En [Paquetes de versión preliminar](../create-packages/prerelease-packages.md) se muestra cómo liberar paquetes alfa, beta y rc a aquellos clientes que estén interesados.
--  En [Origen y transformaciones del archivo de configuración](../create-packages/source-and-config-file-transformations.md) se describe cómo se pueden hacer reemplazos de tokens unidireccionales en archivos que se agregan a un proyecto y cómo modificar `web.config` y `app.config` con una configuración que también se retira cuando se desinstala el paquete.
--  En [Paquetes de símbolos](../create-packages/symbol-packages.md) se ofrecen consejos para proporcionar símbolos para su biblioteca que permiten a los consumidores entrar en el código durante la depuración.
--  En [Package versioning](../reference/package-versioning.md) (Control de versiones de paquetes) se describe cómo identificar las versiones exactas que se permiten para las dependencias (otros paquetes que se usan en el paquete).
--  En [Paquetes nativos](../create-packages/native-packages.md) se describe el proceso de creación de un paquete para los consumidores de C++.
+- En [Compatibilidad con varias plataformas de destino](../create-packages/supporting-multiple-target-frameworks.md) se describe cómo crear un paquete con varias variantes para diferentes versiones de .NET Framework.
+- En [Creación de paquetes localizados](../create-packages/creating-localized-packages.md) se describe cómo estructurar un paquete con varios recursos de idioma y cómo usar paquetes satélite localizados e independientes.
+- En [Paquetes de versión preliminar](../create-packages/prerelease-packages.md) se muestra cómo liberar paquetes alfa, beta y rc a aquellos clientes que estén interesados.
+- En [Origen y transformaciones del archivo de configuración](../create-packages/source-and-config-file-transformations.md) se describe cómo se pueden hacer reemplazos de tokens unidireccionales en archivos que se agregan a un proyecto y cómo modificar `web.config` y `app.config` con una configuración que también se retira cuando se desinstala el paquete.
+- En [Paquetes de símbolos](../create-packages/symbol-packages.md) se ofrecen consejos para proporcionar símbolos para su biblioteca que permiten a los consumidores entrar en el código durante la depuración.
+- En [Package versioning](../reference/package-versioning.md) (Control de versiones de paquetes) se describe cómo identificar las versiones exactas que se permiten para las dependencias (otros paquetes que se usan en el paquete).
+- En [Paquetes nativos](../create-packages/native-packages.md) se describe el proceso de creación de un paquete para los consumidores de C++.
 
 Cuando esté preparado para publicar un paquete en nuget.org, siga el proceso simple en [Publicar un paquete](../create-packages/publish-a-package.md).
 

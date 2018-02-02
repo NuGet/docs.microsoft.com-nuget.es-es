@@ -3,21 +3,20 @@ title: Versiones preliminares en paquetes de NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/14/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: df6a366a-22c1-47bb-8017-18231311ce88
 description: "Guía para la creación de paquetes de versión preliminar"
 keywords: "control de versiones, control de versiones de paquetes de NuGet, versiones preliminares de NuGet, paquetes de versiones preliminares de NuGet, versiones de paquetes de versión preliminar, versiones de paquetes RC, versiones de paquetes, control de versiones de semántica de NuGet"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 07cb9b9bdeeea6f283e95a11a06d7f2043c9b17c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: f07b4a0428685b036640a7153190fd8454885608
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="building-pre-release-packages"></a>Crear paquetes de versión preliminar
 
@@ -47,7 +46,6 @@ Puede especificar estas versiones de dos maneras:
 
 Cuando esté listo para liberar una versión estable, quite el sufijo y el paquete tendrá prioridad sobre las demás versiones preliminares. Una vez más, vea [Package versioning](../reference/package-versioning.md#pre-release-versions) (Control de versiones de paquetes).
 
-
 ## <a name="installing-and-updating-pre-release-packages"></a>Instalar y actualizar paquetes de versión preliminar
 
 De forma predeterminada, NuGet no incluye las versiones preliminares al trabajar con paquetes, pero puede cambiar este comportamiento del siguiente modo:
@@ -61,7 +59,6 @@ De forma predeterminada, NuGet no incluye las versiones preliminares al trabajar
 - **Consola del Administrador de paquetes**: use el conmutador `-IncludePrerelease` con los comandos `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` y `Update-Package`. Consulte la [referencia de PowerShell](../tools/powershell-reference.md).
 
 - **CLI de NuGet**: use el conmutador `-prerelease` con los comandos `install`, `update`, `delete` y `mirror`. Consulte la [referencia de la CLI de NuGet](../tools/nuget-exe-cli-reference.md)
-
 
 ## <a name="semantic-versioning"></a>Control de versiones semántico
 
@@ -86,16 +83,14 @@ Teniendo esto en cuenta, se recomienda seguir unas convenciones de nomenclatura 
 
 Use los sufijos que use, NuGet les dará prioridad en orden alfabético inverso:
 
-```
-1.0.1
-1.0.1-zzz
-1.0.1-rc
-1.0.1-open
-1.0.1-beta12
-1.0.1-beta05
-1.0.1-beta
-1.0.1-alpha2
-1.0.1-alpha
-```
+    1.0.1
+    1.0.1-zzz
+    1.0.1-rc
+    1.0.1-open
+    1.0.1-beta12
+    1.0.1-beta05
+    1.0.1-beta
+    1.0.1-alpha2
+    1.0.1-alpha
 
 Como se muestra, la versión sin sufijo siempre tendrá prioridad sobre las versiones preliminares. Tenga en cuenta también que, si usa sufijos numéricos con etiquetas de versión preliminar que podrían usar números de dos dígitos (o más), use ceros iniciales como en beta01 y beta05 para asegurarse de que se ordenen correctamente cuando los números vayan aumentando.

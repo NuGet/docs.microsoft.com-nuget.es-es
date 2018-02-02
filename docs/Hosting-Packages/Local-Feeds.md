@@ -7,17 +7,16 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 1354a527-d988-43d1-8dcf-6ce46ec5d3d4
 description: "Cómo crear una fuente local para los paquetes de NuGet usando carpetas en la red local"
 keywords: "Fuente de NuGet, galería de NuGet, fuente local de paquetes"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 32217622077ff983abaf00b2e6e5baf3064fff56
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0b8633db78b19fecddeb057a9f287ef971aef27a
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="local-feeds"></a>Fuentes locales
 
@@ -40,7 +39,7 @@ El árbol jerárquico de carpetas con control de versiones tiene la siguiente es
 
 NuGet crea esta estructura automáticamente al usar el comando [`nuget add`](../tools/cli-ref-add.md) para copiar un paquete a la fuente:
 
-```
+```cli
 nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 ```
 
@@ -48,7 +47,7 @@ El comando `nuget add` funciona con un paquete a la vez, lo cual puede ser un pr
 
 En estos casos, use el comando [`nuget init`](../tools/cli-ref-init.md) para copiar todos los paquetes de una carpeta a la fuente como si ejecutara `nuget add` en cada uno de ellos por separado. Por ejemplo, el siguiente comando copia todos los paquetes de `c:\packages` a un árbol jerárquico en `\\myserver\packages`:
 
-```
+```cli
 nuget init c:\packages \\myserver\packages
 ```
 

@@ -3,21 +3,20 @@ title: "Paquetes de NuGet y control de código fuente | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 07/17/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 2c874e6f-99eb-46dd-997f-f67d98d0237e
 description: "Consideraciones sobre cómo tratar los paquetes de NuGet dentro de los sistemas de control de código fuente y de control de versiones, y cómo omitir paquetes con TFVC y Git."
 keywords: "Control de código fuente de NuGet, control de versiones de NuGet, NuGet y Git, NuGet y TFS, NuGet y TFVC, omisión de paquetes, repositorios de control de código fuente, repositorios de control de versiones"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c73dea74f2363f49fb476a5812c29de63fec89a3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 6261625d5d7eaa748f9ad15510b7b2af3c814e44
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>Omitir paquetes de NuGet en sistemas de control de código fuente
 
@@ -38,7 +37,7 @@ Use el [archivo .gitignore](https://git-scm.com/docs/gitignore) para evitar incl
 
 Las partes importantes del archivo `.gitignore` son:
 
-```
+```gitignore
 # Ignore NuGet Packages
 *.nupkg
 
@@ -70,7 +69,7 @@ Para deshabilitar la integración del control de código fuente con TFVC para lo
 
 1. En esa carpeta, cree un archivo denominado `NuGet.Config` y ábralo para editarlo.
 
-1. Agregue el siguiente texto como mínimo, donde el valor [disableSourceControlIntegration](../Schema/nuget-config-file.md#solution-section) indica a Visual Studio que omita todos los elementos de la carpeta `packages`:
+1. Agregue el siguiente texto como mínimo, donde el valor [disableSourceControlIntegration](../reference/nuget-config-file.md#solution-section) indica a Visual Studio que omita todos los elementos de la carpeta `packages`:
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -85,9 +84,9 @@ Para deshabilitar la integración del control de código fuente con TFVC para lo
 
 1. En TFS 2012 o versiones posteriores, o en Visual Studio Team Services, cree un archivo `.tfignore` tal como se describe en [Add files to the server](https://www.visualstudio.com/en-us/docs/tfvc/add-files-server#tfignore) (Agregar archivos al servidor). En ese archivo, incluya el contenido siguiente para ignorar explícitamente las modificaciones efectuadas en la carpeta `\packages` en el nivel de repositorio y en algunos otros archivos intermedios. Puede crear el archivo en el Explorador de Windows usando el nombre `.tfignore.` con el punto final, pero puede que deba deshabilitar primero la opción "Ocultar las extensiones de los tipos de archivo conocidos":
 
-   ```
+   ```cli
    # Ignore NuGet Packages
-   *.nupkg   
+   *.nupkg
 
    # Ignore the NuGet packages folder in the root of the repository. If needed, prefix 'packages'
    # with additional folder names if it's not in the same folder as .tfignore.   

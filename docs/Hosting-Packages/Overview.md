@@ -7,18 +7,17 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 97577ddd-c294-432d-81a7-b4aebe88bd1c
 description: "Información general sobre códigos abiertos para hospedar sus propias fuentes o galerías de paquetes de NuGet, ya sea de forma local o remota."
 keywords: "Fuente de NuGet, galería de NuGet, fuente de paquetes personalizada, NuGet.Server"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: c3c6b17cdeb4fe959adbc56bdc6ace73202a98fc
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 738190e20603046d075faa3f50402601890583c1
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>Hospedar sus propias fuentes de NuGet
 
@@ -27,7 +26,7 @@ En lugar de hacer que los paquetes estén disponibles de forma pública, es posi
 Para todos estos propósitos, NuGet admite la configuración de orígenes de paquetes privados de las siguientes maneras:
 
 - Fuente local: los paquetes se colocan en un recurso compartido de red adecuado, idealmente con `nuget init` y `nuget add` para crear una estructura jerárquica de carpetas (NuGet 3.3+). Para más información, vea [Fuentes locales](../hosting-packages/local-feeds.md).
-- NuGet.Server: los paquetes están disponibles a través de un servidor HTTP local. Para más información, vea [NuGet.Server](../hosting-packages/NuGet-Server.md).
+- NuGet.Server: los paquetes están disponibles a través de un servidor HTTP local. Para más información, vea [NuGet.Server](../hosting-packages/nuget-server.md).
 - Galería de NuGet: los paquetes se hospedan en un servidor de Internet mediante el [proyecto de la galería de NuGet](https://github.com/NuGet/NuGetGallery#build-and-run-the-gallery-in-arbitrary-number-easy-steps) (github.com). La galería de NuGet proporciona características y administración de usuarios, como una interfaz de usuario web amplia que permite efectuar búsquedas y explorar paquetes desde dentro del explorador, de forma similar a nuget.org.
 
 Hay muchos más productos de hospedaje de NuGet que admiten las fuentes privadas remotas, como las siguientes:
