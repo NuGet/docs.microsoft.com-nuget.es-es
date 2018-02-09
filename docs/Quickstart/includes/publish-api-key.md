@@ -1,0 +1,11 @@
+1. <span data-ttu-id="0d9e3-101">[Inicie sesión en su cuenta de nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) o cree una cuenta si aún no tiene una.</span><span class="sxs-lookup"><span data-stu-id="0d9e3-101">[Sign into your nuget.org account](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) or create an account if you don't have one already.</span></span>
+
+1. <span data-ttu-id="0d9e3-102">Seleccione el nombre de usuario (en la esquina superior derecha) y luego **Claves de API**.</span><span class="sxs-lookup"><span data-stu-id="0d9e3-102">Select your user name (on the upper right), then select **API Keys**.</span></span>
+
+1. <span data-ttu-id="0d9e3-103">Haga clic en **Crear**, proporcione un nombre para la clave, seleccione **Seleccionar ámbitos > Insertar** en **Clave de API**, escriba \* para **Patrón global** y después haga clic en **Crear**.</span><span class="sxs-lookup"><span data-stu-id="0d9e3-103">Select **Create**, provide a name for your key, select **Select Scopes > Push**Under **API Key**, enter \* for **Glob pattern**, then select **Create**.</span></span>
+
+1. <span data-ttu-id="0d9e3-104">Cuando haya creado la clave, seleccione **Copiar** para recuperar la clave de acceso que va a necesitar en la CLI:</span><span class="sxs-lookup"><span data-stu-id="0d9e3-104">Once the key is created, select **Copy** to retrieve the access key you need in the CLI:</span></span>
+
+    ![Copia de la clave de API al Portapapeles](../media/QS_Create-02-APIKey.png)
+
+1. <span data-ttu-id="0d9e3-106">**Importante**: guarde la clave en una ubicación segura porque después no se puede volver a copiar.</span><span class="sxs-lookup"><span data-stu-id="0d9e3-106">**Important**: Save your key in a secure location because you cannot copy the key again later on.</span></span> <span data-ttu-id="0d9e3-107">Si vuelve a la página de clave de API, ha de volver a generar la clave para copiarla.</span><span class="sxs-lookup"><span data-stu-id="0d9e3-107">If you return to the API key page, you need to regenerate the key to copy it.</span></span> <span data-ttu-id="0d9e3-108">También puede quitar la clave de API si ya no quiere insertar paquetes a través de la CLI.</span><span class="sxs-lookup"><span data-stu-id="0d9e3-108">You can also remove the API key if you no longer want to push packages via the CLI.</span></span>
