@@ -3,7 +3,7 @@ title: Formas de instalar paquetes NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/30/2018
+ms.date: 02/12/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: 
@@ -12,11 +12,11 @@ keywords: instalar NuGet, consumo de paquetes NuGet, instalar paquetes NuGet, re
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e48bbe813168e773bc46b7fe25af29785ff75df
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 3bae03e148a366388c10d08e83c89dac6ff56d06
+ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>Distintas formas de instalar un paquete NuGet
 
@@ -35,7 +35,10 @@ En general, NuGet hace lo siguiente cuando se le pide que instale un paquete:
 
 1. Adquirir el paquete:
     - Se comprueba si el paquete solicitado ya existe en una caché (vea [Administrar la memoria caché de NuGet](managing-the-nuget-cache.md)).
-    - Si el paquete no está en la caché, se intenta descargar el paquete desde los orígenes incluidos en los archivos de configuración, comenzando por el primero de la lista. Este comportamiento permite usar fuentes privadas de paquetes antes de buscar un paquete en nuget.org (vea [Configuración del comportamiento de NuGet](configuring-nuget-behavior.md)).
+    - Si el paquete no está en la caché, se intenta descargar el paquete desde los orígenes incluidos en los [archivos de configuración](Configuring-NuGet-Behavior.md).
+      - Para los proyectos que usan el formato de referencia `packages.config`, NuGet usa el orden de los orígenes en la configuración.
+      - Para los proyectos que usan el formato PackageReference, NuGet comprueba primero los orígenes de las carpetas locales, luego los orígenes de los recursos compartidos de red y, finalmente, los orígenes de HTTP (Internet).
+      - En general, el orden en el que NuGet comprueba los orígenes no es especialmente significativo, porque cualquier paquete con un número de versión y un identificador específico es exactamente el mismo independientemente del origen en el que se encuentre.
     - Si el paquete se adquiere correctamente de uno de los orígenes, NuGet lo agrega a la caché. De lo contrario, no se lleva a cabo la instalación.
 
 1. Expanda el paquete en el proyecto.
