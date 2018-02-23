@@ -13,11 +13,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 56cb9d5b40bbfbd722e611e0e86945eddbe9d19a
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: c52d0a7c0da507cb9688c8a7b2c4eaf54a8ca5c2
+ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -94,7 +94,7 @@ Estos elementos pueden aparecer dentro de un elemento `<metadata>`.
 | **owners** | Lista separada por comas de los creadores del paquete usando nombres de perfil en nuget.org. Suele ser la misma lista que en `authors` y se ignora al cargar el paquete en nuget.org. Vea [Administrar los propietarios de paquetes en nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). |
 | **projectUrl** | Una dirección URL de la página principal del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org. |
 | **licenseUrl** | Dirección URL de la licencia del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org. |
-| **iconUrl** | Dirección URL para una imagen de 64 x 64 con fondo transparente para usarla como icono para el paquete en la visualización de la interfaz de usuario. Asegúrese de que este elemento contiene la *dirección URL directa a la imagen* y no la dirección URL de una página web que contiene la imagen. Por ejemplo, para usar una imagen de GitHub, use la dirección URL de archivo sin formato, como `https://github.com/<username>/<repository>/raw/<branch>/<logo.png>`. |
+| **iconUrl** | Dirección URL para una imagen de 64 x 64 con fondo transparente para usarla como icono para el paquete en la visualización de la interfaz de usuario. Asegúrese de que este elemento contiene la *dirección URL directa a la imagen* y no la dirección URL de una página web que contiene la imagen. Por ejemplo, para utilizar una imagen de GitHub, use el archivo sin formato de dirección URL como *https://github.com/\<nombre de usuario\>/\<repositorio\>/raw/\<rama\> / \<logo.png\>*. |
 | **requireLicenseAcceptance** | Valor booleano que especifica si el cliente debe pedir al consumidor que acepte la licencia del paquete antes de instalarlo. |
 | **developmentDependency** | *(2.8+)* Valor booleano que especifica si el paquete se debe marcar como una dependencia de solo desarrollo, que impide que el paquete se incluya como una dependencia en otros paquetes. |
 | **summary** | Descripción breve del paquete para su visualización en la interfaz de usuario. Si se omite, se usará una versión truncada de `description`. |
@@ -108,7 +108,7 @@ Estos elementos pueden aparecer dentro de un elemento `<metadata>`.
 
 | Elemento | Descripción |
 | --- | --- |
-**packageTypes** | *(3.5 +)*  Una colección de cero o más `<packageType>` elementos especificando el tipo del paquete si es distinto de un paquete de dependencia tradicional. Cada tipo de paquete tiene atributos de *name* y *version*. Vea [Establecimiento de un tipo de paquete](../create-packages/creating-a-package.md#setting-a-package-type). |
+**packageTypes** | *(3.5+)* Colección de cero o más elementos `<packageType>` que especifican el tipo del paquete si es distinto de un paquete de dependencias tradicional. Cada tipo de paquete tiene atributos de *name* y *version*. Vea [Establecimiento de un tipo de paquete](../create-packages/creating-a-package.md#setting-a-package-type). |
 | **dependencies** | Colección de cero o más elementos `<dependency>` que especifican las dependencias del paquete. Cada dependencia tiene atributos de *id*, *version*, *include* (3.x+) y *exclude* (3.x+). Vea [Dependencias](#dependencies) a continuación. |
 | **frameworkAssemblies** | *(1.2+)* Colección de cero o más elementos `<frameworkAssembly>` que identifican las referencias de ensamblado de .NET Framework que requiere este paquete, lo que garantiza que se agreguen las referencias a los proyectos que consumen el paquete. Cada frameworkAssembly tiene atributos *assemblyName* y *targetFramework*. Vea [Referencias de ensamblado de plataforma](#specifying-framework-assembly-references-gac) a continuación. |
 | **references** | *(1.5+)* Colección de cero o más elementos `<reference>` que nombran ensamblados en la carpeta `lib` del paquete que se agregan como referencias de proyecto. Cada referencia tiene un atributo *file*. `<references>` también puede contener un elemento `<group>` con un atributo *targetFramework*, que contiene elementos `<reference>`. Si se omite, se incluyen todas las referencias de `lib`. Vea [Referencias de ensamblado explícitas](#specifying-explicit-assembly-references) a continuación. |
@@ -328,7 +328,7 @@ Para omitir este comportamiento automático y controlar explícitamente los arch
 </files>
 ```
 
-Con NuGet 2.x y versiones anteriores, así como en los proyectos que usan `packages.config`, el elemento `<files>` también se usa para incluir archivos de contenido inmutable cuando se instala un paquete. Con NuGet 3.3 + y proyectos PackageReference, la `<contentFiles>` elemento se usa en su lugar. Vea [Incluir archivos de contenido](#including-content-files) a continuación para más información.
+Con NuGet 2.x y versiones anteriores, así como en los proyectos que usan `packages.config`, el elemento `<files>` también se usa para incluir archivos de contenido inmutable cuando se instala un paquete. Con NuGet 3.3+ y los proyectos que usan PackageReference, se usa el elemento `<contentFiles>` en su lugar. Vea [Incluir archivos de contenido](#including-content-files) a continuación para más información.
 
 ### <a name="file-element-attributes"></a>Atributos del elemento File
 
@@ -413,7 +413,7 @@ Los archivos de contenido son archivos inmutables que un paquete tiene que inclu
 - Scripts que se deben incluir con la salida de la compilación del proyecto
 - Archivos de configuración del paquete que se debe incluir en el proyecto pero que no necesitan cambios específicos del proyecto
 
-Los archivos de contenido se incluyen en un paquete mediante el elemento `<files>`, especificando la carpeta `content` en el atributo `target`. Sin embargo, estos archivos se omiten cuando se instala el paquete en un proyecto mediante PackageReference, que se usa en su lugar el `<contentFiles>` elemento.
+Los archivos de contenido se incluyen en un paquete mediante el elemento `<files>`, especificando la carpeta `content` en el atributo `target`. Pero estos archivos se ignoran cuando el paquete se instala en un proyecto que usa PackageReference, que utiliza el elemento `<contentFiles>` en su lugar.
 
 Para lograr la máxima compatibilidad con los proyectos de consumo, un paquete idealmente especifica los archivos de contenido en ambos elementos.
 
@@ -544,7 +544,7 @@ Estos archivos se especifican con un conjunto de atributos que describen cómo s
 | **exclude** | Una lista delimitada por punto y coma de archivos o patrones de archivo que se deben excluir de la ubicación `src`. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
 | **buildAction** | Acción de compilación que se debe asignar al elemento de contenido para MSBuild, como `Content`, `None`, `Embedded Resource`, `Compile`, etc. El valor predeterminado es `Compile`. |
 | **copyToOutput** | Valor booleano que indica si se deben copiar los elementos de contenido en la carpeta de salida de la compilación. El valor predeterminado es false. |
-| **flatten** | Valor booleano que indica si se deben copiar los elementos de contenido en una carpeta en la salida de la compilación (true) o si se debe conservar la estructura de carpetas del paquete (false). Esta marca solo funciona cuando copyToOutput marca está establecida en true. El valor predeterminado es false. |
+| **flatten** | Valor booleano que indica si se deben copiar los elementos de contenido en una carpeta en la salida de la compilación (true) o si se debe conservar la estructura de carpetas del paquete (false). Esta marca solo funciona cuando la marca copyToOutput está establecida en true. El valor predeterminado es false. |
 
 Al instalar un paquete, NuGet aplica los elementos secundarios de `<contentFiles>` de arriba abajo. Si hay varias entradas que coinciden con el mismo archivo, se aplicarán todas las entradas. La entrada de nivel superior invalida las entradas inferiores si hay un conflicto para el mismo atributo.
 

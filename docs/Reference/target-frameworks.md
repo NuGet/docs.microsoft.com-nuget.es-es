@@ -13,11 +13,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: dbeec1d3332571d8e9616dfe9675b5fcf3c85589
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 7e3621f01312e3b4fdbef116e5044869416b851c
+ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="target-frameworks"></a>Versiones de .NET Framework de destino
 
@@ -129,7 +129,7 @@ La serie de monikers `dotnet` se debe usar en NuGet 3.3 y en versiones anteriore
 ## <a name="portable-class-libraries"></a>Bibliotecas de clases portables
 
 > [!Warning]
-> **No se recomiendan las PCL**. Aunque se admiten las PCL, los autores de paquetes deben admitir .NET Standard. .NET Platform Standard es una evolución de las PCL y representa la portabilidad de archivos binarios entre plataformas mediante un moniker único que no está vinculado a ningún elemento estático, como los monikers *portátil-a+b+c*.
+> **No se recomiendan las PCL**. Aunque se admiten las PCL, los autores de paquetes deben admitir .NET Standard. El estándar para la plataforma de .NET es una evolución del PCLs y representa binario portabilidad entre plataformas, mediante un moniker único que no está vinculado a una biblioteca estática como *portátil-a + b + c* monikers.
 
 Para definir una plataforma de destino que haga referencia a varias plataformas de destino secundarias, use la palabra clave `portable` para prefijar la lista de las plataformas a las que se hace referencia. Evite incluir artificialmente plataformas adicionales que no estén directamente compiladas, ya que puede provocar efectos secundarios imprevistos en esas plataformas.
 
