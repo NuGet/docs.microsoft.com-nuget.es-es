@@ -13,11 +13,11 @@ keywords: Consola de administrador, comandos de NuGet Powershell, referencia de 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f5f6b3dffb27af510b750650561cdff597c927e0
-ms.sourcegitcommit: a40a6ce6897b2d9411397b2e29b1be234eb6e50c
+ms.openlocfilehash: f01c990d12392795e90e95e4efe66c6051011c51
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>Paquete de instalación (consola de administrador de paquetes en Visual Studio)
 
@@ -39,8 +39,6 @@ En NuGet 2.8 + `Install-Package` puede degradar un paquete existente en el proye
 Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 ```
 
-NuGet 2.7 y versiones anterior, produce un error que indica que ya está instalada una versión más reciente.
-  
 ## <a name="parameters"></a>Parámetros
 
 | Parámetro | Descripción |

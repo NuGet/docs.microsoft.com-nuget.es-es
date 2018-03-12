@@ -13,15 +13,15 @@ ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: bee215fcc88b03dbdde6c15d1583898bdf205952
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: f74ea3c772a129f4b9cd286a77cf3e88eba2d33b
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="package-id-prefix-reservation"></a>Reserva de prefijo de Id. de paquete
 
-Son los propietarios de paquetes puede reservar y proteger su identidad al reservar los prefijos de identificador. Los consumidores de paquete son siempre con información adicional al consumir paquetes que el paquete consumen no sean engañosos en sus propiedades de identificación. 
+Los propietarios de paquetes pueden reservar y proteger su identidad al reservar los prefijos de identificador. Los consumidores de paquete son siempre con información adicional al consumir paquetes que el paquete consumen no sean engañosos en sus propiedades de identificación. 
 
 [NuGet.org](https://www.nuget.org/) y Visual Studio 2017 versión 15,4 o una versión posterior se muestra un indicador visual para los paquetes que se envían los propietarios de con un prefijo de Id. de paquete reservado, siempre y cuando el paquete coincide con el identificador reservado prefijo de patrón de nomenclatura. La siguiente referencia explica lo que conlleva la reserva de prefijo de Id., y cómo puede aplicar un propietario para un prefijo de identificador.
 
