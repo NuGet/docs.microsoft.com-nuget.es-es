@@ -26,6 +26,7 @@
 ## [Paquetes de versión preliminar](create-packages/prerelease-packages.md)
 ## [Paquetes nativos](create-packages/native-packages.md)
 ## [Paquetes de símbolos](create-packages/symbol-packages.md)
+## [Firma de paquetes](create-packages/sign-a-package.md)
 ## [Publicar un paquete](create-packages/publish-a-package.md)
 ## Guías
 ### [Crear paquetes UWP](guides/create-uwp-packages.md)
@@ -51,9 +52,11 @@
 ### [push](tools/cli-ref-push.md)
 ### [restore](tools/cli-ref-restore.md)
 ### [setapikey](tools/cli-ref-setapikey.md)
+### [sign](tools/cli-ref-sign.md)
 ### [sources](tools/cli-ref-sources.md)
 ### [spec](tools/cli-ref-spec.md)
 ### [update](tools/cli-ref-update.md)
+### [verify](tools/cli-ref-verify.md)
 ### [Variables de entorno](tools/cli-ref-environment-variables.md)
 ## [Interfaz de usuario del administrador de paquetes](tools/package-manager-ui.md)
 ## [Consola del Administrador de paquetes](tools/package-manager-console.md)
@@ -79,6 +82,7 @@
 ## [Errores y advertencias](reference/errors-and-warnings.md)
 ## [Reserva de prefijo de id.](reference/id-prefix-reservation.md)
 ## [SDK cliente de NuGet](reference/nuget-client-sdk.md)
+## [Referencia de paquetes firmados](reference/signed-packages-reference.md)
 ## Extensibilidad
 ### [Proveedores de credenciales de NuGet para Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [Proveedores de credenciales de nuget.exe](reference/extensibility/nuget-exe-credential-providers.md)
@@ -108,9 +112,9 @@
 ## [Ecosistema](policies/ecosystem.md)
 ## [Resolución de conflictos](policies/dispute-resolution.md)
 ## [Eliminación de paquetes](policies/deleting-packages.md)
-# [Repositorios GitHub](https://github.com/NuGet)
 # Notas de la versión
 ## [Problemas conocidos](release-notes/known-issues.md)
+## [NuGet 4.6 RTM](release-notes/NuGet-4.6-RTM.md)
 ## [NuGet 4.5 RTM](release-notes/NuGet-4.5-RTM.md)
 ## [NuGet 4.4 RTM](release-notes/NuGet-4.4-RTM.md)
 ## [NuGet 4.3 RTM](release-notes/NuGet-4.3-RTM.md)
