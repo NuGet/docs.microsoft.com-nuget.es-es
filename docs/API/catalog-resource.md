@@ -12,15 +12,15 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: 
 description: "El catálogo es un índice de todos los paquetes creados y eliminados en nuget.org."
-keywords: "Catálogo de API de NuGet V3, registro de transacciones de nuget.org, replique NuGet.org, clonar NuGet.org, registro solo de adición de NuGet.org"
+keywords: "Catálogo de API de NuGet V3, registro de transacciones de nuget.org, replicar nuget.org, clon nuget.org, registro solo de adición de nuget.org"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: d1a24be68a60085a40361c374ffb34dc221f09c4
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: be30b21d488c323c439a59fff290a95adaefd902
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="catalog"></a>Catálogo
 
@@ -50,7 +50,7 @@ Todas las direcciones URL se encuentra en el soporte del catálogo de recursos �
 
 ## <a name="catalog-index"></a>Índice del catálogo
 
-El índice del catálogo es un documento en una ubicación conocida que tiene una lista de elementos de catálogo, ordenados cronologically. Es el punto de entrada del recurso de catálogo.
+El índice del catálogo es un documento en una ubicación conocida que tiene una lista de elementos de catálogo, ordenados cronológicamente. Es el punto de entrada del recurso de catálogo.
 
 El índice se compone de páginas del catálogo. Cada página de catálogo contiene elementos de catálogo. Cada elemento de catálogo representa un evento relativas a un único paquete en un momento dado. Un elemento de catálogo puede representar un paquete que se creó, dados de baja, poner o eliminado del origen del paquete. Mediante el procesamiento de los elementos de catálogo en orden cronológico, el cliente puede crear una vista actualizada de cada paquete que existe en el origen del paquete V3.
 
@@ -128,7 +128,7 @@ parent          | cadena           | sí      | Una dirección URL para el índi
 
 Cada elemento de la `items` matriz es un objeto con algunos detalles mínimos sobre el elemento de catálogo. Estos objetos de elemento no contienen todos los datos del elemento de catálogo. El orden de los elementos de la página `items` matriz no está definida. Los elementos se pueden ordenar por el cliente en la memoria con sus `commitTimeStamp` propiedad.
 
-El número de elementos de catálogo en una página se define mediante la implementación del servidor. Para nuget.org, a lo sumo hay 550 elementos en cada página, aunque el número real puede ser menor algunos dependong de páginas en el tamaño del lote de confirmación siguiente en el punto en el tiempo.
+El número de elementos de catálogo en una página se define mediante la implementación del servidor. Para nuget.org, a lo sumo hay 550 elementos en cada página, aunque el número real puede ser menor para algunas páginas según el tamaño del lote de confirmación siguiente en el punto en el tiempo.
 
 Cuando se Introducción nuevos elementos, el `count` es objetos de elemento de catálogo incrementado y nuevos aparecen en la `items` matriz.
 
@@ -164,7 +164,7 @@ Para obtener más detalles sobre cada tipo de qué significa, consulte el [corre
 
 ## <a name="catalog-leaf"></a>Hoja de catálogo
 
-La hoja de catálogo contiene metadatos sobre un identificador de paquete específico y la versión en algún momento en el tiempo. Es un documento que se obtienen mediante la `@id` valor se encuentra en una página de catálogo. La dirección URL a una hoja de catálogo no está diseñada para ser predictedable y debe detectarse mediante una página de catálogo.
+La hoja de catálogo contiene metadatos sobre un identificador de paquete específico y la versión en algún momento en el tiempo. Es un documento que se obtienen mediante la `@id` valor se encuentra en una página de catálogo. La dirección URL a una hoja de catálogo no está diseñada para ser predecibles y debe detectarse mediante una página de catálogo.
 
 El documento de hoja de catálogo es un objeto JSON con las siguientes propiedades:
 
@@ -226,12 +226,12 @@ El paquete `version` propiedad es la cadena de versión completa, normalizado. E
 
 El `created` marca de tiempo es cuando el paquete se recibió en primer lugar por el origen del paquete, que suele ser poco tiempo antes de la marca de tiempo de confirmación del elemento de catálogo.
 
-El `packageHashAlgorithm` es una cadena definida por el represeting de implementación de servidor el algoritmo hash utilizado para generar el `packageHash`. NuGet.org siempre utilizado la `packageHashAlgorithm` valo `SHA512`.
+El `packageHashAlgorithm` es una cadena definida por la implementación del servidor que representa el algoritmo hash utilizado para generar el `packageHash`. NuGet.org siempre utilizado la `packageHashAlgorithm` valo `SHA512`.
 
 El `published` marca de tiempo es la hora en que se incluyó por última cuando el paquete.
 
 > [!Note]
-> En nuget.org, el `published` valor se establece en año 1900 cuando es que no figuran en el paquete.
+> En nuget.org, el `published` valor se establece en el año 1900 cuando es que no figuran en el paquete.
 
 #### <a name="sample-request"></a>Solicitud de ejemplo
 
@@ -307,7 +307,7 @@ Con este algoritmo básico, la implementación del cliente puede crear una vista
 
 ### <a name="dependent-cursors"></a>Cursores dependientes
 
-Supongamos que hay dos clientes de catálogo que tienen una dependencia inherant donde depende de salida de un cliente en la salida de otro cliente. 
+Supongamos que hay dos clientes de catálogo que tienen una dependencia inherente donde depende de salida de un cliente en la salida de otro cliente. 
 
 #### <a name="example"></a>Ejemplo
 
@@ -317,7 +317,7 @@ Dado que ambos recursos están integrados en el catálogo, el cursor del cliente
 
 #### <a name="algorithm"></a>Algoritmo
 
-Para implementar esta restricción, sencillo modificar el algoritmo anterior para ser:
+Para implementar esta restricción, basta con modificar el algoritmo anterior para ser:
 
 1. Capturar el valor de cursor registrados de un almacén local.
 1. Descargue y deserializar el índice del catálogo.

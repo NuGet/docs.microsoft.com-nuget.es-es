@@ -12,17 +12,17 @@ keywords: paquetes de lista de referencia de la lista de NuGet, comando
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5a1f68aaffd26a0f903aa3a7a4a450a0121191c3
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 7e0945b9e64a15a839f62bde0a0ef8f3d83335d4
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="list-command-nuget-cli"></a>comando de lista (NuGet CLI)
 
 **Se aplica a:** consumo de paquete, publicación &bullet; **versiones admitidas:** todos
 
-Muestra una lista de paquetes de un origen determinado. Si no se especifica ningún origen, todos los orígenes definen en el archivo de configuración global, `%AppData%\NuGet\NuGet.Config`, se utilizan. Si `NuGet.Config` no especifica ningún origen, a continuación, `list` utiliza la fuente predeterminada (nuget.org).
+Muestra una lista de paquetes de un origen determinado. Si no se especifica ningún origen, todos los orígenes definen en el archivo de configuración global, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config`, se utilizan. Si `NuGet.Config` no especifica ningún origen, a continuación, `list` utiliza la fuente predeterminada (nuget.org).
 
 ## <a name="usage"></a>Uso
 
@@ -30,14 +30,14 @@ Muestra una lista de paquetes de un origen determinado. Si no se especifica ning
 nuget list [search terms] [options]
 ```
 
-donde los términos de búsqueda opcional filtrará la lista que aparece. Términos de búsqueda se aplican a los nombres de paquetes, etiquetas y descripciones de paquete.
+donde los términos de búsqueda opcional filtrará la lista que aparece. Términos de búsqueda se aplican a los nombres de paquetes, etiquetas y descripciones de paquete tal como aparecen cuando se usen en nuget.org.
 
 ## <a name="options"></a>Opciones
 
 | Opción | Descripción |
 | --- | --- |
 | AllVersions | Enumerar todas las versiones de un paquete. De forma predeterminada, se muestra solo la versión más reciente del paquete. |
-| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
+| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux) se utiliza.|
 | ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |
 | IncludeDelisted | *(3.2 +)*  Muestra los paquetes que no figuran en. |
@@ -53,5 +53,7 @@ Consulte también [variables de entorno](cli-ref-environment-variables.md)
 ```cli
 nuget list
 
-nuget list -Verbosity detailed -AllVersions
+nuget list chinese korean -Verbosity detailed
+
+nuget list couchbase -AllVersions
 ```

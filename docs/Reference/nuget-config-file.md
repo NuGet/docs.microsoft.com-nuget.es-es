@@ -12,11 +12,11 @@ keywords: "Archivo NuGet.Config, referencia de configuración de NuGet, opciones
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c76ebcb06adc5e5b862647de6b6f4e19bde87b91
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.openlocfilehash: 6a5be1ebcca0accafcdaf32f0b1b7ca66ec53425
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="nugetconfig-reference"></a>Referencia de NuGet.Config
 
@@ -86,8 +86,6 @@ Configura si NuGet realiza redirecciones de enlaces automáticas cuando se insta
 ```
 
 ## <a name="packagerestore-section"></a>Sección packageRestore
-
-*Pasa por alto en todas las versiones actuales (2.7 +)*
 
 Controla la restauración del paquete durante las compilaciones.
 
@@ -159,7 +157,7 @@ Almacena nombres de usuario y contraseñas para los orígenes, normalmente espec
 
 **Ejemplo:**
 
-En el archivo de configuración, el elemento `<packageSourceCredentials>` contiene nodos secundarios para cada nombre de origen aplicable (los espacios en el nombre se reemplazan por `_x0020+`). Es decir, para los orígenes denominados "Contoso" y "Test Source", el archivo de configuración contiene lo siguiente cuando se usan contraseñas cifradas:
+En el archivo de configuración, el elemento `<packageSourceCredentials>` contiene nodos secundarios para cada nombre de origen aplicable (los espacios en el nombre se reemplazan por `_x0020_`). Es decir, para los orígenes denominados "Contoso" y "Test Source", el archivo de configuración contiene lo siguiente cuando se usan contraseñas cifradas:
 
 ```xml
 <packageSourceCredentials>

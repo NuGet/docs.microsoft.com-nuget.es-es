@@ -12,18 +12,17 @@ keywords: "NuGet orígenes de referencia, orígenes de comando"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1e8204f5e1bf712f65d8efb14ca2a4bd802e3f90
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.openlocfilehash: 139a9494e1ea898c90ce79d5990530fbe08642bd
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="sources-command-nuget-cli"></a>comando de fuentes (NuGet CLI)
 
 **Se aplica a:** consumo de paquete, publicación &bullet; **versiones admitidas:** todos
 
-Administra la lista de orígenes que se encuentra en el archivo de configuración de ámbito de usuario o un archivo de configuración especificado. El archivo de configuración de ámbito de usuario se encuentra en `%APPDATA%\NuGet\NuGet.Config` en Windows y en `~/.nuget/NuGet.Config` en Mac/Linux.
-
+Administra la lista de orígenes que se encuentra en el archivo de configuración de ámbito de usuario o un archivo de configuración especificado. El archivo de configuración de ámbito de usuario se encuentra en `%APPDATA%\NuGet\NuGet.Config` (Windows) y `~/.nuget/NuGet/NuGet.Config` (Mac o Linux).
 
 Tenga en cuenta que la dirección URL de origen de nuget.org es `https://api.nuget.org/v3/index.json`.
 
@@ -39,7 +38,7 @@ donde `<operation>` es uno de los *enumerar, agregar, quitar, habilitar, deshabi
 
 | Opción | Descripción |
 | --- | --- |
-| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
+| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux) se utiliza.|
 | ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | Formato | Se aplica a la `list` acción y puede ser `Detailed` (valor predeterminado) o `Short`. |
 | Ayuda | Muestra información de ayuda para el comando. |

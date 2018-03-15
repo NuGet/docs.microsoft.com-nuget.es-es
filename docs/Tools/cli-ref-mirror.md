@@ -12,11 +12,11 @@ keywords: referencia de reflejado de NuGet, comando espejo
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 80b8f9a3b74030ffd3f1c7b784204d98be67d684
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 0c1969cc04b2e2cead5e9dadf9739fdabdf65f6c
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="mirror-command-nuget-cli"></a>comando reflejado (NuGet CLI)
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 02/14/2018
 Refleja un paquete y sus dependencias de los repositorios de origen especificada en el repositorio de destino.
 
 > [!NOTE]
-> Para habilitar este comando para las versiones de NuGet antes 3.2, vaya a [https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases), seleccione la versión estable más reciente, descargue `NuGet.ServerExtensions.dll` y `Nuget-Signed.exe` en el disco local y el nombre `Nuget-Signed.exe` a `nuget.exe`.
+> Para habilitar este comando para las versiones de NuGet antes 3.2, vaya a [ https://nuget.codeplex.com/releases ](https://nuget.codeplex.com/releases), seleccione la versión estable más reciente, descargue `NuGet.ServerExtensions.dll` y `Nuget-Signed.exe` en el disco local y el cambio de nombre `Nuget-Signed.exe` a `nuget.exe`.
 
 ## <a name="usage"></a>Uso
 
@@ -43,12 +43,12 @@ Si el repositorio de destino está en `https://machine/repo` que se esté ejecut
 
 | Opción | Descripción |
 | --- | --- |
-| apiKey | La clave de API para el repositorio de destino. Si no está presente, el especificado en *%AppData%\NuGet\NuGet.Config* se utiliza. |
+| apiKey | La clave de API para el repositorio de destino. Si no está presente, se especificó en el archivo de configuración se usa (`%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux)). |
 | Ayuda | Muestra información de ayuda para el comando. |
 | NoCache | Impide que NuGet use paquetes de memorias caché del equipo local. |
 | NOOP | Registra qué están a cargo pero no lleva a cabo las acciones; se da por supuesto se realizó correctamente para las operaciones de inserción. |
 | Versión preliminar | Incluye paquetes de versión preliminar de la operación de creación de reflejo. |
-| Origen | Una lista de orígenes de paquetes para crear el reflejo. Si no se especifica ningún origen de los definen en *%AppData%\NuGet\NuGet.Config* se usan, volverá al valor predeterminado nuget.org si no se especifica ninguno. |
+| Origen | Una lista de orígenes de paquetes para crear el reflejo. Si no se especifica ningún origen de los definen en el archivo de configuración (vea ApiKey anterior) se usan, volverá al valor predeterminado nuget.org si no se especifica ninguno. |
 | Timeout | Especifica el tiempo de espera, en segundos, para insertar a un servidor. El valor predeterminado es 300 segundos (5 minutos). |
 | Versión | La versión del paquete para instalar. Si no se especifica, se refleja la versión más reciente. |
 

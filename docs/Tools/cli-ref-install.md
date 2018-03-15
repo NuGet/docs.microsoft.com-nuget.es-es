@@ -12,11 +12,11 @@ keywords: "NuGet instalar referencia, el comando de paquete de instalación"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e824b08486704371eebefb964f86315d82fc222
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 8d5f53c833fb42c9fe37d0629eab33e8f0bc70d7
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-command-nuget-cli"></a>Instale el comando (NuGet CLI)
 
@@ -27,7 +27,7 @@ Descarga e instala un paquete en un proyecto, de forma predeterminada en la carp
 > [!Tip]
 > Para descargar un paquete directamente fuera del contexto de un proyecto, visite la página del paquete en [nuget.org](https://www.nuget.org) y seleccione la **descargar** vínculo.
 
-Si no se especifica ningún origen de los indicados en el archivo de configuración global, `%APPDATA%\NuGet\NuGet.Config`, se utilizan. Vea [NuGet configurar comportamiento](../consume-packages/configuring-nuget-behavior.md) para obtener más detalles.
+Si no se especifica ningún origen de los indicados en el archivo de configuración global, `%APPDATA%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux), se utilizan. Vea [NuGet configurar comportamiento](../consume-packages/configuring-nuget-behavior.md) para obtener más detalles.
 
 Si no se especifica ningún paquete específico, `install` instala todos los paquetes que se muestran en el proyecto `packages.config` archivo, lo que similar a [ `restore` ](cli-ref-restore.md).
 
@@ -47,7 +47,7 @@ donde `<packageID>` nombres el paquete que desea instalar (con la versión más 
 
 | Opción | Descripción |
 | --- | --- |
-| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
+| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux) se utiliza.|
 | DependencyVersion | *(4.4 +)*  Especifica una versión concreta, reemplazar el comportamiento predeterminado de la resolución de dependencia. |
 | DisableParallelProcessing | Deshabilita la instalación de varios paquetes en paralelo. |
 | ExcludeVersion | Instala el paquete en una carpeta denominada con solo el nombre del paquete y no el número de versión. |

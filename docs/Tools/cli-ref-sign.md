@@ -12,11 +12,11 @@ keywords: "referencia de inicio de sesión de NuGet, comandos de inicio de sesi�
 ms.reviewer:
 - karann
 - rmpablos
-ms.openlocfilehash: 109b0f6aca0ebaae2ea56fbb45226bc1b14f2ea1
-ms.sourcegitcommit: df7158169e84900d135416cd5e52f937df0beb52
+ms.openlocfilehash: f600a0830472703f40ef62f1b1538c53671703a9
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="sign-command-nuget-cli"></a>comando de inicio de sesión (NuGet CLI)
 
@@ -44,7 +44,7 @@ donde `<package(s)>` es uno o más `.nupkg` archivos.
 | CertificateStoreLocation | Especifica el nombre del uso del almacén de certificados X.509 para buscar el certificado. El valor predeterminado es "CurrentUser", el almacén de certificados X.509 utilizado por el usuario actual. Esta opción debe utilizarse cuando se especifica el certificado a través de las opciones - CertificateSubjectName o - CertificateFingerprint. |
 | CertificateStoreName | Especifica el nombre del almacén de certificados X.509 se utiliza para buscar el certificado. El valor predeterminado es "My", el almacén de certificados X.509 para los certificados personales. Esta opción debe utilizarse cuando se especifica el certificado a través de las opciones - CertificateSubjectName o - CertificateFingerprint. |
 | CertificateSubjectName | Especifica el nombre de sujeto del certificado usado para buscar un almacén de certificados local para el certificado.  La búsqueda es una comparación de cadenas entre mayúsculas y minúsculas con el valor proporcionado, que encontrará todos los certificados con el nombre de sujeto que contenga esa cadena, sin tener en cuenta otros valores del sujeto.  El almacén de certificados puede especificarse mediante opciones NombreAlmacenamientoCertificados - y - CertificateStoreLocation. |
-| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza. |
+| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux) se utiliza.|
 | ForceEnglishOutput | Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | HashAlgorithm | Algoritmo hash que se utilizará para firmar el paquete. El valor predeterminado es SHA256. |
 | Ayuda | Muestra información de ayuda para el comando. |

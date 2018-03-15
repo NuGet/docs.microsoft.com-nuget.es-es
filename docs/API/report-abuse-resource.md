@@ -12,15 +12,15 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: 
 description: "La plantilla de dirección URL de abuso de informes permite a los clientes mostrar un vínculo de abuso del informe en su interfaz de usuario."
-keywords: "Informar de abuso de API de NuGet, queja de archivo de API de NuGet, plantilla de dirección URL de informe NuGet.org"
+keywords: "Informar de abuso de API de NuGet, queja de archivo de API de NuGet, plantilla de dirección URL de informe nuget.org"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: c12be294c71547fbce421c72aa091e0eee15aacd
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: efbe5704e6e6028f9382fea3fe5ec453f573a2e9
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="report-abuse-url-template"></a>Plantilla de dirección URL de informe abuso
 
@@ -35,7 +35,7 @@ Los siguientes `@type` se usan valores:
 Valor de @type                       | Notas
 --------------------------------- | -----
 ReportAbuseUriTemplate/3.0.0-beta | La versión inicial
-ReportAbuseUriTemplate/3.0.0-rc   | Alias de`ReportAbuseUriTemplate/3.0.0-beta`
+ReportAbuseUriTemplate/3.0.0-rc   | Alias de `ReportAbuseUriTemplate/3.0.0-beta`
 
 ## <a name="url-template"></a>Plantilla de dirección URL
 
@@ -58,7 +58,7 @@ nombre        | Tipo    | Obligatorio | Notas
 `{id}`      | cadena  | No       | El identificador del paquete para notificar un abuso para
 `{version}` | cadena  | No       | La versión del paquete para notificar un abuso para
 
-El `{id}` y `{version}` valores interpretados la implementación de servidor deben ser sin distinción de mayúsculas y no sensibles a si se normaliza la versión.
+El `{id}` y `{version}` valores interpretados la implementación de servidor deben ser entre mayúsculas y minúsculas y no sensibles a si se normaliza la versión.
 
 Por ejemplo, plantilla de abuso de nuget.org informe tiene un aspecto similar al siguiente:
 
