@@ -12,11 +12,11 @@ keywords: instalar NuGet, consumo de paquetes de NuGet, instalar paquetes de NuG
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 11b417644a46008f91fdcd5e0ba0a1fcf0bdc0e0
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: accc6d7bb5abff43ffaa083fa55c13cd5b10ce10
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="install-and-use-a-package-using-the-dotnet-cli"></a>Instalar y usar un paquete con la CLI de dotnet
 
@@ -27,7 +27,7 @@ Una vez instalado, haga referencia al paquete en el código con `using <namespac
 > [!Tip]
 > **Comience con nuget.org**: la exploración de nuget.org es la forma en que los desarrolladores de .NET suelen buscar componentes que pueden reutilizar en sus propias aplicaciones. Puede buscar directamente en nuget.org o buscar e instalar paquetes en Visual Studio, tal y como se indica en este artículo.
 
-## <a name="pre-requisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 
 - El [SDK de .NET Core](https://www.microsoft.com/net/download/), que ofrece la herramienta de línea de comandos de `dotnet`.
 
