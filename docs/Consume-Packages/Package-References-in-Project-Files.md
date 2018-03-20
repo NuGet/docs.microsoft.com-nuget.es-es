@@ -1,50 +1,34 @@
 ---
-title: PackageReference de NuGet en archivos de proyecto de Visual Studio | Microsoft Docs
+title: Formato PackageReference de NuGet (referencias de paquete en archivos de proyecto) | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 7/17/2017
+ms.date: 07/17/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 5a554e9d-1266-48c2-92e8-6dd00b1d6810
-description: "Información detallada sobre PackageReference de NuGet en archivos de proyecto compatibles con NuGet 4.0+ y VS2017"
-keywords: Dependencias de paquetes de NuGet, referencias de paquetes, archivos de proyecto, PackageReference, packages.config, project.json, VS2017, Visual Studio 2017, NuGet 4
+description: "Información detallada sobre PackageReference de NuGet en archivos de proyecto compatibles con NuGet 4.0 y versiones posteriores, VS2017 y .NET Core 2.0"
+keywords: Dependencias de paquetes NuGet, referencias de paquetes, archivos de proyecto, PackageReference, packages.config, VS2017, Visual Studio 2017, NuGet 4, .NET Core 2.0
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 275957c94e4a4bb45f359cd48816acf4f286ebad
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 679871a280c158c863e0daf790af1b7cef509943
+ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 02/20/2018
 ---
-# <a name="package-references-packagereference-in-project-files"></a><span data-ttu-id="6d0af-104">Referencias del paquete (PackageReference) en archivos de proyecto</span><span class="sxs-lookup"><span data-stu-id="6d0af-104">Package references (PackageReference) in project files</span></span>
+# <a name="package-references-packagereference-in-project-files"></a><span data-ttu-id="6ed69-104">Referencias del paquete (PackageReference) en archivos de proyecto</span><span class="sxs-lookup"><span data-stu-id="6ed69-104">Package references (PackageReference) in project files</span></span>
 
-<span data-ttu-id="6d0af-105">Las referencias de paquetes, mediante el nodo `PackageReference`, le permiten administrar las dependencias de NuGet directamente dentro de los archivos de proyecto, en lugar de necesitar un archivo `packages.config` o `project.json` independiente.</span><span class="sxs-lookup"><span data-stu-id="6d0af-105">Package references, using the `PackageReference` node, allow you to manage NuGet dependencies directly within project files, rather than needing a separate `packages.config` or `project.json` file.</span></span> <span data-ttu-id="6d0af-106">Este método no afecta a otros aspectos de NuGet; por ejemplo, las opciones de los archivos `NuGet.Config` (incluidos los orígenes de paquetes) se siguen aplicando como se explica en [Configuración del comportamiento de NuGet](Configuring-NuGet-Behavior.md).</span><span class="sxs-lookup"><span data-stu-id="6d0af-106">This method doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Configuring NuGet Behavior](Configuring-NuGet-Behavior.md).</span></span>
+<span data-ttu-id="6ed69-105">Las referencias de paquetes, con el nodo `PackageReference`, administran las dependencias de NuGet directamente en los archivos de proyecto (a diferencia de un archivo `packages.config` independiente).</span><span class="sxs-lookup"><span data-stu-id="6ed69-105">Package references, using the `PackageReference` node, manage NuGet dependencies directly within project files (as opposed to a separate `packages.config` file).</span></span> <span data-ttu-id="6ed69-106">El uso de PackageReference, como así se llama, no afecta a otros aspectos de NuGet; por ejemplo, las opciones de los archivos `NuGet.Config` (incluidos los orígenes de paquetes) se siguen aplicando como se explica en [Configuración del comportamiento de NuGet](configuring-nuget-behavior.md).</span><span class="sxs-lookup"><span data-stu-id="6ed69-106">Using PackageReference, as it's called, doesn't affect other aspects of NuGet; for example, settings in `NuGet.Config` files (including package sources) are still applied as explained in [Configuring NuGet Behavior](configuring-nuget-behavior.md).</span></span>
 
-> [!Important]
-> <span data-ttu-id="6d0af-107">Actualmente, las referencias de paquetes solo se admiten en Visual Studio 2017 para los proyectos de .NET Core, .NET Standard y UWP que tengan como destino Windows 10 Build 15063 (Creators Update).</span><span class="sxs-lookup"><span data-stu-id="6d0af-107">At present, package references are supported in Visual Studio 2017 only, for .NET Core projects, .NET Standard projects, and UWP projects targeting Windows 10 Build 15063 (Creators Update).</span></span>
+<span data-ttu-id="6ed69-107">Con PackageReference, también puede usar las condiciones de MSBuild para elegir referencias de paquetes por plataforma de destino, configuración, plataforma u otras agrupaciones.</span><span class="sxs-lookup"><span data-stu-id="6ed69-107">With PackageReference, you can also use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings.</span></span> <span data-ttu-id="6ed69-108">También le proporciona un control específico sobre las dependencias y el flujo de contenido.</span><span class="sxs-lookup"><span data-stu-id="6ed69-108">It also allows for fine-grained control over dependencies and content flow.</span></span> <span data-ttu-id="6ed69-109">(Para saber más, vea [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md) (Empaquetado y restauración de NuGet como destinos de MSBuild).</span><span class="sxs-lookup"><span data-stu-id="6ed69-109">(See For more details [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md).)</span></span>
 
-<span data-ttu-id="6d0af-108">El enfoque `PackageReference` le permite usar condiciones de MSBuild para elegir referencias de paquetes por plataforma de destino, configuración, plataforma u otras agrupaciones.</span><span class="sxs-lookup"><span data-stu-id="6d0af-108">The `PackageReference` approach allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings.</span></span> <span data-ttu-id="6d0af-109">También le proporciona un control específico sobre las dependencias y el flujo de contenido.</span><span class="sxs-lookup"><span data-stu-id="6d0af-109">It also allows for fine-grained control over dependencies and content flow.</span></span> <span data-ttu-id="6d0af-110">En términos de comportamiento y de [resolución de dependencias](Dependency-Resolution.md), es lo mismo que usar `project.json`.</span><span class="sxs-lookup"><span data-stu-id="6d0af-110">In terms of behavior and [dependency resolution](Dependency-Resolution.md), it's the same as using `project.json`.</span></span>
+<span data-ttu-id="6ed69-110">De forma predeterminada, PackageReference se usa para proyectos de .NET Core, proyectos de .NET Standard y proyectos de UWP que tengan como destino Windows 10 Build 15063 (Creators Update) y versiones posteriores.</span><span class="sxs-lookup"><span data-stu-id="6ed69-110">By default, PackageReference is used for .NET Core projects, .NET Standard projects,  and UWP projects targeting Windows 10 Build 15063 (Creators Update) and later.</span></span> <span data-ttu-id="6ed69-111">Los proyectos completos de .NET Framework admiten PackageReference, pero actualmente tienen como valor predeterminado `packages.config`.</span><span class="sxs-lookup"><span data-stu-id="6ed69-111">.NET full framework projects support PackageReference, but currently default to `packages.config`.</span></span> <span data-ttu-id="6ed69-112">Para usar PackageReference, migre las dependencias de `packages.config` al archivo de proyecto y luego quite packages.config.</span><span class="sxs-lookup"><span data-stu-id="6ed69-112">To use PackageReference, migrate the dependencies from `packages.config` into your project file, then remove packages.config.</span></span>
 
-<span data-ttu-id="6d0af-111">Para más información sobre la integración de MSBuild con referencias de paquetes en los archivos de proyecto, vea [pack y restore de NuGet como destinos de MSBuild](../schema/msbuild-targets.md).</span><span class="sxs-lookup"><span data-stu-id="6d0af-111">For more details on the integration of MSBuild with package references in project files, see [NuGet pack and restore as MSBuild targets](../schema/msbuild-targets.md).</span></span>
+## <a name="adding-a-packagereference"></a><span data-ttu-id="6ed69-113">Agregar una PackageReference</span><span class="sxs-lookup"><span data-stu-id="6ed69-113">Adding a PackageReference</span></span>
 
-## <a name="adding-a-packagereference"></a><span data-ttu-id="6d0af-112">Agregar una PackageReference</span><span class="sxs-lookup"><span data-stu-id="6d0af-112">Adding a PackageReference</span></span>
-
-<span data-ttu-id="6d0af-113">Agregue una dependencia en el archivo de proyecto usando la sintaxis siguiente:</span><span class="sxs-lookup"><span data-stu-id="6d0af-113">Add a dependency in your project file using the following syntax:</span></span>
-
-```xml
-<ItemGroup>
-    <!-- ... -->
-    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />    
-    <!-- ... -->
-</ItemGroup>
-```
-
-## <a name="controlling-dependency-version"></a><span data-ttu-id="6d0af-114">Controlar la versión de una dependencia</span><span class="sxs-lookup"><span data-stu-id="6d0af-114">Controlling dependency version</span></span>
-
-<span data-ttu-id="6d0af-115">La convención para especificar la versión de un paquete es la misma que cuando se usa `packages.config` o `project.json`:</span><span class="sxs-lookup"><span data-stu-id="6d0af-115">The convention for specifying the version of a package is the same as when using `packages.config` or `project.json`:</span></span>
+<span data-ttu-id="6ed69-114">Agregue una dependencia en el archivo de proyecto usando la sintaxis siguiente:</span><span class="sxs-lookup"><span data-stu-id="6ed69-114">Add a dependency in your project file using the following syntax:</span></span>
 
 ```xml
 <ItemGroup>
@@ -54,11 +38,23 @@ ms.lasthandoff: 01/05/2018
 </ItemGroup>
 ```
 
-<span data-ttu-id="6d0af-116">En el ejemplo anterior, 3.6.0 hace referencia a cualquier versión que sea > = 3.6.0 con preferencia para la versión más antigua, tal como se describe en [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards) (Control de versiones de paquetes).</span><span class="sxs-lookup"><span data-stu-id="6d0af-116">In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards).</span></span>
+## <a name="controlling-dependency-version"></a><span data-ttu-id="6ed69-115">Controlar la versión de una dependencia</span><span class="sxs-lookup"><span data-stu-id="6ed69-115">Controlling dependency version</span></span>
 
-## <a name="floating-versions"></a><span data-ttu-id="6d0af-117">Versiones flotantes</span><span class="sxs-lookup"><span data-stu-id="6d0af-117">Floating Versions</span></span>
+<span data-ttu-id="6ed69-116">La convención para especificar la versión de un paquete es la misma que cuando se usa `packages.config`:</span><span class="sxs-lookup"><span data-stu-id="6ed69-116">The convention for specifying the version of a package is the same as when using `packages.config`:</span></span>
 
-<span data-ttu-id="6d0af-118">Las [versiones flotantes](../consume-packages/dependency-resolution.md#floating-versions) son compatibles con `PackageReference`:</span><span class="sxs-lookup"><span data-stu-id="6d0af-118">[Floating versions](../consume-packages/dependency-resolution.md#floating-versions) are supported with `PackageReference`:</span></span>
+```xml
+<ItemGroup>
+    <!-- ... -->
+    <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
+    <!-- ... -->
+</ItemGroup>
+```
+
+<span data-ttu-id="6ed69-117">En el ejemplo anterior, 3.6.0 hace referencia a cualquier versión que sea > = 3.6.0 con preferencia para la versión más antigua, tal como se describe en [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards) (Control de versiones de paquetes).</span><span class="sxs-lookup"><span data-stu-id="6ed69-117">In the example above, 3.6.0 means any version that is >=3.6.0 with preference for the lowest version, as described on [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards).</span></span>
+
+## <a name="floating-versions"></a><span data-ttu-id="6ed69-118">Versiones flotantes</span><span class="sxs-lookup"><span data-stu-id="6ed69-118">Floating Versions</span></span>
+
+<span data-ttu-id="6ed69-119">Las [versiones flotantes](../consume-packages/dependency-resolution.md#floating-versions) son compatibles con `PackageReference`:</span><span class="sxs-lookup"><span data-stu-id="6ed69-119">[Floating versions](../consume-packages/dependency-resolution.md#floating-versions) are supported with `PackageReference`:</span></span>
 
 ```xml
 <ItemGroup>
@@ -69,9 +65,9 @@ ms.lasthandoff: 01/05/2018
 </ItemGroup>
 ```
 
-## <a name="controlling-dependency-assets"></a><span data-ttu-id="6d0af-119">Controlar los recursos de dependencias</span><span class="sxs-lookup"><span data-stu-id="6d0af-119">Controlling dependency assets</span></span>
+## <a name="controlling-dependency-assets"></a><span data-ttu-id="6ed69-120">Controlar los recursos de dependencias</span><span class="sxs-lookup"><span data-stu-id="6ed69-120">Controlling dependency assets</span></span>
 
-<span data-ttu-id="6d0af-120">Puede que esté usando una dependencia únicamente como instrumento de desarrollo y no quiera exponerla a proyectos que consumirán el paquete.</span><span class="sxs-lookup"><span data-stu-id="6d0af-120">You might be using a dependency purely as a development harness and might not want to expose that to projects that will consume your package.</span></span> <span data-ttu-id="6d0af-121">En este escenario, puede usar los metadatos `PrivateAssets` para controlar este comportamiento.</span><span class="sxs-lookup"><span data-stu-id="6d0af-121">In this scenario, you can use the `PrivateAssets` metadata to control this behavior.</span></span>
+<span data-ttu-id="6ed69-121">Puede que esté usando una dependencia únicamente como instrumento de desarrollo y no quiera exponerla a proyectos que consumirán el paquete.</span><span class="sxs-lookup"><span data-stu-id="6ed69-121">You might be using a dependency purely as a development harness and might not want to expose that to projects that will consume your package.</span></span> <span data-ttu-id="6ed69-122">En este escenario, puede usar los metadatos `PrivateAssets` para controlar este comportamiento.</span><span class="sxs-lookup"><span data-stu-id="6ed69-122">In this scenario, you can use the `PrivateAssets` metadata to control this behavior.</span></span>
 
 ```xml
 <ItemGroup>
@@ -85,29 +81,28 @@ ms.lasthandoff: 01/05/2018
 </ItemGroup>
 ```
 
-<span data-ttu-id="6d0af-122">Las siguientes etiquetas de metadatos controlan los recursos de dependencia:</span><span class="sxs-lookup"><span data-stu-id="6d0af-122">The following metadata tags control dependency assets:</span></span>
+<span data-ttu-id="6ed69-123">Las siguientes etiquetas de metadatos controlan los recursos de dependencia:</span><span class="sxs-lookup"><span data-stu-id="6ed69-123">The following metadata tags control dependency assets:</span></span>
 
-| <span data-ttu-id="6d0af-123">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="6d0af-123">Tag</span></span> | <span data-ttu-id="6d0af-124">Description</span><span class="sxs-lookup"><span data-stu-id="6d0af-124">Description</span></span> | <span data-ttu-id="6d0af-125">Valor predeterminado</span><span class="sxs-lookup"><span data-stu-id="6d0af-125">Default Value</span></span> |
+| <span data-ttu-id="6ed69-124">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="6ed69-124">Tag</span></span> | <span data-ttu-id="6ed69-125">Description</span><span class="sxs-lookup"><span data-stu-id="6ed69-125">Description</span></span> | <span data-ttu-id="6ed69-126">Valor predeterminado</span><span class="sxs-lookup"><span data-stu-id="6ed69-126">Default Value</span></span> |
 | --- | --- | --- |
-| <span data-ttu-id="6d0af-126">IncludeAssets</span><span class="sxs-lookup"><span data-stu-id="6d0af-126">IncludeAssets</span></span> | <span data-ttu-id="6d0af-127">Se consumirán estos recursos</span><span class="sxs-lookup"><span data-stu-id="6d0af-127">These assets will be consumed</span></span> | <span data-ttu-id="6d0af-128">todo</span><span class="sxs-lookup"><span data-stu-id="6d0af-128">all</span></span> |
-| <span data-ttu-id="6d0af-129">ExcludeAssets</span><span class="sxs-lookup"><span data-stu-id="6d0af-129">ExcludeAssets</span></span> | <span data-ttu-id="6d0af-130">No se consumirán estos recursos</span><span class="sxs-lookup"><span data-stu-id="6d0af-130">These assets will not be consumed</span></span> | <span data-ttu-id="6d0af-131">ninguna</span><span class="sxs-lookup"><span data-stu-id="6d0af-131">none</span></span> | 
-| <span data-ttu-id="6d0af-132">PrivateAssets</span><span class="sxs-lookup"><span data-stu-id="6d0af-132">PrivateAssets</span></span> | <span data-ttu-id="6d0af-133">Estos recursos se consumirán, pero no irán al proyecto principal</span><span class="sxs-lookup"><span data-stu-id="6d0af-133">These assets will be consumed but won't flow to the parent project</span></span> | <span data-ttu-id="6d0af-134">archivos de contenido; analizadores; compilación</span><span class="sxs-lookup"><span data-stu-id="6d0af-134">contentfiles;analyzers;build</span></span> |
+| <span data-ttu-id="6ed69-127">IncludeAssets</span><span class="sxs-lookup"><span data-stu-id="6ed69-127">IncludeAssets</span></span> | <span data-ttu-id="6ed69-128">Se consumirán estos recursos</span><span class="sxs-lookup"><span data-stu-id="6ed69-128">These assets will be consumed</span></span> | <span data-ttu-id="6ed69-129">todo</span><span class="sxs-lookup"><span data-stu-id="6ed69-129">all</span></span> |
+| <span data-ttu-id="6ed69-130">ExcludeAssets</span><span class="sxs-lookup"><span data-stu-id="6ed69-130">ExcludeAssets</span></span> | <span data-ttu-id="6ed69-131">No se consumirán estos recursos</span><span class="sxs-lookup"><span data-stu-id="6ed69-131">These assets will not be consumed</span></span> | <span data-ttu-id="6ed69-132">ninguna</span><span class="sxs-lookup"><span data-stu-id="6ed69-132">none</span></span> |
+| <span data-ttu-id="6ed69-133">PrivateAssets</span><span class="sxs-lookup"><span data-stu-id="6ed69-133">PrivateAssets</span></span> | <span data-ttu-id="6ed69-134">Estos recursos se consumirán, pero no irán al proyecto principal</span><span class="sxs-lookup"><span data-stu-id="6ed69-134">These assets will be consumed but won't flow to the parent project</span></span> | <span data-ttu-id="6ed69-135">archivos de contenido; analizadores; compilación</span><span class="sxs-lookup"><span data-stu-id="6ed69-135">contentfiles;analyzers;build</span></span> |
 
+<span data-ttu-id="6ed69-136">A continuación se muestran los valores permitidos para estas etiquetas, con varios valores separados por un punto y coma, salvo `all` y `none`, que deben aparecer por sí mismos:</span><span class="sxs-lookup"><span data-stu-id="6ed69-136">Allowable values for these tags are as follows, with multiple values separated by a semicolon except with `all` and `none` which must appear by themselves:</span></span>
 
-<span data-ttu-id="6d0af-135">A continuación se muestran los valores permitidos para estas etiquetas, con varios valores separados por un punto y coma, salvo `all` y `none`, que deben aparecer por sí mismos:</span><span class="sxs-lookup"><span data-stu-id="6d0af-135">Allowable values for these tags are as follows, with multiple values separated by a semicolon except with `all` and `none` which must appear by themselves:</span></span>
-
-| <span data-ttu-id="6d0af-136">Valor</span><span class="sxs-lookup"><span data-stu-id="6d0af-136">Value</span></span> | <span data-ttu-id="6d0af-137">Description</span><span class="sxs-lookup"><span data-stu-id="6d0af-137">Description</span></span> |
+| <span data-ttu-id="6ed69-137">Valor</span><span class="sxs-lookup"><span data-stu-id="6ed69-137">Value</span></span> | <span data-ttu-id="6ed69-138">Description</span><span class="sxs-lookup"><span data-stu-id="6ed69-138">Description</span></span> |
 | --- | ---
-| <span data-ttu-id="6d0af-138">compile</span><span class="sxs-lookup"><span data-stu-id="6d0af-138">compile</span></span> | <span data-ttu-id="6d0af-139">Contenido de la carpeta `lib`</span><span class="sxs-lookup"><span data-stu-id="6d0af-139">Contents of the `lib` folder</span></span> |
-| <span data-ttu-id="6d0af-140">motor en tiempo de ejecución</span><span class="sxs-lookup"><span data-stu-id="6d0af-140">runtime</span></span> | <span data-ttu-id="6d0af-141">Contenido de la carpeta `runtime`</span><span class="sxs-lookup"><span data-stu-id="6d0af-141">Contents of the `runtime` folder</span></span> |
-| <span data-ttu-id="6d0af-142">contentFiles</span><span class="sxs-lookup"><span data-stu-id="6d0af-142">contentFiles</span></span> | <span data-ttu-id="6d0af-143">Contenido de la carpeta `contentfiles`</span><span class="sxs-lookup"><span data-stu-id="6d0af-143">Contents of the `contentfiles` folder</span></span> |
-| <span data-ttu-id="6d0af-144">compilación</span><span class="sxs-lookup"><span data-stu-id="6d0af-144">build</span></span> | <span data-ttu-id="6d0af-145">Propiedades y destinos de la carpeta `build`</span><span class="sxs-lookup"><span data-stu-id="6d0af-145">Props and targets in the `build` folder</span></span> |
-| <span data-ttu-id="6d0af-146">analyzers</span><span class="sxs-lookup"><span data-stu-id="6d0af-146">analyzers</span></span> | <span data-ttu-id="6d0af-147">Analizadores de .NET</span><span class="sxs-lookup"><span data-stu-id="6d0af-147">.NET analyzers</span></span> |
-| <span data-ttu-id="6d0af-148">nativas</span><span class="sxs-lookup"><span data-stu-id="6d0af-148">native</span></span> | <span data-ttu-id="6d0af-149">Contenido de la carpeta `native`</span><span class="sxs-lookup"><span data-stu-id="6d0af-149">Contents of the `native` folder</span></span> |
-| <span data-ttu-id="6d0af-150">ninguna</span><span class="sxs-lookup"><span data-stu-id="6d0af-150">none</span></span> | <span data-ttu-id="6d0af-151">No se usa ninguno de los anteriores.</span><span class="sxs-lookup"><span data-stu-id="6d0af-151">None of the above are used.</span></span> |
-| <span data-ttu-id="6d0af-152">todo</span><span class="sxs-lookup"><span data-stu-id="6d0af-152">all</span></span> | <span data-ttu-id="6d0af-153">Todo lo anterior (excepto `none`)</span><span class="sxs-lookup"><span data-stu-id="6d0af-153">All of the above (except `none`)</span></span> |
+| <span data-ttu-id="6ed69-139">compile</span><span class="sxs-lookup"><span data-stu-id="6ed69-139">compile</span></span> | <span data-ttu-id="6ed69-140">Contenido de la carpeta `lib`</span><span class="sxs-lookup"><span data-stu-id="6ed69-140">Contents of the `lib` folder</span></span> |
+| <span data-ttu-id="6ed69-141">motor en tiempo de ejecución</span><span class="sxs-lookup"><span data-stu-id="6ed69-141">runtime</span></span> | <span data-ttu-id="6ed69-142">Contenido de la carpeta `runtime`</span><span class="sxs-lookup"><span data-stu-id="6ed69-142">Contents of the `runtime` folder</span></span> |
+| <span data-ttu-id="6ed69-143">contentFiles</span><span class="sxs-lookup"><span data-stu-id="6ed69-143">contentFiles</span></span> | <span data-ttu-id="6ed69-144">Contenido de la carpeta `contentfiles`</span><span class="sxs-lookup"><span data-stu-id="6ed69-144">Contents of the `contentfiles` folder</span></span> |
+| <span data-ttu-id="6ed69-145">compilación</span><span class="sxs-lookup"><span data-stu-id="6ed69-145">build</span></span> | <span data-ttu-id="6ed69-146">Propiedades y destinos de la carpeta `build`</span><span class="sxs-lookup"><span data-stu-id="6ed69-146">Props and targets in the `build` folder</span></span> |
+| <span data-ttu-id="6ed69-147">analyzers</span><span class="sxs-lookup"><span data-stu-id="6ed69-147">analyzers</span></span> | <span data-ttu-id="6ed69-148">Analizadores de .NET</span><span class="sxs-lookup"><span data-stu-id="6ed69-148">.NET analyzers</span></span> |
+| <span data-ttu-id="6ed69-149">nativas</span><span class="sxs-lookup"><span data-stu-id="6ed69-149">native</span></span> | <span data-ttu-id="6ed69-150">Contenido de la carpeta `native`</span><span class="sxs-lookup"><span data-stu-id="6ed69-150">Contents of the `native` folder</span></span> |
+| <span data-ttu-id="6ed69-151">ninguna</span><span class="sxs-lookup"><span data-stu-id="6ed69-151">none</span></span> | <span data-ttu-id="6ed69-152">No se usa ninguno de los anteriores.</span><span class="sxs-lookup"><span data-stu-id="6ed69-152">None of the above are used.</span></span> |
+| <span data-ttu-id="6ed69-153">todo</span><span class="sxs-lookup"><span data-stu-id="6ed69-153">all</span></span> | <span data-ttu-id="6ed69-154">Todo lo anterior (excepto `none`)</span><span class="sxs-lookup"><span data-stu-id="6ed69-154">All of the above (except `none`)</span></span> |
 
-<span data-ttu-id="6d0af-154">En el ejemplo siguiente, todo excepto los archivos de contenido del paquete sería consumido por el proyecto y todo excepto los analizadores y los archivos de contenido iría al proyecto principal.</span><span class="sxs-lookup"><span data-stu-id="6d0af-154">In the following example, everything except the content files from the package would be consumed by the project and everything except content files and analyzers would flow to the parent project.</span></span>
+<span data-ttu-id="6ed69-155">En el ejemplo siguiente, todo excepto los archivos de contenido del paquete sería consumido por el proyecto y todo excepto los analizadores y los archivos de contenido iría al proyecto principal.</span><span class="sxs-lookup"><span data-stu-id="6ed69-155">In the following example, everything except the content files from the package would be consumed by the project and everything except content files and analyzers would flow to the parent project.</span></span>
 
 ```xml
 <ItemGroup>
@@ -123,27 +118,27 @@ ms.lasthandoff: 01/05/2018
 </ItemGroup>
 ```
 
-<span data-ttu-id="6d0af-155">Tenga en cuenta que, dado que `build` no se incluye con `PrivateAssets`, los destinos y las propiedades *irán* al proyecto principal.</span><span class="sxs-lookup"><span data-stu-id="6d0af-155">Note that because `build` is not included with `PrivateAssets`, targets and props *will* flow to the parent project.</span></span> <span data-ttu-id="6d0af-156">Imagínese, por ejemplo, que la referencia anterior se usa en un proyecto que genera un paquete de NuGet llamado AppLogger.</span><span class="sxs-lookup"><span data-stu-id="6d0af-156">Consider, for example, that the reference above is used in a project that builds a NuGet package called AppLogger.</span></span> <span data-ttu-id="6d0af-157">AppLogger puede consumir los destinos y las propiedades de `Contoso.Utility.UsefulStuff`, igual que los proyectos que consumen AppLogger.</span><span class="sxs-lookup"><span data-stu-id="6d0af-157">AppLogger can consume the targets and props from `Contoso.Utility.UsefulStuff`, as can projects that consume AppLogger.</span></span>
+<span data-ttu-id="6ed69-156">Tenga en cuenta que, dado que `build` no se incluye con `PrivateAssets`, los destinos y las propiedades *irán* al proyecto principal.</span><span class="sxs-lookup"><span data-stu-id="6ed69-156">Note that because `build` is not included with `PrivateAssets`, targets and props *will* flow to the parent project.</span></span> <span data-ttu-id="6ed69-157">Imagínese, por ejemplo, que la referencia anterior se usa en un proyecto que genera un paquete de NuGet llamado AppLogger.</span><span class="sxs-lookup"><span data-stu-id="6ed69-157">Consider, for example, that the reference above is used in a project that builds a NuGet package called AppLogger.</span></span> <span data-ttu-id="6ed69-158">AppLogger puede consumir los destinos y las propiedades de `Contoso.Utility.UsefulStuff`, igual que los proyectos que consumen AppLogger.</span><span class="sxs-lookup"><span data-stu-id="6ed69-158">AppLogger can consume the targets and props from `Contoso.Utility.UsefulStuff`, as can projects that consume AppLogger.</span></span>
 
-## <a name="adding-a-packagereference-condition"></a><span data-ttu-id="6d0af-158">Agregar una condición PackageReference</span><span class="sxs-lookup"><span data-stu-id="6d0af-158">Adding a PackageReference condition</span></span>
+## <a name="adding-a-packagereference-condition"></a><span data-ttu-id="6ed69-159">Agregar una condición PackageReference</span><span class="sxs-lookup"><span data-stu-id="6ed69-159">Adding a PackageReference condition</span></span>
 
-<span data-ttu-id="6d0af-159">Puede usar una condición para controlar si se incluye un paquete, donde las condiciones pueden usar cualquier variable de MSBuild o una variable definida en el archivo de destinos o propiedades.</span><span class="sxs-lookup"><span data-stu-id="6d0af-159">You can use a condition to control whether a package is included, where conditions can use any MSBuild variable or a variable defined in the targets or props file.</span></span> <span data-ttu-id="6d0af-160">Pero actualmente solo se admite la variable `TargetFramework`.</span><span class="sxs-lookup"><span data-stu-id="6d0af-160">However, at presently, only the `TargetFramework` variable is supported.</span></span>
+<span data-ttu-id="6ed69-160">Puede usar una condición para controlar si se incluye un paquete, donde las condiciones pueden usar cualquier variable de MSBuild o una variable definida en el archivo de destinos o propiedades.</span><span class="sxs-lookup"><span data-stu-id="6ed69-160">You can use a condition to control whether a package is included, where conditions can use any MSBuild variable or a variable defined in the targets or props file.</span></span> <span data-ttu-id="6ed69-161">Pero actualmente solo se admite la variable `TargetFramework`.</span><span class="sxs-lookup"><span data-stu-id="6ed69-161">However, at presently, only the `TargetFramework` variable is supported.</span></span>
 
-<span data-ttu-id="6d0af-161">Por ejemplo, imagínese que va a fijar como destino `netstandard1.4` y `net452`, pero tiene una dependencia que solo es aplicable a `net452`.</span><span class="sxs-lookup"><span data-stu-id="6d0af-161">For example, say you're targeting `netstandard1.4` as well as `net452` but have a dependency that is applicable only for `net452`.</span></span> <span data-ttu-id="6d0af-162">En este caso no quiere que un proyecto `netstandard1.4` que está consumiendo el paquete agregue esa dependencia innecesaria.</span><span class="sxs-lookup"><span data-stu-id="6d0af-162">In this case you don't want a `netstandard1.4` project that's consuming your package to add that unnecessary dependency.</span></span> <span data-ttu-id="6d0af-163">Para evitarlo, especifique una condición en `PackageReference` como se indica a continuación:</span><span class="sxs-lookup"><span data-stu-id="6d0af-163">To prevent this, you specify a condition on the `PackageReference` as follows:</span></span>
+<span data-ttu-id="6ed69-162">Por ejemplo, imagínese que va a fijar como destino `netstandard1.4` y `net452`, pero tiene una dependencia que solo es aplicable a `net452`.</span><span class="sxs-lookup"><span data-stu-id="6ed69-162">For example, say you're targeting `netstandard1.4` as well as `net452` but have a dependency that is applicable only for `net452`.</span></span> <span data-ttu-id="6ed69-163">En este caso no quiere que un proyecto `netstandard1.4` que está consumiendo el paquete agregue esa dependencia innecesaria.</span><span class="sxs-lookup"><span data-stu-id="6ed69-163">In this case you don't want a `netstandard1.4` project that's consuming your package to add that unnecessary dependency.</span></span> <span data-ttu-id="6ed69-164">Para evitarlo, especifique una condición en `PackageReference` como se indica a continuación:</span><span class="sxs-lookup"><span data-stu-id="6ed69-164">To prevent this, you specify a condition on the `PackageReference` as follows:</span></span>
 
 ```xml
 <ItemGroup>
     <!-- ... -->
-    <PackageReference Include="Newtonsoft.json" Version="9.0.1" Condition="'$(TargetFramework)' == 'net452'" />    
+    <PackageReference Include="Newtonsoft.json" Version="9.0.1" Condition="'$(TargetFramework)' == 'net452'" />
     <!-- ... -->
 </ItemGroup>
 ```
 
-<span data-ttu-id="6d0af-164">Un paquete creado con este proyecto mostrará que Newtonsoft.json se incluye como dependencia únicamente para un destino `net452`:</span><span class="sxs-lookup"><span data-stu-id="6d0af-164">A package built using this project will show that Newtonsoft.json is included as a dependency only for a `net452` target:</span></span>
+<span data-ttu-id="6ed69-165">Un paquete creado con este proyecto mostrará que Newtonsoft.json se incluye como dependencia únicamente para un destino `net452`:</span><span class="sxs-lookup"><span data-stu-id="6ed69-165">A package built using this project will show that Newtonsoft.json is included as a dependency only for a `net452` target:</span></span>
 
 ![El resultado de aplicar una condición en PackageReference con VS2017](media/PackageReference-Condition.png)
 
-<span data-ttu-id="6d0af-166">Las condiciones también se pueden aplicar a nivel de `ItemGroup` y se aplicarán a todos los elementos `PackageReference` secundarios:</span><span class="sxs-lookup"><span data-stu-id="6d0af-166">Conditions can also be applied at the `ItemGroup` level and will apply to all children `PackageReference` elements:</span></span>
+<span data-ttu-id="6ed69-167">Las condiciones también se pueden aplicar a nivel de `ItemGroup` y se aplicarán a todos los elementos `PackageReference` secundarios:</span><span class="sxs-lookup"><span data-stu-id="6ed69-167">Conditions can also be applied at the `ItemGroup` level and will apply to all children `PackageReference` elements:</span></span>
 
 ```xml
 <ItemGroup Condition = "'$(TargetFramework)' == 'net452'">
