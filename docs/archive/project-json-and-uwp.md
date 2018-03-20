@@ -12,11 +12,11 @@ keywords: Dependencias de NuGet, NuGet y UWP, UWP y project.json, archivo projec
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f1ec086d6404c441ca5ad53028af2265a2344905
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 3ef3703b2be92f84d37866bce9934ebcfed3a9f7
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="projectjson-and-uwp"></a>project.json y UWP
 
@@ -121,7 +121,7 @@ En este ejemplo, todos los ensamblados de los directorios `ref` serían idéntic
 
 La carpeta runtimes contiene ensamblados y bibliotecas nativas que se deben ejecutar en "runtimes" específicos, que generalmente se definen por el sistema operativo y la arquitectura de CPU. Estos tiempos de ejecución se identifican mediante [identificadores en tiempo de ejecución (RID)](/dotnet/core/rid-catalog) como `win`, `win-x86`, `win7-x86`, `win8-64`, etc.
 
-## <a name="native-light-up"></a>Carga ligera nativa
+## <a name="native-helpers-to-use-platform-specific-apis"></a>Aplicaciones auxiliares nativas para usar las API específicas de la plataforma
 
 En el ejemplo siguiente se muestra un paquete que tiene una implementación estrictamente administrada para varias plataformas, pero que usa aplicaciones auxiliares nativas en Windows 8, donde puede llamar a API nativas específicas de Windows 8.
 

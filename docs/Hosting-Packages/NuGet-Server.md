@@ -3,7 +3,7 @@ title: Usar NuGet.Server para hospedar fuentes de NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 08/25/2017
+ms.date: 03/13/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
@@ -12,11 +12,11 @@ keywords: "Fuente de NuGet, galería de NuGet, fuente de paquetes remota, NuGet.
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4cb3f04954fac1b4a39284be187776ab4a19b364
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: d85c1ca88ca44c8f8bfa5cb9c453279f65f26f50
+ms.sourcegitcommit: 9adf5349eab91bd1d044e11f34836d53cfb115b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -28,28 +28,32 @@ NuGet.Server es un paquete proporcionado por .NET Foundation que crea una aplica
 
 En las siguientes secciones se describe este proceso en detalle, mediante C#.
 
+Si tiene más preguntas sobre NuGet.Server, registre un problema en [https://github.com/nuget/NuGetGallery/issues](https://github.com/nuget/NuGetGallery/issues).
+
 ## <a name="create-and-deploy-an-aspnet-web-application-with-nugetserver"></a>Crear e implementar una aplicación web ASP.NET con NuGet.Server
 
-1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto**, establezca la plataforma de destino para .NET Framework 4.6 (vea más abajo), busque "ASP.NET" y seleccione la plantilla **Aplicación web ASP.NET (.NET Framework)** para C#.
+1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto**, busque "ASP.NET", seleccione la plantilla **Aplicación web ASP.NET (.NET Framework)** para C# y establezca **Framework** en ".NET Framework 4.6":
 
-    ![Establecer el destino de .NET Framework en 4.6](media/Hosting_01-NuGet.Server-Set4.6.png)
+    ![Establecimiento de la plataforma de destino para un nuevo proyecto](media/Hosting_01-NuGet.Server-Set4.6.png)
 
-1. Asigne un nombre adecuado a la aplicación que *no* sea NuGet.Server y seleccione Aceptar. En el siguiente cuadro de diálogo, seleccione la plantilla **Vacío** y seleccione Aceptar.
+1. Asigne un nombre adecuado a la aplicación que sea *distinto* de NuGet.Server y seleccione Aceptar. En el siguiente cuadro de diálogo, seleccione la plantilla **Vacío** y elija **Aceptar**.
 
-1. Haga clic con el botón derecho en el proyecto, seleccione **Administrar paquetes NuGet** y, en la interfaz de usuario del Administrador de paquetes, busque e instale la versión más reciente del paquete NuGet.Server si va a usar .NET Framework 4.6 (también puede instalarla desde la consola del Administrador de paquetes con `Install-Package NuGet.Server`).
+1. Haga clic con el botón derecho en el proyecto y seleccione **Administrar paquetes NuGet**.
+
+1. En la interfaz de usuario del Administrador de paquetes, seleccione la pestaña **Examinar** y busque e instale la versión más reciente del paquete NuGet.Server si va a usar .NET Framework 4.6. (también puede instalarla desde la consola del Administrador de paquetes con `Install-Package NuGet.Server`). Si se le pide, acepte los términos de licencia.
 
     ![Instalar el paquete NuGet.Server](media/Hosting_02-NuGet.Server-Package.png)
 
+1. La instalación de NuGet.Server convierte la aplicación web vacía en un origen del paquete. Se instala una variedad de otros paquetes, se crea una carpeta `Packages` en la aplicación y se modifica `web.config` para incluir valores de configuración adicionales (vea los comentarios en ese archivo para más información).
+
     > [!Important]
-    > Si la aplicación web tiene como destino .NET Framework 4.5.2, deberá instalar NuGet Server **2.10.3**.
+    > Compruebe `web.config` detenidamente después de que el paquete de NuGet.Server haya finalizado sus modificaciones a ese archivo. Es posible que NuGet.Server no sobrescriba los elementos existentes, sino que cree elementos duplicados. Estos duplicados provocarán un "Error interno del servidor" al intentar ejecutar el proyecto más adelante. Por ejemplo, si `web.config` contiene `<compilation debug="true" targetFramework="4.5.2" />` antes de instalar NuGet.Server, el paquete no lo sobrescribe, pero inserta un segundo `<compilation debug="true" targetFramework="4.6" />`. En ese caso, elimine el elemento con la versión anterior de Framework.
 
-1. La instalación de NuGet.Server convierte la aplicación web vacía en un origen del paquete. Crea una carpeta `Packages` en la aplicación y sobrescribe `web.config` para incluir valores de configuración adicionales (vea los comentarios en ese archivo para obtener más información).
-
-1. Para que los paquetes estén disponibles en la fuente al publicar la aplicación en un servidor, agregue los archivos `.nupkg` correspondientes a la carpeta `Packages` de Visual Studio. Luego, establezca **Acción de compilación** en **Contenido** y **Copiar en el directorio de salida** en **Copiar siempre**:
+1. Para que los paquetes estén disponibles en la fuente al publicar la aplicación en un servidor, agregue cada archivo `.nupkg` a la carpeta `Packages` de Visual Studio. Luego, establezca **Acción de compilación** en **Contenido** para cada uno y **Copiar en el directorio de salida** en **Copiar siempre**:
 
     ![Copiar paquetes en la carpeta Paquetes en el proyecto](media/Hosting_03-NuGet.Server-Package-Folder.png)
 
-1. Ejecute el sitio localmente en Visual Studio (sin depuración; es decir, Ctrl + F5). La página principal proporciona las direcciones URL de la fuente del paquete:
+1. Ejecute el sitio de forma local en Visual Studio (con **Depurar > Iniciar sin depurar** o Ctrl+F5). La página principal proporciona las direcciones URL de la fuente del paquete, como se muestra aquí. Si ve errores, inspeccione detenidamente el `web.config` para detectar elementos duplicados que se hayan anotado antes con el paso 5.
 
     ![Página principal predeterminada de una aplicación con NuGet.Server](media/Hosting_04-NuGet.Server-FeedHomePage.png)
 
@@ -58,6 +62,7 @@ En las siguientes secciones se describe este proceso en detalle, mediante C#.
 1. La primera vez que ejecute la aplicación, NuGet.Server reestructura la carpeta `Packages` para que contenga una carpeta para cada paquete. Esto coincide con el [diseño de almacenamiento local](http://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands) introducido con NuGet 3.3 para mejorar el rendimiento. Al agregar más paquetes, siga esta estructura.
 
 1. Una vez que haya probado la implementación local, implemente la aplicación en cualquier otro sitio interno o externo según sea necesario.
+
 1. Una vez implementada en `http://<domain>`, la dirección URL que usa para el origen del paquete será `http://<domain>/nuget`.
 
 ## <a name="configuring-the-packages-folder"></a>Configurar la carpeta Paquetes
@@ -77,7 +82,7 @@ Si `packagesPath` se omite o se deja en blanco, la carpeta Paquetes es la carpet
 
 ## <a name="adding-packages-to-the-feed-externally"></a>Agregar paquetes a la fuente de forma externa
 
-Una vez que se esté ejecutando un sitio de NuGet.Server, puede agregar o eliminar paquetes con nuget.exe, siempre y cuando establezca un valor de clave de API en `web.config`.
+Una vez que se esté ejecutando un sitio de NuGet.Server, puede agregar paquetes con el comando [nuget push](../tools/cli-ref-push.md), siempre y cuando establezca un valor de clave de API en `web.config`.
 
 Después de instalar el paquete NuGet.Server, `web.config` contiene un valor `appSetting/apiKey` vacío:
 
@@ -101,4 +106,14 @@ Para habilitar esta funcionalidad, establezca `apiKey` en un valor (lo ideal ser
 </appSettings>
 ```
 
-Si el servidor ya está protegido o no necesita una clave de API (por ejemplo, al usar un servidor privado en una red de equipo local), puede establecer `requireApiKey` en `false`. Todos los usuarios que tengan acceso al servidor podrán insertar o eliminar paquetes.
+Si el servidor ya está protegido o no necesita una clave de API (por ejemplo, al usar un servidor privado en una red de equipo local), puede establecer `requireApiKey` en `false`. Todos los usuarios que tengan acceso al servidor podrán insertar paquetes.
+
+## <a name="removing-packages-from-the-feed"></a>Eliminación de paquetes de la fuente
+
+Con NuGet.Server, el comando [nuget delete](../tools/cli-ref-delete.md) quita un paquete del repositorio, siempre que incluya la clave de API con el comentario.
+
+Si quiere cambiar el comportamiento para quitar el paquete de la lista (dejándolo disponible para la restauración del paquete), cambie la clave `enableDelisting` en `web.config` a true.
+
+## <a name="nugetserver-support"></a>Compatibilidad con NuGet.Server
+
+Para obtener más ayuda con NuGet.Server, registre un problema en [https://github.com/nuget/NuGetGallery/issues](https://github.com/nuget/NuGetGallery/issues).

@@ -12,11 +12,11 @@ keywords: crear un paquete, paquetes para UWP, componentes de Windows Runtime
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6d35b484ff708d7174c19791ab1ad7904bea0d2f
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: af650b6cd67855a67d0f49cdbd9f510bf90a60f6
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="create-uwp-packages"></a>Crear paquetes UWP
 
@@ -24,7 +24,7 @@ La [Plataforma universal de Windows (UWP)](https://developer.microsoft.com/windo
 
 En este tutorial creará un paquete NuGet con un componente nativo de UWP (incluido un control XAML) que se puede usar en proyectos administrados y nativos.
 
-## <a name="pre-requisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 
 1. Visual Studio 2017 o Visual Studio 2015. Instale la 2017 Community Edition gratuitamente desde [visualstudio.com](https://www.visualstudio.com/); también puede usar las ediciones Professional y Enterprise.
 
@@ -156,7 +156,7 @@ Dentro del componente, la lógica básica del tipo ImageEnhancer está en códig
 
 ### <a name="adding-targets"></a>Adición de .targets
 
-Después, los proyectos de C++ y JavaScript que es posible que consuman el paquete NuGet necesitan un archivo .targets para identificar los archivos de ensamblado y winmd necesarios. (Los proyectos de C# y Visual Basic lo hacen de forma automática). Cree este archivo copiando el texto siguiente en `ImageEnhancer.targets` y guárdelo en la misma carpeta que el archivo `.nuspec`:
+Después, los proyectos de C++ y JavaScript que es posible que consuman el paquete NuGet necesitan un archivo .targets para identificar los archivos de ensamblado y winmd necesarios. (Los proyectos de C# y Visual Basic lo hacen de forma automática). Cree este archivo copiando el texto siguiente en `ImageEnhancer.targets` y guárdelo en la misma carpeta que el archivo `.nuspec`. _Nota_: Este archivo `.targets` debe tener el mismo nombre que el identificador de paquete (por ejemplo, el elemento `<Id>` del archivo `.nupspec`):
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

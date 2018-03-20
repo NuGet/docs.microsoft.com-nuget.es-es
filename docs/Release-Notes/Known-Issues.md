@@ -12,11 +12,11 @@ keywords: Problemas conocidos de NuGet, problemas de NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2b9190c058215d9e63894de45c0c55c8ddae0e0f
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: ac00e3f11c54290a31319e7f2946fd965a0a9288
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="known-issues-with-nuget"></a>Problemas conocidos con NuGet
 
@@ -45,7 +45,7 @@ En NuGet 3.4 y 3.4.1, al usar el complemento de NuGet, ningún origen aparece co
 
 ![Configuración de NuGet sin ningún origen](./media/knownIssue-34-NoSources.PNG)
 
-El archivo `NuGet.Config` de la carpeta `%AppData%\NuGet\` se ha vaciado accidentalmente. Para solucionar este problema, cierre Visual Studio 2015, elimine el archivo `NuGet.Config` de la carpeta `%AppData%\NuGet\` y reinicie Visual Studio.  Se generará otro archivo `NuGet.Config` y de esta forma podrá continuar.
+El archivo `NuGet.Config` en la carpeta `%AppData%\NuGet\` (Windows) o `~/.nuget/` (Mac/Linux) se ha vaciado accidentalmente. Para solucionar este problema: cierre Visual Studio (en Windows, si procede), elimine el archivo `NuGet.Config` y vuelva a intentar la operación. NuGet generó un nuevo `NuGet.Config` y podrá continuar.
 
 ## <a name="error-installing-packages-with-nuget-27"></a>Error al instalar paquetes con NuGet 2.7
 
@@ -96,7 +96,7 @@ Si está ejecutando VS 2010 SP1, puede que encuentre el siguiente mensaje de err
 Al consultar los registros, puede que vea una mención a una excepción `SignatureMismatchException`.
 
 Para evitar que esto ocurra, puede instalar una [revisión de Visual Studio 2010 SP1](http://bit.ly/vsixcertfix).
-Como alternativa, la solución consiste en desinstalar NuGet (ejecutando Visual Studio como administrador) e instalarlo desde la galería de extensiones de VS.  Vea [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019) para más información.
+Como alternativa, la solución consiste en desinstalar NuGet (ejecutando Visual Studio como administrador) e instalarlo desde la galería de extensiones de VS.  Para más información, vea [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019).
 
 ## <a name="package-manager-console-throws-an-exception-when-the-reflector-visual-studio-add-in-is-also-installed"></a>La consola del Administrador de paquetes genera una excepción cuando también se instala el complemento Reflector Visual Studio.
 
@@ -165,7 +165,7 @@ Si intenta desinstalar NuGet con el Administrador de extensiones de Visual Studi
 
 ## <a name="the-package-manager-console-crashes-when-i-open-it-in-windows-xp-whats-wrong"></a>La consola del Administrador de paquetes se bloquea cuando se abre en Windows XP. ¿Qué ocurre?
 
-NuGet requiere Powershell 2.0 en tiempo de ejecución. Windows XP, de forma predeterminada, no tiene Powershell 2.0. Puede descargar Powershell 2.0 en tiempo de ejecución en [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929). Después de su instalación, reinicie Visual Studio y debería poder abrir la consola del Administrador de paquetes.
+NuGet requiere Powershell 2.0 en tiempo de ejecución. Windows XP, de forma predeterminada, no tiene Powershell 2.0. Puede descargar el runtime de Powershell 2.0 desde [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929). Después de su instalación, reinicie Visual Studio y debería poder abrir la consola del Administrador de paquetes.
 
 ## <a name="visual-studio-2010-sp1-beta-crashes-on-exit-if-the-package-manager-console-is-open"></a>Visual Studio 2010 SP1 Beta se bloquea al salir si la consola del Administrador de paquetes está abierta.
 
@@ -231,4 +231,4 @@ Como se describe con detalle en [este problema de GitHub](https://github.com/Par
 
 ## <a name="reporting-issues"></a>Notificar problemas
 
-Para informar de problemas de NuGet, visite [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues).
+Para informar sobre problemas de NuGet, visite [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues).

@@ -12,11 +12,11 @@ keywords: "control de versiones, control de versiones de paquetes de NuGet, vers
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f07b4a0428685b036640a7153190fd8454885608
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 03f744a96841a8c49d9f1dde89620b85de968d6f
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="building-pre-release-packages"></a>Crear paquetes de versión preliminar
 
@@ -79,7 +79,7 @@ Teniendo esto en cuenta, se recomienda seguir unas convenciones de nomenclatura 
 - `-rc`: versión candidata para lanzamiento. Suele ser una versión potencialmente definitiva (estable) a menos que surjan errores importantes.
 
 > [!Note]
-> NuGet no admite los números de versión preliminar [compatibles con SemVer (v2.0.0)](http://semver.org/spec/v2.0.0.html) con la notación de puntos, como en `1.0.1-build.23`. Puede usar un formato tipo `1.0.1-build23`, pero siempre se considerará una versión preliminar.
+> NuGet 4.3.0 y versiones posteriores admite [Versionamiento semántico v2.0.0](http://semver.org/spec/v2.0.0.html), que es compatible con números de versión preliminar con notación de puntos, como en `1.0.1-build.23`. La notación de puntos no es compatible con versiones de NuGet anteriores a 4.3.0. En versiones anteriores de NuGet, podría usar un formulario como `1.0.1-build23`, pero esto siempre se considera una versión preliminar.
 
 Use los sufijos que use, NuGet les dará prioridad en orden alfabético inverso:
 

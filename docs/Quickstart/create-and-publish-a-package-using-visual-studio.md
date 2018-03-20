@@ -1,28 +1,28 @@
 ---
-title: "Guía de introducción a la creación y publicación de un paquete NuGet con Visual Studio | Microsoft Docs"
+title: "Guía de introducción a la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 02/02/2018
+ms.date: 03/18/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: 
-description: "Tutorial sobre la creación y publicación de un paquete NuGet con Visual Studio 2017."
+description: "Tutorial sobre la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio 2017."
 keywords: "Creación de paquetes NuGet, publicación de paquetes NuGet, tutorial de NuGet, creación en Visual Studio, paquete de NuGet, paquete msbuild"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: a4d60fdc0f27f9c4080266e212ac1cfe470ba925
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: 733fee616601e1d15d8fb5814b5bfb7905ff4a33
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="create-and-publish-a-package-using-visual-studio"></a>Crear y publicar un paquete con Visual Studio
+# <a name="create-and-publish-a-package-using-visual-studio-net-standard"></a>Crear y publicar un paquete con Visual Studio (.NET Standard)
 
-La creación de un paquete NuGet desde una biblioteca de clases de .NET en Visual Studio y su publicación en nuget.org con una herramienta CLI es un proceso simple.
+Es muy sencillo crear un paquete NuGet desde una biblioteca de clases de .NET Standard en Visual Studio y después publicarlo en nuget.org con una herramienta CLI.
 
-## <a name="pre-requisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 
 1. Instale cualquier edición de Visual Studio 2017 desde [visualstudio.com](https://www.visualstudio.com/) con cualquier carga de trabajo relacionada con .NET. Visual Studio de 2017 incluye automáticamente funcionalidades de NuGet cuando se instala una carga de trabajo. NET.
 
@@ -34,7 +34,7 @@ La creación de un paquete NuGet desde una biblioteca de clases de .NET en Visua
 
 ## <a name="create-a-class-library-project"></a>Crear un proyecto de biblioteca de clases
 
-Puede usar un proyecto de biblioteca de clases .NET existente para el código que desea empaquetar o crear uno simple tal y como se indica a continuación:
+Puede usar un proyecto de biblioteca de clases .NET Standard existente para el código que quiere empaquetar o crear uno simple tal y como se indica aquí:
 
 1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto**, expanda el nodo **Visual C# > .NET Standard**, seleccione la plantilla "Biblioteca de clases (.NET Standard)", denomine el proyecto AppLogger y haga clic en **Aceptar**.
 
@@ -60,7 +60,7 @@ namespace AppLogger
 
 ## <a name="configure-package-properties"></a>Configurar propiedades del paquete
 
-1. Seleccione el comando de menú **Proyecto > Propiedades** menú de comandos y luego la pestaña **Paquete**:
+1. Seleccione el comando de menú **Proyecto > Propiedades** y luego la pestaña **Paquete**. (La pestaña **Paquete** solo aparece para proyectos de biblioteca de clases .NET Standard; si apunta a .NET Framework, vea mejor [Crear y publicar un paquete con Visual Studio](create-and-publish-a-package-using-visual-studio-net-framework.md)).
 
     ![Propiedades del paquete NuGet en un proyecto de Visual Studio](media/qs_create-vs-01-package-properties.png)
 
@@ -95,7 +95,7 @@ namespace AppLogger
 
 ### <a name="alternate-option-pack-with-msbuild"></a>Opción alternativa: paquete con MSBuild
 
-Como alternativa al uso del comando de menú **Pack**, NuGet 4.x y posterior y MSBuild 15.1 y posterior admiten un destino de `pack` cuando el proyecto contiene los datos del paquete necesario:
+Como alternativa al uso del comando de menú **Paquete**, NuGet 4.x y versiones posteriores y MSBuild 15.1 y versiones posteriores admiten un destino de `pack` cuando el proyecto contiene los datos de paquete necesarios. Abra un símbolo del sistema, navegue a la carpeta del proyecto y ejecute este comando. (Normalmente es preferible iniciar el "Símbolo del sistema para desarrolladores de Visual Studio" en el menú Inicio, ya que se configurará con todas las rutas de acceso necesarias para MSBuild).
 
 ```cli
 msbuild /t:pack /p:Configuration=Release

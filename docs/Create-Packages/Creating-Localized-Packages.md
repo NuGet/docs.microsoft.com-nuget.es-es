@@ -12,18 +12,18 @@ keywords: "Localización de paquetes de NuGet, ensamblados satélite de NuGet, c
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1ce8cff07bf629fcdeeaace901a185f2446b077a
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 5946ba6b43d3c418a1624aeb27d12b385d66b2fb
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="creating-localized-nuget-packages"></a>Creación de paquetes localizados de NuGet
 
 Hay dos métodos para crear versiones localizadas de una biblioteca:
 
 1. Incluir todos los ensamblados de recursos localizados en un único paquete.
-1. Crear paquetes satélite localizados e independiente (NuGet 1.8 y versiones posteriores) siguiendo una serie de convenciones estrictas.
+1. Crear paquetes satélite localizados e independientes siguiendo una serie de convenciones estrictas.
 
 Ambos métodos tienen sus ventajas y desventajas, como se describe en las secciones siguientes.
 

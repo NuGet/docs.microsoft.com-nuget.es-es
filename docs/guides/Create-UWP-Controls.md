@@ -3,7 +3,7 @@ title: "Cómo empaquetar controles de UWP con NuGet | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/21/2017
+ms.date: 03/14/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: 
@@ -12,17 +12,17 @@ keywords: "Controles de UWP de NuGet, diseñador XAML de Visual Studio, diseñad
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3af17121f73b878decd5f0c933696fc1b0c786d7
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 1af5118eb71836d8b8bcfa8ff713d9fef3c86374
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="creating-uwp-controls-as-nuget-packages"></a>Crear controles de UWP como paquetes de NuGet
 
 Con Visual Studio 2017 puede sacar partido de las capacidades agregadas para los controles de UWP que se suministran en los paquetes de NuGet. En esta guía se describen estas capacidades con el [ejemplo ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). 
 
-## <a name="pre-requisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 
 1. Visual Studio 2017
 1. Comprender cómo [crear paquetes UWP](create-uwp-packages.md)
@@ -100,13 +100,7 @@ Por ejemplo, supongamos que ha establecido la TPMinV del paquete de controles en
     \lib\uap10.0\*
     \ref\uap10.0\*
 
-Para forzar la comprobación de TPMinV adecuada, cree un [archivo de destinos de MSBuild](/visualstudio/msbuild/msbuild-targets) y empaquételo en la carpeta de compilación (reemplazando "your_assembly_name" por el nombre del ensamblado en cuestión):
-
-    \build
-      \uap10.0
-        your_assembly_name.targets
-    \lib
-    \tools
+Para forzar la comprobación de TPMinV adecuada, cree un [archivo de destinos de MSBuild](/visualstudio/msbuild/msbuild-targets) y empaquételo en `build\uap10.0" folder as `<your_assembly_name>.targets`, replacing ` (reemplace <your_assembly_name> con el nombre del ensamblado en cuestión).
 
 Aquí se muestra un ejemplo del aspecto que debería tener el archivo de destinos:
 
@@ -114,7 +108,7 @@ Aquí se muestra un ejemplo del aspecto que debería tener el archivo de destino
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <Target Name="TPMinVCheck" BeforeTargets="Build;ReBuild" Condition="'$(TargetPlatformMinVersion)' != ''">
+  <Target Name="TPMinVCheck" BeforeTargets="ResolveAssemblyReferences" Condition="'$(TargetPlatformMinVersion)' != ''">
     <PropertyGroup>
       <RequiredTPMinV>10.0.14393</RequiredTPMinV>
       <ActualTPMinV>$(TargetPlatformMinVersion)</ActualTPMinV>
@@ -126,17 +120,15 @@ Aquí se muestra un ejemplo del aspecto que debería tener el archivo de destino
 
 ## <a name="add-design-time-support"></a>Agregar compatibilidad en tiempo de diseño
 
-Para configurar la ubicación donde se mostrarán las propiedades del control en el inspector de propiedad, agregarán adornos personalizados, etc., coloque el archivo `design.dll` dentro de la carpeta `lib\<platform>\Design`, según corresponda con la plataforma de destino. Además, para asegurarse de que la característica **[Editar plantilla > Editar una copia](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** funciona, debe incluir el archivo `Generic.xaml` y todos los diccionarios de recursos que fusione en la carpeta `<AssemblyName>\Themes` (este archivo no influye en el comportamiento en tiempo de ejecución de un control).
+Para configurar la ubicación donde se mostrarán las propiedades del control en el inspector de propiedad, agregarán adornos personalizados, etc., coloque el archivo `design.dll` dentro de la carpeta `lib\uap10.0\Design`, según corresponda con la plataforma de destino. Además, para asegurarse de que la característica **[Editar plantilla > Editar una copia](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)** funciona, debe incluir el archivo `Generic.xaml` y todos los diccionarios de recursos que fusione en la carpeta `<your_assembly_name>\Themes` (una vez más, usando el nombre de ensamblado real). (este archivo no influye en el comportamiento en tiempo de ejecución de un control). La estructura de carpetas podría aparecer así:
 
-    \build
     \lib
-      \uap10.0.14393.0
+      \uap10.0
         \Design
           \MyControl.design.dll
         \your_assembly_name
           \Themes
             Generic.xaml
-    \tools
 
 > [!Note]
 > De forma predeterminada, las propiedades del control se mostrarán en la categoría Varios del inspector de propiedad.
@@ -149,15 +141,7 @@ Para ver un ejemplo, vea [MyCustomControl.cs](https://github.com/NuGet/Samples/b
 
 ## <a name="package-content-such-as-images"></a>Contenido del paquete (por ejemplo, imágenes)
 
-Para empaquetar contenido, como imágenes que el control o el proyecto UWP de consumo pueden usar, agregue la carpeta `lib\uap10.0.14393.0` de estos archivos como se indica a continuación ("your_assembly_name" debe coincidir de nuevo con su control específico):
-
-    \build
-    \lib
-      \uap10.0.14393.0
-        \Design
-          \your_assembly_name
-    \contosoSampleImage.jpg
-    \tools
+Para empaquetar contenido, como las imágenes que el control o el proyecto UWP de consumo pueden usar, coloque dichos archivos en la carpeta `lib\uap10.0`.
 
 También puede crear un [archivo de destinos de MSBuild](/visualstudio/msbuild/msbuild-targets) para asegurarse de que el recurso se copia en la carpeta de salida del proyecto de consumo:
 
@@ -165,7 +149,7 @@ También puede crear un [archivo de destinos de MSBuild](/visualstudio/msbuild/m
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
-        <Content Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0.14393.0\contosoSampleImage.jpg">
+        <Content Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0\contosoSampleImage.jpg">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
