@@ -1,22 +1,25 @@
 ---
-title: "Referencia de PowerShell de paquete de actualización de NuGet | Documentos de Microsoft"
+title: Referencia de PowerShell de paquete de actualización de NuGet | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Referencia de comandos de PowerShell de paquete de actualización en la consola de administrador de paquetes de NuGet en Visual Studio."
-keywords: "Consola de administrador, comandos de NuGet Powershell, referencia de NuGet Powershell, paquete de actualización del paquete de NuGet"
+ms.technology: ''
+description: Referencia de comandos de PowerShell de paquete de actualización en la consola de administrador de paquetes de NuGet en Visual Studio.
+keywords: Consola de administrador, comandos de NuGet Powershell, referencia de NuGet Powershell, paquete de actualización del paquete de NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 293d9a7fdcce633eb5a97e5f76398deb5c13bdb4
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 05772159d62f73e7d25f71ad36809f5ae8ef6aae
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Paquete de actualización (consola de administrador de paquetes en Visual Studio)
 
@@ -47,7 +50,7 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | NombreDelProyecto | El nombre del proyecto que contiene los paquetes que se va a actualizar, el valor predeterminado para todos los proyectos. |
 | Versión | La versión que se utilizará para la actualización, la versión más reciente de forma predeterminada. En NuGet 3.0 +, el valor de versión debe ser uno de *mínima, máxima, HighestMinor*, o *HighestPatch* (equivalente a - seguro). |
 | Seguridad de | Restringe las actualizaciones a solo las versiones con la misma versión de mayor y menor que el paquete instalado actualmente. |
-| Origen | La ruta de acceso URL o una carpeta de origen del paquete para buscar. Las rutas de acceso de la carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Uninstall-Package` busca en el origen del paquete seleccionado. |
+| Origen | La ruta de acceso URL o una carpeta de origen del paquete para buscar. Las rutas de acceso de la carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Update-Package` busca en el origen del paquete seleccionado. |
 | IncludePrerelease | Incluye paquetes de versión preliminar para las actualizaciones. |
 | Reinstalación | Paquetes de Resintalls con sus versiones instaladas actualmente. Vea [Reinstalación y actualización de paquetes](../consume-packages/reinstalling-and-updating-packages.md). |
 | FileConflictAction | La acción que se realizará cuando se le pregunte para sobrescribir u omitir los archivos existentes al que hace referencia el proyecto. Los valores posibles son *sobrescribir, omitir, None, OverwriteAll*, y *IgnoreAll* (3.0 +). |

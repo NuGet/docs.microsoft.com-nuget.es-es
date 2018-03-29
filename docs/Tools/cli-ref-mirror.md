@@ -6,17 +6,20 @@ manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 description: Referencia del comando de reflejado nuget.exe
 keywords: referencia de reflejado de NuGet, comando espejo
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0c1969cc04b2e2cead5e9dadf9739fdabdf65f6c
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 512bd72d568cda81eb7c6a1555c36ead66b5c438
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="mirror-command-nuget-cli"></a>comando reflejado (NuGet CLI)
 
@@ -45,7 +48,7 @@ Si el repositorio de destino está en `https://machine/repo` que se esté ejecut
 | --- | --- |
 | apiKey | La clave de API para el repositorio de destino. Si no está presente, se especificó en el archivo de configuración se usa (`%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux)). |
 | Ayuda | Muestra información de ayuda para el comando. |
-| NoCache | Impide que NuGet use paquetes de memorias caché del equipo local. |
+| NoCache | Impide que NuGet use paquetes almacenados en caché. Vea [administrar los paquetes globales y las carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | NOOP | Registra qué están a cargo pero no lleva a cabo las acciones; se da por supuesto se realizó correctamente para las operaciones de inserción. |
 | Versión preliminar | Incluye paquetes de versión preliminar de la operación de creación de reflejo. |
 | Origen | Una lista de orígenes de paquetes para crear el reflejo. Si no se especifica ningún origen de los definen en el archivo de configuración (vea ApiKey anterior) se usan, volverá al valor predeterminado nuget.org si no se especifica ninguno. |

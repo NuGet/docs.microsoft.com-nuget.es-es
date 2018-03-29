@@ -1,22 +1,25 @@
 ---
-title: "Notas de la versión de NuGet 3.0 Beta | Documentos de Microsoft"
+title: Notas de la versión de NuGet 3.0 Beta | Documentos de Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 3.0 Beta, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 3.0 Beta notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
+ms.technology: ''
+description: Notas de la versión de NuGet 3.0 Beta, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
+keywords: NuGet 3.0 Beta notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3a595d002e385ff0330c2eebd0e8439f5dbefbd9
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: bb64cbce4f26d84e1ba12930578382f887bb85f8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-30-beta-release-notes"></a>Notas de la versión Beta 3.0 NuGet
 

@@ -6,7 +6,7 @@ manager: ghogen
 ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager
 - vs.toolsoptionspages.nuget_package_manager.general
@@ -17,11 +17,14 @@ keywords: NuGet UI, el Administrador de paquetes de NuGet UI, NuGet en Visual St
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 35bb856ccff43c77af7eac67da4614d83dcdc533
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ad36c2ab0c6e62c7fe624b35d92e852303ecfdfb
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-package-manager-ui"></a>Interfaz de usuario de administrador de paquetes de NuGet
 
@@ -37,13 +40,13 @@ En este tema:
 - [Controlan opciones de administrador de paquetes](#package-manager-options-control)
 
 > [!Note]
-> Compruebe si faltan el Administrador de paquetes de NuGet en Visual Studio 2015, **Herramientas > extensiones y actualizaciones...**  y busque el *Administrador de paquetes de NuGet* extensión. Si no puede usar el instalador de extensiones de Visual Studio, descargue la extensión directamente desde [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
+> Compruebe si faltan el Administrador de paquetes de NuGet en Visual Studio 2015, **Herramientas > extensiones y actualizaciones... ** y busque el *Administrador de paquetes de NuGet* extensión. Si no puede usar el instalador de extensiones de Visual Studio, descargue la extensión directamente desde [ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html).
 >
 > En Visual Studio 2017 NuGet y el Administrador de paquetes de NuGet se instalan automáticamente con cualquiera. Cargas de trabajo relacionados con la red. Instalar de forma individual seleccionando la **componentes individuales > herramientas de código > Administrador de paquetes de NuGet** opción en el programa de instalación de Visual Studio de 2017.
 
 ## <a name="finding-and-installing-a-package"></a>Búsqueda e instalación de un paquete
 
-1. En **el Explorador de soluciones**, haga **referencias** o un proyecto y seleccione **administrar paquetes de NuGet...** .
+1. En **el Explorador de soluciones**, haga **referencias** o un proyecto y seleccione **administrar paquetes de NuGet... **.
 
     ![Administrar la opción de menú de paquetes de NuGet](media/ManagePackagesUICommand.png)
 
@@ -60,7 +63,7 @@ En este tema:
 
 ## <a name="uninstalling-a-package"></a>Desinstalar un paquete
 
-1. En **el Explorador de soluciones**, haga **referencias** o el proyecto que desee y seleccione **administrar paquetes de NuGet...** .
+1. En **el Explorador de soluciones**, haga **referencias** o el proyecto que desee y seleccione **administrar paquetes de NuGet... **.
 1. Seleccione el **instalado** ficha.
 1. Seleccione el paquete para desinstalar (uso de búsqueda para filtrar la lista si es necesario) y seleccione **desinstalar**.
 
@@ -70,7 +73,7 @@ En este tema:
 
 ## <a name="updating-a-package"></a>Actualizar un paquete
 
-1. En **el Explorador de soluciones**, haga **referencias** o el proyecto que desee y seleccione **administrar paquetes de NuGet...** . (En proyectos de sitios web, haga clic en el **Bin** carpeta.)
+1. En **el Explorador de soluciones**, haga **referencias** o el proyecto que desee y seleccione **administrar paquetes de NuGet... **. (En proyectos de sitios web, haga clic en el **Bin** carpeta.)
 1. Seleccione el **actualizaciones** pestaña para ver los paquetes que tienen actualizaciones disponibles de los orígenes del paquete seleccionado. Seleccione **incluir versión preliminar** debe incluir paquetes de versión preliminar en la lista de actualizaciones.
 1. Seleccione el paquete para actualizar, seleccione la versión deseada de la lista desplegable de la derecha y seleccione **actualizar**.
 
@@ -87,7 +90,7 @@ En este tema:
 
 Administrar paquetes de una solución es un medio cómodo para trabajar con varios proyectos simultáneamente.
 
-1. Seleccione el **Herramientas > Administrador de paquetes de NuGet > Administrar paquetes de NuGet para solución...**  menú de comandos, o haga clic en la solución y seleccione **administrar paquetes de NuGet...** :
+1. Seleccione el **Herramientas > Administrador de paquetes de NuGet > Administrar paquetes de NuGet para solución... ** menú de comandos, o haga clic en la solución y seleccione **administrar paquetes de NuGet... **:
 
     ![Administrar paquetes de NuGet para la solución](media/ManagePackagesSolutionUICommand.png)
 
@@ -125,7 +128,7 @@ Para administrar los orígenes de paquetes:
 
     ![Opciones de orígenes de paquetes](media/options.png)
 
-1. Para agregar un origen, seleccione  **+** , edite el nombre, escriba la dirección URL o ruta de acceso en la **origen** control y seleccione **actualización**. El origen ahora aparece en el selector de lista desplegable.
+1. Para agregar un origen, seleccione ** + **, edite el nombre, escriba la dirección URL o ruta de acceso en la **origen** control y seleccione **actualización**. El origen ahora aparece en el selector de lista desplegable.
 1. Para cambiar un origen del paquete, selecciónelo, efectúe modificaciones en el **nombre** y **origen** cuadros y seleccione **actualización**.
 1. Para deshabilitar un origen del paquete, desactive la casilla a la izquierda del nombre de la lista.
 1. Para quitar un origen de paquete, selecciónelo y, a continuación, seleccione la **X** botón.

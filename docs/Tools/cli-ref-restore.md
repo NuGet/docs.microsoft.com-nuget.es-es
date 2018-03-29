@@ -1,22 +1,25 @@
 ---
-title: "Comando de restauración de NuGet CLI | Documentos de Microsoft"
+title: Comando de restauración de NuGet CLI | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Referencia para el comando de restauración nuget.exe"
-keywords: "NuGet referencia de restauración, restaurar los comandos de paquetes"
+ms.technology: ''
+description: Referencia para el comando de restauración nuget.exe
+keywords: NuGet referencia de restauración, restaurar los comandos de paquetes
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2416ad652244e0ea60651147ad74a1513cdb75ff
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 64f12fdedc8fbfcee15c1dcddc445148f458c030
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="restore-command-nuget-cli"></a>comando restore (NuGet CLI)
 
@@ -46,15 +49,15 @@ donde `<projectPath>` especifica la ubicación de una solución o un `packages.c
 | Ayuda | Muestra información de ayuda para el comando. |
 | MSBuildPath | *(4.0 +)*  Especifica la ruta de acceso de MSBuild para usar con el comando, tiene prioridad sobre `-MSBuildVersion`. |
 | MSBuildVersion | *(3.2 +)*  Especifica la versión de MSBuild que se utilizará con este comando. Valores admitidos son 4, 12, 14, 15. De forma predeterminada, se seleccionará el MSBuild en la ruta de acceso, en caso contrario, valor predeterminado es la última versión instalada de MSBuild. |
-| NoCache | Impide que NuGet use paquetes de memorias caché del equipo local. |
+| NoCache | Impide que NuGet use paquetes almacenados en caché. Vea [administrar los paquetes globales y las carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
-| OutputDirectory | Especifica la carpeta en la que se instalan los paquetes. Si no se especifica ninguna carpeta, se usa la carpeta actual. |
+| OutputDirectory | Especifica la carpeta en la que se instalan los paquetes. Si no se especifica ninguna carpeta, se usa la carpeta actual. Necesario cuando se restaura con un `packages.config` archivo a menos que `PackagesDirectory` o `SolutionDirectory` se utiliza.|
 | PackageSaveMode | Especifica los tipos de archivos para guardar después de la instalación de paquete: uno de `nuspec`, `nupkg`, o `nuspec;nupkg`. |
-| PackagesDirectory | Igual a `OutputDirectory`. |
+| PackagesDirectory | Igual a `OutputDirectory`. Necesario cuando se restaura con un `packages.config` archivo a menos que `OutputDirectory` o `SolutionDirectory` se utiliza. |
 | Project2ProjectTimeOut | Tiempo de espera en segundos para resolver las referencias de proyecto a proyecto. |
 | Recursiva | *(4.0 +)*  Restaura todas las referencias de proyectos para proyectos de UWP y .NET Core. No se aplica a proyectos mediante `packages.config`. |
 | RequireConsent | Comprueba que la restauración de paquetes está habilitada antes de descargar e instalar los paquetes. Para obtener más información, consulte [la restauración del paquete](../consume-packages/package-restore.md). |
-| SolutionDirectory | Especifica la carpeta de soluciones. No es válido cuando restaurando paquetes para una solución. |
+| SolutionDirectory | Especifica la carpeta de soluciones. No es válido cuando restaurando paquetes para una solución. Necesario cuando se restaura con un `packages.config` archivo a menos que `PackagesDirectory` o `OutputDirectory` se utiliza. |
 | Origen | Especifica la lista de orígenes de paquetes (como las direcciones URL) para que utilice para la restauración. Si se omite, el comando utiliza los orígenes proporcionados en archivos de configuración, consulte [NuGet configurar comportamiento](../consume-packages/configuring-nuget-behavior.md). |
 | Nivel de detalle |> especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 

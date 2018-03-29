@@ -1,22 +1,25 @@
 ---
-title: "Notas de la versión de NuGet 2.1 | Documentos de Microsoft"
+title: Notas de la versión de NuGet 2.1 | Documentos de Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión para 2.1 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 2.1 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
+ms.technology: ''
+description: Notas de la versión para 2.1 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
+keywords: NuGet 2.1 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 405f5a0bddd5472cc760da77412c5fa066da1558
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 06116a86887b5561ad4e2ecad8090222d16cd333
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-21-release-notes"></a>Notas de la versión 2.1 de NuGet
 

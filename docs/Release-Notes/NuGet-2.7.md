@@ -1,22 +1,25 @@
 ---
-title: "Notas de la versión de NuGet 2.7 | Documentos de Microsoft"
+title: Notas de la versión de NuGet 2.7 | Documentos de Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión para 2.7 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 2.7 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
+ms.technology: ''
+description: Notas de la versión para 2.7 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
+keywords: NuGet 2.7 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 43638626661ae034bb0a1cc28958a2e2929f047f
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 71ced70af127c8219001069739a6cec59d7d1684
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-27-release-notes"></a>Notas de la versión 2.7 de NuGet
 
@@ -158,7 +161,7 @@ Vea [valores predeterminados de configuración de NuGet](../consume-packages/con
 
 ### <a name="renaming-the-default-package-source"></a>Cambiar el nombre del origen del paquete predeterminado
 
-NuGet siempre ha registrado un origen de paquete predeterminado denominado "NuGet oficial origen del paquete" que señala a nuget.org. Ese nombre es detallado y también no especifique donde se apunta realmente. Para resolver los problemas de dos, hemos hemos cambiado el nombre de este origen del paquete para simplemente "nuget.org" en la interfaz de usuario. La dirección URL para el origen del paquete también se ha modificado para incluir la "www." de grupo. Después de usar NuGet 2.7, su existente "origen del paquete oficial de NuGet" se actualizarán automáticamente a "nuget.org" como su nombre y "https://www.nuget.org/api/v2/" como su dirección URL.
+NuGet siempre ha registrado un origen de paquete predeterminado denominado "NuGet oficial origen del paquete" que señala a nuget.org. Ese nombre es detallado y también no especifique donde se apunta realmente. Para resolver los problemas de dos, hemos hemos cambiado el nombre de este origen del paquete para simplemente "nuget.org" en la interfaz de usuario. La dirección URL para el origen del paquete también se ha modificado para incluir la "www." de grupo. Después de usar NuGet 2.7, se actualizará automáticamente el existente "origen del paquete oficial de NuGet" a "nuget.org" como su nombre y "https://www.nuget.org/api/v2/" como su dirección URL.
 
 ### <a name="performance-improvements"></a>Mejoras en el rendimiento
 

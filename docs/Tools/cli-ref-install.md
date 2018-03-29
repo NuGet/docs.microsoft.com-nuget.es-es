@@ -1,22 +1,25 @@
 ---
-title: "Comando de instalación de NuGet CLI | Documentos de Microsoft"
+title: Comando de instalación de NuGet CLI | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Referencia para el comando de instalación nuget.exe"
-keywords: "NuGet instalar referencia, el comando de paquete de instalación"
+ms.technology: ''
+description: Referencia para el comando de instalación nuget.exe
+keywords: NuGet instalar referencia, el comando de paquete de instalación
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8d5f53c833fb42c9fe37d0629eab33e8f0bc70d7
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 121d7b50767f1d466d6d0d8494f324b02d8ff6f1
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-command-nuget-cli"></a>Instale el comando (NuGet CLI)
 
@@ -27,7 +30,7 @@ Descarga e instala un paquete en un proyecto, de forma predeterminada en la carp
 > [!Tip]
 > Para descargar un paquete directamente fuera del contexto de un proyecto, visite la página del paquete en [nuget.org](https://www.nuget.org) y seleccione la **descargar** vínculo.
 
-Si no se especifica ningún origen de los indicados en el archivo de configuración global, `%APPDATA%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux), se utilizan. Vea [NuGet configurar comportamiento](../consume-packages/configuring-nuget-behavior.md) para obtener más detalles.
+Si no se especifica ningún origen de los indicados en el archivo de configuración global, `%appdata%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux), se utilizan. Vea [NuGet configurar comportamiento](../consume-packages/configuring-nuget-behavior.md) para obtener más detalles.
 
 Si no se especifica ningún paquete específico, `install` instala todos los paquetes que se muestran en el proyecto `packages.config` archivo, lo que similar a [ `restore` ](cli-ref-restore.md).
 
@@ -55,7 +58,7 @@ donde `<packageID>` nombres el paquete que desea instalar (con la versión más 
 | ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | Framework | *(4.4 +)*  Utilizado para seleccionar las dependencias de .NET framework de destino. El valor predeterminado es 'Any' Si no se especifica. |
 | Ayuda | Muestra información de ayuda para el comando. |
-| NoCache | Impide que NuGet use paquetes de memorias caché del equipo local. |
+| NoCache | Impide que NuGet use paquetes almacenados en caché. Vea [administrar los paquetes globales y las carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
 | OutputDirectory | Especifica la carpeta en la que se instalan los paquetes. Si no se especifica ninguna carpeta, se usa la carpeta actual. |
 | PackageSaveMode | Especifica los tipos de archivos para guardar después de la instalación de paquete: uno de `nuspec`, `nupkg`, o `nuspec;nupkg`. |

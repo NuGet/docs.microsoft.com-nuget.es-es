@@ -6,18 +6,21 @@ manager: unniravindranathan
 ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Descripción de la característica de paquetes de sesión."
-keywords: "Inicio de sesión de paquete de NuGet, firma, certificados"
+ms.technology: ''
+description: Descripción de la característica de paquetes de sesión.
+keywords: Inicio de sesión de paquete de NuGet, firma, certificados
 ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9bf9885aaf42bedb681a5d916202fa8b26749a0c
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a2a338596f7d98ded11da6fb02bafba3521249ab
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="signed-packages"></a>Paquetes firmados
 
@@ -34,7 +37,7 @@ Además, paquetes firmados por el autor proporcionan un mecanismo de autenticaci
 Para obtener más información acerca de cómo crear un paquete firmado, consulte [firma paquetes](../create-packages/Sign-a-package.md) y [comando de inicio de sesión de nuget](../tools/cli-ref-sign.md).
 
 > [!Important]
-> NuGet.org no acepta actualmente los paquetes firmados. Puede firmar paquetes para la publicación en las fuentes personalizadas.
+> NuGet.org no acepta actualmente los paquetes firmados. Puede firmar paquetes para publicarlos en fuentes personalizadas.
 
 ## <a name="certificate-requirements"></a>Requisitos de certificados
 

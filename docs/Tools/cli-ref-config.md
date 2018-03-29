@@ -6,17 +6,20 @@ manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 description: Referencia para el comando config de nuget.exe
-keywords: "referencia de configuración de NuGet, comando config"
+keywords: referencia de configuración de NuGet, comando config
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 7cf7c06000904a617752567ed7612c0c48042db9
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: e3d08f210bd56fcb8eb701fc9b241a3ab45998ec
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="config-command-nuget-cli"></a>comando config (NuGet CLI)
 

@@ -1,22 +1,25 @@
 ---
-title: "Notas de la versión de NuGet 1.2 | Documentos de Microsoft"
+title: Notas de la versión de NuGet 1.2 | Documentos de Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 1.2, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 1.2 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
+ms.technology: ''
+description: Notas de la versión de NuGet 1.2, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
+keywords: NuGet 1.2 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9c8fff67eb61ab673eb62113e0cc46c0868be237
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 0d95f41c5bc5d490764c9f128ee621e1037cef66
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-12-release-notes"></a>Notas de la versión 1.2 de NuGet
 

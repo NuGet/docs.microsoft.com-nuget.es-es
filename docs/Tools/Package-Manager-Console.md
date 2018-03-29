@@ -1,12 +1,12 @@
 ---
-title: "Guía de consola de administrador de paquetes de NuGet | Documentos de Microsoft"
+title: Guía de consola de administrador de paquetes de NuGet | Documentos de Microsoft
 author: kraigb
 hms.author: kraigb
 manager: ghogen
 ms.date: 01/23/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 f1_keywords:
 - vs.nuget.packagemanager.console
 description: Instrucciones para usar la consola de administrador de paquetes de NuGet en Visual Studio para trabajar con paquetes.
@@ -14,11 +14,14 @@ keywords: Consola de administrador de paquetes de NuGet, powershell de NuGet, ad
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 60c7edd0497e162cc511424e9acfbbfd6f53fd46
-ms.sourcegitcommit: a40a6ce6897b2d9411397b2e29b1be234eb6e50c
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: af22a524f6b4a41a4c24077fe396846da6fb1ff8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="package-manager-console"></a>Consola del Administrador de paquetes
 
@@ -80,19 +83,10 @@ Install-Package Elmah -ProjectName UtilitiesLib
 
 Vea [Install-Package](../tools/ps-ref-install-package.md).
 
-Instalar un paquete realiza las siguientes acciones:
+Instalar un paquete en la consola realiza los mismos pasos tal como se describe en [¿qué ocurre cuando se instala un paquete](../consume-packages/ways-to-install-a-package.md#what-happens-when-a-package-is-installed), con las siguientes adiciones:
 
-- Muestra los términos de licencia aplicables en la ventana de consola con acuerdo implícito. Si no acepta los términos, debe desinstalar el paquete inmediatamente.
-- Agrega una referencia al proyecto en el formato de referencia está en uso. Las referencias posteriormente aparecen en el Explorador de soluciones y el archivo de formato de referencia aplicable. Sin embargo, tenga en cuenta que con PackageReference, debe guardar el proyecto para ver los cambios en el archivo de proyecto directamente.
-- Almacena en caché el paquete:
-  - PackageReference: el paquete está almacenado en caché en `%USERPROFILE%\.nuget\packages` y el bloqueo de archivos, es decir, `project.assets.json` se actualiza.
-  - `packages.config`: crea un `packages` carpeta en la raíz de la solución y copia los archivos de paquete en una subcarpeta dentro de él. El `package.config` archivo se ha actualizado.
-- Las actualizaciones de `app.config` o `web.config` si el paquete utiliza [transformaciones de archivos de origen y configuración](../create-packages/source-and-config-file-transformations.md).
-- Instala todas las dependencias si no están ya presentes en el proyecto. Esto podría actualizar versiones del paquete en el proceso, como se describe en [resolución de dependencia](../consume-packages/dependency-resolution.md).
-- Muestra al archivo Léame del paquete, si está disponible, en una ventana de Visual Studio.
-
-> [!Tip]
-> Una de las ventajas principales de la instalación de paquetes con el `Install-Package` comando en la consola es que agrega una referencia al proyecto como si ha usado la UI del Administrador de paquetes. En cambio, la `nuget install` comando de CLI de solo descarga el paquete y no se agrega automáticamente una referencia.
+- La consola muestra los términos de licencia aplicables en su ventana con un acuerdo implícito. Si no acepta los términos, debe desinstalar el paquete inmediatamente.
+- También una referencia al paquete se agrega al archivo de proyecto y aparece en **el Explorador de soluciones** en el **referencias** nodo, debe guardar el proyecto para ver los cambios en el archivo de proyecto directamente.
 
 ## <a name="uninstalling-a-package"></a>Desinstalar un paquete
 
@@ -111,12 +105,9 @@ Vea [Uninstall-Package](../tools/ps-ref-uninstall-package.md). Use [Get-Package]
 
 Desinstalar un paquete realiza las siguientes acciones:
 
-- Quita las referencias a los paquetes del proyecto (y cualquier formato de referencia está en uso). Las referencias ya no aparecen en el Explorador de soluciones. (Es posible que deba volver a generar el proyecto para verlo quita de la **Bin** carpeta.)
+- Quita las referencias a los paquetes del proyecto (y cualquier formato de administración está en uso). Las referencias ya no aparecen en **el Explorador de soluciones**. (Es posible que deba volver a generar el proyecto para verlo quita de la **Bin** carpeta.)
 - Invierte los cambios realizados en `app.config` o `web.config` cuando se instaló el paquete.
 - Quita instaladas con anterioridad dependencias si no hay paquetes restantes usan esas dependencias.
-
-> [!Tip]
-> Al igual que `Install-Package`, el `Uninstall-Package` comando tiene la ventaja de administrar referencias en el proyecto, a diferencia de las `nuget uninstall` comando de CLI.
 
 ## <a name="updating-a-package"></a>Actualizar un paquete
 
@@ -159,7 +150,7 @@ Vea [Find-Package](../tools/ps-ref-find-package.md). En Visual Studio 2013 y ver
 
 En Visual Studio 2017 NuGet y el Administrador de paquetes de NuGet se instalan automáticamente cuando se selecciona cualquiera. Cargas de trabajo relacionados con NET; También puede instalarlo por separado mediante la comprobación de la **componentes individuales > herramientas de código > Administrador de paquetes de NuGet** opción en el programa de instalación de Visual Studio de 2017.
 
-Además, compruebe si faltan el Administrador de paquetes de NuGet en Visual Studio 2015 y versiones anteriores, **Herramientas > extensiones y actualizaciones...**  y busque la extensión del Administrador de paquetes de NuGet. Si no puede usar el instalador de extensiones de Visual Studio, puede descargar la extensión directamente desde [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
+Además, compruebe si faltan el Administrador de paquetes de NuGet en Visual Studio 2015 y versiones anteriores, **Herramientas > extensiones y actualizaciones...**  y busque la extensión del Administrador de paquetes de NuGet. Si no puede usar el instalador de extensiones de Visual Studio, puede descargar la extensión directamente desde [ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html).
 
 La consola de administrador de paquetes no está actualmente disponible con Visual Studio para Mac. Los comandos equivalentes, sin embargo, están disponibles a través de la [NuGet CLI](nuget-exe-CLI-reference.md). Visual Studio para Mac tiene una interfaz de usuario para administrar paquetes de NuGet. Vea [paquete NuGet unos incluidos en el proyecto](/visualstudio/mac/nuget-walkthrough).
 

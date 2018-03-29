@@ -1,5 +1,5 @@
 ---
-title: "Catálogo, NuGet V3 API | Documentos de Microsoft"
+title: Catálogo, NuGet V3 API | Documentos de Microsoft
 author:
 - joelverhagen
 - kraigb
@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/30/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "El catálogo es un índice de todos los paquetes creados y eliminados en nuget.org."
-keywords: "Catálogo de API de NuGet V3, registro de transacciones de nuget.org, replicar nuget.org, clon nuget.org, registro solo de adición de nuget.org"
+ms.technology: ''
+description: El catálogo es un índice de todos los paquetes creados y eliminados en nuget.org.
+keywords: Catálogo de API de NuGet V3, registro de transacciones de nuget.org, replicar nuget.org, clon nuget.org, registro solo de adición de nuget.org
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: be30b21d488c323c439a59fff290a95adaefd902
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 61ed502eee498f5ad0a014e3338503f2855396a5
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="catalog"></a>Catálogo
 

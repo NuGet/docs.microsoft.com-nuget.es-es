@@ -1,22 +1,25 @@
 ---
-title: "Notas de la versión de NuGet 2.5 | Documentos de Microsoft"
+title: Notas de la versión de NuGet 2.5 | Documentos de Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 2.5, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 2.5 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
+ms.technology: ''
+description: Notas de la versión de NuGet 2.5, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
+keywords: NuGet 2.5 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4fb696a1f4d76bdd3461df6af461f279f9f0a8b0
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 4495e1ea9cc4ec13ef330e56d12de1320cf10b24
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-25-release-notes"></a>Notas de la versión 2.5 de NuGet
 
@@ -129,7 +132,7 @@ Ahora los procesos del comando nuget.exe módulo hace referencia a los proyectos
 
 Esto permite que un proyecto que se hace referencia se trate como una dependencia si no hay un `.nuspec` de archivos, en caso contrario, se convierte en parte del paquete.
 
-Obtener más detalles: [http://nuget.codeplex.com/workitem/936](http://nuget.codeplex.com/workitem/936)
+Obtener más información aquí: [http://nuget.codeplex.com/workitem/936](http://nuget.codeplex.com/workitem/936)
 
 ### <a name="add-a-minimum-nuget-version-property-to-packages"></a>Agregar una propiedad 'Mínimo NuGet Version' a los paquetes
 

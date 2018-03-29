@@ -1,22 +1,25 @@
 ---
-title: "Notas de versión 1.0 y 1.1 de NuGet | Documentos de Microsoft"
+title: Notas de versión 1.0 y 1.1 de NuGet | Documentos de Microsoft
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión 1.1 de NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 1.1 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
+ms.technology: ''
+description: Notas de la versión 1.1 de NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
+keywords: NuGet 1.1 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6a596e61f144e7269f703f2dba3dddb4fd338e6a
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dd320df2d725e58182cd908ce621571ea018b350
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-10-and-11-release-notes"></a>Notas de la versión de NuGet 1.0 y 1.1
 
@@ -49,7 +52,7 @@ Para usar este [última versión](http://nuget.codeplex.com/releases/view/52018)
 
 * Primero debe desinstalar la compilación anterior. Debe ejecutar VS como administrador para hacerlo.
 * Quite todas las fuentes existentes que tenga.
-* Agregar una fuente nueva señalando a [http://go.microsoft.com/fwlink/?LinkId=206669](http://go.microsoft.com/fwlink/?LinkId=206669).
+* Agregar una fuente nueva señalando a [ http://go.microsoft.com/fwlink/?LinkId=206669 ](http://go.microsoft.com/fwlink/?LinkId=206669).
 
 ## <a name="nuget-11"></a>1.1 de NuGet
 
@@ -135,7 +138,7 @@ Se corrigió un problema para RTM desde la versión RC.
 
 Éstos son los cambios más importantes realizados en la versión 2:
 
-* Cambiar el paquete de fuente de ATOM a un punto de conexión de servicio de OData: Si actualiza a la versión CTP2 de NuGet, no olvide agregar la siguiente dirección URL como un origen de paquete: https://feed.nuget.org/ctp2/odata/v1/.
+* Cambiar el paquete de fuente de ATOM a un punto de conexión de servicio de OData: Si actualiza a la versión CTP2 de NuGet, no olvide agregar la siguiente dirección URL como un origen de paquete: `https://feed.nuget.org/ctp2/odata/v1/`.
 * Cambiar el nombre del comando Add-Package para *Install-Package*.
 * Actualiza el `.nuspec` formato. El `.nuspec` formato ahora incluye la *iconUrl* campo para especificar un icono de 32 x 32 png que se mostrará en el cuadro de diálogo Agregar paquete. Por tanto, asegúrese de establecer se va a distinguir el paquete. El `.nuspec` formato también incluye el nuevo *projectUrl* campo que puede usar para que señale a una página web que proporciona más información sobre el paquete.
 

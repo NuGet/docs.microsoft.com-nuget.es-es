@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 description: La URL base del registro de paquete permite capturar metadatos acerca de los paquetes.
 keywords: Metadatos de paquete de NuGet API, registro de la API de NuGet, API de NuGet que no figuran en paquetes
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: c098d70d58011bad7f9829f0c95c87c1339dd362
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: c7b32e1d2bb9250de1e0b707405a75184b2bd8b4
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="package-metadata"></a>Metadatos de paquete
 
@@ -35,8 +38,8 @@ Los siguientes `@type` se usan valores:
 Valor de @type                     | Notas
 ------------------------------- | -----
 RegistrationsBaseUrl            | La versión inicial
-RegistrationsBaseUrl/3.0.0-beta | Alias de`RegistrationsBaseUrl`
-RegistrationsBaseUrl/3.0.0-rc   | Alias de`RegistrationsBaseUrl`
+RegistrationsBaseUrl/3.0.0-beta | Alias de `RegistrationsBaseUrl`
+RegistrationsBaseUrl/3.0.0-rc   | Alias de `RegistrationsBaseUrl`
 RegistrationsBaseUrl/3.4.0      | Respuestas de comprimido con gzip
 RegistrationsBaseUrl/3.6.0      | Incluye paquetes de SemVer 2.0.0
 
@@ -87,7 +90,7 @@ La heurística que usa nuget.org es la siguiente: si hay 128 o más versiones de
 
 nombre     | En     | Tipo    | Obligatorio | Notas
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | Dirección URL    | cadena  | sí      | El identificador del paquete, en minúsculas
+LOWER_ID | Resolución    | cadena  | sí      | El identificador del paquete, en minúsculas
 
 El `LOWER_ID` valor es el identificador de paquete deseado en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
 
@@ -146,7 +149,7 @@ nombre                     | Tipo                       | Obligatorio | Notas
 ------------------------ | -------------------------- | -------- | -----
 @id                      | cadena                     | sí      | La dirección URL para el documento que se utiliza para generar este objeto
 authors                  | cadena o matriz de cadenas | No       | 
-dependencyGroups         | Matriz de objetos           | No       | La dirección URL para el contenido del paquete (.nupkg)
+dependencyGroups         | Matriz de objetos           | No       | Las dependencias del paquete, agrupados por .NET framework de destino
 Descripción              | cadena                     | No       | 
 iconUrl                  | cadena                     | No       | 
 id                       | cadena                     | sí      | El identificador del paquete

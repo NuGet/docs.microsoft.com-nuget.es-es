@@ -6,17 +6,20 @@ manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Referencia para el comando de actualización nuget.exe"
-keywords: "referencia de actualización de NuGet, comandos del paquete de actualización"
+ms.technology: ''
+description: Referencia para el comando de actualización nuget.exe
+keywords: referencia de actualización de NuGet, comandos del paquete de actualización
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6acf3a74e5c26bc4e2cef9b0db4a72442d311449
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 1ea04f2fa2a753065ee4f17cbb926e37acf129e0
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="update-command-nuget-cli"></a>comando de actualización (NuGet CLI)
 

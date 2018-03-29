@@ -1,25 +1,28 @@
 ---
-title: "Referencia de la versión de paquete de NuGet | Documentos de Microsoft"
+title: Referencia de la versión de paquete de NuGet | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/08/2017
+ms.date: 03/23/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Detalles exactos en la especificación de números de versión y las duraciones de otros paquetes en la que depende de un paquete de NuGet y cómo se instalan las dependencias."
-keywords: "control de versiones, las dependencias de paquetes de NuGet, versiones de la dependencia de NuGet, números de versión de NuGet, versión del paquete de NuGet, intervalos de versiones, las especificaciones de versión, números de versión normalizada"
+ms.technology: ''
+description: Detalles exactos en la especificación de números de versión y las duraciones de otros paquetes en la que depende de un paquete de NuGet y cómo se instalan las dependencias.
+keywords: control de versiones, las dependencias de paquetes de NuGet, versiones de la dependencia de NuGet, números de versión de NuGet, versión del paquete de NuGet, intervalos de versiones, las especificaciones de versión, números de versión normalizada
 ms.reviewer:
 - anandr
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 70472d7d97d073009237a047e0fdf528b221dfd0
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 678ad79d9106a9f592ae4f47bc93cc117496e2c9
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="package-versioning"></a>Control de versiones del paquete
+# <a name="package-versioning"></a>Control de versiones de paquetes
 
 Siempre se conoce que un paquete específico mediante su identificador de paquete y un número de versión exacta. Por ejemplo, [Entity Framework](https://www.nuget.org/packages/EntityFramework/) en nuget.org tiene varios paquetes específicos de doce disponibles, que van desde la versión *4.1.10311* versión *6.1.3* (el estable de más reciente lanzamiento) y una variedad de versiones preliminares como *6.2.0-beta1*.
 
@@ -61,7 +64,7 @@ Es decir, los desarrolladores de paquetes suelen seguir las convenciones de nome
 - `-rc`: versión candidata para lanzamiento. Suele ser una versión potencialmente definitiva (estable) a menos que surjan errores importantes.
 
 > [!Note]
-> Es compatible con NuGet 4.3.0+ [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html), que es compatible con números de versión preliminar con la notación de puntos, como en *1.0.1-build.23*. La notación de puntos no es compatible con versiones de NuGet antes 4.3.0. Puede utilizar un formulario como *1.0.1-build23*.
+> Es compatible con NuGet 4.3.0+ [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html), que es compatible con números de versión preliminar con la notación de puntos, como en *1.0.1-build.23*. La notación de puntos no es compatible con versiones de NuGet anteriores a 4.3.0. Puede utilizar un formulario como *1.0.1-build23*.
 
 Al resolver las referencias del paquete y varias versiones de paquete distinguirse sólo por sufijo, NuGet elige una versión sin un sufijo en primer lugar, a continuación, aplica la prioridad para la versión preliminar en orden alfabético inverso. Por ejemplo, las siguientes versiones se elegiría en el orden mostrado:
 
@@ -109,8 +112,8 @@ Cuando se hace referencia a las dependencias de paquete, NuGet admite el uso de 
 
 | Notation | Regla aplicada | Descripción |
 |----------|--------------|-------------|
-| 1.0 | 1.0 ≤ x | Versión mínima, ambos inclusive |
-| (1.0,) | 1.0 < x | Versión mínima, exclusivo |
+| 1.0 | x ≥ 1.0 | Versión mínima, ambos inclusive |
+| (1.0,) | x > 1.0 | Versión mínima, exclusivo |
 | [1.0] | x == 1.0 | Coincidencia de versión exacta |
 | (,1.0] | x ≤ 1.0 | Versión máxima, ambos inclusive |
 | (,1.0) | x < 1.0 | Versión máxima, exclusivo |

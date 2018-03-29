@@ -1,5 +1,5 @@
 ---
-title: "Información general, NuGet API | Documentos de Microsoft"
+title: Información general, NuGet API | Documentos de Microsoft
 author:
 - joelverhagen
 - kraigb
@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 description: La API de NuGet es un conjunto de extremos HTTP que puede usarse para descargar los paquetes, capturar metadatos, publicar nuevos paquetes, etcetera.
-keywords: "API de NuGet V3, API de NuGet V2, NuGet JSON, API de registro de NuGet, contenedor sin formato de API de NuGet, NuGet nupkg API, API de metadatos de NuGet, API de búsqueda de NuGet, NuGet inserción API, NuGe publicar API, NuGet eliminar API, NuGet ocultar API, protocolo de NuGet"
+keywords: API de NuGet V3, API de NuGet V2, NuGet JSON, API de registro de NuGet, contenedor sin formato de API de NuGet, NuGet nupkg API, API de metadatos de NuGet, API de búsqueda de NuGet, NuGet inserción API, NuGe publicar API, NuGet eliminar API, NuGet ocultar API, protocolo de NuGet
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: c28b0912be6dbccab06078100cb71821c3658e08
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 7053a971c80a94cf035e8f149c332b36e66a9ea9
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-api"></a>API de NuGet
 
@@ -32,8 +35,7 @@ Tenga en cuenta que en algunos casos, nuget.org tiene requisitos adicionales que
 
 ## <a name="service-index"></a>Índice de servicio
 
-El punto de entrada para la API es un documento JSON en una ubicación conocida. Este documento se conoce el **índice servicio**.
-La ubicación del índice de servicio de nuget.org es `https://api.nuget.org/v3/index.json`.
+El punto de entrada para la API es un documento JSON en una ubicación conocida. Este documento se conoce el **índice servicio**. La ubicación del índice de servicio de nuget.org es `https://api.nuget.org/v3/index.json`.
 
 Este documento JSON contiene una lista de *recursos* que proporcionan una funcionalidad diferente y atender distintos casos de uso.
 
@@ -112,8 +114,9 @@ En el caso de un código de estado de nivel de 500, el cliente puede implementar
 nombre                     | Descripción
 ------------------------ | -----------
 X-NuGet-ApiKey           | Necesario para la inserción y eliminación, consulte [ `PackagePublish` recursos](package-publish-resource.md)
-X-NuGet-Client-Version   | **En desuso** y reemplazado por`X-NuGet-Protocol-Version`
+X-NuGet-Client-Version   | **En desuso** y reemplazado por `X-NuGet-Protocol-Version`
 X-NuGet-Protocol-Version | Requerido en determinados casos solo en nuget.org, vea [nuget.org protocolos](NuGet-Protocols.md)
+X-NuGet-Session-Id       | *Opcional*. NuGet clientes v4.7 + identificar las solicitudes HTTP que forman parte de la misma sesión de cliente de NuGet. Para `PackageReference` hay operaciones de restauración es un identificador de sesión único, para otros escenarios como Autocompletar, y `packages.config` restauración puede haber varias diferentes Id. de sesión debido a cómo se divide el código.
 
 ## <a name="authentication"></a>Autenticación
 

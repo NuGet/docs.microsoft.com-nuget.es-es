@@ -6,17 +6,20 @@ manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 description: Referencia para el nuget.exe agregar (comando)
 keywords: NuGet Agregar referencia, agregue el comando del paquete
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 70c86f8d240bd308224f6b7887b630cc1e953bf8
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 48e093cbae2cecb1652e17a9b26920107aa8aef7
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="add-command-nuget-cli"></a>Agregar comando (NuGet CLI)
 
@@ -47,7 +50,7 @@ donde `<packagePath>` es la ruta de acceso al paquete que se agregará y `<sourc
 
 | Opción | Descripción |
 | --- | --- |
-| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, *%AppData%\NuGet\NuGet.Config* se utiliza.| 
+| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux) se utiliza.|
 | Expand | Agrega todos los archivos en el paquete en el origen del paquete. |
 | ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |

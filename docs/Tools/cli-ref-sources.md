@@ -1,28 +1,31 @@
 ---
-title: "NuGet CLI orígenes comando | Documentos de Microsoft"
+title: NuGet CLI orígenes comando | Documentos de Microsoft
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Referencia para el nuget.exe orígenes de comando"
-keywords: "NuGet orígenes de referencia, orígenes de comando"
+ms.technology: ''
+description: Referencia para el nuget.exe orígenes de comando
+keywords: NuGet orígenes de referencia, orígenes de comando
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 139a9494e1ea898c90ce79d5990530fbe08642bd
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: f682a5209556ec6741473ccf2648e8f38bb568b9
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="sources-command-nuget-cli"></a>comando de fuentes (NuGet CLI)
 
 **Se aplica a:** consumo de paquete, publicación &bullet; **versiones admitidas:** todos
 
-Administra la lista de orígenes que se encuentra en el archivo de configuración de ámbito de usuario o un archivo de configuración especificado. El archivo de configuración de ámbito de usuario se encuentra en `%APPDATA%\NuGet\NuGet.Config` (Windows) y `~/.nuget/NuGet/NuGet.Config` (Mac o Linux).
+Administra la lista de orígenes que se encuentra en el archivo de configuración de ámbito de usuario o un archivo de configuración especificado. El archivo de configuración de ámbito de usuario se encuentra en `%appdata%\NuGet\NuGet.Config` (Windows) y `~/.nuget/NuGet/NuGet.Config` (Mac o Linux).
 
 Tenga en cuenta que la dirección URL de origen de nuget.org es `https://api.nuget.org/v3/index.json`.
 
