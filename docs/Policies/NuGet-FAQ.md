@@ -1,22 +1,25 @@
 ---
-title: "Preguntas más frecuentes de NuGet | Microsoft Docs"
+title: Preguntas más frecuentes de NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/11/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Preguntas y respuestas frecuentes para usar NuGet en la línea de comandos y en Visual Studio, y trabajar con la galería de NuGet."
+ms.technology: ''
+description: Preguntas y respuestas frecuentes para usar NuGet en la línea de comandos y en Visual Studio, y trabajar con la galería de NuGet.
 keywords: Preguntas y respuestas de NuGet, preguntas y respuestas, problemas frecuentes, versiones de NuGet, versiones de paquetes
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3782fe5dcf8df002d99446aa7548a6eacc62211c
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 33e4776054b1cdd874dcd7e955552ef873dbbf5b
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 

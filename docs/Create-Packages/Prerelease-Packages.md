@@ -6,17 +6,20 @@ manager: ghogen
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Guía para la creación de paquetes de versión preliminar"
-keywords: "control de versiones, control de versiones de paquetes de NuGet, versiones preliminares de NuGet, paquetes de versiones preliminares de NuGet, versiones de paquetes de versión preliminar, versiones de paquetes RC, versiones de paquetes, control de versiones de semántica de NuGet"
+ms.technology: ''
+description: Guía para la creación de paquetes de versión preliminar
+keywords: control de versiones, control de versiones de paquetes de NuGet, versiones preliminares de NuGet, paquetes de versiones preliminares de NuGet, versiones de paquetes de versión preliminar, versiones de paquetes RC, versiones de paquetes, control de versiones de semántica de NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 03f744a96841a8c49d9f1dde89620b85de968d6f
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 57f59e3906e2d49b6b6e078f530885a601553b06
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="building-pre-release-packages"></a>Crear paquetes de versión preliminar
 

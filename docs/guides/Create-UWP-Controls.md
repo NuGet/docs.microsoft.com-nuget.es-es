@@ -1,22 +1,25 @@
 ---
-title: "Cómo empaquetar controles de UWP con NuGet | Microsoft Docs"
+title: Cómo empaquetar controles de UWP con NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/14/2018
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "Cómo controlar los paquetes de NuGet que contienen controles de UWP, incluidos los metadatos necesarios y los archivos auxiliares de los diseñadores de Visual Studio y Blend."
-keywords: "Controles de UWP de NuGet, diseñador XAML de Visual Studio, diseñador de Blend, controles personalizados"
+ms.technology: ''
+description: Cómo controlar los paquetes de NuGet que contienen controles de UWP, incluidos los metadatos necesarios y los archivos auxiliares de los diseñadores de Visual Studio y Blend.
+keywords: Controles de UWP de NuGet, diseñador XAML de Visual Studio, diseñador de Blend, controles personalizados
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1af5118eb71836d8b8bcfa8ff713d9fef3c86374
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: f024fd1823c77d57d30c4f841bf03494194c8339
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-uwp-controls-as-nuget-packages"></a>Crear controles de UWP como paquetes de NuGet
 

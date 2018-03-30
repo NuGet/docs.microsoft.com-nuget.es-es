@@ -6,21 +6,24 @@ manager: ghogen
 ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Información detallada sobre cómo crear paquetes nativos de NuGet que contengan código de C++ en lugar de tener código administrado, para usarlos en proyectos de C++."
-keywords: "Paquetes nativos de NuGet, paquetes de C++ de NuGet, paquetes de código nativo, destino de los proyectos de C++"
+ms.technology: ''
+description: Información detallada sobre cómo crear paquetes nativos de NuGet que contengan código de C++ en lugar de tener código administrado, para usarlos en proyectos de C++.
+keywords: Paquetes nativos de NuGet, paquetes de C++ de NuGet, paquetes de código nativo, destino de los proyectos de C++
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 71f4eca411d520630ca7d77165b8f03cd32af290
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ed33f906f11a80c0d033292f7de151e93b8368fd
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-native-packages"></a>Crear paquetes nativos
 
-Un paquete nativo contiene código de C++ nativo en lugar de código administrado, lo que permite usarlo en proyectos de C++ (vea [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-cpp-packages) [Paquetes nativos de C++] en la sección Consume [Consumir]).
+Un paquete nativo contiene código de C++ nativo en lugar de código administrado, lo que permite usarlo en proyectos de C++ (vea [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-c-packages) [Paquetes nativos de C++] en la sección Consume [Consumir]).
 
 Para poder usarse en un proyecto de C++, un paquete debe tener como destino la plataforma `native`. Actualmente no hay ningún número de versión asociado a esta plataforma, ya que NuGet trata igual a todos los proyectos de C++.
 

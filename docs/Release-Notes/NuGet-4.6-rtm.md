@@ -1,23 +1,26 @@
 ---
-title: "Notas de la versión de NuGet 4.6 RTM | Microsoft Docs"
+title: Notas de la versión de NuGet 4.6 RTM | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unnir
 ms.date: 3/7/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 4.6.0, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR."
-keywords: "Notas de la versión de NuGet 4.6.0, correcciones de errores, problemas conocidos, características agregadas y DCR."
+ms.technology: ''
+description: Notas de la versión de NuGet 4.6.0, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
+keywords: Notas de la versión de NuGet 4.6.0, correcciones de errores, problemas conocidos, características agregadas y DCR.
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: 32bfe8a7d5d60a0ad24444749beff64edcaab305
-ms.sourcegitcommit: fa31ae10b5a5add7184bf7420554aade8adce6ed
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 004ad16018443292840b00fa88aa78350e371414
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-46-rtm-release-notes"></a>Notas de la versión de NuGet 4.6 RTM
 

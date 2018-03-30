@@ -1,22 +1,25 @@
 ---
-title: "Tutorial de restauración de paquetes de NuGet con Team Foundation Build | Microsoft Docs"
+title: Tutorial de restauración de paquetes de NuGet con Team Foundation Build | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Tutorial sobre cómo restaurar paquetes de NuGet con Team Foundation Build (TFS y Visual Studio Team Services)."
-keywords: "Restauración de paquetes de NuGet, NuGet y TFS, NuGet y VSTS, sistemas de compilación de NuGet, Team Foundation Build, proyectos de MSBuild personalizados, compilación en la nube, integración continua"
+ms.technology: ''
+description: Tutorial sobre cómo restaurar paquetes de NuGet con Team Foundation Build (TFS y Visual Studio Team Services).
+keywords: Restauración de paquetes de NuGet, NuGet y TFS, NuGet y VSTS, sistemas de compilación de NuGet, Team Foundation Build, proyectos de MSBuild personalizados, compilación en la nube, integración continua
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e3ef6e3bcc55705315fcb6ccf3e917963c62250
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: f46a7402214bf965918a5195605027913a8c60c2
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Configurar la restauración de paquetes con Team Foundation Build
 
@@ -110,6 +113,9 @@ El archivo `.gitignore` tiene el siguiente aspecto:
     bin
     obj
     packages
+    *.nupkg
+    project.lock.json
+    project.assets.json
 
 El archivo `.gitignore` es [bastante eficaz](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html). Por ejemplo, si por lo general no quiere insertar en el repositorio el contenido de la carpeta `packages` sino que quiere optar por las instrucciones anteriores para insertar los archivos `.targets`, podría aplicar esta regla:
 
@@ -125,6 +131,9 @@ El control de versiones de TF admite un mecanismo muy parecido mediante el archi
     bin
     obj
     packages
+    *.nupkg
+    project.lock.json
+    project.assets.json
 
 ## <a name="buildproj"></a>build.proj
 

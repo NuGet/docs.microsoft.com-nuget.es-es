@@ -1,23 +1,26 @@
 ---
-title: "Transformaciones de archivos de código fuente y de archivos de configuración para los paquetes de NuGet | Microsoft Docs"
+title: Transformaciones de archivos de código fuente y de archivos de configuración para los paquetes de NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 04/24/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Información detallada sobre la capacidad de los paquetes de NuGet para transformar archivos de código fuente y de configuración (XML) al instalarlos."
-keywords: "Instalación de paquetes de NuGet, transformaciones de paquetes de NuGet, modificación de archivos de configuración, modificación del código fuente"
+ms.technology: ''
+description: Información detallada sobre la capacidad de los paquetes de NuGet para transformar archivos de código fuente y de configuración (XML) al instalarlos.
+keywords: Instalación de paquetes de NuGet, transformaciones de paquetes de NuGet, modificación de archivos de configuración, modificación del código fuente
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: 47d02d160a7e40f323edcbd87e2c8642905b8ddf
-ms.sourcegitcommit: df21fe770900644d476d51622a999597a6f20ef8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: b2c25acdd37489a2965d29356742a826b62afa2c
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>Transformar archivos de código fuente y de configuración
 

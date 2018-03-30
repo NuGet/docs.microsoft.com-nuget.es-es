@@ -1,22 +1,25 @@
 ---
-title: "Guía de introducción a la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio | Microsoft Docs"
+title: Guía de introducción a la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/18/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
-ms.technology: 
-description: "Tutorial sobre la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio 2017."
-keywords: "Creación de paquetes NuGet, publicación de paquetes NuGet, tutorial de NuGet, creación en Visual Studio, paquete de NuGet, paquete msbuild"
+ms.technology: ''
+description: Tutorial sobre la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio 2017.
+keywords: Creación de paquetes NuGet, publicación de paquetes NuGet, tutorial de NuGet, creación en Visual Studio, paquete de NuGet, paquete msbuild
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 733fee616601e1d15d8fb5814b5bfb7905ff4a33
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: cdfaf437b30f507f1227f9e6dbd8b039c5bf4402
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-and-publish-a-package-using-visual-studio-net-standard"></a>Crear y publicar un paquete con Visual Studio (.NET Standard)
 

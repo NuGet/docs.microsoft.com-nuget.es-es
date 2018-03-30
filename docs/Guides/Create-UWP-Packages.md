@@ -4,19 +4,22 @@ author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/21/2017
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "Un tutorial integral de creación de paquetes NuGet con un componente de Windows Runtime para la Plataforma universal de Windows."
+ms.technology: ''
+description: Un tutorial integral de creación de paquetes NuGet con un componente de Windows Runtime para la Plataforma universal de Windows.
 keywords: crear un paquete, paquetes para UWP, componentes de Windows Runtime
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: af650b6cd67855a67d0f49cdbd9f510bf90a60f6
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 6923cdc87b0a550abb51316e384c79137eeaf63a
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-uwp-packages"></a>Crear paquetes UWP
 
