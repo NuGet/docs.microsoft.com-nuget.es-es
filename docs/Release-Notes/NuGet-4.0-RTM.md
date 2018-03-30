@@ -1,22 +1,25 @@
 ---
-title: "Notas de la versión de NuGet 4.0 RC | Microsoft Docs"
+title: Notas de la versión de NuGet 4.0 RC | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unniravindranathan
 ms.date: 03/03/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 4.0 RTM incluidos problemas conocidos, correcciones de errores, características agregadas y DCR."
-keywords: "Notas de la versión de NuGet 4.0 RTM, correcciones de errores, problemas, conocidos, características agregadas, DCR"
+ms.technology: ''
+description: Notas de la versión de NuGet 4.0 RTM incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
+keywords: Notas de la versión de NuGet 4.0 RTM, correcciones de errores, problemas, conocidos, características agregadas, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d1ab89f0decb64a64d04dc293e5273b577e8398b
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 75ce757c209afd74f8d4f45d58d4e13a23b3b743
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-40-rtm-release-notes"></a>Notas de la versión de NuGet 4.0 RTM
 
@@ -134,7 +137,7 @@ No hay ninguna solución alternativa para este problema.
 
 - Soporte para agregar referencias de `.csproj` de las líneas de comandos: [#3751](https://github.com/NuGet/Home/issues/3751)
 
-- Compatibilidad con la restauración de NuGet para la carga de solución ligera para `packages.config` o `project.json`: [#3711](https://github.com/NuGet/Home/issues/3711)
+- Compatibilidad con la restauración de NuGet para la carga de solución ligera para `packages.config` o `project.json` - :[#3711](https://github.com/NuGet/Home/issues/3711)
 
 - Soporte de contentFiles en archivos de destinos generados por NuGet: [#3683](https://github.com/NuGet/Home/issues/3683)
 
@@ -228,11 +231,11 @@ No hay ninguna solución alternativa para este problema.
 
 - NuGet 3.5.0 no desempaqueta `.targets` del paquete: [#4171](https://github.com/NuGet/Home/issues/4171)
 
-- dotnet pack no admite title en `.csproj`: [#4150](https://github.com/NuGet/Home/issues/4150)
+- dotnet pack no admite title en `.csproj` - : [#4150](https://github.com/NuGet/Home/issues/4150)
 
 - Install-Package genera un cuadro de diálogo de error en VS2017 RC: [#4127](https://github.com/NuGet/Home/issues/4127)
 
-- Aparentemente, la actualización de un paquete de un proyecto de .Net Core no funciona, ya que la interfaz de usuario no recibe la actualización de CPS del nominado:[#4035](https://github.com/NuGet/Home/issues/4035)
+- Aparentemente, la actualización de un paquete de un proyecto de .Net Core no funciona, ya que la interfaz de usuario no recibe la actualización de CPS del nominado: - [#4035](https://github.com/NuGet/Home/issues/4035)
 
 - Mejorar la advertencia de referencia sin resolver: [#3955](https://github.com/NuGet/Home/issues/3955)
 
@@ -240,7 +243,7 @@ No hay ninguna solución alternativa para este problema.
 
 - Tiempo total transcurrido de las regresiones al crear un proyecto y al volver a compilar en la aplicación Crear UWP: [#3873](https://github.com/NuGet/Home/issues/3873)
 
-- Se muestra un mensaje de restauración correcta incluso después de producirse un error durante la restauración:[#3799](https://github.com/NuGet/Home/issues/3799)
+- Se muestra un mensaje de restauración correcta incluso después de producirse un error durante la restauración: - [#3799](https://github.com/NuGet/Home/issues/3799)
 
 - Volver a publicar Nuget.CommandLine 3.4.4 en Nuget.org: [#2931](https://github.com/NuGet/Home/issues/2931)
 
@@ -254,7 +257,7 @@ No hay ninguna solución alternativa para este problema.
 
 - La lista de errores contiene un error después de la solución de compilación, que descarga el proyecto al que se hace referencia: [#4208](https://github.com/NuGet/Home/issues/4208)
 
-- MSB4057: El destino "_GenerateRestoreGraphProjectEntry" no existe en el proyecto:[#4194](https://github.com/NuGet/Home/issues/4194)
+- MSB4057: El destino "_GenerateRestoreGraphProjectEntry" no existe en el proyecto: - [#4194](https://github.com/NuGet/Home/issues/4194)
 
 - vsfeedback: la interfaz de usuario del administrador de NuGet de la solución se bloquea cuando se seleccionan todos los proyectos: [#4191](https://github.com/NuGet/Home/issues/4191)
 
@@ -270,7 +273,7 @@ No hay ninguna solución alternativa para este problema.
 
 - VSFeedback: los errores de restauración pueden ocultar mensajes de error más completos que podría proporcionar la compilación: [#4113](https://github.com/NuGet/Home/issues/4113)
 
-- [VSFeedback] Se ha producido un error al restaurar los paquetes de NuGet para un proyecto de sitio web: El valor no puede ser nulo:[#4092](https://github.com/NuGet/Home/issues/4092)
+- [VSFeedback] Se ha producido un error al restaurar los paquetes de NuGet para un proyecto de sitio web: El valor no puede ser nulo: - [#4092](https://github.com/NuGet/Home/issues/4092)
 
 - La migración genera una "excepción de referencia a objeto" en NuGet.PackageManagement.VisualStudio.SolutionRestoreWorker: [#4067](https://github.com/NuGet/Home/issues/4067)
 
@@ -306,7 +309,7 @@ No hay ninguna solución alternativa para este problema.
 
 - El texto de nuget.exe locals -help sigue mencionando la memoria caché de paquetes: [#3592](https://github.com/NuGet/Home/issues/3592)
 
-- Restore3 acopla PackageReferences a TargetFrameworks:[#3504](https://github.com/NuGet/Home/issues/3504)
+- Restore3 acopla PackageReferences a TargetFrameworks: - [#3504](https://github.com/NuGet/Home/issues/3504)
 
 - NuGet toma una versión no esperada de MSBuild en VS "15" Preview 4 dev. símbolo del sistema: [#3408](https://github.com/NuGet/Home/issues/3408)
 
@@ -332,7 +335,7 @@ No hay ninguna solución alternativa para este problema.
 
 - Aparentemente, dotnet pack siempre establece la versión de ProjectReference en 1.0.0: [#3874](https://github.com/NuGet/Home/issues/3874)
 
-- Se produce un error en dotnet pack con referencias de proyecto y <TargetFramework>: [#3865](https://github.com/NuGet/Home/issues/3865)
+- Se produce un error en dotnet pack con referencias de proyecto y <TargetFramework> - : [#3865](https://github.com/NuGet/Home/issues/3865)
 
 - LockRecursionException en ProjectSystemCache.TryGetProjectNameByShortName: [#3861](https://github.com/NuGet/Home/issues/3861)
 

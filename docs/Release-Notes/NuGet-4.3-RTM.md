@@ -1,23 +1,26 @@
 ---
-title: "Notas de la versión de NuGet 4.3 RTM | Microsoft Docs"
+title: Notas de la versión de NuGet 4.3 RTM | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
 manager: unniravindranathan
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 4.3 RTM incluidos problemas conocidos, correcciones de errores, características agregadas y DCR."
-keywords: "Notas de la versión de NuGet 4.3 RTM, correcciones de errores, problemas, conocidos, características agregadas, DCR"
+ms.technology: ''
+description: Notas de la versión de NuGet 4.3 RTM incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
+keywords: Notas de la versión de NuGet 4.3 RTM, correcciones de errores, problemas, conocidos, características agregadas, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: a2b61d854f4a5f1490832dab9a272c3a13b56adf
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 3c798bde11548b866cad62697315e907dea91aa5
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-43-rtm-release-notes"></a>Notas de la versión de NuGet 4.3 RTM
 
@@ -123,7 +126,7 @@ Haga una restauración manual.
 
 - Mejorar la descripción de la interfaz de usuario para los paquetes con referencia automática: [#4471](https://github.com/NuGet/Home/issues/4471)
 
-- La restauración de NuGet selecciona activos de compilación de la sección de tiempo de ejecución:[#4207](https://github.com/NuGet/Home/issues/4207)
+- La restauración de NuGet selecciona activos de compilación de la sección de tiempo de ejecución: - [#4207](https://github.com/NuGet/Home/issues/4207)
 
 - Colocar el diagnóstico de dependencias en el archivo de bloqueo: [#1599](https://github.com/NuGet/Home/issues/1599)
 
