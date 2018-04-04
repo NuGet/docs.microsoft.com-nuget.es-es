@@ -1,23 +1,26 @@
 ---
-title: "Notas de la versión de NuGet 4.5 RTM | Microsoft Docs"
+title: Notas de la versión de NuGet 4.5 RTM | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unniravindranathan
 ms.date: 12/4/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 4.5 RTM, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR."
-keywords: "Notas de la versión de NuGet 4.5 RTM, correcciones de errores, problemas conocidos, características agregadas y DCR"
+ms.technology: ''
+description: Notas de la versión de NuGet 4.5 RTM, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
+keywords: Notas de la versión de NuGet 4.5 RTM, correcciones de errores, problemas conocidos, características agregadas y DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: e4727d46812cbfeb2e7094ddf28bf4e738e8aeea
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dbde7256ed5526761107272792d7c7cdc324a3ef
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-45-rtm-release-notes"></a>Notas de la versión de NuGet 4.5 RTM
 
@@ -72,7 +75,7 @@ Para los problemas corregidos en NuGet 4.4 RTM, consulte las [notas de la versi�
 - [Regresión] en 15.5p1: se omite Portable0.0: [#6105](https://github.com/NuGet/Home/issues/6105)
 - Faltan recursos de los paquetes después de la restauración: [#5995](https://github.com/NuGet/Home/issues/5995)
 - Los proveedores de credenciales de complementos no funcionan con los URI que contienen espacios: [#5982](https://github.com/NuGet/Home/issues/5982)
-- Si se produce un error al restaurar el paquete, se debe imprimir el error en la salida, aunque la opción de detalle mínimo esté activada: [#5658](https://github.com/NuGet/Home/issues/5658)
+- Si se produce un error al restaurar el paquete, el error se debe imprimir en la salida, aunque el nivel de detalle mínimo esté activado: [#5658](https://github.com/NuGet/Home/issues/5658)
 - dotnet restore a nivel de solución no sigue ProjectReference con ReferenceOutputAssembly al comportar incorrectamente errores de compilación aleatorios: [#5490](https://github.com/NuGet/Home/issues/5490)
 - Autocompletar en PMC funciona incorrectamente con métodos de objeto: [#4800](https://github.com/NuGet/Home/issues/4800)
 - Se produce un error en la restauración de nuget.exe con el conjunto de herramientas de Visual Studio 2015: [#4713](https://github.com/NuGet/Home/issues/4713)

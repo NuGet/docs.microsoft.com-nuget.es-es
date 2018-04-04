@@ -1,23 +1,26 @@
 ---
-title: "Cómo crear paquetes de símbolos de NuGet | Microsoft Docs"
+title: Cómo crear paquetes de símbolos de NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 09/12/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Cómo crear paquetes de NuGet que solo contienen símbolos para admitir la depuración de otros paquetes de NuGet en Visual Studio."
-keywords: "Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, compatibilidad con la depuración de NuGet, símbolos de paquetes, convenciones de paquetes de símbolos"
+ms.technology: ''
+description: Cómo crear paquetes de NuGet que solo contienen símbolos para admitir la depuración de otros paquetes de NuGet en Visual Studio.
+keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, compatibilidad con la depuración de NuGet, símbolos de paquetes, convenciones de paquetes de símbolos
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: e1d90009c739a7f358e9581c7032523b8b284936
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 6b6ddb0ca8ac5d7589dc5cb6de66ee3aa5faf8b6
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-symbol-packages"></a>Crear paquetes de símbolos
 

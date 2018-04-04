@@ -1,28 +1,31 @@
 ---
-title: "Guía de introducción al uso de paquetes NuGet mediante la CLI de dotnet | Microsoft Docs"
+title: Guía de introducción al uso de paquetes NuGet mediante la CLI de dotnet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/23/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
-ms.technology: 
-description: "Tutorial sobre el proceso de instalación y uso de un paquete NuGet en un proyecto de .NET Core."
+ms.technology: ''
+description: Tutorial sobre el proceso de instalación y uso de un paquete NuGet en un proyecto de .NET Core.
 keywords: instalar NuGet, consumo de paquetes de NuGet, instalar paquetes de NuGet, referencias de paquetes de NuGet, usar paquetes de NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: accc6d7bb5abff43ffaa083fa55c13cd5b10ce10
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 87a37a733ebbbbf9bc161247b657a69f30ed4fb3
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-and-use-a-package-using-the-dotnet-cli"></a>Instalar y usar un paquete con la CLI de dotnet
 
 Los paquetes de NuGet son unidades de código reutilizable que otros desarrolladores ponen a su disposición para que los use en sus proyectos. Consulte [¿Qué es NuGet?](../What-is-NuGet.md) para obtener más información. Los paquetes se instalan en un proyecto de .NET Core con el comando `dotnet add package` tal y como se describe en este artículo para el popular paquete [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/).
 
-Una vez instalado, haga referencia al paquete en el código con `using <namespace>`, donde \<namespace\> es específico del paquete que está usando. Una vez efectuada la referencia, puede llamar al paquete a través de su API.
+Una vez instalado, haga referencia al paquete en el código con `using <namespace>`, donde \<namespace\> es específico del paquete que está usando. A continuación, puede usar la API del paquete.
 
 > [!Tip]
 > **Comience con nuget.org**: la exploración de nuget.org es la forma en que los desarrolladores de .NET suelen buscar componentes que pueden reutilizar en sus propias aplicaciones. Puede buscar directamente en nuget.org o buscar e instalar paquetes en Visual Studio, tal y como se indica en este artículo.

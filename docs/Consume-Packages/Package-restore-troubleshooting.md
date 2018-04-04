@@ -1,22 +1,25 @@
 ---
-title: "Solución de problemas en la restauración de paquetes de NuGet en Visual Studio | Microsoft Docs"
+title: Solución de problemas en la restauración de paquetes de NuGet en Visual Studio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/13/2018
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Descripción de errores habituales de restauración de NuGet en Visual Studio y cómo solucionarlos."
-keywords: "Restauración de paquetes de NuGet, restauración de paquetes, solución de problemas, solucionar problemas"
+ms.technology: ''
+description: Descripción de errores habituales de restauración de NuGet en Visual Studio y cómo solucionarlos.
+keywords: Restauración de paquetes de NuGet, restauración de paquetes, solución de problemas, solucionar problemas
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8efaed497a596921af3c73ab919831c73bf598e0
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 27a43ceaefdf3a7842183a64ea57d05416d6cb02
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Solución de errores de restauración de paquetes
 
@@ -48,7 +51,10 @@ This project references NuGet package(s) that are missing on this computer.
 Use NuGet Package Restore to download them. The missing file is {name}.
 ```
 
-Este error se produce cuando intenta compilar un proyecto que contiene referencias a uno o varios paquetes de NuGet, pero estos paquetes no están almacenados en caché actualmente en el proyecto. (Los paquetes se almacenan en caché en una carpeta `packages`en la raíz de la solución si el proyecto usa `packages.config`, o en el archivo `obj/project.assets.json` si el proyecto usa el formato PackageReference).
+Este error se produce cuando se intenta compilar un proyecto que contiene referencias a uno o varios paquetes NuGet, pero estos paquetes no están actualmente instalados en el equipo ni en el proyecto.
+
+- Cuando se utiliza el formato de administración PackageReference, el error implica que el paquete no está instalado en la carpeta *global-packages*, tal y como se describe en[Administración de paquetes globales y carpetas de caché](managing-the-global-packages-and-cache-folders.md).
+- Cuando se usa `packages.config`, el error indica que el paquete no está instalado en la carpeta `packages` en la raíz de la solución.
 
 Esta situación se suele producir cuando obtiene el código fuente del proyecto del control de código fuente u otra descarga. Los paquetes se suelen omitir desde el control de código fuente o las descargas porque se pueden restaurar desde fuentes de paquete como nuget.org (vea [Omitir paquetes de NuGet en sistemas de control de código fuente](Packages-and-Source-Control.md)). Si se incluyen, se provocaría el sobredimensionamiento del repositorio o se crearían archivos .zip innecesariamente grandes.
 
@@ -59,7 +65,7 @@ Use uno de estos métodos para restaurar los paquetes:
 - En la línea de comandos, ejecute `nuget restore` (excepto para los proyectos creados con `dotnet`, en cuyo caso se usa `dotnet restore`).
 - Para proyectos con el formato PackageReference, ejecute `msbuild /t:restore` en la línea de comandos.
 
-Después de una restauración correcta, debería ver una carpeta `packages` (al usar `packages.config`) o el archivo `obj/project.assets.json` (cuando se usa PackageReference). Ahora el proyecto debería compilarse correctamente. Si no es así, [registre un problema en GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) para que podamos realizar un seguimiento.
+Después de una restauración correcta, el paquete debe estar presente en la carpeta *global-packages*. Para los proyectos con PackageReference, debe volverse a crear el archivo `obj/project.assets.json`; para los proyectos con `packages.config`, el paquete debe aparecer en la carpeta `packages` del proyecto . Ahora el proyecto debería compilarse correctamente. Si no es así, [registre un problema en GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) para que podamos realizar un seguimiento.
 
 <a name="assets"></a>
 
@@ -71,7 +77,9 @@ Mensaje de error completo:
 Assets file '<path>\project.assets.json' not found. Run a NuGet package restore to generate this file.
 ```
 
-Este error se produce por las mismas razones que se explican en la [sección anterior](#missing) y se soluciona del mismo modo. Por ejemplo, al ejecutar `msbuild` en un proyecto de .NET Core que se ha obtenido a partir de control de código fuente no se restaurarán automáticamente los paquetes. En este caso, ejecute `msbuild /t:restore` seguido de `msbuild`, o use `dotnet build` (que restaurará los paquetes automáticamente).
+El archivo `project.assets.json` mantiene un gráfico de dependencias del proyecto cuando se usa el formato de administración PackageReference, que sirve para asegurarse de que todos los paquetes necesarios están instalados en el equipo. Dado que este archivo se genera dinámicamente a través de la restauración del paquete, no suele agregarse al control de código fuente. Por consiguiente, este error se produce al crear un proyecto con una herramienta como `msbuild` que no restaura automáticamente paquetes.
+
+En este caso, ejecute `msbuild /t:restore` seguido de `msbuild`, o use `dotnet build` (que restaurará los paquetes automáticamente). También puede usar cualquiera de los métodos de restauración de paquetes de la [sección anterior](#missing).
 
 <a name="consent"></a>
 
@@ -103,11 +111,12 @@ También puede editar estos valores directamente en el archivo `nuget.config` ap
 </configuration>
 ```
 
-Tenga en cuenta que si edita el valor `packageRestore` directamente en `nuget.config`, debe reiniciar Visual Studio para que el cuadro de diálogo de opciones muestre los valores actuales.
+> [!Important]
+> Si edita el valor `packageRestore` directamente en `nuget.config`, debe reiniciar Visual Studio para que el cuadro de diálogo de opciones muestre los valores actuales.
 
 ## <a name="other-potential-conditions"></a>Otras condiciones posibles
 
-- Pueden producirse errores de compilación debido a que faltan archivos, con un mensaje que indica que use la restauración de NuGet para descargarlos. Pero al ejecutar una restauración, podría mostrarse el mensaje "Todos los paquetes ya están instalados y no hay nada que restaurar". En este caso, elimine la carpeta `packages` (al usar `packages.config`) o el archivo `obj/project.assets.json` (cuando se usa PackageReference) y vuelva a ejecutar la restauración.
+- Pueden producirse errores de compilación debido a que faltan archivos, con un mensaje que indica que use la restauración de NuGet para descargarlos. Pero al ejecutar una restauración, podría mostrarse el mensaje "Todos los paquetes ya están instalados y no hay nada que restaurar". En este caso, elimine la carpeta `packages` (al usar `packages.config`) o el archivo `obj/project.assets.json` (cuando se usa PackageReference) y vuelva a ejecutar la restauración. Si el error persiste, utilice `nuget locals all -clear` o `dotnet locals all --clear` desde la línea de comandos para borrar las carpetas *global-packages* y de memoria caché, tal y como se describe en [Administración de paquetes globales y carpetas de caché](managing-the-global-packages-and-cache-folders.md).
 
 - Al obtener un proyecto de control de código fuente, las carpetas de proyecto pueden establecerse en solo lectura. Cambie los permisos de carpeta e intente restaurar los paquetes otra vez.
 

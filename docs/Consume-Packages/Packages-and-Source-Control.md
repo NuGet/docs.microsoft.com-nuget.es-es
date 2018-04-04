@@ -1,26 +1,29 @@
 ---
-title: "Paquetes de NuGet y control de código fuente | Microsoft Docs"
+title: Paquetes de NuGet y control de código fuente | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 07/17/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Consideraciones sobre cómo tratar los paquetes de NuGet dentro de los sistemas de control de código fuente y de control de versiones, y cómo omitir paquetes con TFVC y Git."
-keywords: "Control de código fuente de NuGet, control de versiones de NuGet, NuGet y Git, NuGet y TFS, NuGet y TFVC, omisión de paquetes, repositorios de control de código fuente, repositorios de control de versiones"
+ms.technology: ''
+description: Consideraciones sobre cómo tratar los paquetes de NuGet dentro de los sistemas de control de código fuente y de control de versiones, y cómo omitir paquetes con TFVC y Git.
+keywords: Control de código fuente de NuGet, control de versiones de NuGet, NuGet y Git, NuGet y TFS, NuGet y TFVC, omisión de paquetes, repositorios de control de código fuente, repositorios de control de versiones
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6261625d5d7eaa748f9ad15510b7b2af3c814e44
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 43fc1653616091b0f974903147645c0c99c8f57b
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>Omitir paquetes de NuGet en sistemas de control de código fuente
 
-Los desarrolladores suelen ignorar los paquetes de NuGet de sus repositorios de control de código fuente y, en su lugar, se basan en la [restauración de paquetes](../consume-packages/package-restore.md) para volver a instalar las dependencias de un proyecto antes de efectuar una compilación.
+Los desarrolladores suelen ignorar los paquetes de NuGet de sus repositorios de control de código fuente y, en su lugar, se basan en la [restauración de paquetes](package-restore.md) para volver a instalar las dependencias de un proyecto antes de efectuar una compilación.
 
 Entre los motivos por los que confiar en la restauración de paquetes están los siguientes:
 
@@ -29,11 +32,11 @@ Entre los motivos por los que confiar en la restauración de paquetes están los
 1. Resulta más difícil limpiar la solución de cualquier carpeta de paquete sin usar, ya que tiene que asegurarse de no eliminar ninguna carpeta de paquete que todavía esté en uso.
 1. Mediante la omisión de paquetes, se mantienen limpios los límites de propiedad entre el código y los paquetes de otras personas de las que dependa. Muchos paquetes de NuGet ya se mantienen en sus propios repositorios de control de código fuente.
 
-Aunque la restauración de paquetes es el comportamiento predeterminado en NuGet, es necesario llevar a cabo algunas tareas manuales para ignorar los paquetes (es decir, la carpeta `packages` del proyecto) del control de código fuente, tal como se describe en las secciones siguientes.
+Aunque la restauración de paquetes es el comportamiento predeterminado en NuGet, es necesario llevar a cabo algunas tareas manuales para omitir los paquetes (es decir, la carpeta `packages` del proyecto) del control de código fuente, tal y como se describe en las secciones siguientes.
 
 ## <a name="omitting-packages-with-git"></a>Omitir paquetes con Git
 
-Use el [archivo .gitignore](https://git-scm.com/docs/gitignore) para evitar incluir la carpeta `packages` en el control de código fuente. Como referencia, vea el [archivo `.gitignore` de ejemplo para los proyectos de Visual Studio](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
+Use el [archivo .gitignore](https://git-scm.com/docs/gitignore) para omitir, entre otras cosas, los paquetes NuGet (`.nupkg`) la carpeta `packages` y `project.assets.json`. Como referencia, vea el [archivo `.gitignore` de ejemplo para los proyectos de Visual Studio](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore):
 
 Las partes importantes del archivo `.gitignore` son:
 
@@ -41,20 +44,24 @@ Las partes importantes del archivo `.gitignore` son:
 # Ignore NuGet Packages
 *.nupkg
 
-# Ignore the packages folder
-**/packages/*
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
 
-# Include packages/build/, which is used as an MSBuild target
-!**/packages/build/
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
 
-# Uncomment if necessary; generally it's regenerated when needed
-#!**/packages/repositories.config
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/[Pp]ackages/repositories.config
+
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
 
 # Ignore other intermediate files that NuGet might create. project.lock.json is used in conjunction
-# with project.json; project.assets.json is used in conjunction with the PackageReference format.
+# with project.json (NuGet v3); project.assets.json is used in conjunction with the PackageReference
+# format (NuGet v4 and .NET Core).
 project.lock.json
 project.assets.json
-*.nuget.props
 ```
 
 ## <a name="omitting-packages-with-team-foundation-version-control"></a>Omitir paquetes con Control de versiones de Team Foundation
@@ -92,7 +99,7 @@ Para deshabilitar la integración del control de código fuente con TFVC para lo
    # with additional folder names if it's not in the same folder as .tfignore.   
    packages
 
-   # Include package target files which may be required for MSBuild, again prefixing the folder name as needed.
+   # Exclude package target files which may be required for MSBuild, again prefixing the folder name as needed.
    !packages/*.targets
 
    # Omit temporary files

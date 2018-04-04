@@ -1,26 +1,29 @@
 ---
-title: "Guía de introducción al uso de paquetes NuGet en Visual Studio | Microsoft Docs"
+title: Guía de introducción al uso de paquetes NuGet en Visual Studio | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/23/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
-ms.technology: 
-description: "Tutorial sobre el proceso de instalación y uso de un paquete NuGet en un proyecto de Visual Studio."
+ms.technology: ''
+description: Tutorial sobre el proceso de instalación y uso de un paquete NuGet en un proyecto de Visual Studio.
 keywords: instalar NuGet, consumo de paquetes de NuGet, instalar paquetes de NuGet, referencias de paquetes de NuGet, usar paquetes de NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ff905fec6d6af4fa40fd4331cb970121b6eb0879
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 4205893cc02cffff8926513a555393d10c046f43
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-and-use-a-package-in-visual-studio"></a>Instalar y usar un paquete en Visual Studio
 
-Los paquetes de NuGet son unidades de código reutilizable que otros desarrolladores ponen a su disposición para que los use en sus proyectos. Consulte [¿Qué es NuGet?](../What-is-NuGet.md) para obtener más información. Los paquetes se instalan en un proyecto de Visual Studio mediante interfaz de usuario del Administrador de paquetes o la consola del Administrador de paquetes, tal y como se describe en este artículo para el conocido paquete [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) y un proyecto de la Plataforma Universal de Windows (UWP).
+Los paquetes de NuGet son unidades de código reutilizable que otros desarrolladores ponen a su disposición para que los use en sus proyectos. Consulte [¿Qué es NuGet?](../What-is-NuGet.md) para obtener más información. Los paquetes se instalan en un proyecto de Visual Studio mediante la interfaz de usuario del Administrador de paquetes o la consola del Administrador de paquetes. En este artículo se muestra el proceso con el conocido paquete [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) y un proyecto de la Plataforma universal de Windows (UWP). El mismo proceso se aplica a cualquier otro proyecto de .NET o .NET Core.
 
 Una vez instalado, haga referencia al paquete en el código con `using <namespace>`, donde \<namespace\> es específico del paquete que está usando. Una vez efectuada la referencia, puede llamar al paquete a través de su API.
 
@@ -36,7 +39,9 @@ Puede instalar la 2017 Community Edition gratuitamente desde [visualstudio.com](
 
 ## <a name="create-a-project"></a>Crear un proyecto
 
-Los paquetes NuGet pueden instalarse en todo tipo de proyecto de .NET. En este tutorial, se utiliza una aplicación simple de Plataforma Universal de Windows (UWP) simple. Cree un proyecto en Visual Studio con **Archivo > Nuevo proyecto...**  y seleccione la opción **Windows Universal > Aplicación vacía (Windows Universal)**. Cuando se le solicite, acepte los valores predeterminados para Versión de destino y Versión mínima.
+Los paquetes NuGet pueden instalarse en cualquier proyecto. NET, siempre que el paquete sea compatible con la misma plataforma de destino que el proyecto.
+
+En este tutorial, se utiliza una aplicación simple de la Plataforma Universal de Windows (UWP). Cree un proyecto en Visual Studio con **Archivo > Nuevo proyecto...**  y seleccione la opción **Windows Universal > Aplicación vacía (Windows Universal)**. Cuando se le solicite, acepte los valores predeterminados para Versión de destino y Versión mínima.
 
 ## <a name="add-the-newtonsoftjson-nuget-package"></a>Agregar el paquete de NuGet Newtonsoft.Json
 
@@ -56,7 +61,7 @@ Para instalar el paquete, puede usar la interfaz de usuario del Administrador de
 
 1. (Visual Studio 2017) Si se le pide que seleccione un formato de administración de paquetes, seleccione **PackageReference en archivo de proyecto**:
 
-    ![Seleccionar un formato de referencia de paquete](media/QS_Use-03b-SelectFormat.png)
+    ![Selección de un formato de administración de paquetes](media/QS_Use-03b-SelectFormat.png)
 
 1. Si se le pide que revise los cambios, seleccione **Aceptar**.
 

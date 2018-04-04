@@ -1,22 +1,25 @@
 ---
-title: "Resolución de dependencias de paquetes NuGet | Microsoft Docs"
+title: Resolución de dependencias de paquetes NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Obtenga más información sobre el proceso de resolución e instalación de las dependencias de un paquete NuGet en NuGet 2.x y NuGet 3.x y versiones posteriores."
-keywords: "Dependencias de paquetes NuGet, control de versiones de NuGet, versiones de dependencia, gráfico de versiones, resolución de versiones, restauración transitiva"
+ms.technology: ''
+description: Obtenga más información sobre el proceso de resolución e instalación de las dependencias de un paquete NuGet en NuGet 2.x y NuGet 3.x y versiones posteriores.
+keywords: Dependencias de paquetes NuGet, control de versiones de NuGet, versiones de dependencia, gráfico de versiones, resolución de versiones, restauración transitiva
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: aa2537a2538d0ea665944784ef183dc12faa9b38
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: d387acd369c88a64abaa2cb94a913fe211df8da1
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Cómo resuelve NuGet las dependencias de paquetes
 
@@ -24,7 +27,7 @@ Siempre que se instala o reinstala un paquete, lo que incluye la instalación co
 
 Es posible que esas dependencias inmediatas también tengan sus propias dependencias, lo que puede continuar hasta una profundidad arbitraria. Esto produce lo que se llama *gráfico de dependencias*, que describe las relaciones entre paquetes en todos los niveles.
 
-Cuando varios paquetes tienen la misma dependencia, entonces el mismo Id. de paquete puede aparecer varias veces en el gráfico, posiblemente con restricciones de versión diferentes. Pero, en un proyecto, solo se puede usar una versión de un paquete determinado, por lo que NuGet debe elegir la versión que se usa. El proceso exacto depende del formato de referencia de paquete que se usa.
+Cuando varios paquetes tienen la misma dependencia, entonces el mismo Id. de paquete puede aparecer varias veces en el gráfico, posiblemente con restricciones de versión diferentes. Pero, en un proyecto, solo se puede usar una versión de un paquete determinado, por lo que NuGet debe elegir la versión que se usa. El proceso exacto depende del formato de administración de paquetes que se usa.
 
 ## <a name="dependency-resolution-with-packagereference"></a>Resolución de dependencias con PackageReference
 
@@ -109,7 +112,7 @@ Con `packages.config`, NuGet intenta resolver los conflictos de dependencias dur
 
 De forma predeterminada, NuGet 2.8 busca la versión de revisión más antigua (vea [Notas de la versión de NuGet 2.8](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)). Puede controlar esta configuración mediante el atributo `DependencyVersion` de `Nuget.Config` y el modificador `-DependencyVersion` en la línea de comandos.  
 
-El proceso de `packages.config` para resolver dependencias se complica en gráficos de dependencias más grandes. En cada instalación de un paquete nuevo es necesario recorrer el gráfico completo y aumenta la posibilidad de conflictos de versiones. Cuando se produce un conflicto, la instalación se detiene, lo que deja el proyecto en un estado indeterminado, especialmente con posibles modificaciones del propio archivo de proyecto. Esto no es un problema al usar otros formatos de referencia de paquetes.
+El proceso de `packages.config` para resolver dependencias se complica en gráficos de dependencias más grandes. En cada instalación de un paquete nuevo es necesario recorrer el gráfico completo y aumenta la posibilidad de conflictos de versiones. Cuando se produce un conflicto, la instalación se detiene, lo que deja el proyecto en un estado indeterminado, especialmente con posibles modificaciones del propio archivo de proyecto. Esto no supone un problema al usar otros formatos de administración de paquetes.
 
 ## <a name="managing-dependency-assets"></a>Administración de recursos de dependencia
 
@@ -121,7 +124,7 @@ Cuando el proyecto de nivel superior es un paquete, también tiene control sobre
 
 Hay escenarios en los que es posible que se haga referencia a ensamblados con el mismo nombre más de una vez en un proyecto, lo que produce errores de tiempo de diseño y tiempo de compilación. Considere la posibilidad de un proyecto que contiene una versión personalizada de `C.dll` y hace referencia al Paquete C que también contiene `C.dll`. Al mismo tiempo, el proyecto también depende del Paquete B que depende también del Paquete C y `C.dll`. Como resultado, NuGet no puede determinar qué `C.dll` usar, pero no se puede quitar la dependencia del proyecto del Paquete C porque el Paquete B también depende de ella.
 
-Para resolver este problema, debe hacer referencia directamente al archivo `C.dll` que quiere (o bien usar otro paquete que haga referencia al archivo correcto) y, después, agregar una dependencia al Paquete C que excluya todos sus activos. Esto se realiza como se indica a continuación según el formato de referencia de paquete en uso:
+Para resolver este problema, debe hacer referencia directamente al archivo `C.dll` que quiere (o bien usar otro paquete que haga referencia al archivo correcto) y, después, agregar una dependencia al Paquete C que excluya todos sus activos. Esto se realiza como se indica a continuación según el formato de administración de paquetes en uso:
 
 - [PackageReference](../consume-packages/package-references-in-project-files.md): agregue `Exclude="All"` en la dependencia:
 

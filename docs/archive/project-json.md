@@ -6,23 +6,26 @@ manager: ghogen
 ms.date: 07/27/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 description: En algunos tipos de proyecto, project.json mantiene la lista de paquetes NuGet que se usan en el proyecto.
 keywords: project.json de NuGet, referencias de paquetes NuGet, dependencias de NuGet, project.lock.json
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2e2c521b18dd67e49942cc20eafef0be7f91573a
-ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 21542a219faa3d1fa0c32a838645d4471c5aa935
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="projectjson-reference"></a>referencia de project.json
 
 *NuGet 3.x y versiones posteriores*
 
-El archivo `project.json` mantiene una lista de los paquetes que se usan en un proyecto, conocida como formato de referencia de paquete. Sustituye a `packages.config` pero, a su vez, se sustituye por [PackageReference](../consume-packages/package-references-in-project-files.md) con NuGet 4.0 y versiones posteriores.
+El archivo `project.json` mantiene una lista de los paquetes que se usan en un proyecto, conocida como formato de administración de paquetes. Sustituye a `packages.config` pero, a su vez, se sustituye por [PackageReference](../consume-packages/package-references-in-project-files.md) con NuGet 4.0 y versiones posteriores.
 
 El archivo [`project.lock.json`](#projectlockjson) (descrito a continuación) también se usa en los proyectos que emplean `project.json`.
 
@@ -122,7 +125,7 @@ Enumera las plataformas en las que se ejecuta el proyecto, como `net45`, `netcor
     }
  ```
 
-En la sección `frameworks` solo se permite una entrada. (Una excepción son los archivos `project.json` para los proyectos ASP.NET que se compilan con la cadena de herramientas DNX en desuso, lo que permite varios destinos).
+En la sección `frameworks` solo se permite una entrada. (Una excepción son los archivos `project.json` de los proyectos ASP.NET que se compilan con la cadena de herramientas DNX en desuso, lo que permite varios destinos).
 
 ## <a name="runtimes"></a>Runtimes
 

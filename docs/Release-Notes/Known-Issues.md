@@ -6,17 +6,20 @@ manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "Problemas conocidos con NuGet, como la autenticación, la instalación de paquetes y las herramientas."
+ms.technology: ''
+description: Problemas conocidos con NuGet, como la autenticación, la instalación de paquetes y las herramientas.
 keywords: Problemas conocidos de NuGet, problemas de NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ac00e3f11c54290a31319e7f2946fd965a0a9288
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: c36da5dc73dddbd540a36d171583cbf542e0678f
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="known-issues-with-nuget"></a>Problemas conocidos con NuGet
 
@@ -227,7 +230,7 @@ Herramientas de Windows Phone no tiene compatibilidad con el Administrador de ex
 
 ## <a name="changing-the-capitalization-of-nuget-package-ids-breaks-package-restore"></a>Al cambiar las mayúsculas y minúsculas de los identificadores de paquete de NuGet se interrumpe la restauración de los paquetes
 
-Como se describe con detalle en [este problema de GitHub](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932), se pueden cambiar las mayúsculas y minúsculas de los paquetes de NuGet por compatibilidad con NuGet, pero se crean complicaciones durante la restauración de los paquetes de los usuarios que tienen paquetes (con un uso de mayúsculas y minúsculas diferente) en la memoria caché local de paquetes. Se recomienda únicamente solicitar un cambio de mayúsculas y minúsculas si dispone de un método de comunicación con los usuarios existentes del paquete para notificarles la interrupción que se puede producir en la restauración de paquetes en tiempo de compilación.
+Tal y como se describe con detalle en [este problema de GitHub](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932), se pueden cambiar las mayúsculas y minúsculas de los paquetes de NuGet por compatibilidad con NuGet, pero se crean complicaciones durante la restauración de los paquetes de los usuarios que tienen paquetes (con un uso de mayúsculas y minúsculas diferente) en la carpeta *global-packages*. Se recomienda únicamente solicitar un cambio de mayúsculas y minúsculas si dispone de un método de comunicación con los usuarios existentes del paquete para notificarles la interrupción que se puede producir en la restauración de paquetes en tiempo de compilación.
 
 ## <a name="reporting-issues"></a>Notificar problemas
 

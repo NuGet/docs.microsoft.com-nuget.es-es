@@ -6,17 +6,20 @@ manager: ghogen
 ms.date: 01/09/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Integración de NuGet en el sistema de proyectos de Visual Studio para tipos de proyectos de terceros."
+ms.technology: ''
+description: Integración de NuGet en el sistema de proyectos de Visual Studio para tipos de proyectos de terceros.
 keywords: NuGet en Visual Studio, tipos de proyecto personalizados, proyectos de Visual Studio
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: e2f7c4a32f80b96360f08d04efb8af639af2ddd3
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 0ffebfc9e403315482d3781a00a0a6896fd04f0c
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-support-for-the-visual-studio-project-system"></a>Compatibilidad de NuGet para el sistema de proyectos de Visual Studio
 
@@ -107,7 +110,7 @@ No olvide agregar o quitar capacidades del conjunto de `ActualProjectCapabilitie
 
 ## <a name="responding-to-queries"></a>Responder a consultas
 
-Un proyecto declara esta capacidad admitiendo la propiedad `VSHPROPID_ProjectCapabilitiesChecker` mediante `IVsHierarchy::GetProperty`. Debe devolver una instancia de `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`, que se define en el ensamblado `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll`. Haga referencia a este ensamblado instalando [su paquete de NuGet](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime).
+Un proyecto declara esta capacidad admitiendo la propiedad `VSHPROPID_ProjectCapabilitiesChecker` mediante `IVsHierarchy::GetProperty`. Debe devolver una instancia de `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`, que se define en el ensamblado `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll`. Haga referencia a este ensamblado instalando [su paquete NuGet](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime).
 
 Por ejemplo, podría agregar la siguiente instrucción `case` a la instrucción `switch` del método `IVsHierarchy::GetProperty`:
 

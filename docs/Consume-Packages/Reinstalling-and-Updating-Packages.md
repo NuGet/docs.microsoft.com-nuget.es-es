@@ -6,18 +6,20 @@ manager: ghogen
 ms.date: 12/07/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-ms.assetid: 2785879b-97f0-4a85-b3cc-bf4eaa5c39bf
-description: "Información detallada sobre cuándo es necesario volver a instalar y actualizar los paquetes, como ocurre con las referencias de paquetes rotas en Visual Studio."
-keywords: "Instalación de paquetes de NuGet, reinstalación de paquetes de NuGet, restauración de paquetes de NuGet, actualización de paquetes, restauración de paquetes, corrección de referencias rotas"
+ms.technology: ''
+description: Información detallada sobre cuándo es necesario volver a instalar y actualizar los paquetes, como ocurre con las referencias de paquetes rotas en Visual Studio.
+keywords: Instalación de paquetes de NuGet, reinstalación de paquetes de NuGet, restauración de paquetes de NuGet, actualización de paquetes, restauración de paquetes, corrección de referencias rotas
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: e2875630b24fbe04fc7bcab52335d849e54160de
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 9da385f51abf5877589c29ebdeffefc9a1a20a2e
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>Cómo volver a instalar y actualizar paquetes
 
@@ -48,7 +50,7 @@ En este artículo:
 
 De forma predeterminada, al volver a instalar o actualizar un paquete *siempre* se instala la última versión disponible del origen del paquete.
 
-En cambio, en los proyectos en los que se usa el formato de referencia `packages.config` puede restringir específicamente el intervalo de versiones. Por ejemplo, si sabe que la aplicación solo funciona con la versión 1.x de un paquete pero no con la versión 2.0 y versiones posteriores (quizás debido a un cambio importante en la API del paquete), sería conveniente restringir las actualizaciones a las versiones 1.x. Esto evita las actualizaciones accidentales que interrumpirían la aplicación.
+En cambio, en los proyectos en los que se usa el formato de administración `packages.config`, se puede restringir específicamente el intervalo de versiones. Por ejemplo, si sabe que la aplicación solo funciona con la versión 1.x de un paquete pero no con la versión 2.0 y versiones posteriores (quizás debido a un cambio importante en la API del paquete), sería conveniente restringir las actualizaciones a las versiones 1.x. Esto evita las actualizaciones accidentales que interrumpirían la aplicación.
 
 Para establecer una restricción, abra `packages.config` en un editor de texto, busque la dependencia en cuestión y agregue el atributo `allowedVersions` con un intervalo de versiones. Por ejemplo, para restringir las actualizaciones a la versión 1.x, establezca `allowedVersions` en `[1,2)`:
 

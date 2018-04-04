@@ -1,23 +1,25 @@
 ---
-title: "Cómo crear un paquete NuGet | Microsoft Docs"
+title: Cómo crear un paquete NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/12/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
-description: "Un guía detallada sobre el proceso de diseño y creación de un paquete NuGet, incluidos puntos de decisión clave como archivos y control de versiones."
-keywords: "Creación de paquetes NuGet, crear un paquete, manifiesto de nuspec, convenciones de paquetes NuGet, versión de paquetes NuGet"
+ms.technology: ''
+description: Un guía detallada sobre el proceso de diseño y creación de un paquete NuGet, incluidos puntos de decisión clave como archivos y control de versiones.
+keywords: Creación de paquetes NuGet, crear un paquete, manifiesto de nuspec, convenciones de paquetes NuGet, versión de paquetes NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 613e3eb9d08a0da96340f32b13c486508fa32439
-ms.sourcegitcommit: df21fe770900644d476d51622a999597a6f20ef8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 7bb7e16a317aff908effe0b6c603ea53c9e8a563
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-nuget-packages"></a>Creación de paquetes NuGet
 
@@ -131,7 +133,7 @@ El siguiente archivo `.nuspec` es común (pero ficticio), con comentarios que de
 
 Para obtener más información sobre cómo declarar dependencias y especificar números de versión, vea [Control de versiones de paquetes](../reference/package-versioning.md). También es posible exponer activos directamente desde las dependencias en el paquete mediante los atributos `include` y `exclude` del elemento `dependency`. Vea [Referencia de .nuspec: dependencias](../reference/nuspec.md#dependencies).
 
-Dado que el manifiesto se incluye en el paquete creado a partir de él, puede buscar cualquier número de ejemplos adicionales mediante el examen de los paquetes existentes. Una buena fuente es la memoria caché de paquetes global en el equipo, cuya ubicación se devuelve mediante el comando siguiente:
+Dado que el manifiesto se incluye en el paquete creado a partir de él, puede buscar cualquier número de ejemplos adicionales mediante el examen de los paquetes existentes. Una buena fuente es la carpeta *global-packages* en el equipo, cuya ubicación se devuelve mediante el comando siguiente:
 
 ```cli
 nuget locals -list global-packages
@@ -351,7 +353,9 @@ Después, en el archivo `.nuspec`, asegúrese de hacer referencia a estos archiv
 
 Con [NuGet 2.5 se introdujo](../release-notes/NuGet-2.5.md#automatic-import-of-msbuild-targets-and-props-files) la inclusión de propiedades y destinos de MSBuild en un paquete. Por tanto, se recomienda agregar el atributo `minClientVersion="2.5"` al elemento `metadata` para indicar la versión de cliente de NuGet mínima necesaria para usar el paquete.
 
-Cuando NuGet instala un paquete con archivos `\build`, agrega un elemento `<Import>` de MSBuild en el archivo de proyecto que apunta a los archivos `.targets` y `.props`. (`.props` se agrega en la parte superior del archivo del proyecto; `.targets` se agrega al final).
+Cuando NuGet instala un paquete con archivos `\build`, agrega elementos `<Import>` de MSBuild al archivo de proyecto que apunta a los archivos `.targets` y `.props`. (`.props` se agrega en la parte superior del archivo del proyecto; `.targets` se agrega al final). Se agrega un elemento condicional `<Import>` de MSBuild independiente para cada plataforma de destino.
+
+Los archivos `.props` y `.targets` de MSBuild de los destinos multiplataforma pueden colocarse en la carpeta `\buildCrossTargeting`. Durante la instalación de paquetes, NuGet agrega los elementos `<Import>` correspondientes al archivo de proyecto, con la condición de que no se establezca la plataforma de destino (la propiedad `$(TargetFramework)` de MSBuild debe estar vacía).
 
 Con NuGet 3.x, los destinos no se agregan al proyecto pero en su lugar se ponen a disposición a través de `project.lock.json`.
 
@@ -372,7 +376,7 @@ Los paquetes que contienen ensamblados de interoperabilidad COM deben incluir un
 </Target>
 ```
 
-Tenga en cuenta que, cuando se usa el formato de referencias `packages.config`, agregar referencias a los ensamblados desde los paquetes hace que NuGet y Visual Studio comprueben los ensamblados de interoperabilidad COM y establezcan `EmbedInteropTypes` en true en el archivo de proyecto. En este caso, los destinos se reemplazan.
+Tenga en cuenta que, cuando se usa el formato de administración `packages.config`, agregar referencias a los ensamblados desde los paquetes hace que NuGet y Visual Studio comprueben los ensamblados de interoperabilidad COM y establezcan `EmbedInteropTypes` en true en el archivo de proyecto. En este caso, los destinos se reemplazan.
 
 Además, de forma predeterminada los [activos de compilación no fluyen de manera transitiva](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets). Los paquetes creados como se describe aquí funcionan de manera diferente cuando se extraen como una dependencia transitiva de un proyecto a una referencia de proyecto. El consumidor del paquete puede permitir que fluyan si modifica el valor predeterminado de PrivateAssets para que no se incluya la compilación.
 

@@ -1,22 +1,25 @@
 ---
-title: "Instalación de herramientas de cliente de NuGet | Microsoft Docs"
+title: Instalación de herramientas de cliente de NuGet | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/24/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
-ms.technology: 
-description: "Instrucciones sobre cómo instalar las herramientas de cliente, la interfaz de la línea de comandos (CLI) y el Administrador de paquetes para Visual Studio."
+ms.technology: ''
+description: Instrucciones sobre cómo instalar las herramientas de cliente, la interfaz de la línea de comandos (CLI) y el Administrador de paquetes para Visual Studio.
 keywords: CLI de nuget.exe, herramientas de cliente de NuGet, Administrador de paquetes NuGet, consola del Administrador de paquetes NuGet, NuGet para Visual Studio, canal beta de NuGet
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 462557e939e769f26fe05d6f9e2994eaf43c6e11
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dd9ca3b39c4bc9b00d8fca6fe1479d64016bad86
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="installing-nuget-client-tools"></a>Instalación de las herramientas del cliente NuGet
 
@@ -27,10 +30,10 @@ Para trabajar con NuGet, como consumidor o creador de paquetes, puede usar las [
 | Herramienta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Descargar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | Se incluye con el SDK de .NET Core y ofrece las características básicas de NuGet en todas las plataformas. | [SDK de .NET Core](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | Ofrece todas las funcionalidades de NuGet en Windows y la mayoría de las características que se ejecutan en [Mono](http://www.mono-project.com/docs/getting-started/install/) en Mac y Linux. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | Ofrece funciones de NuGet mediante la interfaz de usuario del Administrador de paquetes y la consola del Administrador de paquetes, incluidas las cargas de trabajo relacionadas con .NET. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
+| [nuget.exe](#nugetexe-cli) | Ofrece todas las funcionalidades de NuGet en Windows, además de la mayoría de las características en Mac y Linux cuando se ejecutan con Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [Visual Studio](#visual-studio) | En Windows, ofrece funciones de NuGet mediante la interfaz de usuario del Administrador de paquetes y la consola del Administrador de paquetes, incluidas las cargas de trabajo relacionadas con .NET. En Mac, ofrece ciertas características a través de la interfaz de usuario. En Visual Studio Code, las características de NuGet se proporcionan a través de extensiones. | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
-La [CLI de MSBuild](reference/msbuild-targets.md) también ofrece la posibilidad de restaurar y crear paquetes, que es especialmente útil en los servidores de compilación. Por lo demás, MSBuild no es una herramienta de uso general para trabajar con NuGet.
+La [CLI de MSBuild](reference/msbuild-targets.md) también ofrece la posibilidad de restaurar y crear paquetes, que es especialmente útil en los servidores de compilación. MSBuild no es una herramienta de uso general para trabajar con NuGet.
 
 ## <a name="cli-tools"></a>Herramientas de la CLI
 
@@ -38,7 +41,7 @@ Las dos herramientas de la CLI de NuGet son `dotnet.exe` y `nuget.exe`. Vea la c
 
 ### <a name="dotnetexe-cli"></a>CLI de dotnet.exe
 
-La CLI de .NET Core 2.0, `dotnet.exe`, funciona en todas las plataformas (Windows, Mac y Linux) y ofrece características básicas de NuGet, tales como la instalación, restauración y publicación de paquetes. "dotnet" proporciona la integración directa con archivos de proyecto de .NET Core (como `.csproj`), lo que resulta útil en la mayoría de los escenarios. `dotnet` también se crea directamente para cada plataforma y no requiere que se instale Mono.
+La CLI de .NET Core 2.0, `dotnet.exe`, funciona en todas las plataformas (Windows, Mac y Linux) y ofrece características básicas de NuGet, tales como la instalación, restauración y publicación de paquetes. `dotnet` proporciona la integración directa con archivos de proyecto de .NET Core (como `.csproj`), lo que resulta útil en la mayoría de los escenarios. `dotnet` también se crea directamente para cada plataforma y no requiere que se instale Mono.
 
 Instalación:
 
@@ -49,7 +52,7 @@ Para obtener más información, vea [Herramientas de la interfaz de la línea de
 
 ### <a name="nugetexe-cli"></a>CLI de nuget.exe
 
-La CLI de NuGet, `nuget.exe`, es la utilidad de línea de comandos para Windows que ofrece todas las funcionalidades de NuGet; también se puede ejecutar en Mac OSX y Linux con Mono, con algunas limitaciones. A diferencia de `dotnet`, La CLI de `nuget.exe` no afecta a los archivos de proyecto.
+La CLI de NuGet, `nuget.exe`, es la utilidad de línea de comandos para Windows que ofrece todas las funcionalidades de NuGet; también se puede ejecutar en Mac OSX y Linux con [Mono](http://www.mono-project.com/docs/getting-started/install/), con algunas limitaciones. A diferencia de `dotnet`, la CLI de `nuget.exe` no afecta a los archivos de proyecto y no actualiza `packages.config` al instalar paquetes.
 
 Instalación:
 
@@ -59,11 +62,12 @@ Instalación:
 > Use `nuget update -self` para actualizar nuget.exe a la versión más reciente.
 
 > [!Note]
-> La CLI de NuGet más reciente recomendada está siempre disponible en `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. A efectos de compatibilidad con sistemas de integración continua anteriores, una dirección URL anterior, `https://nuget.org/nuget.exe`, actualmente ofrece la herramienta de la CLI 2.8.6. [Está en desuso](https://github.com/NuGet/NuGetGallery/issues/5381).
+> La CLI de NuGet más reciente recomendada está siempre disponible en `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe`. A efectos de compatibilidad con sistemas de integración continua anteriores, una dirección URL anterior, `https://nuget.org/nuget.exe`, ofrece actualmente la [herramienta CLI 2.8.6 en desuso](https://github.com/NuGet/NuGetGallery/issues/5381).
 
 ## <a name="visual-studio"></a>Programa para la mejora
 
 - Visual Studio Code: las funcionalidades de NuGet están disponibles a través de las extensiones de Marketplace. También puede usar las herramientas `dotnet.exe` o `nuget.exe` de la CLI.
+
 - Visual Studio for Mac: ciertas funcionalidades de NuGet se han integrado directamente. Vea [Incluir un paquete NuGet en el proyecto](/visualstudio/mac/nuget-walkthrough) para obtener un tutorial. Para otras funcionalidades, use las herramientas `dotnet.exe` o `nuget.exe` de la CLI.
 
 - Visual Studio en Windows: el **Administrador de paquetes NuGet** se incluye con Visual Studio 2012 y versiones posteriores. El Administrador de paquetes ofrece la [Interfaz de usuario del Administrador de paquetes](tools/package-manager-ui.md) y la [Consola del Administrador de paquetes](tools/package-manager-console.md), por lo que puede ejecutar la mayoría de las operaciones de NuGet.
@@ -72,7 +76,7 @@ Instalación:
   - Visual Studio no incluye automáticamente La CLI de `nuget.exe`, que debe instalarse por separado, tal y como se ha descrito antes.
   - Los comandos de la consola del Administrador de paquetes solo funcionan en Visual Studio en Windows y no en otros entornos de PowerShell.
   - En Visual Studio 2010 y versiones anteriores, instale la extensión "Administrador de paquetes NuGet para Visual Studio".
-  - También pueden descargarse extensiones NuGet para Visual Studio 2013 y 2015 desde [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
+  - También pueden descargarse extensiones de NuGet para Visual Studio 2013 y 2015 desde [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html).
   - Si quiere obtener una vista previa de las próximas características de NuGet, instale [Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/), que funciona en paralelo con versiones estables de Visual Studio. Para notificar problemas o compartir ideas sobre versiones preliminares, abra un problema en el [repositorio NuGet de GitHub](https://github.com/Nuget/Home/issues).
 
 ## <a name="feature-availability"></a>Disponibilidad de características
@@ -89,7 +93,7 @@ Instalación:
 | Crear paquetes(4) | &#10004; | &#10004; | &#10004;(5) | &#10004; | |
 | Publicar paquetes | &#10004;(1) | &#10004; | &#10004; | &#10004; |  |
 | Replicar paquetes |  | &#10004; | &#10004; | | |
-| Administrar la caché de NuGet | &#10004; | &#10004; | &#10004; | | |
+| Administrar las carpetas *global-package* y de caché | &#10004; | &#10004; | &#10004; | | |
 | Administrar configuración de NuGet | | &#10004; | &#10004; | | |
 
 (1) Solo paquetes en nuget.org

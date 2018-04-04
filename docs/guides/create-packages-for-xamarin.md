@@ -1,28 +1,31 @@
 ---
-title: Crear paquetes NuGet para Xamarin (para iOS, Android y Windows) | Microsoft Docs
+title: Creación de paquetes NuGet para Xamarin (en iOS, Android y Windows) con Visual Studio 2015 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "Un tutorial integral de creación de paquetes NuGet para Xamarin que usan las API nativas en iOS, Android y Windows."
+ms.technology: ''
+description: Un tutorial integral de creación de paquetes NuGet para Xamarin que usan las API nativas en iOS, Android y Windows.
 keywords: crear un paquete, paquetes para Xamarin, paquetes multiplataforma
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3e1460de060980365a5eaa2ef91c052cc359bb70
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: e101ca2d124a19d2cf758776717b3680aa5bbdd8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="create-packages-for-xamarin"></a>Crear paquetes para Xamarin
+# <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>Creación de paquetes para Xamarin con Visual Studio 2015
 
-Un paquete multiplataforma contiene código en el que se usan las API nativas en iOS, Android y Windows, según el sistema operativo del tiempo de ejecución. Aunque esto es sencillo de hacer, es preferible permitir que los desarrolladores consuman el paquete desde una PCL o bibliotecas de .NET Standard a través del área expuesta de una API común.
+Un paquete de Xamarin contiene código en el que se usan las API nativas en iOS, Android y Windows, según el sistema operativo del tiempo de ejecución. Aunque esto es sencillo de hacer, es preferible permitir que los desarrolladores consuman el paquete desde una PCL o bibliotecas de .NET Standard a través del área expuesta de una API común.
 
-En este tutorial creará un paquete NuGet multiplataforma que se puede usar en proyectos para dispositivos móviles en iOS, Android y Windows.
+En este tutorial usará Visual Studio 2015 para crear un paquete NuGet multiplataforma que se puede usar en proyectos para dispositivos móviles en iOS, Android y Windows.
 
 1. [Requisitos previos](#prerequisites)
 1. [Crear la estructura y el código de abstracción del proyecto](#create-the-project-structure-and-abstraction-code)

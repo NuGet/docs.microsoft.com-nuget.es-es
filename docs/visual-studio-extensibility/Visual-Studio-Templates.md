@@ -6,17 +6,20 @@ manager: ghogen
 ms.date: 01/03/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 description: Instrucciones para incluir paquetes NuGet como parte de las plantillas de proyecto y elemento de Visual Studio.
 keywords: NuGet en Visual Studio, plantillas de proyecto de Visual Studio, plantillas de elemento de Visual Studio, paquetes en plantillas de proyecto, paquetes en plantillas de elemento
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 65b914e1fa59c28615f195b470880a12bf80efbb
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 8c1751ba9caf5e71ace7a81575e4e5448b1e4185
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="packages-in-visual-studio-templates"></a>Paquetes en plantillas de Visual Studio
 
@@ -62,7 +65,7 @@ Pasos para incluir paquetes en una plantilla:
     </WizardData>
     ```
 
-    *(NuGet 2.2.1 y versiones posteriores)*  El asistente admite varios elementos `<package>` para admitir varios orígenes de paquetes. Los atributos `id` y `version` son obligatorios, lo que significa que esa versión específica del paquete se instalará incluso si hay disponible una versión más reciente. Esto evita que las actualizaciones del paquete afecten a la plantilla, dejando la opción de actualizar el paquete al desarrollador que usa la plantilla.
+    El asistente admite varios elementos `<package>` para admitir varios orígenes de paquetes. Los atributos `id` y `version` son obligatorios, lo que significa que esa versión específica del paquete se instalará incluso si hay disponible una versión más reciente. Esto evita que las actualizaciones del paquete afecten a la plantilla, dejando la opción de actualizar el paquete al desarrollador que usa la plantilla.
 
 1. Especifique el repositorio donde NuGet puede encontrar los paquetes tal como se describe en las secciones siguientes.
 
