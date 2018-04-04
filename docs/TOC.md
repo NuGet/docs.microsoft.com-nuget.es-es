@@ -74,6 +74,7 @@
 # Referencia
 ## [.nuspec](reference/nuspec.md)
 ## [Referencias de paquete en archivos de proyecto](consume-packages/package-references-in-project-files.md)
+## [Migración de packages.config a PackageReference](reference/migrate-packages-config-to-package-reference.md)
 ## [packages.config](reference/packages-config.md)
 ## [Control de versiones del paquete](reference/package-versioning.md)
 ## [Archivo Nuget.Config](reference/nuget-config-file.md)
