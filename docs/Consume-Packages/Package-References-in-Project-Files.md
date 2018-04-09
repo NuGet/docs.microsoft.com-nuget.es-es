@@ -15,11 +15,11 @@ ms.reviewer:
 ms.workload:
 - dotnet
 - aspnet
-ms.openlocfilehash: 99caf371ca1bd85e6af4e879741e3e2caab6e860
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 7844ace0565b2e70f8f68e6e61548f0f28171689
+ms.sourcegitcommit: 5b223c5814799caa6309e95792a2d338df692778
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
 
@@ -96,8 +96,8 @@ A continuación se muestran los valores permitidos para estas etiquetas, con var
 
 | Valor | Description |
 | --- | ---
-| compile | Contenido de la carpeta `lib` |
-| motor en tiempo de ejecución | Contenido de la carpeta `runtimes` |
+| compile | Contenido de la carpeta `lib` y controla si el proyecto se puede compilar con los ensamblados dentro de la carpeta |
+| motor en tiempo de ejecución | Contenido de las carpetas `lib` y `runtimes` y controla si estos ensamblados se copiarán en el directorio de salida de compilación |
 | contentFiles | Contenido de la carpeta `contentfiles` |
 | compilación | Propiedades y destinos de la carpeta `build` |
 | analyzers | Analizadores de .NET |
