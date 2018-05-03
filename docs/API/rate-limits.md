@@ -1,28 +1,20 @@
 ---
-title: Límites de frecuencia | Documentos de Microsoft
-author:
-- cmanu
-- anangaur
-ms.author:
-- cmanu
+title: Límites, NuGet API de frecuencia
+description: Las APIs NuGet habrá aplica límites de velocidad para evitar abusos.
+author: cmanu
+ms.author: cmanu
 manager: skofman
 ms.date: 03/20/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Las APIs NuGet habrá aplica límites de velocidad para evitar abusos.
-keywords: Velocidad de NuGet API, limitar
 ms.reviewer:
 - skofman
 - anangaur
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: f7891d5e4c008219d9f4808f223f3e5e7ae06ced
-ms.sourcegitcommit: fa40be739d093a37d5f7072b62ebdb4f595f4110
+- kraigb
+ms.openlocfilehash: 3aaebef8fff670759c6484a5a8f90a2f4dd58c66
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="rate-limits"></a>Límites de velocidad
 
@@ -45,10 +37,10 @@ Las tablas siguientes muestran los límites de frecuencia para la API de NuGet.o
 
 | API | Tipo de límite | Valor del límite | API usecase |
 |:---|:---|:---|:---|
-**GET** `/api/v1/Packages` | IP | 1000 / minuto | Consultar los metadatos de paquete de NuGet a través de OData v1 `Packages` colección |
-**GET** `/api/v1/Search()` | IP | 3000 / minuto | Buscar paquetes de NuGet a través del extremo de la búsqueda de v1 | 
-**GET** `/api/v2/Packages` | IP | 20000 / minuto | Consultar los metadatos de paquete de NuGet a través de OData v2 `Packages` colección | 
-**GET** `/api/v2/Packages/$count` | IP | 100 / minuto | Consultar el número de paquetes de NuGet a través de OData v2 `Packages` colección | 
+**OBTENER** `/api/v1/Packages` | IP | 1000 / minuto | Consultar los metadatos de paquete de NuGet a través de OData v1 `Packages` colección |
+**OBTENER** `/api/v1/Search()` | IP | 3000 / minuto | Buscar paquetes de NuGet a través del extremo de la búsqueda de v1 | 
+**OBTENER** `/api/v2/Packages` | IP | 20000 / minuto | Consultar los metadatos de paquete de NuGet a través de OData v2 `Packages` colección | 
+**OBTENER** `/api/v2/Packages/$count` | IP | 100 / minuto | Consultar el número de paquetes de NuGet a través de OData v2 `Packages` colección | 
 
 ## <a name="package-push-and-unlist"></a>Paquete de inserción y ocultar
 

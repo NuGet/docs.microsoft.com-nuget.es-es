@@ -1,29 +1,17 @@
 ---
-title: Metadatos, NuGet API del paquete | Documentos de Microsoft
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Metadatos de paquete de NuGet API
+description: La URL base del registro de paquete permite capturar metadatos acerca de los paquetes.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: La URL base del registro de paquete permite capturar metadatos acerca de los paquetes.
-keywords: Metadatos de paquete de NuGet API, registro de la API de NuGet, API de NuGet que no figuran en paquetes
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: c7b32e1d2bb9250de1e0b707405a75184b2bd8b4
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: 50064e1450232e9cdedcc042a09c08860f802e76
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-metadata"></a>Metadatos de paquete
 
@@ -155,7 +143,7 @@ iconUrl                  | cadena                     | No       |
 id                       | cadena                     | sí      | El identificador del paquete
 licenseUrl               | cadena                     | No       | 
 lista                   | booleano                    | No       | Se debe considerar que la lista si está ausente
-minClientVersion         | cadena                     | No       | 
+MinClientVersion         | cadena                     | No       | 
 projectUrl               | cadena                     | No       | 
 Publicado                | cadena                     | No       | Una cadena que contiene una marca de hora ISO 8601 de cuándo se publicó el paquete
 requireLicenseAcceptance | booleano                    | No       | 

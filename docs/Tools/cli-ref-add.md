@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI Agregar comando | Documentos de Microsoft
+title: NuGet CLI agregar (comando)
+description: Referencia para el nuget.exe agregar (comando)
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Referencia para el nuget.exe agregar (comando)
-keywords: NuGet Agregar referencia, agregue el comando del paquete
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 48e093cbae2cecb1652e17a9b26920107aa8aef7
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 4a4201a321ffe0f7fb61f4e98012a1a2d7d8fda4
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="add-command-nuget-cli"></a>Agregar comando (NuGet CLI)
 

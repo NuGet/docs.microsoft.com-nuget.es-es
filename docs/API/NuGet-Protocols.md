@@ -1,21 +1,17 @@
 ---
-title: Protocolos de NuGet.org | Documentos de Microsoft
+title: Protocolos de NuGet.org
+description: Los protocolos de nuget.org en constante evolución para interactuar con los clientes de NuGet.
 author: anangaur
 ms.author: anangaur
-manager: unniravindranathan
+manager: unnir
 ms.date: 10/30/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Los protocolos de nuget.org en constante evolución para interactuar con los clientes de NuGet."
-ms.reviewer:
-- kraigb
-- karann-msft
-ms.openlocfilehash: 488a86a36a6bc83c91f0182bf437ddb83e707e31
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.reviewer: kraigb
+ms.openlocfilehash: cc6d52617ea8b69d5b18b831ddf8a1a85dd6798f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nugetorg-protocols"></a>protocolos de NuGet.org
 
@@ -56,8 +52,8 @@ Esta API se utiliza para obtener una clave de comprobar el ámbito de un autor n
 
 nombre           | En     | Tipo   | Obligatorio | Notas
 -------------- | ------ | ------ | -------- | -----
-Id.             | Dirección URL    | cadena | sí      | El identidier de paquete para el que se solicita la clave de ámbito Compruebe
-VERSION        | Dirección URL    | cadena | No       | La versión del paquete
+Id.             | Resolución    | cadena | sí      | El identidier de paquete para el que se solicita la clave de ámbito Compruebe
+VERSION        | Resolución    | cadena | No       | La versión del paquete
 X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
 
 #### <a name="response"></a>Respuesta
@@ -79,8 +75,8 @@ Esta API se utiliza para validar una clave de comprobar el ámbito de paquete pr
 
 nombre           | En     | Tipo   | Obligatorio | Notas
 -------------  | ------ | ------ | -------- | -----
-Id.             | Dirección URL    | cadena | sí      | El identificador de paquete para el que se solicita la clave de ámbito Compruebe
-VERSION        | Dirección URL    | cadena | No       | La versión del paquete
+Id.             | Resolución    | cadena | sí      | El identificador de paquete para el que se solicita la clave de ámbito Compruebe
+VERSION        | Resolución    | cadena | No       | La versión del paquete
 X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {VERIFY_SCOPE_KEY}`.
 
 > [!Note]

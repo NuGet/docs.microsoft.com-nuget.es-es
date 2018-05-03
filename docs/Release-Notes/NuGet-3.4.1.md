@@ -1,22 +1,16 @@
 ---
-title: "Notas de la versión de NuGet 3.4.1 | Documentos de Microsoft"
+title: Notas de la versión de NuGet 3.4.1
+description: Notas de la versión de NuGet 3.4.1 incluidos problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 3.4.1 incluidos problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 3.4.1 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: c2e22b6c22c55fd51bd1d20d52b4b7b07c5a205c
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: d492afc59fe2f9237aaf54dca56e09f9148a0dcf
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-341-release-notes"></a>Notas de la versión de NuGet 3.4.1
 
@@ -27,7 +21,7 @@ NuGet 3.4.1 se publicó el 30 de marzo de 2016 al mismo tiempo como Visual Studi
 ## <a name="updates-and-improvements"></a>Actualizaciones y mejoras
 
 * Corregido un problema que impedía que examinar los paquetes de la interfaz de usuario de Visual Studio con una instalación mínima de Visual Studio
-* Se ha corregido un problema con la ubicación de Visual Studio`lucene.net.dll`
+* Se ha corregido un problema con la ubicación de Visual Studio `lucene.net.dll`
 * Todos los orígenes no deben ser el origen del repositorio predeterminado después de una extensión de NuGet instalar o actualizar.  Puede participar en esta característica de las opciones de configuración.
 
 Seguimos realizar el seguimiento de problemas en nuestra lista de problemas de GitHub que se encuentra en: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)

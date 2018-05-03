@@ -1,25 +1,16 @@
 ---
-title: Notas de la versión de NuGet 2.5 | Documentos de Microsoft
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: Notas de la versión 2.5 de NuGet
 description: Notas de la versión de NuGet 2.5, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
-keywords: NuGet 2.5 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 4495e1ea9cc4ec13ef330e56d12de1320cf10b24
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: accea5033e44927259537b5047a4a821babc6146
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-25-release-notes"></a>Notas de la versión 2.5 de NuGet
 
@@ -33,28 +24,28 @@ Nos gustaría gracias a los siguientes colaboradores externos para sus contribuc
 
 1. [Daniel Plaisted](https://www.codeplex.com/site/users/view/dsplaisted) ([@dsplaisted](https://twitter.com/dsplaisted))
     - [#2847](https://nuget.codeplex.com/workitem/2847) -agregar MonoAndroid, MonoTouch y MonoMac a la lista de identificadores de framework de destino conocidas.
-1. [Andres g. Aragoneses](https://www.codeplex.com/site/users/view/knocte) ([@knocte](https://twitter.com/knocte))
+2. [Andres g. Aragoneses](https://www.codeplex.com/site/users/view/knocte) ([@knocte](https://twitter.com/knocte))
     - [#2865](https://nuget.codeplex.com/workitem/2865) -corrija la ortografía de `NuGet.targets` para un sistema operativo entre mayúsculas y minúsculas
-1. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
+3. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
     - Que la solución de compilación en Mono.
-1. [Andrew Theken](https://www.codeplex.com/site/users/view/atheken) ([@atheken](https://twitter.com/atheken))
+4. [Andrew Theken](https://www.codeplex.com/site/users/view/atheken) ([@atheken](https://twitter.com/atheken))
     - Corregir errores en Mono las pruebas unitarias.
-1. [Olivier Dagenais](https://www.codeplex.com/site/users/view/OliIsCool) ([@OliIsCool](https://twitter.com/oliiscool))
+5. [Olivier Dagenais](https://www.codeplex.com/site/users/view/OliIsCool) ([@OliIsCool](https://twitter.com/oliiscool))
     - [#2920](https://nuget.codeplex.com/workitem/2920) -comando de pack nuget.exe no propagar las propiedades de MSBuild
-1. [Miroslav Bajtos](https://www.codeplex.com/site/users/view/MiroslavBajtos) ([@bajtos](https://twitter.com/bajtos))
+6. [Miroslav Bajtos](https://www.codeplex.com/site/users/view/MiroslavBajtos) ([@bajtos](https://twitter.com/bajtos))
     - [#1511](https://nuget.codeplex.com/workitem/1511) : XML modificar código de control para preservar el formato.
-1. [ADAM Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+7. [ADAM Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - Agrega reconocidas palabras al diccionario personalizado para permitir build.cmd sea correcta.
-1. [Bruno Roggeri](https://www.codeplex.com/site/users/view/broggeri)
+8. [Bruno Roggeri](https://www.codeplex.com/site/users/view/broggeri)
     - Corrija las pruebas de unidad cuando se ejecuta en VS localizados.
-1. [Gareth Evans](https://www.codeplex.com/site/users/view/garethevans)
+9. [Gareth Evans](https://www.codeplex.com/site/users/view/garethevans)
     - Interfaz extraído de PackageService
-1. [Maxime Brugidou](https://www.codeplex.com/site/users/view/brugidou) ([@brugidou](https://twitter.com/brugidou))
-    - [#936](https://nuget.codeplex.com/workitem/936) -administrar dependencias del proyecto cuando empaquetado
-1. [Xavier Decoster](https://www.codeplex.com/site/users/view/XavierDecoster) ([@XavierDecoster](https://twitter.com/xavierdecoster))
-    - [#2991](https://nuget.codeplex.com/workitem/2991), [#3164](https://nuget.codeplex.com/workitem/3164) -compatibilidad con contraseña en texto claro al almacenar las credenciales del origen de paquete en archivos de nuget.cofig
-1. [James dotación](http://www.codeplex.com/site/users/view/jmanning) ([@manningj](https://twitter.com/manningj))
-    - [#3190](http://nuget.codeplex.com/workitem/3190), [#3191](http://nuget.codeplex.com/workitem/3191) -descripción de la Ayuda de Get-Package corregir
+10. [Maxime Brugidou](https://www.codeplex.com/site/users/view/brugidou) ([@brugidou](https://twitter.com/brugidou))
+     - [#936](https://nuget.codeplex.com/workitem/936) -administrar dependencias del proyecto cuando empaquetado
+11. [Xavier Decoster](https://www.codeplex.com/site/users/view/XavierDecoster) ([@XavierDecoster](https://twitter.com/xavierdecoster))
+     - [#2991](https://nuget.codeplex.com/workitem/2991), [#3164](https://nuget.codeplex.com/workitem/3164) -compatibilidad con contraseña en texto claro al almacenar las credenciales del origen de paquete en archivos de nuget.cofig
+12. [James dotación](http://www.codeplex.com/site/users/view/jmanning) ([@manningj](https://twitter.com/manningj))
+     - [#3190](http://nuget.codeplex.com/workitem/3190), [#3191](http://nuget.codeplex.com/workitem/3191) -descripción de la Ayuda de Get-Package corregir
 
 Agradecemos también las siguientes personas para encontrar errores con NuGet 2.5 Beta o RC que se han aprobado y corregir antes de la versión final:
 

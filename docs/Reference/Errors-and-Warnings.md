@@ -1,21 +1,12 @@
 ---
-title: NuGet referencia de errores y advertencias | Documentos de Microsoft
+title: NuGet referencia de errores y advertencias
+description: Referencia completa para las advertencias y errores emitidos de NuGet durante varias operaciones de NuGet.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Referencia completa para las advertencias y errores emitidos de NuGet durante varias operaciones de NuGet.
-keywords: NuGet errores y advertencias de NuGet, diagnóstico
-ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
+ms.reviewer: anangaur
 f1_keywords:
 - NU1000
 - NU1001
@@ -53,11 +44,11 @@ f1_keywords:
 - NU3008
 - NU3018
 - NU3028
-ms.openlocfilehash: 020e31dc8646c43b86bcee555f1772e8b1db7761
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: dcff20e35adc0a3dbcc7bef482f81a937cf059c5
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="errors-and-warnings"></a>Errores y advertencias
 
@@ -65,7 +56,7 @@ En 4.3.0+ de NuGet, errores y advertencias se numeran como se describe en este t
 
 Los errores y advertencias que se indican aquí sólo están disponibles con [PackageReference-based](../consume-packages/package-references-in-project-files.md) 4.3.0+ de NuGet y proyectos. NuGet también respeta las propiedades de MSBuild para suprimir las advertencias o elevar los privilegios a errores. Para obtener más información, consulte [Cómo: Suprimir advertencias del compilador](/visualstudio/ide/how-to-suppress-compiler-warnings) en la documentación de Visual Studio.
 
-**Errors**
+**errores**
 
 | Agrupar | Números de error |
 | --- | --- |
@@ -115,7 +106,7 @@ Los errores y advertencias que se indican aquí sólo están disponibles con [Pa
 
 ## <a name="missing-package-and-project-errors"></a>Errores de paquete y proyecto ausente
 
-[NU1100](#nu1100) | [NU1101](#nu1101) | [NU1102](#nu1102) | [NU1103](#nu1103) | [NU1104](#nu1104) | [NU1105](#nu1105) | [NU1106](#nu1106)
+[NU1100](#nu1100) | [NU1101](#nu1101) | [NU1102](#nu1102) | [NU1103](#nu1103) | [NU1104](#nu1104)  |  [NU1105](#nu1105) | [NU1106](#nu1106)
 
 ### <a name="nu1100"></a>NU1100
 
@@ -211,7 +202,7 @@ Los errores y advertencias que se indican aquí sólo están disponibles con [Pa
 | | |
 | --- | --- |
 | **Problema** | Un paquete de dependencia no contiene ningún activos compatibles con el proyecto. |
-| **Mensaje de ejemplo** | *Paquete System.ComponentModel.EventBasedAsync 4.0.11 no es compatible con netstandard1.3 (. NETStandard, Version = v1.3). Package System.ComponentModel.EventBasedAsync 4.0.11 supports:<br/>  - monoandroid10 (MonoAndroid,Version=v1.0)<br/>  - monotouch10 (MonoTouch,Version=v1.0)<br/>  - net45 (.NETFramework,Version=v4.5)<br/>  - netcore50 (.NETCore,Version=v5.0)<br/>  - netstandard1.0 (.NETStandard,Version=v1.0)<br/>  - portable-net45+win8+wp8+wpa81 (.NETPortable,Version=v0.0,Profile=Profile259)<br/>  - win8 (Windows,Version=v8.0)<br/>  - wp8 (WindowsPhone,Version=v8.0)<br/>  - wpa81 (WindowsPhoneApp,Version=v8.1)<br/>  - xamarinios10 (Xamarin.iOS,Version=v1.0)<br/>  - xamarinmac20 (Xamarin.Mac,Version=v2.0)<br/>  - xamarintvos10 (Xamarin.TVOS,Version=v1.0)<br/>  - xamarinwatchos10 (Xamarin.WatchOS,Version=v1.0)*|
+| **Mensaje de ejemplo** | *Paquete System.ComponentModel.EventBasedAsync 4.0.11 no es compatible con netstandard1.3 (. NETStandard, Version = v1.3). Paquete admite System.ComponentModel.EventBasedAsync 4.0.11:<br/> -monoandroid10 (MonoAndroid, Version = v1.0)<br/> -monotouch10 (MonoTouch, Version = v1.0)<br/> -net45 (. NETFramework, Version = v4.5)<br/> -netcore50 (. NETCore, Version = v5.0)<br/> -netstandard1.0 (. NETStandard, Version = v1.0)<br/> -portable net45 + win8 + wp8 + wpa81 (. NETPortable, Version = v0.0, perfil = Profile259)<br/> -win8 (Windows, versión = v8.0)<br/> -wp8 (WindowsPhone, Version = v8.0)<br/> -wpa81 (WindowsPhoneApp, Version = v8.1)<br/> -xamarinios10 ( Xamarin.iOS,Version=v1.0)<br/> -xamarinmac20 (Xamarin.Mac,Version=v2.0)<br/> -xamarintvos10 (Xamarin.TVOS,Version=v1.0)<br/> -xamarinwatchos10 (Xamarin.WatchOS,Version=v1.0)*|
 | **Solución** | Cambiar plataforma de destino del proyecto a uno que admite el paquete. |
 
 ### <a name="nu1203"></a>NU1203

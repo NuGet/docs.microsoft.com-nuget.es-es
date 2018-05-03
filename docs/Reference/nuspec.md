@@ -1,26 +1,17 @@
 ---
-title: Referencia del archivo .nuspec para NuGet | Microsoft Docs
+title: Referencia del archivo NuSpec de NuGet
+description: El archivo .nuspec contiene metadatos de paquete que se usan para crear un paquete y proporcionar información a los consumidores del paquete.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 08/29/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: El archivo .nuspec contiene metadatos de paquete que se usan para crear un paquete y proporcionar información a los consumidores del paquete.
-keywords: Referencia de nuspec, metadatos de paquetes de NuGet, manifiesto del paquete de NuGet, esquema de nuspec
-ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 086826b47402bb5e7066c7a10b1e2ff246fd58ea
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.reviewer: anangaur
+ms.openlocfilehash: c11b50aa1637c00f0f0e71a6e20ce5d435db402b
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -97,14 +88,14 @@ Estos elementos pueden aparecer dentro de un elemento `<metadata>`.
 | **owners** | Lista separada por comas de los creadores del paquete usando nombres de perfil en nuget.org. Suele ser la misma lista que en `authors` y se ignora al cargar el paquete en nuget.org. Vea [Administrar los propietarios de paquetes en nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). |
 | **projectUrl** | Una dirección URL de la página principal del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org. |
 | **licenseUrl** | Dirección URL de la licencia del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org. |
-| **iconUrl** | Dirección URL para una imagen de 64 x 64 con fondo transparente para usarla como icono para el paquete en la visualización de la interfaz de usuario. Asegúrese de que este elemento contiene la *dirección URL directa a la imagen* y no la dirección URL de una página web que contiene la imagen. Por ejemplo, para utilizar una imagen de GitHub, use el archivo sin formato de dirección URL como  *https://github.com/ \<nombre de usuario\>/\<repositorio\>/raw/\<rama\> / \<logo.png\>*. |
+| **iconUrl** | Dirección URL para una imagen de 64 x 64 con fondo transparente para usarla como icono para el paquete en la visualización de la interfaz de usuario. Asegúrese de que este elemento contiene la *dirección URL directa a la imagen* y no la dirección URL de una página web que contiene la imagen. Por ejemplo, para utilizar una imagen de GitHub, use el archivo sin formato de dirección URL como  <em>https://github.com/ \<nombre de usuario\>/\<repositorio\>/raw/\<rama\> / \<logo.png\></em>. |
 | **requireLicenseAcceptance** | Valor booleano que especifica si el cliente debe pedir al consumidor que acepte la licencia del paquete antes de instalarlo. |
 | **developmentDependency** | *(2.8+)* Valor booleano que especifica si el paquete se debe marcar como una dependencia de solo desarrollo, que impide que el paquete se incluya como una dependencia en otros paquetes. |
 | **summary** | Descripción breve del paquete para su visualización en la interfaz de usuario. Si se omite, se usará una versión truncada de `description`. |
 | **releaseNotes** | *(1.5+)* Descripción de los cambios efectuados en esta versión del paquete. A menudo se usa en la interfaz de usuario como la pestaña **Actualizaciones** del Administrador de paquetes de Visual Studio, en lugar de la descripción del paquete. |
 | **copyright** | *(1.5+)* Información de copyright del paquete. |
 | **language** | Identificador de configuración regional del paquete. Vea [Creación de paquetes localizados](../create-packages/creating-localized-packages.md). |
-| **tags** | Lista de etiquetas y palabras clave, delimitadas por espacios, que describen el paquete y ayudan a detectar los paquetes a través de búsquedas y filtrados. |
+| **tags**  | Lista de etiquetas y palabras clave, delimitadas por espacios, que describen el paquete y ayudan a detectar los paquetes a través de búsquedas y filtrados. |
 | **serviceable** | *(3.3+)* Solo para uso interno de NuGet. |
 
 #### <a name="collection-elements"></a>Elementos de colección
@@ -183,8 +174,8 @@ El elemento `<dependencies>` dentro de `<metadata>` contiene cualquier número d
 
 | Etiqueta Include o Exclude | Carpetas afectadas del destino |
 | --- | --- |
-| contentFiles | Contenido  |
-| motor en tiempo de ejecución | Runtime, Resources y FrameworkAssemblies  |
+| contentFiles | Contenido |
+| motor en tiempo de ejecución | Runtime, Resources y FrameworkAssemblies |
 | compile | lib |
 | compilación | build (propiedades y destinos de MSBuild) |
 | nativas | nativas |

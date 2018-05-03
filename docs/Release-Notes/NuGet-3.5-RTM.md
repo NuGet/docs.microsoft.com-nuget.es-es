@@ -1,22 +1,16 @@
 ---
-title: "Notas de la versión de NuGet 3.5 Beta | Documentos de Microsoft"
+title: Notas de la versión 3.5 Beta NuGet
+description: Notas de la versión 3.5 de NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión 3.5 de NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 3.5 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: ee78ceb2ff032c05c0f8ef9a6623b94cc56ee0a9
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: cdb540229cae0e6e952ac2a0c00c8801ccbbb28d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-35-release-notes"></a>Notas de la versión 3.5 de NuGet
 
@@ -80,7 +74,7 @@ ms.lasthandoff: 02/02/2018
 
 * No se especificó ninguna información cuando una llamada a nuget.exe actualización *.csproj mientras el proyecto no tiene un `packages.config`  -  [#1496](https://github.com/NuGet/Home/issues/1496)
 
-* `packages.config`restore no intentará de nuevo en códigos de estado 5xx de orígenes de V2 - [#1217](https://github.com/NuGet/Home/issues/1217)
+* `packages.config` restore no intentará de nuevo en códigos de estado 5xx de orígenes de V2 - [#1217](https://github.com/NuGet/Home/issues/1217)
 
 * Dos puntos en el archivo src en `.nuspec` no funciona - [#2947](https://github.com/NuGet/Home/issues/2947)
 
@@ -144,11 +138,11 @@ ms.lasthandoff: 02/02/2018
 
 * Se produce un error en la instalación de NuGet con todos los orígenes de paquetes, pero falta de 1 origen, el paquete - [#2322](https://github.com/NuGet/Home/issues/2322)
 
-* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+*lt;&gt;c__DisplayClass_0+&lt;&lt;AddReference&gt;b__&gt;d.MoveNext - [#2285](https://github.com/NuGet/Home/issues/2285)
+* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll! NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+*lt; &gt;c__DisplayClass_0 +&lt;&lt;AddReference&gt;b__&gt;d.MoveNext - [#2285](https://github.com/NuGet/Home/issues/2285)
 
 * Instalar bloques si se produce un error en un único origen de autorización - [#2034](https://github.com/NuGet/Home/issues/2034)
 
-* `.nuspec`versión intervalo debe invalidar versión - IncludeReferencedProjects - [#1983](https://github.com/NuGet/Home/issues/1983)
+* `.nuspec` versión intervalo debe invalidar versión - IncludeReferencedProjects - [#1983](https://github.com/NuGet/Home/issues/1983)
 
 * Paquete de actualización muy lenta - "intentando recopilar información sobre dependencias" [#1909](https://github.com/NuGet/Home/issues/1909)
 
@@ -184,7 +178,7 @@ ms.lasthandoff: 02/02/2018
 
 * paquete de NuGet para `project.json` omite las etiquetas packOptions como resumen, los autores y propietarios etcetera - [#3161](https://github.com/NuGet/Home/issues/3161)
 
-* NullReferenceException via NuGet.Packaging.PhysicalPackageFile.GetStream - [#3160](https://github.com/NuGet/Home/issues/3160)
+* NullReferenceException a través de NuGet.Packaging.PhysicalPackageFile.GetStream - [#3160](https://github.com/NuGet/Home/issues/3160)
 
 * Paquete de NuGet omite las dependencias en la salida `.nuspec` para `project.json`  -  [#3145](https://github.com/NuGet/Home/issues/3145)
 
@@ -226,7 +220,7 @@ ms.lasthandoff: 02/02/2018
 
 * Complemento de credencial se cerró con el error -1 / error Descargar paquete cuando se usan proveedores de credenciales con varios orígenes - [#2885](https://github.com/NuGet/Home/issues/2885)
 
-* `project.json`restauración de NuGet causa recompilación cuando no haya nada cambia - [#2817](https://github.com/NuGet/Home/issues/2817)
+* `project.json` restauración de NuGet causa recompilación cuando no haya nada cambia - [#2817](https://github.com/NuGet/Home/issues/2817)
 
 * Paquetes de símbolos no deberían ser nunca utilizados en la instalación o actualización - [#2807](https://github.com/NuGet/Home/issues/2807)
 
