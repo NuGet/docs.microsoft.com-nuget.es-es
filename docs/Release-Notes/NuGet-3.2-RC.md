@@ -1,22 +1,16 @@
 ---
-title: "Notas de la versión RC de NuGet 3.2 | Documentos de Microsoft"
+title: Notas de la versión RC de NuGet 3.2
+description: Notas de la versión de NuGet 3.2 RC incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 3.2 RC incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 3.2 RC notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: b19f62217ed79689ce067107dd64dfffe2c59291
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 0310bac6fdb3ef92176f9224ace1620a230664af
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-32-rc-release-notes"></a>Notas de la versión RC de NuGet 3.2
 
@@ -27,7 +21,7 @@ Candidato de versión 3.2 de NuGet se publicó la versión 2 de septiembre de 20
 ## <a name="new-features"></a>Características nuevas
 
 * Ahora pueden tener diferentes proyectos que se encuentran en la misma carpeta `project.json` archivos de esa carpeta específico de cada proyecto.  Para cada proyecto, el nombre del `project.json` archivo `{ProjectName}.project.json` y NuGet correctamente haga referencia y utilizar dicho contenido para cada proyecto correctamente.  Esto es compatible con una nueva característica [1102](https://github.com/NuGet/Home/issues/1102)
-* `NuGet.Config`Ahora es compatible con un globalPackagesFolder como una ruta de acceso relativa - [1062](https://github.com/NuGet/Home/issues/1062)
+* `NuGet.Config` Ahora es compatible con un globalPackagesFolder como una ruta de acceso relativa - [1062](https://github.com/NuGet/Home/issues/1062)
 
 ## <a name="command-line-updates"></a>Actualizaciones de línea de comandos
 
@@ -45,7 +39,7 @@ Se trata de la primera versión del cliente nuget.exe que es compatible con los 
 * Se ha corregido el comando de restauración de NuGet para devolver correctamente un 1 cuando se produce una condición de error - [1186](https://github.com/NuGet/Home/issues/1186)
 * Ahora reintentos de conexión de red cada 200 ms para un máximo de 5 intentos en el caso de errores HTTP 5xx - [1120](https://github.com/NuGet/Home/issues/1120)
 * El control mejorado de las respuestas de redirección del servidor durante un comando de inserción - [1051](https://github.com/NuGet/Home/issues/1051)
-* `nuget install -source`Ahora es compatible con nombre de dirección URL o repositorio de Nuget.Config como argumento - [1046](https://github.com/NuGet/Home/issues/1046)
+* `nuget install -source` Ahora es compatible con nombre de dirección URL o repositorio de Nuget.Config como argumento - [1046](https://github.com/NuGet/Home/issues/1046)
 * Los paquetes que faltan que no estaban ubicados en un repositorio durante una operación de restauración se notifican como errores, en lugar de advertencias [1038](https://github.com/NuGet/Home/issues/1038)
 * Se ha corregido el control de multipartwebrequest de \r\n para escenarios de Unix/Linux - [776](https://github.com/NuGet/Home/issues/776)
 

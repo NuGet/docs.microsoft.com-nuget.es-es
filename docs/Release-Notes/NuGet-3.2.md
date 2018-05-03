@@ -1,22 +1,16 @@
 ---
-title: "Notas de la versión 3.2 de NuGet | Documentos de Microsoft"
+title: Notas de la versión 3.2 de NuGet
+description: Notas de la versión para 3.2 de NuGet, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión para 3.2 de NuGet, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "3.2 de NuGet notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 1728a5c0d83be84686e7ab1394cfc4f8f809987c
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 938104c50fee19ee398de49c786bbb4963ba1429
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-32-release-notes"></a>Notas de la versión 3.2 de NuGet
 
@@ -45,7 +39,7 @@ Hemos realizado una serie de mejoras para controlar mejor los errores de red al 
 * Se ha corregido el comando de restauración de NuGet para devolver correctamente un 1 cuando se produce una condición de error - [1186](https://github.com/NuGet/Home/issues/1186)
 * Ahora reintentos de conexión de red cada 200 ms para un máximo de 5 intentos en el caso de errores HTTP 5xx - [1120](https://github.com/NuGet/Home/issues/1120)
 * El control mejorado de las respuestas de redirección del servidor durante un comando de inserción - [1051](https://github.com/NuGet/Home/issues/1051)
-* `nuget install -source`Ahora es compatible con nombre de dirección URL o repositorio de Nuget.Config como argumento - [1046](https://github.com/NuGet/Home/issues/1046)
+* `nuget install -source` Ahora es compatible con nombre de dirección URL o repositorio de Nuget.Config como argumento - [1046](https://github.com/NuGet/Home/issues/1046)
 * Los paquetes que faltan que no estaban ubicados en un repositorio durante una operación de restauración se notifican como errores, en lugar de advertencias [1038](https://github.com/NuGet/Home/issues/1038)
 * Se ha corregido el control de multipartwebrequest de \r\n para escenarios de Unix/Linux - [776](https://github.com/NuGet/Home/issues/776)
 

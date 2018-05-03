@@ -1,22 +1,16 @@
 ---
-title: "Notas de la versión de NuGet 2.6 | Documentos de Microsoft"
+title: Notas de la versión 2.6 de NuGet
+description: Notas de la versión de NuGet 2.6.1 para WebMatrix, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión para 2.6 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 2.6 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: c2df9721e6941c110948af1a2d4ec4b7aeb476dd
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 39ce6ac3d36464d26966b0dabb0893f09ad4afdc
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-26-release-notes"></a>Notas de la versión 2.6 de NuGet
 
@@ -52,8 +46,8 @@ En abril de 2013, hemos realizado dos grandes anuncios sobre la compatibilidad d
 Para aprovechar las ventajas del soporte técnico XDT de NuGet, la mecánica tener un aspecto similar a las de la [característica de transformación de configuración actual](../create-packages/source-and-config-file-transformations.md).
 Archivos de transformación se agregan a la carpeta de contenido del paquete. Sin embargo, mientras que las transformaciones de configuración usan un único archivo para la instalación y desinstalación, las transformaciones de XDT permiten un control exhaustivo de estos procesos mediante los siguientes archivos:
 
-- Web.config.install.xdt
-- Web.config.uninstall.xdt
+- Web.config.Install.xdt
+- Web.config.Uninstall.xdt
 
 Además, NuGet utiliza el sufijo de archivo para determinar qué motor se debe ejecutar para las transformaciones, por lo que los paquetes mediante el web.config.transforms existentes continuarán funcionando. Transformaciones de XDT también puede aplicarse a cualquier archivo XML (no solo web.config), por lo que puede aprovechar para otras aplicaciones en el proyecto.
 
@@ -68,10 +62,10 @@ Característica de origen de paquete personalizado de NuGet proporciona una mane
 
 NuGet 2.6 amplía la lógica para la configuración de NuGet mediante la búsqueda de la jerarquía de carpetas en la ruta de acceso % ProgramData%/NuGet/Config. Instaladores de producto pueden agregar archivos de configuración personalizada de NuGet en esta carpeta para registrar un origen de paquete personalizado para sus productos. Además, la estructura de carpetas admite la semántica de producto y versión, incluso SKU del IDE. Configuración de estos directorios se aplica en el orden siguiente con una estrategia de prioridad "último en wins".
 
-1. %ProgramData%\NuGet\Config\*.config
-2. %ProgramData%\NuGet\Config\{IDE}\*.config
-3. %ProgramData%\NuGet\Config\{IDE}\{Version}\*.config
-4. %ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config
+1. %ProgramData%\NuGet\Config\*config
+2. %ProgramData%\NuGet\Config\{IDE}\*config
+3. %ProgramData%\NuGet\Config\{IDE}\{versión}\*config
+4. %ProgramData%\NuGet\Config\{IDE}\{versión}\{SKU}\*config
 
 En esta lista, el marcador de posición {IDE} es específico del IDE en el que se ejecuta NuGet, por lo que en el caso de Visual Studio, será "VisualStudio". La versión de {} y se proporcionan los marcadores de posición {SKU} por el IDE (p. ej. "11.0" y "WDExpress", de "VWDExpress" y "Pro", respectivamente). La carpeta, a continuación, puede contener muchos archivos *.config diferentes.
 Por lo tanto, como parte de su programa de instalación del producto, la compañía de componente ACME puede agregar un origen de paquete personalizado que será visible solo en las versiones Professional y Ultimate de Visual Studio 2012 mediante la creación de la ruta de acceso siguiente:

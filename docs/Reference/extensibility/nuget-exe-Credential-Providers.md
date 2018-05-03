@@ -1,22 +1,16 @@
 ---
-title: los proveedores de credenciales NuGet.exe | Documentos de Microsoft
+title: Proveedores de credenciales NuGet.exe
+description: los proveedores de credenciales NuGet.exe autentican con una fuente de distribución y se implementan como archivos ejecutables de línea de comandos que siguen las convenciones específicas.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/12/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "los proveedores de credenciales NuGet.exe autentican con una fuente de distribución y se implementan como archivos ejecutables de línea de comandos que siguen las convenciones específicas."
-keywords: "NuGet.exe los proveedores de credenciales, el proveedor de credenciales API, autenticarse con la fuente, autenticarse con la Galería"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 88ce0106ad4e628ba8120f94b7951c7746ab67f3
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 494ea83007895e973585395e0cfe05b7226c4c3e
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>Fuentes con nuget.exe los proveedores de credenciales de autenticación
 

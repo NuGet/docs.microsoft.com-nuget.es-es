@@ -1,22 +1,16 @@
 ---
-title: "Notas de la versión de NuGet 1.3 | Documentos de Microsoft"
+title: Notas de la versión 1.3 de NuGet
+description: Notas de la versión de 1.3 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de 1.3 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "1.3 NuGet notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 59169be5b39ba4436e13e0935a0ad6efa724e08e
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: c0284fe0afb11bf6465897132cccd160674ea3e1
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-13-release-notes"></a>Notas de la versión 1.3 de NuGet
 
@@ -30,7 +24,7 @@ ms.lasthandoff: 02/02/2018
 
 El equipo de NuGet se ha asociado con los compañeros [symbolsource.org del asociado](http://www.symbolsource.org/) para ofrecer una manera realmente simple sobre la publicación de los orígenes y del archivo PDB junto con el paquete. Esto permite que los consumidores del paquete de paso a paso el código fuente para el paquete en el depurador. Para obtener más información, lea [crear y publicar un paquete de símbolos](../create-packages/symbol-packages.md) publicar paquetes de NuGet con orígenes de manera sencilla. También puede ver una demostración en vivo de esta función como parte de NuGet en profundidad hablar en Mix11. Esta característica se muestra totalmente a partir de la marca de 20 minutos de vídeo.
 
-### <a name="open-packagepage-command"></a>`Open-PackagePage`Comando
+### <a name="open-packagepage-command"></a>`Open-PackagePage` Comando
 
 Este comando resulta muy sencillo a la página de proyecto para un paquete desde la consola de administrador de paquetes. También proporciona opciones para abrir la dirección URL de licencia y la página de abuso del informe para el paquete.
 La sintaxis del comando es:

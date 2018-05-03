@@ -1,31 +1,22 @@
 ---
-title: Referencia del archivo NuGet.Config | Microsoft Docs
+title: Referencia del archivo NuGet.config
+description: Referencia del archivo NuGet.Config en la que se incluyen las secciones config, bindingRedirects, packageRestore, solution y packageSource.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 10/25/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Referencia del archivo NuGet.Config en la que se incluyen las secciones config, bindingRedirects, packageRestore, solution y packageSource.
-keywords: Archivo NuGet.Config, referencia de configuración de NuGet, opciones de configuración de NuGet
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: e2a9d4f10ac6af4e5bc7386d4f78e18c2a5752c4
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 871cd05ed010d2a31348151de6b7e225ed2dc915
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="nugetconfig-reference"></a>Referencia de NuGet.Config
+# <a name="nugetconfig-reference"></a>referencia de NuGet.config
 
 El comportamiento de NuGet se controla mediante la configuración en diferentes archivos `NuGet.Config`, como se describe en [Configuración del comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md).
 
-`NuGet.Config` es un archivo XML que contiene un nodo `<configuration>` de nivel superior, que contiene los elementos de sección que se describen en este tema. Cada sección contiene cero o más elementos `<add>` con atributos `key` y `value`. Vea el [archivo de configuración de ejemplo](#example-config-file). Los nombres de opción distinguen mayúsculas de minúsculas, y los valores pueden usar [variables de entorno](#using-environment-variables).
+`nuget.config` es un archivo XML que contiene un nodo `<configuration>` de nivel superior, que contiene los elementos de sección que se describen en este tema. Cada sección contiene cero o más elementos `<add>` con atributos `key` y `value`. Vea el [archivo de configuración de ejemplo](#example-config-file). Los nombres de opción distinguen mayúsculas de minúsculas, y los valores pueden usar [variables de entorno](#using-environment-variables).
 
 En este tema:
 
@@ -56,8 +47,8 @@ Contiene varios valores de configuración, que se pueden establecer mediante el 
 | Key | Valor |
 | --- | --- |
 | dependencyVersion (solo `packages.config`) | El valor predeterminado `DependencyVersion` para la instalación, restauración y actualización del paquete, cuando no se especifica directamente el modificador `-DependencyVersion`. Este valor también se usa en la interfaz de usuario del Administrador de paquetes NuGet. Los valores son `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
-| globalPackagesFolder (solo mediante PackageReference de proyectos) | La ubicación de la carpeta de paquetes global predeterminada. El valor predeterminado es `%userprofile%\.nuget\packages` (Windows) o `~/.nuget/packages` (Mac o Linux). Se puede usar una ruta de acceso relativa en archivos `Nuget.Config` específicos del proyecto. Esta configuración se reemplaza por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
-| repositoryPath (solo `packages.config`) | La ubicación en la que se van a instalar los paquetes NuGet en lugar de la carpeta `$(Solutiondir)/packages` predeterminada. Se puede usar una ruta de acceso relativa en archivos `Nuget.Config` específicos del proyecto. Esta configuración se reemplaza por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
+| globalPackagesFolder (solo mediante PackageReference de proyectos) | La ubicación de la carpeta de paquetes global predeterminada. El valor predeterminado es `%userprofile%\.nuget\packages` (Windows) o `~/.nuget/packages` (Mac o Linux). Se puede usar una ruta de acceso relativa en archivos `nuget.config` específicos del proyecto. Esta configuración se reemplaza por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
+| repositoryPath (solo `packages.config`) | La ubicación en la que se van a instalar los paquetes NuGet en lugar de la carpeta `$(Solutiondir)/packages` predeterminada. Se puede usar una ruta de acceso relativa en archivos `nuget.config` específicos del proyecto. Esta configuración se reemplaza por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
 | defaultPushSource | Identifica la dirección URL o ruta de acceso de origen del paquete que se debe usar como valor predeterminado si no se encuentra ningún otro origen del paquete para una operación. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Configuración de proxy que se usa al conectarse a orígenes de paquetes; `http_proxy` debe tener el formato `http://<username>:<password>@<domain>`. Las contraseñas están cifradas y no se pueden agregar de forma manual. Para `no_proxy`, el valor es una lista separada por comas de dominios que omiten el servidor proxy. Como alternativa, puede usar las variables de entorno http_proxy y no_proxy para esos valores. Para obtener más información, vea [Configuración de proxy de NuGet](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
 
@@ -108,7 +99,7 @@ Controla la restauración del paquete durante las compilaciones.
 
 ## <a name="solution-section"></a>Sección solution
 
-Controla si la carpeta `packages` de una solución se incluye en el control de código fuente. En esta sección solo funciona en los archivos `Nuget.Config` de la carpeta de una solución.
+Controla si la carpeta `packages` de una solución se incluye en el control de código fuente. En esta sección solo funciona en los archivos `nuget.config` de la carpeta de una solución.
 
 | Key | Valor |
 | --- | --- |
@@ -249,7 +240,7 @@ Identifica al origen actualmente activo o indica la suma de todos los orígenes.
 
 ## <a name="using-environment-variables"></a>Uso de variables de entorno
 
-Puede usar variables de entorno en valores `NuGet.Config` (NuGet 3.4 o versiones posteriores) para aplicar la configuración en tiempo de ejecución.
+Puede usar variables de entorno en valores `nuget.config` (NuGet 3.4 o versiones posteriores) para aplicar la configuración en tiempo de ejecución.
 
 Por ejemplo, si la variable de entorno `HOME` en Windows se establece en `c:\users\username`, el valor de `%HOME%\NuGetRepository` en el archivo de configuración se resuelve como `c:\users\username\NuGetRepository`.
 
@@ -259,7 +250,7 @@ Si no se encuentra una variable de entorno, NuGet usa el valor literal del archi
 
 ## <a name="example-config-file"></a>Archivo de configuración de ejemplo
 
-A continuación se muestra un archivo `NuGet.Config` de ejemplo en el que se ilustran varios valores:
+A continuación se muestra un archivo `nuget.config` de ejemplo en el que se ilustran varios valores:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

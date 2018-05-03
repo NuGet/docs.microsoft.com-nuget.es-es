@@ -1,25 +1,16 @@
 ---
-title: Notas de la versión de NuGet 2.7 | Documentos de Microsoft
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: Notas de la versión 2.7 de NuGet
 description: Notas de la versión para 2.7 NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
-keywords: NuGet 2.7 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 71ced70af127c8219001069739a6cec59d7d1684
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: 4b7cea360764e1b069afacabadd9b94d87e21ecc
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-27-release-notes"></a>Notas de la versión 2.7 de NuGet
 
@@ -33,36 +24,36 @@ Nos gustaría gracias a los colaboradores externos siguientes para sus contribuc
 
 1. [Mike Roth](http://www.codeplex.com/site/users/view/mxrss) ([@mxrss](https://twitter.com/mxrss))
     - Mostrar direcciones url de licencia cuando se detalla la lista de paquetes y el nivel de detalle.
-1. [ADAM Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+2. [ADAM Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - [#1956](http://nuget.codeplex.com/workitem/1956) -Agregar atributo developmentDependency `packages.config` y usarla en el comando pack para incluir sólo los paquetes en tiempo de ejecución
-1. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
+3. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
     - Evite la clave duplicada de propiedades de comando de pack nuget.exe.
-1. [Ben Phegan](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
+4. [Ben Phegan](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
     - [#2610](http://nuget.codeplex.com/workitem/2610) -aumentar el tamaño de caché de la máquina a 200.
-1. [Slava Trenogin](http://www.codeplex.com/site/users/view/derigel) ([@derigel](https://twitter.com/derigel))
+5. [Slava Trenogin](http://www.codeplex.com/site/users/view/derigel) ([@derigel](https://twitter.com/derigel))
     - [#3217](http://nuget.codeplex.com/workitem/3217) -corregir NuGet cuadro de diálogo que muestra las actualizaciones en la pestaña incorrecta
     - Corrección Project.TargetFramework puede ser null en jefe del proyecto
     - [#3248](http://nuget.codeplex.com/workitem/3248) -corregir SharedPackageRepository FindPackage/FindPackagesById se producirán errores en packageId inexistente
-1. [Kevin Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
+6. [Kevin Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
     - [#3234](http://nuget.codeplex.com/workitem/3234) -habilitar la compatibilidad de proyecto Nomad
-1. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
+7. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
     - [#3252](http://nuget.codeplex.com/workitem/3252) -produce un error de corrección inserción comando con exit código 0 cuando no existe el archivo.
-1. [Martin Veselý](http://www.codeplex.com/site/users/view/veselkamartin)
+8. [Martin Veselý](http://www.codeplex.com/site/users/view/veselkamartin)
     - [#3226](http://nuget.codeplex.com/workitem/3226) -error de corrección con el comando Agregar redirección de enlace cuando un proyecto hace referencia a un proyecto de base de datos.
-1. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
+9. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
     - [#2891](http://nuget.codeplex.com/workitem/2891) -error de corrección de nuget.pack análisis incorrecto de carácter comodín en el atributo 'exclude'.
-1. [Justin Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
-    - [#3307](http://nuget.codeplex.com/workitem/3307) -error de corrección `NuGet.targets` no pasa $(Platform) a nuget.exe al restaurar paquetes.
-1. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin)
-    - [#3294](http://nuget.codeplex.com/workitem/3294) -error de corrección en el comando de paquete nuget.exe que permitiría agregar archivos con el mismo nombre pero con distintas mayúsculas y minúsculas, eventualmente ocasionando excepción "El elemento ya existe".
-1. [Daniel Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
-    - [#2990](http://nuget.codeplex.com/workitem/2990) -propiedad de versión de agregar a la clase NetPortableProfile.
-1. [David Simner](https://www.codeplex.com/site/users/view/DavidSimner)
-    - [#3460](https://nuget.codeplex.com/workitem/3460) -corregir error NullReferenceException si requireApiKey = true, pero el encabezado X-NUGET-APIKEY no está presente
-1. [Michael Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
-    - [#3278](https://nuget.codeplex.com/workitem/3278) -NuGet.Build corrige los destinos de archivo a para que funcione correctamente en MonoDevelop
-1. [Pranav Krishnamoorthy](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
-    - Mejorar el rendimiento de comando de restauración mediante el aumento de la ejecución en paralelo
+10. [Justin Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
+     - [#3307](http://nuget.codeplex.com/workitem/3307) -error de corrección `NuGet.targets` no pasa $(Platform) a nuget.exe al restaurar paquetes.
+11. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin)
+     - [#3294](http://nuget.codeplex.com/workitem/3294) -error de corrección en el comando de paquete nuget.exe que permitiría agregar archivos con el mismo nombre pero con distintas mayúsculas y minúsculas, eventualmente ocasionando excepción "El elemento ya existe".
+12. [Daniel Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
+     - [#2990](http://nuget.codeplex.com/workitem/2990) -propiedad de versión de agregar a la clase NetPortableProfile.
+13. [David Simner](https://www.codeplex.com/site/users/view/DavidSimner)
+     - [#3460](https://nuget.codeplex.com/workitem/3460) -corregir error NullReferenceException si requireApiKey = true, pero el encabezado X-NUGET-APIKEY no está presente
+14. [Michael Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
+     - [#3278](https://nuget.codeplex.com/workitem/3278) -NuGet.Build corrige los destinos de archivo a para que funcione correctamente en MonoDevelop
+15. [Pranav Krishnamoorthy](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
+     - Mejorar el rendimiento de comando de restauración mediante el aumento de la ejecución en paralelo
 
 ## <a name="notable-features-in-the-release"></a>Características importantes de la versión
 
@@ -161,7 +152,7 @@ Vea [valores predeterminados de configuración de NuGet](../consume-packages/con
 
 ### <a name="renaming-the-default-package-source"></a>Cambiar el nombre del origen del paquete predeterminado
 
-NuGet siempre ha registrado un origen de paquete predeterminado denominado "NuGet oficial origen del paquete" que señala a nuget.org. Ese nombre es detallado y también no especifique donde se apunta realmente. Para resolver los problemas de dos, hemos hemos cambiado el nombre de este origen del paquete para simplemente "nuget.org" en la interfaz de usuario. La dirección URL para el origen del paquete también se ha modificado para incluir la "www." de grupo. Después de usar NuGet 2.7, se actualizará automáticamente el existente "origen del paquete oficial de NuGet" a "nuget.org" como su nombre y "https://www.nuget.org/api/v2/" como su dirección URL.
+NuGet siempre ha registrado un origen de paquete predeterminado denominado "NuGet oficial origen del paquete" que señala a nuget.org. Ese nombre es detallado y también no especifique donde se apunta realmente. Para resolver los problemas de dos, hemos hemos cambiado el nombre de este origen del paquete para simplemente "nuget.org" en la interfaz de usuario. La dirección URL para el origen del paquete también se ha modificado para incluir la "www." de grupo. Después de usar NuGet 2.7, se actualizará automáticamente el existente "origen del paquete oficial de NuGet" a "nuget.org" como su nombre y "<https://www.nuget.org/api/v2/>" como su dirección URL.
 
 ### <a name="performance-improvements"></a>Mejoras en el rendimiento
 

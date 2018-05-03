@@ -1,22 +1,16 @@
 ---
-title: "Notas de la versión de NuGet 3.4 | Documentos de Microsoft"
+title: Notas de la versión 3.4 de NuGet
+description: Notas de la versión de NuGet 3.4, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 3.4, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 3.4 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 515fb888aca2a8eb138c8fea1fb5b3f5a8f4e275
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 3f2a945b628022bdcc6e69a7a4b1be6c53b65626
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-34-release-notes"></a>Notas de la versión 3.4 de NuGet
 
@@ -24,9 +18,9 @@ ms.lasthandoff: 02/02/2018
 
 NuGet 3.4 publicó el 30 de marzo de 2016 como parte de Visual Studio 2015 Update 2 y la versión preliminar de Visual Studio 15 y se ha generado con unos principios en mente:
 
-*  La compatibilidad multiplataforma
-*  Mejoras en el rendimiento
-*  Pequeñas mejoras de la interfaz de usuario
+* La compatibilidad multiplataforma
+* Mejoras en el rendimiento
+* Pequeñas mejoras de la interfaz de usuario
 
 Las siguientes características se agregaron previamente en la versión RC y se han actualizado o completado para la versión 3.4:
 

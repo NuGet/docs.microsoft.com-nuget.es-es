@@ -1,25 +1,16 @@
 ---
-title: Notas de la versión de NuGet 1.4 | Documentos de Microsoft
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: Notas de la versión 1.4 de NuGet
 description: Notas de la versión de NuGet 1.4, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
-keywords: NuGet 1.4 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 1229cd7fddb826902478b69cfdbc16a8ed192b64
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: e5e4c2a5f2db80b0ebc3fec7c653aecb8bcc4ab5
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-14-release-notes"></a>Notas de la versión 1.4 de NuGet
 

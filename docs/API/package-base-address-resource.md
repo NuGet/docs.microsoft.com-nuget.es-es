@@ -1,26 +1,17 @@
 ---
-title: Paquete de contenido, NuGet API | Documentos de Microsoft
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Contenido del paquete, NuGet API
+description: La dirección base del paquete es una interfaz sencilla para capturar el propio paquete.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "La dirección base del paquete es una interfaz sencilla para capturar el propio paquete."
-keywords: "NuGet planos contenedor, la dirección base del paquete de NuGet, NuGet nupkg API, las versiones de paquetes de NuGet API, API de NuGet que no figuran en paquetes, nuspec de descarga de API de NuGet"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: c2e631dc0bba95ac849430d77142f27ef591f741
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: a6ac40368f30d33f35d4ca0b6cc18ce4bd6efee5
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-content"></a>Contenido del paquete
 
@@ -57,7 +48,7 @@ Si el cliente sabe que un identificador de paquete y desea descubrir que version
 
 nombre     | En     | Tipo    | Obligatorio | Notas
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | Dirección URL    | cadena  | sí      | El identificador del paquete, en minúsculas
+LOWER_ID | Resolución    | cadena  | sí      | El identificador del paquete, en minúsculas
 
 El `LOWER_ID` valor es el identificador de paquete deseado en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
 
@@ -93,8 +84,8 @@ Si el cliente sabe que un identificador de paquete y la versión y desea descarg
 
 nombre          | En     | Tipo   | Obligatorio | Notas
 ------------- | ------ | ------ | -------- | -----
-LOWER_ID      | Dirección URL    | cadena | sí      | El identificador del paquete, en minúsculas
-LOWER_VERSION | Dirección URL    | cadena | sí      | La versión del paquete, normalizar y en minúsculas
+LOWER_ID      | Resolución    | cadena | sí      | El identificador del paquete, en minúsculas
+LOWER_VERSION | Resolución    | cadena | sí      | La versión del paquete, normalizar y en minúsculas
 
 Ambos `LOWER_ID` y `LOWER_VERSION` están en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
 
@@ -124,8 +115,8 @@ Si el cliente sabe que un identificador de paquete y la versión y desea descarg
 
 nombre          | En     | Tipo    | Obligatorio | Notas
 ------------- | ------ | ------- | -------- | -----
-LOWER_ID      | Dirección URL    | cadena  | sí      | El identificador del paquete, en minúsculas
-LOWER_VERSION | Dirección URL    | enteros | sí      | La versión del paquete, normalizar y en minúsculas
+LOWER_ID      | Resolución    | cadena  | sí      | El identificador del paquete, en minúsculas
+LOWER_VERSION | Resolución    | enteros | sí      | La versión del paquete, normalizar y en minúsculas
 
 Ambos `LOWER_ID` y `LOWER_VERSION` están en minúsculas utilizando las reglas implementadas por. De NET [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
 

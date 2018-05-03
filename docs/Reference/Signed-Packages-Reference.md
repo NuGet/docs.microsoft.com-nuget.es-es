@@ -1,26 +1,17 @@
 ---
-title: Firmar paquetes referencia | Documentos de Microsoft
+title: Firma de referencia de paquetes de NuGet
+description: Requisitos para la firma del paquete de NuGet.
 author: rido-min
 ms.author: rido-min
-manager: unniravindranathan
-ms.date: 03/06/2018
+manager: unnir
+ms.date: 04/24/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Descripción de la característica de paquetes de sesión.
-keywords: Inicio de sesión de paquete de NuGet, firma, certificados
-ms.reviewer:
-- ananguar
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: a2a338596f7d98ded11da6fb02bafba3521249ab
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: ananguar
+ms.openlocfilehash: 751a8ff14bdc3a647985da4f908ad1a0fd0def9a
+ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="signed-packages"></a>Paquetes firmados
 
@@ -39,6 +30,9 @@ Para obtener más información acerca de cómo crear un paquete firmado, consult
 > [!Important]
 > NuGet.org no acepta actualmente los paquetes firmados. Puede firmar paquetes para publicarlos en fuentes personalizadas.
 
+> [!Important]
+> Firma del paquete actualmente se admite solo cuando se utiliza nuget.exe en Windows. Comprobación de paquetes firmados se admite actualmente solo al usar nuget.exe o Visual Studio en Windows.
+
 ## <a name="certificate-requirements"></a>Requisitos de certificados
 
 Firma del paquete requiere un código de firma de certificado, que es un tipo especial de certificado que sea válido para el `id-kp-codeSigning` propósito [[RFC 5280 sección 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]. Además, el certificado debe tener una RSA longitud de clave pública de 2048 bits o superior.
@@ -50,7 +44,7 @@ Los certificados válidos pueden obtenerse de entidades de certificación públi
 - [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3)
 - [DigiCert](https://www.digicert.com/code-signing/)
 - [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate)
-- [Global Sign](https://www.globalsign.com/en/code-signing-certificate/)
+- [Inicio de sesión global](https://www.globalsign.com/en/code-signing-certificate/)
 - [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)
 - [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 
 

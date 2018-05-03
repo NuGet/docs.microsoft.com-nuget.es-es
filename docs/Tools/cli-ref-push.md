@@ -1,25 +1,16 @@
 ---
-title: Comando de inserción de NuGet CLI | Documentos de Microsoft
+title: Comando de inserción de NuGet CLI
+description: Referencia del comando de inserción nuget.exe
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Referencia del comando de inserción nuget.exe
-keywords: referencia de inserción de NuGet, el comando de inserción
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 832f7aeb2b485acbb83e5213916fc3423df961ab
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 959b539fc20bc47f38946cb660375a6652582a0d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="push-command-nuget-cli"></a>comando de inserción (NuGet CLI)
 

@@ -1,26 +1,17 @@
 ---
-title: Insertar y eliminar, NuGet API | Documentos de Microsoft
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Insertar y eliminar, NuGet API
+description: El servicio de publicación permite a los clientes publicar nuevos paquetes y ocultar o eliminar los paquetes existentes.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "El servicio de publicación permite a los clientes publicar nuevos paquetes y ocultar o eliminar los paquetes existentes."
-keywords: "Paquete de inserción de API de NuGet, API de NuGet eliminar paquete, API de NuGet ocultar paquete, paquete de carga de la API de NuGet, API de NuGet crear paquete"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: f8051ca57fccae77917567d8c9f2f8a120a8d884
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: 911c8238624f806b1fbb5c7938d02b6bdfbd8614
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="push-and-delete"></a>Insertar y eliminar
 
@@ -89,8 +80,8 @@ NuGet.org interpreta la solicitud de eliminación de paquete como un "Ocultar". 
 
 nombre           | En     | Tipo   | Obligatorio | Notas
 -------------- | ------ | ------ | -------- | -----
-Id.             | Dirección URL    | cadena | sí      | El identificador del paquete para eliminar
-VERSION        | Dirección URL    | cadena | sí      | La versión del paquete que se va a eliminar
+Id.             | Resolución    | cadena | sí      | El identificador del paquete para eliminar
+VERSION        | Resolución    | cadena | sí      | La versión del paquete que se va a eliminar
 X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
 
 ### <a name="response"></a>Respuesta
@@ -112,8 +103,8 @@ Si el paquete ya está disponible, la solicitud se realiza correctamente.
 
 nombre           | En     | Tipo   | Obligatorio | Notas
 -------------- | ------ | ------ | -------- | -----
-Id.             | Dirección URL    | cadena | sí      | El identificador del paquete a poner en venta
-VERSION        | Dirección URL    | cadena | sí      | La versión del paquete que se va a poner en venta
+Id.             | Resolución    | cadena | sí      | El identificador del paquete a poner en venta
+VERSION        | Resolución    | cadena | sí      | La versión del paquete que se va a poner en venta
 X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
 
 ### <a name="response"></a>Respuesta

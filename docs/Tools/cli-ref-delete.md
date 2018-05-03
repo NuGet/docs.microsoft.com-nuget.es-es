@@ -1,25 +1,16 @@
 ---
-title: Comando de NuGet CLI delete | Documentos de Microsoft
+title: Comando de eliminación de NuGet CLI
+description: Referencia para el comando de eliminación nuget.exe
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Referencia para el comando de eliminación nuget.exe
-keywords: NuGet eliminar referencia, eliminar comando paquete
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 9445042c46ef41721def1fbbb8dcebf4afc14d1b
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 1db00a32d777f1c0247f855bf57a0dcf1c6734ae
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="delete-command-nuget-cli"></a>Eliminar comando (NuGet CLI)
 

@@ -1,25 +1,17 @@
 ---
-title: Comando de inicio de sesión de NuGet CLI | Documentos de Microsoft
+title: Comando de inicio de sesión de NuGet CLI
+description: Referencia del comando de inicio de sesión nuget.exe
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Referencia del comando de inicio de sesión nuget.exe
-keywords: referencia de inicio de sesión de NuGet, comandos de inicio de sesión
-ms.reviewer:
-- karann
-- rmpablos
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 9c83e5abae0e70cdc62917861c1febfce4f792c7
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: rmpablos
+ms.openlocfilehash: 7e84d794b802cfd69c785f720280fd5c022a46f6
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sign-command-nuget-cli"></a>comando de inicio de sesión (NuGet CLI)
 
@@ -27,7 +19,7 @@ ms.lasthandoff: 03/28/2018
 
 Firma todos los paquetes que el primer argumento con un certificado de la búsqueda de coincidencias. El certificado con la clave privada puede obtenerse de un archivo o de un certificado instalado en un almacén de certificados al proporcionar un nombre de asunto o una huella digital.
 
-Firma del paquete no se admite todavía en Mono o en plataformas distintas de Windows.
+Aún no se admite la firma del paquete en .NET Core, en Mono o en plataformas distintas de Windows.
 
 ## <a name="usage"></a>Uso
 
@@ -45,7 +37,7 @@ donde `<package(s)>` es uno o más `.nupkg` archivos.
 | CertificatePassword | Especifica la contraseña del certificado, si es necesario. Si un certificado está protegido con contraseña, pero no se proporciona ninguna contraseña, el comando le solicitará una contraseña en tiempo de ejecución, a menos que-se pasó a la opción no interactiva. |
 | CertificatePath | Especifica la ruta de acceso de archivo para el certificado que se usará en la firma del paquete. |
 | CertificateStoreLocation | Especifica el nombre del uso del almacén de certificados X.509 para buscar el certificado. El valor predeterminado es "CurrentUser", el almacén de certificados X.509 utilizado por el usuario actual. Esta opción debe utilizarse cuando se especifica el certificado a través de las opciones - CertificateSubjectName o - CertificateFingerprint. |
-| CertificateStoreName | Especifica el nombre del almacén de certificados X.509 se utiliza para buscar el certificado. El valor predeterminado es "My", el almacén de certificados X.509 para los certificados personales. Esta opción debe utilizarse cuando se especifica el certificado a través de las opciones - CertificateSubjectName o - CertificateFingerprint. |
+| NombreAlmacenamientoCertificados | Especifica el nombre del almacén de certificados X.509 se utiliza para buscar el certificado. El valor predeterminado es "My", el almacén de certificados X.509 para los certificados personales. Esta opción debe utilizarse cuando se especifica el certificado a través de las opciones - CertificateSubjectName o - CertificateFingerprint. |
 | CertificateSubjectName | Especifica el nombre de sujeto del certificado usado para buscar un almacén de certificados local para el certificado.  La búsqueda es una comparación de cadenas entre mayúsculas y minúsculas con el valor proporcionado, que encontrará todos los certificados con el nombre de sujeto que contenga esa cadena, sin tener en cuenta otros valores del sujeto.  El almacén de certificados puede especificarse mediante opciones NombreAlmacenamientoCertificados - y - CertificateStoreLocation. |
 | ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux) se utiliza.|
 | ForceEnglishOutput | Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |

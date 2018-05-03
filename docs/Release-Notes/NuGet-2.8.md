@@ -1,22 +1,16 @@
 ---
-title: "Notas de la versión de NuGet 2.8 | Documentos de Microsoft"
+title: Notas de la versión 2,8 de NuGet
+description: Notas de la versión de NuGet 2.8, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 2.8, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 2.8 notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 39b885adc9e23eb815f65639875c4a4c27d61a4c
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 9f472f1370bfedaf04ebe889c0da01155b8aec22
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-28-release-notes"></a>Notas de la versión 2,8 de NuGet
 
@@ -28,21 +22,21 @@ NuGet 2.8 se publicó en 29 de enero de 2014.
 
 1. [Llewellyn Pritchard](https://www.codeplex.com/site/users/view/leppie) ([@leppie](https://twitter.com/leppie))
     - [#3466](https://nuget.codeplex.com/workitem/3466) : cuando los paquetes, comprobar el Id. de paquetes de dependencia de empaquetado.
-1. [Maarten Balliauw](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
+2. [Maarten Balliauw](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
     - [#2379](https://nuget.codeplex.com/workitem/2379) -quitar el sufijo $metadata al persistening fuente credenciales.
-1. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
+3. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
     - [#3538](http://nuget.codeplex.com/workitem/3538) : especifica el archivo de proyecto para el comando de actualización nuget.exe de soporte técnico.
-1. [Juan González](https://www.codeplex.com/site/users/view/jjgonzalez)
+4. [Juan González](https://www.codeplex.com/site/users/view/jjgonzalez)
     - [#3536](http://nuget.codeplex.com/workitem/3536) -tokens de reemplazo no se pasan con - IncludeReferencedProjects.
-1. [David Poole](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
+5. [David Poole](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
     - [#3677](http://nuget.codeplex.com/workitem/3677) -corregir nuget.push producir OutOfMemoryException al realizar inserciones paquete grande.
-1. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
+6. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
     - [#3666](http://nuget.codeplex.com/workitem/3666) -ruta de acceso de destino incorrecto de corrección al proyecto hace referencia a otro proyecto de C++/CLI.
-1. [ADAM Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+7. [ADAM Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - [#3639](https://nuget.codeplex.com/workitem/3639) -permitir que los paquetes se instala como dependencias de desarrollo de forma predeterminada
-1. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
+8. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
     - [#3717](https://nuget.codeplex.com/workitem/3717) -quitar implícita actualizaciones a la última versión de revisión
-1. [Gregory Vandenbrouck](https://www.codeplex.com/site/users/view/vdbg)
+9. [Gregory Vandenbrouck](https://www.codeplex.com/site/users/view/vdbg)
     - Varias correcciones de errores y mejoras para NuGet.Server, el comando de reflejado nuget.exe y otros elementos.
     - Este trabajo se realiza durante varios meses, con Gregory colaborar con nosotros en el control de tiempo adecuado para integrar en maestro para 2.8.
 

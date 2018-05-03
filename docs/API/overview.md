@@ -1,29 +1,17 @@
 ---
-title: Información general, NuGet API | Documentos de Microsoft
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Información general de la API de NuGet
+description: La API de NuGet es un conjunto de extremos HTTP que puede usarse para descargar los paquetes, capturar metadatos, publicar nuevos paquetes, etcetera.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: La API de NuGet es un conjunto de extremos HTTP que puede usarse para descargar los paquetes, capturar metadatos, publicar nuevos paquetes, etcetera.
-keywords: API de NuGet V3, API de NuGet V2, NuGet JSON, API de registro de NuGet, contenedor sin formato de API de NuGet, NuGet nupkg API, API de metadatos de NuGet, API de búsqueda de NuGet, NuGet inserción API, NuGe publicar API, NuGet eliminar API, NuGet ocultar API, protocolo de NuGet
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 7053a971c80a94cf035e8f149c332b36e66a9ea9
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: a638dba005c14bff4b2e668e2d6ca527a67b94a9
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-api"></a>API de NuGet
 
@@ -114,9 +102,9 @@ En el caso de un código de estado de nivel de 500, el cliente puede implementar
 nombre                     | Descripción
 ------------------------ | -----------
 X-NuGet-ApiKey           | Necesario para la inserción y eliminación, consulte [ `PackagePublish` recursos](package-publish-resource.md)
-X-NuGet-Client-Version   | **En desuso** y reemplazado por `X-NuGet-Protocol-Version`
-X-NuGet-Protocol-Version | Requerido en determinados casos solo en nuget.org, vea [nuget.org protocolos](NuGet-Protocols.md)
-X-NuGet-Session-Id       | *Opcional*. NuGet clientes v4.7 + identificar las solicitudes HTTP que forman parte de la misma sesión de cliente de NuGet. Para `PackageReference` hay operaciones de restauración es un identificador de sesión único, para otros escenarios como Autocompletar, y `packages.config` restauración puede haber varias diferentes Id. de sesión debido a cómo se divide el código.
+X-NuGet-versión de cliente   | **En desuso** y reemplazado por `X-NuGet-Protocol-Version`
+Protocolo versión X-NuGet | Requerido en determinados casos solo en nuget.org, vea [nuget.org protocolos](NuGet-Protocols.md)
+X-NuGet-identificador de sesión       | *Opcional*. NuGet clientes v4.7 + identificar las solicitudes HTTP que forman parte de la misma sesión de cliente de NuGet. Para `PackageReference` hay operaciones de restauración es un identificador de sesión único, para otros escenarios como Autocompletar, y `packages.config` restauración puede haber varias diferentes Id. de sesión debido a cómo se divide el código.
 
 ## <a name="authentication"></a>Autenticación
 

@@ -1,26 +1,17 @@
 ---
-title: Autocompletar, NuGet API | Documentos de Microsoft
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Autocompletar, NuGet API
+description: El servicio de búsqueda Autocompletar admite las versiones y descubrimiento interactivo de identificadores de paquete.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "El servicio de búsqueda Autocompletar admite las versiones y descubrimiento interactivo de identificadores de paquete."
-keywords: "API de Autocompletar de NuGet, Id. de paquete de búsqueda de NuGet, Id. de paquete de subcadena"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: 7c984ca61799293d7832851b80cf3fefc4734288
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: d5e1936c6c5406a1a376c16b2bad5351320dfb4f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="autocomplete"></a>Autocompletar
 
@@ -33,8 +24,8 @@ Los siguientes `@type` se usan valores:
 Valor de @type                          | Notas
 ------------------------------------ | -----
 SearchAutocompleteService            | La versión inicial
-SearchAutocompleteService/3.0.0-beta | Alias de`SearchAutocompleteService`
-SearchAutocompleteService/3.0.0-rc   | Alias de`SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-beta | Alias de `SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-rc   | Alias de `SearchAutocompleteService`
 
 ## <a name="base-url"></a>Dirección URL base
 
@@ -56,11 +47,11 @@ Un paquete con solo las versiones que no figuran en no aparecerán en los result
 
 nombre        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
-q           | Dirección URL    | cadena  | No       | La cadena para comparar identificadores de paquete
-skip        | Dirección URL    | enteros | No       | El número de resultados que se va a omitir, para la paginación
-Take        | Dirección URL    | enteros | No       | El número de resultados que se va a devolver para la paginación
-versión preliminar  | Dirección URL    | booleano | No       | `true`o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
-semVerLevel | Dirección URL    | cadena  | No       | Una cadena de versión SemVer 1.0.0 
+q           | Resolución    | cadena  | No       | La cadena para comparar identificadores de paquete
+skip        | Resolución    | enteros | No       | El número de resultados que se va a omitir, para la paginación
+Take        | Resolución    | enteros | No       | El número de resultados que se va a devolver para la paginación
+versión preliminar  | Resolución    | booleano | No       | `true` o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
+semVerLevel | Resolución    | cadena  | No       | Una cadena de versión SemVer 1.0.0 
 
 La consulta de Autocompletar `q` se analiza de forma que se define mediante la implementación del servidor. NuGet.org admite las consultas para el prefijo de tokens de Id. de paquete, que son partes del identificador generado por spliting original, caracteres camel de caso y símbolos.
 
@@ -82,12 +73,12 @@ El objeto JSON raíz tiene las siguientes propiedades:
 
 nombre      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
-totalHits | enteros          | sí      | El número total de coincidencias, sin tener en cuenta `skip` y`take`
+totalHits | enteros          | sí      | El número total de coincidencias, sin tener en cuenta `skip` y `take`
 datos      | Matriz de cadenas | sí      | El paquete coincidentes con la solicitud de identificadores
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+OBTENER https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 
@@ -105,9 +96,9 @@ Una versión de paquete que no figuran en no aparecerán en los resultados.
 
 nombre        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
-id          | Dirección URL    | cadena  | sí      | El identificador del paquete para capturar las versiones de
-versión preliminar  | Dirección URL    | booleano | No       | `true`o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
-semVerLevel | Dirección URL    | cadena  | No       | Una cadena de versión SemVer 2.0.0 
+id          | Resolución    | cadena  | sí      | El identificador del paquete para capturar las versiones de
+versión preliminar  | Resolución    | booleano | No       | `true` o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
+semVerLevel | Resolución    | cadena  | No       | Una cadena de versión SemVer 2.0.0 
 
 Si `prerelease` no es siempre, se excluyen los paquetes de versión preliminar.
 

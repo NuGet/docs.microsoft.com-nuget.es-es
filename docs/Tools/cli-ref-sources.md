@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI orígenes comando | Documentos de Microsoft
+title: NuGet CLI orígenes de comando
+description: Referencia para el nuget.exe orígenes de comando
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Referencia para el nuget.exe orígenes de comando
-keywords: NuGet orígenes de referencia, orígenes de comando
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 5fb34654dc294de34cf0e15f784240884dc1e3d1
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.openlocfilehash: d588ff09075ad75b76b7dd3645f3cdff29f6f093
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sources-command-nuget-cli"></a>comando de fuentes (NuGet CLI)
 

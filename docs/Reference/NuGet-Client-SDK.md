@@ -1,22 +1,16 @@
 ---
-title: NuGet v3 API de cliente y NuGetGallery | Documentos de Microsoft
+title: NuGet v3 API de cliente y NuGetGallery
+description: El NuGet y NuGetGallery APIs están en constante evolución y aún no aparece documentado, pero ejemplos están disponibles en el blog de Dave Glick.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/09/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "El NuGet y NuGetGallery APIs están en constante evolución y aún no aparece documentado, pero ejemplos están disponibles en el blog de Dave Glick."
-keywords: Bibliotecas de API de NuGet, NuGetGallery API, NuGet v3
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 3eeb4d4df06c235e3b6af50859899c12db3f8f18
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: b4a7944cdadc90f035b9fe93d7343fd2a93d5868
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-client-sdk"></a>SDK de cliente de NuGet
 

@@ -1,26 +1,17 @@
 ---
-title: Referencia de reserva de prefijo de Id. | Documentos de Microsoft
+title: Referencia de reserva de prefijo de Id.
+description: Descripción de característica de reserva de prefijo de Id. de paquete y Guía del autor.
 author: diverdan92
 ms.author: diverdan92
-manager: unniravindranathan
+manager: unnir
 ms.date: 10/09/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Descripción de característica de reserva de prefijo de Id. de paquete y Guía del autor.
-keywords: Id. de paquete de NuGet, un prefijo, reserva
-ms.reviewer:
-- ananguar
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 7b1956612bd48a1c59503418f1a4d7d9dee900f5
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: ananguar
+ms.openlocfilehash: 63f442ae25b92aacbbf5af7d9b3ea1a5dafe5fc9
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="package-id-prefix-reservation"></a>Reserva de prefijo de Id. de paquete
 
@@ -74,9 +65,9 @@ Cuando un paquete procede de un prefijo reservado, verá el siguiente indicadore
 
 1. Revise la aceptación [criterios para la reserva de Id. de prefijo](#id-prefix-reservation-criteria).
 
-1. Determinar los espacios de nombres que desea reservar, además de cualquier [prefijo reserva escenarios avanzados](#advanced-prefix-reservation-scenarios) es posible que necesite.
+2. Determinar los espacios de nombres que desea reservar, además de cualquier [prefijo reserva escenarios avanzados](#advanced-prefix-reservation-scenarios) es posible que necesite.
 
-1. Enviar un correo electrónico a [ account@nuget.org ](mailto:account@nuget.org) con el propietario del nombre para mostrar en [nuget.org](https://www.nuget.org/), así como cualquier prefijo reservado que está solicitando. Si va a delegar subconjuntos de prefijo a varios propietarios, asegúrese de que se mencionan todos los nombres para mostrar propietario y subconjuntos de prefijo.
+3. Enviar un correo electrónico a [ account@nuget.org ](mailto:account@nuget.org) con el propietario del nombre para mostrar en [nuget.org](https://www.nuget.org/), así como cualquier prefijo reservado que está solicitando. Si va a delegar subconjuntos de prefijo a varios propietarios, asegúrese de que se mencionan todos los nombres para mostrar propietario y subconjuntos de prefijo.
 
 Una vez enviada la aplicación, se le notificará de aceptación o rechazo (con los criterios que causó el rechazo). Necesitamos podemos hacer preguntas de identificación adicionales para confirmar la identidad del propietario.
 

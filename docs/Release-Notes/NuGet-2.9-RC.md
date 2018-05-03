@@ -1,22 +1,16 @@
 ---
-title: "Notas de la versión 2.9 RC de NuGet | Documentos de Microsoft"
+title: Notas de la versión 2.9 RC de NuGet
+description: Notas de la versión de NuGet 2.9 RC incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "Notas de la versión de NuGet 2.9 RC incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr."
-keywords: "NuGet 2.9 RC notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 0e73b54ab7bbf97806269834c67ad0a159c9065b
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 15665e7c3f9f638b434b0d7be2f7ff3215c787c6
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-29-rc-release-notes"></a>Notas de la versión 2.9 RC de NuGet
 

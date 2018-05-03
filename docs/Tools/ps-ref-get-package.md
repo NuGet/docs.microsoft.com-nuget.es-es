@@ -1,25 +1,16 @@
 ---
-title: Referencia de PowerShell Get-paquete de NuGet | Documentos de Microsoft
+title: Referencia de PowerShell Get-paquete de NuGet
+description: Referencia de comandos de PowerShell Get-Package en la consola de administrador de paquetes de NuGet en Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Referencia de comandos de PowerShell Get-Package en la consola de administrador de paquetes de NuGet en Visual Studio.
-keywords: Consola de administrador, comandos de NuGet Powershell, referencia de NuGet Powershell, Get-Package de paquete de NuGet
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: ca80d95df309d8afce2ce6cff26c19980affde7a
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: c70e60b7391f19026e2dcd502d667fbe1da7e6e2
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (consola de administrador de paquetes en Visual Studio)
 

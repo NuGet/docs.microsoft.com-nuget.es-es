@@ -1,29 +1,17 @@
 ---
-title: Plantilla de dirección URL de abuso, NuGet API de informes | Documentos de Microsoft
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Plantilla de dirección URL de informe de abuso, NuGet API
+description: La plantilla de dirección URL de abuso de informes permite a los clientes mostrar un vínculo de abuso del informe en su interfaz de usuario.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: La plantilla de dirección URL de abuso de informes permite a los clientes mostrar un vínculo de abuso del informe en su interfaz de usuario.
-keywords: Informar de abuso de API de NuGet, queja de archivo de API de NuGet, plantilla de dirección URL de informe nuget.org
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: ded861e3eaf73e45b8d4bd80b96d54bfeb38e9d6
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: 15cf0953391489d9dd9b5d609c3f4c8f66748f19
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="report-abuse-url-template"></a>Plantilla de dirección URL de informe abuso
 

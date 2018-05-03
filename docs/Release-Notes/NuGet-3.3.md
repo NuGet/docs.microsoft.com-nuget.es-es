@@ -1,25 +1,16 @@
 ---
-title: Notas de la versión de NuGet 3.3 | Documentos de Microsoft
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: Notas de la versión 3.3 de NuGet
 description: Notas de la versión para 3.3 de NuGet incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
-keywords: 3.3 de NuGet notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: ab5e1ca550297c608017cb56dff32f4bd4bbb885
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: adf193437de237ed32da481e627552a8dba6f656
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-33-release-notes"></a>Notas de la versión 3.3 de NuGet
 

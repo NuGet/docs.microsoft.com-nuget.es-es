@@ -1,26 +1,17 @@
 ---
-title: "Búsqueda, NuGet API | Documentos de Microsoft"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Búsqueda, NuGet API
+description: El servicio de búsqueda permite a los clientes para consultar los paquetes por palabra clave y a los resultados del filtro en determinados campos de paquete.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "El servicio de búsqueda permite a los clientes para consultar los paquetes por palabra clave y a los resultados del filtro en determinados campos de paquete."
-keywords: "API de búsqueda de NuGet, NuGet detectar los paquetes, API a los paquetes de NuGet de consulta, API para examinar paquetes de NuGet"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: 612ce0f46b654335a29bb36a64b27525994162ed
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: 76600ee916305ee01ddfb675c83c184e980c5a42
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="search"></a>Buscar
 
@@ -33,8 +24,8 @@ Los siguientes `@type` se usan valores:
 Valor de @type                   | Notas
 ----------------------------- | -----
 SearchQueryService            | La versión inicial
-SearchQueryService/3.0.0-beta | Alias de`SearchQueryService`
-SearchQueryService/3.0.0-rc   | Alias de`SearchQueryService`
+SearchQueryService/3.0.0-beta | Alias de `SearchQueryService`
+SearchQueryService/3.0.0-rc   | Alias de `SearchQueryService`
 
 ## <a name="base-url"></a>Dirección URL base
 
@@ -56,11 +47,11 @@ Un paquete que no figuran en nunca debe aparecer en los resultados de búsqueda.
 
 nombre        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
-q           | Dirección URL    | cadena  | No       | Términos de búsqueda usados para filtrar los paquetes
-skip        | Dirección URL    | enteros | No       | El número de resultados que se va a omitir, para la paginación
-Take        | Dirección URL    | enteros | No       | El número de resultados que se va a devolver para la paginación
-versión preliminar  | Dirección URL    | booleano | No       | `true`o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
-semVerLevel | Dirección URL    | cadena  | No       | Una cadena de versión SemVer 1.0.0 
+q           | Resolución    | cadena  | No       | Términos de búsqueda usados para filtrar los paquetes
+skip        | Resolución    | enteros | No       | El número de resultados que se va a omitir, para la paginación
+Take        | Resolución    | enteros | No       | El número de resultados que se va a devolver para la paginación
+versión preliminar  | Resolución    | booleano | No       | `true` o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
+semVerLevel | Resolución    | cadena  | No       | Una cadena de versión SemVer 1.0.0 
 
 La consulta de búsqueda `q` se analiza de forma que se define mediante la implementación del servidor. NuGet.org admite el filtrado básico en una [serie de campos](../consume-packages/finding-and-choosing-packages.md#search-syntax). Si no hay ningún `q` es siempre se deben devolver todos los paquetes, dentro de los límites impuestos por skip y take. Esto permite que la ficha "Buscar" en la experiencia de NuGet Visual Studio.
 
@@ -82,7 +73,7 @@ El objeto JSON raíz tiene las siguientes propiedades:
 
 nombre      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
-totalHits | enteros          | sí      | El número total de coincidencias, sin tener en cuenta `skip` y`take`
+totalHits | enteros          | sí      | El número total de coincidencias, sin tener en cuenta `skip` y `take`
 datos      | Matriz de objetos | sí      | Los resultados de búsqueda coincidentes con la solicitud
 
 ### <a name="search-result"></a>resultado de la búsqueda

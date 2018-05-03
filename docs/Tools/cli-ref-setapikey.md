@@ -1,25 +1,16 @@
 ---
-title: Comando de NuGet CLI setapikey | Documentos de Microsoft
+title: Comando de NuGet CLI setapikey
+description: Referencia para el comando de setapikey nuget.exe
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Referencia para el comando de setapikey nuget.exe
-keywords: referencia de setapikey de NuGet, comando setapikey
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 696ccf9df5af487d3bf75925c1c1e0d1d1bf7f7b
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 968e22f32e51659590a6fe1e881bf5a9792a1331
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="setapikey-command-nuget-cli"></a>comando setapikey (NuGet CLI)
 

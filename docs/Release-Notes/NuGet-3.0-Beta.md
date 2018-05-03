@@ -1,25 +1,16 @@
 ---
-title: Notas de la versión de NuGet 3.0 Beta | Documentos de Microsoft
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: Notas de la versión Beta 3.0 NuGet
 description: Notas de la versión de NuGet 3.0 Beta, incluidos los problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
-keywords: NuGet 3.0 Beta notas de la versión, correcciones de errores, problemas, conocidos agregan características, DCR
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: bb64cbce4f26d84e1ba12930578382f887bb85f8
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: 4608b196d19f95410f9fe20f6a22e31c15955b89
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-30-beta-release-notes"></a>Notas de la versión Beta 3.0 NuGet
 
@@ -29,7 +20,7 @@ NuGet 3.0 Beta se publicó en 23 de febrero de 2015 para la versión de Visual S
 
 Se recomienda encarecidamente que desinstale cualquier versión anterior de la extensión de NuGet Visual Studio 2015 antes de instalar esta nueva versión.  Si tiene problemas con esta versión de la extensión, se recomienda volver a la [versión anterior](http://nuget.codeplex.com/downloads/get/909582) para su uso con la versión preliminar de Visual Studio 2015.
 
-## <a name="visual-studio-2012"></a>Visual Studio 2012+
+## <a name="visual-studio-2012"></a>Visual Studio 2012 +
 
 Esta versión Beta 3.0 de NuGet está disponible para su instalación en la Galería de Visual Studio 2015 CTP 6 extensión. Estamos trabajando para obtener eliminaciones de vista previa de Visual Studio 2012 y Visual Studio 2013 muy pronto. Ya se compartió nuestra intención de [interrumpir las actualizaciones para Visual Studio 2010](http://blog.nuget.org/20141002/visual-studio-2010.html), y se hizo dicha decisión difícil.
 
