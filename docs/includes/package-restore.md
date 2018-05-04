@@ -1,3 +1,0 @@
-- **Interfaz de usuario del Administrador de paquetes** (Visual Studio): haga clic con el botón derecho en la solución en el Explorador de soluciones y seleccione **Restaurar paquetes NuGet**. Si uno o varios paquetes siguen sin estar instalados correctamente (lo que significa que el Explorador de soluciones muestra un icono de error), use la interfaz de usuario del Administrador de paquetes para desinstalar los paquetes afectados y vuelva a instalarlos. Vea [Reinstalación y actualización de paquetes](../Consume-Packages/Reinstalling-and-Updating-Packages.md)
-
-- **Línea de comandos**: use el comando [nuget restore](../tools/cli-ref-restore.md). Basta con ejecutar `nuget restore` en la carpeta del proyecto y se intentará restaurar las dependencias del proyecto.
