@@ -1,29 +1,17 @@
 ---
-title: Consultar todos los paquetes publicados en nuget.org | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: Consultar todos los paquetes publicados en nuget.org
+description: Con la API de NuGet puede consultar todos los paquetes publicados en nuget.org y mantenerse siempre al día.
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 11/02/2017
 ms.topic: tutorial
-ms.prod: nuget
-ms.technology: ''
-description: Con la API de NuGet puede consultar todos los paquetes publicados en nuget.org y mantenerse siempre al día.
-keywords: La API de NuGet enumera todos los paquetes, la API de NuGet replica paquetes, últimos paquetes publicados en nuget.org
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 5ea11e1b4edd87b6d30d3838986ca60aaa77870f
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: 4190cfb500127f117ea1067f0679e5c248bffb3d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>Consultar todos los paquetes publicados en nuget.org
 
