@@ -1,25 +1,16 @@
 ---
-title: Referencia del archivo project.json para NuGet | Microsoft Docs
+title: Referencia del archivo project.json para NuGet
+description: En algunos tipos de proyecto, project.json mantiene la lista de paquetes NuGet que se usan en el proyecto.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 07/27/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: En algunos tipos de proyecto, project.json mantiene la lista de paquetes NuGet que se usan en el proyecto.
-keywords: project.json de NuGet, referencias de paquetes NuGet, dependencias de NuGet, project.lock.json
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 21542a219faa3d1fa0c32a838645d4471c5aa935
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 52df5c6a4d5f1c0092a85c124903203da83a1821
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="projectjson-reference"></a>referencia de project.json
 

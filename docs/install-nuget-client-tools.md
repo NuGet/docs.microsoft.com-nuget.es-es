@@ -1,31 +1,22 @@
 ---
-title: Instalación de herramientas de cliente de NuGet | Microsoft Docs
+title: Instalación de las herramientas del cliente NuGet
+description: Instrucciones sobre cómo instalar las herramientas de cliente, la interfaz de la línea de comandos (CLI) y el Administrador de paquetes para Visual Studio.
 author: kraigb
 ms.author: kraigb
-manager: ghogen
-ms.date: 01/24/2018
+manager: douge
+ms.date: 04/09/2018
 ms.topic: quickstart
-ms.prod: nuget
-ms.technology: ''
-description: Instrucciones sobre cómo instalar las herramientas de cliente, la interfaz de la línea de comandos (CLI) y el Administrador de paquetes para Visual Studio.
-keywords: CLI de nuget.exe, herramientas de cliente de NuGet, Administrador de paquetes NuGet, consola del Administrador de paquetes NuGet, NuGet para Visual Studio, canal beta de NuGet
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: e4dfe1102d1e0e2013136b0ae4975e5036e34642
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.openlocfilehash: 6681c910768bc705f5e09340e04e4d368fde5efe
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="installing-nuget-client-tools"></a>Instalación de las herramientas del cliente NuGet
 
 > **¿Quiere instalar un paquete? Vea [Formas de instalar paquetes NuGet](consume-packages/ways-to-install-a-package.md).**
 
-Para trabajar con NuGet, como consumidor o creador de paquetes, puede usar las [herramientas de la interfaz de la línea de comandos (CLI) multiplataforma](#cli-tools), además de las [características de NuGet en Visual Studio](#visual-studio). En este artículo se describen brevemente las funcionalidades de las distintas herramientas, cómo instalarlas y la comparativa de su [disponibilidad de características](#feature-availability).
+Para trabajar con NuGet, como consumidor o creador de paquetes, puede usar las [herramientas de la interfaz de la línea de comandos (CLI) multiplataforma](#cli-tools), además de las [características de NuGet en Visual Studio](#visual-studio). En este artículo se describen brevemente las funcionalidades de las distintas herramientas, cómo instalarlas y la comparativa de su [disponibilidad de características](#feature-availability). Para comenzar a usar NuGet para consumir paquetes, vea [Install and use a package (.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) (Instalación y uso de un paquete [CLI de .NET CLI]) e [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md) (Instalación y uso de un paquete [Visual Studio]). Para empezar a crear paquetes NuGet, vea [Create and publish a .NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) (Creación y publicación de un paquete de .NET Standard [CLI de dotnet]) y [Create and publish a .NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md) (Creación y publicación de un paquete de .NET Standard [Visual Studio]).
 
 | Herramienta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Descargar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
@@ -56,7 +47,7 @@ La CLI de NuGet, `nuget.exe`, es la utilidad de línea de comandos para Windows 
 
 Instalación:
 
-[!INCLUDE[install-cli](includes/install-cli.md)]
+[!INCLUDE [install-cli](includes/install-cli.md)]
 
 > [!Tip]
 > Use `nuget update -self` en Windows para actualizar un archivo nuget.exe existente a la versión más reciente.
