@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 615f2beca1eb288417f2345fcdf25e323942d300
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
-ms.translationtype: HT
+ms.openlocfilehash: 1c6ec1181f2f619eb8a4f2d87f7910f25b98e0f4
+ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="install-command-nuget-cli"></a>Comando install (CLI de NuGet)
 
@@ -27,7 +27,7 @@ Si no se especifica ningún paquete específico, `install` instala todos los paq
 
 El `install` comando no modifica un archivo de proyecto o `packages.config`; de este modo es similar a `restore` ya que se solo agrega paquetes en el disco, pero no cambia las dependencias del proyecto.
 
-Para agregar una dependencia, agregue un proyecto a través del Administrador de paquetes de interfaz de usuario o la consola en Visual Studio o modificar `packages.config` y, a continuación, ejecute cualquiera `install` o `restore`.
+Para agregar una dependencia, agregar un paquete mediante el Administrador de paquetes de interfaz de usuario o la consola en Visual Studio o modificar `packages.config` y, a continuación, ejecute cualquiera `install` o `restore`.
 
 ## <a name="usage"></a>Uso
 
@@ -50,10 +50,10 @@ donde `<packageID>` nombres el paquete que desea instalar (con la versión más 
 | Framework | *(4.4 +)*  Utilizado para seleccionar las dependencias de .NET framework de destino. El valor predeterminado es 'Any' Si no se especifica. |
 | Ayuda | Muestra información de ayuda para el comando. |
 | NoCache | Impide que NuGet use paquetes almacenados en caché. Vea [administrar los paquetes globales y las carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
-| No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
+| NonInteractive | Suprime los mensajes para la entrada de usuario o confirmaciones. |
 | OutputDirectory | Especifica la carpeta en la que se instalan los paquetes. Si no se especifica ninguna carpeta, se usa la carpeta actual. |
 | PackageSaveMode | Especifica los tipos de archivos para guardar después de la instalación de paquete: uno de `nuspec`, `nupkg`, o `nuspec;nupkg`. |
-| Versión preliminar | Permite que los paquetes de versión preliminar para instalarse. Esta marca no es necesaria al restaurar paquetes con `packages.config`. |
+| PreRelease | Permite que los paquetes de versión preliminar para instalarse. Esta marca no es necesaria al restaurar paquetes con `packages.config`. |
 | RequireConsent | Comprueba que la restauración de paquetes está habilitada antes de descargar e instalar los paquetes. Para obtener más información, consulte [la restauración del paquete](../consume-packages/package-restore.md). |
 | SolutionDirectory | Especifica la carpeta raíz de la solución para el que se va a restaurar los paquetes. |
 | Origen | Especifica la lista de orígenes de paquetes (como las direcciones URL) para usar. Si se omite, el comando utiliza los orígenes proporcionados en archivos de configuración, consulte [NuGet configurar comportamiento](../consume-packages/configuring-nuget-behavior.md). |

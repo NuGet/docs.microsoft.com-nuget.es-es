@@ -119,6 +119,7 @@
 ## [Eliminación de paquetes](policies/deleting-packages.md)
 # Notas de la versión
 ## [Problemas conocidos](release-notes/known-issues.md)
+## [NuGet 4.7 RTM](release-notes/NuGet-4.7-RTM.md)
 ## [NuGet 4.6 RTM](release-notes/NuGet-4.6-RTM.md)
 ## [NuGet 4.5 RTM](release-notes/NuGet-4.5-RTM.md)
 ## [NuGet 4.4 RTM](release-notes/NuGet-4.4-RTM.md)

@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 73885256c5d5ea67140051bf63ff470991978928
-ms.sourcegitcommit: 055248d790051774c892b220eca12015babbd668
-ms.translationtype: HT
+ms.openlocfilehash: 00d763bcfdd2f3db50378a1e7774eae7a2e1fcd1
+ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -52,7 +52,7 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 | Authors | Authors | Nombre del usuario actual | |
 | Owners | N/D | No está presente en el archivo NuSpec | |
 | Title | Title | El identificador de paquete| |
-| Descripción | PackageDescription | "Descripción del paquete" | |
+| Descripción | Descripción | "Descripción del paquete" | |
 | Copyright | Copyright | vacío | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | vacío | |
