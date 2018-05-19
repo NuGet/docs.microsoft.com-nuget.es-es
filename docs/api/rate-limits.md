@@ -10,11 +10,11 @@ ms.reviewer:
 - skofman
 - anangaur
 - kraigb
-ms.openlocfilehash: e236d685a700d0f47480336cece8edfd44c28863
-ms.sourcegitcommit: 68c8a494a11c892ac671fec3170ba7be97fb044d
+ms.openlocfilehash: c5d3cf68ac6a96a6c14eb5e652bcf72698b6a8e8
+ms.sourcegitcommit: 8f0bb8bb9cb91d27d660963ed9b0f32642f420fe
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="rate-limits"></a>Límites de velocidad
 
@@ -46,5 +46,5 @@ Las tablas siguientes muestran los límites de frecuencia para la API de NuGet.o
 
 | API | Tipo de límite | Valor del límite | API usecase | 
 |:---|:---|:---|:--- |
-**PUT** `/api/v2/package` | Clave de API | 100 / minuto | Cargar un nuevo paquete de NuGet (versión) a través del extremo de inserción de v2 
-**ELIMINAR** `/api/v2/package/{id}/{version}` | Clave de API | 100 / minuto | Ocultar un paquete de NuGet (versión) a través del extremo de v2 
+**PUT** `/api/v2/package` | Clave de API | 250 / hora | Cargar un nuevo paquete de NuGet (versión) a través del extremo de inserción de v2 
+**ELIMINAR** `/api/v2/package/{id}/{version}` | Clave de API | 250 / hora | Ocultar un paquete de NuGet (versión) a través del extremo de v2 
