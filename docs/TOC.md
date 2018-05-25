@@ -84,7 +84,7 @@
 ## [Errores y advertencias](reference/errors-and-warnings.md)
 ## [Reserva de prefijo de id.](reference/id-prefix-reservation.md)
 ## [SDK cliente de NuGet](reference/nuget-client-sdk.md)
-## [Referencia de paquetes firmados](reference/signed-packages-reference.md)
+## [Paquetes firmados](reference/signed-packages-reference.md)
 ## [Organizaciones en nuget.org](reference/organizations-on-nuget-org.md)
 ## Extensibilidad
 ### [Proveedores de credenciales de NuGet para Visual Studio](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
