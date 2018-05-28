@@ -30,7 +30,7 @@
 ## [Publicar un paquete](create-packages/publish-a-package.md)
 ## Guías
 ### [Crear paquetes UWP](guides/create-uwp-packages.md)
-### [Creación de controles UWP como paquetes NuGet](guides/create-uwp-controls.md)
+### [Creación de controles de IU como paquetes NuGet](guides/create-UI-controls.md)
 ### [Creación de paquetes de .NET Standard/.NET Framework con Visual Studio 2015](guides/create-net-standard-packages-vs2015.md)
 ### [Creación de paquetes para Xamarin con Visual Studio 2015](guides/create-packages-for-xamarin.md)
 # Hospedar paquetes
