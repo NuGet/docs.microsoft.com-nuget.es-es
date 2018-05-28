@@ -1,20 +1,23 @@
 ---
-title: Guía de introducción a la creación y publicación de un paquete NuGet de .NET Framework con Visual Studio
-description: Tutorial sobre la creación y publicación de un paquete NuGet de .NET Framework con Visual Studio 2017.
+title: Creación y publicación de un paquete de NET Framework con Visual Studio en Windows
+description: Tutorial sobre la creación y publicación de un paquete NuGet de .NET Framework con Visual Studio 2017 en Windows
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/13/2018
+ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: 01760034a121b1ff6f227e006415779898c4cf6d
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: ba02b53c6ac0b4172b8611958775980ce401bf9b
+ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/22/2018
 ---
-# <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework"></a>Inicio rápido: Creación y publicación de un paquete con Visual Studio (.NET Framework)
+# <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Inicio rápido: Creación y publicación de un paquete con Visual Studio (.NET Framework, Windows)
 
-Crear un paquete NuGet desde una biblioteca de clases de .NET Framework implica crear el archivo DLL en Visual Studio y, después, usar la herramienta de línea de comandos nuget.exe para crear y publicar el paquete.
+Crear un paquete NuGet desde una biblioteca de clases de .NET Framework implica crear el archivo DLL con Visual Studio en Windows y, después, usar la herramienta de línea de comandos nuget.exe para crear y publicar el paquete.
+
+> [!Note]
+> Este inicio rápido se aplica solo a Visual Studio 2017 para Windows. Visual Studio para Mac no incluye las funcionalidades descritas aquí. En su lugar, use las [herramientas de la CLI de dotnet](create-and-publish-a-package-using-the-dotnet-cli.md).
 
 ## <a name="prerequisites"></a>Requisitos previos
 

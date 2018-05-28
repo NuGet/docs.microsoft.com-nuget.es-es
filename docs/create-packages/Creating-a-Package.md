@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: c1e3bfd1c7e80c7deb505ef732d73c2edf3e32f7
-ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
+ms.openlocfilehash: 1657479e1a87f7022caa2fd991127b4ca702cdac
+ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="creating-nuget-packages"></a>Creación de paquetes NuGet
 
@@ -157,7 +157,7 @@ Después, se edita el archivo manualmente para que describa el contenido exacto 
 
 ### <a name="from-a-convention-based-working-directory"></a>Desde un directorio de trabajo basado en convenciones
 
-Dado que un paquete NuGet es simplemente un archivo ZIP que se ha cambiado de nombre con la extensión `.nupkg`, a menudo es más fácil crear la estructura de carpetas que quiere en el sistema de archivos y, después, crear el archivo `.nuspec` directamente desde esa estructura. Después, el comando `nuget pack` agrega automáticamente todos los archivos de esa estructura de carpetas (sin incluir las carpetas que comienzan por `.`, lo que permite mantener archivos privados en la misma estructura).
+Dado que un paquete NuGet es simplemente un archivo ZIP que se ha cambiado de nombre con la extensión `.nupkg`, a menudo es más fácil crear la estructura de carpetas que quiere en el sistema de archivos local y, después, crear el archivo `.nuspec` directamente desde esa estructura. Después, el comando `nuget pack` agrega automáticamente todos los archivos de esa estructura de carpetas (sin incluir las carpetas que comienzan por `.`, lo que permite mantener archivos privados en la misma estructura).
 
 La ventaja de este enfoque es que no es necesario especificar en el manifiesto qué archivos se van a incluir en el paquete (como se explica más adelante en este tema). Puede hacer que el proceso de compilación genere simplemente la estructura de carpetas exacta que se agrega al paquete e incluir otros archivos que en otros casos es posible que no formen parte de un proyecto:
 
@@ -361,12 +361,9 @@ Con NuGet 3.x, los destinos no se agregan al proyecto pero en su lugar se ponen 
 Los paquetes que contienen ensamblados de interoperabilidad COM deben incluir un [archivo de destinos](#including-msbuild-props-and-targets-in-a-package) adecuado para que los metadatos `EmbedInteropTypes` correctos se agreguen a los proyectos con el formato PackageReference. De forma predeterminada, los metadatos `EmbedInteropTypes` siempre son false para todos los ensamblados cuando se usa PackageReference, por lo que el archivo de destinos agrega estos metadatos de manera explícita. Para evitar conflictos, el nombre del destino debe ser único; lo ideal es usar una combinación del nombre del paquete y del ensamblado que se va a insertar, reemplazando el `{InteropAssemblyName}` en el ejemplo siguiente con ese valor. (Vea también [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop) para obtener un ejemplo).
 
 ```xml
-<Target Name="EmbeddingAssemblyNameFromPackageId" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
-  <PropertyGroup>
-    <_InteropAssemblyFileName>{InteropAssemblyName}</_InteropAssemblyFileName>
-  </PropertyGroup>
+<Target Name="Embedding**AssemblyName**From**PackageId**" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
   <ItemGroup>
-    <ReferencePath Condition=" '%(FileName)' == '$(_InteropAssemblyFileName)' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
+    <ReferencePath Condition=" '%(FileName)' == '{InteropAssemblyName}' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </ReferencePath>
   </ItemGroup>
@@ -381,7 +378,7 @@ Además, de forma predeterminada los [activos de compilación no fluyen de maner
 
 ## <a name="running-nuget-pack-to-generate-the-nupkg-file"></a>Ejecución del paquete nuget para generar el archivo .nupkg
 
-Cuando se usa un ensamblado o el directorio de trabajo basado en convenciones, cree un paquete mediante la ejecución de `nuget pack` con el archivo `.nuspec`, reemplazando `<manifest-name>` con el nombre de archivo específico:
+Cuando se usa un ensamblado o el directorio de trabajo basado en convenciones, cree un paquete mediante la ejecución de `nuget pack` con el archivo `.nuspec`, reemplazando `<project-name>` con el nombre de archivo específico:
 
 ```cli
 nuget pack <project-name>.nuspec

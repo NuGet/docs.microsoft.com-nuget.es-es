@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 09/27/2017
 ms.topic: conceptual
-ms.openlocfilehash: d1a64c61954381b7ab3a7ecc8aa5a812cfa14e8b
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 9bdcff8210c192a695a5645f28ef88087469ec52
+ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="supporting-multiple-net-framework-versions"></a>Compatibilidad con varias versiones de .NET Framework
 
@@ -28,7 +28,7 @@ Al crear un paquete que solo contiene una versión de una biblioteca o que tiene
 
 Para obtener una lista completa de los nombres admitidos, vea la [referencia de las plataformas de destino](../reference/target-frameworks.md#supported-frameworks).
 
-No debería tener nunca una versión de la biblioteca que no sea específica de una plataforma ni colocarla directamente en la carpeta `lib` raíz (esta funcionalidad solo era compatible con `packages.config`). Si lo hiciera, haría que fuera compatible con cualquier plataforma de destino y permitiría que se instalara en cualquier lugar, algo que probablemente generaría errores inesperados en tiempo de ejecución. La incorporación de ensamblados en la carpeta raíz (como `lib\abc.dll`) o en subcarpetas (como `lib\abc\abc.dll`) ha quedado en desuso y se omite al usar el formato PackagesReference.
+No debería tener nunca una versión de la biblioteca que no sea específica de una plataforma ni colocarla directamente en la carpeta `lib` raíz (esta funcionalidad solo era compatible con `packages.config`). Si lo hiciera, haría que la biblioteca fuera compatible con cualquier plataforma de destino y permitiría que se instalara en cualquier lugar, algo que probablemente generaría errores inesperados en tiempo de ejecución. La incorporación de ensamblados en la carpeta raíz (como `lib\abc.dll`) o en subcarpetas (como `lib\abc\abc.dll`) ha quedado en desuso y se omite al usar el formato PackagesReference.
 
 Por ejemplo, la siguiente estructura de carpetas admite cuatro versiones de un ensamblado que son específicas de la plataforma:
 
