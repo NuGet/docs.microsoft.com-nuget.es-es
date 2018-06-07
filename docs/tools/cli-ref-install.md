@@ -1,16 +1,17 @@
 ---
 title: Comando de instalación de NuGet CLI
 description: Referencia para el comando de instalación nuget.exe
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 1c6ec1181f2f619eb8a4f2d87f7910f25b98e0f4
-ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.openlocfilehash: 8aaf4c2563aa802900a102848fc33fc8708a135d
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817894"
 ---
 # <a name="install-command-nuget-cli"></a>Comando install (CLI de NuGet)
 
@@ -50,10 +51,10 @@ donde `<packageID>` nombres el paquete que desea instalar (con la versión más 
 | Framework | *(4.4 +)*  Utilizado para seleccionar las dependencias de .NET framework de destino. El valor predeterminado es 'Any' Si no se especifica. |
 | Ayuda | Muestra información de ayuda para el comando. |
 | NoCache | Impide que NuGet use paquetes almacenados en caché. Vea [administrar los paquetes globales y las carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
-| NonInteractive | Suprime los mensajes para la entrada de usuario o confirmaciones. |
+| No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
 | OutputDirectory | Especifica la carpeta en la que se instalan los paquetes. Si no se especifica ninguna carpeta, se usa la carpeta actual. |
 | PackageSaveMode | Especifica los tipos de archivos para guardar después de la instalación de paquete: uno de `nuspec`, `nupkg`, o `nuspec;nupkg`. |
-| PreRelease | Permite que los paquetes de versión preliminar para instalarse. Esta marca no es necesaria al restaurar paquetes con `packages.config`. |
+| Versión preliminar | Permite que los paquetes de versión preliminar para instalarse. Esta marca no es necesaria al restaurar paquetes con `packages.config`. |
 | RequireConsent | Comprueba que la restauración de paquetes está habilitada antes de descargar e instalar los paquetes. Para obtener más información, consulte [la restauración del paquete](../consume-packages/package-restore.md). |
 | SolutionDirectory | Especifica la carpeta raíz de la solución para el que se va a restaurar los paquetes. |
 | Origen | Especifica la lista de orígenes de paquetes (como las direcciones URL) para usar. Si se omite, el comando utiliza los orígenes proporcionados en archivos de configuración, consulte [NuGet configurar comportamiento](../consume-packages/configuring-nuget-behavior.md). |

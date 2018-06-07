@@ -1,9 +1,9 @@
 ---
 title: NuGet referencia de errores y advertencias
 description: Referencia completa para las advertencias y errores emitidos de NuGet durante varias operaciones de NuGet.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
@@ -44,11 +44,12 @@ f1_keywords:
 - NU3008
 - NU3018
 - NU3028
-ms.openlocfilehash: 748c2746a61886617e2eefe3e6c4a2e2a5b9d4d3
-ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
+ms.openlocfilehash: 368a9554c5caf92b709f9b29e16b8a7cdb264eec
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/22/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818521"
 ---
 # <a name="errors-and-warnings"></a>Errores y advertencias
 
@@ -173,7 +174,7 @@ Los errores y advertencias que se indican aquí sólo están disponibles con [Pa
 | --- | --- |
 | **Problema** | No se puede resolver las restricciones de dependencia entre paquetes. |
 | **Mensaje de ejemplo** | *Ha detectado para NuGet.Versioning un conflicto de versión. Hacen referencia al paquete directamente desde el proyecto para resolver este problema.<br/>  NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)<br/> NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)* |
-| **Solución** | Paquetes con las restricciones de dependencia en versiones exactas no permitir que los otros paquetes aumentar la versión, si es necesario. Agregue una referencia al proyecto directamente (en el archivo de proyecto) con la versión exacta requerida. |
+| **Solución** | Paquetes con las restricciones de dependencia en versiones exactas no permitir que los otros paquetes aumentar la versión, si es necesario. Agregue una referencia al paquete directamente (en el archivo de proyecto) con la versión exacta requerida. |
 
 <a name="nu1108"></a>
 

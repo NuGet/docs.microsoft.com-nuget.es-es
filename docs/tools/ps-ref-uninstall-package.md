@@ -1,16 +1,17 @@
 ---
 title: Referencia de PowerShell de NuGet Uninstall-Package
 description: Referencia de comandos de PowerShell de paquete de desinstalación en la consola de administrador de paquetes de NuGet en Visual Studio.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: 5969526a12cb6e06f23f35a2481d0385bb9780ab
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 860a58c359c9b723564a70f83aee4eee5cebf16d
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818872"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package (Consola del Administrador de paquetes en Visual Studio)
 
