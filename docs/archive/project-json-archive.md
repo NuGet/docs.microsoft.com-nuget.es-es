@@ -1,16 +1,17 @@
 ---
 title: Contenido del archivo project.json de NuGet
 description: Se han quitado fragmentos de información diversa del contenido de project.json en otras áreas de la documentación de NuGet.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: cd0f4bc44c1acaeed3b3ed0241c501ddd281628d
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 5b5a5309f5b22f08c289aa49781fa44f95646153
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818339"
 ---
 # <a name="projectjson-archive"></a>archivo project.json
 

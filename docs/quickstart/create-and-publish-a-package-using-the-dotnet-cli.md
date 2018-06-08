@@ -1,16 +1,17 @@
 ---
 title: Creación y publicación de un paquete NuGet con la CLI de dotnet
 description: Tutorial sobre la creación y publicación de un paquete NuGet mediante la CLI de NuGet. NET con la CLI de .NET Core (dotnet).
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: e47eb5f9b3cd7e915db82f043ebb6190b656fb28
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: c50c92f966cd68477cd3f29ab99857911299b7ea
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818456"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Inicio rápido: Crear y publicar un paquete (CLI de dotnet)
 

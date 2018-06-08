@@ -1,17 +1,18 @@
 ---
 title: Cómo publicar un paquete NuGet
 description: Instrucciones detalladas sobre cómo publicar un paquete de NuGet en nuget.org o en fuentes privadas y cómo administrar la propiedad de los paquetes en nuget.org.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 806a64d2d7654e4c1bca89a13d70fd9983c12703
-ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
+ms.openlocfilehash: eb45ac1574efc79873d2d372f122a3d756e90ee5
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/22/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818560"
 ---
 # <a name="publishing-packages"></a>Publicar paquetes
 

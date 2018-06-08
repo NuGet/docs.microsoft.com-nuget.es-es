@@ -1,16 +1,17 @@
 ---
 title: Información general sobre el ecosistema de NuGet
 description: Recursos completos sobre el ecosistema de NuGet, incluidos los orígenes de NuGet, proyectos de NuGet que no son de Microsoft, utilidades y materiales de aprendizaje.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: c2ad662659487bf3875dbdaf76529f1834ca82ca
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 52edc29fe8e9ec8927844a71a01e4983e47b1ce0
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818183"
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>Una introducción al ecosistema de NuGet
 
