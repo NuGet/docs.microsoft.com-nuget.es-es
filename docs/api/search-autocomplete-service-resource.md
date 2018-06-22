@@ -1,0 +1,126 @@
+---
+title: Autocompletar, NuGet API
+description: El servicio de búsqueda Autocompletar admite las versiones y descubrimiento interactivo de identificadores de paquete.
+author: joelverhagen
+ms.author: jver
+manager: skofman
+ms.date: 10/26/2017
+ms.topic: reference
+ms.reviewer: kraigb
+ms.openlocfilehash: d5e1936c6c5406a1a376c16b2bad5351320dfb4f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.translationtype: MT
+ms.contentlocale: es-ES
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31822141"
+---
+# <a name="autocomplete"></a><span data-ttu-id="c8799-103">Autocompletar</span><span class="sxs-lookup"><span data-stu-id="c8799-103">Autocomplete</span></span>
+
+<span data-ttu-id="c8799-104">Es posible crear una experiencia paquete identificador y la versión Autocompletar mediante la API V3.</span><span class="sxs-lookup"><span data-stu-id="c8799-104">It is possible to build a package ID and version autocomplete experience using the V3 API.</span></span> <span data-ttu-id="c8799-105">El recurso que se utiliza para realizar consultas de Autocompletar es el `SearchAutocompleteService` recurso se encuentra en la [índice servicio](service-index.md).</span><span class="sxs-lookup"><span data-stu-id="c8799-105">The resource used for making autocomplete queries is the `SearchAutocompleteService` resource found in the [service index](service-index.md).</span></span>
+
+## <a name="versioning"></a><span data-ttu-id="c8799-106">Control de versiones</span><span class="sxs-lookup"><span data-stu-id="c8799-106">Versioning</span></span>
+
+<span data-ttu-id="c8799-107">Los siguientes `@type` se usan valores:</span><span class="sxs-lookup"><span data-stu-id="c8799-107">The following `@type` values are used:</span></span>
+
+<span data-ttu-id="c8799-108">Valor de @type</span><span class="sxs-lookup"><span data-stu-id="c8799-108">@type value</span></span>                          | <span data-ttu-id="c8799-109">Notas</span><span class="sxs-lookup"><span data-stu-id="c8799-109">Notes</span></span>
+------------------------------------ | -----
+<span data-ttu-id="c8799-110">SearchAutocompleteService</span><span class="sxs-lookup"><span data-stu-id="c8799-110">SearchAutocompleteService</span></span>            | <span data-ttu-id="c8799-111">La versión inicial</span><span class="sxs-lookup"><span data-stu-id="c8799-111">The initial release</span></span>
+<span data-ttu-id="c8799-112">SearchAutocompleteService/3.0.0-beta</span><span class="sxs-lookup"><span data-stu-id="c8799-112">SearchAutocompleteService/3.0.0-beta</span></span> | <span data-ttu-id="c8799-113">Alias de `SearchAutocompleteService`</span><span class="sxs-lookup"><span data-stu-id="c8799-113">Alias of `SearchAutocompleteService`</span></span>
+<span data-ttu-id="c8799-114">SearchAutocompleteService/3.0.0-rc</span><span class="sxs-lookup"><span data-stu-id="c8799-114">SearchAutocompleteService/3.0.0-rc</span></span>   | <span data-ttu-id="c8799-115">Alias de `SearchAutocompleteService`</span><span class="sxs-lookup"><span data-stu-id="c8799-115">Alias of `SearchAutocompleteService`</span></span>
+
+## <a name="base-url"></a><span data-ttu-id="c8799-116">Dirección URL base</span><span class="sxs-lookup"><span data-stu-id="c8799-116">Base URL</span></span>
+
+<span data-ttu-id="c8799-117">La dirección URL base para las API siguientes es el valor de la `@id` propiedad asociado a uno de los recursos mencionados anteriormente `@type` valores.</span><span class="sxs-lookup"><span data-stu-id="c8799-117">The base URL for the following APIs is the value of the `@id` property associated with one of the aforementioned resource `@type` values.</span></span> <span data-ttu-id="c8799-118">En el siguiente documento, el marcador de posición de la dirección URL base `{@id}` se usará.</span><span class="sxs-lookup"><span data-stu-id="c8799-118">In the following document, the placeholder base URL `{@id}` will be used.</span></span>
+
+## <a name="http-methods"></a><span data-ttu-id="c8799-119">Métodos HTTP</span><span class="sxs-lookup"><span data-stu-id="c8799-119">HTTP Methods</span></span>
+
+<span data-ttu-id="c8799-120">Todas las direcciones URL se encuentra en el soporte de registro del recurso los métodos HTTP `GET` y `HEAD`.</span><span class="sxs-lookup"><span data-stu-id="c8799-120">All URLs found in the registration resource support the HTTP methods `GET` and `HEAD`.</span></span>
+
+## <a name="search-for-package-ids"></a><span data-ttu-id="c8799-121">Busque los identificadores de paquete</span><span class="sxs-lookup"><span data-stu-id="c8799-121">Search for package IDs</span></span>
+
+<span data-ttu-id="c8799-122">La primera Autocompletar API admite las búsquedas de parte de una cadena de identificador de paquete.</span><span class="sxs-lookup"><span data-stu-id="c8799-122">The first autocomplete API supports searching for part of a package ID string.</span></span> <span data-ttu-id="c8799-123">Esto es excelente cuando desea proporcionar una característica de escritura anticipada de paquete en una interfaz de usuario integrada con un origen de paquete de NuGet.</span><span class="sxs-lookup"><span data-stu-id="c8799-123">This is great when you want to provide a package typeahead feature in a user interface integrated with a NuGet package source.</span></span>
+
+<span data-ttu-id="c8799-124">Un paquete con solo las versiones que no figuran en no aparecerán en los resultados.</span><span class="sxs-lookup"><span data-stu-id="c8799-124">A package with only unlisted versions will not appear in the results.</span></span>
+
+    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+
+### <a name="request-parameters"></a><span data-ttu-id="c8799-125">Parámetros de solicitud</span><span class="sxs-lookup"><span data-stu-id="c8799-125">Request parameters</span></span>
+
+<span data-ttu-id="c8799-126">nombre</span><span class="sxs-lookup"><span data-stu-id="c8799-126">Name</span></span>        | <span data-ttu-id="c8799-127">En</span><span class="sxs-lookup"><span data-stu-id="c8799-127">In</span></span>     | <span data-ttu-id="c8799-128">Tipo</span><span class="sxs-lookup"><span data-stu-id="c8799-128">Type</span></span>    | <span data-ttu-id="c8799-129">Obligatorio</span><span class="sxs-lookup"><span data-stu-id="c8799-129">Required</span></span> | <span data-ttu-id="c8799-130">Notas</span><span class="sxs-lookup"><span data-stu-id="c8799-130">Notes</span></span>
+----------- | ------ | ------- | -------- | -----
+<span data-ttu-id="c8799-131">q</span><span class="sxs-lookup"><span data-stu-id="c8799-131">q</span></span>           | <span data-ttu-id="c8799-132">Resolución</span><span class="sxs-lookup"><span data-stu-id="c8799-132">URL</span></span>    | <span data-ttu-id="c8799-133">cadena</span><span class="sxs-lookup"><span data-stu-id="c8799-133">string</span></span>  | <span data-ttu-id="c8799-134">No</span><span class="sxs-lookup"><span data-stu-id="c8799-134">no</span></span>       | <span data-ttu-id="c8799-135">La cadena para comparar identificadores de paquete</span><span class="sxs-lookup"><span data-stu-id="c8799-135">The string to compare against package IDs</span></span>
+<span data-ttu-id="c8799-136">skip</span><span class="sxs-lookup"><span data-stu-id="c8799-136">skip</span></span>        | <span data-ttu-id="c8799-137">Resolución</span><span class="sxs-lookup"><span data-stu-id="c8799-137">URL</span></span>    | <span data-ttu-id="c8799-138">enteros</span><span class="sxs-lookup"><span data-stu-id="c8799-138">integer</span></span> | <span data-ttu-id="c8799-139">No</span><span class="sxs-lookup"><span data-stu-id="c8799-139">no</span></span>       | <span data-ttu-id="c8799-140">El número de resultados que se va a omitir, para la paginación</span><span class="sxs-lookup"><span data-stu-id="c8799-140">The number of results to skip, for pagination</span></span>
+<span data-ttu-id="c8799-141">Take</span><span class="sxs-lookup"><span data-stu-id="c8799-141">take</span></span>        | <span data-ttu-id="c8799-142">Resolución</span><span class="sxs-lookup"><span data-stu-id="c8799-142">URL</span></span>    | <span data-ttu-id="c8799-143">enteros</span><span class="sxs-lookup"><span data-stu-id="c8799-143">integer</span></span> | <span data-ttu-id="c8799-144">No</span><span class="sxs-lookup"><span data-stu-id="c8799-144">no</span></span>       | <span data-ttu-id="c8799-145">El número de resultados que se va a devolver para la paginación</span><span class="sxs-lookup"><span data-stu-id="c8799-145">The number of results to return, for pagination</span></span>
+<span data-ttu-id="c8799-146">versión preliminar</span><span class="sxs-lookup"><span data-stu-id="c8799-146">prerelease</span></span>  | <span data-ttu-id="c8799-147">Resolución</span><span class="sxs-lookup"><span data-stu-id="c8799-147">URL</span></span>    | <span data-ttu-id="c8799-148">booleano</span><span class="sxs-lookup"><span data-stu-id="c8799-148">boolean</span></span> | <span data-ttu-id="c8799-149">No</span><span class="sxs-lookup"><span data-stu-id="c8799-149">no</span></span>       | <span data-ttu-id="c8799-150">`true` o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)</span><span class="sxs-lookup"><span data-stu-id="c8799-150">`true` or `false` determining whether to include [pre-release packages](../create-packages/prerelease-packages.md)</span></span>
+<span data-ttu-id="c8799-151">semVerLevel</span><span class="sxs-lookup"><span data-stu-id="c8799-151">semVerLevel</span></span> | <span data-ttu-id="c8799-152">Resolución</span><span class="sxs-lookup"><span data-stu-id="c8799-152">URL</span></span>    | <span data-ttu-id="c8799-153">cadena</span><span class="sxs-lookup"><span data-stu-id="c8799-153">string</span></span>  | <span data-ttu-id="c8799-154">No</span><span class="sxs-lookup"><span data-stu-id="c8799-154">no</span></span>       | <span data-ttu-id="c8799-155">Una cadena de versión SemVer 1.0.0</span><span class="sxs-lookup"><span data-stu-id="c8799-155">A SemVer 1.0.0 version string</span></span> 
+
+<span data-ttu-id="c8799-156">La consulta de Autocompletar `q` se analiza de forma que se define mediante la implementación del servidor.</span><span class="sxs-lookup"><span data-stu-id="c8799-156">The autocomplete query `q` is parsed in a manner that is defined by the server implementation.</span></span> <span data-ttu-id="c8799-157">NuGet.org admite las consultas para el prefijo de tokens de Id. de paquete, que son partes del identificador generado por spliting original, caracteres camel de caso y símbolos.</span><span class="sxs-lookup"><span data-stu-id="c8799-157">nuget.org supports querying for the prefix of package ID tokens, which are pieces of the ID produced by spliting the original by camel case and symbol characters.</span></span>
+
+<span data-ttu-id="c8799-158">El `skip` parámetro el valor predeterminado es 0.</span><span class="sxs-lookup"><span data-stu-id="c8799-158">The `skip` parameter defaults to 0.</span></span>
+
+<span data-ttu-id="c8799-159">El `take` parámetro debe ser un entero mayor que cero.</span><span class="sxs-lookup"><span data-stu-id="c8799-159">The `take` parameter should be an integer greater than zero.</span></span> <span data-ttu-id="c8799-160">La implementación del servidor puede imponer un valor máximo.</span><span class="sxs-lookup"><span data-stu-id="c8799-160">The server implementation may impose a maximum value.</span></span>
+
+<span data-ttu-id="c8799-161">Si `prerelease` no es siempre, se excluyen los paquetes de versión preliminar.</span><span class="sxs-lookup"><span data-stu-id="c8799-161">If `prerelease` is not provided, pre-release packages are excluded.</span></span>
+
+<span data-ttu-id="c8799-162">El `semVerLevel` parámetro de consulta se utiliza para participar en [SemVer 2.0.0 paquetes](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29#identifying-semver-v200-packages).</span><span class="sxs-lookup"><span data-stu-id="c8799-162">The `semVerLevel` query parameter is used to opt-in to [SemVer 2.0.0 packages](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29#identifying-semver-v200-packages).</span></span>
+<span data-ttu-id="c8799-163">Si se excluye de este parámetro de consulta, se devolverán los identificadores de paquete solo con las versiones compatibles de SemVer 1.0.0 (con la [control de versiones de NuGet estándar](../reference/package-versioning.md) advertencias, como las cadenas de versión con 4 partes entero).</span><span class="sxs-lookup"><span data-stu-id="c8799-163">If this query parameter is excluded, only package IDs with SemVer 1.0.0 compatible versions will be returned (with the [standard NuGet versioning](../reference/package-versioning.md) caveats, such as version strings with 4 integer pieces).</span></span>
+<span data-ttu-id="c8799-164">Si `semVerLevel=2.0.0` es siempre devolverán SemVer 1.0.0 y paquetes de SemVer 2.0.0 compatibles.</span><span class="sxs-lookup"><span data-stu-id="c8799-164">If `semVerLevel=2.0.0` is provided, both SemVer 1.0.0 and SemVer 2.0.0 compatible packages will be returned.</span></span> <span data-ttu-id="c8799-165">Consulte la [SemVer 2.0.0 compatibilidad con nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29) para obtener más información.</span><span class="sxs-lookup"><span data-stu-id="c8799-165">See the [SemVer 2.0.0 support for nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29) for more information.</span></span>
+
+### <a name="response"></a><span data-ttu-id="c8799-166">Respuesta</span><span class="sxs-lookup"><span data-stu-id="c8799-166">Response</span></span>
+
+<span data-ttu-id="c8799-167">La respuesta es documento JSON que contiene hasta `take` resultados de Autocompletar.</span><span class="sxs-lookup"><span data-stu-id="c8799-167">The response is JSON document containing up to `take` autocomplete results.</span></span>
+
+<span data-ttu-id="c8799-168">El objeto JSON raíz tiene las siguientes propiedades:</span><span class="sxs-lookup"><span data-stu-id="c8799-168">The root JSON object has the following properties:</span></span>
+
+<span data-ttu-id="c8799-169">nombre</span><span class="sxs-lookup"><span data-stu-id="c8799-169">Name</span></span>      | <span data-ttu-id="c8799-170">Tipo</span><span class="sxs-lookup"><span data-stu-id="c8799-170">Type</span></span>             | <span data-ttu-id="c8799-171">Obligatorio</span><span class="sxs-lookup"><span data-stu-id="c8799-171">Required</span></span> | <span data-ttu-id="c8799-172">Notas</span><span class="sxs-lookup"><span data-stu-id="c8799-172">Notes</span></span>
+--------- | ---------------- | -------- | -----
+<span data-ttu-id="c8799-173">totalHits</span><span class="sxs-lookup"><span data-stu-id="c8799-173">totalHits</span></span> | <span data-ttu-id="c8799-174">enteros</span><span class="sxs-lookup"><span data-stu-id="c8799-174">integer</span></span>          | <span data-ttu-id="c8799-175">sí</span><span class="sxs-lookup"><span data-stu-id="c8799-175">yes</span></span>      | <span data-ttu-id="c8799-176">El número total de coincidencias, sin tener en cuenta `skip` y `take`</span><span class="sxs-lookup"><span data-stu-id="c8799-176">The total number of matches, disregarding `skip` and `take`</span></span>
+<span data-ttu-id="c8799-177">datos</span><span class="sxs-lookup"><span data-stu-id="c8799-177">data</span></span>      | <span data-ttu-id="c8799-178">Matriz de cadenas</span><span class="sxs-lookup"><span data-stu-id="c8799-178">array of strings</span></span> | <span data-ttu-id="c8799-179">sí</span><span class="sxs-lookup"><span data-stu-id="c8799-179">yes</span></span>      | <span data-ttu-id="c8799-180">El paquete coincidentes con la solicitud de identificadores</span><span class="sxs-lookup"><span data-stu-id="c8799-180">The package IDs matched by the request</span></span>
+
+### <a name="sample-request"></a><span data-ttu-id="c8799-181">Solicitud de ejemplo</span><span class="sxs-lookup"><span data-stu-id="c8799-181">Sample request</span></span>
+
+<span data-ttu-id="c8799-182">OBTENER https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true</span><span class="sxs-lookup"><span data-stu-id="c8799-182">GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true</span></span>
+
+### <a name="sample-response"></a><span data-ttu-id="c8799-183">Respuesta de ejemplo</span><span class="sxs-lookup"><span data-stu-id="c8799-183">Sample response</span></span>
+
+[!code-JSON [autocomplete-id-result.json](./_data/autocomplete-id-result.json)]
+
+## <a name="enumerate-package-versions"></a><span data-ttu-id="c8799-184">Enumerar las versiones del paquete</span><span class="sxs-lookup"><span data-stu-id="c8799-184">Enumerate package versions</span></span>
+
+<span data-ttu-id="c8799-185">Una vez que se detecta un identificador de paquete mediante la API anterior, un cliente puede utilizar la API de Autocompletar para enumerar las versiones del paquete para un identificador de paquete proporcionado.</span><span class="sxs-lookup"><span data-stu-id="c8799-185">Once a package ID is discovered using the previous API, a client can use the autocomplete API to enumerate package versions for a provided package ID.</span></span>
+
+<span data-ttu-id="c8799-186">Una versión de paquete que no figuran en no aparecerán en los resultados.</span><span class="sxs-lookup"><span data-stu-id="c8799-186">A package version that is unlisted will not appear in the results.</span></span>
+
+    GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+
+### <a name="request-parameters"></a><span data-ttu-id="c8799-187">Parámetros de solicitud</span><span class="sxs-lookup"><span data-stu-id="c8799-187">Request parameters</span></span>
+
+<span data-ttu-id="c8799-188">nombre</span><span class="sxs-lookup"><span data-stu-id="c8799-188">Name</span></span>        | <span data-ttu-id="c8799-189">En</span><span class="sxs-lookup"><span data-stu-id="c8799-189">In</span></span>     | <span data-ttu-id="c8799-190">Tipo</span><span class="sxs-lookup"><span data-stu-id="c8799-190">Type</span></span>    | <span data-ttu-id="c8799-191">Obligatorio</span><span class="sxs-lookup"><span data-stu-id="c8799-191">Required</span></span> | <span data-ttu-id="c8799-192">Notas</span><span class="sxs-lookup"><span data-stu-id="c8799-192">Notes</span></span>
+----------- | ------ | ------- | -------- | -----
+<span data-ttu-id="c8799-193">id</span><span class="sxs-lookup"><span data-stu-id="c8799-193">id</span></span>          | <span data-ttu-id="c8799-194">Resolución</span><span class="sxs-lookup"><span data-stu-id="c8799-194">URL</span></span>    | <span data-ttu-id="c8799-195">cadena</span><span class="sxs-lookup"><span data-stu-id="c8799-195">string</span></span>  | <span data-ttu-id="c8799-196">sí</span><span class="sxs-lookup"><span data-stu-id="c8799-196">yes</span></span>      | <span data-ttu-id="c8799-197">El identificador del paquete para capturar las versiones de</span><span class="sxs-lookup"><span data-stu-id="c8799-197">The package ID to fetch versions for</span></span>
+<span data-ttu-id="c8799-198">versión preliminar</span><span class="sxs-lookup"><span data-stu-id="c8799-198">prerelease</span></span>  | <span data-ttu-id="c8799-199">Resolución</span><span class="sxs-lookup"><span data-stu-id="c8799-199">URL</span></span>    | <span data-ttu-id="c8799-200">booleano</span><span class="sxs-lookup"><span data-stu-id="c8799-200">boolean</span></span> | <span data-ttu-id="c8799-201">No</span><span class="sxs-lookup"><span data-stu-id="c8799-201">no</span></span>       | <span data-ttu-id="c8799-202">`true` o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)</span><span class="sxs-lookup"><span data-stu-id="c8799-202">`true` or `false` determining whether to include [pre-release packages](../create-packages/prerelease-packages.md)</span></span>
+<span data-ttu-id="c8799-203">semVerLevel</span><span class="sxs-lookup"><span data-stu-id="c8799-203">semVerLevel</span></span> | <span data-ttu-id="c8799-204">Resolución</span><span class="sxs-lookup"><span data-stu-id="c8799-204">URL</span></span>    | <span data-ttu-id="c8799-205">cadena</span><span class="sxs-lookup"><span data-stu-id="c8799-205">string</span></span>  | <span data-ttu-id="c8799-206">No</span><span class="sxs-lookup"><span data-stu-id="c8799-206">no</span></span>       | <span data-ttu-id="c8799-207">Una cadena de versión SemVer 2.0.0</span><span class="sxs-lookup"><span data-stu-id="c8799-207">A SemVer 2.0.0 version string</span></span> 
+
+<span data-ttu-id="c8799-208">Si `prerelease` no es siempre, se excluyen los paquetes de versión preliminar.</span><span class="sxs-lookup"><span data-stu-id="c8799-208">If `prerelease` is not provided, pre-release packages are excluded.</span></span>
+
+<span data-ttu-id="c8799-209">El `semVerLevel` parámetro de consulta se utiliza para participar en paquetes SemVer 2.0.0.</span><span class="sxs-lookup"><span data-stu-id="c8799-209">The `semVerLevel` query parameter is used to opt-in to SemVer 2.0.0 packages.</span></span> <span data-ttu-id="c8799-210">Si se excluye de este parámetro de consulta, se devolverá solo las versiones de SemVer 1.0.0.</span><span class="sxs-lookup"><span data-stu-id="c8799-210">If this query parameter is excluded, only SemVer 1.0.0 versions will be returned.</span></span> <span data-ttu-id="c8799-211">Si `semVerLevel=2.0.0` es siempre devolverán SemVer 1.0.0 y SemVer 2.0.0 versiones.</span><span class="sxs-lookup"><span data-stu-id="c8799-211">If `semVerLevel=2.0.0` is provided, both SemVer 1.0.0 and SemVer 2.0.0 versions will be returned.</span></span> <span data-ttu-id="c8799-212">Consulte la [SemVer 2.0.0 compatibilidad con nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29) para obtener más información.</span><span class="sxs-lookup"><span data-stu-id="c8799-212">See the [SemVer 2.0.0 support for nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29) for more information.</span></span>
+
+### <a name="response"></a><span data-ttu-id="c8799-213">Respuesta</span><span class="sxs-lookup"><span data-stu-id="c8799-213">Response</span></span>
+
+<span data-ttu-id="c8799-214">La respuesta es documento JSON que contiene todas las versiones de paquete del identificador de paquete suministrado, filtrado por los parámetros de consulta determinada.</span><span class="sxs-lookup"><span data-stu-id="c8799-214">The response is JSON document containing all package versions of the provided package ID, filtering by the given query parameters.</span></span>
+
+<span data-ttu-id="c8799-215">El objeto JSON raíz tiene la propiedad siguiente:</span><span class="sxs-lookup"><span data-stu-id="c8799-215">The root JSON object has the following property:</span></span>
+
+<span data-ttu-id="c8799-216">nombre</span><span class="sxs-lookup"><span data-stu-id="c8799-216">Name</span></span>      | <span data-ttu-id="c8799-217">Tipo</span><span class="sxs-lookup"><span data-stu-id="c8799-217">Type</span></span>             | <span data-ttu-id="c8799-218">Obligatorio</span><span class="sxs-lookup"><span data-stu-id="c8799-218">Required</span></span> | <span data-ttu-id="c8799-219">Notas</span><span class="sxs-lookup"><span data-stu-id="c8799-219">Notes</span></span>
+--------- | ---------------- | -------- | -----
+<span data-ttu-id="c8799-220">datos</span><span class="sxs-lookup"><span data-stu-id="c8799-220">data</span></span>      | <span data-ttu-id="c8799-221">Matriz de cadenas</span><span class="sxs-lookup"><span data-stu-id="c8799-221">array of strings</span></span> | <span data-ttu-id="c8799-222">sí</span><span class="sxs-lookup"><span data-stu-id="c8799-222">yes</span></span>      | <span data-ttu-id="c8799-223">Las versiones del paquete coincidentes con la solicitud</span><span class="sxs-lookup"><span data-stu-id="c8799-223">The package versions matched by the request</span></span>
+
+<span data-ttu-id="c8799-224">Las versiones del paquete en el `data` matriz podría contener metadatos de compilación SemVer 2.0.0 (p. ej. `1.0.0+metadata`) si el `semVerLevel=2.0.0` se proporcionó en la cadena de consulta.</span><span class="sxs-lookup"><span data-stu-id="c8799-224">The package versions in the `data` array could contain SemVer 2.0.0 build metadata (e.g. `1.0.0+metadata`) if the `semVerLevel=2.0.0` was provided in the query string.</span></span>
+
+### <a name="sample-request"></a><span data-ttu-id="c8799-225">Solicitud de ejemplo</span><span class="sxs-lookup"><span data-stu-id="c8799-225">Sample request</span></span>
+
+    GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
+
+### <a name="sample-response"></a><span data-ttu-id="c8799-226">Respuesta de ejemplo</span><span class="sxs-lookup"><span data-stu-id="c8799-226">Sample response</span></span>
+
+[!code-JSON [autocomplete-version-result.json](./_data/autocomplete-version-result.json)]

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31822661"
 ---
 # <a name="nuget-43-rtm-release-notes"></a><span data-ttu-id="4bf56-103">Notas de la versión de NuGet 4.3 RTM</span><span class="sxs-lookup"><span data-stu-id="4bf56-103">NuGet 4.3 RTM Release Notes</span></span>
 
