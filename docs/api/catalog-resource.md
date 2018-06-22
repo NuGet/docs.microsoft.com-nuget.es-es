@@ -12,6 +12,7 @@ ms.sourcegitcommit: 055248d790051774c892b220eca12015babbd668
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34152440"
 ---
 # <a name="catalog"></a>Catálogo
 

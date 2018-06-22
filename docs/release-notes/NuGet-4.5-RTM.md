@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31820721"
 ---
 # <a name="nuget-45-rtm-release-notes"></a>Notas de la versión de NuGet 4.5 RTM
 
