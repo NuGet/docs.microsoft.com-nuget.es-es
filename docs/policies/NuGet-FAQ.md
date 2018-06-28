@@ -1,16 +1,17 @@
 ---
 title: Preguntas más frecuentes de NuGet
 description: Preguntas y respuestas frecuentes para usar NuGet en la línea de comandos y en Visual Studio, y trabajar con la galería de NuGet.
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: bcdb4e8971ee4e742e6cf37f8b662e50a77604f0
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: e3c52f1e49a53b89d7e5c0728c02a7915db2aeb9
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817985"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -160,9 +161,9 @@ Si un paquete no especifica los términos de licencia, póngase en contacto con 
 
 ## <a name="managing-packages-on-nugetorg"></a>Administración de paquetes en nuget.org
 
-**¿Puedo editar metadatos de paquete después de cargarlos? ¿Por qué se requiere modificar el archivo nuspec y cargar un paquete nuevo para realizar cambios en los metadatos del paquete?**
+**¿Puedo editar metadatos de paquete después de cargarlos?**
 
-NuGet requiere que todos los paquetes estén firmados. Un principio de diseño de la firma de paquetes es que el contenido del paquete firmado debe ser inmutable, lo que incluye el archivo nuspec. Al modificar los metadatos del paquete se producen cambios en el archivo nuspec, lo que invalida las firmas existentes. Se recomienda modificar los flujos de trabajo existentes para que no se requiera la modificación de los metadatos del paquete una vez creado el paquete.
+NuGet recomienda que todos los paquetes estén firmados. Un principio de diseño de la firma de paquetes es que el contenido del paquete firmado debe ser inmutable, lo que incluye el archivo nuspec. Al modificar los metadatos del paquete se producen cambios en el archivo nuspec, lo que invalida las firmas existentes. Se recomienda modificar los flujos de trabajo existentes para que no se requiera la modificación de los metadatos del paquete una vez creado el paquete.
 
 Tenga en cuenta que las dependencias indicadas para el paquete se generan automáticamente a partir del propio paquete y no se pueden modificar.
 
