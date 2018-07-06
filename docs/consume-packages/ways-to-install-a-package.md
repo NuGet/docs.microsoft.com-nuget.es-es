@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
-ms.openlocfilehash: 5f71ce6217071efc3d483cde4cf36c5585808167
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 0f59c3b7f1e32ae34889921c13d15074ef5c1260
+ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816935"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37843386"
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>Distintas formas de instalar un paquete NuGet
 
@@ -39,7 +39,7 @@ El proceso general es el siguiente:
 
    - Si el paquete no está en la caché, intente descargarlo de los orígenes indicados en los archivos de configuración. Si se descarga un paquete, "GET" y "Aceptar" aparecen en la salida.
 
-   - Si el paquete no se puede adquirir correctamente desde ningún origen, la instalación no se completa en este momento y genera un mensaje de error como, por ejemplo, [NU1103](../reference/errors-and-warnings.md#nu1103). Tenga en cuenta que los errores de los comandos `nuget.exe` solo muestran el último origen comprobado, pero esto implica que el paquete no estaba disponible en ningún origen.
+   - Si el paquete no se puede adquirir correctamente desde ningún origen, la instalación no se completa en este momento y genera un mensaje de error como, por ejemplo, [NU1103](../reference/errors-and-warnings/NU1103.md). Tenga en cuenta que los errores de los comandos `nuget.exe` solo muestran el último origen comprobado, pero esto implica que el paquete no estaba disponible en ningún origen.
 
    Al adquirir el paquete, es posible que se aplique el orden de los orígenes en la configuración de NuGet:
 
