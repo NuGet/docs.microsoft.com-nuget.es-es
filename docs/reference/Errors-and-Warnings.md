@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 25c8a22fc0bce2372c54cf29b904a8d9fbbe9ace
-ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
+ms.openlocfilehash: a787d036f7682b54adb30140152655fe165ee161
+ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843435"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39069666"
 ---
 # <a name="errors-and-warnings"></a>Errores y advertencias
 
@@ -25,7 +25,7 @@ Los errores y advertencias que se indican aquí sólo están disponibles con [ba
 | Agrupar | Números de error |
 | --- | --- |
 | Errores de entrada no válidos | [NU1001](./errors-and-warnings/NU1001.md), [NU1002](./errors-and-warnings/NU1002.md), [NU1003](./errors-and-warnings/NU1003.md) |
-| Errores de paquete y proyecto ausente | [NU1100](./errors-and-warnings/NU1100.md), [NU1101](./errors-and-warnings/NU1101.md), [NU1102](./errors-and-warnings/NU1102.md), [NU1103](./errors-and-warnings/NU1103.md), [NU1104](./errors-and-warnings/NU1104.md), [NU1105](./errors-and-warnings/NU1105.md), [NU1106](./errors-and-warnings/NU1106.md), [NU1107](./errors-and-warnings/NU1107.md) (anteriormente NU1607) [NU1108](./errors-and-warnings/NU1108.md) (anteriormente NU1606) |
+| Errores de paquete y proyecto ausente | [NU1100](./errors-and-warnings/NU1100.md), [NU1101](./errors-and-warnings/NU1101.md), [NU1102](./errors-and-warnings/NU1102.md), [NU1103](./errors-and-warnings/NU1103.md), [NU1104](./errors-and-warnings/NU1104.md), [NU1105](./errors-and-warnings/NU1105.md), [NU1106](./errors-and-warnings/NU1106.md), [NU1107](./errors-and-warnings/NU1107.md), [NU1108](./errors-and-warnings/NU1108.md) |
 | Errores de compatibilidad | [NU1201](./errors-and-warnings/NU1201.md), [NU1202](./errors-and-warnings/NU1202.md), [NU1203](./errors-and-warnings/NU1203.md), [NU1401](./errors-and-warnings/NU1401.md) |
 | Errores internos de NuGet | [NU1000](./errors-and-warnings/NU1000.md) |
 | Errores de paquetes firmados (creación y comprobación) | [NU3000](./errors-and-warnings/NU3000.md), [NU3001](./errors-and-warnings/NU3001.md), [NU3004](./errors-and-warnings/NU3004.md), [NU3008](./errors-and-warnings/NU3008.md) |
@@ -35,7 +35,7 @@ Los errores y advertencias que se indican aquí sólo están disponibles con [ba
 | Agrupar | Números de advertencia |
 | --- | --- |
 | Advertencias de entrada no válidas | [NU1501](./errors-and-warnings/NU1501.md), [NU1502](./errors-and-warnings/NU1502.md), [NU1503](./errors-and-warnings/NU1503.md) |
-| Advertencias de la versión de paquete inesperado | [NU1601](./errors-and-warnings/NU1601.md), [NU1602](./errors-and-warnings/NU1602.md), [NU1603](./errors-and-warnings/NU1603.md), [NU1604](./errors-and-warnings/NU1604.md), [NU1605](./errors-and-warnings/NU1605.md) |
+| Advertencias de la versión de paquete inesperado | [NU1601](./errors-and-warnings/NU1601.md), [NU1602](./errors-and-warnings/NU1602.md), [NU1603](./errors-and-warnings/NU1603.md), [NU1604](./errors-and-warnings/NU1604.md), [NU1605](./errors-and-warnings/NU1605.md), [NU1606](./errors-and-warnings/NU1108.md), [NU1607](./errors-and-warnings/NU1107.md) |
 | Advertencias de conflicto de resolución | [NU1608](./errors-and-warnings/NU1608.md) |
 | Advertencias de reserva de paquete | [NU1701](./errors-and-warnings/NU1701.md) |
 | Advertencias de fuentes | [NU1801](./errors-and-warnings/NU1801.md) |

@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 03/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1ca97e1c2dfba876aefe6b06eab10def67b8d848
-ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
+ms.openlocfilehash: 4f42403abbf07c2c48ce13c70c49f7f3c15c40e4
+ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843399"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39072371"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Migración de packages.config a PackageReference
 
@@ -41,7 +41,7 @@ Cuando se abre un proyecto por primera vez, NuGet puede no inicializarse hasta q
 
 #### <a name="workaround"></a>Solución 
 
-Realice cualquiera de las siguientes acciones de NuGet: 
+Lleve a cabo cualquiera de las siguientes acciones de NuGet: 
 * Abra la UI del administrador de paquetes; haga clic con el botón derecho en `References` y seleccione `Manage NuGet Packages...`. 
 * Abra la consola del administrador de paquetes; en `Tools > NuGet Package Manager`, seleccione `Package Manager Console`. 
 * Ejecute la restauración de NuGet; haga clic con el botón derecho en el nodo de la solución en el Explorador de soluciones y seleccione `Restore NuGet Packages`. 
@@ -58,7 +58,7 @@ Ahora debería ver la opción de migración. Tenga en cuenta que esta opción no
 
 1. En **el Explorador de soluciones**, haga doble clic en el **referencias** nodo o la `packages.config` de archivo y seleccione **Migrovat packages.config NA PackageReference...** .
 
-1. La herramienta de migración analiza las referencias de paquete de NuGet del proyecto e intenta clasificarlos en **dependencias de nivel superior** (ese directorio se ha instalado los paquetes de NuGet) y **dependencias transitivas**(paquetes que se instalaron como las dependencias de paquetes de nivel superior).
+1. La herramienta de migración analiza las referencias de paquete de NuGet del proyecto e intenta clasificarlos en **dependencias de nivel superior** (paquetes de NuGet que instalar directamente) y **dependencias transitivas** (los paquetes que se instalaron como las dependencias de paquetes de nivel superior).
 
    > [!Note]
    > PackageReference admite la restauración de paquetes transitiva y resuelve las dependencias de forma dinámica, lo que significa que las dependencias transitivas no deben instalarse explícitamente.
