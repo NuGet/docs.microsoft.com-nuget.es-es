@@ -7,11 +7,11 @@ manager: unnir
 ms.date: 05/18/2018
 ms.topic: quickstart
 ms.openlocfilehash: e97773d79b22db1f08d868190895a9417b12c924
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818752"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37963092"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
 
