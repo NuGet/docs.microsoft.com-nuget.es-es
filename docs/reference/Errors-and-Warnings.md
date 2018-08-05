@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: a787d036f7682b54adb30140152655fe165ee161
-ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
+ms.openlocfilehash: 73de86a4eed1a06979a86a0969b95f011de741fa
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39069666"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508145"
 ---
 # <a name="errors-and-warnings"></a>Errores y advertencias
 
@@ -29,6 +29,7 @@ Los errores y advertencias que se indican aquí sólo están disponibles con [ba
 | Errores de compatibilidad | [NU1201](./errors-and-warnings/NU1201.md), [NU1202](./errors-and-warnings/NU1202.md), [NU1203](./errors-and-warnings/NU1203.md), [NU1401](./errors-and-warnings/NU1401.md) |
 | Errores internos de NuGet | [NU1000](./errors-and-warnings/NU1000.md) |
 | Errores de paquetes firmados (creación y comprobación) | [NU3000](./errors-and-warnings/NU3000.md), [NU3001](./errors-and-warnings/NU3001.md), [NU3004](./errors-and-warnings/NU3004.md), [NU3008](./errors-and-warnings/NU3008.md) |
+| Errores de los paquetes | [NU5000](./errors-and-warnings/NU5000.md), [NU5002](./errors-and-warnings/NU5002.md), [NU5003](./errors-and-warnings/NU5003.md), [NU5004](./errors-and-warnings/NU5004.md), [NU5008](./errors-and-warnings/NU5008.md), [NU5009](./errors-and-warnings/NU5009.md), [NU5010](./errors-and-warnings/NU5010.md), [NU5011](./errors-and-warnings/NU5011.md), [NU5012](./errors-and-warnings/NU5012.md), [NU5013](./errors-and-warnings/NU5013.md), [NU5014](./errors-and-warnings/NU5014.md), [NU5015](./errors-and-warnings/NU5015.md), [NU5016](./errors-and-warnings/NU5016.md), [NU5017](./errors-and-warnings/NU5017.md), [NU5018](./errors-and-warnings/NU5018.md), [NU5019](./errors-and-warnings/NU5019.md), [NU5026](./errors-and-warnings/NU5026.md)
 
 **Advertencias**
 
@@ -41,3 +42,4 @@ Los errores y advertencias que se indican aquí sólo están disponibles con [ba
 | Advertencias de fuentes | [NU1801](./errors-and-warnings/NU1801.md) |
 | Advertencias internas de NuGet | [NU1500](./errors-and-warnings/NU1500.md) |
 | Advertencias de paquetes firmados (creación y comprobación) | [NU3002](./errors-and-warnings/NU3002.md), [NU3018](./errors-and-warnings/NU3018.md), [NU3028](./errors-and-warnings/NU3028.md) |
+| Advertencias de módulo | [NU5100](./errors-and-warnings/NU5100.md), [NU5101](./errors-and-warnings/NU5101.md), [NU5115](./errors-and-warnings/NU5115.md), [NU5500](./errors-and-warnings/NU5500.md)

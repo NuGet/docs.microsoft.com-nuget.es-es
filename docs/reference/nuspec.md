@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 142f82386395b8ab2ed1d57218db9bc1d2e98638
-ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
+ms.openlocfilehash: 6d190d9fdb26d76fa8e46b7d283c1857cfab26e9
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843451"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508041"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -27,7 +27,7 @@ En este tema:
 - [Referencias de ensamblado de plataforma](#framework-assembly-references)
 - [Incluir archivos de ensamblado](#including-assembly-files)
 - [Incluir archivos de contenido](#including-content-files)
-- [Ejemplos](#examples)
+- [Archivos de ejemplo de nuspec](#example-nuspec-files)
 
 ## <a name="general-form-and-schema"></a>Esquema y forma general
 
@@ -58,12 +58,6 @@ Para tener una representación visual clara del esquema, abra el archivo de esqu
 
 ### <a name="metadata-attributes"></a>Atributos de metadatos
 
-El elemento `<metadata>` admite los atributos descritos en la tabla siguiente.
-
-| Atributo | Obligatorio | Descripción |
-| --- | --- | --- | 
-| **minClientVersion** | No | Especifica la versión mínima del cliente de NuGet que puede instalar este paquete, aplicada por nuget.exe y el Administrador de paquetes de Visual Studio. Se usa siempre que el paquete depende de características específicas del archivo `.nuspec` que se agregaron en una versión concreta del cliente de NuGet. Por ejemplo, un paquete que usa el atributo `developmentDependency` debería especificar "2.8" para `minClientVersion`. Asimismo, un paquete que usa el elemento `contentFiles` (vea la sección siguiente) debería establecer `minClientVersion` en "3.3". Observe también que, debido a que los clientes de NuGet anteriores a la versión 2.5 no reconocen esta marca, *siempre* rechazan instalar el paquete, independientemente de lo que contenga `minClientVersion`. |
-
 ### <a name="required-metadata-elements"></a>Elementos de metadatos necesarios
 
 Aunque los elementos siguientes son los requisitos mínimos de un paquete, debe plantearse la posibilidad de agregar los [elementos de metadatos opcionales](#optional-metadata-elements) para mejorar la experiencia general que tienen los desarrolladores con el paquete.
@@ -79,39 +73,51 @@ Estos elementos deben aparecer dentro de un elemento `<metadata>`.
 
 ### <a name="optional-metadata-elements"></a>Elementos de metadatos opcionales
 
-Estos elementos pueden aparecer dentro de un elemento `<metadata>`.
+#### <a name="title"></a>título
+Un título fácil de usar del paquete, que se usa normalmente en las visualizaciones de la interfaz de usuario, como en nuget.org, y el Administrador de paquetes de Visual Studio. Si no se especifica, se usa el identificador del paquete. 
+#### <a name="owners"></a>owners
+Lista separada por comas de los creadores del paquete usando nombres de perfil en nuget.org. Suele ser la misma lista que en `authors` y se ignora al cargar el paquete en nuget.org. Vea [Administrar los propietarios de paquetes en nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). 
+#### <a name="projecturl"></a>projectUrl
+Una dirección URL de la página principal del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org. 
+#### <a name="licenseurl"></a>licenseUrl
+Dirección URL de la licencia del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org.
+#### <a name="iconurl"></a>iconUrl
+Dirección URL para una imagen de 64 x 64 con fondo transparente para usarla como icono para el paquete en la visualización de la interfaz de usuario. Asegúrese de que este elemento contiene la *dirección URL directa a la imagen* y no la dirección URL de una página web que contiene la imagen. Por ejemplo, para utilizar una imagen desde GitHub, use el archivo sin formato, como la dirección URL <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
 
-#### <a name="single-elements"></a>Elementos únicos
-
-| Elemento | Descripción |
-| --- | --- |
-| **title** | Un título fácil de usar del paquete, que se usa normalmente en las visualizaciones de la interfaz de usuario, como en nuget.org, y el Administrador de paquetes de Visual Studio. Si no se especifica, se usa el identificador del paquete. |
-| **owners** | Lista separada por comas de los creadores del paquete usando nombres de perfil en nuget.org. Suele ser la misma lista que en `authors` y se ignora al cargar el paquete en nuget.org. Vea [Administrar los propietarios de paquetes en nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). |
-| **projectUrl** | Una dirección URL de la página principal del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org. |
-| **licenseUrl** | Dirección URL de la licencia del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org. |
-| **iconUrl** | Dirección URL para una imagen de 64 x 64 con fondo transparente para usarla como icono para el paquete en la visualización de la interfaz de usuario. Asegúrese de que este elemento contiene la *dirección URL directa a la imagen* y no la dirección URL de una página web que contiene la imagen. Por ejemplo, para utilizar una imagen desde GitHub, use el archivo sin formato, como la dirección URL <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. |
-| **requireLicenseAcceptance** | Valor booleano que especifica si el cliente debe pedir al consumidor que acepte la licencia del paquete antes de instalarlo. |
-| **developmentDependency** | *(2.8+)* Valor booleano que especifica si el paquete se debe marcar como una dependencia de solo desarrollo, que impide que el paquete se incluya como una dependencia en otros paquetes. |
-| **summary** | Descripción breve del paquete para su visualización en la interfaz de usuario. Si se omite, se usará una versión truncada de `description`. |
-| **releaseNotes** | *(1.5+)* Descripción de los cambios efectuados en esta versión del paquete. A menudo se usa en la interfaz de usuario como la pestaña **Actualizaciones** del Administrador de paquetes de Visual Studio, en lugar de la descripción del paquete. |
-| **copyright** | *(1.5+)* Información de copyright del paquete. |
-| **language** | Identificador de configuración regional del paquete. Vea [Creación de paquetes localizados](../create-packages/creating-localized-packages.md). |
-| **tags**  | Lista de etiquetas y palabras clave, delimitadas por espacios, que describen el paquete y ayudan a detectar los paquetes a través de búsquedas y filtrados. |
-| **serviceable** | *(3.3+)* Solo para uso interno de NuGet. |
-| **repositorio** | Repositorio de metadatos, que consta de cuatro atributos opcionales: *tipo* y *url* *(4.0 y versiones posteriores)*, y *rama* y  *confirmación* *(4.6 y versiones posteriores)*. Estos atributos permiten asignar los archivos .nupkg en el repositorio que se crearon, con la posibilidad de obtener tal como se detalla como la rama individual o la confirmación de que se creó el paquete. |
+#### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
+Valor booleano que especifica si el cliente debe pedir al consumidor que acepte la licencia del paquete antes de instalarlo.
+#### <a name="developmentdependency"></a>developmentDependency
+*(2.8+)* Valor booleano que especifica si el paquete se debe marcar como una dependencia de solo desarrollo, que impide que el paquete se incluya como una dependencia en otros paquetes.
+#### <a name="summary"></a>resumen
+Descripción breve del paquete para su visualización en la interfaz de usuario. Si se omite, se usará una versión truncada de `description`.
+#### <a name="releasenotes"></a>releaseNotes
+*(1.5+)* Descripción de los cambios efectuados en esta versión del paquete. A menudo se usa en la interfaz de usuario como la pestaña **Actualizaciones** del Administrador de paquetes de Visual Studio, en lugar de la descripción del paquete.
+#### <a name="copyright"></a>copyright
+*(1.5+)* Información de copyright del paquete.
+#### <a name="language"></a>lenguaje
+Identificador de configuración regional del paquete. Vea [Creación de paquetes localizados](../create-packages/creating-localized-packages.md).
+#### <a name="tags"></a>etiquetas
+Lista de etiquetas y palabras clave, delimitadas por espacios, que describen el paquete y ayudan a detectar los paquetes a través de búsquedas y filtrados. 
+#### <a name="serviceable"></a>posibilidad de mantenimiento 
+*(3.3+)* Solo para uso interno de NuGet.
+#### <a name="repository"></a>repositorio
+Repositorio de metadatos, que consta de cuatro atributos opcionales: *tipo* y *url* *(4.0 y versiones posteriores)*, y *rama* y  *confirmación* *(4.6 y versiones posteriores)*. Estos atributos permiten asignar los archivos .nupkg en el repositorio que se crearon, con la posibilidad de obtener tal como se detalla como la rama individual o la confirmación de que se creó el paquete. Debe ser una dirección url disponible públicamente que se puede invocar directamente mediante un software de control de versión. No debe ser una página html tal como está pensado para el equipo. Para vincular a la página del proyecto, use el `projectUrl` campo, en su lugar. |
+#### <a name="minclientversion"></a>MinClientVersion
+Especifica la versión mínima del cliente de NuGet que puede instalar este paquete, aplicada por nuget.exe y el Administrador de paquetes de Visual Studio. Se usa siempre que el paquete depende de características específicas del archivo `.nuspec` que se agregaron en una versión concreta del cliente de NuGet. Por ejemplo, un paquete que usa el atributo `developmentDependency` debería especificar "2.8" para `minClientVersion`. Asimismo, un paquete que usa el elemento `contentFiles` (vea la sección siguiente) debería establecer `minClientVersion` en "3.3". Observe también que, debido a que los clientes de NuGet anteriores a la versión 2.5 no reconocen esta marca, *siempre* rechazan instalar el paquete, independientemente de lo que contenga `minClientVersion`.
 
 #### <a name="collection-elements"></a>Elementos de colección
 
-| Elemento | Descripción |
-| --- | --- |
-**packageTypes** | *(3.5+)* Colección de cero o más elementos `<packageType>` que especifican el tipo del paquete si es distinto de un paquete de dependencias tradicional. Cada tipo de paquete tiene atributos de *name* y *version*. Vea [Establecimiento de un tipo de paquete](../create-packages/creating-a-package.md#setting-a-package-type). |
-| **dependencies** | Colección de cero o más elementos `<dependency>` que especifican las dependencias del paquete. Cada dependencia tiene atributos de *id*, *version*, *include* (3.x+) y *exclude* (3.x+). Vea [Dependencias](#dependencies) a continuación. |
-| **frameworkAssemblies** | *(1.2+)* Colección de cero o más elementos `<frameworkAssembly>` que identifican las referencias de ensamblado de .NET Framework que requiere este paquete, lo que garantiza que se agreguen las referencias a los proyectos que consumen el paquete. Cada frameworkAssembly tiene atributos *assemblyName* y *targetFramework*. Vea [Referencias de ensamblado de plataforma](#specifying-framework-assembly-references-gac) a continuación. |
-| **references** | *(1.5+)* Colección de cero o más elementos `<reference>` que nombran ensamblados en la carpeta `lib` del paquete que se agregan como referencias de proyecto. Cada referencia tiene un atributo *file*. `<references>` también puede contener un elemento `<group>` con un atributo *targetFramework*, que contiene elementos `<reference>`. Si se omite, se incluyen todas las referencias de `lib`. Vea [Referencias de ensamblado explícitas](#specifying-explicit-assembly-references) a continuación. |
-| **contentFiles** | *(3.3+)* Colección de elementos `<files>` que identifican archivos de contenido que se incluirán en el proyecto de consumo. Estos archivos se especifican con un conjunto de atributos que describen cómo se deben usar en el sistema del proyecto. Vea [Incluir archivos de ensamblado](#specifying-files-to-include-in-the-package) a continuación. |
-
-### <a name="files-element"></a>Files (elemento)
-
+#### <a name="packagetypes"></a>PackageTypes
+*(3.5+)* Colección de cero o más elementos `<packageType>` que especifican el tipo del paquete si es distinto de un paquete de dependencias tradicional. Cada tipo de paquete tiene atributos de *name* y *version*. Vea [Establecimiento de un tipo de paquete](../create-packages/creating-a-package.md#setting-a-package-type).
+#### <a name="dependencies"></a>dependencias
+Colección de cero o más elementos `<dependency>` que especifican las dependencias del paquete. Cada dependencia tiene atributos de *id*, *version*, *include* (3.x+) y *exclude* (3.x+). Vea [Dependencias](#dependencies-element) a continuación.
+#### <a name="frameworkassemblies"></a>frameworkAssemblies
+*(1.2+)* Colección de cero o más elementos `<frameworkAssembly>` que identifican las referencias de ensamblado de .NET Framework que requiere este paquete, lo que garantiza que se agreguen las referencias a los proyectos que consumen el paquete. Cada frameworkAssembly tiene atributos *assemblyName* y *targetFramework*. Vea [Referencias de ensamblado de plataforma](#specifying-framework-assembly-references-gac) a continuación. |
+#### <a name="references"></a>referencias
+*(1.5+)* Colección de cero o más elementos `<reference>` que nombran ensamblados en la carpeta `lib` del paquete que se agregan como referencias de proyecto. Cada referencia tiene un atributo *file*. `<references>` también puede contener un elemento `<group>` con un atributo *targetFramework*, que contiene elementos `<reference>`. Si se omite, se incluyen todas las referencias de `lib`. Vea [Referencias de ensamblado explícitas](#specifying-explicit-assembly-references) a continuación.
+#### <a name="contentfiles"></a>contentFiles
+*(3.3+)* Colección de elementos `<files>` que identifican archivos de contenido que se incluirán en el proyecto de consumo. Estos archivos se especifican con un conjunto de atributos que describen cómo se deben usar en el sistema del proyecto. Vea [Incluir archivos de ensamblado](#specifying-files-to-include-in-the-package) a continuación.
+#### <a name="files"></a>archivos 
 El nodo `<package>` puede contener un nodo `<files>` como un elemento del mismo nivel de `<metadata>`, o un elemento secundario `<contentFiles>` en `<metadata>`, para especificar los archivos de contenido y de ensamblado que se deben incluir en el paquete. Vea las secciones [Incluir archivos de ensamblado](#including-assembly-files) e [Incluir archivos de contenido](#including-content-files), que aparecen más adelante en este tema, para más información.
 
 ## <a name="replacement-tokens"></a>Tokens de reemplazo
@@ -163,7 +169,7 @@ Y compila un ensamblado cuyo `AssemblyName` es `LoggingLibrary` con la configura
 </files>
 ```
 
-## <a name="dependencies"></a>Dependencias
+## <a name="dependencies-element"></a>Elemento de dependencias
 
 El elemento `<dependencies>` dentro de `<metadata>` contiene cualquier número de elementos `<dependency>` que identifican otros paquetes de los que depende el paquete de nivel superior. Los atributos de cada `<dependency>` son los siguientes:
 
@@ -594,7 +600,7 @@ Las carpetas vacías pueden usar `.` para no proporcionar contenido para ciertas
 </contentFiles>
 ```
 
-## <a name="example-nuspec-files"></a>Archivos .nuspec de ejemplo
+## <a name="example-nuspec-files"></a>Archivos de ejemplo de nuspec
 
 **Un archivo `.nuspec` simple que no especifica dependencias ni archivos**
 
