@@ -30,7 +30,7 @@ Puede descargar VSIX y nuget.exe [aquí](https://dist.nuget.org/index.html).
 ### <a name="changes"></a>Cambios
 
 - Mejoras de módulo: Mejoras empaquetado símbolos, empaquetado con `project.json` y más [ \#606](https://github.com/NuGet/NuGet.Client/pull/606)
-- Mostrar excepciones cuando se produce un error de búsqueda de proyectos en el comando de actualización [\#605] ()https://github.com/NuGet/NuGet.Client/pull/605
+- Mostrar excepciones cuando se produce un error de búsqueda de proyectos en el comando de actualización [\#605](https://github.com/NuGet/NuGet.Client/pull/605)
 - Lee el tipo de paquete de la entrada `.nuspec` y `project.json` cuando empaquetado [ \#603](https://github.com/NuGet/NuGet.Client/pull/603)
 - Asegúrese de NuGet.Shared no es un proyecto. [\#602](https://github.com/NuGet/NuGet.Client/pull/602)
 - Usar el tiempo de espera de inserción como el tiempo de espera de la respuesta HTTP [ \#599](https://github.com/NuGet/NuGet.Client/pull/599)
