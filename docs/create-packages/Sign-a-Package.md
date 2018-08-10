@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 9900db1970a89de129d9074e5900e0aa048101de
-ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
+ms.openlocfilehash: 8bbbc785a50e49530bbbd4e88bbd71a8a7bfe911
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/22/2018
-ms.locfileid: "34449609"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508184"
 ---
 # <a name="signing-nuget-packages"></a>Firma de paquetes NuGet
 
@@ -44,7 +44,7 @@ Como se describe en la referencia de comandos, puede usar un certificado disponi
 - El servidor de marca de tiempo no satisface los requisitos de certificado.
 
 > [!Note]
-> Los paquetes firmados deben incluir una marca de tiempo para asegurarse de que la firma es válida cuando ha expirado el certificado de firma. La operación de inicio de sesión genera una [advertencia NU3002](../reference/Errors-and-Warnings.md#nu3002) al iniciar sesión sin una marca de tiempo.
+> Los paquetes firmados deben incluir una marca de tiempo para asegurarse de que la firma es válida cuando ha expirado el certificado de firma. La operación de inicio de sesión genera una [advertencia NU3002](../reference/errors-and-warnings/NU3002.md) al iniciar sesión sin una marca de tiempo.
 
 ## <a name="verify-a-signed-package"></a>Comprobación de un paquete firmado
 
@@ -56,7 +56,7 @@ nuget verify -signature MyPackage.nupkg
 
 ## <a name="install-a-signed-package"></a>Instalación de un paquete firmado
 
-Para instalar paquetes firmados no se necesita ninguna acción específica, pero si el contenido se ha modificado desde que se firmó, la instalación se bloquea y genera un [error NU3008](../reference/Errors-and-Warnings.md#nu3008).
+Para instalar paquetes firmados no se necesita ninguna acción específica, pero si el contenido se ha modificado desde que se firmó, la instalación se bloquea y genera un [error NU3008](../reference/errors-and-warnings/NU3008.md).
 
 > [!Warning]
 > Los paquetes firmados con certificados que no son de confianza se consideran como no firmados y se instalan sin advertencias ni errores como cualquier otro paquete sin firmar.
