@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 61f447877459764906cf9a2b88b32a8bc0553689
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 48930701f1bb5f13718505b85b293f38d37d19fb
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817676"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508353"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
 
@@ -89,7 +89,7 @@ Puede que esté usando una dependencia únicamente como instrumento de desarroll
 
 Las siguientes etiquetas de metadatos controlan los recursos de dependencia:
 
-| Etiqueta | Description | Valor predeterminado |
+| Etiqueta | Descripción | Valor predeterminado |
 | --- | --- | --- |
 | IncludeAssets | Se consumirán estos recursos | todo |
 | ExcludeAssets | No se consumirán estos recursos | ninguna |
@@ -97,7 +97,7 @@ Las siguientes etiquetas de metadatos controlan los recursos de dependencia:
 
 A continuación se muestran los valores permitidos para estas etiquetas, con varios valores separados por un punto y coma, salvo `all` y `none`, que deben aparecer por sí mismos:
 
-| Valor | Description |
+| Valor | Descripción |
 | --- | ---
 | compile | Contenido de la carpeta `lib` y controla si el proyecto se puede compilar con los ensamblados dentro de la carpeta |
 | motor en tiempo de ejecución | Contenido de las carpetas `lib` y `runtimes` y controla si estos ensamblados se copiarán en el directorio de salida de compilación |
@@ -135,12 +135,12 @@ Por ejemplo, imagínese que va a fijar como destino `netstandard1.4` y `net452`,
 ```xml
 <ItemGroup>
     <!-- ... -->
-    <PackageReference Include="Newtonsoft.json" Version="9.0.1" Condition="'$(TargetFramework)' == 'net452'" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" Condition="'$(TargetFramework)' == 'net452'" />
     <!-- ... -->
 </ItemGroup>
 ```
 
-Un paquete creado con este proyecto mostrará que Newtonsoft.json se incluye como dependencia únicamente para un destino `net452`:
+Un paquete creado con este proyecto mostrará que Newtonsoft.Json se incluye como dependencia únicamente para un destino `net452`:
 
 ![El resultado de aplicar una condición en PackageReference con VS2017](media/PackageReference-Condition.png)
 
@@ -149,7 +149,7 @@ Las condiciones también se pueden aplicar a nivel de `ItemGroup` y se aplicará
 ```xml
 <ItemGroup Condition = "'$(TargetFramework)' == 'net452'">
     <!-- ... -->
-    <PackageReference Include="Newtonsoft.json" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
     <!-- ... -->
 </ItemGroup>
