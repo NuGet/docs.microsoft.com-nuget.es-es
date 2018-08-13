@@ -161,6 +161,7 @@
 ## [Metadatos de paquete](api/registration-base-url-resource.md)
 ## [Contenido de paquete](api/package-base-address-resource.md)
 ## [URL de notificación de abuso](api/report-abuse-resource.md)
+## [Firmas de repositorio](api/repository-signatures-resource.md)
 ## [Catálogo](api/catalog-resource.md)
 ## [Límites de velocidad](api/rate-limits.md)
 ## [Protocolos de nuget.org](api/nuget-protocols.md)
