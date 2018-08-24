@@ -1,5 +1,5 @@
 ---
-title: Referencia de marcos de trabajo de destino de NuGet
+title: Referencia de marcos de destino para NuGet
 description: Las referencias de las plataformas de destino de NuGet identifican y aíslan los componentes de un paquete que dependen de la plataforma.
 author: karann-msft
 ms.author: karann
@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 87000ce95ffeef36d9f792e9e8fdad6878488773
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: c9267945b8055b536cf35911c36a066981ef67b6
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818326"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42793302"
 ---
 # <a name="target-frameworks"></a>Versiones de .NET Framework de destino
 
@@ -46,6 +46,9 @@ Los clientes de NuGet admiten las plataformas indicadas en la tabla siguiente. L
 | | | net46 |
 | | | net461 |
 | | | net462 |
+| | | net47 |
+| | | net471 |
+| | | net472 |
 |Microsoft Store (Tienda Windows) | netcore | netcore [netcore45] |
 | | | netcore45 [win, win8] |
 | | | netcore451 [win81] |
@@ -76,6 +79,7 @@ Plataforma universal de Windows | uap | uap [uap10.0] |
 Aplicación .NET core | netcoreapp | netcoreapp1.0 |
 | | | netcoreapp1.1 |
 | | | netcoreapp2.0 |
+| | | netcoreapp2.1 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
@@ -125,7 +129,7 @@ La serie de monikers `dotnet` se debe usar en NuGet 3.3 y en versiones anteriore
 ## <a name="portable-class-libraries"></a>Bibliotecas de clases portables
 
 > [!Warning]
-> **No se recomiendan las PCL**. Aunque se admiten las PCL, los autores de paquetes deben admitir .NET Standard. El estándar para la plataforma de .NET es una evolución del PCLs y representa binario portabilidad entre plataformas, mediante un moniker único que no está vinculado a una biblioteca estática como *portátil-a + b + c* monikers.
+> **No se recomiendan las PCL**. Aunque se admiten las PCL, los autores de paquetes deben admitir .NET Standard. .NET Platform Standard es una evolución de las PCL y representa la portabilidad binaria entre plataformas mediante un moniker único que no está vinculado a una biblioteca estática como *portable-a + b + c* monikers.
 
 Para definir una plataforma de destino que haga referencia a varias plataformas de destino secundarias, use la palabra clave `portable` para prefijar la lista de las plataformas a las que se hace referencia. Evite incluir artificialmente plataformas adicionales que no estén directamente compiladas, ya que puede provocar efectos secundarios imprevistos en esas plataformas.
 

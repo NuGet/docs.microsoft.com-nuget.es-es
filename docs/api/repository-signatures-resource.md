@@ -16,12 +16,12 @@ keywords: Las firmas de repositorio de API de NuGet, nuget.org firma de certific
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 27c572a482fef791f19b3d32e816a41d8dc40b53
-ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
+ms.openlocfilehash: 32dd2ee19261488a2b1b92724095a11ced69ae68
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40020566"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42793209"
 ---
 # <a name="repository-signatures"></a>Firmas de repositorio
 
@@ -59,7 +59,7 @@ El índice de firmas de repositorio contiene dos fragmentos de información:
 
 En la mayoría de los casos, solo se anexará a la lista de certificados. Se debe agregar los nuevos certificados a la lista cuando ha expirado el certificado de firma anterior y el origen del paquete debe empezar a usar un certificado de firma. Si se quita un certificado de la lista, significa que todas las firmas de paquete creadas con el certificado de firma quitado ya no se deben considerar válidas por el cliente. En este caso, la firma del paquete (pero no necesariamente el paquete) no es válido. Una directiva de cliente puede permitir la instalación del paquete como unsigned.
 
-En el caso de revocación de certificados (compromiso de clave p. ej.), se espera el origen del paquete para volver a firmar todos los paquetes firmados por el certificado afectado. Además, el origen del paquete debe quitar el certificado afectado en la lista de certificados de firma.
+En el caso de revocación de certificados (compromiso de clave p. ej.), el origen del paquete debe volver a firmar todos los paquetes firmados por el certificado afectado. Además, el origen del paquete debe quitar el certificado afectado en la lista de certificados de firma.
 
 La siguiente solicitud recupera el índice de las firmas del repositorio.
 

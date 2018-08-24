@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 110d1aa29fc7238f1a82c1a81ec6431dfe437420
-ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
+ms.openlocfilehash: 922243050dd32a960d5348f9bb3125d0f6a226fb
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40020458"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42793246"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -63,7 +63,9 @@ Aunque los elementos siguientes son los requisitos mínimos de un paquete, debe 
 Estos elementos deben aparecer dentro de un elemento `<metadata>`.
 
 #### <a name="id"></a>id 
-El identificador del paquete que no distingue entre mayúsculas y minúsculas, que debe ser único en nuget.org o en cualquier galería en la que resida el paquete. Los identificadores no pueden contener espacios ni caracteres no válidos para una dirección URL y normalmente seguirán las reglas de espacios de nombres de .NET. Vea [Choosing a unique package identifier](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number) (Elegir un identificador de paquete único) para obtener instrucciones. ### versión de la versión del paquete, siguiendo la *principal.secundaria.revisión* patrón. Los números de versión pueden incluir un sufijo de versión preliminar, tal y como se describe en [Control de versiones de paquetes](../reference/package-versioning.md#pre-release-versions). 
+El identificador del paquete que no distingue entre mayúsculas y minúsculas, que debe ser único en nuget.org o en cualquier galería en la que resida el paquete. Los identificadores no pueden contener espacios ni caracteres no válidos para una dirección URL y normalmente seguirán las reglas de espacios de nombres de .NET. Vea [Choosing a unique package identifier](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number) (Elegir un identificador de paquete único) para obtener instrucciones.
+#### <a name="version"></a>version
+La versión del paquete, siguiendo el patrón *mayor.menor.revisión*. Los números de versión pueden incluir un sufijo de versión preliminar, tal y como se describe en [Control de versiones de paquetes](../reference/package-versioning.md#pre-release-versions). 
 #### <a name="description"></a>Descripción
 Una descripción larga del paquete para su visualización en la interfaz de usuario. 
 #### <a name="authors"></a>authors
@@ -99,7 +101,7 @@ Lista de etiquetas y palabras clave, delimitadas por espacios, que describen el 
 #### <a name="serviceable"></a>posibilidad de mantenimiento 
 *(3.3+)* Solo para uso interno de NuGet.
 #### <a name="repository"></a>repositorio
-Repositorio de metadatos, que consta de cuatro atributos opcionales: *tipo* y *url* *(4.0 y versiones posteriores)*, y *rama* y *confirmación* *(4.6 y versiones posteriores)*. Estos atributos permiten asignar los archivos .nupkg en el repositorio que se crearon, con la posibilidad de obtener tal como se detalla como la rama individual o la confirmación de que se creó el paquete. Debe ser una dirección url disponible públicamente que se puede invocar directamente mediante un software de control de versión. No debe ser una página html tal como está pensado para el equipo. Para vincular a la página del proyecto, use el `projectUrl` campo, en su lugar. |
+Repositorio de metadatos, que consta de cuatro atributos opcionales: *tipo* y *url* *(4.0 y versiones posteriores)*, y *rama* y  *confirmación* *(4.6 y versiones posteriores)*. Estos atributos permiten asignar los archivos .nupkg en el repositorio que se crearon, con la posibilidad de obtener tal como se detalla como la rama individual o la confirmación de que se creó el paquete. Debe ser una dirección url disponible públicamente que se puede invocar directamente mediante un software de control de versión. No debe ser una página html tal como está pensado para el equipo. Para vincular a la página del proyecto, use el `projectUrl` campo, en su lugar.
 
 #### <a name="minclientversion"></a>MinClientVersion
 Especifica la versión mínima del cliente de NuGet que puede instalar este paquete, aplicada por nuget.exe y el Administrador de paquetes de Visual Studio. Se usa siempre que el paquete depende de características específicas del archivo `.nuspec` que se agregaron en una versión concreta del cliente de NuGet. Por ejemplo, un paquete que usa el atributo `developmentDependency` debería especificar "2.8" para `minClientVersion`. Asimismo, un paquete que usa el elemento `contentFiles` (vea la sección siguiente) debería establecer `minClientVersion` en "3.3". Observe también que, debido a que los clientes de NuGet anteriores a la versión 2.5 no reconocen esta marca, *siempre* rechazan instalar el paquete, independientemente de lo que contenga `minClientVersion`.
@@ -176,8 +178,8 @@ El elemento `<dependencies>` dentro de `<metadata>` contiene cualquier número d
 | --- | --- |
 | `id` | (Obligatorio) El identificador de paquete de la dependencia, como "EntityFramework" y "NUnit", que es el nombre del paquete nuget.org que se muestra en una página del paquete. |
 | `version` | (Obligatorio) Intervalo de versiones aceptable como dependencia. Vea [Control de versiones de paquetes](../reference/package-versioning.md#version-ranges-and-wildcards) para consultar la sintaxis exacta. |
-| include | Lista delimitada por comas de etiquetas de inclusión/exclusión (vea más abajo) que indican la dependencia que se va a incluir en el paquete final. El valor predeterminado es `none`. |
-| exclude | Lista delimitada por comas de etiquetas de inclusión/exclusión (vea más abajo) que indican la dependencia que se va a excluir en el paquete final. El valor predeterminado es `all`. Las etiquetas especificadas con `exclude` tienen prioridad sobre las que se especifican con `include`. Por ejemplo, `include="runtime, compile" exclude="compile"` es lo mismo que `include="runtime"`. |
+| include | Lista delimitada por comas de etiquetas de inclusión/exclusión (vea más abajo) que indican la dependencia que se va a incluir en el paquete final. El valor predeterminado es `all`. |
+| exclude | Lista delimitada por comas de etiquetas de inclusión/exclusión (vea más abajo) que indican la dependencia que se va a excluir en el paquete final. El valor predeterminado es `build,analyzers` que puede que se sobrescriban. Pero `content/ ContentFiles` implícitamente también se excluyen en el paquete final que no se sobrescribe. Las etiquetas especificadas con `exclude` tienen prioridad sobre las que se especifican con `include`. Por ejemplo, `include="runtime, compile" exclude="compile"` es lo mismo que `include="runtime"`. |
 
 | Etiqueta Include o Exclude | Carpetas afectadas del destino |
 | --- | --- |

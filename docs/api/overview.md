@@ -7,12 +7,12 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: fe843a121e2f1aae376f3e30a7b911792057688f
-ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
+ms.openlocfilehash: 0cb40a640a0bab63a63b3b690a34f1f8cbf7fcb8
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40020536"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42793183"
 ---
 # <a name="nuget-api"></a>API de NuGet
 
@@ -21,6 +21,8 @@ La API de NuGet es un conjunto de puntos de conexión HTTP que puede usarse para
 Esta API se usa por el cliente de NuGet en Visual Studio, nuget.exe y la CLI de .NET para realizar operaciones de NuGet como [ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore), búsqueda en la IU de Visual Studio, y [ `nuget.exe push` ](../tools/cli-ref-push.md).
 
 Tenga en cuenta que en algunos casos, nuget.org tiene requisitos adicionales que no se aplican por otros orígenes de paquetes. Estas diferencias se documentan por la [protocolos de nuget.org](nuget-protocols.md).
+
+Para una enumeración sencilla y descarga de versiones de nuget.exe disponibles, consulte el [tools.json](tools-json.md) punto de conexión.
 
 ## <a name="service-index"></a>Índice de servicio
 
