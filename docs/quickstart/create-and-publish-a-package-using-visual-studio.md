@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 05/18/2018
 ms.topic: quickstart
-ms.openlocfilehash: e97773d79b22db1f08d868190895a9417b12c924
-ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
+ms.openlocfilehash: af6e6e015f2e4adccd99171abb37e7291551351c
+ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37963092"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42794104"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
 
@@ -149,6 +149,26 @@ Este paso es una alternativa al uso de `nuget.exe`.
 ### <a name="manage-the-published-package"></a>Administrar el paquete publicado
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
+
+## <a name="adding-a-readme-and-other-files"></a>Adición de un archivo Léame y otros archivos
+
+Para especificar directamente los archivos que quiere incluir en el paquete, edite el archivo del proyecto y use la propiedad `content`:
+
+```xml
+<ItemGroup>
+  <Content Include="readme.txt">
+    <Pack>true</Pack>
+    <PackagePath>\</PackagePath>
+  </Content>
+</ItemGroup>
+```
+
+De este modo, se incluirá un archivo denominado `readme.txt` en la raíz del paquete. Visual Studio muestra el contenido de ese archivo como texto sin formato inmediatamente después de instalar el paquete directamente. (Los archivos Léame no se muestran para paquetes instalados como dependencias). Por ejemplo, este es el aspecto del archivo Léame para el paquete HtmlAgilityPack:
+
+![La presentación de un archivo Léame para un paquete NuGet tras la instalación](../create-packages/media/Create_01-ShowReadme.png)
+
+> [!Note]
+> Si simplemente agrega el archivo Léame.txt en la raíz del proyecto, no se incluirá en el paquete resultante.
 
 ## <a name="related-topics"></a>Temas relacionados
 
