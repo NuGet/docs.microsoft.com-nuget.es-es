@@ -1,23 +1,22 @@
 ---
-title: Comando config de NuGet CLI
+title: Comando de CLI de NuGet config
 description: Referencia para el comando config de nuget.exe
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 9deab9fcca740ea99da61b7d54700a29c1813e88
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 376b69186ad22d4d94a1df51146b833a1f6f9bd9
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818170"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546483"
 ---
-# <a name="config-command-nuget-cli"></a>comando config (NuGet CLI)
+# <a name="config-command-nuget-cli"></a>comando config (CLI de NuGet)
 
-**Se aplica a:** todos los &bullet; **versiones compatibles**: todos los
+**Se aplica a:** todas &bullet; **versiones compatibles de**: todas
 
-Obtiene o establece los valores de configuración de NuGet. Para uso adicionales, consulte [configuración de comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md). Para obtener información detallada sobre los nombres de clave permitidos, consulte la [referencia del archivo de configuración de NuGet](../reference/nuget-config-file.md).
+Obtiene o establece los valores de configuración de NuGet. Para el uso adicional, consulte [configuración del comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md). Para más información sobre los nombres de clave permitidos, consulte el [referencia del archivo de configuración de NuGet](../reference/nuget-config-file.md).
 
 ## <a name="usage"></a>Uso
 
@@ -26,21 +25,21 @@ nuget config -Set <name>=[<value>] [<name>=<value> ...] [options]
 nuget config -AsPath <name> [options]
 ```
 
-donde `<name>` y `<value>` especificar un par clave-valor que se establecerán en la configuración. Puede especificar tantos pares según sea necesario. Para quitar un valor, especifique el nombre y la `=` inicio de sesión, pero ningún valor.
+donde `<name>` y `<value>` especificar un par de clave y valor debe establecerse en la configuración. Puede especificar tantos pares según sea necesario. Para quitar un valor, especifique el nombre y la `=` inicio de sesión, pero ningún valor.
 
-Para los nombres de clave permitidos, consulte la [referencia del archivo de configuración de NuGet](../reference/nuget-config-file.md).
+Para los nombres de clave permitidos, consulte el [referencia del archivo de configuración de NuGet](../reference/nuget-config-file.md).
 
-En NuGet 3.4 o superior, `<value>` puede usar [variables de entorno](cli-ref-environment-variables.md).
+En NuGet 3.4 y versiones posteriores, `<value>` puede usar [variables de entorno](cli-ref-environment-variables.md).
 
 ## <a name="options"></a>Opciones
 
 | Opción | Descripción |
 | --- | --- |
 | AsPath | Devuelve el valor de la configuración como una ruta de acceso, se omite cuando `-Set` se utiliza. |
-| ConfigFile | El archivo de configuración de NuGet para modificar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux) se utiliza.|
-| ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
+| ConfigFile | El archivo de configuración para modificar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) se utiliza.|
+| ForceEnglishOutput | *(3.5 y versiones posteriores)*  Fuerza nuget.exe se ejecute con una referencia cultural invariable, en inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |
-| No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
+| No interactivo | Suprime los mensajes para confirmaciones o intervención del usuario. |
 | Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)

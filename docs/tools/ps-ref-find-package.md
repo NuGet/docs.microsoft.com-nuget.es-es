@@ -1,23 +1,22 @@
 ---
-title: Referencia de PowerShell de NuGet Find-Package
+title: Referencia de PowerShell de Find-paquete de NuGet
 description: Referencia de comandos de PowerShell de Find-Package en la consola de administrador de paquetes de NuGet en Visual Studio.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 6/1/2017
 ms.topic: reference
-ms.openlocfilehash: ebecb3818c063d11a2d613a85e2b7baef649dee6
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: c6797e3778c7095a9abfc6cd87e2337313988c20
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816928"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550983"
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>Find-Package (Consola del Administrador de paquetes en Visual Studio)
 
-*Versión 3.0 +; Este tema describe el comando dentro de la [NuGet Package Manager Console](package-manager-console.md) en Visual Studio en Windows. Para el comando de PowerShell Find-Package genérico, vea la [referencia de PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
+*Versión 3.0 o superior; Este tema describe el comando dentro de la [NuGet Package Manager Console](package-manager-console.md) en Visual Studio en Windows. El comando de PowerShell Find-Package genérico, vea el [referencia de PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
 
-Obtiene el conjunto de paquetes remotos con especificado Id. o palabras clave del origen del paquete.
+Obtiene el conjunto de paquetes remotos con el identificador especificado o palabras clave del origen del paquete.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -30,20 +29,20 @@ Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
 
 | Parámetro | Descripción |
 | --- | --- |
-| Id. de &lt;palabras clave&gt; | (Obligatorio) Palabras clave que se usará al buscar el origen del paquete. Utilice - ExactMatch para devolver solo los paquetes cuyo Id. de paquete coincide con las palabras clave. Si no se especifica ninguna palabra clave, `Find-Package` devuelve una lista de los primeros 20 paquetes descargas o el número especificada por - primero. Tenga en cuenta que - Id. es opcional y una operación inefectiva. |
-| Origen | La ruta de acceso URL o una carpeta de origen del paquete para buscar. Las rutas de acceso de la carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Find-Package` busca en el origen del paquete seleccionado. |
+| Id. de &lt;palabras clave&gt; | (Obligatorio) Palabras clave pueden usarse al buscar el origen del paquete. Utilice - ExactMatch para devolver solo los paquetes cuyo identificador de paquete coincide con las palabras clave. Si no se especifica ninguna palabra clave, `Find-Package` devuelve una lista de los primeros 20 paquetes por descarga o el número especificada por - primero. Tenga en cuenta que - Id. es opcional y una operación inefectiva. |
+| Origen | La ruta de acceso URL o carpeta para buscar el origen del paquete. Las rutas de acceso de carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Find-Package` busca el origen del paquete seleccionado actualmente. |
 | AllVersions | Muestra todas las versiones disponibles de cada paquete en lugar de solo la versión más reciente. |
-| First | El número de paquetes que se va a devolver desde el principio de la lista; el valor predeterminado es 20. |
+| First | El número de paquetes que se devolverán desde el principio de la lista. el valor predeterminado es 20. |
 | Skip | Omite la primera &lt;int&gt; paquetes en la lista mostrada.  |
 | IncludePrerelease | Incluye paquetes de versión preliminar en los resultados. |
 | ExactMatch | Especificado para usar &lt;palabras clave&gt; como un identificador del paquete distingue mayúsculas de minúsculas. |
-| StartWith | Devuelve paquetes cuyo paquete identificador comienza con &lt;palabras clave&gt;. |
+| StartWith | Devuelve los paquetes cuyo paquete ID comienza con &lt;palabras clave&gt;. |
 
-Ninguno de estos parámetros aceptan caracteres de entrada o el carácter comodín de canalización.
+Ninguno de estos parámetros aceptan caracteres comodín o de entrada de canalización.
 
 ## <a name="common-parameters"></a>Parámetros comunes
 
-`Find-Package` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): depuración, acción de Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, detallado, WarningAction y WarningVariable.
+`Find-Package` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction y WarningVariable.
 
 ## <a name="examples"></a>Ejemplos
 

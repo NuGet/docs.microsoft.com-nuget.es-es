@@ -1,27 +1,19 @@
 ---
 title: Las firmas de repositorio, API de NuGet | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
-manager: skofman
+author: joelverhagen
+ms.author: jver
 ms.date: 3/2/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
 description: El recurso de firmas de repositorio permite a los clientes los orígenes de paquetes anunciar su repositorio de funciones de firma.
-keywords: Las firmas de repositorio de API de NuGet, nuget.org firma de certificados, la firma del paquete de nuget.org
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 32dd2ee19261488a2b1b92724095a11ced69ae68
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 50f309b99d4bf59e14f3e29b6b0421d8c3e8aa5a
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42793209"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547986"
 ---
 # <a name="repository-signatures"></a>Firmas de repositorio
 

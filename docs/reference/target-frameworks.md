@@ -3,16 +3,15 @@ title: Referencia de marcos de destino para NuGet
 description: Las referencias de las plataformas de destino de NuGet identifican y aíslan los componentes de un paquete que dependen de la plataforma.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: c9267945b8055b536cf35911c36a066981ef67b6
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 047ede14c7935844cb4f6d0315772c2a1190e5b8
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42793302"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547264"
 ---
 # <a name="target-frameworks"></a>Versiones de .NET Framework de destino
 

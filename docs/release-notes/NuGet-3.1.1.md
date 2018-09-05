@@ -1,21 +1,20 @@
 ---
 title: Notas de la versión de NuGet 3.1.1
-description: Notas de la versión de NuGet 3.1.1 incluidos problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
+description: Notas de la versión para incluir NuGet 3.1.1 conocen problemas, correcciones de errores, características agregadas y dcr.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 2ad5ed0da91f52ec4a5072a4001bd2e3e3679a5d
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: c0e822b6045ba0467fc9c88b661b8f88cfb8aa16
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31819221"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550309"
 ---
 # <a name="nuget-311-release-notes"></a>Notas de la versión de NuGet 3.1.1
 
-[Notas de la versión de NuGet 3.1](../release-notes/nuget-3.1.md) | [notas de la versión 3.2 RC de NuGet](../release-notes/nuget-3.2-RC.md)
+[Notas de la versión de NuGet 3.1](../release-notes/nuget-3.1.md) | [NuGet 3.2 RC notas](../release-notes/nuget-3.2-RC.md)
 
-NuGet 3.1.1 se publicó el 27 de julio de 2015 como una revisión de actualización al VSIX 3.1 con corrección específica de un error que realiza la implementación de directivas de Powershell.
+NuGet 3.1.1 se lanzó el 27 de julio de 2015 como una revisión de actualizar a la 3.1 VSIX con corrección específico a un error que se efectúe la implementación de directivas de Powershell.
 [https://github.com/NuGet/Home/issues/974](https://github.com/NuGet/Home/issues/974)

@@ -1,23 +1,22 @@
 ---
-title: NuGet CLI agregar (comando)
-description: Referencia para el nuget.exe agregar (comando)
+title: CLI de NuGet Agregar comando
+description: Referencia de nuget.exe Agregar comando
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: f229ca100463c556f9c4cefc49f52724a9c4ba77
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 7a72186e1dece082cd200a03849a0b12c751a645
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817615"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43545839"
 ---
 # <a name="add-command-nuget-cli"></a>Comando add (CLI de NuGet)
 
-**Se aplica a**: paquete de publicación &bullet; **versiones compatibles**: 3.3 +
+**Se aplica a**: publicación del paquete &bullet; **versiones compatibles de**: 3.3 +
 
-Agrega un paquete específico a un origen de paquete no son HTTP (una carpeta o ruta de acceso UNC) en un formato jerárquico y en el que se crean las carpetas para el número de identificador y la versión del paquete. Por ejemplo:
+Agrega un paquete específico a un origen de paquete que no sean HTTP (una carpeta o ruta de acceso UNC) en formato jerárquico, en la que se crean las carpetas para el número de identificador y la versión del paquete. Por ejemplo:
 
     \\myserver\packages
       └─<packageID>
@@ -28,7 +27,7 @@ Agrega un paquete específico a un origen de paquete no son HTTP (una carpeta o 
 
 Al restaurar o actualizar en el origen del paquete, formato jerárquico proporciona un rendimiento significativamente mejor.
 
-Para expandir todos los archivos en el paquete en el origen del paquete de destino, use el `-Expand` cambiar. Normalmente esto tiene como resultado en subcarpetas adicionales que aparecen en el destino, como `tools` y `lib`.
+Para expandir todos los archivos en el paquete al origen del paquete de destino, use el `-Expand` cambie. Esto normalmente da como resultado de las subcarpetas adicionales que aparecen en el destino, como `tools` y `lib`.
 
 ## <a name="usage"></a>Uso
 
@@ -36,17 +35,17 @@ Para expandir todos los archivos en el paquete en el origen del paquete de desti
 nuget add <packagePath> -Source <sourcePath> [options]
 ```
 
-donde `<packagePath>` es la ruta de acceso al paquete que se agregará y `<sourcePath>` especifica el origen del paquete basada en la carpeta a la que se agregará el paquete. No se admiten orígenes HTTP.
+donde `<packagePath>` es la ruta de acceso al paquete para agregar, y `<sourcePath>` especifica el origen del paquete basada en la carpeta a la que se agregará el paquete. No se admiten orígenes de HTTP.
 
 ## <a name="options"></a>Opciones
 
 | Opción | Descripción |
 | --- | --- |
-| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux) se utiliza.|
+| ConfigFile | El archivo de configuración para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) se utiliza.|
 | Expand | Agrega todos los archivos en el paquete en el origen del paquete. |
-| ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
+| ForceEnglishOutput | *(3.5 y versiones posteriores)*  Fuerza nuget.exe se ejecute con una referencia cultural invariable, en inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |
-| No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
+| No interactivo | Suprime los mensajes para confirmaciones o intervención del usuario. |
 | Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)

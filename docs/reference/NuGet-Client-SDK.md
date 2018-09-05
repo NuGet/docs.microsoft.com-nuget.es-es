@@ -3,15 +3,14 @@ title: SDK de cliente de NuGet
 description: La API está en constante evolución y no ha documentado, pero los ejemplos están disponibles en el blog de Dave Glick.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: f814b0c0e7fac719e4221a8d8e945de703348aba
-ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
+ms.openlocfilehash: 8e612d9f86bcffc99870c5541aa6091e678db512
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39508067"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547094"
 ---
 # <a name="nuget-client-sdk"></a>SDK de cliente de NuGet
 

@@ -1,29 +1,28 @@
 ---
-title: Comando de actualización de NuGet CLI
-description: Referencia para el comando de actualización nuget.exe
+title: Comando de actualización de la CLI de NuGet
+description: Referencia del comando de actualización de nuget.exe
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 39e269b10a0cf144d5971d2af9f82a606e0b6904
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: fc34550b3669d83466318645987cfd3078bc3c18
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817712"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43545105"
 ---
 # <a name="update-command-nuget-cli"></a>Comando update (CLI de NuGet)
 
-**Se aplica a:** paquete consumo &bullet; **versiones admitidas:** todos
+**Se aplica a:** consumo de paquetes &bullet; **versiones compatibles:** todas
 
-Actualiza todos los paquetes en un proyecto (mediante `packages.config`) a sus versiones más recientes disponibles. Se recomienda ejecutar ['restore'](cli-ref-restore.md) antes de ejecutar el `update`. (Para actualizar un paquete individual, utilice [ `nuget install` ](cli-ref-install.md) sin especificar un número de versión, en el que NuGet mayúscula instala la versión más reciente.)
+Actualiza todos los paquetes en un proyecto (mediante `packages.config`) a sus versiones más recientes. Se recomienda ejecutar ['restore'](cli-ref-restore.md) antes de ejecutar el `update`. (Para actualizar un paquete individual, use [ `nuget install` ](cli-ref-install.md) sin especificar un número de versión, en el que caso NuGet instala la versión más reciente.)
 
-Nota: `update` no funciona con la CLI ejecutando bajo Mono (Mac OSX o Linux) o cuando se usa el formato PackageReference.
+Nota: `update` no funciona con la CLI que se ejecuta en Mono (Mac OSX o Linux) o cuando se usa el formato PackageReference.
 
-El `update` comando también actualiza las referencias de ensamblado en el archivo de proyecto, proporcionado por las que hace referencia ya existe. Si un paquete actualizado no tiene un ensamblado agregado, es una nueva referencia *no* agregado. También nuevas dependencias de paquete no tienen sus referencias de ensamblado agregados. Para incluir estas operaciones como parte de una actualización, actualice el paquete en Visual Studio mediante la UI del Administrador de paquetes o la consola de administrador de paquetes.
+El `update` comando también actualiza las referencias de ensamblado en el archivo de proyecto, siempre que los que hace referencia ya existe. Si un paquete actualizado tiene un ensamblado se ha agregado, es una nueva referencia *no* agregado. También nuevas dependencias de paquete no tienen sus referencias de ensamblado agregados. Para incluir estas operaciones como parte de una actualización, actualice el paquete en Visual Studio mediante la UI de administrador de paquetes o la consola de administrador de paquetes.
 
-Este comando también puede utilizarse para actualizar nuget.exe propio mediante el *-self* marca.
+Este comando también se puede usar para actualizar nuget.exe propio mediante el *-self* marca.
 
 ## <a name="usage"></a>Uso
 
@@ -31,25 +30,25 @@ Este comando también puede utilizarse para actualizar nuget.exe propio mediante
 nuget update <configPath> [options]
 ```
 
-donde `<configPath>` identifica ya sea un `packages.config` o un archivo de solución que enumera las dependencias del proyecto.
+donde `<configPath>` identifica ya sea un `packages.config` o archivo de solución que se enumera las dependencias del proyecto.
 
 ## <a name="options"></a>Opciones
 
 | Opción | Descripción |
 | --- | --- |
-| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux) se utiliza.|
-| FileConflictAction | Especifica la acción que se realizará cuando se le pregunte para sobrescribir u omitir los archivos existentes al que hace referencia el proyecto. Los valores son *sobrescribir, omitir, ninguno*. |
-| ForceEnglishOutput | *(3.5 +)*  Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
+| ConfigFile | El archivo de configuración para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) se utiliza.|
+| FileConflictAction | Especifica la acción que se realizará cuando se le pida sobrescribir u omitir los archivos existentes que se hace referencia el proyecto. Los valores son *sobrescribir, omitir ninguno*. |
+| ForceEnglishOutput | *(3.5 y versiones posteriores)*  Fuerza nuget.exe se ejecute con una referencia cultural invariable, en inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |
-| Id. | Especifica una lista de identificadores para la actualización de paquete. |
-| MSBuildPath | *(4.0 +)*  Especifica la ruta de acceso de MSBuild para usar con el comando, tiene prioridad sobre `-MSBuildVersion`. |
-| MSBuildVersion | *(3.2 +)*  Especifica la versión de MSBuild que se utilizará con este comando. Valores admitidos son 4, 12, 14, 15. De forma predeterminada, se seleccionará el MSBuild en la ruta de acceso, en caso contrario, valor predeterminado es la última versión instalada de MSBuild. |
-| No interactivo | Suprime los mensajes para la entrada de usuario o confirmaciones. |
+| Id. | Especifica una lista de identificadores para la actualización del paquete. |
+| MSBuildPath | *(4.0 y versiones posteriores)*  Especifica la ruta de acceso de MSBuild que use con el comando, tiene prioridad sobre `-MSBuildVersion`. |
+| MSBuildVersion | *(3.2 y versiones posteriores)*  Especifica la versión de MSBuild que se usará con este comando. Los valores admitidos son 4, 12, 14, 15. De forma predeterminada que se selecciona la versión de MSBuild en su ruta de acceso, en caso contrario, el valor predeterminado es la última versión instalada de MSBuild. |
+| No interactivo | Suprime los mensajes para confirmaciones o intervención del usuario. |
 | Versión preliminar | Permite la actualización a las versiones preliminares. Esta marca no es necesaria al actualizar paquetes de versión preliminar que ya están instalados. |
 | RepositoryPath | Especifica la carpeta local donde están instalados los paquetes. |
-| Seguridad de | Especifica que solo se actualiza con la versión más reciente disponible dentro de la misma versión principal y secundaria tal y como se instalará el paquete instalado. |
-| En sí mismo | Nuget.exe actualizaciones a la versión más reciente; todos los demás argumentos se pasan por alto. |
-| Origen | Especifica la lista de orígenes de paquetes (como las direcciones URL) para utilizar para las actualizaciones. Si se omite, el comando utiliza los orígenes proporcionados en archivos de configuración, consulte [NuGet configurar comportamiento](../consume-packages/configuring-nuget-behavior.md). |
+| Safe | Especifica que sólo actualiza con la versión más alta disponible dentro de la misma versión principal y secundaria que se instalará el paquete instalado. |
+| Self | Nuget.exe actualizaciones a la versión más reciente; todos los demás argumentos se pasan por alto. |
+| Origen | Especifica la lista de orígenes de paquetes (como las direcciones URL) para las actualizaciones. Si se omite, el comando usa los orígenes proporcionados en los archivos de configuración, consulte [del comportamiento de configuración de NuGet](../consume-packages/configuring-nuget-behavior.md). |
 | Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 | Versión | Cuando se usa con un Id. de paquete, especifica la versión del paquete para actualizar. |
 

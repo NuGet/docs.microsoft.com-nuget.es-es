@@ -1,28 +1,27 @@
 ---
 title: Notas de la versión de NuGet 3.4.1
-description: Notas de la versión de NuGet 3.4.1 incluidos problemas conocidos, correcciones de errores, las funciones agregadas y dcr.
+description: Notas de la versión para incluir NuGet 3.4.1 conocen problemas, correcciones de errores, características agregadas y dcr.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: d492afc59fe2f9237aaf54dca56e09f9148a0dcf
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: e3f90646149b6a1a0e6a2639979110fb779d973c
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31819250"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547562"
 ---
 # <a name="nuget-341-release-notes"></a>Notas de la versión de NuGet 3.4.1
 
 [Notas de la versión de NuGet 3.4](../release-notes/nuget-3.4.md) | [notas de la versión de NuGet 3.4.2](../release-notes/nuget-3.4.2.md)
 
-NuGet 3.4.1 se publicó el 30 de marzo de 2016 al mismo tiempo como Visual Studio 2015 Update 2 y lanzamiento de Visual Studio 15 Preview soluciona algunos problemas que se identificaron en la versión 3.4.
+NuGet 3.4.1 se lanzó el 30 de marzo de 2016 al mismo tiempo como de Visual Studio 2015 Update 2 y Visual Studio 15 Preview versión soluciona algunos problemas que se han identificado en la versión 3.4.
 
 ## <a name="updates-and-improvements"></a>Actualizaciones y mejoras
 
-* Corregido un problema que impedía que examinar los paquetes de la interfaz de usuario de Visual Studio con una instalación mínima de Visual Studio
-* Se ha corregido un problema con la ubicación de Visual Studio `lucene.net.dll`
-* Todos los orígenes no deben ser el origen del repositorio predeterminado después de una extensión de NuGet instalar o actualizar.  Puede participar en esta característica de las opciones de configuración.
+* Se ha corregido un problema que impedía la exploración de paquetes de la interfaz de usuario de Visual Studio con una instalación mínima de Visual Studio
+* Se ha corregido un problema con la búsqueda de Visual Studio `lucene.net.dll`
+* Todos los orígenes no deben ser el origen del repositorio predeterminado después de una extensión de NuGet, instalar o actualizar.  Puede participar en esta característica de las opciones de configuración.
 
 Seguimos realizar el seguimiento de problemas en nuestra lista de problemas de GitHub que se encuentra en: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)

@@ -1,26 +1,25 @@
 ---
-title: NuGet CLI comprobar comando
-description: Comprobar la referencia para el nuget.exe comando
+title: Comando de comprobación de la CLI de NuGet
+description: Referencia de nuget.exe comprobar comandos
 author: dtivel
 ms.author: dtivel
-manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: c80334104f7d8b2ccbf16ea2c11dc37b39408eeb
-ms.sourcegitcommit: c8485dc61469511485367d2067b97d6f74b49f6e
+ms.openlocfilehash: 127f7a549c0a213f319c8820293646b302830436
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34462857"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43545218"
 ---
 # <a name="verify-command-nuget-cli"></a>Comando verify (CLI de NuGet)
 
-**Se aplica a:** paquete consumo &bullet; **versiones admitidas:** 4.6 +
+**Se aplica a:** consumo de paquetes &bullet; **versiones compatibles:** 4.6 +
 
 Comprueba un paquete.
 
-Comprobación de paquetes firmados no se admite todavía en .NET Core, en Mono o en plataformas distintas de Windows.
+Comprobación de paquetes firmados no se admite todavía en .NET Core, en Mono, o bien en plataformas que no sean Windows.
 
 ## <a name="usage"></a>Uso
 
@@ -28,28 +27,28 @@ Comprobación de paquetes firmados no se admite todavía en .NET Core, en Mono o
 nuget verify <-All|-Signatures> <package(s)> [options]
 ```
 
-donde `<package(s)>` es uno o más `.nupkg` archivos.
+donde `<package(s)>` consta de uno o más `.nupkg` archivos.
 
-## <a name="nuget-verify--all"></a>Compruebe de NuGet - todas
+## <a name="nuget-verify--all"></a>comprobar NuGet - todo
 
-Especifica que se deben realizar todas las comprobaciones de posibles en los paquetes.
+Especifica que se deben realizar comprobaciones de todos los posibles en los paquetes.
 
-## <a name="nuget-verify--signatures"></a>NuGet comprobar - firmas
+## <a name="nuget-verify--signatures"></a>NuGet compruebe - firmas
 
-Especifica que se debe realizar la comprobación de firmas de paquete.
+Especifica que se debe realizar la comprobación de firma del paquete.
 
-## <a name="options-for-verify--signatures"></a>Opciones para "comprobar - firmas"
+## <a name="options-for-verify--signatures"></a>Opciones de "comprobar - firmas"
 
 | Opción | Descripción |
 | --- | --- |
-| CertificateFingerprint | Especifica uno o más SHA-256 certificado las huellas digitales de certificados (s) de los paquetes con firma deben estar firmados con. Una huella digital del certificado SHA-256 es un hash SHA-256 del certificado. Varias entradas deben ser separado de punto y coma. |
+| CertificateFingerprint | Especifica uno o más SHA-256 certificado huellas digitales de certificados (s) de los paquetes firmados deben firmarse con. Una huella digital de certificado SHA-256 es un hash SHA-256 del certificado. Varias entradas deben estar separada de punto y coma. |
 
 ## <a name="options"></a>Opciones
 
 | Opción | Descripción |
 | --- | --- |
-| ConfigFile | El archivo de configuración de NuGet para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac o Linux) se utiliza.|
-| ForceEnglishOutput | Fuerza nuget.exe ejecutándose con una referencia cultural invariable, basados en el inglés. |
+| ConfigFile | El archivo de configuración para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) se utiliza.|
+| ForceEnglishOutput | Obliga a nuget.exe para ejecutarse con una referencia cultural invariable, en inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |
 | Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 

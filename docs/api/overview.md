@@ -3,16 +3,15 @@ title: Información general de la API de NuGet
 description: La API de NuGet es un conjunto de puntos de conexión HTTP que puede usarse para descargar los paquetes, capturar metadatos, publicar nuevos paquetes, etcetera.
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 0cb40a640a0bab63a63b3b690a34f1f8cbf7fcb8
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 770173d6b84048cf42a5da46cbc474d8cf604a08
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42793183"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547508"
 ---
 # <a name="nuget-api"></a>API de NuGet
 
