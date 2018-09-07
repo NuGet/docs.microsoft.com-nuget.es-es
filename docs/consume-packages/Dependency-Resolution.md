@@ -3,15 +3,14 @@ title: Resolución de dependencias de paquetes NuGet
 description: Obtenga más información sobre el proceso de resolución e instalación de las dependencias de un paquete NuGet en NuGet 2.x y NuGet 3.x y versiones posteriores.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 7363b6a28f29b271c8ae2025bba7cb88fc77db67
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: cdbe13df04bb27091b684a4ae27b0e751da1098f
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818703"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549039"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Cómo resuelve NuGet las dependencias de paquetes
 

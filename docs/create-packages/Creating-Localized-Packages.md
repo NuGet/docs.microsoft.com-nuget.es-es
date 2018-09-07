@@ -3,15 +3,14 @@ title: Cómo crear un paquete NuGet localizado
 description: Información detallada sobre los dos métodos para crear paquetes de NuGet localizados, ya sea incluyendo todos los ensamblados en un único paquete o publicando ensamblados independientes.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1088f174c6a1ec21f876ccc3d79c9b40eee4758f
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: b1c2511c1fbafc7f52029c23521fa55671b0b5c5
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817797"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546900"
 ---
 # <a name="creating-localized-nuget-packages"></a>Creación de paquetes localizados de NuGet
 

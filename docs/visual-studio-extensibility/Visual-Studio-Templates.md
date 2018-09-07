@@ -3,15 +3,14 @@ title: Paquetes NuGet en plantillas de Visual Studio
 description: Instrucciones para incluir paquetes NuGet como parte de las plantillas de proyecto y elemento de Visual Studio.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/03/2018
 ms.topic: conceptual
-ms.openlocfilehash: e03d97eede3f4c91475fbb48804d0f4a08ff0750
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: be7c10fb6ce60375f77e38f9b604ec33063e52fc
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818807"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550515"
 ---
 # <a name="packages-in-visual-studio-templates"></a>Paquetes en plantillas de Visual Studio
 

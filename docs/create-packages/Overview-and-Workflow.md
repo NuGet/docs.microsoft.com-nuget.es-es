@@ -3,15 +3,14 @@ title: Información general y flujo de trabajo de la creación de paquetes NuGet
 description: Información general del proceso de creación y publicación de un paquete de NuGet, con vínculos a otras partes específicas del proceso.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 07/26/2017
 ms.topic: conceptual
-ms.openlocfilehash: 1e2a7299be64d33bd0d697522cf5febb2022e0ee
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: f911e24da76880410f8dfaa2891b609c7beb4a61
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817019"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547894"
 ---
 # <a name="package-creation-workflow"></a>Flujo de trabajo de creación de paquetes
 

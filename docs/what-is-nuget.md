@@ -3,15 +3,14 @@ title: ¿Qué es NuGet y qué hace?
 description: Una introducción completa a qué es NuGet y qué hace
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/10/2018
 ms.topic: overview
-ms.openlocfilehash: b8929baa9022b7c40acbeb8a4f868fa5532ec13b
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 0b7105ea5d183d139c8bac915378924ba9c0874a
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818365"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548824"
 ---
 # <a name="an-introduction-to-nuget"></a>Una introducción a NuGet
 
@@ -44,7 +43,7 @@ Los desarrolladores de paquetes que requieren las API fuera de .NET Standard, po
 
 Además de la compatibilidad con el hospedaje, NuGet también proporciona una variedad de herramientas que usan tanto creadores como consumidores. Vea [Instalación de las herramientas del cliente NuGet](install-nuget-client-tools.md) para saber cómo obtener herramientas específicas.
 
-| Herramienta | Plataformas | Escenarios aplicables | Description |
+| Herramienta | Plataformas | Escenarios aplicables | Descripción |
 | --- | --- | --- | --- |
 | [CLI de nuget.exe](tools/nuget-exe-cli-reference.md) | Todas | Creación, Consumo | Proporciona todas las funcionalidades de NuGet, con algunos comandos que se aplican de forma específica a los creadores del paquete, otros solo a los consumidores y otros a ambos. Por ejemplo, los creadores de paquetes usan el comando `nuget pack` para crear un paquete a partir de varios ensamblados y archivos relacionados, los consumidores de paquetes usan `nuget install` para incluir los paquetes en una carpeta de proyecto y todos usan `nuget config` para establecer variables de configuración de NuGet. Como herramienta independiente de la plataforma, la CLI de NuGet no interactúa con proyectos de Visual Studio. |
 | [CLI de dotnet](tools/dotnet-Commands.md) | Todas | Creación, Consumo | Ofrece determinadas funcionalidades de la CLI de NuGet directamente en la cadena de herramientas de .NET Core. Al igual que con la CLI de NuGet, la CLI de dotnet no interactúa con proyectos de Visual Studio. |

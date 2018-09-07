@@ -3,15 +3,14 @@ title: Preguntas más frecuentes de NuGet
 description: Preguntas y respuestas frecuentes para usar NuGet en la línea de comandos y en Visual Studio, y trabajar con la galería de NuGet.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3fe59ef03632053182b034052e93a5f2e6f444bd
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 8c63abc9971623e0732ae8d973fafcd04c5d9f48
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42792964"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548809"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 

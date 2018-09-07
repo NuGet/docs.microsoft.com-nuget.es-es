@@ -3,15 +3,14 @@ title: Uso de NuGet.Server para hospedar fuentes de NuGet
 description: Cómo crear y hospedar una fuente de paquetes de NuGet en cualquier servidor que ejecute IIS mediante NuGet.Server, de forma que los paquetes estén disponibles a través de HTTP y OData.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: b1ef1764b28631c3032ac23a250dedece7803ae6
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: e99d42744ec860976ae098be94e747ec4bc9a7c6
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817972"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43551961"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 

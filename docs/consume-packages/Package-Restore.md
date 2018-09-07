@@ -3,15 +3,14 @@ title: Restauración de paquetes NuGet
 description: Una descripción de cómo NuGet restaura paquetes de los que depende un proyecto, incluido cómo deshabilitar la restauración y la restricción de versiones.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 34da7f5800671f03df6728e0b948c560f73fd13c
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: b95c4462a214a78452f9dbe35936620636c4f60b
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817052"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548777"
 ---
 # <a name="package-restore"></a>Restauración de paquetes
 

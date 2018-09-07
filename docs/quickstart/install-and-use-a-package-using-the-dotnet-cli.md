@@ -3,15 +3,14 @@ title: Guía de introducción al uso de paquetes NuGet mediante la CLI de dotnet
 description: Tutorial sobre el proceso de instalación y uso de un paquete NuGet en un proyecto de .NET Core.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 2fac013de5457f26bbbaeff37209316daedcdbb0
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: bb24ccbfdd4a6a94cf7116f16b0862871e176e50
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816948"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549281"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>Inicio rápido: Instalar y usar un paquete con la CLI de dotnet
 

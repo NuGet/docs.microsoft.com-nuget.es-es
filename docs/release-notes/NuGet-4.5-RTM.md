@@ -3,15 +3,14 @@ title: Notas de la versión de NuGet 4.5 RTM
 description: Notas de la versión de NuGet 4.5 RTM, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
 author: anangaur
 ms.author: anangaur
-manager: unnir
 ms.date: 12/4/2017
 ms.topic: conceptual
-ms.openlocfilehash: 1d04c508d029a6d92bbd480fe3bd7dc14727970e
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 01ecd8c7de1a0f713766e3c413d889038522bac7
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31820721"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548301"
 ---
 # <a name="nuget-45-rtm-release-notes"></a>Notas de la versión de NuGet 4.5 RTM
 

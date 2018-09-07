@@ -3,15 +3,14 @@ title: Creación y publicación de un paquete de NET Framework con Visual Studio
 description: Tutorial sobre la creación y publicación de un paquete NuGet de .NET Framework con Visual Studio 2017 en Windows
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: c537ee97b79648428df2c1b52894f536f5626a9e
-ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
+ms.openlocfilehash: 68593211da1a34649c7050753a5db0f3a03cb41b
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39508262"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549633"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Inicio rápido: Creación y publicación de un paquete con Visual Studio (.NET Framework, Windows)
 

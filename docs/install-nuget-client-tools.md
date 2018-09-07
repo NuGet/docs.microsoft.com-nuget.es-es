@@ -3,15 +3,14 @@ title: Instalación de las herramientas del cliente NuGet
 description: Instrucciones sobre cómo instalar las herramientas de cliente, la interfaz de la línea de comandos (CLI) y el Administrador de paquetes para Visual Studio.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 04/09/2018
 ms.topic: quickstart
-ms.openlocfilehash: f136295cd46dd11a153b5f9c25a685a5a8dbd45a
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: b3be75a5af85bd3048c8b0eb71d90238b9349e09
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818126"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549727"
 ---
 # <a name="installing-nuget-client-tools"></a>Instalación de las herramientas del cliente NuGet
 
@@ -19,7 +18,7 @@ ms.locfileid: "34818126"
 
 Para trabajar con NuGet, como consumidor o creador de paquetes, puede usar las [herramientas de la interfaz de la línea de comandos (CLI) multiplataforma](#cli-tools), además de las [características de NuGet en Visual Studio](#visual-studio). En este artículo se describen brevemente las funcionalidades de las distintas herramientas, cómo instalarlas y la comparativa de su [disponibilidad de características](#feature-availability). Para comenzar a usar NuGet para consumir paquetes, vea [Install and use a package (.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) (Instalación y uso de un paquete [CLI de .NET CLI]) e [Install and use a package (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md) (Instalación y uso de un paquete [Visual Studio]). Para empezar a crear paquetes NuGet, vea [Create and publish a .NET Standard package (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) (Creación y publicación de un paquete de .NET Standard [CLI de dotnet]) y [Create and publish a .NET Standard package (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md) (Creación y publicación de un paquete de .NET Standard [Visual Studio]).
 
-| Herramienta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Descargar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| Herramienta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Descripción | Descargar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | Se incluye con el SDK de .NET Core y ofrece las características básicas de NuGet en todas las plataformas. | [SDK de .NET Core](https://www.microsoft.com/net/download/) |
 | [nuget.exe](#nugetexe-cli) | Ofrece todas las funcionalidades de NuGet en Windows, además de la mayoría de las características en Mac y Linux cuando se ejecutan con Mono. | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |

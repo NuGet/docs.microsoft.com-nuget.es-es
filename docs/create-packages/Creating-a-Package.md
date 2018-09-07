@@ -3,15 +3,14 @@ title: Cómo crear un paquete NuGet
 description: Un guía detallada sobre el proceso de diseño y creación de un paquete NuGet, incluidos puntos de decisión clave como archivos y control de versiones.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 435db2d0cddcfd6b9db530cb384cf7facb9170dd
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 37c2208f0942b12428dba9d664f25e7e4f3c0b72
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818469"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547379"
 ---
 # <a name="creating-nuget-packages"></a>Creación de paquetes NuGet
 
@@ -168,7 +167,7 @@ La ventaja de este enfoque es que no es necesario especificar en el manifiesto q
 
 Las convenciones de carpeta son las siguientes:
 
-| Carpeta | Description | Acción tras la instalación del paquete |
+| Carpeta | Descripción | Acción tras la instalación del paquete |
 | --- | --- | --- |
 | (raíz) | Ubicación de Léame.txt | Visual Studio muestra un archivo Léame.txt en la raíz del paquete cuando se instala el paquete. |
 | lib/{tfm} | Archivos de ensamblado (`.dll`), documentación (`.xml`) y símbolos (`.pdb`) para el Moniker de plataforma de destino (TFM) indicado | Los ensamblados se agregan como referencias; `.xml` y `.pdb` se copian en carpetas de proyecto. Vea [Compatibilidad con varias plataformas de destino](supporting-multiple-target-frameworks.md) para obtener información sobre cómo crear subcarpetas específicas de la plataforma de destino. |

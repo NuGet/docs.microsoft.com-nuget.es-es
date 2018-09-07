@@ -3,21 +3,20 @@ title: Formas de instalar paquetes NuGet
 description: Describe el proceso de instalación de paquetes de NuGet en un proyecto, que incluye lo que sucede en el disco y a los correspondientes archivos de proyecto.
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
-ms.openlocfilehash: 0f59c3b7f1e32ae34889921c13d15074ef5c1260
-ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
+ms.openlocfilehash: 3cb3d5f97e9fb7ce292ddc5a95b61c13f64a17e7
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843386"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547671"
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>Distintas formas de instalar un paquete NuGet
 
 Los paquetes NuGet se descargan e instalan con cualquiera de los métodos de la tabla siguiente (vea [Instalación de las herramientas del cliente NuGet](../install-nuget-client-tools.md) si todavía no se han instalado). El paquete se puede recuperar de una memoria caché en lugar de descargarlo.
 
-| Método | Description |
+| Método | Descripción |
 | --- | --- |
 | CLI de dotnet.exe<br/>`dotnet add package <package_name>` | (Todas las plataformas) Recupera el paquete identificado con \<package_name\>, expande su contenido en una carpeta del directorio actual y agrega una referencia al archivo de proyecto. También recupera e instala las dependencias.<ul><li>[Instalar y usar un paquete (CLI de dotnet)](../quickstart/install-and-use-a-package-using-the-dotnet-cli.md)</li><li>[Comando dotnet add package](/dotnet/core/tools/dotnet-add-package)</li></ul> |
 | Interfaz de usuario del Administrador de paquetes (Visual Studio) | (Windows and Mac) Ofrece una interfaz de usuario a través de la cual puede examinar, seleccionar e instalar paquetes con sus dependencias en un proyecto desde el origen del paquete especificado. Agrega las referencias a paquetes instalados en el archivo de proyecto.<ul><li>[Instalar y usar un paquete (Visual Studio)](../quickstart/install-and-use-a-package-in-visual-studio.md)</li><li>[Referencia de la interfaz de usuario del Administrador de paquetes](../tools/package-manager-ui.md)</li><li>[Incluir un paquete NuGet en el proyecto (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
