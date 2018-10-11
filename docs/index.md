@@ -20,8 +20,6 @@ ms.locfileid: "43550040"
     <ul class="pivots">
         <li>
             <a href="#start">Introducción</a>
-            <ul id="start">
-                <li>
                     <a href="#start-all"></a>
                     <ul id="start-all" class="cardsC">
                         <li>
@@ -136,15 +134,11 @@ ms.locfileid: "43550040"
                                 </div>
                             </div>
                             </a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </li>
         <li>
             <a href="#tools">Herramientas y referencia</a>
-            <ul id="tools">
-                <li>
                     <a href="#tools-all"></a>
                     <ul id="tools-all" class="cardsC">
                         <li>
@@ -243,8 +237,6 @@ ms.locfileid: "43550040"
                             </a>
                         </li>
                     </ul>
-                </li>
-            </ul>
         </li>
     </ul>
 </div>
