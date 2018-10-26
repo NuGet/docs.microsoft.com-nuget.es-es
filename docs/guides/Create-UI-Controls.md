@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: ce5ad07209a06010150b14092aa1b15ee6f84146
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: dd36987e020c2daa02bb875aa9dbd69c85bba4d3
+ms.sourcegitcommit: 1bd72dca2f85b4267b9924236f1d23dd7b0ed733
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548743"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49951751"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>Creación de controles de IU como paquetes NuGet
 
@@ -87,7 +87,9 @@ En el ejemplo siguiente, el control implementado en `ManagedPackage.winmd` apare
 
 ## <a name="add-custom-icons-to-your-controls"></a>Agregar iconos personalizados a los controles
 
-Para mostrar un icono personalizado en el panel Recursos o en el cuadro de herramientas, agregue una imagen a su proyecto o al proyecto `design.dll` correspondiente con el nombre "Namespace.ControlName.extension" y establezca la acción de compilación en "Recurso incrustado". Los formatos compatibles son `.png`, `.jpg`, `.jpeg`, `.gif` y `.bmp`. El tamaño de imagen recomendado es de 64 por 64 píxeles.
+Para mostrar un icono personalizado en el panel Recursos o en el cuadro de herramientas, agregue una imagen a su proyecto o al proyecto `design.dll` correspondiente con el nombre "Namespace.ControlName.extension" y establezca la acción de compilación en "Recurso incrustado". También debe asegurarse de que `AssemblyInfo.cs` asociado especifique el atributo ProvideMetadata: `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`. Vea esta [muestra](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20).
+
+Los formatos compatibles son `.png`, `.jpg`, `.jpeg`, `.gif` y `.bmp`. El tamaño de imagen recomendado es de 64 por 64 píxeles.
 
 En el ejemplo siguiente, el proyecto contiene un archivo de imagen denominado "ManagedPackage.MyCustomControl.png".
 
