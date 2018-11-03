@@ -10,12 +10,12 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 651bbe63ec95fcedb8e9504022d08d6ba7f9219e
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 1de6ddeca6295c621a90409807af198bc3c7a068
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551762"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981189"
 ---
 # <a name="nuget-package-manager-ui"></a>Interfaz de usuario del Administrador de paquetes de NuGet
 
@@ -70,7 +70,11 @@ En este tema:
 
     ![Actualizar un paquete](media/UpdatePackages.png)
 
-1. <a name="implicit_reference"></a>Para algunos paquetes, el **actualización** botón está deshabilitado y aparece un mensaje que indica que se "hace referencia implícitamente mediante un SDK" (o "Compatibilidad con AutoReferenced"). El mensaje indica que el paquete, como Microsoft.NETCore.App o Microsoft.NETStandard.Library, forma parte de un marco de trabajo o SDK más grande y no se debe actualizar de forma independiente. (Estos paquetes internamente se marcan con `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) Para actualizar el paquete, actualizar el SDK al que pertenece, inferir el SDK de contenedor desde el nombre del paquete. Por ejemplo, un paquete como Microsoft.NETCore.App es parte del SDK de .NET Core, por lo tanto, deberá actualizar la instalación del SDK de .NET Core.
+1. <a name="implicit_reference"></a>Para algunos paquetes, el **actualización** botón está deshabilitado y aparece un mensaje que indica que se "hace referencia implícitamente mediante un SDK" (o "Compatibilidad con AutoReferenced"). Este mensaje indica que el paquete forma parte de un marco de trabajo o SDK más grande y no se debe actualizar de forma independiente. (Estos paquetes internamente se marcan con `<IsImplicitlyDefined>True</IsImplicitlyDefined>`.) Por ejemplo, `Microsoft.NETCore.App` es parte del SDK de .NET Core y la versión del paquete no es igual que la versión de framework en tiempo de ejecución utilizado por la aplicación. Deberá [actualizar su instalación de .NET Core](https://aka.ms/dotnet-download) para obtener nuevas versiones del tiempo de ejecución de ASP.NET Core y .NET Core. [Consulte este documento para obtener más detalles sobre los metapaquetes de .NET Core y control de versiones](/dotnet/core/packages). Esto se aplica a los siguientes paquetes usados:
+    * Microsoft.AspNetCore.All
+    * Microsoft.AspNetCore.App
+    * Microsoft.NETCore.App
+    * NETStandard.Library
 
     ![Paquete de ejemplo marcada como implícitamente las referencias o compatibilidad con AutoReferenced](media/PackageManagerUIAutoReferenced.png)
 

@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1258ca4b30cb674c3832f12262940729438dd5b0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d80339eb81ade1cf2c323a604cc4fac06dcb1012
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546639"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981059"
 ---
 # <a name="nuget-cross-platform-authentication-plugin"></a>NuGet entre el complemento de autenticación de la plataforma
 
@@ -36,7 +36,7 @@ Para permitir la restauración pausar y esperar la autenticación, llamar a la r
 
 ## <a name="creating-a-cross-platform-authentication-plugin"></a>Crear un complemento de autenticación multiplataforma
 
-Puede encontrar una implementación de ejemplo en [MSCredProvider complemento](https://github.com/Microsoft/mscredprovider).
+Puede encontrar una implementación de ejemplo en [complemento de proveedor de credenciales de Microsoft](https://github.com/Microsoft/artifacts-credprovider).
 
 Es muy importante que los complementos se ajustan a los requisitos de seguridad establecidos por las herramientas de cliente de NuGet.
 La mínima necesaria es la versión para un complemento como un complemento de autenticación *2.0.0*.

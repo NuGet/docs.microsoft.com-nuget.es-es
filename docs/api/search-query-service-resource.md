@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: f04c6a62fc3b5056ad82930447b8ba46a8797fd2
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: cfcb52ba7689f1b392c782b4ad42ba820a76c8bf
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548096"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981137"
 ---
 # <a name="search"></a>Buscar
 
@@ -21,7 +21,7 @@ Es posible buscar paquetes disponibles en un origen de paquete mediante la API d
 
 La siguiente `@type` se usan los valores:
 
-Valor de @type                   | Notas
+Valor de@type                    | Notas
 ----------------------------- | -----
 SearchQueryService            | La versión inicial
 SearchQueryService/3.0.0-beta | Alias de `SearchQueryService`
@@ -99,7 +99,7 @@ título          | cadena                     | No       |
 totalDownloads | enteros                    | No       | Este valor se puede inferir por la suma de las descargas en el `versions` matriz
 comprobar       | booleano                    | No       | Un valor booleano JSON que indica si el paquete es [comprobado](../reference/id-prefix-reservation.md)
 
-En nuget.org, un paquete verificado es uno que tiene un identificador de paquete que coincide con un prefijo de identificador reservado y que pertenecen a uno de los propietarios del espacio de nombres reservado. Para obtener más información, consulte el [documentación acerca de la reserva de prefijo de identificador](../reference/id-prefix-reservation.md).
+En nuget.org, un paquete verificado es uno que tiene un identificador de paquete que coincide con un prefijo de identificador reservado y que pertenecen a uno de los propietarios del prefijo reservado. Para obtener más información, consulte el [documentación acerca de la reserva de prefijo de identificador](../reference/id-prefix-reservation.md).
 
 Los metadatos contenidos en el objeto de resultado de búsqueda se toman de la versión más reciente del paquete. Cada elemento de la `versions` matriz es un objeto JSON con las siguientes propiedades:
 

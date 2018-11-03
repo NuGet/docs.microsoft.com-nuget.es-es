@@ -6,12 +6,12 @@ ms.author: diverdan92
 ms.date: 10/09/2017
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 0711f3ee00b4a387d676ca43c98a9467effed90a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 32f83bede42f7643a9a4fed593643eefea0453c1
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546595"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981007"
 ---
 # <a name="package-id-prefix-reservation"></a>Reserva de prefijo de Id. de paquete
 
@@ -65,7 +65,7 @@ Cuando un paquete procede de un prefijo reservado, verá el siguiente indicadore
 
 1. Revise la aceptación [criterios para la reserva de Id. de prefijo](#id-prefix-reservation-criteria).
 
-2. Determinar los espacios de nombres que desea reservar, además de cualquier [escenarios de reserva de prefijo avanzados](#advanced-prefix-reservation-scenarios) es posible que necesite.
+2. Determinar los prefijos que desea reservar, además de cualquier [escenarios de reserva de prefijo avanzados](#advanced-prefix-reservation-scenarios) es posible que necesite.
 
 3. Enviar un correo a [ account@nuget.org ](mailto:account@nuget.org) con el propietario del nombre para mostrar en [nuget.org](https://www.nuget.org/), así como todos los prefijos reservados que está solicitando. Si va a delegar subconjuntos de prefijo a varios propietarios, asegúrese de que mencione todos los nombres para mostrar propietario y subconjuntos de prefijo.
 
