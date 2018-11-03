@@ -31,7 +31,6 @@
 ## Guías
 ### [Crear paquetes UWP](guides/create-uwp-packages.md)
 ### [Creación de controles de IU como paquetes NuGet](guides/create-UI-controls.md)
-### [Creación de paquetes de .NET Standard/.NET Framework con Visual Studio 2015](guides/create-net-standard-packages-vs2015.md)
 ### [Creación de paquetes para Xamarin con Visual Studio 2015](guides/create-packages-for-xamarin.md)
 # Hospedar paquetes
 ## [Información general](hosting-packages/overview.md)
@@ -45,7 +44,7 @@
 ### [help or ?](tools/cli-ref-help.md)
 ### [init](tools/cli-ref-init.md)
 ### [install](tools/cli-ref-install.md)
-### [list](tools/cli-ref-list.md)
+### [lista](tools/cli-ref-list.md)
 ### [locals](tools/cli-ref-locals.md)
 ### [mirror](tools/cli-ref-mirror.md)
 ### [pack](tools/cli-ref-pack.md)
