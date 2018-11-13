@@ -6,14 +6,14 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 770173d6b84048cf42a5da46cbc474d8cf604a08
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 7bb5e83b29d1d7e4bf06accfccb73db3aa9ee025
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547508"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580342"
 ---
-# <a name="nuget-api"></a>API de NuGet
+# <a name="nuget-api"></a>API NuGet
 
 La API de NuGet es un conjunto de puntos de conexión HTTP que puede usarse para descargar los paquetes, capturar metadatos, publicar nuevos paquetes y realizar otras operaciones disponibles en los clientes de NuGet oficiales.
 
@@ -49,16 +49,17 @@ Se realizaron cambios en los protocolos que no son importantes a la API porque e
 
 El **índice de servicio** describe una variedad de recursos. El conjunto actual de los recursos admitidos son los siguientes:
 
-Nombre del recurso                                                          | Obligatorio | Descripción
----------------------------------------------------------------------- | -------- | -----------
+Nombre del recurso                                                           | Obligatorio | Descripción
+----------------------------------------------------------------------  | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | sí      | Insertar y eliminar (o quitar de la lista) paquetes.
 [`SearchQueryService`](search-query-service-resource.md)               | sí      | Filtrar y buscar paquetes mediante la palabra clave.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | sí      | Obtener metadatos del paquete.
 [`PackageBaseAddress`](package-base-address-resource.md)               | sí      | Obtener contenido del paquete (archivo .nupkg).
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | No       | Detectar el Id. de paquete y las versiones por la subcadena.
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | No       | Construir una dirección URL para tener acceso a una página web de "Notificar abuso".
-[`RepositorySignatures`](repository-signatures-resource.md)            | No       | Obtener certificados usados para firmar el repositorio.
-[`Catalog`](catalog-resource.md)                                       | No       | Registro completo de todos los eventos de paquete.
+[`RepositorySignatures`](repository-signatures-resource.md)             | No      | Obtener certificados usados para firmar el repositorio.
+[`Catalog`](catalog-resource.md)                                         | No      | Registro completo de todos los eventos de paquete.
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | No      | Insertar paquetes de símbolos.
 
 En general, todos los datos no binarios devueltos por un recurso de API se serializan mediante JSON. El esquema de respuesta devuelto por cada recurso en el índice de servicio se define por separado para ese recurso. Para obtener más información acerca de cada recurso, vea los temas enumerados anteriormente.
 
