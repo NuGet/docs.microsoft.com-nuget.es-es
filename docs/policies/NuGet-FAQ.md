@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8c63abc9971623e0732ae8d973fafcd04c5d9f48
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c136a3dffac38a68b80f730de1e4c3a3a9c8bd5d
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548809"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580368"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -95,7 +95,7 @@ Se trata de un problema conocido de cómo interactúa PowerShell con un objeto C
 `$dte2 = Get-Interface $dte ([EnvDTE80.DTE2])`
 ```
 
-`Get-Interface` es una función auxiliar agregada por el host de PowerShell de NuGet.
+`Get-Interface` es una función del asistente agregada por el host de PowerShell de NuGet.
 
 ## <a name="creating-and-publishing-packages"></a>Creación y publicación de paquetes
 
@@ -166,7 +166,7 @@ NuGet recomienda que todos los paquetes estén firmados. Un principio de diseño
 
 Tenga en cuenta que las dependencias indicadas para el paquete se generan automáticamente a partir del propio paquete y no se pueden modificar.
 
-Además, cargar paquetes en [staging.nuget.org](http://staging.nuget.org) es una excelente manera de probar y validar el paquete sin hacer que esté disponible en la galería pública.
+Además, cargar paquetes en [int.nugettest.org](https://int.nugettest.org) es una excelente manera de probar y validar el paquete sin hacer que esté disponible en la galería pública.
 
 **¿Es posible reservar nombres para los paquetes que se van a publicar en el futuro?**
 
@@ -182,9 +182,9 @@ Se recomienda que la comunidad de NuGet trabaje de forma conjunta para resolver 
 
 **¿Se recomienda cargar los paquetes de prueba en nuget.org?**
 
-Para fines de prueba, se puede usar [staging.nuget.org](http://staging.nuget.org), o bien servidores públicos alternativos de NuGet como [myget.org](https://myget.org) o [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/).
+Para fines de prueba, se puede usar [int.nugettest.org](https://int.nugettest.org), o bien servidores públicos alternativos de NuGet como [myget.org](https://myget.org) o [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/).
 
-Tenga en cuenta que es posible que los paquetes que se cargan en staging.nuget.org no se conserven. Vea [Adiós a preview](http://blog.nuget.org/20130419/goodbye-preview.html).
+Tenga en cuenta que es posible que los paquetes que se cargan en int.nugettest.org no se conserven.
 
 **¿Cuál es el tamaño máximo de los paquetes que puedo cargar en nuget.org?**
 

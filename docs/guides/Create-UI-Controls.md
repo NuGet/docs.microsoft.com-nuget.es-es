@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: dd36987e020c2daa02bb875aa9dbd69c85bba4d3
-ms.sourcegitcommit: 1bd72dca2f85b4267b9924236f1d23dd7b0ed733
+ms.openlocfilehash: dfbd6a3e6d59dfcea6394891703ea66bce5e8e92
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49951751"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580280"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>Creación de controles de IU como paquetes NuGet
 
@@ -89,7 +89,11 @@ En el ejemplo siguiente, el control implementado en `ManagedPackage.winmd` apare
 
 Para mostrar un icono personalizado en el panel Recursos o en el cuadro de herramientas, agregue una imagen a su proyecto o al proyecto `design.dll` correspondiente con el nombre "Namespace.ControlName.extension" y establezca la acción de compilación en "Recurso incrustado". También debe asegurarse de que `AssemblyInfo.cs` asociado especifique el atributo ProvideMetadata: `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`. Vea esta [muestra](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20).
 
-Los formatos compatibles son `.png`, `.jpg`, `.jpeg`, `.gif` y `.bmp`. El tamaño de imagen recomendado es de 64 por 64 píxeles.
+Los formatos compatibles son `.png`, `.jpg`, `.jpeg`, `.gif` y `.bmp`. El formato recomendado es BMP24 en 16 por 16 píxeles.
+
+![Ejemplo de icono de cuadro de herramientas](https://raw.githubusercontent.com/NuGet/docs.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
+
+El fondo de color rosa se reemplaza durante el tiempo de ejecución. El color de los iconos cambia con el tema de Visual Studio y ese color de fondo no es un efecto inesperado. Para obtener más información, consulte [Imágenes e iconos para Visual Studio](https://docs.microsoft.com/en-us/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio).
 
 En el ejemplo siguiente, el proyecto contiene un archivo de imagen denominado "ManagedPackage.MyCustomControl.png".
 

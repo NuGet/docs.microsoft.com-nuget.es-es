@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 1bc67927ddc463dcc3a0abe80fe20e625e188e63
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: 1221631b22eed7d2d8e58bd08ff120d91231d49b
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981176"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580407"
 ---
 # <a name="creating-nuget-packages"></a>Creación de paquetes NuGet
 
@@ -51,7 +51,7 @@ Propiedades necesarias:
 
 - El identificador de paquete, que debe ser único en la galería que hospeda el paquete.
 - Un número de versión específico con el formato *Principal.Secundaria.Revisión[-Sufijo]* donde *-Sufijo* identifica las [versiones preliminares](prerelease-packages.md)
-- El título del paquete como debería aparece en el host (por ejemplo, nuget.org)
+- El título del paquete como debe aparecer en el host (por ejemplo, nuget.org)
 - Información del autor y el propietario.
 - Una descripción extensa del paquete.
 
@@ -177,7 +177,7 @@ Las convenciones de carpeta son las siguientes:
 | compilación | Archivos `.targets` y `.props` de MSBuild | Se insertan automáticamente en el archivo de proyecto o en `project.lock.json` (NuGet 3.x y versiones posteriores). |
 | tools | Scripts de PowerShell y programas accesibles desde la consola del Administrador de paquetes | La carpeta `tools` se agrega a la variable de entorno `PATH` solo para la consola del Administrador de paquetes (en concreto, *no* a `PATH` como se establece para MSBuild al compilar el proyecto). |
 
-Dado que la estructura de carpetas puede contener cualquier número de ensamblados para cualquier número de plataformas de destino, este método es necesario al crear paquetes que admiten varias plataformas 
+Dado que la estructura de carpetas puede contener cualquier número de ensamblados para cualquier número de plataformas de destino, este método es necesario al crear paquetes que admiten varias plataformas.
 
 En cualquier caso, una vez que tenga la estructura de carpetas deseada, ejecute el comando siguiente en esa carpeta para crear el archivo `.nuspec`:
 

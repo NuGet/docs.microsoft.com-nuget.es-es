@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: a5807a6895a76a7d6660d218b29e1d3a2802ca28
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5f52b00e0c45882fb7a4bd1c1a80022192f3be6b
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545053"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580251"
 ---
 # <a name="package-consumption-workflow"></a>Flujo de trabajo de consumo de paquetes
 
@@ -18,7 +18,7 @@ Entre la galería de nuget.org y las galerías de paquetes privadas que puede es
 
 ![Flujo para ir al origen de un paquete, buscar un paquete, instalarlo en un proyecto y agregar una instrucción Using y llamadas a la API del paquete](media/Overview-01-GeneralFlow.png)
 
-\* _Solo Visual Studio y dotnet.ex. El comando nuget install no modifica los archivos de proyecto ni packages.config; las entradas tienen que administrarse manualmente._
+\* Solo _Visual Studio y `dotnet.exe`. El comando `nuget install` no modifica los archivos de proyecto ni el archivo `packages.config`; las entradas tienen que administrarse manualmente._
 
 Para más información, vea [Búsqueda y selección de paquetes](../consume-packages/finding-and-choosing-packages.md) y [Distintas formas de instalar un paquete NuGet](ways-to-install-a-package.md).
 
