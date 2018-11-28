@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: a64c5844a58213415671ab0d202a75bc0ececc89
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: ba47d6fdeeaa4ee9de83ef4dd990707bd4928063
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546789"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453564"
 ---
 # <a name="package-metadata"></a>Metadatos del paquete
 
@@ -23,7 +23,7 @@ La colección de los documentos se encuentran en `RegistrationsBaseUrl` a menudo
 
 La siguiente `@type` se usan los valores:
 
-Valor de @type                     | Notas
+Valor de@type                      | Notas
 ------------------------------- | -----
 RegistrationsBaseUrl            | La versión inicial
 RegistrationsBaseUrl/3.0.0-beta | Alias de `RegistrationsBaseUrl`
@@ -150,7 +150,9 @@ requireLicenseAcceptance | booleano                    | No       |
 resumen                  | cadena                     | No       | 
 etiquetas                     | cadena o matriz de cadena  | No       | 
 título                    | cadena                     | No       | 
-version                  | cadena                     | sí      | La versión del paquete
+version                  | cadena                     | sí      | La cadena de versión completa después de la normalización
+
+El paquete `version` propiedad es la cadena de versión completa después de la normalización. Esto significa que los datos de generación de SemVer 2.0.0 se pueden incluidos aquí.
 
 El `dependencyGroups` propiedad es una matriz de objetos que representan las dependencias del paquete, agrupados por .NET framework de destino. Si el paquete no tiene dependencias, el `dependencyGroups` falta la propiedad, una matriz vacía, o el `dependencies` propiedad de todos los grupos falta o está vacía.
 

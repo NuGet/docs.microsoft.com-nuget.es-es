@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 826316bdbce881836836f2a667cfa5297996d14f
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: b5bd8bd30ad134f36433b8e4721ce131425a1483
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580316"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453369"
 ---
 # <a name="pack-command-nuget-cli"></a>Comando pack (CLI de NuGet)
 
 **Se aplica a:** la creación del paquete &bullet; **versiones compatibles:** 2.7 +
 
-Crea un paquete de NuGet según lo especificado `.nuspec` o archivo de proyecto. El `dotnet pack` comando (vea [comandos dotnet](dotnet-Commands.md)) y `msbuild /t:pack` (consulte [destinos de MSBuild](../reference/msbuild-targets.md)) que puede utilizarse como alternativas.
+Crea un paquete de NuGet según lo especificado `.nuspec` o archivo de proyecto. El `dotnet pack` comando (vea [comandos dotnet](dotnet-Commands.md)) y `msbuild -t:pack` (consulte [destinos de MSBuild](../reference/msbuild-targets.md)) que puede utilizarse como alternativas.
 
 > [!Important]
 > En Mono, no se admite la creación de un paquete desde un archivo de proyecto. También deberá ajustar las rutas de acceso no local en el `.nuspec` de archivos para las rutas de acceso de estilo Unix, como nuget.exe no convierte las rutas de acceso de Windows sí.
@@ -49,7 +49,7 @@ donde `<nuspecPath>` y `<projectPath>` especificar el `.nuspec` o archivo de pro
 | OutputDirectory | Especifica la carpeta donde se almacena el paquete creado. Si se especifica ninguna carpeta, se usa la carpeta actual. |
 | Propiedades | Debe aparecer al final de la línea de comandos después de otras opciones. Especifica una lista de las propiedades que reemplazan los valores en el archivo de proyecto. consulte [propiedades comunes de proyectos de MSBuild](/visualstudio/msbuild/common-msbuild-project-properties) nombres de propiedad. Aquí el argumento de propiedades es una lista de pares de nombre-valor, separados por punto y coma, donde cada aparición de `$token$` en el `.nuspec` archivo se sustituirá con el valor especificado. Los valores pueden ser cadenas entre comillas. Tenga en cuenta que para la propiedad "Configuration", el valor predeterminado es "Debug". Para cambiar a una configuración de lanzamiento, utilice `-Properties Configuration=Release`. |
 | Sufijo | *(3.4.4+)*  Anexa un sufijo para el número de versión generada internamente, se utiliza normalmente para anexar las compilación u otros identificadores de versión preliminar. Por ejemplo, mediante `-suffix nightly` creará un paquete con un tipo de número de versión `1.2.3-nightly`. Sufijos deben empezar por una letra para evitar las advertencias, errores y las posibles incompatibilidades con distintas versiones de NuGet y el Administrador de paquetes de NuGet. |
-| Símbolos | Especifica que el paquete contiene orígenes y símbolos. Cuando se usa con un `.nuspec` archivo, esto crea un archivo de paquete NuGet normal y el correspondiente paquete de símbolos. De forma predeterminada crea un [paquete de símbolos heredado](../create-packages/Symbol-Packages.md). El nuevo formato recomendado para los paquetes de símbolos es .snupkg. Consulte [crear paquetes de símbolos (.snupkg)](../create-packages/Symbol-Packages-snupkg.md). |
+| Símbolos | Especifica que el paquete contiene orígenes y símbolos. Cuando se usa con un `.nuspec` archivo, esto crea un archivo de paquete NuGet normal y el correspondiente paquete de símbolos. De forma predeterminada crea un [paquete de símbolos heredado](../create-packages/Symbol-Packages.md). El nuevo formato recomendado para paquetes de símbolos es .snupkg. Vea [Crear paquetes de símbolos (.snupkg)](../create-packages/Symbol-Packages-snupkg.md). |
 | Herramienta | Especifica que se deben colocar los archivos de salida del proyecto en el `tool` carpeta. |
 | Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 | Versión | Invalida el número de versión desde el `.nuspec` archivo. |

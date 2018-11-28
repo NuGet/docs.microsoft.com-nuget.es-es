@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: d4c13200494ed3c6fa897ce0083a52c13688b44b
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: fd5188c92f8154391359b8da5c8a32f4d5d6f2c0
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547398"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453590"
 ---
 # <a name="catalog"></a>Catálogo
 
@@ -27,7 +27,7 @@ El **catálogo** es un recurso que registra todas las operaciones de paquete en 
 
 La siguiente `@type` se usa el valor:
 
-Valor de @type   | Notas
+Valor de@type    | Notas
 ------------- | -----
 Catalog/3.0.0 | La versión inicial
 
@@ -213,7 +213,7 @@ etiquetas                    | matriz de cadenas           | No       |
 título                   | cadena                     | No       |
 verbatimVersion         | cadena                     | No       | La cadena de versión que originalmente se encuentra en el archivo .nuspec
 
-El paquete `version` propiedad es la cadena de versión completa, normalizado. Esto significa que los datos de generación de SemVer 2.0.0 se pueden incluidos aquí.
+El paquete `version` propiedad es la cadena de versión completa después de la normalización. Esto significa que los datos de generación de SemVer 2.0.0 se pueden incluidos aquí.
 
 El `created` marca de tiempo es cuando se recibe por primera vez el paquete por el origen del paquete, que suele ser poco tiempo antes de la marca de tiempo de confirmación del elemento de catálogo.
 

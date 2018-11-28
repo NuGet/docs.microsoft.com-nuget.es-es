@@ -5,12 +5,12 @@ author: zhili1208
 ms.author: lzhi
 ms.date: 07/12/2018
 ms.topic: reference
-ms.openlocfilehash: 7cd387e3eb05d149da9a88cc1c76dc08588d04b5
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 42b5b7d863d22d7aad99a65700ca11bcc2861db1
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547831"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453499"
 ---
 # <a name="long-path-support-nuget-cli"></a>Compatibilidad con trazado largo (CLI de NuGet)
 
@@ -39,6 +39,6 @@ Pasos siguientes:
 > Habilitación de otras herramientas de NuGet admitir rutas de acceso largas
 >
 > -   Dotnet CLI admite rutas de acceso largas, independientemente de la versión o sistema operativo.
-> -   Visual Studio o msbuild/t: restore no es compatible aún con rutas de acceso largas.
+> -   Visual Studio o msbuild - t: restore aún no admite rutas de acceso largas.
 > -   Software que usa las bibliotecas de NuGet para ejecutar otros comandos, y restauración será compatible con rutas de acceso largas en los mismos sistemas que NuGet.exe funciona en, si también establecen longPathAware en la ventana del manifiesto y configurar UseLegacyPathHandling en false a través de App.Config [ Obtenga más información](https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/)
 
