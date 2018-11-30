@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/26/2017
 ms.topic: conceptual
-ms.openlocfilehash: f911e24da76880410f8dfaa2891b609c7beb4a61
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6b41b23df115c45e830404afcf9defa23615bd7c
+ms.sourcegitcommit: ce97dded7715f217ec44f6c8368ab0df19c38342
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547894"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52615761"
 ---
 # <a name="package-creation-workflow"></a>Flujo de trabajo de creación de paquetes
 
@@ -36,7 +36,7 @@ Desde ahí podrá plantearse una serie de opciones más para el paquete:
 - En [Creación de paquetes localizados](../create-packages/creating-localized-packages.md) se describe cómo estructurar un paquete con varios recursos de idioma y cómo usar paquetes satélite localizados e independientes.
 - En [Paquetes de versión preliminar](../create-packages/prerelease-packages.md) se muestra cómo liberar paquetes alfa, beta y rc a aquellos clientes que estén interesados.
 - En [Origen y transformaciones del archivo de configuración](../create-packages/source-and-config-file-transformations.md) se describe cómo se pueden hacer reemplazos de tokens unidireccionales en archivos que se agregan a un proyecto y cómo modificar `web.config` y `app.config` con una configuración que también se retira cuando se desinstala el paquete.
-- En [Paquetes de símbolos](../create-packages/symbol-packages.md) se ofrecen consejos para proporcionar símbolos para su biblioteca que permiten a los consumidores entrar en el código durante la depuración.
+- En [Paquetes de símbolos](../create-packages/symbol-packages-snupkg.md) se ofrecen consejos para proporcionar símbolos para su biblioteca que permiten a los consumidores entrar en el código durante la depuración.
 - En [Package versioning](../reference/package-versioning.md) (Control de versiones de paquetes) se describe cómo identificar las versiones exactas que se permiten para las dependencias (otros paquetes que se usan en el paquete).
 - En [Paquetes nativos](../create-packages/native-packages.md) se describe el proceso de creación de un paquete para los consumidores de C++.
 - En [Firma de paquetes NuGet](../create-packages/sign-a-package.md) se describe el proceso para agregar una firma digital a un paquete.
