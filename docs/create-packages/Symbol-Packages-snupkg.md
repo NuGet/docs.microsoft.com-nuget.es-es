@@ -16,12 +16,12 @@ keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, comp
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: a72b59a391ed25e9617ba3ba3656301a2ed90ddc
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 48ca4b62e722988b3dfe69306565d7f159805962
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580438"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453460"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Crear paquetes de símbolos (.snupkg)
 
@@ -41,12 +41,12 @@ nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
-msbuild /t:pack MyPackage.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
+msbuild -t:pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
 ```
 
-Los archivos `.snupkgs` no se producen de forma predeterminada. Debe pasar la propiedad `SymbolsPackageFormat` junto con `-Symbols` en el caso de nuget.exe, `--include-symbols` en el caso de dotnet.exe o `/p:IncludeSymbols` en el caso de msbuild.
+Los archivos `.snupkgs` no se producen de forma predeterminada. Debe pasar la propiedad `SymbolPackageFormat` junto con `-Symbols` en el caso de nuget.exe, `--include-symbols` en el caso de dotnet.exe o `-p:IncludeSymbols` en el caso de msbuild.
 
-La propiedad SymbolsPackageFormat puede tener uno de estos dos valores: `symbols.nupkg` (predeterminado) o `snupkg`. Si no se especifica SymbolsPackageFormat, el valor predeterminado es `symbols.nupkg` y se creará un paquete de símbolos heredado.
+La propiedad SymbolPackageFormat puede tener uno de estos dos valores: `symbols.nupkg` (predeterminado) o `snupkg`. Si no se especifica SymbolPackageFormat, el valor predeterminado es `symbols.nupkg` y se creará un paquete de símbolos heredado.
 
 > [!Note]
 > El formato heredado `.symbols.nupkg` todavía se admite, pero solo por motivos de compatibilidad (vea [Paquetes de símbolos heredados](Symbol-Packages.md)). El servidor de símbolos de NuGet.org solo acepta el nuevo formato de paquete de símbolos, `.snupkg`.
@@ -71,7 +71,7 @@ La propiedad SymbolsPackageFormat puede tener uno de estos dos valores: `symbols
     nuget push MyPackage.nupkg
     ```
 
-En este caso, NuGet publicará en nuget.org primero `MyPackage.nupkg` y, después, `MyPackage.snupkg`.
+NuGet publicará ambos paquetes en nuget.org. `MyPackage.nupkg` se publica en primer lugar, y luego `MyPackage.snupkg`.
 
 ## <a name="nugetorg-symbol-server"></a>Servidor de símbolos de NuGet.org
 

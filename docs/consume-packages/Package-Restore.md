@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: da69181aebe3bebcea6acd6e15fde6b77dd33452
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 9acb87a5f5731fb33c91a1ae9b106c6df492ddcd
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580303"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453538"
 ---
 # <a name="package-restore"></a>Restauración de paquetes
 
@@ -39,7 +39,7 @@ La restauración de paquetes se activa de las maneras siguientes:
 
 - **CLI de NuGet**: use el comando [nuget restore](../tools/cli-ref-restore.md), que restaura los paquetes incluidos en el archivo de proyecto o en `packages.config`. También puede especificar un archivo de solución.
 
-- **MSBuild**: use el comando [msbuild /t:restore](../reference/msbuild-targets.md#restore-target), que restaura los paquetes incluidos en el archivo de proyecto (solo PackageReference). Disponible solo en 4.x y versiones posteriores y MSBuild 15.1 y versiones posteriores, que se incluyen con Visual Studio de 2017. `nuget restore` y `dotnet restore` usan este comando para los proyectos aplicables.
+- **MSBuild**: use el comando [msbuild -t:restore](../reference/msbuild-targets.md#restore-target), que restaura los paquetes incluidos en el archivo de proyecto (solo PackageReference). Disponible solo en 4.x y versiones posteriores y MSBuild 15.1 y versiones posteriores, que se incluyen con Visual Studio de 2017. `nuget restore` y `dotnet restore` usan este comando para los proyectos aplicables.
 
 - **Visual Studio Team Services**: al crear una definición de compilación en Team Services, incluya la tarea [Restaurar NuGet](/vsts/build-release/tasks/package/nuget#restore-nuget-packages) o [.NET Core Restore](/vsts/build-release/tasks/build/dotnet-core#restore-nuget-packages) (Restaurar .NET Core) en la definición antes de cualquier tarea de compilación. Esta tarea se incluye de forma predeterminada en una serie de plantillas de compilación.
 

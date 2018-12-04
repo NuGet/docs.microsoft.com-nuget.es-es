@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 80f9354e149129fff043b470d833f348df15c0a7
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 4741d780afa4fbe11001aed49a9f72bf608d96d9
+ms.sourcegitcommit: a1846edf70ddb2505d58e536e08e952d870931b0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545496"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52303569"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>Hospedar sus propias fuentes de NuGet
 
@@ -32,6 +32,7 @@ Hay muchos más productos de hospedaje de NuGet que admiten las fuentes privadas
 - [NuGet Server (código abierto)](http://nuget-server.net), una implementación de código abierto parecida a NuGet Server de Inedo
 - [LiGet](https://github.com/ai-traders/liget), una implementación de código abierto del servidor NuGet V2 que se ejecuta en Kestrel en Docker
 - [BaGet](https://github.com/loic-sharma/BaGet), una implementación de código abierto del servidor NuGet V3 integrado en .NET Core
+- [Sleet](https://github.com/emgarten/sleet), un generador de fuentes estáticas NuGet V3 de código abierto
 - [Artifactory](https://www.jfrog.com/artifactory/) de JFrog.
 - [Nexus](http://www.sonatype.org/nexus/) de Sonatype.
 - [TeamCity](https://www.jetbrains.com/teamcity/) de JetBrains.

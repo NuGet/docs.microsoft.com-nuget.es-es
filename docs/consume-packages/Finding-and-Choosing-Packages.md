@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 81672abf0362e053da2b71c8bd39bd7f96ddf73b
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c86a07c30631b7ee99526b014ac9c3b9f136aa81
+ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549420"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52671193"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Búsqueda y evaluación de paquetes NuGet para el proyecto
 
@@ -100,6 +100,21 @@ Al mismo tiempo, usar un paquete NuGet significa tomar una dependencia en él, p
 
 > [!Note]
 > Siempre debe prestar atención a los términos de licencia de un paquete, que puede ver si selecciona **Información de licencia** en la página de listado de un paquete en nuget.org. Si un paquete no especifica los términos de licencia, póngase en contacto directamente con el propietario del paquete mediante el vínculo de **contacto con los propietarios** de la página del paquete. Microsoft no le ofrece licencia para propiedad intelectual de proveedores de paquetes de terceros ni es responsable de la información proporcionada por terceros.
+
+## <a name="license-url-deprecation"></a>Desuso de la dirección URL de licencia
+A medida que hacemos la transición de [URL de licencia](../reference/nuspec#licenseurl) a [licencia](../reference/nuspec#license), es posible que algunos clientes y fuentes de NuGet aún no puedan mostrar información de licencias en algunos casos. Para mantener la compatibilidad con versiones anteriores, la dirección URL de licencia apunta a este documento, que trata sobre cómo recuperar la información de licencia en estos casos.
+
+Si al hacer clic en la dirección URL de licencia para un paquete llegó a esta página, el paquete contiene un archivo de licencia y
+* Está conectado a una fuente que aún no sabe cómo interpretar y exponer la nueva información de licencia para el cliente **O**
+* Usa un cliente que aún no sabe cómo interpretar y leer la nueva información de licencia que potencialmente proporciona la fuente **O**
+* Una combinación de ambos
+
+Aquí le mostramos cómo puede leer la información contenida en el archivo de licencia dentro del paquete:
+1. Descargue el paquete NuGet y descomprima su contenido en una carpeta.
+1. Abra el archivo `.nuspec`, que estaría en la raíz de esa carpeta.
+1. Debe tener una etiqueta como `<license type="file">license\license.txt</license>`. Esto implica que el archivo de licencia se denomina `license.txt` y está dentro de una carpeta denominada `license`, que a su vez estaría en la raíz de esa carpeta.
+1. Navegue hasta la carpeta `license` y abra el archivo `license.txt`.
+
 
 ## <a name="search-syntax"></a>Sintaxis de búsqueda
 
