@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: c136a3dffac38a68b80f730de1e4c3a3a9c8bd5d
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 93a22b423b193874c4c69c37ff9c6d9b4489a48d
+ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580368"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52977581"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -39,7 +39,7 @@ Para más información, vea [Búsqueda y selección de paquetes](../consume-pack
 - Visual Studio en Windows admite la [Interfaz de usuario del Administrador de paquetes](../tools/package-manager-ui.md) y la [Consola del Administrador de paquetes](../tools/package-manager-console.md).
 - Visual Studio para Mac tiene características integradas de NuGet, como se describe en [Incluir un paquete NuGet en el proyecto](/visualstudio/mac/nuget-walkthrough).
 - Visual Studio Code (todas las plataformas) no tiene ninguna integración directa de NuGet. Use la [CLI de NuGet](../tools/nuget-exe-cli-reference.md) o [la CLI de dotnet](../tools/dotnet-commands.md).
-- Visual Studio Team Services proporciona [un paso de compilación para restaurar paquetes NuGet](/vsts/build-release/tasks/package/nuget). También puede [hospedar fuentes privadas de distribución de paquetes NuGet en Team Services](https://www.visualstudio.com/docs/package/nuget/publish).
+- Azure DevOps proporciona [un paso de compilación para restaurar paquetes NuGet](/vsts/build-release/tasks/package/nuget). También puede [hospedar fuentes privadas de distribución de paquetes NuGet en Azure DevOps](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish).
 
 **¿Cómo puedo comprobar la versión exacta de las herramientas de NuGet que están instaladas?**
 
@@ -182,7 +182,7 @@ Se recomienda que la comunidad de NuGet trabaje de forma conjunta para resolver 
 
 **¿Se recomienda cargar los paquetes de prueba en nuget.org?**
 
-Para fines de prueba, se puede usar [int.nugettest.org](https://int.nugettest.org), o bien servidores públicos alternativos de NuGet como [myget.org](https://myget.org) o [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/).
+Para fines de prueba, se puede usar [int.nugettest.org](https://int.nugettest.org), o bien servidores públicos alternativos de NuGet como [myget.org](https://myget.org) o [Azure DevOps](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/).
 
 Tenga en cuenta que es posible que los paquetes que se cargan en int.nugettest.org no se conserven.
 
