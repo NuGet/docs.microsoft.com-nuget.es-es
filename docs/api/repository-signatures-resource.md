@@ -8,12 +8,12 @@ description: El recurso de firmas de repositorio permite a los clientes los orí
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 50f309b99d4bf59e14f3e29b6b0421d8c3e8aa5a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 81d32a7011268e45136e00cdb7345a95070aae06
+ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547986"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53248447"
 ---
 # <a name="repository-signatures"></a>Firmas de repositorio
 
@@ -21,16 +21,14 @@ Si un origen de paquete admite agregar firmas de repositorio para los paquetes p
 
 El recurso usado para recuperar la información de firma de este repositorio es el `RepositorySignatures` encontrar el recurso en el [índice de servicio](service-index.md).
 
-> [!Note]
-> NuGet.org se iniciará el anuncio de la `RepositorySignatures` recursos en un futuro próximo.
-
 ## <a name="versioning"></a>Control de versiones
 
 La siguiente `@type` se usa el valor:
 
-Valor de @type                | Notas
+Valor de@type                 | Notas
 -------------------------- | -----
 RepositorySignatures/4.7.0 | La versión inicial
+RepositorySignatures/4.9.0 | Permite habilitar `allRepositorySigned`
 
 ## <a name="base-url"></a>Dirección URL base
 
@@ -59,12 +57,15 @@ La siguiente solicitud recupera el índice de las firmas del repositorio.
 
 El índice de la firma de repositorio es un documento JSON que contiene un objeto con las siguientes propiedades:
 
-nombre                | Tipo             | Obligatorio
-------------------- | ---------------- | --------
-allRepositorySigned | booleano          | sí
-signingCertificates | matriz de objetos | sí
+nombre                | Tipo             | Obligatorio | Notas
+------------------- | ---------------- | -------- | -----
+allRepositorySigned | booleano          | sí      | Debe ser `false` en 4.7.0 recursos
+signingCertificates | matriz de objetos | sí      | 
 
 El `allRepositorySigned` booleano se establece en false si el origen del paquete tiene algunos paquetes que no tengan ninguna firma de repositorio. Si el valor booleano se establece en true, todos los paquetes disponibles en el origen debe tener una firma de repositorio producida por uno de los certificados de firma se ha mencionado en `signingCertificates`.
+
+> [!Warning]
+> El `allRepositorySigned` booleano debe ser false en el 4.7.0 recursos. Los clientes de v4.7 y v4.8 NuGet no pueden instalar paquetes de orígenes que tienen `allRepositorySigned` establecido en true.
 
 Debe haber uno o varios certificados de firma en el `signingCertificates` matriz si la `allRepositorySigned` booleano se establece en true. Si la matriz está vacía y `allRepositorySigned` se establece en true, todos los paquetes desde el origen deben considerarse válidos, aunque una directiva de cliente todavía puede permitir el consumo de paquetes. Cada elemento de esta matriz es un objeto JSON con las siguientes propiedades.
 
