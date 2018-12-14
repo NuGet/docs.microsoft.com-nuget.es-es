@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: d4f0177183ee3edf595c4ce10d1f26cbaca5755d
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: e4df15be1f29e2c611876aaa49e16ac7d1823938
+ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453577"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53248460"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
 
@@ -155,7 +155,7 @@ Las condiciones también se pueden aplicar a nivel de `ItemGroup` y se aplicará
 ```
 
 ## <a name="locking-dependencies"></a>Cargando las dependencias
-*Esta característica está disponible con NuGet **4.9** o superior y con Visual Studio 2017 **15.9 Preview 5** o superior.*
+*Esta característica está disponible con NuGet **4.9** o superior y con Visual Studio 2017 **15.9** o superior.*
 
 La entrada a la restauración de NuGet es un conjunto de referencias de paquete del archivo del proyecto (dependencias de nivel superior o directas) y la salida es un cierre completo de todas las dependencias de paquetes, incluidas las dependencias transitivas. NuGet siempre intenta producir el mismo cierre completo de dependencias de paquetes si no ha cambiado la lista PackageReference de entrada. Sin embargo, hay algunos escenarios en los que no se puede hacer. Por ejemplo:
 
@@ -164,7 +164,7 @@ La entrada a la restauración de NuGet es un conjunto de referencias de paquete 
 
   * Día 1: si especificó `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>`, pero las versiones disponibles en los repositorios NuGet eran 4.1.0, 4.2.0 y 4.3.0. En este caso, NuGet habría llevado a cabo la resolución de la versión 4.1.0 (la versión mínima más cercana)
 
-  * Día 2: se publica la versión 4.0.0. Ahora, NuGet encontrará la coincidencia exacta e iniciará la resolución de la versión 4.0.0
+  * Día 2: Se publica la versión 4.0.0. Ahora, NuGet encontrará la coincidencia exacta e iniciará la resolución de la versión 4.0.0
 
 * Se quita una versión del paquete especificada del repositorio. Aunque nuget.org no permite la eliminación de paquetes, no todos los repositorios de paquetes tienen estas restricciones. Esto da lugar a la búsqueda por parte de NuGet de la mejor coincidencia cuando no puede llevar a cabo la resolución de la versión eliminada.
 
@@ -213,7 +213,7 @@ También puede establecer esta propiedad MSBuild condicional en su archivo del p
 Si el modo de bloqueo es `true`, la restauración restaurará los paquetes exactos tal como se incluyen en el archivo de bloqueo o producirá un error si actualizó las dependencias de paquetes definidas para el proyecto tras crearse el archivo de bloqueo.
 
 ### <a name="make-lock-file-part-of-your-source-repository"></a>Haga que el archivo de bloqueo forme parte de su repositorio de origen
-Si crea una aplicación, un archivo ejecutable y el proyecto en cuestión se encuentra al final de la cadena de dependencia, inserte el archivo de bloqueo en el repositorio de código fuente para que NuGet pueda hacer uso de este durante la restauración.
+Si crea una aplicación, un archivo ejecutable y el proyecto en cuestión se encuentra al principio de la cadena de dependencia, inserte el archivo de bloqueo en el repositorio de código fuente para que NuGet pueda hacer uso de este durante la restauración.
 
 Sin embargo, si su proyecto es un proyecto de biblioteca que no envía o un proyecto de código común del que dependen otros proyectos, **no debe** insertar en el repositorio el archivo de bloqueo como parte de su código fuente. No hay nada malo en el hecho de conservar el archivo de bloqueo, pero es posible que no se usen las dependencias de paquetes bloqueadas para el proyecto de código común, como se muestra en el archivo de bloqueo, durante la restauración/creación de un proyecto que depende de este proyecto de código común.
 
