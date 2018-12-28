@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: a9427d87f69a2e942a9802fbdae5193eead1c724
-ms.sourcegitcommit: af58d59669674c3bc0a230d5764e37020a9a3f1e
+ms.openlocfilehash: 878fb582a31667c84f3ae306b554718de72eca7a
+ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52831025"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53645677"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -51,7 +51,7 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 | VersionSuffix | PackageVersionSuffix | vacío | $(VersionSuffix) de MSBuild. Al establecer PackageVersion se sobrescribe PackageVersionSuffix. |
 | Authors | Authors | Nombre del usuario actual | |
 | Owners | N/D | No está presente en el archivo NuSpec | |
-| Title | Title | El identificador de paquete| |
+| Título | Título | El identificador de paquete| |
 | Descripción | Descripción | "Descripción del paquete" | |
 | Copyright | Copyright | vacío | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
@@ -117,8 +117,8 @@ Como parte del cambio para [NuGet problema 352](https://github.com/NuGet/Home/is
 
 Hay dos propiedades de MSBuild que se pueden usar en el archivo de proyecto o la línea de comandos para controlar dónde van los ensamblados de salida:
 
-- `IncludeBuildOutput`: un valor booleano que determina si los ensamblados de salida de compilación deben incluirse en el paquete.
-- `BuildOutputTargetFolder`: especifica la carpeta en la que se deben colocar los ensamblados de salida. Los ensamblados de salida (y otros archivos de salida) se copian en sus respectivas carpetas de marco.
+- `IncludeBuildOutput`: Un valor booleano que determina si los ensamblados de salida de compilación deben incluirse en el paquete.
+- `BuildOutputTargetFolder`: Especifica la carpeta en la que se deben colocar los ensamblados de salida. Los ensamblados de salida (y otros archivos de salida) se copian en sus respectivas carpetas de marco.
 
 ### <a name="package-references"></a>Referencias de paquete
 
@@ -202,7 +202,7 @@ Cuando se empaqueta un archivo de licencia, deberá usar la propiedad PackageLic
 </PropertyGroup>
 
 <ItemGroup>
-    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
 [Ejemplo de archivo de licencia](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
@@ -217,7 +217,7 @@ Puede usar un `.nuspec` archivo para empaquetar el proyecto siempre que tenga un
 
 1. `NuspecFile`: ruta de acceso relativa o absoluta al archivo `.nuspec` que se usa para el empaquetado.
 1. `NuspecProperties`: lista de pares clave=valor separados por punto y coma. Debido al funcionamiento del análisis de línea de comandos de MSBuild, se deben especificar varias propiedades como se indica a continuación: `-p:NuspecProperties=\"key1=value1;key2=value2\"`.  
-1. `NuspecBasePath`: ruta de acceso base para el archivo `.nuspec`.
+1. `NuspecBasePath`: Ruta de acceso base para el `.nuspec` archivo.
 
 Si se usa `dotnet.exe` para empaquetar el proyecto, use un comando similar al siguiente:
 
@@ -252,15 +252,15 @@ Un ejemplo de un archivo csproj para empaquetar un archivo nuspec es:
 
 El `pack` destino proporciona dos puntos de extensión que se ejecutan en la compilación interna, de específica de framework de destino. Se admiten los puntos de extensión como contenido específico de framework de destino y los ensamblados en un paquete:
 
-- `TargetsForTfmSpecificBuildOutput` destino: uso para los archivos en el `lib` carpeta o una carpeta especificada utilizando `BuildOutputTargetFolder`.
-- `TargetsForTfmSpecificContentInPackage` destino: uso de archivos fuera de la `BuildOutputTargetFolder`.
+- `TargetsForTfmSpecificBuildOutput` destino: Uso para los archivos en el `lib` carpeta o una carpeta especificada utilizando `BuildOutputTargetFolder`.
+- `TargetsForTfmSpecificContentInPackage` destino: Uso de archivos fuera de la `BuildOutputTargetFolder`.
 
 #### <a name="targetsfortfmspecificbuildoutput"></a>TargetsForTfmSpecificBuildOutput
 
 Escribir un destino personalizado y lo especifica como el valor de la `$(TargetsForTfmSpecificBuildOutput)` propiedad. Para los archivos que deben entrar en el `BuildOutputTargetFolder` (lib de forma predeterminada), el destino debe escribir esos archivos en el elemento ItemGroup `BuildOutputInPackage` y establecer los dos valores de metadatos siguientes:
 
 - `FinalOutputPath`: La ruta de acceso absoluta del archivo; Si no se proporciona, la identidad se utiliza para evaluar la ruta de acceso de origen.
-- `TargetPath`: (Opcional) establecer cuando el archivo debe ir en una subcarpeta dentro de `lib\<TargetFramework>` , como ensamblados satélite que van en sus carpetas respectivas de referencia cultural. El valor predeterminado es el nombre del archivo.
+- `TargetPath`:  (Opcional) Establecer cuando el archivo debe ir en una subcarpeta dentro de `lib\<TargetFramework>` , como ensamblados satélite que van en sus carpetas respectivas de referencia cultural. El valor predeterminado es el nombre del archivo.
 
 Ejemplo:
 
