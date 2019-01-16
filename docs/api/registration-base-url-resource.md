@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: ba47d6fdeeaa4ee9de83ef4dd990707bd4928063
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 19a1f48164f65f1ff805e036e55abb110247aa72
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453564"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324869"
 ---
 # <a name="package-metadata"></a>Metadatos del paquete
 
@@ -141,9 +141,10 @@ dependencyGroups         | matriz de objetos           | No       | Las dependen
 Descripción              | cadena                     | No       | 
 iconUrl                  | cadena                     | No       | 
 id                       | cadena                     | sí      | El identificador del paquete
-licenseUrl               | cadena                     | No       | 
+licenseUrl               | cadena                     | No       |
+licenseExpression        | cadena                     | No       | 
 lista                   | booleano                    | No       | Se debe considerar como activa si está ausente
-MinClientVersion         | cadena                     | No       | 
+minClientVersion         | cadena                     | No       | 
 projectUrl               | cadena                     | No       | 
 Publicado                | cadena                     | No       | Una cadena que contiene una marca de tiempo ISO 8601 de cuando se publicó el paquete
 requireLicenseAcceptance | booleano                    | No       | 
@@ -155,6 +156,8 @@ version                  | cadena                     | sí      | La cadena de 
 El paquete `version` propiedad es la cadena de versión completa después de la normalización. Esto significa que los datos de generación de SemVer 2.0.0 se pueden incluidos aquí.
 
 El `dependencyGroups` propiedad es una matriz de objetos que representan las dependencias del paquete, agrupados por .NET framework de destino. Si el paquete no tiene dependencias, el `dependencyGroups` falta la propiedad, una matriz vacía, o el `dependencies` propiedad de todos los grupos falta o está vacía.
+
+El valor de la `licenseExpression` propiedad cumple [sintaxis de expresiones de licencia de NuGet](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license).
 
 #### <a name="package-dependency-group"></a>Grupo de dependencia del paquete
 

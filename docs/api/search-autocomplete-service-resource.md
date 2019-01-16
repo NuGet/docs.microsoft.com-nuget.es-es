@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 01f919dc3bbfb6752c8f8e055a3cd473ad194e75
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 2d2b20c1ea439ec0a3225cf983d9a4d2eedb0333
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549088"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324765"
 ---
 # <a name="autocomplete"></a>Autocompletar
 
@@ -21,7 +21,7 @@ Es posible crear una experiencia paquete ID y version Autocompletar mediante la 
 
 La siguiente `@type` se usan los valores:
 
-Valor de @type                          | Notas
+Valor de@type                           | Notas
 ------------------------------------ | -----
 SearchAutocompleteService            | La versión inicial
 SearchAutocompleteService/3.0.0-beta | Alias de `SearchAutocompleteService`
@@ -78,7 +78,7 @@ datos      | matriz de cadenas | sí      | El paquete de identificadores que co
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-OBTENER https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+    GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 

@@ -6,18 +6,18 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: bb47c72768b0698d8e712c8261321ff38bba2764
-ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
+ms.openlocfilehash: 39b710c483ce4b3f2da30df6bb5b6842f9ee1fca
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53248434"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324843"
 ---
 # <a name="nuget-api"></a>API NuGet
 
 La API de NuGet es un conjunto de puntos de conexión HTTP que puede usarse para descargar los paquetes, capturar metadatos, publicar nuevos paquetes y realizar otras operaciones disponibles en los clientes de NuGet oficiales.
 
-Esta API se usa por el cliente de NuGet en Visual Studio, nuget.exe y la CLI de .NET para realizar operaciones de NuGet como [ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore), búsqueda en la IU de Visual Studio, y [ `nuget.exe push` ](../tools/cli-ref-push.md).
+Esta API se usa por el cliente de NuGet en Visual Studio, nuget.exe y la CLI de .NET para realizar operaciones de NuGet como [ `dotnet restore` ](/dotnet/core/tools/dotnet-restore?tabs=netcore2x), búsqueda en la IU de Visual Studio, y [ `nuget.exe push` ](../tools/cli-ref-push.md).
 
 Tenga en cuenta que en algunos casos, nuget.org tiene requisitos adicionales que no se aplican por otros orígenes de paquetes. Estas diferencias se documentan por la [protocolos de nuget.org](nuget-protocols.md).
 
@@ -43,7 +43,7 @@ Los clientes más antiguos (por ejemplo, nuget.exe 2.x) no admiten la API de V3 
 
 La API de NuGet V3 se denomina así porque es el sucesor de la API V2, que era el protocolo basado en OData, implementado por la versión 2.x del cliente NuGet oficial. La API de V3 primero era compatible con la versión 3.0 del cliente NuGet oficial y es todavía la versión de protocolo principal más reciente compatible con el cliente de NuGet 4.0 y en. 
 
-Se realizaron cambios en los protocolos que no son importantes a la API porque era el primer lanzamiento.
+Se realizaron cambios en los protocolos que no son importantes a la API desde el lanzamiento en primer lugar.
 
 ## <a name="resources-and-schema"></a>Los recursos y el esquema
 
@@ -74,7 +74,7 @@ Todas las marcas de tiempo devueltos por la API son UTC o si no se especifican u
 
 ## <a name="http-methods"></a>Métodos HTTP
 
-Verbo   | Usar
+Verb   | Usar
 ------ | -----------
 GET    | Realiza una operación de solo lectura, normalmente, recuperación de datos.
 HEAD   | Obtiene los encabezados de respuesta correspondiente `GET` solicitud.
@@ -110,7 +110,7 @@ nombre                     | Descripción
 X-NuGet-ApiKey           | Es necesario para la inserción y eliminación, consulte [ `PackagePublish` recursos](package-publish-resource.md)
 X-NuGet-Client-Version   | **En desuso** y reemplazado por `X-NuGet-Protocol-Version`
 X-NuGet-Protocol-Version | Necesario en algunos casos solo en nuget.org, vea [protocolos de nuget.org](NuGet-Protocols.md)
-X-NuGet-Id. de sesión       | *Opcional*. NuGet clientes v4.7 + identificar las solicitudes HTTP que forman parte de la misma sesión de cliente de NuGet. Para `PackageReference` hay operaciones de restauración es un identificador de sesión único, para otros escenarios como Autocompletar, y `packages.config` restauración puede haber varios diferentes Id. de sesión debido a cómo el código se divide.
+X-NuGet-Session-Id       | *Opcional*. NuGet clientes v4.7 + identificar las solicitudes HTTP que forman parte de la misma sesión de cliente de NuGet. Para `PackageReference` hay operaciones de restauración es un identificador de sesión único, para otros escenarios como Autocompletar, y `packages.config` restauración puede haber varios diferentes Id. de sesión debido a cómo el código se divide.
 
 ## <a name="authentication"></a>Autenticación
 

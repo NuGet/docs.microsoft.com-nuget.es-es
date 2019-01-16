@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 878fb582a31667c84f3ae306b554718de72eca7a
-ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
+ms.openlocfilehash: 8132595cbfaf553736fbcc81aada283a44d6cdbf
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53645677"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324856"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -72,6 +72,7 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 ### <a name="pack-target-inputs"></a>Entradas de destino de pack
 
 - IsPackable
+- SuppressDependenciesWhenPacking
 - PackageVersion
 - PackageId
 - Authors
@@ -106,6 +107,10 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 - NuspecProperties
 
 ## <a name="pack-scenarios"></a>Escenarios de pack
+
+### <a name="suppress-dependencies"></a>Suprimir las dependencias
+
+Para suprimir las dependencias de paquete desde el paquete NuGet generado, establezca `SuppressDependenciesWhenPacking` a `true` que permitirá omitir todas las dependencias de archivo nupkg generado.
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
@@ -193,6 +198,14 @@ Si un archivo de tipo Compile está fuera de la carpeta de proyecto, simplemente
 
 Cuando se usa una expresión de licencia, debe usarse la propiedad PackageLicenseExpression. 
 [Ejemplo de expresión de licencia](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample).
+
+```xml
+<PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+</PropertyGroup>
+```
+
+[Obtenga información sobre las expresiones de licencia y licencias que se aceptan en NuGet.org](nuspec.md#license).
 
 Cuando se empaqueta un archivo de licencia, deberá usar la propiedad PackageLicenseFile para especificar la ruta de acceso de paquete, relativa a la raíz del paquete. Además, deberá asegurarse de que el archivo está incluido en el paquete. Por ejemplo:
 

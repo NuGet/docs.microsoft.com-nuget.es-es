@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8e612d9f86bcffc99870c5541aa6091e678db512
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 97ed3ec7d41d2847c0521af69373a1871eb585dd
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547094"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324687"
 ---
 # <a name="nuget-client-sdk"></a>SDK de cliente de NuGet
 
@@ -29,10 +29,14 @@ El código fuente se publica en GitHub en el proyecto [NuGet/NuGet.Client](https
 
 Puede encontrar ejemplos y documentación para algunas de las API en la serie de blogs por Dave Glick, publicado 2016:
 
-- [Exploración de las bibliotecas de NuGet v3, parte 1: introducción y conceptos](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
-- [Exploración de las bibliotecas de NuGet v3, parte 2: buscar paquetes](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
-- [Exploración de las bibliotecas de NuGet v3, parte 3: instalación de paquetes](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
+- [Exploración de las bibliotecas de NuGet v3, parte 1: Introducción y conceptos](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
+- [Exploración de las bibliotecas de NuGet v3, 2ª parte: Buscar paquetes](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
+- [Exploración de las bibliotecas de NuGet v3, parte 3: Instalación de paquetes](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
 
 > [!Note]
 > Estas entradas de blog escritas poco después de la **3.4.3** versión de NuGet se han publicado paquetes de SDK de cliente.
 > Las versiones más recientes de los paquetes pueden ser incompatibles con la información de las entradas de blog.
+
+Martin Björkström hizo un seguimiento del blog para la serie de blogs de Dave Glick donde presenta un enfoque diferente en mediante el SDK de cliente de NuGet para instalar paquetes de NuGet:
+
+- [Nueva visita a las bibliotecas de NuGet v3](https://martinbjorkstrom.com/posts/2018-09-19-revisiting-nuget-client-libraries)

@@ -6,29 +6,29 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 047ede14c7935844cb4f6d0315772c2a1190e5b8
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 0c76ea43e871009223cc4328449e21e5d02129bb
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547264"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324882"
 ---
 # <a name="target-frameworks"></a>Versiones de .NET Framework de destino
 
 NuGet usa referencias de plataformas de destino en varios lugares para identificar y aislar de forma específica los componentes de un paquete que dependen de la plataforma:
 
-- [Manifiesto .nuspec](../reference/nuspec.md): un paquete puede indicar que se incluyan distintos paquetes en un proyecto en función de la plataforma de destino del proyecto.
-- [Nombre de la carpeta .nupkg](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): las carpetas que están dentro de la carpeta `lib` de un paquete se pueden denominar según la plataforma de destino, cada una de las cuales contiene los archivos DLL y otro contenido adecuado para esa plataforma.
-- [packages.config](../reference/packages-config.md): el atributo `targetframework` de una dependencia especifica la variante de un paquete que se va a instalar.
+- [manifiesto .nuspec](../reference/nuspec.md): Un paquete puede indicar distintos paquetes que se incluirán en un proyecto en función de la plataforma de destino del proyecto.
+- [nombre de la carpeta .nupkg](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): Las carpetas dentro de un paquete `lib` carpeta se puede denominar según la plataforma de destino, cada uno de los cuales contiene los archivos DLL y otro contenido adecuado para esa plataforma.
+- [packages.config](../reference/packages-config.md): El `targetframework` atributo de una dependencia especifica la variante de un paquete para instalarlo.
 
 > [!Note]
 > El código fuente del cliente de NuGet que calcula las siguientes tablas se encuentra en las siguientes ubicaciones:
 > - Nombres de plataforma admitidos: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> - Prioridad y asignación de plataformas: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> - Prioridad y asignación: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 ## <a name="supported-frameworks"></a>Marcos de trabajo admitidos
 
-A una plataforma normalmente se hace referencia mediante un moniker corto de la plataforma de destino o TFM. En .NET Standard, esto también se ha generalizado a *TxM* para permitir una sola referencia a varias plataformas.
+A una plataforma normalmente se hace referencia mediante un moniker corto de la plataforma de destino o TFM. En .NET Standard Esto también se ha generalizado a *TxM* para permitir una referencia única a varias plataformas.
 
 Los clientes de NuGet admiten las plataformas indicadas en la tabla siguiente. Los equivalentes se muestran entre corchetes []. Tenga en cuenta que es posible que algunas herramientas, como `dotnet`, usen variaciones de TFM canónicos en algunos archivos. Por ejemplo, `dotnet pack` usa `.NETCoreApp2.0` en un archivo `.nuspec` en lugar de `netcoreapp2.0`. Las distintas herramientas del cliente de NuGet controlan estas variaciones sin problema, pero siempre debe usar TFM canónicos al editar archivos directamente.
 

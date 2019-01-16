@@ -6,16 +6,16 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: ffd0cf5d50a2deed16e1722b32e43047bc81df2f
-ms.sourcegitcommit: a1846edf70ddb2505d58e536e08e952d870931b0
+ms.openlocfilehash: ee4ffaa7e250cdbf313476fd794a8d87c80b69f9
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52303691"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324713"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a>comando de firmantes de confianza (CLI de NuGet)
 
-**Se aplica a:** consumo de paquetes &bullet; **versiones compatibles:** 4.9 +
+**Se aplica a:** consumo de paquetes &bullet; **versiones compatibles:** 4.9.1+
 
 Obtiene o establece los firmantes de confianza a la configuración de NuGet. Para el uso adicional, consulte [configuración del comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md). Para obtener más información sobre cómo el esquema de nuget.config parece, consulte el [referencia del archivo de configuración de NuGet](../reference/nuget-config-file.md).
 
@@ -53,7 +53,7 @@ Registered trusted signers:
         
 ```
 
-## <a name="nuget-trusted-signers-add-options"></a>NuGet confianza-firmantes agregar [opciones]
+## <a name="nuget-trusted-signers-add-options"></a>nuget trusted-signers add [options]
 
 Agrega un firmante de confianza con el nombre dado a la configuración. Esta opción tiene diferentes movimientos para agregar un repositorio o autor de confianza.
 
@@ -80,7 +80,7 @@ Proporcionar ambos `-Author` y `-Repository` al mismo tiempo, no se admite.
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_Tenga en cuenta_: esta opción sólo permiten agregar repositorios de confianza. 
+_Nota_: Esta opción sólo permiten agregar repositorios de confianza. 
 
 | Opción | Descripción |
 | --- | --- |
@@ -94,7 +94,7 @@ _Tenga en cuenta_: esta opción sólo permiten agregar repositorios de confianza
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_Tenga en cuenta_: si ya existe un firmante de confianza con el nombre especificado, se agregará el elemento de certificado para ese firmante. En caso contrario, se creará un autor de confianza con un elemento de certificado desde determinadas información del certificado.
+_Nota_: Si ya existe un firmante de confianza con el nombre especificado, se agregará el elemento de certificado para ese firmante. En caso contrario, se creará un autor de confianza con un elemento de certificado desde determinadas información del certificado.
 
 | Opción | Descripción |
 | --- | --- |
@@ -110,7 +110,7 @@ Quita los firmantes de confianza que coinciden con el nombre especificado.
 
 Solicita la lista más reciente de los certificados usados en un repositorio de confianza actualmente para actualizar el la lista de certificados existentes en el firmante de confianza.
 
-_Tenga en cuenta_: eliminará de la lista actual de los certificados y reemplazarlos por una lista actualizada desde el repositorio de este gesto.
+_Nota_: Este gesto eliminará la lista actual de los certificados y reemplazarlos por una lista actualizada desde el repositorio.
 
 ## <a name="options"></a>Opciones
 

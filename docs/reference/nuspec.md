@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: e8d4ed1f3fe4394d084a5847200901b23a1b7b39
-ms.sourcegitcommit: c825eb7e222d4a551431643f5b5617ae868ebe0a
+ms.openlocfilehash: 009be99a1c6623a00b4bdbe6db3164ca70782212
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51944085"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324908"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -105,6 +105,9 @@ Si usa una licencia que no se ha asignado un identificador SPDX, o se trata de u
   </files>
 </package>
 ```
+
+Para el equivalente en MSBuild, eche un vistazo a [empaquetado de una expresión de licencia o un archivo de licencia](msbuild-targets.md#packing-a-license-expression-or-a-license-file).
+
 Se describe en la sintaxis exacta de las expresiones de licencia de NuGet [ABNF](https://tools.ietf.org/html/rfc5234).
 ```cli
 license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
@@ -139,17 +142,17 @@ Descripción breve del paquete para su visualización en la interfaz de usuario.
 Identificador de configuración regional del paquete. Vea [Creación de paquetes localizados](../create-packages/creating-localized-packages.md).
 #### <a name="tags"></a>etiquetas
 Lista de etiquetas y palabras clave, delimitadas por espacios, que describen el paquete y ayudan a detectar los paquetes a través de búsquedas y filtrados. 
-#### <a name="serviceable"></a>posibilidad de mantenimiento 
+#### <a name="serviceable"></a>serviceable 
 *(3.3+)* Solo para uso interno de NuGet.
 #### <a name="repository"></a>repositorio
 Repositorio de metadatos, que consta de cuatro atributos opcionales: *tipo* y *url* *(4.0 y versiones posteriores)*, y *rama* y  *confirmación* *(4.6 y versiones posteriores)*. Estos atributos permiten asignar los archivos .nupkg en el repositorio que se crearon, con la posibilidad de obtener tal como se detalla como la rama individual o la confirmación de que se creó el paquete. Debe ser una dirección url disponible públicamente que se puede invocar directamente mediante un software de control de versión. No debe ser una página html tal como está pensado para el equipo. Para vincular a la página del proyecto, use el `projectUrl` campo, en su lugar.
 
-#### <a name="minclientversion"></a>MinClientVersion
+#### <a name="minclientversion"></a>minClientVersion
 Especifica la versión mínima del cliente de NuGet que puede instalar este paquete, aplicada por nuget.exe y el Administrador de paquetes de Visual Studio. Se usa siempre que el paquete depende de características específicas del archivo `.nuspec` que se agregaron en una versión concreta del cliente de NuGet. Por ejemplo, un paquete que usa el atributo `developmentDependency` debería especificar "2.8" para `minClientVersion`. Asimismo, un paquete que usa el elemento `contentFiles` (vea la sección siguiente) debería establecer `minClientVersion` en "3.3". Observe también que, debido a que los clientes de NuGet anteriores a la versión 2.5 no reconocen esta marca, *siempre* rechazan instalar el paquete, independientemente de lo que contenga `minClientVersion`.
 
 #### <a name="collection-elements"></a>Elementos de colección
 
-#### <a name="packagetypes"></a>PackageTypes
+#### <a name="packagetypes"></a>packageTypes
 *(3.5+)* Colección de cero o más elementos `<packageType>` que especifican el tipo del paquete si es distinto de un paquete de dependencias tradicional. Cada tipo de paquete tiene atributos de *name* y *version*. Vea [Establecimiento de un tipo de paquete](../create-packages/creating-a-package.md#setting-a-package-type).
 #### <a name="dependencies"></a>dependencias
 Colección de cero o más elementos `<dependency>` que especifican las dependencias del paquete. Cada dependencia tiene atributos de *id*, *version*, *include* (3.x+) y *exclude* (3.x+). Vea [Dependencias](#dependencies-element) a continuación.
@@ -250,7 +253,7 @@ Las líneas siguientes indican dependencias en los mismos paquetes, pero especif
 </dependencies>
 ```
 
-Nota: al crear un archivo `.nuspec` a partir de un proyecto mediante `nuget spec`, las dependencias que existen en ese proyecto se incluyen automáticamente en el archivo `.nuspec` resultante.
+Nota: Al crear un `.nuspec` desde un proyecto mediante `nuget spec`, las dependencias que existen en ese proyecto se incluyen automáticamente en el cuadro `.nuspec` archivo.
 
 ### <a name="dependency-groups"></a>Grupos de dependencia
 

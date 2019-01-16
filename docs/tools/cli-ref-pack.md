@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: b5bd8bd30ad134f36433b8e4721ce131425a1483
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: d39ec8caf94caa767b6c502cc475e278aa718b95
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453369"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324791"
 ---
 # <a name="pack-command-nuget-cli"></a>Comando pack (CLI de NuGet)
 
-**Se aplica a:** la creación del paquete &bullet; **versiones compatibles:** 2.7 +
+**Se aplica a:** la creación del paquete &bullet; **versiones compatibles:** 2.7+
 
 Crea un paquete de NuGet según lo especificado `.nuspec` o archivo de proyecto. El `dotnet pack` comando (vea [comandos dotnet](dotnet-Commands.md)) y `msbuild -t:pack` (consulte [destinos de MSBuild](../reference/msbuild-targets.md)) que puede utilizarse como alternativas.
 
@@ -89,7 +89,7 @@ nuget pack foo.csproj -Properties Configuration=Release
 nuget pack foo.csproj -Build -Symbols -Properties owners=janedoe,xiaop;version="1.0.5"
 
 # Create a package from project foo.csproj, using MSBuild version 12 to build the project
-nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5
+nuget pack foo.csproj -Build -Symbols -MSBuildVersion 12 -Properties owners=janedoe,xiaop;version="1.0.5"
 
 # Create a package from project foo.nuspec and the corresponding symbol package using the new recommended format .snupkg
 nuget pack foo.nuspec -Symbols -SymbolPackageFormat snupkg
