@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 5f52b00e0c45882fb7a4bd1c1a80022192f3be6b
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 506a093ff4d62c10c896246f746e6765f64f33f4
+ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580251"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54403169"
 ---
 # <a name="package-consumption-workflow"></a>Flujo de trabajo de consumo de paquetes
 
@@ -35,7 +35,7 @@ Al agregar el código del proyecto a un repositorio de origen, no se suelen incl
 
 ![Flujo para restaurar paquetes de NuGet clonando un repositorio y usando un comando de restauración](media/Overview-02-RestoreFlow.png)
 
-La [restauración de paquetes](../consume-packages/package-restore.md) usa la información del archivo de proyecto o de `packages.config` para volver a instalar todas las dependencias. Tenga en cuenta que existen diferencias en el proceso implicado, como se describe en [Dependency Resolution](../consume-packages/dependency-resolution.md) (Resolución de dependencias). Además, el diagrama anterior no muestra un comando de restauración para la consola del Administrador de paquetes porque se encuentra en la consola y ya está en el contexto de Visual Studio, que normalmente restaura paquetes automáticamente y proporciona el comando de nivel de la solución, tal y como se muestra.
+La [restauración de paquetes](../consume-packages/package-restore.md) usa la información del archivo de proyecto o de `packages.config` para volver a instalar todas las dependencias. Tenga en cuenta que existen diferencias en el proceso implicado, como se describe en [Dependency Resolution](../consume-packages/dependency-resolution.md) (Resolución de dependencias). Además, en el diagrama anterior no se muestra un comando de restauración para la consola del Administrador de paquetes porque, si se encuentra en la consola, ya está en el contexto de Visual Studio, que normalmente restaura los paquetes de forma automática y proporciona el comando de nivel de la solución, tal y como se muestra.
 
 A veces es necesario volver a instalar los paquetes que ya están incluidos en un proyecto, que también podrían volver a instalar las dependencias. Esto resulta sencillo con el comando `nuget reinstall` o la consola del Administrador de paquetes NuGet. Para más información, vea [Reinstalación y actualización de paquetes](../consume-packages/reinstalling-and-updating-packages.md).
 
