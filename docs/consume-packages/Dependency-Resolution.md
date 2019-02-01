@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: cdbe13df04bb27091b684a4ae27b0e751da1098f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a561a49f2e733929e32584adf7b6849ea535c440
+ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549039"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55046261"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Cómo resuelve NuGet las dependencias de paquetes
 
@@ -117,10 +117,10 @@ Hay escenarios en los que es posible que se haga referencia a ensamblados con el
 
 Para resolver este problema, debe hacer referencia directamente al archivo `C.dll` que quiere (o bien usar otro paquete que haga referencia al archivo correcto) y, después, agregar una dependencia al Paquete C que excluya todos sus activos. Esto se realiza como se indica a continuación según el formato de administración de paquetes en uso:
 
-- [PackageReference](../consume-packages/package-references-in-project-files.md): agregue `Exclude="All"` en la dependencia:
+- [PackageReference](../consume-packages/package-references-in-project-files.md): agregue `ExcludeAssets="All"` en la dependencia:
 
     ```xml
-    <PackageReference Include="PackageC" Version="1.0.0" Exclude="All" />
+    <PackageReference Include="PackageC" Version="1.0.0" ExcludeAssets="All" />
     ```
 
 - `packages.config`: quite la referencia a PackageC desde el archivo `.csproj` para que solo haga referencia a la versión de `C.dll` que quiera.

@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 009be99a1c6623a00b4bdbe6db3164ca70782212
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: fec6dd0fb97b565b364a7ffcb192d2eb99187e83
+ms.sourcegitcommit: b15fdd101aec13ea5fe9dd12845051d648034abd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324908"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55480145"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -90,7 +90,7 @@ Esta es la lista completa de [identificadores de licencia SPDX](https://spdx.org
 
 Si el paquete con licencia bajo varias licencias común, puede especificar una licencia compuesto utilizando el [SPDX versión 2.0 de la sintaxis de expresión](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60).<br>Por ejemplo: `<license type="expression">BSD-2-Clause OR MIT</license>`.
 
-Si usa una licencia que no se ha asignado un identificador SPDX, o se trata de una licencia personalizada, puede empaquetar un archivo con el texto de la licencia. Por ejemplo:
+Si usa una licencia que no se ha asignado un identificador SPDX, o se trata de una licencia personalizada, puede empaquetar un archivo (solo `.txt.` o `.md`) con el texto de la licencia. Por ejemplo:
 ```xml
 <package>
   <metadata>
