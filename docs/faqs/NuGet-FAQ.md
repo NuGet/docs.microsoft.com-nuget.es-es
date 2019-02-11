@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: dbdd171321c2560adc06feccbd60fc4e84dcf0a3
-ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
+ms.openlocfilehash: 290055a306306e944695d3a6ac970819882ee0c6
+ms.sourcegitcommit: 046717af2eba9ff6f619a0533844dee56a600d1c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54403227"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55648275"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -235,10 +235,17 @@ Nota: Es posible que sea necesario establecer la variable de entorno `HTTP_PROXY
 
 Si eso no funciona, pruebe las [sugerencias mencionadas en esta publicación de StackOverflow](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
 
-**¿Cuáles son los puntos de conexión de API para nuget.org?**
+## <a name="what-is-the-api-endpoint-for-nugetorg"></a>¿Cuál es el punto de conexión de la API de nuget.org?
 
-- V3: `https://api.nuget.org/v3/index.json`
-- V2: `https://www.nuget.org/api/v2/` Tenga en cuenta que la API V2 está en desuso y no funciona con NuGet 4 y versiones posteriores.
+Para usar nuget.org como repositorio de paquetes con clientes NuGet, deberá usar el siguiente punto de conexión de la API (versión 3): 
+
+**`https://api.nuget.org/v3/index.json`**
+
+Los clientes anteriores seguirán pudiendo utilizar la versión 2 para conectarse a nuget.org. Sin embargo, tenga en cuenta que, en el caso de los clientes de NuGet 3.0 o versiones posteriores, la versión 2 del protocolo ofrece un servicio más lento y menos confiable:
+
+`https://www.nuget.org/api/v2/` (EN DESUSO) **Nota**: El "www." es importante.
+
+Además, *NuGet.exe List* solo funciona con la versión 2 del protocolo.
 
 ## <a name="nugetorg-account-management"></a>Administración de cuentas de nuget.org
 
