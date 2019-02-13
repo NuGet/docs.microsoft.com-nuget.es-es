@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 39b710c483ce4b3f2da30df6bb5b6842f9ee1fca
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 5d0d60cbcf6516d24efeb04f8262902da69d92d1
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324843"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145662"
 ---
 # <a name="nuget-api"></a>API NuGet
 
@@ -49,17 +49,17 @@ Se realizaron cambios en los protocolos que no son importantes a la API desde el
 
 El **índice de servicio** describe una variedad de recursos. El conjunto actual de los recursos admitidos son los siguientes:
 
-Nombre del recurso                                                           | Obligatorio | Descripción
-----------------------------------------------------------------------  | -------- | -----------
+Nombre del recurso                                                          | Obligatorio | Descripción
+---------------------------------------------------------------------- | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | sí      | Insertar y eliminar (o quitar de la lista) paquetes.
 [`SearchQueryService`](search-query-service-resource.md)               | sí      | Filtrar y buscar paquetes mediante la palabra clave.
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | sí      | Obtener metadatos del paquete.
 [`PackageBaseAddress`](package-base-address-resource.md)               | sí      | Obtener contenido del paquete (archivo .nupkg).
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | No       | Detectar el Id. de paquete y las versiones por la subcadena.
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | No       | Construir una dirección URL para tener acceso a una página web de "Notificar abuso".
-[`RepositorySignatures`](repository-signatures-resource.md)             | No      | Obtener certificados usados para firmar el repositorio.
-[`Catalog`](catalog-resource.md)                                         | No      | Registro completo de todos los eventos de paquete.
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | No      | Insertar paquetes de símbolos.
+[`RepositorySignatures`](repository-signatures-resource.md)            | No       | Obtener certificados usados para firmar el repositorio.
+[`Catalog`](catalog-resource.md)                                       | No       | Registro completo de todos los eventos de paquete.
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)           | No       | Insertar paquetes de símbolos.
 
 En general, todos los datos no binarios devueltos por un recurso de API se serializan mediante JSON. El esquema de respuesta devuelto por cada recurso en el índice de servicio se define por separado para ese recurso. Para obtener más información acerca de cada recurso, vea los temas enumerados anteriormente.
 
@@ -67,6 +67,19 @@ En el futuro, a medida que evoluciona el protocolo, se pueden agregar nuevas pro
 
 > [!Note]
 > Cuando un origen no implementa `SearchAutocompleteService` cualquier comportamiento de Autocompletar debe deshabilitarse de forma correcta. Cuando `ReportAbuseUriTemplate` no está implementado, la vuelve de cliente de NuGet oficial de nuget.org a la dirección URL de abuso de informes (sometidas a seguimiento por [NuGet/Home #4924](https://github.com/NuGet/Home/issues/4924)). Pueden optar por otros clientes simplemente no se muestra una dirección URL de abuso de informe al usuario.
+
+### <a name="undocumented-resources-on-nugetorg"></a>Recursos no documentados en nuget.org
+
+El índice de servicio V3 en nuget.org tiene algunos recursos que no se han documentado anteriormente. Hay varias razones para no documentar un recurso.
+
+En primer lugar, se no documenta los recursos que se utiliza como un detalle de implementación de nuget.org. El `SearchGalleryQueryService` se encuentra en esta categoría. [NuGetGallery](https://github.com/NuGet/NuGetGallery) usa este recurso para delegar algunas V2 consultas (OData) en nuestro índice de búsqueda en lugar de usar la base de datos. Este recurso se introdujo por motivos de escalabilidad y no está pensado para uso externo.
+
+En segundo lugar, se no documenta los recursos que nunca se distribuye con una versión RTM del cliente oficial.
+`PackageDisplayMetadataUriTemplate` y `PackageVersionDisplayMetadataUriTemplate` entran en esta categoría.
+
+En tercer lugar, documentamos no los recursos que están estrechamente junto con el protocolo de V2, que a su vez está documentado deliberadamente. El `LegacyGallery` recurso se encuentra en esta categoría. Este recurso permite un índice de servicio V3 para que apunte a una dirección URL del origen de V2 correspondiente. Este recurso es compatible con la `nuget.exe list`.
+
+Si un recurso no está documentado aquí, hemos *fuertemente* recomendamos que no tome una dependencia en ellos. Podemos quitar o cambiar el comportamiento de estos recursos no documentados que podría afectar a su implementación de manera inesperada.
 
 ## <a name="timestamps"></a>Marcas de tiempo
 

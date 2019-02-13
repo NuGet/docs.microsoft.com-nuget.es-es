@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 06e3a26863761b7e7a42752866e7fe369f5be4ef
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: adf97196f50f2a55d6b8ceed93d53ff12b67657b
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550357"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145636"
 ---
 # <a name="restore-command-nuget-cli"></a>restaurar comandos (CLI de NuGet)
 
-**Se aplica a:** consumo de paquetes &bullet; **versiones compatibles:** 2.7 +
+**Se aplica a:** consumo de paquetes &bullet; **versiones compatibles:** 2.7+
 
 Descarga e instala los paquetes que faltan en el `packages` carpeta. Cuando se usa con NuGet 4.0 + y el formato PackageReference, genera un `<project>.nuget.props` archivo, si es necesario, en el `obj` carpeta. (Se puede omitir el archivo de control de código fuente.)
 
@@ -39,9 +39,9 @@ donde `<projectPath>` especifica la ubicación de una solución o un `packages.c
 | ForceEnglishOutput | *(3.5 y versiones posteriores)*  Fuerza nuget.exe se ejecute con una referencia cultural invariable, en inglés. |
 | Ayuda | Muestra información de ayuda para el comando. |
 | MSBuildPath | *(4.0 y versiones posteriores)*  Especifica la ruta de acceso de MSBuild que use con el comando, tiene prioridad sobre `-MSBuildVersion`. |
-| MSBuildVersion | *(3.2 y versiones posteriores)*  Especifica la versión de MSBuild que se usará con este comando. Los valores admitidos son 4, 12, 14, 15. De forma predeterminada que se selecciona la versión de MSBuild en su ruta de acceso, en caso contrario, el valor predeterminado es la última versión instalada de MSBuild. |
+| MSBuildVersion | *(3.2 y versiones posteriores)*  Especifica la versión de MSBuild que se usará con este comando. Los valores admitidos son 4, 12, 14, 15.1, versión 15.3, 15.4, 15.5, versión 15.6, versión 15.7, 15,8, 15.9. De forma predeterminada que se selecciona la versión de MSBuild en su ruta de acceso, en caso contrario, el valor predeterminado es la última versión instalada de MSBuild. |
 | NoCache | Impide que NuGet utilice paquetes almacenados en caché. Consulte [administración de paquetes globales y carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
-| No interactivo | Suprime los mensajes para confirmaciones o intervención del usuario. |
+| NonInteractive | Suprime los mensajes para confirmaciones o intervención del usuario. |
 | OutputDirectory | Especifica la carpeta donde se instalan los paquetes. Si se especifica ninguna carpeta, se usa la carpeta actual. Necesario cuando se restaura con un `packages.config` archivo a menos que `PackagesDirectory` o `SolutionDirectory` se utiliza.|
 | PackageSaveMode | Especifica los tipos de archivos que se va a guardar tras la instalación del paquete: uno de `nuspec`, `nupkg`, o `nuspec;nupkg`. |
 | PackagesDirectory | Igual a `OutputDirectory`. Necesario cuando se restaura con un `packages.config` archivo a menos que `OutputDirectory` o `SolutionDirectory` se utiliza. |
