@@ -5,20 +5,52 @@ author: anangaur
 ms.author: anangaur
 ms.date: 1/25/2019
 ms.topic: conceptual
-ms.openlocfilehash: ed3294f88ff99d5e26f630bdbca03aa8446b6e7f
-ms.sourcegitcommit: 0cb4c9853cde3647291062eadee2298dd273311e
+ms.openlocfilehash: 5889ea52f993fa8fe841f8eb83b6da659cdede93
+ms.sourcegitcommit: 1ab750ff17e55c763d646c50e7630138804ce8b8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55084941"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56247664"
 ---
 # <a name="nuget-50-preview-release-notes"></a>Notas de la versión preliminar 5.0 NuGet
+
+## <a name="nuget-50-preview-releases"></a>Versiones 5.0 Preview de NuGet
+
+* 13 de febrero de 2019 - [NuGet 5.0 Preview 3](#summary-whats-new-in-50-preview-3)
+* 23 de enero de 2019 - [NuGet 5.0 Preview 2](#summary-whats-new-in-50-preview-2)
+
+## <a name="summary-whats-new-in-nuget-50-preview-3"></a>Resumen: Novedades en NuGet 5.0 Preview 3
+
+### <a name="issues-fixed-in-this-release"></a>Problemas corregidos en esta versión 
+
+**Errores:**
+
+* nuget.exe /? debe enumerar las versiones correctas de msbuild - [#7794](https://github.com/NuGet/Home/issues/7794)
+
+* NuGet.targets(498,5): error: No se encontró una parte de la ruta de acceso ' / tmp/NuGetScratch - en mono - [#7793](https://github.com/NuGet/Home/issues/7793)
+
+* restauración innecesariamente enumera el contenido de todas las versiones de paquete que se hace referencia en la caché del equipo - [#7639](https://github.com/NuGet/Home/issues/7639)
+
+* Detección automática de MSBuild siempre selecciona 16.0 después de obtener una vista previa en la instalación de VS 2019 - [#7621](https://github.com/NuGet/Home/issues/7621)
+
+* paquete de dotnet lista en una solución genera entradas duplicadas para framework - [#7607](https://github.com/NuGet/Home/issues/7607)
+
+* Excepción "el nombre de ruta de acceso vacía no es legal" cuando IVsPackageInstaller.InstallPackage que realiza la llamada en el antiguo proyectos y paquetes de la carpeta no existe. - [#5936](https://github.com/NuGet/Home/issues/5936)
+
+* nivel de detalle de MSBuild/t: Restore mínimo debe ser más mínimo - [4695 #](https://github.com/NuGet/Home/issues/4695)
+
+**DCRs**
+
+* Permitir que los autores de paquetes definir el comportamiento de compilación activos transitiva - [#6091](https://github.com/NuGet/Home/issues/6091)
+
+* Habilitar la restauración en VS se realice correctamente si un proyecto no forma parte de la solución o no está cargado, pero anteriormente se ha restaurado - [#5820](https://github.com/NuGet/Home/issues/5820)
+
 
 ## <a name="summary-whats-new-in-50-preview-2"></a>Resumen: Novedades de 5.0 Preview 2
 
 ### <a name="issues-fixed-in-this-release"></a>Problemas corregidos en esta versión
 
-#### <a name="bugs"></a>Errores:
+**Errores:**
 
 * VS de 16.0 NuGet UI tiene pestañas ilegibles debido a problemas de color - [#7735](https://github.com/NuGet/Home/issues/7735)
 
@@ -60,7 +92,7 @@ ms.locfileid: "55084941"
 
 * se produce un error en la restauración de dotnet debido a la amplia deshabilitado máquina fuente - [#5410](https://github.com/NuGet/Home/issues/5410)
 
-#### <a name="dcrs"></a>DCR
+**DCRs**
 
 * Los ensamblados de NuGet 5.0 requieren .NET 4.7.2 (a través de cambio TFM) - [#7510](https://github.com/NuGet/Home/issues/7510)
 
@@ -76,21 +108,12 @@ ms.locfileid: "55084941"
 
 [Lista de todos los problemas corregidos en esta versión 5.0.0-preview2](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
 
+### <a name="known-issues"></a>Problemas conocidos
 
-## <a name="known-issues"></a>Problemas conocidos
+#### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget push --interactive produce un error en un equipo Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
+**Problema** el `--interactive` argumento no se reenvía mediante la cli de dotnet y da como resultado el error `error: Missing value for option 'interactive'` 
+ **solución** ejecute cualquier otro comando de dotnet con la opción interactiva como `dotnet restore --interactive` y autenticarse. La autenticación se puede almacenar en caché por el proveedor de credenciales. Después, ejecute `dotnet nuget push`.
 
-### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget push --interactive produce un error en un equipo Mac. - [#7519](https://github.com/NuGet/Home/issues/7519)
-
-#### <a name="issue"></a>Problema
-El argumento `--interactive` no se reenvía mediante la cli de dotnet y da como resultado el error `error: Missing value for option 'interactive'`
-
-#### <a name="workaround"></a>Solución
-Ejecute cualquier otro comando de dotnet con la opción interactiva como `dotnet restore --interactive` y autentíquese. La autenticación se puede almacenar en caché por el proveedor de credenciales. Después, ejecute `dotnet nuget push`.
-
-### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>Los paquetes en FallbackFolders instalados por el SDK de .NET Core de forma personalizada no superan la validación de firma. - [#7414](https://github.com/NuGet/Home/issues/7414)
-
-#### <a name="issue"></a>Problema
-Cuando se usa dotnet.exe 2.x para restaurar un proyecto que tiene como destinos múltiples netcoreapp 1.x y netcoreapp 2.x, la carpeta de reserva se trata como una fuente de archivos. Esto significa que, cuando se restaura, NuGet elegirá el paquete de la carpeta de reserva e intentará instalarlo en la carpeta de paquetes global y realizará la validación de firma habitual, lo cual produce un error.
-
-#### <a name="workaround"></a>Solución
-Deshabilite el uso de la carpeta reservada estableciendo `RestoreAdditionalProjectSources` en nothing. `<RestoreAdditionalProjectSources/>` Use esta opción con precaución, ya que provocará que muchos paquetes, que de otro modo se habrían restaurado de la carpeta de reserva, se descarguen de NuGet.org.
+#### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>Los paquetes en FallbackFolders instalados por el SDK de .NET Core de forma personalizada no superan la validación de firma. - [#7414](https://github.com/NuGet/Home/issues/7414)
+**Problema** al usar dotnet.exe 2.x para restaurar esa netcoreapp varios destino de un proyecto 1.x y netcoreapp 2.x, la carpeta de reserva se trata como un archivo de fuente. Esto significa que, cuando se restaura, NuGet elegirá el paquete de la carpeta de reserva e intentará instalarlo en la carpeta de paquetes global y realizará la validación de firma habitual, lo cual produce un error.
+**Solución alternativa** deshabilitar el uso de la carpeta reserva estableciendo el `RestoreAdditionalProjectSources` en nothing. `<RestoreAdditionalProjectSources/>` Use esta opción con precaución, ya que provocará que muchos paquetes, que de otro modo se habrían restaurado de la carpeta de reserva, se descarguen de NuGet.org.
