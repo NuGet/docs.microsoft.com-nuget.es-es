@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: f054a1cae7328d3e910d11ac1bfc5f98505e5879
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: e0ec5323f7be53bef6637ad69540a66abbf22711
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546538"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145584"
 ---
 # <a name="creating-native-packages"></a>Crear paquetes nativos
 
-Un paquete nativo contiene código de C++ nativo en lugar de código administrado, lo que permite usarlo en proyectos de C++ (vea [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-c-packages) [Paquetes nativos de C++] en la sección Consume [Consumir]).
+Un paquete nativo contiene binarios nativos en lugar de ensamblados administrados, lo que permite usarlo en proyectos de C++ (o similares). (vea [Native C++ Packages](../consume-packages/finding-and-choosing-packages.md#native-c-packages) [Paquetes nativos de C++] en la sección Consume [Consumir]).
 
 Para poder usarse en un proyecto de C++, un paquete debe tener como destino la plataforma `native`. Actualmente no hay ningún número de versión asociado a esta plataforma, ya que NuGet trata igual a todos los proyectos de C++.
 

@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 290055a306306e944695d3a6ac970819882ee0c6
-ms.sourcegitcommit: 046717af2eba9ff6f619a0533844dee56a600d1c
+ms.openlocfilehash: f15639c883241c328b5fc0a4bf5617540b52b7ee
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55648275"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145688"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -237,15 +237,13 @@ Si eso no funciona, pruebe las [sugerencias mencionadas en esta publicación de 
 
 ## <a name="what-is-the-api-endpoint-for-nugetorg"></a>¿Cuál es el punto de conexión de la API de nuget.org?
 
-Para usar nuget.org como repositorio de paquetes con clientes NuGet, deberá usar el siguiente punto de conexión de la API (versión 3): 
+Para usar nuget.org como repositorio de paquetes con clientes NuGet, deberá usar el siguiente extremo de la API (versión 3): 
 
 **`https://api.nuget.org/v3/index.json`**
 
-Los clientes anteriores seguirán pudiendo utilizar la versión 2 para conectarse a nuget.org. Sin embargo, tenga en cuenta que, en el caso de los clientes de NuGet 3.0 o versiones posteriores, la versión 2 del protocolo ofrece un servicio más lento y menos confiable:
+Los clientes anteriores pueden seguir usando la versión 2 del protocolo para conectarse a nuget.org. Sin embargo, tenga en cuenta que, en el caso de los clientes de NuGet 3.0 o de versiones posteriores, la versión 2 del protocolo ofrece un servicio más lento y menos confiable:
 
-`https://www.nuget.org/api/v2/` (EN DESUSO) **Nota**: El "www." es importante.
-
-Además, *NuGet.exe List* solo funciona con la versión 2 del protocolo.
+`https://www.nuget.org/api/v2` (EN DESUSO) **Nota:** Use "www." para mayor confiabilidad.
 
 ## <a name="nugetorg-account-management"></a>Administración de cuentas de nuget.org
 
