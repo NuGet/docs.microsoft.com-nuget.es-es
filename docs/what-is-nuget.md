@@ -14,7 +14,7 @@ ms.locfileid: "51580329"
 ---
 # <a name="an-introduction-to-nuget"></a>Una introducción a NuGet
 
-Una herramienta esencial para cualquier plataforma de desarrollo moderna es un mecanismo a través del cual los desarrolladores pueden crear, compartir y consumir código útil. A menudo, este código se integra en "paquetes" que contienen código compilado (como archivos DLL) y otro contenido necesario en los proyectos que utilizan estos paquetes.
+Una herramienta esencial para cualquier plataforma de desarrollo moderno, es un mecanismo a través del cual los desarrolladores pueden crear, compartir y consumir código útil. A menudo, este código se integra en "paquetes" que contienen código compilado (como archivos DLL) y otro contenido necesario en los proyectos que utilizan estos paquetes.
 
 En .NET (incluido .NET Core), el mecanismo compatible con Microsoft para compartir código es **NuGet**, que define cómo se crean, hospedan y consumen paquetes en .NET, y ofrece las herramientas para cada uno de esos roles.
 
