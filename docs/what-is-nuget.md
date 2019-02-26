@@ -64,7 +64,7 @@ En la imagen siguiente se muestra un proyecto que depende de cinco paquetes que,
 
 ![Un gráfico de dependencias de NuGet de ejemplo para un proyecto de .NET](media/dependency-graph.png)
 
-Tenga en cuenta que algunos paquetes aparecen varias veces en el gráfico de dependencias. Por ejemplo, hay tres consumidores diferentes del paquete B, y es posible que cada consumidor también especifique una versión diferente de ese paquete (no se muestra). Se trata de un hecho frecuente, especialmente para los paquetes más ampliamente utilizados. Afortunadamente, NuGet se encarga del trabajo duro de determinar exactamente qué versión del paquete B satisface a todos los consumidores. NuGet hace después lo mismo con los demás paquetes, con independencia de la profundidad que alcance el gráfico de dependencias.
+Tenga en cuenta que algunos paquetes aparecen varias veces en el gráfico de dependencias. Por ejemplo, hay tres consumidores diferentes del paquete B, y es posible que cada consumidor también especifique una versión diferente de ese paquete (no se muestra). Se trata de un hecho frecuente, especialmente para los paquetes más ampliamente utilizados. Afortunadamente, NuGet se encarga del trabajo duro de determinar exactamente qué versión del paquete B satisface a todos los consumidores. NuGet hace lo mismo para todos los demás paquetes, sin importar que tan profundo sea el grafico de dependencia.
 
 Para obtener más información sobre cómo realiza NuGet este servicio, vea [Resolución de dependencias](consume-packages/dependency-resolution.md).
 
