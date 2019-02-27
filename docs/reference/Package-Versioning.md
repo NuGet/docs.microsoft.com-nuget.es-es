@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: b980c1084fe8e31573053a4dcf38bbfa6146e6de
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6407cd2ea5e5e7a9c9e2be679764a8a0d5dd9260
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549778"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852473"
 ---
 # <a name="package-versioning"></a>Control de versiones de paquetes
 
@@ -29,7 +29,7 @@ En este tema:
 
 Es un número de versión específico en el formulario *principal.secundaria.revisión [-sufijo]*, donde los componentes tienen los significados siguientes:
 
-- *Principales*: cambios importantes
+- *Principales*: Cambios importantes
 - *Menores*: nuevas características, compatibles con versiones anteriores
 - *Revisión*: solo correcciones de errores compatibles con versiones anteriores
 - *-Sufijo* (opcional): un guión seguido de una cadena que denota una versión preliminar (siguientes el [convención SemVer 1.0 o de control de versiones semántico](http://semver.org/spec/v1.0.0.html)).
@@ -92,7 +92,7 @@ Si va a cargar un paquete de SemVer v2.0.0 específicos en nuget.org, el paquete
 
 Clientes de terceros:
 
-- Rider de JetBrains
+- JetBrains Rider
 - Paket versión 5.0 o superior
 
 <!-- For compatibility with previous dependency-versions page -->
@@ -187,9 +187,6 @@ El `version` atributo en un `<dependency>` elemento describe las versiones de in
 ```xml
 <!-- Accepts any version 6.1 and above. -->
 <dependency id="ExamplePackage" version="6.1" />
-
-<!-- Accepts any 6.x.y version. -->
-<dependency id="ExamplePackage" version="6.*" />
 
 <!-- Accepts any version above, but not including 4.1.3. Could be
      used to guarantee a dependency with a specific bug fix. -->
