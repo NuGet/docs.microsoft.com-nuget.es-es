@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: f15639c883241c328b5fc0a4bf5617540b52b7ee
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: 03223e949eeeadd7eaa6e392297ba79d28eed2f2
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145688"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852551"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -166,7 +166,7 @@ NuGet recomienda que todos los paquetes estén firmados. Un principio de diseño
 
 Tenga en cuenta que las dependencias indicadas para el paquete se generan automáticamente a partir del propio paquete y no se pueden modificar.
 
-Además, cargar paquetes en [int.nugettest.org](https://int.nugettest.org) es una excelente manera de probar y validar el paquete sin hacer que esté disponible en la galería pública.
+Además, cargar paquetes en [int.nugettest.org](https://int.nugettest.org) es una excelente manera de probar y validar el paquete sin hacer que esté disponible en la galería pública. Punto de conexión de API: https://apiint.nugettest.org/v3/index.json
 
 **¿Es posible reservar nombres para los paquetes que se van a publicar en el futuro?**
 

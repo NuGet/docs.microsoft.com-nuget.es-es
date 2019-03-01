@@ -6,21 +6,21 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: bd36ae311da1ec824726c5d73670b1232a3f89e0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: bd19bc402ff9d66d7e2baa4f326d75f0ed444f30
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549591"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852577"
 ---
 # <a name="publishing-packages"></a>Publicar paquetes
 
 Cuando haya creado un paquete y tenga el archivo `.nupkg` a mano, ponerlo a disposición de otros desarrolladores, de forma pública o privada, es un proceso simple:
 
 - Los paquetes públicos se ponen a disposición de todos los desarrolladores de forma global a través de [nuget.org](https://www.nuget.org/packages/manage/upload), tal y como se describe en este artículo (requiere NuGet 4.1.0 y versiones posteriores).
-- Los paquetes privados están disponibles solo para un equipo u organización, mediante su hospedaje, ya sea en un recurso compartido de archivos, en un servidor privado de NuGet, en [Visual Studio Team Services Package Management](https://www.visualstudio.com/docs/package/nuget/publish) (Administración de paquetes de Visual Studio Team Services) o en un repositorio de terceros como myget, ProGet, Nexus Repository o Artifactory. Para más información, vea la [información general sobre el hospedaje de paquetes](../hosting-packages/overview.md).
+- Los paquetes privados están disponibles solo para un equipo u organización mediante su hospedaje, ya sea en un recurso compartido de archivos, un servidor privado de NuGet, [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) o un repositorio de terceros como myget, ProGet, Nexus Repository o Artifactory. Para más información, vea la [información general sobre el hospedaje de paquetes](../hosting-packages/overview.md).
 
-En este artículo se explica la publicación en nuget.org; para información sobre la publicación en Visual Studio Team Services, vea el artículo sobre [administración de paquetes](https://www.visualstudio.com/docs/package/nuget/publish).
+En este artículo se explica la publicación en nuget.org. Para obtener información sobre la publicación en Azure Artifacts, consulte el artículo relativo a la [administración de paquetes](https://www.visualstudio.com/docs/package/nuget/publish).
 
 ## <a name="publish-to-nugetorg"></a>Publicar en nuget.org
 
@@ -28,7 +28,7 @@ En nuget.org, debe iniciar sesión con una cuenta de Microsoft, con la que se le
 
 ![Ubicación de inicio de sesión de NuGet](media/publish_NuGetSignIn.png)
 
-Luego, puede cargar el paquete a través del portal web de nuget.org, insertarlo en nuget.org desde la línea de comandos (se requiere `nuget.exe` 4.1.0 o versiones posteriores) o publicarlo como parte de un proceso de CI/CD a través de Visual Studio Team Services, tal y como se describe en las secciones siguientes.
+Luego, puede cargar el paquete a través del portal web nuget.org, insertarlo en nuget.org desde la línea de comandos (se requiere `nuget.exe` 4.1.0 o versiones posteriores) o publicarlo como parte de un proceso de CI/CD a través de Azure DevOps Services, tal y como se describe en las secciones siguientes.
 
 ### <a name="web-portal-use-the-upload-package-tab-on-nugetorg"></a>Portal web: use la pestaña Upload Package (Cargar paquete) en nuget.org
 
@@ -93,9 +93,9 @@ Tenga en cuenta que es posible que el paquete tarde un poco en indexarse y en ap
 
 ![Mensaje que indica que todavía no se ha publicado un paquete](media/publish_NotYetIndexed.png)
 
-### <a name="visual-studio-team-services-cicd"></a>Visual Studio Team Services (CI/CD)
+### <a name="azure-devops-services-cicd"></a>Azure DevOps Services (CI/CD)
 
-Si inserta paquetes en nuget.org mediante Visual Studio Team Services como parte del proceso de implementación/integración continua, debe usar `nuget.exe` 4.1 o una versión posterior en las tareas de NuGet. Encontrará información detallada en [Using the latest NuGet in your build](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/) (Usar la última versión de NuGet en su compilación) (blog de Microsoft DevOps).
+Si inserta paquetes en nuget.org mediante Azure DevOps Services como parte del proceso de implementación/integración continua, debe usar `nuget.exe` 4.1 o una versión posterior en las tareas de NuGet. Encontrará información detallada en [Using the latest NuGet in your build](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/) (Usar la última versión de NuGet en su compilación) (blog de Microsoft DevOps).
 
 ## <a name="managing-package-owners-on-nugetorg"></a>Administrar los propietarios de paquetes en nuget.org
 
