@@ -6,12 +6,12 @@ ms.author: diverdan92
 ms.date: 10/09/2017
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 32f83bede42f7643a9a4fed593643eefea0453c1
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: e8b902c89427333afb7a27ee9de0eeb99a92f391
+ms.sourcegitcommit: 571644118e3c5a2fd818891d305b4b8de8ef21de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981007"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57225880"
 ---
 # <a name="package-id-prefix-reservation"></a>Reserva de prefijo de Id. de paquete
 
@@ -31,7 +31,7 @@ Cuando se reserva un prefijo en [nuget.org](https://www.nuget.org/), sucederá l
 
 1. Cada vez que se envía un paquete a [nuget.org](https://www.nuget.org/) con un identificador que coincida con el prefijo de identificador reservado, el paquete se rechaza, a menos que se origina desde los propietarios que reservar el prefijo del identificador.
 
-1. Cualquier paquete que coincida con el prefijo de identificador reservado y los propietarios que reservar el prefijo de identificador que se origina tendrá un indicador visual de Visual Studio 2017 versión 15.4 o posterior y en [nuget.org](https://www.nuget.org/) que indica que el paquete está en un prefijo de identificador reservado. Esto es cierto para las nuevas presentaciones de paquete así como los paquetes existentes en el propietario. **Nota:** el indicador en Visual Studio aparece únicamente si se selecciona una única fuente como origen del paquete.
+1. Cualquier paquete que coincida con el prefijo de identificador reservado y los propietarios que reservar el prefijo de identificador que se origina tendrá un indicador visual de Visual Studio 2017 versión 15.4 o posterior y en [nuget.org](https://www.nuget.org/) que indica que el paquete está en un prefijo de identificador reservado. Esto es cierto para las nuevas presentaciones de paquete así como los paquetes existentes en el propietario. **Nota:** El indicador en Visual Studio aparece únicamente si se selecciona una única fuente como origen del paquete.
 
 1. Todos los paquetes ya existentes que coinciden con el prefijo de identificador reservado, pero son *no* que pertenezca al propietario de la reserva prefijo permanecerá sin cambios (no se quitó de la lista, pero también no tendrán el indicador visual). Además, los propietarios de estos paquetes todavía podrán enviar nuevas versiones del paquete.
 
@@ -84,6 +84,8 @@ Al revisar cualquier aplicación de la reserva de prefijo de identificador, el [
 1. ¿Sería *no* reservar el prefijo de Id. de paquete provocar ambigüedad y confusión para la Comunidad?
 
 1. ¿Son las propiedades de identificación de los paquetes que coinciden con el prefijo de los Id. de paquete claro y coherente (especialmente el autor del paquete)?
+
+1. ¿Los paquetes que tienen una licencia (mediante el [licencia](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license) metadatos de elemento y no licenseUrl que está en desuso)?
 
 ## <a name="third-party-feed-provider-scenarios"></a>Escenarios de proveedor de fuente de terceros
 
