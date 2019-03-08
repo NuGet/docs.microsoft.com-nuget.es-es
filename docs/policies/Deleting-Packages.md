@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 901eb09711a6e32740c70829028da66b782870a0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 833f4a67bc75c5d650e85180b52ecd8f69218f15
+ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548133"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57196192"
 ---
 # <a name="deleting-packages"></a>Eliminar paquetes
 
@@ -23,7 +23,7 @@ nuget.org sí permite *quitar de una lista* un paquete, acción que se puede lle
 
 ## <a name="exceptions"></a>Excepciones
 
-En casos excepcionales (como la infracción de derechos de autor y el contenido potencialmente dañino), el equipo de NuGet puede eliminar los paquetes de forma manual. Envíe una solicitud de soporte técnico a través de la [galería de NuGet](http://www.nuget.org) para iniciar el proceso.
+En casos excepcionales (como la infracción de derechos de autor y el contenido potencialmente dañino), el equipo de NuGet puede eliminar los paquetes de forma manual. Puede informar de un paquete con el botón "Report abuse" (Notificar abuso) en la página de detalles del paquete de NuGet.org. Si es el propietario del paquete, inicie sesión en su cuenta de NuGet.org para ponerse en contacto con el servicio de soporte técnico; para ello, use el botón "Contact support" (Ponerse en contacto con el servicio de soporte técnico) en la página de detalles del paquete de NuGet.org.
 
 ## <a name="prohibited-use"></a>Uso prohibido
 

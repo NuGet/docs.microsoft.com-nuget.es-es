@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 03223e949eeeadd7eaa6e392297ba79d28eed2f2
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 1c838116f9737b01ea3f9ca17f5d5002f6548044
+ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852551"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57196218"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -158,7 +158,7 @@ Cada paquete se rige por los términos que se incluyen con el paquete. Debe revi
 
 Si un paquete no especifica los términos de licencia, póngase en contacto con el propietario del paquete directamente mediante el vínculo **Póngase en contacto con el propietario** en la página del paquete en nuget.org. Microsoft no le ofrece licencia para propiedad intelectual de proveedores de paquetes de terceros ni es responsable de la información proporcionada por terceros.
 
-## <a name="managing-packages-on-nugetorg"></a>Administración de paquetes en nuget.org
+## <a name="managing-packages-on-nugetorg"></a>Administración de paquetes en NuGet.org
 
 **¿Puedo editar metadatos de paquete después de cargarlos?**
 
@@ -167,6 +167,10 @@ NuGet recomienda que todos los paquetes estén firmados. Un principio de diseño
 Tenga en cuenta que las dependencias indicadas para el paquete se generan automáticamente a partir del propio paquete y no se pueden modificar.
 
 Además, cargar paquetes en [int.nugettest.org](https://int.nugettest.org) es una excelente manera de probar y validar el paquete sin hacer que esté disponible en la galería pública. Punto de conexión de API: https://apiint.nugettest.org/v3/index.json
+
+**¿Puedo eliminar un paquete publicado en NuGet.org?**
+
+En general, no se admite la eliminación de un paquete publicado en NuGet.org. Obtenga más información sobre nuestra [directiva de eliminación de paquetes](../policies/deleting-packages).
 
 **¿Es posible reservar nombres para los paquetes que se van a publicar en el futuro?**
 
