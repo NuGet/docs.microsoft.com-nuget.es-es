@@ -1,6 +1,6 @@
 ---
-title: Gobierno de los proyectos de NuGet
-description: Modelo de gobierno de NuGet, incluidos los roles y las responsabilidades de desarrolladores registrados, colaboradores y usuarios.
+title: Gobernanza de los proyectos de NuGet
+description: Modelo de gobernanza de NuGet, incluidos los roles y las responsabilidades de desarrolladores registrados, colaboradores y usuarios.
 author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
@@ -12,7 +12,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/04/2018
 ms.locfileid: "43549455"
 ---
-# <a name="nuget-governance"></a>Gobierno de NuGet
+# <a name="nuget-governance"></a>Gobernanza de NuGet
 
 > Este documento se basa en el modelo [Benevolent Dictator Governance Model](http://www.oss-watch.ac.uk/resources/benevolentdictatorgovernancemodel) de la Universidad de Oxford. Tiene una licencia de tipo [Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License](http://creativecommons.org/licenses/by-sa/2.0/uk/).
 
@@ -92,4 +92,4 @@ Si necesita invocar esta directiva, envíenos un correo electrónico a [support@
 
 ## <a name="transparency"></a>Transparencia
 
-Que la comunidad confíe en el gobierno de un proyecto de código abierto es esencial para que este tenga éxito. Para ello, se debe tomar una decisión de forma transparente y clara. El debate sobre la dirección del proyecto debe tener lugar de forma pública. La comunidad no debe verse sorprendida nunca por una decisión que haya tomado el dictador benevolente. Además, el debate sobre las decisiones del proyecto se debe archivar para que los miembros de la comunidad puedan comprender toda la historia de una decisión y su contexto.
+Que la comunidad confíe en la gobernanza de un proyecto de código abierto es esencial para que este tenga éxito. Para ello, se debe tomar una decisión de forma transparente y clara. El debate sobre la dirección del proyecto debe tener lugar de forma pública. La comunidad no debe verse sorprendida nunca por una decisión que haya tomado el dictador benevolente. Además, el debate sobre las decisiones del proyecto se debe archivar para que los miembros de la comunidad puedan comprender toda la historia de una decisión y su contexto.

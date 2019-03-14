@@ -7,12 +7,6 @@ ms.date: 02/12/2018
 ms.topic: overview
 layout: HubPage
 hide_bc: true
-ms.openlocfilehash: 35eef5125c40689da0f888992ea8376bb9eb096b
-ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54403156"
 ---
 <div id="main" class="v2">
 <div class="container">
@@ -235,7 +229,7 @@ ms.locfileid: "54403156"
                                         </div>
                                         <div class="cardText">
                                             <h3>Directivas</h3>
-                                            <p>Información acerca de NuGet como proyecto de código abierto, gobierno, ecosistema y resolución de disputas.</p>
+                                            <p>Información acerca de NuGet como proyecto de código abierto, gobernanza, ecosistema y resolución de disputas.</p>
                                         </div>
                                     </div>
                                 </div>
