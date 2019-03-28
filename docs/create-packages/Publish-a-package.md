@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: bd19bc402ff9d66d7e2baa4f326d75f0ed444f30
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 6d183100a8319b517347567f34d276e94eb4e15d
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852577"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432548"
 ---
 # <a name="publishing-packages"></a>Publicar paquetes
 
@@ -74,7 +74,7 @@ Para insertar paquetes en nuget.org debe usar [la versión 4.1.0 o una versión 
 
 #### <a name="publish-signed-packages"></a>Publicación de paquetes firmados
 
-Para enviar paquetes firmados, primero debe [registrar el certificado](../reference/Signed-Packages-Reference.md#register-certificate-on-nugetorg) usado para firmar los paquetes. 
+Para enviar paquetes firmados, primero debe [registrar el certificado](../create-packages/Sign-a-Package.md#register-the-certificate-on-nugetorg) usado para firmar los paquetes. 
 
 > [!Warning]
 > nuget.org rechaza paquetes que no cumplan los [requisitos del paquete firmado](../reference/Signed-Packages-Reference.md#signature-requirements-on-nugetorg).
@@ -83,7 +83,7 @@ Para enviar paquetes firmados, primero debe [registrar el certificado](../refere
 
 Los paquetes insertados en nuget.org se someten a varias validaciones, como las comprobaciones de virus. (Todos los paquetes en nuget.org se examinan periódicamente).
 
-. Cuando el paquete haya aprobado todas las comprobaciones de validación, puede que tarde un poco en indexarse y en aparecer en los resultados de la búsqueda. Una vez finalizada la indexación, recibirá un correo electrónico en el que se le confirmará que el paquete se publicó correctamente. Si no se supera la comprobación de validación del paquete, la página de detalles del paquete se actualizará y mostrará el error correspondiente. Además, el usuario recibirá un correo electrónico en el que se le notificará este extremo.
+Cuando el paquete haya aprobado todas las comprobaciones de validación, puede que tarde un poco en indexarse y en aparecer en los resultados de la búsqueda. Una vez finalizada la indexación, recibirá un correo electrónico en el que se le confirmará que el paquete se publicó correctamente. Si no se supera la comprobación de validación del paquete, la página de detalles del paquete se actualizará y mostrará el error correspondiente. Además, el usuario recibirá un correo electrónico en el que se le notificará este extremo.
 
 La validación y la indexación del paquete suelen tardar menos de 15 minutos. Si la publicación del paquete tarda más de lo esperado, visite [status.nuget.org](https://status.nuget.org/) para comprobar si nuget.org está experimentando alguna interrupción. Si todos los sistemas están operativos y el paquete no se ha publicado correctamente en una hora, inicie sesión en nuget.org y póngase en contacto con nosotros mediante el vínculo de contacto con el equipo de soporte técnico de la página del paquete.
 
