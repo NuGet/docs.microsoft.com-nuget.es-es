@@ -5,16 +5,26 @@ author: anangaur
 ms.author: anangaur
 ms.date: 12/4/2017
 ms.topic: conceptual
-ms.openlocfilehash: 01ecd8c7de1a0f713766e3c413d889038522bac7
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 321aedb471bc6f86e9c03878093b199267e31195
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548301"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432509"
 ---
-# <a name="nuget-45-rtm-release-notes"></a>Notas de la versión de NuGet 4.5 RTM
+# <a name="nuget-45-release-notes"></a>Notas de la versión de NuGet 4.5
 
 [Visual Studio 2017 15.5 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) incluye [NuGet 4.5 RTM](https://dist.nuget.org/win-x86-commandline/v4.5.0/nuget.exe).
+
+## <a name="summary-whats-new-in-450"></a>Resumen: Novedades de la versión 4.5.0
+
+## <a name="summary-whats-new-in-452"></a>Resumen: Novedades de la versión 4.5.2
+
+* Corrección de seguridad: Premisos demasiado amplios de los archivos creados en ~/.nuget: [n.º 7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-453"></a>Resumen: Novedades de la versión 4.5.3
+
+* Corrección de seguridad: Posible ruta relativa de los archivos de NUPKG por encima del directorio NUPKG: [n.º 7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>Problemas conocidos
 
@@ -62,7 +72,7 @@ Para los problemas corregidos en NuGet 4.4 RTM, consulte las [notas de la versi�
 
 ### <a name="bugs"></a>Errores
 
-- [Regresión] en 15.5p1: se omite Portable0.0: [#6105](https://github.com/NuGet/Home/issues/6105)
+- [Regresión] en 15.5p1: omisión de Portable0.0: [n.º 6105](https://github.com/NuGet/Home/issues/6105)
 - Faltan recursos de los paquetes después de la restauración: [#5995](https://github.com/NuGet/Home/issues/5995)
 - Los proveedores de credenciales de complementos no funcionan con los URI que contienen espacios: [#5982](https://github.com/NuGet/Home/issues/5982)
 - Si se produce un error al restaurar el paquete, el error se debe imprimir en la salida, aunque el nivel de detalle mínimo esté activado: [#5658](https://github.com/NuGet/Home/issues/5658)

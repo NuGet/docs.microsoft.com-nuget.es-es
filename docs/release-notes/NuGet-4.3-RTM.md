@@ -6,16 +6,23 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 4bee32995884f4c003ebb963d2fd5b2d04363bab
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 72d707cb9bacd8abbac873ee10b2fd00f233d3cc
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551629"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432483"
 ---
-# <a name="nuget-43-rtm-release-notes"></a>Notas de la versión de NuGet 4.3 RTM
+# <a name="nuget-43-release-notes"></a>Notas de la versión NuGet 4.3
 
 [Visual Studio 2017 15.3 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) incluye NuGet 4.3 RTM que agrega compatibilidad para escenarios nuevos, como .NET Standard 2.0 y .NET Core 2.0, contiene numerosas correcciones de calidad y mejora el rendimiento. En esta versión también se ofrecen varias mejoras como compatibilidad para Versionamiento Semántico 2.0.0, integración de MSBuild de advertencias y errores de NuGet, y mucho más.
+
+## <a name="summary-whats-new-in-430"></a>Resumen: Novedades de la versión 4.3.0
+
+## <a name="summary-whats-new-in-431"></a>Resumen: Novedades de la versión 4.3.1
+
+* Corrección de seguridad: Premisos demasiado amplios de los archivos creados en ~/.nuget: [n.º 7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* Corrección de seguridad: Posible ruta relativa de los archivos de NUPKG por encima del directorio NUPKG: [n.º 7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>Problemas conocidos
 
@@ -71,15 +78,15 @@ Haga una restauración manual.
 
 - Mejorar el rendimiento de restauración de NuGet: implementar NoOp más inteligente para las restauraciones de línea de comandos y VS: [#5080](https://github.com/NuGet/Home/issues/5080)
 
-- .NET Core 2.0: la CLI de VS o Dotnet deben empezar a usar la funcionalidad existente de NuGet: carpetas FallBack: [#4939](https://github.com/NuGet/Home/issues/4939)
+- NET Core 2.0: CLI de VS o Dotnet debe empezar a usar la funcionalidad existente de NuGet: carpetas FallBack: [n.º 4939](https://github.com/NuGet/Home/issues/4939)
 
-- .NET Core 2.0: permitir a los usuarios ignorar advertencias de restauración específicas (o elevarlas a error): [#4898](https://github.com/NuGet/Home/issues/4898)
+- NET Core 2.0: permitir a los usuarios ignorar advertencias de restauración específicas (o elevarlas a error): [n.º 4898](https://github.com/NuGet/Home/issues/4898)
 
-- NET Core 2.0: ensamblados localizados de la CLI: [#4896](https://github.com/NuGet/Home/issues/4896)
+- NET Core 2.0: ensamblados localizados de la CLI: [n.º 4896](https://github.com/NuGet/Home/issues/4896)
 
 - NET Core 2.0: registrar todas las advertencias o errores en el archivo de recursos (incluido PackageTargetFallback): [#4895](https://github.com/NuGet/Home/issues/4895)
 
-- Habilitar la compatibilidad con TFM: NetStandard2.0, Tizen: [#4892](https://github.com/NuGet/Home/issues/4892)
+- Habilitar compatibilidad con TFM: NetStandard2.0, Tizen: [n.º 4892](https://github.com/NuGet/Home/issues/4892)
 
 - Reducir el número de proyectos de NuGet.Core NuGet.Client (y, por tanto, de archivos DLL): [#2446](https://github.com/NuGet/Home/issues/2446)
 

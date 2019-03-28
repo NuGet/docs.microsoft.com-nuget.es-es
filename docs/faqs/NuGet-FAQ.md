@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1c838116f9737b01ea3f9ca17f5d5002f6548044
-ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
+ms.openlocfilehash: 3b6257287c1f8c6345765e0a081bac11b34e05cb
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57196218"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432587"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -346,8 +346,8 @@ Siga los pasos de la sección [No puedo usar el inicio de sesión de Microsoft, 
 ### <a name="unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account"></a>No puedo usar el inicio de sesión de Microsoft, ¿cómo recupero mi cuenta de nuget.org?
 
 Si ha intentado usar la [asistencia para el inicio sesión](#which-microsoft-account-is-linked-to-my-nugetorg-account) y no tiene acceso a la cuenta de Microsoft asociada con la cuenta de nuget.org, siga los pasos siguientes para vincular una cuenta de Microsoft a la de nuget.org.
-1. **Requisito**: Necesita acceso a una cuenta de Microsoft (que no esté asociada con las cuentas de nuget.org existentes). Si no tiene una, puede [crearla](https://signup.live.com).
-2. Siga los [pasos para recuperar la contraseña de inicio de sesión](#how-to-recover-nugetorg-password-login); si la tiene, omita este paso.
+1. **Requisito**: Necesitará acceso a una cuenta de Microsoft que no esté asociada a las cuentas de nuget.org existentes. Si no tiene una, puede [crearla](https://signup.live.com).
+2. Si ha olvidado el nombre de usuario y la contraseña de su cuenta de nuget.org, siga los [pasos para recuperar las credenciales para iniciar sesión](#how-to-recover-nugetorg-password-login).
 3. [Inicie sesión en nuget.org](https://www.nuget.org/users/account/LogOnNuGetAccount) con el inicio de sesión de usuario y contraseña.
 4. Una vez iniciada la sesión, verá aparecer un cuadro de diálogo emergente similar al siguiente. Es el cuadro de diálogo de suspensión de la contraseña.
 5. **NOTA**: Omita las instrucciones para iniciar sesión con la cuenta de Microsoft especificada. Ahora puede vincular la cuenta de nuget.org a cualquier otro inicio de sesión de Microsoft.

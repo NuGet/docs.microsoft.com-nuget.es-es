@@ -6,16 +6,26 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 9ea11ad5476b02940b171fdc69ac0bf56598418d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 3be24a86cc92c4e6d07fcae1dc625a150f28d7b4
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548419"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432574"
 ---
-# <a name="nuget-44-rtm-release-notes"></a>Notas de la versión de NuGet 4.4 RTM
+# <a name="nuget-44-release-notes"></a>Notas de la versión de NuGet 4.4
 
 [Visual Studio 2017 15.4 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) incluye NuGet 4.4 RTM.
+
+## <a name="summary-whats-new-in-440"></a>Resumen: Novedades de la versión 4.4.0
+
+## <a name="summary-whats-new-in-442"></a>Resumen: Novedades de la versión 4.4.2
+
+* Corrección de seguridad: Premisos demasiado amplios de los archivos creados en ~/.nuget: [n.º 7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-443"></a>Resumen: Novedades de la versión 4.4.3
+
+* Corrección de seguridad: Posible ruta relativa de los archivos de NUPKG por encima del directorio NUPKG: [n.º 7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>Problemas conocidos
 
@@ -73,7 +83,7 @@ No hay ninguna solución alternativa para este problema.
 
 - El destino pack de msbuild debe tener un enlace público para ejecutar destinos de usuario antes que a sí mismo: [#5143](https://github.com/NuGet/Home/issues/5143)
 
-- Característica: agregar el modificador dependencyVersion a nuget install: [#1806](https://github.com/NuGet/Home/issues/1806)
+- Característica: incorporación del modificador dependencyVersion a nuget install: [n.º 1806](https://github.com/NuGet/Home/issues/1806)
 
 - uap10.0.TODO.0 se debe asignar a .NET Standard 2.0 para NuGet: [#5684](https://github.com/NuGet/Home/issues/5684)
 
@@ -165,15 +175,15 @@ No hay ninguna solución alternativa para este problema.
 
 - [Advertencias y errores] NoWarn no fluye de manera transitiva a través de las referencias de P2P: [#5501](https://github.com/NuGet/Home/issues/5501)
 
-- Carga de solución ligera: núcleo común para la interfaz de usuario de PM, PMC e IV: [#5057](https://github.com/NuGet/Home/issues/5057)
+- Carga de solución ligera: núcleo común para la IU de IV, PM y PMC: [n.º 5057](https://github.com/NuGet/Home/issues/5057)
 
-- Carga de solución ligera: compatibilidad con PMC: [#5053](https://github.com/NuGet/Home/issues/5053)
+- Carga de solución ligera: compatibilidad con PMC: [n.º 5053](https://github.com/NuGet/Home/issues/5053)
 
 - Agregar compatibilidad para el destino de MSBuild previo a la restauración que genera Visual Studio: [#4781](https://github.com/NuGet/Home/issues/4781)
 
 - Agregar un destino público a NuGet.targets al que se pueda hacer referencia mediante BeforeTargets: [#4634](https://github.com/NuGet/Home/issues/4634)
 
-- El destino de pack no puede crear contentFile con acciones de compilación correctamente: [#4166](https://github.com/NuGet/Home/issues/4166)
+- Imposibilidad de crear correctamente contentFile con acciones de compilación por parte del destino del paquete: [n.º 4166](https://github.com/NuGet/Home/issues/4166)
 
 - RestoreOperationLogger.Do bloquea los subprocesos del grupo de subprocesos: [#5663](https://github.com/NuGet/Home/issues/5663)
 

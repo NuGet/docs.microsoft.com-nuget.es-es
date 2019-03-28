@@ -5,22 +5,30 @@ author: anangaur
 ms.author: anangaur
 ms.date: 3/7/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3c71d05144aa2b92b916d4ebf319c5a4e321581f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: eacd29d4c9340a0f015fcdf6c5b9dd41bf781419
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549849"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432561"
 ---
-# <a name="nuget-46-rtm-release-notes"></a>Notas de la versión de NuGet 4.6 RTM
+# <a name="nuget-46-release-notes"></a>Notas de la versión de NuGet 4.6
 
 [Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) incluye [NuGet 4.6.0 RTM](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe).
 
-## <a name="summary-whats-new-in-this-release"></a>Resumen: Novedades de esta versión
+## <a name="summary-whats-new-in-460"></a>Resumen: Novedades de la versión 4.6.0
 
 * Hemos agregado compatibilidad para la [firma de paquetes](../create-packages/sign-a-package.md).
 * Visual Studio 2017 y nuget.exe ahora comprueban la integridad del paquete antes de la instalación, restaurando los paquetes de los [paquetes firmados](../reference/signed-packages-reference.md).
 * Se ha mejorado el rendimiento de restauraciones sucesivas.
+
+## <a name="summary-whats-new-in-463"></a>Resumen: Novedades de la versión 4.6.3
+
+* Corrección de seguridad: Premisos demasiado amplios de los archivos creados en ~/.nuget: [n.º 7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-464"></a>Resumen: Novedades de la versión 4.6.4
+
+* Corrección de seguridad: Posible ruta relativa de los archivos de NUPKG por encima del directorio NUPKG: [n.º 7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>Problemas conocidos
 
