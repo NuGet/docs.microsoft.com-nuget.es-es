@@ -10,12 +10,12 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 1de6ddeca6295c621a90409807af198bc3c7a068
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: 422faf99e58e058d86db774a8f3c1c576b3dc393
+ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981189"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58637628"
 ---
 # <a name="nuget-package-manager-ui"></a>Interfaz de usuario del Administrador de paquetes de NuGet
 
@@ -127,7 +127,7 @@ Para administrar orígenes de paquetes:
 1. Para cambiar un origen del paquete, selecciónelo, realice modificaciones en el **nombre** y **origen** cuadros y seleccione **actualización**.
 1. Para deshabilitar un origen del paquete, desactive la casilla a la izquierda del nombre de la lista.
 1. Para quitar un origen del paquete, selecciónelo y, a continuación, seleccione el **X** botón.
-1. Arriba y abajo botones de flecha para cambiar el orden de prioridad de los orígenes del paquete. Visual Studio busca estos orígenes en el orden de prioridad al restaurar los paquetes de un proyecto. Para obtener más información, consulte [restauración del paquete](../consume-packages/package-restore.md).
+1. Usar arriba y flecha abajo botones no cambian el orden de prioridad de los orígenes del paquete. Visual Studio omite el orden de los orígenes de paquetes, mediante el paquete del origen que primero responda a las solicitudes. Para obtener más información, consulte [restauración del paquete](../consume-packages/package-restore.md).
 
 > [!Tip]
 > Si se vuelve a aparecer en un origen de paquete después de eliminarlo, pueden mostrarse en un nivel de equipo o el nivel de usuario `NuGet.Config` archivos. Consulte [del comportamiento de configuración de NuGet](../consume-packages/configuring-nuget-behavior.md) para la ubicación de estos archivos, a continuación, quitar el origen de editar manualmente los archivos o usando el [nuget orígenes comando](../tools/nuget-exe-CLI-reference.md).
