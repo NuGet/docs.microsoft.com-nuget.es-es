@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 2d2b20c1ea439ec0a3225cf983d9a4d2eedb0333
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: fdc3ad8aa239a42d8a4c169a757715e856bdcb41
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324765"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911054"
 ---
 # <a name="autocomplete"></a>Autocompletar
 
@@ -45,7 +45,7 @@ Un paquete con solo las versiones no enumeradas no aparecerán en los resultados
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-nombre        | En     | Tipo    | Obligatorio | Notas
+Name        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
 q           | Resolución    | cadena  | No       | La cadena para comparar los identificadores de paquete
 skip        | Resolución    | enteros | No       | El número de resultados que se omitirán para la paginación
@@ -71,7 +71,7 @@ La respuesta es un documento JSON que contiene hasta `take` Autocompletar result
 
 El objeto JSON de raíz tiene las siguientes propiedades:
 
-nombre      | Tipo             | Obligatorio | Notas
+Name      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
 totalHits | enteros          | sí      | El número total de coincidencias, omitiendo `skip` y `take`
 datos      | matriz de cadenas | sí      | El paquete de identificadores que coinciden con la solicitud
@@ -94,7 +94,7 @@ No aparecerá en los resultados de una versión del paquete que se da de baja.
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-nombre        | En     | Tipo    | Obligatorio | Notas
+Name        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
 id          | Resolución    | cadena  | sí      | El identificador del paquete para capturar las versiones de
 versión preliminar  | Resolución    | booleano | No       | `true` o `false` determinar si se debe incluir [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
@@ -110,11 +110,11 @@ La respuesta es el documento JSON que contiene todas las versiones de paquete de
 
 El objeto JSON de raíz tiene la siguiente propiedad:
 
-nombre      | Tipo             | Obligatorio | Notas
+Name      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
 datos      | matriz de cadenas | sí      | Las versiones del paquete coincide con la solicitud
 
-Las versiones del paquete en el `data` matriz podría contener metadatos de la compilación de SemVer 2.0.0 (por ejemplo, `1.0.0+metadata`) si el `semVerLevel=2.0.0` no se proporcionó en la cadena de consulta.
+Las versiones del paquete en el `data` matriz puede contener metadatos de la compilación de SemVer 2.0.0 (por ejemplo, `1.0.0+metadata`) si el `semVerLevel=2.0.0` se proporciona en la cadena de consulta.
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
