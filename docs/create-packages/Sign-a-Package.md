@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: e8955f9d46bab235c8755d5654814a4291d542d6
-ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
+ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
+ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52977568"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921577"
 ---
 # <a name="signing-nuget-packages"></a>Firma de paquetes NuGet
 
@@ -29,7 +29,7 @@ Si quiere realizar una prueba, también puede usar un certificado de emisión pr
 
   ![Asistente para exportación de certificados](../reference/media/CertificateExportWizard.png)
 
-* También puede exportar el certificado con el [comando Export-Certificate de PowerShell](/powershell/module/pkiclient/export-certificate.md).
+* También puede exportar el certificado con el [comando Export-Certificate de PowerShell](/powershell/module/pkiclient/export-certificate).
 
 ## <a name="sign-the-package"></a>Firma del paquete
 
@@ -39,8 +39,11 @@ Si quiere realizar una prueba, también puede usar un certificado de emisión pr
 Firme el paquete con [nuget sign](../tools/cli-ref-sign.md):
 
 ```cli
-nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
+nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
 ```
+
+> [!Tip]
+> El proveedor de certificados a menudo proporciona también una URL de servidor de marca de tiempo que puede usar para el argumento opcional `Timestamper` que se muestra anteriormente. Consulte con su proveedor la documentación y la compatibilidad de esa URL de servicio.
 
 * Puede usar un certificado disponible en el almacén de certificados, o bien otro procedente de un archivo. Consulte la referencia de CLI sobre [nuget sign](../tools/cli-ref-sign.md).
 * Los paquetes firmados deben incluir una marca de tiempo para asegurarse de que la firma es válida cuando ha expirado el certificado de firma. De lo contrario, la operación de firma generará una [advertencia](../reference/errors-and-warnings/NU3002.md).
@@ -56,7 +59,7 @@ Para publicar un paquete firmado, primero debe registrar el certificado en NuGet
 1. Busque el archivo del certificado que ha exportado anteriormente y selecciónelo.
   ![Certificados registrados](../reference/media/registered-certs.png)
 
-**Nota:**
+**Nota**
 * Un usuario puede enviar varios certificados, del mismo modo que varios usuarios pueden registrar el mismo certificado.
 * Una vez que un usuario haya registrado un certificado, el resto de envíos de paquetes que realice **deberán** estar firmados con uno de los certificados. Consulte [Administración de los requisitos de firma de paquetes en NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg).
 * Los usuarios también pueden eliminar un certificado registrado de la cuenta. Una vez que el certificado se haya eliminado, los paquetes firmados con dicho significado no se podrán enviar. Los paquetes existentes no se verán afectados.
@@ -67,7 +70,7 @@ Ahora ya puede publicar el paquete en NuGet.org. Consulte [Publicar paquetes](Pu
 
 ## <a name="create-a-test-certificate"></a>Creación de un certificado de prueba
 
-Si quiere realizar una prueba, también puede usar un certificado de emisión propia. Para crear un certificado de emisión propia, use el [comando de PowerShell New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate.md).
+Si quiere realizar una prueba, también puede usar un certificado de emisión propia. Para crear un certificado de emisión propia, use el [comando de PowerShell New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate).
 
 ```ps
 New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
