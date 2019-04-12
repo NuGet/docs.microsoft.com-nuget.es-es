@@ -8,12 +8,12 @@ description: El recurso de firmas de repositorio permite a los clientes los orí
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 81d32a7011268e45136e00cdb7345a95070aae06
-ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
+ms.openlocfilehash: ea318446c41a0d85d3fbf959dd38c929a0d0e9a1
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53248447"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59509027"
 ---
 # <a name="repository-signatures"></a>Firmas de repositorio
 
@@ -28,7 +28,8 @@ La siguiente `@type` se usa el valor:
 Valor de@type                 | Notas
 -------------------------- | -----
 RepositorySignatures/4.7.0 | La versión inicial
-RepositorySignatures/4.9.0 | Permite habilitar `allRepositorySigned`
+RepositorySignatures/4.9.0 | Compatible con clientes de NuGet v4.9 +
+RepositorySignatures/5.0.0 | Permite habilitar `allRepositorySigned`. Compatible con clientes de NuGet v5.0 +
 
 ## <a name="base-url"></a>Dirección URL base
 
@@ -57,23 +58,23 @@ La siguiente solicitud recupera el índice de las firmas del repositorio.
 
 El índice de la firma de repositorio es un documento JSON que contiene un objeto con las siguientes propiedades:
 
-nombre                | Tipo             | Obligatorio | Notas
+Name                | Tipo             | Obligatorio | Notas
 ------------------- | ---------------- | -------- | -----
-allRepositorySigned | booleano          | sí      | Debe ser `false` en 4.7.0 recursos
+allRepositorySigned | booleano          | sí      | Debe ser `false` en recursos 4.7.0 y 4.9.0
 signingCertificates | matriz de objetos | sí      | 
 
 El `allRepositorySigned` booleano se establece en false si el origen del paquete tiene algunos paquetes que no tengan ninguna firma de repositorio. Si el valor booleano se establece en true, todos los paquetes disponibles en el origen debe tener una firma de repositorio producida por uno de los certificados de firma se ha mencionado en `signingCertificates`.
 
 > [!Warning]
-> El `allRepositorySigned` booleano debe ser false en el 4.7.0 recursos. Los clientes de v4.7 y v4.8 NuGet no pueden instalar paquetes de orígenes que tienen `allRepositorySigned` establecido en true.
+> El `allRepositorySigned` booleano debe ser false en los recursos 4.7.0 y 4.9.0. Los clientes de NuGet v4.7, v4.8 y v4.9 no pueden instalar los paquetes de orígenes que tienen `allRepositorySigned` establecido en true.
 
 Debe haber uno o varios certificados de firma en el `signingCertificates` matriz si la `allRepositorySigned` booleano se establece en true. Si la matriz está vacía y `allRepositorySigned` se establece en true, todos los paquetes desde el origen deben considerarse válidos, aunque una directiva de cliente todavía puede permitir el consumo de paquetes. Cada elemento de esta matriz es un objeto JSON con las siguientes propiedades.
 
-nombre         | Tipo   | Obligatorio | Notas
+Name         | Tipo   | Obligatorio | Notas
 ------------ | ------ | -------- | -----
 contentUrl   | cadena | sí      | Dirección URL absoluta para el certificado público con codificación DER
-huellas digitales | objeto | sí      |
-Asunto      | cadena | sí      | El nombre distintivo del sujeto del certificado
+fingerprints | objeto | sí      |
+subject      | cadena | sí      | El nombre distintivo del sujeto del certificado
 issuer       | cadena | sí      | El nombre distintivo del emisor del certificado
 notBefore    | cadena | sí      | La marca de tiempo de inicio del período de validez del certificado
 notAfter     | cadena | sí      | La marca de tiempo final del período de validez del certificado
@@ -85,7 +86,7 @@ Estas propiedades derivar se proporcionan por comodidad para minimizar la ida y 
 
 La `fingerprints` objeto tiene las siguientes propiedades:
 
-nombre                   | Tipo   | Obligatorio | Notas
+Name                   | Tipo   | Obligatorio | Notas
 ---------------------- | ------ | -------- | -----
 2.16.840.1.101.3.4.2.1 | cadena | sí      | La huella digital de SHA-256
 
