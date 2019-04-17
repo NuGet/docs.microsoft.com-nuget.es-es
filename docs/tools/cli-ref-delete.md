@@ -33,10 +33,10 @@ donde `<packageID>` y `<packageVersion>` identificar el paquete exacto para elim
 | ApiKey | La clave de API para el repositorio de destino. Si no está presente, se utiliza el especificado en el archivo de configuración. |
 | ConfigFile | El archivo de configuración para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) se utiliza.|
 | ForceEnglishOutput | *(3.5 y versiones posteriores)*  Fuerza nuget.exe se ejecute con una referencia cultural invariable, en inglés. |
-| Ayuda | Muestra información de ayuda para el comando. |
+| Help | Muestra información de ayuda para el comando. |
 | No interactivo | Suprime los mensajes para confirmaciones o intervención del usuario. |
-| Origen | Especifica la dirección URL del servidor. La dirección URL de nuget.org es `https://api.nuget.org/v3/index.json`. Para fuentes privadas, sustituya el nombre de host, por ejemplo, *%hostname%/api/v3*. |
-| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
+| Source | Especifica la dirección URL del servidor. La dirección URL de nuget.org es `https://api.nuget.org/v3/index.json`. Para fuentes privadas, sustituya el nombre de host, por ejemplo, *%hostname%/api/v3*. |
+| Verbosity | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)
 

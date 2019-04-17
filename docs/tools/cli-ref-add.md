@@ -44,9 +44,9 @@ donde `<packagePath>` es la ruta de acceso al paquete para agregar, y `<sourcePa
 | ConfigFile | El archivo de configuración para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) se utiliza.|
 | Expand | Agrega todos los archivos en el paquete en el origen del paquete. |
 | ForceEnglishOutput | *(3.5 y versiones posteriores)*  Fuerza nuget.exe se ejecute con una referencia cultural invariable, en inglés. |
-| Ayuda | Muestra información de ayuda para el comando. |
-| No interactivo | Suprime los mensajes para confirmaciones o intervención del usuario. |
-| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
+| Help | Muestra información de ayuda para el comando. |
+| NonInteractive | Suprime los mensajes para confirmaciones o intervención del usuario. |
+| Verbosity | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)
 
