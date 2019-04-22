@@ -7,10 +7,10 @@ ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
-ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58921577"
 ---
 # <a name="signing-nuget-packages"></a>Firma de paquetes NuGet
@@ -59,7 +59,7 @@ Para publicar un paquete firmado, primero debe registrar el certificado en NuGet
 1. Busque el archivo del certificado que ha exportado anteriormente y selecciónelo.
   ![Certificados registrados](../reference/media/registered-certs.png)
 
-**Nota**
+**Nota:**
 * Un usuario puede enviar varios certificados, del mismo modo que varios usuarios pueden registrar el mismo certificado.
 * Una vez que un usuario haya registrado un certificado, el resto de envíos de paquetes que realice **deberán** estar firmados con uno de los certificados. Consulte [Administración de los requisitos de firma de paquetes en NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg).
 * Los usuarios también pueden eliminar un certificado registrado de la cuenta. Una vez que el certificado se haya eliminado, los paquetes firmados con dicho significado no se podrán enviar. Los paquetes existentes no se verán afectados.

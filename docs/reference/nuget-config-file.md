@@ -6,17 +6,17 @@ ms.author: karann
 ms.date: 10/25/2017
 ms.topic: reference
 ms.openlocfilehash: d7c943c1f13edf782dabe4afee9d19a1a42bd42a
-ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58911093"
 ---
 # <a name="nugetconfig-reference"></a>referencia de NuGet.config
 
 El comportamiento de NuGet se controla mediante la configuración en diferentes archivos `NuGet.Config`, como se describe en [Configuración del comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md).
 
-`nuget.config` es un archivo XML que contiene un nivel superior `<configuration>` nodo, lo que, a continuación, contiene los elementos de sección se describe en este tema. Cada sección contiene cero o más elementos. Vea el [archivo de configuración de ejemplo](#example-config-file). Los nombres de opción distinguen mayúsculas de minúsculas, y los valores pueden usar [variables de entorno](#using-environment-variables).
+`nuget.config` es un archivo XML que contiene un nodo `<configuration>` de nivel superior, que contiene los elementos de sección que se describen en este tema. Cada sección contiene cero o más elementos. Vea el [archivo de configuración de ejemplo](#example-config-file). Los nombres de opción distinguen mayúsculas de minúsculas, y los valores pueden usar [variables de entorno](#using-environment-variables).
 
 En este tema:
 
@@ -227,7 +227,7 @@ Identifica al origen actualmente activo o indica la suma de todos los orígenes.
 
 | Key | Valor |
 | --- | --- |
-| (nombre de origen) o `All` | Si la clave es el nombre de un origen, el valor es la ruta de acceso o la dirección URL del origen. Si es `All`, el valor debe ser `(Aggregate source)` para combinar todos los orígenes de paquetes que no estén deshabilitados. |
+| (nombre del origen) o `All` | Si la clave es el nombre de un origen, el valor es la ruta de acceso o la dirección URL del origen. Si es `All`, el valor debe ser `(Aggregate source)` para combinar todos los orígenes de paquetes que no estén deshabilitados. |
 
 **Ejemplo**:
 

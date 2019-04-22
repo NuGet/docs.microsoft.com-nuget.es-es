@@ -10,7 +10,7 @@ ms.openlocfilehash: ebb1dd929042a1fcd269d0ac50154ae6b8234be2
 ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59509108"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
@@ -84,13 +84,11 @@ Una dirección URL de la página principal del paquete, que a menudo se muestra 
 
 Dirección URL de la licencia del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org.
 #### <a name="license"></a>licencia
-Expresión de licencia SPDX o ruta de acceso a un archivo de licencia dentro del paquete, que con frecuencia también se muestra en la interfaz de usuario como nuget.org. Si obtiene la licencia del paquete bajo una licencia comunes como BSD-2-Clause o MIT, use el identificador de licencia SPDX asociado.<br>Por ejemplo:
-`<license type="expression">MIT</license>`
+Expresión de licencia SPDX o ruta de acceso a un archivo de licencia dentro del paquete, que con frecuencia también se muestra en la interfaz de usuario como nuget.org. Si obtiene la licencia del paquete bajo una licencia comunes como BSD-2-Clause o MIT, use el identificador de licencia SPDX asociado.<br>Por ejemplo: `<license type="expression">MIT</license>`.
 
 Esta es la lista completa de [identificadores de licencia SPDX](https://spdx.org/licenses/). NuGet.org acepta solo licencias aprobadas de OSI o FSF cuando se usa la expresión de tipo de licencia.
 
-Si el paquete con licencia bajo varias licencias común, puede especificar una licencia compuesto utilizando el [SPDX versión 2.0 de la sintaxis de expresión](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60).<br>Por ejemplo:
-`<license type="expression">BSD-2-Clause OR MIT</license>`
+Si el paquete con licencia bajo varias licencias común, puede especificar una licencia compuesto utilizando el [SPDX versión 2.0 de la sintaxis de expresión](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60).<br>Por ejemplo: `<license type="expression">BSD-2-Clause OR MIT</license>`.
 
 Si usa una licencia que no se ha asignado un identificador SPDX, o se trata de una licencia personalizada, puede empaquetar un archivo (solo `.txt` o `.md`) con el texto de la licencia. Por ejemplo:
 ```xml
@@ -161,7 +159,7 @@ Colección de cero o más elementos `<dependency>` que especifican las dependenc
 #### <a name="frameworkassemblies"></a>frameworkAssemblies
 *(1.2+)* Colección de cero o más elementos `<frameworkAssembly>` que identifican las referencias de ensamblado de .NET Framework que requiere este paquete, lo que garantiza que se agreguen las referencias a los proyectos que consumen el paquete. Cada frameworkAssembly tiene atributos *assemblyName* y *targetFramework*. Vea [Referencias de ensamblado de plataforma](#specifying-framework-assembly-references-gac) a continuación. |
 #### <a name="references"></a>referencias
-*(1.5+)* Colección de cero o más elementos `<reference>` que nombran ensamblados en la carpeta `lib` del paquete que se agregan como referencias de proyecto. Cada referencia tiene un atributo *file*. `<references>` También puede contener un `<group>` elemento con un *targetFramework* atributo, que contiene, a continuación, `<reference>` elementos. Si se omite, se incluyen todas las referencias de `lib`. Vea [Referencias de ensamblado explícitas](#specifying-explicit-assembly-references) a continuación.
+*(1.5+)* Colección de cero o más elementos `<reference>` que nombran ensamblados en la carpeta `lib` del paquete que se agregan como referencias de proyecto. Cada referencia tiene un atributo *file*. `<references>` también puede contener un elemento `<group>` con un atributo *targetFramework*, que contiene elementos `<reference>`. Si se omite, se incluyen todas las referencias de `lib`. Vea [Referencias de ensamblado explícitas](#specifying-explicit-assembly-references) a continuación.
 #### <a name="contentfiles"></a>contentFiles
 *(3.3+)* Colección de elementos `<files>` que identifican archivos de contenido que se incluirán en el proyecto de consumo. Estos archivos se especifican con un conjunto de atributos que describen cómo se deben usar en el sistema del proyecto. Vea [Incluir archivos de ensamblado](#specifying-files-to-include-in-the-package) a continuación.
 #### <a name="files"></a>archivos 
@@ -259,7 +257,7 @@ Nota: Al crear un `.nuspec` desde un proyecto mediante `nuget spec`, las depende
 
 ### <a name="dependency-groups"></a>Grupos de dependencia
 
-*Versión 2.0 o superior*
+*Versión 2.0+*
 
 Como alternativa a una lista plana, se pueden especificar dependencias según el perfil de plataforma del proyecto de destino usando elementos `<group>` dentro de `<dependencies>`.
 
@@ -414,7 +412,7 @@ Cada elemento `<file>` especifica los siguientes atributos:
     Packaged result:
         lib\net40\library.dll
 
-**Conjunto de archivos DLL con un carácter comodín**
+**Conjunto de archivos DLL que usan un carácter comodín**
 
     Source files:
         bin\release\libraryA.dll
@@ -440,7 +438,7 @@ Cada elemento `<file>` especifica los siguientes atributos:
         lib\net40\library.dll
         lib\net20\library.dll
 
-**Excluir archivos**
+**Archivos de exclusión**
 
     Source files:
         \tools\fileA.bak
@@ -511,7 +509,7 @@ En cuanto a los archivos de contenido, basta con usar el mismo formato que para 
     Packaged result:
         content\style.css
 
-**Copiado en una carpeta con un punto en el nombre de archivo de contenido**
+**Archivo de contenido copiado en una carpeta con un punto en el nombre**
 
 En este caso, NuGet ve que la extensión de `target` no coincide con la extensión de `src` y, por lo tanto, trata esa parte del nombre de `target` como una carpeta:
 
@@ -524,7 +522,7 @@ En este caso, NuGet ve que la extensión de `target` no coincide con la extensi�
     Packaged result:
         content\images\package.icons\picture.png
 
-**Archivos de contenido sin extensiones**
+**Archivos de contenido sin extensión**
 
 Para incluir archivos sin extensión, use los caracteres comodín `*` o `**`:
 
@@ -552,7 +550,7 @@ En este caso, puesto que las extensiones de archivo del origen y del destino coi
     Packaged result:
         content\css\cool\style.css
 
-**Cambiar el nombre de un archivo en el paquete de contenido**
+**Cambiar el nombre de un archivo de contenido del paquete**
 
     Source file:
         ie\css\style.css
@@ -563,7 +561,7 @@ En este caso, puesto que las extensiones de archivo del origen y del destino coi
     Packaged result:
         content\css\ie.css
 
-**Excluir archivos**
+**Archivos de exclusión**
 
     Source file:
         docs\*.txt (multiple files)
@@ -595,7 +593,7 @@ Estos archivos se especifican con un conjunto de atributos que describen cómo s
 | **exclude** | Una lista delimitada por punto y coma de archivos o patrones de archivo que se deben excluir de la ubicación `src`. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
 | **buildAction** | Acción de compilación que se debe asignar al elemento de contenido para MSBuild, como `Content`, `None`, `Embedded Resource`, `Compile`, etc. El valor predeterminado es `Compile`. |
 | **copyToOutput** | Un valor booleano que indica si se va a copiar los elementos de contenido a la compilación de carpeta de salida (o publicar). El valor predeterminado es false. |
-| **acoplar** | Valor booleano que indica si se deben copiar los elementos de contenido en una carpeta en la salida de la compilación (true) o si se debe conservar la estructura de carpetas del paquete (false). Esta marca solo funciona cuando la marca copyToOutput está establecida en true. El valor predeterminado es false. |
+| **flatten** | Valor booleano que indica si se deben copiar los elementos de contenido en una carpeta en la salida de la compilación (true) o si se debe conservar la estructura de carpetas del paquete (false). Esta marca solo funciona cuando la marca copyToOutput está establecida en true. El valor predeterminado es false. |
 
 Al instalar un paquete, NuGet aplica los elementos secundarios de `<contentFiles>` de arriba abajo. Si hay varias entradas que coinciden con el mismo archivo, se aplicarán todas las entradas. La entrada de nivel superior invalida las entradas inferiores si hay un conflicto para el mismo atributo.
 
@@ -605,8 +603,8 @@ El proyecto del paquete debe estructurar el contenido usando el siguiente patró
 
     /contentFiles/{codeLanguage}/{TxM}/{any?}
 
-- `codeLanguages` puede ser `cs`, `vb`, `fs`, `any`, o equivalente en minúsculas de un determinado `$(ProjectLanguage)`
-- `TxM` es cualquier moniker de la plataforma de destino válido compatible con NuGet (consulte [plataformas de destino](../reference/target-frameworks.md)).
+- `codeLanguages` puede ser `cs`, `vb`, `fs`, `any` o el equivalente en minúsculas de un `$(ProjectLanguage)` determinado.
+- `TxM` es cualquier moniker de la plataforma de destino válido compatible con NuGet (vea [Plataformas de destino](../reference/target-frameworks.md)).
 - Se puede anexar cualquier estructura de carpetas al final de esta sintaxis.
 
 Por ejemplo:
@@ -649,7 +647,7 @@ Las carpetas vacías pueden usar `.` para no proporcionar contenido para ciertas
 
 ## <a name="example-nuspec-files"></a>Archivos de ejemplo de nuspec
 
-**Un simple `.nuspec` que no especifica dependencias ni archivos**
+**Un archivo `.nuspec` simple que no especifica dependencias ni archivos**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -666,7 +664,7 @@ Las carpetas vacías pueden usar `.` para no proporcionar contenido para ciertas
 </package>
 ```
 
-**Un `.nuspec` con dependencias**
+**Un archivo `.nuspec` con dependencias**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -683,7 +681,7 @@ Las carpetas vacías pueden usar `.` para no proporcionar contenido para ciertas
 </package>
 ```
 
-**Un `.nuspec` con archivos**
+**Un archivo `.nuspec` con archivos**
 
 ```xml
 <?xml version="1.0"?>
@@ -701,7 +699,7 @@ Las carpetas vacías pueden usar `.` para no proporcionar contenido para ciertas
 </package>
 ```
 
-**Un `.nuspec` con ensamblados de framework**
+**Un archivo `.nuspec` con ensamblados de plataforma**
 
 ```xml
 <?xml version="1.0"?>
@@ -730,4 +728,4 @@ En este ejemplo se instalan los siguientes componentes para los destinos de proy
 - .NET4 -> `System.Web`, `System.Net`
 - .NET4 Client Profile -> `System.Net`
 - Silverlight 3 -> `System.Json`
-- WindowsPhone -> `Microsoft.Devices.Sensors`
+- Windows Phone -> `Microsoft.Devices.Sensors`

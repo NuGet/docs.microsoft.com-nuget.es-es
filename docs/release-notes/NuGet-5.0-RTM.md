@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 04/02/2019
 ms.topic: conceptual
 ms.openlocfilehash: 5e48ff19ea5c4908d7eb0a3cb19a31b738e348eb
-ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58921590"
 ---
 # <a name="nuget-50-release-notes"></a>Notas de la versión 5.0 de NuGet
@@ -118,7 +118,7 @@ Vehículos de distribución de NuGet:
 
 * se produce un error en la restauración de dotnet debido a la amplia deshabilitado máquina fuente - [#5410](https://github.com/NuGet/Home/issues/5410)
 
-**DCR**
+**DCRs**
 
 * Advertir de su eliminación futura de "dotnet pack project.json" - [7928 #](https://github.com/NuGet/Home/issues/7928)
  
