@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: adf97196f50f2a55d6b8ceed93d53ff12b67657b
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: 9964186dcbfedfbf2415a57102f8f019a1eef23a
+ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145636"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59932000"
 ---
 # <a name="restore-command-nuget-cli"></a>restaurar comandos (CLI de NuGet)
 
@@ -37,7 +37,7 @@ donde `<projectPath>` especifica la ubicación de una solución o un `packages.c
 | DisableParallelProcessing | Deshabilita la restauración de varios paquetes en paralelo. |
 | FallbackSource | *(3.2 y versiones posteriores)*  Una lista de orígenes de paquetes para utilizar como de reservas en caso de que el paquete no se encuentra en el servidor principal o el origen predeterminado. |
 | ForceEnglishOutput | *(3.5 y versiones posteriores)*  Fuerza nuget.exe se ejecute con una referencia cultural invariable, en inglés. |
-| Ayuda | Muestra información de ayuda para el comando. |
+| Help | Muestra información de ayuda para el comando. |
 | MSBuildPath | *(4.0 y versiones posteriores)*  Especifica la ruta de acceso de MSBuild que use con el comando, tiene prioridad sobre `-MSBuildVersion`. |
 | MSBuildVersion | *(3.2 y versiones posteriores)*  Especifica la versión de MSBuild que se usará con este comando. Los valores admitidos son 4, 12, 14, 15.1, versión 15.3, 15.4, 15.5, versión 15.6, versión 15.7, 15,8, 15.9. De forma predeterminada que se selecciona la versión de MSBuild en su ruta de acceso, en caso contrario, el valor predeterminado es la última versión instalada de MSBuild. |
 | NoCache | Impide que NuGet utilice paquetes almacenados en caché. Consulte [administración de paquetes globales y carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
@@ -49,8 +49,8 @@ donde `<projectPath>` especifica la ubicación de una solución o un `packages.c
 | Recursiva | *(4.0 y versiones posteriores)*  Restaura todas las referencias de proyectos para proyectos de UWP y .NET Core. No se aplica a proyectos mediante `packages.config`. |
 | RequireConsent | Comprueba que la restauración de paquetes está habilitada antes de descargar e instalar los paquetes. Para obtener más información, consulte [la restauración del paquete](../consume-packages/package-restore.md). |
 | SolutionDirectory | Especifica la carpeta de soluciones. No es válido al restaurar los paquetes de una solución. Necesario cuando se restaura con un `packages.config` archivo a menos que `PackagesDirectory` o `OutputDirectory` se utiliza. |
-| Origen | Especifica la lista de orígenes de paquetes (como las direcciones URL) para la restauración. Si se omite, el comando usa los orígenes proporcionados en los archivos de configuración, consulte [del comportamiento de configuración de NuGet](../consume-packages/configuring-nuget-behavior.md). |
-| Nivel de detalle |> especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
+| Source | Especifica la lista de orígenes de paquetes (como las direcciones URL) para la restauración. Si se omite, el comando usa los orígenes proporcionados en los archivos de configuración, consulte [del comportamiento de configuración de NuGet](../consume-packages/configuring-nuget-behavior.md). |
+| Verbosity |> especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)
 
@@ -71,7 +71,7 @@ El comando restore lleva a cabo los pasos siguientes:
 2. Determinar la carpeta de paquetes mediante el siguiente orden de prioridad (NuGet produce un error si no se encuentra ninguna de estas carpetas):
 
     - La carpeta especificada con `-PackagesDirectory`.
-    - El `repositoryPath` vale en `Nuget.Config`
+    - El `repositoryPath` valor en `Nuget.Config`
     - La carpeta especificada con `-SolutionDirectory`
     - `$(SolutionDir)\packages`
 

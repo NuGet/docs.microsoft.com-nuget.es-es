@@ -5,18 +5,21 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: fd5824d1c5e05df08301dac1cf656ba1d5ca75cd
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: ac1bf2b65ab6ec4e8cf864810181fc661236262a
+ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551743"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59931987"
 ---
 # <a name="nuget-cli-environment-variables"></a>Variables de entorno de CLI de NuGet
 
 El comportamiento de la CLI de nuget.exe puede configurarse a través de una serie de variables de entorno, que afectan a nuget.exe en todo el equipo, usuario o procesar los niveles. Las variables de entorno siempre reemplazan la configuración en `NuGet.Config` archivos, lo que permite crear servidores para cambiar la configuración adecuada sin modificar los archivos.
 
 En general, las opciones especificadas directamente en la línea de comandos o en archivos de configuración de NuGet tienen prioridad, pero existen algunas excepciones como *FORCE_NUGET_EXE_INTERACTIVE*. Si encuentra que nuget.exe tiene un comportamiento diferente entre distintos equipos, una variable de entorno podría ser la causa. Por ejemplo, Azure Web Apps Kudu (se usa durante la implementación) tiene *NUGET_XMLDOC_MODE* establecido en *omitir* para acelerar el rendimiento de la restauración de paquetes y ahorrar espacio en disco.
+
+La CLI de NuGet usa MSBuild para leer los archivos del proyecto. Todas las variables de entorno están disponibles como [propiedades](/visualstudio/msbuild/msbuild-command-line-reference) durante la evaluación de MSBuild.
+La lista de propiedades documentadas en [NuGet pack y restore como destinos de MSBuild](../reference/msbuild-targets.md#restore-properties) también se puede establecer como variables de entorno.
 
 | Variable | Descripción | Comentarios |
 | --- | --- | --- |
@@ -34,4 +37,5 @@ En general, las opciones especificadas directamente en la línea de comandos o e
 | NUGET_RESTORE_MSBUILD_VERBOSITY | Establece el nivel de detalle del registro de MSBuild. | El valor predeterminado es *silencioso* ("/ v: q"). Los valores posibles *q [uiet]*, *m [inimal]*, *n [ormal]*, *d. [etailed]*, y *diag [nostic]*. |
 | NUGET_SHOW_STACK | Determina si la excepción completa (incluido el seguimiento de la pila) debe mostrarse al usuario. | Especificado como *true* o *false* (valor predeterminado). |
 | NUGET_XMLDOC_MODE | Determina cómo debe controlarse la extracción de archivos de documentación XML de los ensamblados. | Los modos compatibles son *omitir* (no extraiga los archivos de documentación XML), *comprimir* (almacenar archivos de documento XML como un archivo zip) o *ninguno* (valor predeterminado, tratar los archivos de documento XML como normal archivos). |
-| NUGET_CERT_REVOCATION_MODE | Determina cómo comprobar el estado de revocación del certificado usado para firmar un paquete, pefromed cuando se instala o se restaura un paquete firmado. Si no se establece, el valor predeterminado es `online`.| Los valores posibles *online* (valor predeterminado), *sin conexión*.  Relacionadas con [NU3028](../reference/errors-and-warnings/NU3028.md) |
+| NUGET_CERT_REVOCATION_MODE | Determina cómo comprobar el estado de revocación del certificado usado para firmar un paquete, se realiza cuando se instala o se restaura un paquete firmado. Si no se establece, el valor predeterminado es `online`.| Los valores posibles *online* (valor predeterminado), *sin conexión*.  Relacionadas con [NU3028](../reference/errors-and-warnings/NU3028.md) |
+
