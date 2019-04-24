@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/10/2018
 ms.topic: overview
-ms.openlocfilehash: d688aecaa73cecbfee184e3b13801ed22326a852
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 87f7494ea97a4fa65be04b2692d7b894938c3fe5
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580329"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59509131"
 ---
 # <a name="an-introduction-to-nuget"></a>Una introducción a NuGet
 
@@ -26,7 +26,7 @@ Dado que NuGet admite hosts privados junto al host de nuget.org público, puede 
 
 En su rol de host público, NuGet mantiene el repositorio central de más de 100 000 paquetes únicos en [nuget.org](https://www.nuget.org). Millones de desarrolladores de .NET/.NET Core usan estos paquetes a diario. NuGet también permite hospedar paquetes de forma privada en la nube (como en Azure DevOps), en una red privada o incluso en el sistema de archivos local. Así, los paquetes solo están a disposición de los desarrolladores que tengan acceso al host, lo que le ofrece la posibilidad de poner paquetes a disposición de un grupo determinado de consumidores. Las opciones se explican en [Hospedar sus propias fuentes de NuGet](hosting-packages/overview.md). Mediante opciones de configuración, puede también controlar exactamente qué hosts pueden tener acceso a un equipo determinado, lo que garantiza que los paquetes se obtienen de orígenes específicos y no de un repositorio público como nuget.org.
 
-cualquiera que sea su naturaleza, un host actúa como un punto de conexión entre los *creadores* y los *consumidores* de paquetes. Los creadores compilan paquetes NuGet útiles y los publican en un host. Después, los consumidores buscan paquetes útiles y compatibles en hosts accesibles, los descargan y los incluyen en sus proyectos. Una vez instalados en un proyecto, las API de los paquetes están disponibles para el resto del código del proyecto.
+Con independencia de su naturaleza, un host actúa como un punto de conexión entre los *creadores* y los *consumidores* de paquetes. Los creadores compilan paquetes NuGet útiles y los publican en un host. Después, los consumidores buscan paquetes útiles y compatibles en hosts accesibles, los descargan y los incluyen en sus proyectos. Una vez instalados en un proyecto, las API de los paquetes están disponibles para el resto del código del proyecto.
 
 ![Relación entre los creadores, hosts y consumidores del paquete](media/nuget-roles.png)
 
