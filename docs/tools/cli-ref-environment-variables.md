@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: ac1bf2b65ab6ec4e8cf864810181fc661236262a
-ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
+ms.openlocfilehash: 9f26f75a70a996cad158fd125e86d98e10c3dac1
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59931987"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610641"
 ---
 # <a name="nuget-cli-environment-variables"></a>Variables de entorno de CLI de NuGet
 
@@ -33,7 +33,7 @@ La lista de propiedades documentadas en [NuGet pack y restore como destinos de M
 | NUGET_HTTP_CACHE_PATH | Ruta de acceso que se usará para la *http-cache* carpeta tal como se describe en [administración de paquetes globales y carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). | Si se especifica como ruta de acceso absoluta. |
 | NUGET_PERSIST_DG | Marca que indica si se deben almacenar los archivos del grupo de distribución (datos recopilados de MSBuild). | Especificado como *true* o *false* (predeterminado), si no establece NUGET_PERSIST_DG_PATH se almacenarán en el directorio temporal (NuGetScratch carpeta en el directorio temp del entorno actual). |
 | NUGET_PERSIST_DG_PATH | Ruta de acceso para conservar los archivos del grupo de distribución. | Especificado como ruta de acceso absoluta, esta opción es utiliza únicamente cuando *NUGET_PERSIST_DG* está establecido en true. |
-| NUGET_RESTORE_MSBUILD_ARGS | Establece los argumentos de MSBuild adicionales. | |
+| NUGET_RESTORE_MSBUILD_ARGS | Establece los argumentos de MSBuild adicionales. | Pasar argumentos idénticos a cómo se pasaría a msbuild.exe. Un ejemplo de cómo configurar una propiedad de proyecto Foo desde la línea de comandos a la barra de valor sería /p:Foo = barra |
 | NUGET_RESTORE_MSBUILD_VERBOSITY | Establece el nivel de detalle del registro de MSBuild. | El valor predeterminado es *silencioso* ("/ v: q"). Los valores posibles *q [uiet]*, *m [inimal]*, *n [ormal]*, *d. [etailed]*, y *diag [nostic]*. |
 | NUGET_SHOW_STACK | Determina si la excepción completa (incluido el seguimiento de la pila) debe mostrarse al usuario. | Especificado como *true* o *false* (valor predeterminado). |
 | NUGET_XMLDOC_MODE | Determina cómo debe controlarse la extracción de archivos de documentación XML de los ensamblados. | Los modos compatibles son *omitir* (no extraiga los archivos de documentación XML), *comprimir* (almacenar archivos de documento XML como un archivo zip) o *ninguno* (valor predeterminado, tratar los archivos de documento XML como normal archivos). |

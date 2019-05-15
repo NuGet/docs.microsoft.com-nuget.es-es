@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 04/02/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5e48ff19ea5c4908d7eb0a3cb19a31b738e348eb
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: 7e719a3bb5069c461820c6f884487af1eb04bf86
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58921590"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610662"
 ---
 # <a name="nuget-50-release-notes"></a>Notas de la versión 5.0 de NuGet
 
@@ -19,6 +19,7 @@ Vehículos de distribución de NuGet:
 | Versión de NuGet | Disponible en la versión de Visual Studio| Disponible en los SDK de .NET|
 |:---|:---|:---|
 | [**5.0.0**](https://nuget.org/downloads) | [Visual Studio 2019 versión 16.0](https://visualstudio.microsoft.com/downloads/) | [2.1.602](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.202](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
+| [**5.0.2**](https://nuget.org/downloads) | [Visual Studio 2019 versión 16.0.4](https://visualstudio.microsoft.com/downloads/) | [2.1.60X](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.20X](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
 
 <sup>1</sup>instalado con Visual Studio de 2019 con carga de trabajo de .NET Core 
 
@@ -153,6 +154,13 @@ Vehículos de distribución de NuGet:
 * Habilitar EmbedInteropTypes packagereference (capacidad de búsqueda de coincidencias Packages.Config) - [2365 #](https://github.com/NuGet/Home/issues/2365)
 
 **[Lista de todos los problemas corregidos en esta versión - 5.0 RTM](https://github.com/NuGet/Home/milestone/84?closed=1)**
+
+## <a name="summary-whats-new-in-502"></a>Resumen: Novedades de 5.0.2
+
+* Seguridad (cuando se ejecuta a través de dotnet.exe o mono.exe): se debe crear la carpeta obj con los permisos correctos [#7908](https://github.com/NuGet/Home/issues/7908)
+
+* se produce un error de NuGet.exe restore en mono y MacOS con nuget.config personalizado y `PackageSignatureValidity: False` [#8011](https://github.com/NuGet/Home/issues/8011)
+
 
 ## <a name="known-issues"></a>Problemas conocidos
 
