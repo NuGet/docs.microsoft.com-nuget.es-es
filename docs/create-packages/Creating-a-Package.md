@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: db02089bec3d2b8c001518fa0542375dc5418eb8
-ms.sourcegitcommit: c825eb7e222d4a551431643f5b5617ae868ebe0a
+ms.openlocfilehash: f0d9667b752caf7831278ac3fd63cfd67f7d34a4
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51944072"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610590"
 ---
 # <a name="creating-nuget-packages"></a>Creación de paquetes NuGet
 
@@ -166,7 +166,7 @@ Dado que un paquete NuGet es simplemente un archivo ZIP que se ha cambiado de no
 La ventaja de este enfoque es que no es necesario especificar en el manifiesto qué archivos se van a incluir en el paquete (como se explica más adelante en este tema). Puede hacer que el proceso de compilación genere simplemente la estructura de carpetas exacta que se agrega al paquete e incluir otros archivos que en otros casos es posible que no formen parte de un proyecto:
 
 - Contenido y código fuente que debe insertarse en el proyecto de destino.
-- Scripts de PowerShell (los paquetes que se usan en NuGet 2.x también puede incluir scripts de instalación, que no se admiten en NuGet 3.x y versiones posteriores).
+- Scripts de PowerShell
 - Transformaciones de archivos de código existentes de configuración y código fuente en un proyecto.
 
 Las convenciones de carpeta son las siguientes:
@@ -261,8 +261,8 @@ El identificador del paquete (el elemento `<id>`) y el número de versión (el e
 
 > La siguiente serie de entradas de blog breves también es útil para entender el control de versiones:
 >
-> - [Part 1: Taking on DLL Hell](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html) (Parte 1: Enfrentarse al infierno de los archivos DLL)
-> - [Part 2: The core algorithm](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html) (Parte 2: El algoritmo básico)
+> - [Parte 1: Taking on DLL Hell](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html) (Parte 1: Enfrentarse al infierno de los archivos DLL)
+> - [Parte 2: The core algorithm](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html) (Parte 2: El algoritmo básico)
 > - [Part 3: Unification via Binding Redirects](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html) (Parte 3: Unificación mediante redirecciones de enlaces)
 
 ## <a name="setting-a-package-type"></a>Establecimiento de un tipo de paquete
@@ -357,7 +357,7 @@ Con [NuGet 2.5 se introdujo](../release-notes/NuGet-2.5.md#automatic-import-of-m
 
 Cuando NuGet instala un paquete con archivos `\build`, agrega elementos `<Import>` de MSBuild al archivo de proyecto que apunta a los archivos `.targets` y `.props`. (`.props` se agrega en la parte superior del archivo del proyecto; `.targets` se agrega al final). Se agrega un elemento condicional `<Import>` de MSBuild independiente para cada plataforma de destino.
 
-Los archivos `.props` y `.targets` de MSBuild de los destinos multiplataforma pueden colocarse en la carpeta `\buildCrossTargeting`. Durante la instalación de paquetes, NuGet agrega los elementos `<Import>` correspondientes al archivo de proyecto, con la condición de que no se establezca la plataforma de destino (la propiedad `$(TargetFramework)` de MSBuild debe estar vacía).
+Los archivos `.props` y `.targets` de MSBuild de los destinos multiplataforma pueden colocarse en la carpeta `\buildMultiTargeting`. Durante la instalación de paquetes, NuGet agrega los elementos `<Import>` correspondientes al archivo de proyecto, con la condición de que no se establezca la plataforma de destino (la propiedad `$(TargetFramework)` de MSBuild debe estar vacía).
 
 Con NuGet 3.x, los destinos no se agregan al proyecto pero en su lugar se ponen a disposición a través de `project.lock.json`.
 

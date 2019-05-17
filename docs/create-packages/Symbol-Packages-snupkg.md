@@ -16,12 +16,12 @@ keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, comp
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 43f346dc64ebbc59d02b9c7875b04205d8c5d83a
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 18d54e28d77f2bdcfea70ff9ae9def05278cb26c
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852447"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610561"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Crear paquetes de símbolos (.snupkg)
 
@@ -54,7 +54,7 @@ Si usa dotnet.exe o MSBuild, siga los siguientes pasos para crear un archivo .sn
 
 1. Empaquete el proyecto con `dotnet pack MyPackage.csproj` o `msbuild -t:pack MyPackage.csproj`.
 
-La propiedad `SymbolPackageFormat` puede tener uno de estos dos valores: `symbols.nupkg` (predeterminado) o `snupkg`. Si no se especifica la propiedad `SymbolPackageFormat`, el valor predeterminado es `symbols.nupkg` y se crea un paquete de símbolos heredado.
+La propiedad [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) puede tener uno de estos dos valores: `symbols.nupkg` (predeterminado) o `snupkg`. Si no se especifica la propiedad [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat), se creará un paquete de símbolos heredado.
 
 > [!Note]
 > El formato heredado `.symbols.nupkg` todavía se admite, pero solo por motivos de compatibilidad (vea [Paquetes de símbolos heredados](Symbol-Packages.md)). El servidor de símbolos de NuGet.org solo acepta el nuevo formato de paquete de símbolos, `.snupkg`.
@@ -80,6 +80,9 @@ La propiedad `SymbolPackageFormat` puede tener uno de estos dos valores: `symbol
     ```
 
 NuGet publicará ambos paquetes en nuget.org. `MyPackage.nupkg` se publica en primer lugar, y luego `MyPackage.snupkg`.
+
+> [!Note]
+> Si no se publica el paquete de símbolos, compruebe que ha configurado el origen de NuGet.org como `https://api.nuget.org/v3/index.json`. La publicación de paquetes de símbolos solo es compatible con [la API de NuGet V3](../api/overview.md#versioning).
 
 ## <a name="nugetorg-symbol-server"></a>Servidor de símbolos de NuGet.org
 

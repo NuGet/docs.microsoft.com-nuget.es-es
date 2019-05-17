@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 696f51905198defdbfd475ba7d010ac3e27ac557
-ms.sourcegitcommit: 3fc93f7a64be040699fe12125977dd25a7948470
+ms.openlocfilehash: 845f0ea84bcb92fedf9e5f4fb2b1deee1462a004
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64877943"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610499"
 ---
 # <a name="building-pre-release-packages"></a>Crear paquetes de versión preliminar
 
@@ -22,15 +22,9 @@ Una versión estable es aquella que se considera lo suficientemente confiable pa
 
 Para admitir el ciclo de vida de la versión de software, NuGet 1.6 y versiones posteriores permite la distribución de paquetes de versión preliminar, donde el número de versión incluye un sufijo de control de versiones semántico como `-alpha`, `-beta` o `-rc`. Para más información, vea [Package versioning](../reference/package-versioning.md#pre-release-versions) (Control de versiones de paquetes).
 
-Puede especificar estas versiones de tres maneras:
+Puede especificar estas versiones mediante una de las maneras siguientes:
 
-- Archivo `.nuspec`: incluya el sufijo de versión semántica en el elemento `version`:
-
-    ```xml
-    <version>1.0.1-alpha</version>
-    ```
-
-- Archivo `.csproj`: incluya el sufijo de versión semántica en el elemento `PackageVersion`:
+- **Si el proyecto usa [`PackageReference`](../consume-packages/package-references-in-project-files.md)**: incluya el sufijo de versión semántica en el archivo `.csproj`, en el elemento [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion):
 
     ```xml
     <PropertyGroup>
@@ -38,13 +32,11 @@ Puede especificar estas versiones de tres maneras:
     </PropertyGroup>
     ```
 
-- Atributos de ensamblado: la versión se especifica con `AssemblyInformationalVersionAttribute`:
+- **Si el proyecto tiene un archivo [`packages.config`](../reference/packages-config.md)**: incluya el sufijo de versión semántica en el archivo [`.nuspec`](../reference/nuspec.md), en el elemento [`version`](../reference/nuspec.md#version):
 
-    ```cs
-    [assembly: AssemblyInformationalVersion("1.0.1-beta")]
+    ```xml
+    <version>1.0.1-alpha</version>
     ```
-
-    NuGet toma este valor en lugar del que se especifica en el atributo `AssemblyVersion`, que no es compatible con el control de versiones semánticas.
 
 Cuando esté listo para liberar una versión estable, quite el sufijo y el paquete tendrá prioridad sobre las demás versiones preliminares. Una vez más, vea [Package versioning](../reference/package-versioning.md#pre-release-versions) (Control de versiones de paquetes).
 

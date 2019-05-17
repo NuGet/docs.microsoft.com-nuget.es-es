@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: c23b464ca39fd8d872f21846a7d6d34edf9dce93
-ms.sourcegitcommit: 1bd72dca2f85b4267b9924236f1d23dd7b0ed733
+ms.openlocfilehash: db968189e892723c8fd080cb01a7222696c9d3f3
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50088925"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610568"
 ---
 # <a name="configuring-nuget-behavior"></a>Configuración del comportamiento de NuGet
 
@@ -192,7 +192,7 @@ Después, NuGet carga y aplica la configuración como se indica a continuación,
 
 - **Se invoca desde disk_drive_2/Project1 o disk_drive_2/Project1/Source**: primero se carga el archivo de nivel de usuario (A), después NuGet carga el archivo (B) desde la raíz de disk_drive_2, seguido del archivo (C). La configuración de (C) invalida la de (B) y (A), por lo que la `repositoryPath` donde se instalan los paquetes es disk_drive_2/Project1/External/Packages en lugar de *disk_drive_2/tmp*. Además, dado que borra (C) `<packageSources>`, nuget.org ya no está disponible como un origen, lo que solo deja `https://MyPrivateRepo/ES/nuget`.
 
-- **Se invoca desde disk_drive_2/Project2 o disk_drive_2/Project2/Source**: primero se carga el archivo de nivel de usuario (A), seguido del archivo (B) y el archivo (D). Dado que `packageSources` no se borra, `nuget.org` y `https://MyPrivateRepo/DQ/nuget` están disponibles como orígenes. Los paquetes se expanden en disk_drive_2/tmp, como se especifica en (B).
+- **Se invoca desde disk_drive_2/Project2 o disk_drive_2/Project2/Source**: primero se carga el archivo de nivel de usuario (A) y después el archivo (B) y el archivo (D). Dado que `packageSources` no se borra, `nuget.org` y `https://MyPrivateRepo/DQ/nuget` están disponibles como orígenes. Los paquetes se expanden en disk_drive_2/tmp, como se especifica en (B).
 
 ## <a name="nuget-defaults-file"></a>Archivo de valores predeterminados de NuGet
 
