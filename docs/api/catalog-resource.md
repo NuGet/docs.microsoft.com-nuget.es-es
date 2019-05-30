@@ -6,16 +6,16 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: fd5188c92f8154391359b8da5c8a32f4d5d6f2c0
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 4884de71151ee1ae3c0a78b803c9222f9c1d86ec
+ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453590"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266353"
 ---
 # <a name="catalog"></a>Catálogo
 
-El **catálogo** es un recurso que registra todas las operaciones de paquete en un origen de paquete, como la creación y eliminación. El recurso de catálogo tiene el `Catalog` escriba en el [índice de servicio](service-index.md).
+El **catálogo** es un recurso que registra todas las operaciones de paquete en un origen de paquete, como la creación y eliminación. El recurso de catálogo tiene el `Catalog` escriba en el [índice de servicio](service-index.md). Puede utilizar este recurso para [de consulta de todos los paquetes publican](../guides/api/query-for-all-published-packages.md).
 
 > [!Note]
 > Dado que el catálogo no se usa el cliente NuGet oficial, no todos los orígenes de paquetes implementan el catálogo.
@@ -67,9 +67,9 @@ La siguiente solicitud recupera el índice del catálogo.
 
 El índice del catálogo es un documento JSON que contiene un objeto con las siguientes propiedades:
 
-nombre            | Tipo             | Obligatorio | Notas
+Name            | Tipo             | Obligatorio | Notas
 --------------- | ---------------- | -------- | -----
-commitid & gt        | cadena           | sí      | Un identificador único asociado con la confirmación más reciente
+commitId        | cadena           | sí      | Un identificador único asociado con la confirmación más reciente
 commitTimeStamp | cadena           | sí      | Una marca de tiempo de la confirmación más reciente
 count           | enteros          | sí      | El número de páginas del índice
 items           | matriz de objetos | sí      | Una matriz de objetos, cada objeto que representa una página
@@ -84,10 +84,10 @@ Cuando se agregan elementos a, el índice del catálogo `commitId` cambiará y `
 
 Los objetos de la página de catálogo se encuentran en el índice de catálogo `items` propiedad tiene las siguientes propiedades:
 
-nombre            | Tipo    | Obligatorio | Notas
+Name            | Tipo    | Obligatorio | Notas
 --------------- | ------- | -------- | -----
 @id             | cadena  | sí      | La dirección URL para obtener la página de catálogo
-commitid & gt        | cadena  | sí      | Un identificador único asociado con la confirmación más reciente en esta página
+commitId        | cadena  | sí      | Un identificador único asociado con la confirmación más reciente en esta página
 commitTimeStamp | cadena  | sí      | Una marca de tiempo de la confirmación más reciente en esta página
 count           | enteros | sí      | El número de elementos en la página del catálogo
 
@@ -109,9 +109,9 @@ Nuevos elementos de catálogo se agregan a la página en el índice del catálog
 
 El documento de página del catálogo es un objeto JSON con las siguientes propiedades:
 
-nombre            | Tipo             | Obligatorio | Notas
+Name            | Tipo             | Obligatorio | Notas
 --------------- | ---------------- | -------- | -----
-commitid & gt        | cadena           | sí      | Un identificador único asociado con la confirmación más reciente en esta página
+commitId        | cadena           | sí      | Un identificador único asociado con la confirmación más reciente en esta página
 commitTimeStamp | cadena           | sí      | Una marca de tiempo de la confirmación más reciente en esta página
 count           | enteros          | sí      | El número de elementos en la página
 items           | matriz de objetos | sí      | Los elementos del catálogo en esta página
@@ -129,14 +129,14 @@ Cuando se agregan elementos a la página, el `commitId` cambios y la `commitTime
 
 Los objetos de elemento de catálogo se encontraron en la página catálogo `items` propiedad tiene las siguientes propiedades:
 
-nombre            | Tipo    | Obligatorio | Notas
+Name            | Tipo    | Obligatorio | Notas
 --------------- | ------- | -------- | -----
 @id             | cadena  | sí      | La dirección URL para recuperar el elemento de catálogo
 @type           | cadena  | sí      | El tipo del elemento del catálogo
-commitid & gt        | cadena  | sí      | El identificador de confirmación asociado con este elemento de catálogo
+commitId        | cadena  | sí      | El identificador de confirmación asociado con este elemento de catálogo
 commitTimeStamp | cadena  | sí      | La marca de tiempo de confirmación de este elemento de catálogo
-NuGet:Id        | cadena  | sí      | El identificador del paquete que está relacionado con esta hoja
-NuGet:Version   | cadena  | sí      | La versión del paquete que está relacionado con esta hoja
+nuget:id        | cadena  | sí      | El identificador del paquete que está relacionado con esta hoja
+nuget:version   | cadena  | sí      | La versión del paquete que está relacionado con esta hoja
 
 El `@type` tendrá uno de los dos valores siguientes:
 
@@ -159,11 +159,11 @@ La hoja de catálogo contiene metadatos sobre un identificador de paquete espec�
 
 El documento de hoja de catálogo es un objeto JSON con las siguientes propiedades:
 
-nombre                    | Tipo                       | Obligatorio | Notas
+Name                    | Tipo                       | Obligatorio | Notas
 ----------------------- | -------------------------- | -------- | -----
 @type                   | cadena o matriz de cadenas | sí      | Los tipos del elemento del catálogo
-commitId: catálogo        | cadena                     | sí      | Un identificador de confirmación asociado con este elemento de catálogo
-catálogo: commitTimeStamp | cadena                     | sí      | La marca de tiempo de confirmación de este elemento de catálogo
+catalog:commitId        | cadena                     | sí      | Un identificador de confirmación asociado con este elemento de catálogo
+catalog:commitTimeStamp | cadena                     | sí      | La marca de tiempo de confirmación de este elemento de catálogo
 id                      | cadena                     | sí      | El identificador del paquete del elemento del catálogo
 Publicado               | cadena                     | sí      | La fecha de publicación del elemento del catálogo de paquetes
 version                 | cadena                     | sí      | La versión del paquete del elemento del catálogo
@@ -190,7 +190,7 @@ Los clientes de consumo de los elementos de catálogo no deben intentar determin
 
 Elementos del catálogo de los detalles de paquete tienen las siguientes propiedades además de los [incluida en todas las hojas del catálogo](#catalog-leaf).
 
-nombre                    | Tipo                       | Obligatorio | Notas
+Name                    | Tipo                       | Obligatorio | Notas
 ----------------------- | -------------------------- | -------- | -----
 authors                 | cadena                     | No       |
 created                 | cadena                     | No       | Una marca de tiempo de cuando se creó el paquete por primera vez. Propiedad de reserva: `published`.
@@ -201,7 +201,7 @@ isPrerelease            | booleano                    | No       | Si la versió
 lenguaje                | cadena                     | No       |
 licenseUrl              | cadena                     | No       |
 lista                  | booleano                    | No       | Si aparece el paquete
-MinClientVersion        | cadena                     | No       |
+minClientVersion        | cadena                     | No       |
 packageHash             | cadena                     | sí      | El hash del paquete, la codificación mediante [estándar en base 64](https://tools.ietf.org/html/rfc4648#section-4)
 packageHashAlgorithm    | cadena                     | sí      |
 packageSize             | enteros                    | sí      | El tamaño de los archivos .nupkg de paquete en bytes
@@ -226,7 +226,7 @@ El `published` marca de tiempo es la hora cuando el paquete por última vez enum
 
 #### <a name="sample-request"></a>Solicitud de ejemplo
 
-OBTENER https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
 
 #### <a name="sample-response"></a>Respuesta de ejemplo
 
@@ -247,7 +247,7 @@ El `published` propiedad es el tiempo cuando se eliminó el paquete, que normalm
 
 #### <a name="sample-request"></a>Solicitud de ejemplo
 
-OBTENER https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
+GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
 
 #### <a name="sample-response"></a>Respuesta de ejemplo
 
@@ -306,7 +306,7 @@ Por ejemplo, en nuget.org un paquete publicado recientemente no debe aparecer en
 
 Dado que ambos recursos se crean en el catálogo, el cursor del cliente de catálogo que actualiza el recurso de búsqueda *no debe superar* el cursor del cliente de catálogo de metadatos de paquete.
 
-#### <a name="algorithm"></a>algoritmo
+#### <a name="algorithm"></a>Algoritmo
 
 Para implementar esta restricción, basta con modificar el algoritmo anterior para ser:
 
