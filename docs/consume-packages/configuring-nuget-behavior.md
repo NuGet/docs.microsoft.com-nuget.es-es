@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: db968189e892723c8fd080cb01a7222696c9d3f3
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 963d1d59ea7e65e3d75bc7105b8864e3e4045938
+ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610568"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266340"
 ---
 # <a name="configuring-nuget-behavior"></a>Configuración del comportamiento de NuGet
 
@@ -20,7 +20,7 @@ El comportamiento de NuGet se controla mediante la configuración acumulada en u
 
 | Ámbito | Ubicación del archivo NuGet.Config | Descripción |
 | --- | --- | --- |
-| Proyecto | Carpeta actual (también denominada carpeta del proyecto) o cualquier carpeta hasta la raíz de la unidad.| En una carpeta de proyecto, la configuración se aplica solo a ese proyecto. En las carpetas primarias que contienen varias subcarpetas de proyectos, la configuración se aplica a todos los proyectos de esas subcarpetas. |
+| Soluciones | Carpeta actual (también denominada carpeta de soluciones) o cualquier carpeta hasta la raíz de la unidad.| En una carpeta de soluciones, la configuración se aplica a todos los proyectos de las subcarpetas. Tenga en cuenta que si se coloca un archivo de configuración en una carpeta de proyecto, no tiene ningún efecto en ese proyecto. |
 | Usuario | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac o Linux: `~/.config/NuGet/NuGet.Config` o `~/.nuget/NuGet/NuGet.Config` (varía según la distribución del SO) | La configuración se aplica a todas las operaciones, pero se reemplaza por la configuración de nivel de proyecto. |
 | Equipo | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. Si `$XDG_DATA_HOME` es null o está vacío, se usará `~/.local/share` o `/usr/local/share` (varía según la distribución del SO)  | La configuración se aplica a todas las operaciones en el equipo, pero se reemplaza por cualquier configuración de nivel de proyecto o de usuario. |
 
@@ -186,7 +186,7 @@ Archivo D. disk_drive_2/Project2/NuGet.Config:
 
 Después, NuGet carga y aplica la configuración como se indica a continuación, en función de dónde se invoque:
 
-- **Se invoca desde disk_drive_1/users/**: solo se usa el repositorio predeterminado que aparece en el archivo de configuración de nivel de usuario (A), ya que es el único archivo encontrado en disk_drive_1.
+- **Se invoca desde disk_drive_1/users/** : solo se usa el repositorio predeterminado que aparece en el archivo de configuración de nivel de usuario (A), ya que es el único archivo encontrado en disk_drive_1.
 
 - **Se invoca desde disk_drive_2/ o disk_drive_/tmp**: en primer lugar se carga el archivo de nivel de usuario (A) y después NuGet se desplaza a la raíz de disk_drive_2 y busca el archivo (B). NuGet también busca un archivo de configuración en/tmp pero no lo encuentra. Como resultado, se usa el repositorio predeterminado en nuget.org, se habilita la restauración de paquetes y los paquetes se expanden en disk_drive_2/tmp.
 
