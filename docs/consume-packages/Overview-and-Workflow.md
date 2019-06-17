@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 506a093ff4d62c10c896246f746e6765f64f33f4
-ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
+ms.openlocfilehash: 556683e5a24c57a6c32d8b4e368bfdccd4d19b48
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54403169"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812861"
 ---
 # <a name="package-consumption-workflow"></a>Flujo de trabajo de consumo de paquetes
 
@@ -22,7 +22,7 @@ Entre la galería de nuget.org y las galerías de paquetes privadas que puede es
 
 Para más información, vea [Búsqueda y selección de paquetes](../consume-packages/finding-and-choosing-packages.md) y [Distintas formas de instalar un paquete NuGet](ways-to-install-a-package.md).
 
-NuGet recuerda la identidad y el número de versión de cada paquete instalado y, según el tipo de proyecto y la versión de NuGet, los registra en [`packages.config`](../reference/packages-config.md) o en el archivo del proyecto (con [PackageReference](../consume-packages/package-references-in-project-files.md)). Con NuGet 4.0 y versiones posteriores, es preferible usar PackageReference, aunque esto se puede configurar en Visual Studio mediante las [opciones de la interfaz de usuario del Administrador de paquetes](../tools/package-manager-ui.md). En cualquier caso, puede consultar el archivo adecuado en cualquier momento para ver la lista completa de dependencias del proyecto.
+NuGet recuerda la identidad y el número de versión de cada paquete instalado, registrándolo en el archivo del proyecto (con [PackageReference](../consume-packages/package-references-in-project-files.md)) o [`packages.config`](../reference/packages-config.md), según el tipo de proyecto o la versión de NuGet. Con NuGet 4.0 y versiones posteriores, es preferible usar PackageReference, aunque esto se puede configurar en Visual Studio mediante las [opciones de la interfaz de usuario del Administrador de paquetes](../tools/package-manager-ui.md). En cualquier caso, puede consultar el archivo adecuado en cualquier momento para ver la lista completa de dependencias del proyecto.
 
 > [!Tip]
 > Es recomendable comprobar siempre la licencia de cada paquete que vaya a usar en el software. En nuget.org encontrará un vínculo de **información de la licencia** a la derecha de la página de descripción de cada paquete. Si un paquete no especifica los términos de licencia, póngase en contacto directamente con el propietario del paquete mediante el vínculo de **contacto con los propietarios** de la página del paquete. Microsoft no le ofrece licencia para propiedad intelectual de proveedores de paquetes de terceros ni es responsable de la información proporcionada por terceros.

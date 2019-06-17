@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/21/2017
 ms.topic: tutorial
-ms.openlocfilehash: 16e19be0356bc1d2734ade5cd593ca3ef05bbe5a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a4c609b3390748099d85a73f7d168ebe4de2676a
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546426"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812952"
 ---
 # <a name="create-uwp-packages"></a>Crear paquetes UWP
 
@@ -26,7 +26,7 @@ En este tutorial creará un paquete NuGet con un componente nativo de UWP (inclu
 
 ## <a name="create-a-uwp-windows-runtime-component"></a>Crear un componente de Windows Runtime para UWP
 
-1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto**, expanda el nodo **Visual C++ > Windows > Universal**, seleccione la plantilla **Componente de Windows Runtime (Windows universal)**, cambie el nombre a ImageEnhancer y haga clic en Aceptar. Cuando se le solicite, acepte los valores predeterminados para Versión de destino y Versión mínima.
+1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto**, expanda el nodo **Visual C++ > Windows > Universal**, seleccione la plantilla **Componente de Windows Runtime (Windows universal)** , cambie el nombre a ImageEnhancer y haga clic en Aceptar. Cuando se le solicite, acepte los valores predeterminados para Versión de destino y Versión mínima.
 
     ![Creación de un proyecto de componente de Windows Runtime para UWP](media/UWP-NewProject.png)
 
@@ -138,6 +138,9 @@ Dentro del componente, la lógica básica del tipo ImageEnhancer está en códig
         <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
         <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
 
+        <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm64\native"/>
+        <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm64\native"/>
+
         <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
         <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
 
@@ -216,6 +219,8 @@ Ahora el archivo `.nuspec` final debería ser similar al siguiente, donde debe r
     <!-- DLLs and resources -->
     <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
     <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
+    <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm64\native"/>
+    <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm64\native"/>     
     <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
     <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
     <file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>

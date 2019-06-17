@@ -3,16 +3,16 @@ title: Creación y publicación de un paquete de .NET Standard con Visual Studio
 description: Tutorial sobre la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio 2017 en Windows.
 author: karann-msft
 ms.author: karann
-ms.date: 05/18/2018
+ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: faea00372bd387aee1502e388ad1ea88de07b95d
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: d30e89473b5f00895136b75a90d8d95b7645a100
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453525"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812983"
 ---
-# <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
+# <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
 
 Es muy sencillo crear un paquete NuGet desde una biblioteca de clases de .NET Standard con Visual Studio en Windows y después publicarlo en nuget.org con una herramienta CLI.
 
@@ -23,9 +23,11 @@ Es muy sencillo crear un paquete NuGet desde una biblioteca de clases de .NET St
 
 1. Instale cualquier edición de Visual Studio 2017 desde [visualstudio.com](https://www.visualstudio.com/) con cualquier carga de trabajo relacionada con .NET. Visual Studio de 2017 incluye automáticamente funcionalidades de NuGet cuando se instala una carga de trabajo. NET.
 
-1. Instale la CLI de `nuget.exe` descargándola desde [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), guarde el archivo `.exe` en la carpeta adecuada y agregue esa carpeta a la variable de entorno PATH.
+1. Instale una de las herramientas de la CLI.
 
-    Como alternativa, si tiene instalado el [SDK de .NET Core](https://www.microsoft.com/net/download/), puede usar la CLI de `dotnet`.
+   * Para la CLI de `dotnet`, instale el [SDK de .NET Core](https://www.microsoft.com/net/download/). La CLI de dotnet es necesaria para los proyectos de .NET Standard que usan el formato de estilo SDK (atributo SDK).
+
+   * Para la CLI de `nuget.exe`, descárguela desde [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), guarde el archivo `.exe` en la carpeta adecuada y agregue esa carpeta a la variable de entorno PATH. La CLI de nuget.exe se usa para bibliotecas de .NET Standard en el formato de estilo diferente de SDK.
 
 1. [Registrar una cuenta gratuita en nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) si aún no tiene uno. Al crear una cuenta se envía un correo electrónico de confirmación. Debe confirmar la cuenta para poder cargar un paquete.
 
@@ -112,7 +114,13 @@ Cuando tenga un archivo `.nupkg`, publíquelo en nuget.org con la CLI de `nuget.
 
 [!INCLUDE [publish-api-key](includes/publish-api-key.md)]
 
-### <a name="publish-with-nuget-push"></a>Publicar con nuget push
+### <a name="publish-with-dotnet-nuget-push-dotnet-cli"></a>Publicar con dotnet nuget push (CLI de dotnet)
+
+Este paso es una alternativa al uso de `nuget.exe`.
+
+[!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
+
+### <a name="publish-with-nuget-push-nugetexe-cli"></a>Publicar con nuget push (CLI de nuget.exe)
 
 Este paso es una alternativa al uso de `dotnet.exe`.
 
@@ -134,12 +142,6 @@ Este paso es una alternativa al uso de `dotnet.exe`.
     ```
 
 Vea [nuget push](../tools/cli-ref-push.md).
-
-### <a name="publish-with-dotnet-nuget-push"></a>Publicar con dotnet nuget push
-
-Este paso es una alternativa al uso de `nuget.exe`.
-
-[!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
 ### <a name="publish-errors"></a>Errores de publicación
 

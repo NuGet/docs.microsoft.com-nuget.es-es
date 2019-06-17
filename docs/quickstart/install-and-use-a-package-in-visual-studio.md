@@ -5,14 +5,14 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 15268ae33d56042a765420e5076dac49db6cce04
-ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
+ms.openlocfilehash: 8cfb7bd31c37847d83ffe31f11ba61eadc717eb8
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671180"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812900"
 ---
-# <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>Inicio rápido: Instalación y uso de un paquete en Visual Studio
+# <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>Inicio rápido: Instalar y usar un paquete en Visual Studio
 
 Los paquetes de NuGet son unidades de código reutilizable que otros desarrolladores ponen a su disposición para que los use en sus proyectos. Consulte [¿Qué es NuGet?](../What-is-NuGet.md) para obtener más información. Los paquetes se instalan en un proyecto de Visual Studio mediante la interfaz de usuario del Administrador de paquetes o la consola del Administrador de paquetes. En este artículo se muestra el proceso con el conocido paquete [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) y un proyecto de la Plataforma universal de Windows (UWP). El mismo proceso se aplica a cualquier otro proyecto de .NET o .NET Core.
 
@@ -28,11 +28,13 @@ Una vez instalado, haga referencia al paquete en el código con `using <namespac
 
 Puede instalar la 2017 Community Edition gratuitamente desde [visualstudio.com](https://www.visualstudio.com/) o usar las ediciones Professional o Enterprise.
 
+Si usa Visual Studio para Mac, consulte [Incluir un paquete NuGet en el proyecto](/visualstudio/mac/nuget-walkthrough).
+
 ## <a name="create-a-project"></a>Crear un proyecto
 
 Los paquetes NuGet pueden instalarse en cualquier proyecto. NET, siempre que el paquete sea compatible con la misma plataforma de destino que el proyecto.
 
-En este tutorial, se utiliza una aplicación simple de la Plataforma Universal de Windows (UWP). Cree un proyecto en Visual Studio con **Archivo > Nuevo proyecto...**  y seleccione la opción **Windows Universal > Aplicación vacía (Windows Universal)**. Cuando se le solicite, acepte los valores predeterminados para Versión de destino y Versión mínima.
+En este tutorial, se utiliza una aplicación simple de la Plataforma Universal de Windows (UWP). Cree un proyecto en Visual Studio con **Archivo > Nuevo proyecto...**  y seleccione la opción **Windows Universal > Aplicación vacía (Windows Universal)** . Cuando se le solicite, acepte los valores predeterminados para Versión de destino y Versión mínima.
 
 ## <a name="add-the-newtonsoftjson-nuget-package"></a>Agregar el paquete de NuGet Newtonsoft.Json
 
