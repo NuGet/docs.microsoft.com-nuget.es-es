@@ -6,18 +6,18 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: ee4ffaa7e250cdbf313476fd794a8d87c80b69f9
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: c22c7f0a6b6878bec4f8396e02e2d97998170455
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324713"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425980"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a>comando de firmantes de confianza (CLI de NuGet)
 
 **Se aplica a:** consumo de paquetes &bullet; **versiones compatibles:** 4.9.1+
 
-Obtiene o establece los firmantes de confianza a la configuración de NuGet. Para el uso adicional, consulte [configuración del comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md). Para obtener más información sobre cómo el esquema de nuget.config parece, consulte el [referencia del archivo de configuración de NuGet](../reference/nuget-config-file.md).
+Obtiene o establece los firmantes de confianza a la configuración de NuGet. Para el uso adicional, consulte [configuraciones comunes NuGet](../consume-packages/configuring-nuget-behavior.md). Para obtener más información sobre cómo el esquema de nuget.config parece, consulte el [referencia del archivo de configuración de NuGet](../reference/nuget-config-file.md).
 
 ## <a name="usage"></a>Uso
 
@@ -118,8 +118,8 @@ _Nota_: Este gesto eliminará la lista actual de los certificados y reemplazarlo
 | --- | --- |
 | ConfigFile | El archivo de configuración para aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) se utiliza.|
 | ForceEnglishOutput | Obliga a nuget.exe para ejecutarse con una referencia cultural invariable, en inglés. |
-| Ayuda | Muestra información de ayuda para el comando. |
-| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
+| Help | Muestra información de ayuda para el comando. |
+| Verbosity | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 
 ## <a name="examples"></a>Ejemplos
 

@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 740defc34077793b81fb35db73a2eee393ae3bac
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 2f0f93e0cee78ea03cbd53194cdc2a10871fd7e1
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547159"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426764"
 ---
 # <a name="package-content"></a>Contenido del paquete
 
@@ -23,7 +23,7 @@ Este recurso se conoce comúnmente como el "paquete base dirección" o como cont
 
 La siguiente `@type` se usa el valor:
 
-Valor de @type              | Notas
+Valor de@type              | Notas
 ------------------------ | -----
 PackageBaseAddress/3.0.0 | La versión inicial
 
@@ -46,7 +46,7 @@ Si el cliente sabe que un identificador de paquete y desea descubrir que las ver
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-nombre     | En     | Tipo    | Obligatorio | Notas
+Name     | En     | Tipo    | Obligatorio | Notas
 -------- | ------ | ------- | -------- | -----
 LOWER_ID | Resolución    | cadena  | sí      | El identificador del paquete, en minúsculas
 
@@ -58,7 +58,7 @@ Si el origen del paquete no tiene que no hay ninguna versión del identificador 
 
 Si el origen del paquete tiene una o varias versiones, se devuelve un código de 200 estado. El cuerpo de respuesta es un objeto JSON con la siguiente propiedad:
 
-nombre     | Tipo             | Obligatorio | Notas
+Name     | Tipo             | Obligatorio | Notas
 -------- | ---------------- | -------- | -----
 versiones | matriz de cadenas | sí      | El paquete Id. disponibles
 
@@ -82,7 +82,7 @@ Si el cliente sabe que un identificador de paquete y la versión y desea descarg
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-nombre          | En     | Tipo   | Obligatorio | Notas
+Name          | En     | Tipo   | Obligatorio | Notas
 ------------- | ------ | ------ | -------- | -----
 LOWER_ID      | Resolución    | cadena | sí      | El identificador del paquete, en minúsculas
 LOWER_VERSION | Resolución    | cadena | sí      | La versión del paquete, normalizar y en minúsculas
@@ -114,10 +114,10 @@ Si el cliente sabe que un identificador de paquete y la versión y desea descarg
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-nombre          | En     | Tipo    | Obligatorio | Notas
-------------- | ------ | ------- | -------- | -----
-LOWER_ID      | Resolución    | cadena  | sí      | El identificador del paquete, en minúsculas
-LOWER_VERSION | Resolución    | enteros | sí      | La versión del paquete, normalizar y en minúsculas
+Name          | En     | Tipo   | Obligatorio | Notas
+------------- | ------ | ------ | -------- | -----
+LOWER_ID      | Resolución    | cadena | sí      | El identificador del paquete, en minúsculas
+LOWER_VERSION | Resolución    | cadena | sí      | La versión del paquete, normalizar y en minúsculas
 
 Ambos `LOWER_ID` y `LOWER_VERSION` están en minúsculas utilizando las reglas implementadas por. La red [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
 

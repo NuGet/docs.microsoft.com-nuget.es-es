@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: cfcb52ba7689f1b392c782b4ad42ba820a76c8bf
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: d462b289c39c2dd1418304dabcad47d0d4217f82
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981137"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426731"
 ---
 # <a name="search"></a>Buscar
 
@@ -21,7 +21,7 @@ Es posible buscar paquetes disponibles en un origen de paquete mediante la API d
 
 La siguiente `@type` se usan los valores:
 
-Valor de@type                    | Notas
+Valor de@type                   | Notas
 ----------------------------- | -----
 SearchQueryService            | La versión inicial
 SearchQueryService/3.0.0-beta | Alias de `SearchQueryService`
@@ -45,7 +45,7 @@ Un paquete de dados de baja nunca debe aparecer en los resultados de búsqueda.
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-nombre        | En     | Tipo    | Obligatorio | Notas
+Name        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
 q           | Resolución    | cadena  | No       | Términos de búsqueda usados para filtrar paquetes
 skip        | Resolución    | enteros | No       | El número de resultados que se omitirán para la paginación
@@ -71,7 +71,7 @@ La respuesta es un documento JSON que contiene hasta `take` los resultados de b�
 
 El objeto JSON de raíz tiene las siguientes propiedades:
 
-nombre      | Tipo             | Obligatorio | Notas
+Name      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
 totalHits | enteros          | sí      | El número total de coincidencias, omitiendo `skip` y `take`
 datos      | matriz de objetos | sí      | Los resultados de búsqueda coincide con la solicitud
@@ -81,7 +81,7 @@ datos      | matriz de objetos | sí      | Los resultados de búsqueda coincide
 Cada elemento de la `data` matriz es un objeto JSON que consta de un grupo de versiones del paquete compartir el mismo identificador de paquete.
 El objeto tiene las siguientes propiedades:
 
-nombre           | Tipo                       | Obligatorio | Notas
+Name           | Tipo                       | Obligatorio | Notas
 -------------- | -------------------------- | -------- | -----
 id             | cadena                     | sí      | El identificador del paquete coincidente
 version        | cadena                     | sí      | La cadena de versión completa de SemVer 2.0.0 del paquete (podría contener metadatos de la compilación)
@@ -97,13 +97,13 @@ resumen        | cadena                     | No       |
 etiquetas           | cadena o matriz de cadenas | No       | 
 título          | cadena                     | No       | 
 totalDownloads | enteros                    | No       | Este valor se puede inferir por la suma de las descargas en el `versions` matriz
-comprobar       | booleano                    | No       | Un valor booleano JSON que indica si el paquete es [comprobado](../reference/id-prefix-reservation.md)
+comprobar       | booleano                    | No       | Un valor booleano JSON que indica si el paquete es [comprobado](../nuget-org/id-prefix-reservation.md)
 
 En nuget.org, un paquete verificado es uno que tiene un identificador de paquete que coincide con un prefijo de identificador reservado y que pertenecen a uno de los propietarios del prefijo reservado. Para obtener más información, consulte el [documentación acerca de la reserva de prefijo de identificador](../reference/id-prefix-reservation.md).
 
 Los metadatos contenidos en el objeto de resultado de búsqueda se toman de la versión más reciente del paquete. Cada elemento de la `versions` matriz es un objeto JSON con las siguientes propiedades:
 
-nombre      | Tipo    | Obligatorio | Notas
+Name      | Tipo    | Obligatorio | Notas
 --------- | ------- | -------- | -----
 @id       | cadena  | sí      | La dirección URL absoluta a la categoría asociada [hoja de registro](registration-base-url-resource.md#registration-leaf)
 version   | cadena  | sí      | La cadena de versión completa de SemVer 2.0.0 del paquete (podría contener metadatos de la compilación)

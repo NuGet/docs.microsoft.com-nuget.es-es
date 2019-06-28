@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: b47f73c1c225540226d3780e17053427b8ea4a8a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5d10d6bf27614980a144c30c3af6f9892a109061
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545692"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426188"
 ---
 # <a name="nuget-12-release-notes"></a>Notas de la versión 1.2 de NuGet
 
@@ -54,7 +54,7 @@ Estos ensamblados no se incluyen en el paquete, tal como se supone que en todos 
 
 ### <a name="nugetexe-now-is-able-to-store-api-key-credentials"></a>NuGet.exe ahora es capaz de almacenar las credenciales de clave de API
 
-Cuando se usa la herramienta de línea de comandos de nuget.exe, ahora puede usar el comando SetApiKey para almacenar la clave de API. De este modo, no tendrá que especificarlo cada vez que inserte un paquete. Para obtener más información sobre cómo guardar la clave de API con nuget.exe, [lea la documentación sobre cómo publicar un paquete](../create-packages/publish-a-package.md).
+Cuando se usa la herramienta de línea de comandos de nuget.exe, ahora puede usar el comando SetApiKey para almacenar la clave de API. De este modo, no tendrá que especificarlo cada vez que inserte un paquete. Para obtener más información sobre cómo guardar la clave de API con nuget.exe, [lea la documentación sobre cómo publicar un paquete](../nuget-org/publish-a-package.md).
 
 ### <a name="package-explorer"></a>Explorador de paquetes
 Explorador de paquetes se actualizó para admitir 1.2 de NuGet. Para obtener más información, consulte el [notas de la versión de explorador de paquetes](http://nuget.codeplex.com/wikipage?title=New%20features%20in%20NuGet%20Package%20Explorer%201.0).
@@ -65,6 +65,6 @@ La lista anterior eran más notable de las características que hemos implementa
 
 ## <a name="known-issues"></a>Problemas conocidos
 
-* **1.2 del paquete incompatibilidad**: los paquetes se compilan con la versión más reciente de la herramienta de línea de comandos, nuget.exe (1.2 >) no funcionará con versiones anteriores de lo complemento VS NuGet (como 1.1). Si experimenta un mensaje de error que indica que algo acerca de un esquema incompatible, se está produciendo este error. Actualice NuGet a la versión más reciente.
-* **Incompatibilidad de NuGet.Server**: si se va a hospedar un fuente mediante el proyecto de NuGet.Server interno de NuGet, deberá actualizar ese proyecto con la versión más reciente de NuGet.Server.
+* **1.2 del paquete incompatibilidad**: Los paquetes creados con la versión más reciente de la herramienta de línea de comandos, nuget.exe (1.2 >) no funcionará con versiones anteriores de lo complemento VS NuGet (como 1.1). Si experimenta un mensaje de error que indica que algo acerca de un esquema incompatible, se está produciendo este error. Actualice NuGet a la versión más reciente.
+* **Incompatibilidad de NuGet.Server**: Si se va a hospedar un fuente mediante el proyecto de NuGet.Server interno de NuGet, deberá actualizar ese proyecto con la versión más reciente de NuGet.Server.
 * **Error de coincidencia de firma**: Si experimenta un error durante una actualización con un mensaje sobre un error de coincidencia de firma, deberá desinstalar NuGet primero y, a continuación, vuelva a instalarlo. Esto se muestra en nuestra [página de problemas conocidos](../release-notes/known-issues.md) que proporciona más detalles. El problema sólo afecta a los que se ejecutan Visual Studio 2010 SP1 y tiene una versión de NuGet 1.0 instalado y que se firmó correctamente. Esta versión era solo disponible desde el sitio Web de CodePlex durante un breve período para este problema no debería afectar a demasiadas personas.

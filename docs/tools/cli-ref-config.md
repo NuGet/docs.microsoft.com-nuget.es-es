@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 376b69186ad22d4d94a1df51146b833a1f6f9bd9
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c0497c7b99a2de6bee37d6d0ead8b055578e60b7
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546483"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426070"
 ---
 # <a name="config-command-nuget-cli"></a>comando config (CLI de NuGet)
 
 **Se aplica a:** todas &bullet; **versiones compatibles de**: todas
 
-Obtiene o establece los valores de configuración de NuGet. Para el uso adicional, consulte [configuración del comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md). Para más información sobre los nombres de clave permitidos, consulte el [referencia del archivo de configuración de NuGet](../reference/nuget-config-file.md).
+Obtiene o establece los valores de configuración de NuGet. Para el uso adicional, consulte [configuraciones comunes NuGet](../consume-packages/configuring-nuget-behavior.md). Para más información sobre los nombres de clave permitidos, consulte el [referencia del archivo de configuración de NuGet](../reference/nuget-config-file.md).
 
 ## <a name="usage"></a>Uso
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: bce04864224a66019a52cdfff8355f68dc424204
-ms.sourcegitcommit: 69b5eb1494a1745a4b1a7f320a91255d5d8356a9
+ms.openlocfilehash: b4f73e2b816d8a93e123d6de83ad0a15fbb24d18
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65975001"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425928"
 ---
 # <a name="push-command-nuget-cli"></a>inserción de comandos (CLI de NuGet)
 
@@ -21,7 +21,7 @@ ms.locfileid: "65975001"
 
 Inserta un paquete a un origen de paquete y lo publica.
 
-Configuración predeterminada de NuGet se obtiene mediante la carga `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), a continuación, cargar cualquier `Nuget.Config` o `.nuget\Nuget.Config` archivos a partir de la raíz de la unidad y finalizando en el directorio actual (consulte [configuración Comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md))
+Configuración predeterminada de NuGet se obtiene mediante la carga `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), a continuación, cargar cualquier `Nuget.Config` o `.nuget\Nuget.Config` archivos a partir de la raíz de la unidad y finalizando en el directorio actual (consulte [NuGet comunes las configuraciones de](../consume-packages/configuring-nuget-behavior.md))
 
 ## <a name="usage"></a>Uso
 
@@ -43,7 +43,7 @@ donde `<packagePath>` identifica el paquete para insertar en el servidor.
 | NonInteractive | Suprime los mensajes para confirmaciones o intervención del usuario. |
 | NoSymbols | *(3.5 y versiones posteriores)*  Si existe un paquete de símbolos, no se podrán realizar en un servidor de símbolos. |
 | Source | Especifica la dirección URL del servidor. NuGet identifica un origen de la carpeta local o UNC y simplemente copia el archivo existe en lugar de insertar mediante HTTP.  Además, a partir de NuGet 3.4.2, esto es un parámetro obligatorio a menos que el `NuGet.Config` archivo especifica un *DefaultPushSource* valor (consulte [del comportamiento de configuración de NuGet](../consume-packages/configuring-nuget-behavior.md)). |
-| SkipDuplicate | Si ya existe un paquete y versión, omitirla y continuar con el siguiente paquete en la inserción, si existe. |
+| SkipDuplicate | *(5.1 +)*  Si ya existe un paquete y versión, omitirla y continuar con el siguiente paquete en la inserción, si existe. |
 | SymbolSource | *(3.5 y versiones posteriores)*  Especifica la URL del servidor de símbolos; nuget.smbsrc.net se utiliza al realizar inserciones en nuget.org |
 | SymbolApiKey | *(3.5 y versiones posteriores)*  Especifica la clave de API de la dirección URL especificada en `-SymbolSource`. |
 | Tiempo de espera | Especifica el tiempo de espera en segundos, para insertar en un servidor. El valor predeterminado es 300 segundos (5 minutos). |

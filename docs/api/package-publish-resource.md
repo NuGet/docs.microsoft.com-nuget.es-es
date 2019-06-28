@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: ad66d8e0ffda13aaef744104c213863b0e111e0e
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6e81055796e20186c5769d2ec39849e6c551ff87
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547526"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426724"
 ---
 # <a name="push-and-delete"></a>Inserción y eliminación
 
@@ -21,7 +21,7 @@ Es posible insertar, eliminar (o quitar de la lista, dependiendo de la implement
 
 La siguiente `@type` se usa el valor:
 
-Valor de @type          | Notas
+Valor de@type          | Notas
 -------------------- | -----
 PackagePublish/2.0.0 | La versión inicial
 
@@ -46,7 +46,7 @@ NuGet.org admite insertar nuevos paquetes mediante la API siguiente. Si ya exist
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-nombre           | En     | Tipo   | Obligatorio | Notas
+Name           | En     | Tipo   | Obligatorio | Notas
 -------------- | ------ | ------ | -------- | -----
 X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
 
@@ -72,15 +72,15 @@ Las implementaciones de servidor varían en el código de estado correcto, devue
 
 ## <a name="delete-a-package"></a>Eliminar un paquete
 
-NuGet.org interpreta la solicitud de eliminación de paquete como un "quitar de la lista". Esto significa que el paquete sigue estando disponible para los usuarios existentes del paquete, pero el paquete ya no aparece en los resultados de búsqueda o en la interfaz web. Para obtener más información acerca de esta práctica, consulte el [paquetes eliminados](../policies/deleting-packages.md) directiva. Otras implementaciones del servidor son gratis para interpretar esta señal como una eliminación de disco dura, eliminación temporal o quitar de la lista. Por ejemplo, [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) (una implementación de servidor solo admite la API V2 anterior) es compatible con esta solicitud de control como una eliminación de la lista o una eliminación de disco dura basada en una opción de configuración.
+NuGet.org interpreta la solicitud de eliminación de paquete como un "quitar de la lista". Esto significa que el paquete sigue estando disponible para los usuarios existentes del paquete, pero el paquete ya no aparece en los resultados de búsqueda o en la interfaz web. Para obtener más información acerca de esta práctica, consulte el [paquetes eliminados](../nuget-org/policies/deleting-packages.md) directiva. Otras implementaciones del servidor son gratis para interpretar esta señal como una eliminación de disco dura, eliminación temporal o quitar de la lista. Por ejemplo, [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) (una implementación de servidor solo admite la API V2 anterior) es compatible con esta solicitud de control como una eliminación de la lista o una eliminación de disco dura basada en una opción de configuración.
 
     DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-nombre           | En     | Tipo   | Obligatorio | Notas
+Name           | En     | Tipo   | Obligatorio | Notas
 -------------- | ------ | ------ | -------- | -----
-Id.             | Resolución    | cadena | sí      | El identificador del paquete va a eliminar
+ID             | Resolución    | cadena | sí      | El identificador del paquete va a eliminar
 VERSION        | Resolución    | cadena | sí      | La versión del paquete para eliminar
 X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
 
@@ -101,9 +101,9 @@ Si el paquete ya aparece, la solicitud se realiza correctamente.
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-nombre           | En     | Tipo   | Obligatorio | Notas
+Name           | En     | Tipo   | Obligatorio | Notas
 -------------- | ------ | ------ | -------- | -----
-Id.             | Resolución    | cadena | sí      | El identificador del paquete para volver a
+ID             | Resolución    | cadena | sí      | El identificador del paquete para volver a
 VERSION        | Resolución    | cadena | sí      | La versión del paquete para volver a
 X-NuGet-ApiKey | Header | cadena | sí      | Por ejemplo, `X-NuGet-ApiKey: {USER_API_KEY}`.
 

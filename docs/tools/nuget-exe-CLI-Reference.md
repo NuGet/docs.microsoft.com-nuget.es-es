@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: reference
-ms.openlocfilehash: 2743dde63487124c706f2b1521ef2c6c3b28339d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a257dbbd9d56b5989e050ed4096d096cd1036184
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548083"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426018"
 ---
 # <a name="nuget-cli-reference"></a>Referencia de CLI de NuGet
 
@@ -19,6 +19,8 @@ La interfaz de línea de comandos (CLI de NuGet), `nuget.exe`, proporciona el al
 Para utilizar cualquier comando, abra una ventana de comandos o el shell de bash y ejecute `nuget` seguido por el comando y las opciones adecuadas, como `nuget help pack` (para ver la Ayuda en el comando pack).
 
 Esta documentación refleja la versión más reciente de la CLI de NuGet. Para obtener información exacta para cualquier versión concreta que esté usando, ejecute `nuget help` para el comando deseado.
+
+Para obtener información sobre cómo usar los comandos básicos con el `nuget.exe` CLI, consulte [instalar y usar paquetes mediante la CLI de nuget.exe](../consume-packages/install-use-packages-nuget-cli.md).
 
 ## <a name="installing-nugetexe"></a>Instalación de nuget.exe
 
@@ -56,7 +58,7 @@ Los comandos disponibles y aplicabilidad a creación de paquetes, consumo de paq
 | [delete](cli-ref-delete.md) | Publicación | Todas | Elimina o quita un paquete desde un origen del paquete de la lista. |
 | [init](cli-ref-init.md) | Creación de | 3.3+ | Agrega paquetes desde una carpeta a un origen de paquete con formato jerárquico. |
 | [install](cli-ref-install.md) | Consumo | Todas | Instala un paquete en el actual del proyecto, pero no modifica los proyectos o hacen referencia a archivos. |
-| [list](cli-ref-list.md) | Consumo, quizás de publicación | Todas | Muestra los paquetes desde un origen determinado. |
+| [lista](cli-ref-list.md) | Consumo, quizás de publicación | Todas | Muestra los paquetes desde un origen determinado. |
 | [mirror](cli-ref-mirror.md) | Publicación | En desuso en 3.2 y versiones posteriores | Refleja un paquete y sus dependencias de un origen a un repositorio de destino. |
 | [sources](cli-ref-sources.md) | Consumo, publicar | Todas | Administra los orígenes de paquetes en archivos de configuración. |
 | [update](cli-ref-update.md) | Consumo | Todas | Actualiza los paquetes de un proyecto a las últimas versiones disponibles. No se admite cuando se ejecuta en Mono. |

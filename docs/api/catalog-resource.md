@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 4884de71151ee1ae3c0a78b803c9222f9c1d86ec
-ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
+ms.openlocfilehash: 34c205e7dac60c7abfb6323b4dc45bf4f074d46a
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266353"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426785"
 ---
 # <a name="catalog"></a>Catálogo
 
@@ -27,7 +27,7 @@ El **catálogo** es un recurso que registra todas las operaciones de paquete en 
 
 La siguiente `@type` se usa el valor:
 
-Valor de@type    | Notas
+Valor de@type   | Notas
 ------------- | -----
 Catalog/3.0.0 | La versión inicial
 
@@ -236,8 +236,8 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 Elementos con el tipo de catálogo `PackageDelete` contienen un conjunto mínimo de información que indique a los clientes del catálogo que un paquete se ha eliminado del origen del paquete y ya no está disponible para cualquier operación de paquete (por ejemplo, restauración).
 
-> [!Note]
-> Es posible que un paquete va a eliminar y posteriormente se han vuelto a publicar utilizando el mismo Id. de paquete y la versión. En nuget.org, este es un caso muy poco frecuente, porque interrumpe suposición oficial del cliente que un identificador de paquete y versión implican un contenido de paquete específico. Para obtener más información acerca de la eliminación del paquete en nuget.org, vea [nuestra directiva](../policies/deleting-packages.md).
+> [!NOTE]
+> Es posible que un paquete va a eliminar y posteriormente se han vuelto a publicar utilizando el mismo Id. de paquete y la versión. En nuget.org, este es un caso muy poco frecuente, porque interrumpe suposición oficial del cliente que un identificador de paquete y versión implican un contenido de paquete específico. Para obtener más información acerca de la eliminación del paquete en nuget.org, vea [nuestra directiva](../nuget-org/policies/deleting-packages.md).
 
 Los elementos del catálogo de eliminación de paquete no tienen ninguna propiedad adicional además de los [incluida en todas las hojas del catálogo](#catalog-leaf).
 

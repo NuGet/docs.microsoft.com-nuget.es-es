@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 8261cdb83af72d9d9379124f4c446c7cd2a50299
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 8088c6dcb7d453650950c219e1cc4dd047a64417
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549141"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425992"
 ---
 # <a name="install-command-nuget-cli"></a>Comando install (CLI de NuGet)
 
@@ -21,7 +21,7 @@ Descarga e instala un paquete en un proyecto, de forma predeterminada a la carpe
 > [!Tip]
 > Para descargar un paquete directamente fuera del contexto de un proyecto, visite la página del paquete en [nuget.org](https://www.nuget.org) y seleccione el **descargar** vínculo.
 
-Si no se especifica ningún origen, aquellos que aparecen en el archivo de configuración global, `%appdata%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), se usan. Consulte [del comportamiento de configuración de NuGet](../consume-packages/configuring-nuget-behavior.md) para obtener más detalles.
+Si no se especifica ningún origen, aquellos que aparecen en el archivo de configuración global, `%appdata%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux), se usan. Consulte [configuraciones comunes NuGet](../consume-packages/configuring-nuget-behavior.md) para obtener más detalles.
 
 Si se especifica ningún paquete específico, `install` instala todos los paquetes enumerados en el proyecto `packages.config` archivo, lo que parece [ `restore` ](cli-ref-restore.md).
 
@@ -48,16 +48,16 @@ donde `<packageID>` nombra el paquete que desea instalar (con la versión más r
 | FallbackSource | *(3.2 y versiones posteriores)*  Una lista de orígenes de paquetes para utilizar como de reservas en caso de que el paquete no se encuentra en el servidor principal o el origen predeterminado. |
 | ForceEnglishOutput | *(3.5 y versiones posteriores)*  Fuerza nuget.exe se ejecute con una referencia cultural invariable, en inglés. |
 | Framework | *(4.4 +)*  Se usa para seleccionar las dependencias de .NET framework de destino. El valor predeterminado es "Any" Si no se especifica. |
-| Ayuda | Muestra información de ayuda para el comando. |
+| Help | Muestra información de ayuda para el comando. |
 | NoCache | Impide que NuGet utilice paquetes almacenados en caché. Consulte [administración de paquetes globales y carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). |
-| No interactivo | Suprime los mensajes para confirmaciones o intervención del usuario. |
+| NonInteractive | Suprime los mensajes para confirmaciones o intervención del usuario. |
 | OutputDirectory | Especifica la carpeta donde se instalan los paquetes. Si se especifica ninguna carpeta, se usa la carpeta actual. |
 | PackageSaveMode | Especifica los tipos de archivos que se va a guardar tras la instalación del paquete: uno de `nuspec`, `nupkg`, o `nuspec;nupkg`. |
 | Versión preliminar | Permite que los paquetes preliminares instalarse. Esta marca no es necesaria al restaurar los paquetes con `packages.config`. |
 | RequireConsent | Comprueba que la restauración de paquetes está habilitada antes de descargar e instalar los paquetes. Para obtener más información, consulte [la restauración del paquete](../consume-packages/package-restore.md). |
 | SolutionDirectory | Especifica la carpeta raíz de la solución para que se va a restaurar los paquetes. |
-| Origen | Especifica la lista de orígenes de paquetes (como las direcciones URL) para usar. Si se omite, el comando usa los orígenes proporcionados en los archivos de configuración, consulte [del comportamiento de configuración de NuGet](../consume-packages/configuring-nuget-behavior.md). |
-| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
+| Source | Especifica la lista de orígenes de paquetes (como las direcciones URL) para usar. Si se omite, el comando usa los orígenes proporcionados en los archivos de configuración, consulte [configuraciones comunes NuGet](../consume-packages/configuring-nuget-behavior.md). |
+| Verbosity | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
 | Versión | Especifica la versión del paquete para instalar. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)

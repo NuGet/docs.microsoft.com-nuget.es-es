@@ -1,5 +1,5 @@
 ---
-title: Referencia de la interfaz de usuario del Administrador de paquetes de NuGet
+title: Instalar y administrar paquetes de NuGet en Visual Studio
 description: Instrucciones para usando la UI de administrador de paquetes de NuGet en Visual Studio para trabajar con paquetes de NuGet.
 author: karann-msft
 ms.author: karann
@@ -10,30 +10,21 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 422faf99e58e058d86db774a8f3c1c576b3dc393
-ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
+ms.openlocfilehash: 97e5de3f07199cd3c6a645749c8f2f1603ca630e
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58637628"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426243"
 ---
-# <a name="nuget-package-manager-ui"></a>Interfaz de usuario del Administrador de paquetes de NuGet
+# <a name="install-and-manage-packages-in-visual-studio"></a>Instalar y administrar paquetes en Visual Studio
 
 La UI Administrador de paquetes de NuGet en Visual Studio en Windows le permite instalar, desinstalar y actualizar paquetes de NuGet en proyectos y soluciones con facilidad. Para obtener la experiencia en Visual Studio para Mac, consulte [incluir un paquete NuGet en el proyecto](/visualstudio/mac/nuget-walkthrough). El Administrador de paquetes de UI no se incluye con Visual Studio Code.
 
-En este tema:
-
-- [Búsqueda e instalación de un paquete (pestaña Examinar)](#finding-and-installing-a-package)
-- [Al desinstalar un paquete (pestaña instalados)](#uninstalling-a-package)
-- [Actualizar un paquete (pestañas instaladas y actualizaciones)](#updating-a-package) (incluye el ["Implícitamente que se hace referencia mediante un SDK" o "Compatibilidad con AutoReferenced" mensaje](#implicit_reference))
-- [Administración de paquetes para la solución](#managing-packages-for-the-solution) (trabajar con varios proyectos al mismo tiempo).
-- [Orígenes de paquetes](#package-sources)
-- [Controlan las opciones del Administrador de paquetes](#package-manager-options-control)
-
-> [!Note]
+> [!NOTE]
 > Compruebe si faltan el Administrador de paquetes de NuGet en Visual Studio 2015, **Herramientas > extensiones y actualizaciones...**  y busque el *Administrador de paquetes de NuGet* extensión. Si no puede usar el instalador de extensiones de Visual Studio, descargue la extensión directamente desde [ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html).
 >
-> En Visual Studio 2017, NuGet y el Administrador de paquetes de NuGet se instalan automáticamente con cualquiera. Cargas de trabajo relacionados con la red. Instálelo individualmente seleccionando el **componentes individuales > herramientas de código > Administrador de paquetes de NuGet** opción en el instalador de Visual Studio 2017.
+> A partir de Visual Studio 2017, NuGet y el Administrador de paquetes de NuGet se instalan automáticamente con cualquiera. Cargas de trabajo relacionados con la red. Instálelo individualmente seleccionando el **componentes individuales > herramientas de código > Administrador de paquetes de NuGet** opción en el instalador de Visual Studio.
 
 ## <a name="finding-and-installing-a-package"></a>Búsqueda e instalación de un paquete
 
@@ -123,14 +114,14 @@ Para administrar orígenes de paquetes:
 
     ![Opciones de orígenes de paquetes](media/options.png)
 
-1. Para agregar un origen, seleccione **+**, edite el nombre, escriba la dirección URL o ruta de acceso en el **origen** control y seleccione **actualización**. El origen aparece ahora en el selector de lista desplegable.
+1. Para agregar un origen, seleccione **+** , edite el nombre, escriba la dirección URL o ruta de acceso en el **origen** control y seleccione **actualización**. El origen aparece ahora en el selector de lista desplegable.
 1. Para cambiar un origen del paquete, selecciónelo, realice modificaciones en el **nombre** y **origen** cuadros y seleccione **actualización**.
 1. Para deshabilitar un origen del paquete, desactive la casilla a la izquierda del nombre de la lista.
 1. Para quitar un origen del paquete, selecciónelo y, a continuación, seleccione el **X** botón.
 1. Usar arriba y flecha abajo botones no cambian el orden de prioridad de los orígenes del paquete. Visual Studio omite el orden de los orígenes de paquetes, mediante el paquete del origen que primero responda a las solicitudes. Para obtener más información, consulte [restauración del paquete](../consume-packages/package-restore.md).
 
 > [!Tip]
-> Si se vuelve a aparecer en un origen de paquete después de eliminarlo, pueden mostrarse en un nivel de equipo o el nivel de usuario `NuGet.Config` archivos. Consulte [del comportamiento de configuración de NuGet](../consume-packages/configuring-nuget-behavior.md) para la ubicación de estos archivos, a continuación, quitar el origen de editar manualmente los archivos o usando el [nuget orígenes comando](../tools/nuget-exe-CLI-reference.md).
+> Si se vuelve a aparecer en un origen de paquete después de eliminarlo, pueden mostrarse en un nivel de equipo o el nivel de usuario `NuGet.Config` archivos. Consulte [configuraciones comunes NuGet](../consume-packages/configuring-nuget-behavior.md) para la ubicación de estos archivos, a continuación, quitar el origen de editar manualmente los archivos o usando el [nuget orígenes comando](../tools/nuget-exe-CLI-reference.md).
 
 ## <a name="package-manager-options-control"></a>Controlan las opciones del Administrador de paquetes
 

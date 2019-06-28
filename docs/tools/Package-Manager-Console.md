@@ -1,24 +1,26 @@
 ---
-title: Guía de consola de administrador de paquetes de NuGet
+title: Instalar y administrar paquetes de NuGet con PowerShell en Visual Studio
 description: Instrucciones para usar la consola de administrador de paquetes de NuGet en Visual Studio para trabajar con paquetes.
 author: karann-msft
 ms.author: karann
-ms.date: 01/23/2018
+ms.date: 06/24/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 88979c67ea7f073f2ea5a02c445186642f77f210
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 11ec25598d3110ba84dec5044642e205e13346af
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546883"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426221"
 ---
-# <a name="package-manager-console"></a>Consola del Administrador de paquetes
+# <a name="install-and-manage-packages-using-powershell-in-visual-studio"></a>Instalar y administrar paquetes mediante PowerShell en Visual Studio
 
-La consola de administrador de paquetes de NuGet se integra en Visual Studio en Windows 2012 y versiones posteriores. (No se incluye con Visual Studio para Mac o Visual Studio Code).
+La consola de administrador de paquetes de NuGet le permite usar [comandos de PowerShell de NuGet](../tools/powershell-reference.md) para buscar, instalar, desinstalar y actualizar paquetes de NuGet. Es necesario en casos donde el Administrador de paquetes de UI no proporciona una manera de realizar una operación mediante la consola. Para usar `nuget.exe` comandos de la CLI en la consola, consulte [mediante la CLI de nuget.exe en la consola de](#using-the-nugetexe-cli-in-the-console).
 
-La consola le permite usar [comandos de PowerShell de NuGet](../tools/powershell-reference.md) para buscar, instalar, desinstalar y actualizar paquetes de NuGet. Es necesario en casos donde el Administrador de paquetes de UI no proporciona una manera de realizar una operación mediante la consola. Para usar `nuget.exe` comandos en la consola, consulte [mediante la CLI de nuget.exe en la consola de](#using-the-nugetexe-cli-in-the-console).
+La consola está integrada en Visual Studio en Windows. No se incluye con Visual Studio para Mac o Visual Studio Code.
+
+## <a name="find-and-install-a-package"></a>Buscar e instalar un paquete
 
 Por ejemplo, la búsqueda e instalación de un paquete se realiza con tres sencillos pasos:
 
@@ -74,7 +76,7 @@ Install-Package Elmah -ProjectName UtilitiesLib
 
 Consulte [Install-Package](../tools/ps-ref-install-package.md).
 
-Instalar un paquete en la consola realiza los mismos pasos, tal como se describe en [lo que sucede cuando se instala un paquete](../consume-packages/ways-to-install-a-package.md#what-happens-when-a-package-is-installed), con las siguientes adiciones:
+Instalar un paquete en la consola realiza los mismos pasos, tal como se describe en [lo que sucede cuando se instala un paquete](../concepts/package-installation-process.md), con las siguientes adiciones:
 
 - La consola muestra los términos de licencia aplicables en su ventana con un acuerdo implícito. Si no acepta los términos, debe desinstalar el paquete inmediatamente.
 - También una referencia al paquete se agrega al archivo de proyecto y aparece en **el Explorador de soluciones** bajo el **referencias** nodo, debe guardar el proyecto para ver los cambios en el archivo de proyecto directamente.
@@ -139,7 +141,7 @@ Consulte [Find-Package](../tools/ps-ref-find-package.md). En Visual Studio 2013 
 
 ## <a name="availability-of-the-console"></a>Disponibilidad de la consola
 
-En Visual Studio 2017, NuGet y el Administrador de paquetes de NuGet se instalan automáticamente cuando se selecciona cualquiera. Cargas de trabajo relacionados con la red; También puede instalarlo por separado mediante la comprobación de la **componentes individuales > herramientas de código > Administrador de paquetes de NuGet** opción en el instalador de Visual Studio 2017.
+A partir de Visual Studio 2017, NuGet y el Administrador de paquetes de NuGet se instalan automáticamente cuando se selecciona cualquiera. Cargas de trabajo relacionados con la red; También puede instalarlo por separado mediante la comprobación de la **componentes individuales > herramientas de código > Administrador de paquetes de NuGet** opción en el instalador de Visual Studio.
 
 Además, compruebe si faltan el Administrador de paquetes de NuGet en Visual Studio 2015 y versiones anteriores, **Herramientas > extensiones y actualizaciones...**  y busque la extensión del Administrador de paquetes de NuGet. Si no puede usar el instalador de extensiones de Visual Studio, puede descargar la extensión directamente desde [ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html).
 

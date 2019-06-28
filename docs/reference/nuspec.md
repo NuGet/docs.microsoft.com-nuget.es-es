@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 6c545ddeddb0c5909f57e879912eaeed744e42d5
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: e4c57c0580fe9018703291c08d60e559f95183dc
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812929"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426205"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -85,7 +85,7 @@ Una lista separada por comas de los autores de los paquetes, que coinciden con l
 #### <a name="title"></a>título
 Un título fácil de usar del paquete, que se usa normalmente en las visualizaciones de la interfaz de usuario, como en nuget.org, y el Administrador de paquetes de Visual Studio. Si no se especifica, se usa el identificador del paquete. 
 #### <a name="owners"></a>owners
-Lista separada por comas de los creadores del paquete usando nombres de perfil en nuget.org. Suele ser la misma lista que en `authors` y se ignora al cargar el paquete en nuget.org. Vea [Administrar los propietarios de paquetes en nuget.org](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg). 
+Lista separada por comas de los creadores del paquete usando nombres de perfil en nuget.org. Suele ser la misma lista que en `authors` y se ignora al cargar el paquete en nuget.org. Vea [Administrar los propietarios de paquetes en nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
 #### <a name="projecturl"></a>projectUrl
 Una dirección URL de la página principal del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org. 
 #### <a name="licenseurl"></a>licenseUrl
@@ -300,7 +300,7 @@ En el ejemplo siguiente se muestran diferentes variaciones del elemento `<group>
 
 ## <a name="explicit-assembly-references"></a>Referencias de ensamblado explícitas
 
-El elemento `<references>` especifica explícitamente los ensamblados a los que debe hacer referencia el proyecto de destino al usar el paquete. Cuando este elemento está presente, NuGet agrega referencias únicamente a los ensamblados enumerados. No agrega referencias a otros ensamblados en la carpeta `lib` del paquete.
+El `<references>` elemento se usa en proyectos que usen `packages.config` especificar explícitamente los ensamblados que debe hacer referencia en el proyecto de destino cuando se usa el paquete. Las referencias explícitas se suelen usar para ensamblados que solo son de tiempo de diseño. Para obtener más información, vea la página en [seleccionar ensamblados referenciados por proyectos](../create-packages/select-assemblies-referenced-by-projects.md) para obtener más información.
 
 Por ejemplo, el siguiente elemento `<references>` indica a NuGet que agregue referencias solo a `xunit.dll` y `xunit.extensions.dll`, incluso si hay ensamblados adicionales en el paquete:
 
@@ -310,10 +310,6 @@ Por ejemplo, el siguiente elemento `<references>` indica a NuGet que agregue ref
     <reference file="xunit.extensions.dll" />
 </references>
 ```
-
-Las referencias explícitas se suelen usar para ensamblados que solo son de tiempo de diseño. Al usar [contratos de código](/dotnet/framework/debug-trace-profile/code-contracts), por ejemplo, los ensamblados de contrato deben estar junto a los ensamblados en tiempo de ejecución que alimentan de manera que Visual Studio los pueda encontrar, pero no es necesario que el proyecto haga referencia a los ensamblados de contrato ni que se copien en la carpeta `bin` del proyecto.
-
-De forma parecida, las referencias explícitas se pueden usar para los marcos de pruebas unitarias, como XUnit, que necesita que sus ensamblados de herramientas estén situados junto a los ensamblados en tiempo de ejecución, pero no necesita que se incluyan como referencias de proyecto.
 
 ### <a name="reference-groups"></a>Grupos de referencias
 

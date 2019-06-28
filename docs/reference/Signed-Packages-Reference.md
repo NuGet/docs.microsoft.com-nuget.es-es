@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 486bf4032e156168f9b2fef57ccdae0c372b2eff
-ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
+ms.openlocfilehash: 952256a24246543ecd4c37285cd001622aa2bc46
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52977516"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426179"
 ---
 # <a name="signed-packages"></a>Paquetes firmados
 
@@ -20,7 +20,7 @@ ms.locfileid: "52977516"
 Paquetes de NuGet pueden incluir una firma digital que proporciona protección contra contenido alterado. Esta firma se genera a partir de un certificado X.509 que se agrega también las pruebas de autenticidad para el origen del paquete real.
 
 Paquetes firmados proporcionan la validación de extremo a otro más fuerte. Hay dos tipos diferentes de las firmas de NuGet:
-- **Crear la firma**. Una firma de autor garantiza que el paquete no se ha modificado desde que el autor firmó el paquete, sin importar desde que el repositorio o qué método se entrega el paquete de transporte. Además, los paquetes firmados por el autor proporcionan un mecanismo de autenticación adicional a la canalización de publicación de nuget.org porque el certificado de firma debe estar registrado con anterioridad. Para obtener más información, consulte [registrar certificados](#register-certificate-on-nugetorg).
+- **Crear la firma**. Una firma de autor garantiza que el paquete no se ha modificado desde que el autor firmó el paquete, sin importar desde que el repositorio o qué método se entrega el paquete de transporte. Además, los paquetes firmados por el autor proporcionan un mecanismo de autenticación adicional a la canalización de publicación de nuget.org porque el certificado de firma debe estar registrado con anterioridad. Para obtener más información, consulte [registrar certificados](#signature-requirements-on-nugetorg).
 - **Firma de repositorio**. Las firmas de repositorio ofrecen una garantía de integridad para **todas** paquetes en un repositorio, independientemente de si están firmado o no, el autor, incluso si se obtienen esos paquetes desde una ubicación diferente a donde estaban repositorio original firmado.   
 
 Para obtener más información sobre cómo crear un paquete firmado de autor, consulte [firmar paquetes](../create-packages/Sign-a-package.md) y [comando de inicio de sesión de nuget](../tools/cli-ref-sign.md).
@@ -56,5 +56,5 @@ NuGet.org tiene requisitos adicionales para aceptar un paquete firmado:
   
 ## <a name="related-articles"></a>Artículos relacionados
 
-- [Firma de paquetes de NuGet](../create-packages/Sign-a-Package.md)
-- [Instalar paquetes firmados](../consume-packages/installing-signed-packages.md)
+- [Firma de paquetes NuGet](../create-packages/Sign-a-Package.md)
+- [Administrar los límites de confianza de paquete](../consume-packages/installing-signed-packages.md)
