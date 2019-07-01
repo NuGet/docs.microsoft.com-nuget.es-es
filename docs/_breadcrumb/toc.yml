@@ -1,48 +1,35 @@
-items:
 - name: Docs
   tocHref: /
   topicHref: /
   items:
-  - name: NuGet
-    tocHref: /nuget/
-    topicHref: /nuget
-    items:
-    - name: Inicio rápido
-      tocHref: /nuget/quickstart/
-      topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
-    - name: Guías
-      tocHref: /nuget/guides/
-      topicHref: /nuget/guides/create-net-standard-packages-vs2017
-    - name: Crear paquetes
-      tocHref: /nuget/create-packages/
-      topicHref: /nuget/create-packages/overview-and-workflow
-    - name: Consumir paquetes
-      tocHref: /nuget/consume-packages/
-      topicHref: /nuget/consume-packages/overview-and-workflow
-    - name: Hospedaje de paquetes
-      tocHref: /nuget/hosting-packages/
-      topicHref: /nuget/hosting-packages/overview
-    - name: Herramientas
-      tocHref: /nuget/tools/
-      topicHref: /nuget/tools/nuget-exe-cli-reference
-    - name: Referencia
-      tocHref: /nuget/reference/
-      topicHref: /nuget/reference/nuspec
-    - name: API
-      tocHref: /nuget/api/
-      topicHref: /nuget/api/overview
-    - name: Extensibilidad de Visual Studio
-      tocHref: /nuget/visual-studio-extensibility/
-      topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
-    - name: Directivas
-      tocHref: /nuget/policies/
-      topicHref: /nuget/policies/governance
-    - name: Notas de la versión
-      tocHref: /nuget/release-notes/
-      topicHref: /nuget/release-notes/index
-ms.openlocfilehash: de155b62126e509ae3d554e2caaa70bb91bb90d9
-ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54403130"
+    - name: NuGet
+      tocHref: /nuget/
+      topicHref: /nuget
+      items:
+        - name: Inicio rápido
+          tocHref: /nuget/quickstart/
+          topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
+        - name: Guías
+          tocHref: /nuget/guides/
+          topicHref: /nuget/guides/create-net-standard-packages-vs2017
+        - name: Crear paquetes
+          tocHref: /nuget/create-packages/
+          topicHref: /nuget/create-packages/overview-and-workflow
+        - name: Consumir paquetes
+          tocHref: /nuget/consume-packages/
+          topicHref: /nuget/consume-packages/overview-and-workflow
+        - name: Referencia
+          tocHref: /nuget/reference/
+          topicHref: /nuget/reference/nuspec
+        - name: Extensibilidad de Visual Studio
+          tocHref: /nuget/visual-studio-extensibility/
+          topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
+        - name: Directivas
+          tocHref: /nuget/policies/
+          topicHref: /nuget/policies/governance
+        - name: Notas de la versión
+          tocHref: /nuget/release-notes/
+          topicHref: /nuget/release-notes/index
+        - name: NuGet.org
+          tocHref: /nuget/nuget-org/
+          topicHref: /nuget/nuget-org/organizations-on-nuget-org
