@@ -7,6 +7,12 @@ ms.date: 02/12/2018
 ms.topic: overview
 layout: HubPage
 hide_bc: true
+ms.openlocfilehash: 399e4f80afb3e3d6278618055dde38a87184e3ff
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426643"
 ---
 <div id="main" class="v2">
 <div class="container">
@@ -75,7 +81,7 @@ hide_bc: true
                             </a>
                         </li>
                         <li>
-                            <a href="create-packages/overview-and-workflow.md">
+                            <a href="create-packages/creating-a-package.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -142,7 +148,7 @@ hide_bc: true
                     <a href="#tools-all"></a>
                     <ul id="tools-all" class="cardsC">
                         <li>
-                            <a href="tools/nuget-exe-cli-reference.md">
+                            <a href="install-nuget-client-tools.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -153,7 +159,7 @@ hide_bc: true
                                         </div>
                                         <div class="cardText">
                                             <h3>Herramientas</h3>
-                                            <p>Las guías completas de la herramienta de línea de comandos de nuget.exe, la interfaz de usuario del Administrador de paquetes y la consola del Administrador de paquetes en Visual Studio.</p>
+                                            <p>Información sobre las herramientas que se pueden usar para trabajar con NuGet y cómo obtenerlas.</p>
                                         </div>
                                     </div>
                                 </div>
