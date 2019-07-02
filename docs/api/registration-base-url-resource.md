@@ -6,14 +6,14 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 19a1f48164f65f1ff805e036e55abb110247aa72
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 0b35e2bbdde63f7f7a5298bd035c180389cd345d
+ms.sourcegitcommit: 2a9d149bc6f5ff76b0b657324820bd0429cddeef
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324869"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496495"
 ---
-# <a name="package-metadata"></a>Metadatos del paquete
+# <a name="package-metadata"></a>Metadatos de paquete
 
 Es posible obtener metadatos sobre los paquetes disponibles en un origen de paquete mediante la API de NuGet V3. Estos metadatos se pueden recuperar mediante el `RegistrationsBaseUrl` encontrar el recurso en el [índice de servicio](service-index.md).
 
@@ -23,7 +23,7 @@ La colección de los documentos se encuentran en `RegistrationsBaseUrl` a menudo
 
 La siguiente `@type` se usan los valores:
 
-Valor de@type                      | Notas
+Valor de@type                     | Notas
 ------------------------------- | -----
 RegistrationsBaseUrl            | La versión inicial
 RegistrationsBaseUrl/3.0.0-beta | Alias de `RegistrationsBaseUrl`
@@ -76,7 +76,7 @@ La heurística que usa nuget.org es la siguiente: si hay 128 o más versiones de
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-nombre     | En     | Tipo    | Obligatorio | Notas
+Name     | En     | Tipo    | Obligatorio | Notas
 -------- | ------ | ------- | -------- | -----
 LOWER_ID | Resolución    | cadena  | sí      | El identificador del paquete, en minúsculas
 
@@ -86,7 +86,7 @@ El `LOWER_ID` valor es el identificador de paquete deseado utilizando las reglas
 
 La respuesta es un documento JSON que tiene un objeto raíz con las siguientes propiedades:
 
-nombre  | Tipo             | Obligatorio | Notas
+Name  | Tipo             | Obligatorio | Notas
 ----- | ---------------- | -------- | -----
 count | enteros          | sí      | El número de páginas de registro en el índice
 items | matriz de objetos | sí      | La matriz de páginas de registro
@@ -97,7 +97,7 @@ Cada elemento en el objeto index `items` matriz es un objeto JSON que representa
 
 El objeto de la página de registro se encuentra en el índice de registro tiene las siguientes propiedades:
 
-nombre   | Tipo             | Obligatorio | Notas
+Name   | Tipo             | Obligatorio | Notas
 ------ | ---------------- | -------- | -----
 @id    | cadena           | sí      | La dirección URL a la página de registro
 count  | enteros          | sí      | El número de registro se deja en la página
@@ -121,7 +121,7 @@ Cada elemento en el objeto de página `items` matriz es un objeto JSON que repre
 
 El objeto de hoja de registro se encuentra en una página de registro tiene las siguientes propiedades:
 
-nombre           | Tipo   | Obligatorio | Notas
+Name           | Tipo   | Obligatorio | Notas
 -------------- | ------ | -------- | -----
 @id            | cadena | sí      | La dirección URL de la hoja de registro
 catalogEntry   | objeto | sí      | La entrada del catálogo que contiene los metadatos del paquete
@@ -133,11 +133,12 @@ Cada objeto de hoja de registro representa los datos asociados con una versión 
 
 El `catalogEntry` propiedad del objeto de hoja de registro tiene las siguientes propiedades:
 
-nombre                     | Tipo                       | Obligatorio | Notas
+Name                     | Tipo                       | Obligatorio | Notas
 ------------------------ | -------------------------- | -------- | -----
 @id                      | cadena                     | sí      | La dirección URL para el documento que se usa para generar este objeto
 authors                  | cadena o matriz de cadenas | No       | 
 dependencyGroups         | matriz de objetos           | No       | Las dependencias del paquete, agrupados por .NET framework de destino
+Degradación              | objeto                     | No       | El desuso asociado al paquete
 Descripción              | cadena                     | No       | 
 iconUrl                  | cadena                     | No       | 
 id                       | cadena                     | sí      | El identificador del paquete
@@ -163,7 +164,7 @@ El valor de la `licenseExpression` propiedad cumple [sintaxis de expresiones de 
 
 Cada objeto de grupo de dependencia tiene las siguientes propiedades:
 
-nombre            | Tipo             | Obligatorio | Notas
+Name            | Tipo             | Obligatorio | Notas
 --------------- | ---------------- | -------- | -----
 targetFramework | cadena           | No       | La plataforma de destino que se aplican a estas dependencias
 dependencias    | matriz de objetos | No       |
@@ -176,13 +177,33 @@ El `dependencies` propiedad es una matriz de objetos, que representa una depende
 
 Cada dependencia del paquete tiene las siguientes propiedades:
 
-nombre         | Tipo   | Obligatorio | Notas
+Name         | Tipo   | Obligatorio | Notas
 ------------ | ------ | -------- | -----
 id           | cadena | sí      | El identificador de la dependencia del paquete
 range        | objeto | No       | Permitido [intervalo de versiones](../reference/package-versioning.md#version-ranges-and-wildcards) de la dependencia
 registro | cadena | No       | La dirección URL para el índice del registro de esta dependencia
 
 Si el `range` se excluye la propiedad o una cadena vacía, el cliente de manera predeterminada para el intervalo de versiones `(, )`. Es decir, se permite cualquier versión de la dependencia.
+
+#### <a name="package-deprecation"></a>Degradación de paquete
+
+Degradación de cada paquete tiene las siguientes propiedades:
+
+Name             | Tipo             | Obligatorio | Notas
+---------------- | ---------------- | -------- | -----
+motivos          | matriz de cadenas | sí      | Los motivos por qué ha quedado en desuso el paquete
+message          | cadena           | No       | Los detalles adicionales sobre esta condición de desuso
+alternatePackage | objeto           | No       | La dependencia del paquete que se debe usar en su lugar
+
+El `reasons` debe contener al menos una cadena de propiedad y solo debe contener cadenas a partir de la tabla siguiente:
+
+Motivo       | Descripción             
+------------ | -----------
+Heredado       | Ya no se mantiene el paquete
+CriticalBugs | El paquete tiene errores que hacen que no son adecuados para el uso
+Otros        | El paquete está en desuso debido a un motivo no aparecen en esta lista
+
+Si el `reasons` propiedad contiene cadenas que no están en el conjunto conocido, debe omitirse. Las cadenas que distinguen mayúsculas de minúsculas, por lo que `legacy` debe ser trata igual que `Legacy`. No hay ninguna restricción de ordenación en la matriz, por lo que las cadenas se pueden organizar en cualquier orden arbitrario. Además, si la propiedad contiene las cadenas que no están en el conjunto conocido, deben tratarse como si sólo se incluye la cadena "Other".
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
@@ -200,7 +221,7 @@ La página de registro contiene hojas de registro. La dirección URL para captur
 
 Cuando el `items` matriz no se proporciona en el índice del registro, una solicitud HTTP GET de la `@id` valor devolverá un documento JSON que tiene un objeto como su raíz. El objeto tiene las siguientes propiedades:
 
-nombre   | Tipo             | Obligatorio | Notas
+Name   | Tipo             | Obligatorio | Notas
 ------ | ---------------- | -------- | -----
 @id    | cadena           | sí      | La dirección URL a la página de registro
 count  | enteros          | sí      | El número de registro se deja en la página
@@ -227,7 +248,7 @@ Se obtiene la dirección URL para capturar una hoja de registro de la `@id` prop
 
 La hoja de registro es un documento JSON con un objeto raíz con las siguientes propiedades:
 
-nombre           | Tipo    | Obligatorio | Notas
+Name           | Tipo    | Obligatorio | Notas
 -------------- | ------- | -------- | -----
 @id            | cadena  | sí      | La dirección URL de la hoja de registro
 catalogEntry   | cadena  | No       | La dirección URL a la entrada de catálogo que generó estos hoja

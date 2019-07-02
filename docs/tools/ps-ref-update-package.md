@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: d47e1978ab7d827e0b8b97cd4e7237019185b50f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a5b5a11ee11d9e2cf6a90d56ac63b1f7bad750ea
+ms.sourcegitcommit: 2a9d149bc6f5ff76b0b657324820bd0429cddeef
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546081"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496487"
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Update-Package (Consola del Administrador de paquetes en Visual Studio)
 
@@ -41,12 +41,12 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | NombreDelProyecto | El nombre del proyecto que contiene los paquetes que se va a actualizar, de forma predeterminada a todos los proyectos. |
 | Versión | La versión que se usará para la actualización, la versión más reciente de forma predeterminada. En NuGet 3.0 +, el valor de versión debe ser uno de *mínima, máxima, HighestMinor*, o *HighestPatch* (equivalente a - Safe). |
 | Safe | Restringe las actualizaciones a las versiones sola con la misma versión principal y secundaria, como el paquete instalado actualmente. |
-| Origen | La ruta de acceso URL o carpeta para buscar el origen del paquete. Las rutas de acceso de carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Update-Package` busca el origen del paquete seleccionado actualmente. |
+| Source | La ruta de acceso URL o carpeta para buscar el origen del paquete. Las rutas de acceso de carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Update-Package` busca el origen del paquete seleccionado actualmente. |
 | IncludePrerelease | Incluye paquetes de versión preliminar para las actualizaciones. |
 | Reinstalación | Paquetes de Resintalls con sus versiones instaladas actualmente. Vea [Reinstalación y actualización de paquetes](../consume-packages/reinstalling-and-updating-packages.md). |
 | FileConflictAction | La acción que se realizará cuando se le pida sobrescribir u omitir los archivos existentes que se hace referencia el proyecto. Los valores posibles son *sobrescribir, omitir, None, OverwriteAll*, y *IgnoreAll* (3.0 y versiones posteriores). |
 | DependencyVersion | La versión de los paquetes de dependencia para usar, que puede ser uno de los siguientes:<br/><ul><li>*Menor* (valor predeterminado): la versión más antigua</li><li>*HighestPatch*: la versión con la revisión menor principal, secundaria menor, más alta</li><li>*HighestMinor*: la versión con el menor principales, revisiones secundarias y de mayor más alto</li><li>*Mayor* (predeterminado para el paquete de actualización sin parámetros): la versión más alta</li></ul>Puede establecer el valor predeterminado con el [ `dependencyVersion` ](../reference/nuget-config-file.md#config-section) en el `Nuget.Config` archivo. |
-| ToHighestPatch | Restringe las actualizaciones a solo las versiones con la misma versión menor que el paquete instalado actualmente. |
+| ToHighestPatch | equivalente a - Safe. |
 | ToHighestMinor | Restringe las actualizaciones a solo las versiones con la misma versión principal que el paquete instalado actualmente. |
 | WhatIf | Muestra lo que sucedería cuando ejecute el comando sin tener que realizar la actualización. |
 
@@ -54,7 +54,7 @@ Ninguno de estos parámetros aceptan caracteres comodín o de entrada de canaliz
 
 ### <a name="common-parameters"></a>Parámetros comunes
 
-`Update-Package` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction y WarningVariable.
+`Update-Package` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): Depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, detallado, WarningAction y WarningVariable.
 
 ### <a name="examples"></a>Ejemplos
 

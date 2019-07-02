@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 34c205e7dac60c7abfb6323b4dc45bf4f074d46a
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 8e4fb376e471a207333d241aeb414da7d5c3571e
+ms.sourcegitcommit: 2a9d149bc6f5ff76b0b657324820bd0429cddeef
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426785"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496540"
 ---
 # <a name="catalog"></a>Catálogo
 
@@ -194,7 +194,8 @@ Name                    | Tipo                       | Obligatorio | Notas
 ----------------------- | -------------------------- | -------- | -----
 authors                 | cadena                     | No       |
 created                 | cadena                     | No       | Una marca de tiempo de cuando se creó el paquete por primera vez. Propiedad de reserva: `published`.
-dependencyGroups        | matriz de objetos           | No       | Mismo formato que el [recurso de metadatos de paquete](registration-base-url-resource.md#package-dependency-group)
+dependencyGroups        | matriz de objetos           | No       | Las dependencias del paquete, agrupados por .NET framework de destino ([mismo formato que el recurso de metadatos de paquete](registration-base-url-resource.md#package-dependency-group))
+Degradación             | objeto                     | No       | El desuso asociado al paquete ([mismo formato que el recurso de metadatos de paquete](registration-base-url-resource.md#package-deprecation))
 Descripción             | cadena                     | No       |
 iconUrl                 | cadena                     | No       |
 isPrerelease            | booleano                    | No       | Si la versión del paquete es una versión preliminar. Se pueden detectar desde `version`.
