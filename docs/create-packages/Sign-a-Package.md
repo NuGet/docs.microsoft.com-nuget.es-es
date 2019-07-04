@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: abdd06642ccc652527a1a005eda2689ce97df74c
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58921577"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426808"
 ---
 # <a name="signing-nuget-packages"></a>Firma de paquetes NuGet
 
@@ -66,7 +66,7 @@ Para publicar un paquete firmado, primero debe registrar el certificado en NuGet
 
 ## <a name="publish-the-package"></a>Publicar el paquete
 
-Ahora ya puede publicar el paquete en NuGet.org. Consulte [Publicar paquetes](Publish-a-package.md).
+Ahora ya puede publicar el paquete en NuGet.org. Consulte [Publicar paquetes](../nuget-org/Publish-a-package.md).
 
 ## <a name="create-a-test-certificate"></a>Creación de un certificado de prueba
 
@@ -103,5 +103,5 @@ Este comando permite crear un certificado de prueba que estará disponible en el
 
 ## <a name="related-articles"></a>Artículos relacionados
 
-- [Instalación de paquetes firmados](../consume-packages/installing-signed-packages.md)
+- [Administración de los límites de confianza de paquete](../consume-packages/installing-signed-packages.md)
 - [Referencia de paquetes firmados](../reference/Signed-Packages-Reference.md)

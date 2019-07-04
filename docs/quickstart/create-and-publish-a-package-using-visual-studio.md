@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: d30e89473b5f00895136b75a90d8d95b7645a100
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: c75785d361f25564c8a59d7a2d85924c570a7b9a
+ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812983"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467814"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
 
@@ -29,7 +29,7 @@ Es muy sencillo crear un paquete NuGet desde una biblioteca de clases de .NET St
 
    * Para la CLI de `nuget.exe`, descárguela desde [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), guarde el archivo `.exe` en la carpeta adecuada y agregue esa carpeta a la variable de entorno PATH. La CLI de nuget.exe se usa para bibliotecas de .NET Standard en el formato de estilo diferente de SDK.
 
-1. [Registrar una cuenta gratuita en nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) si aún no tiene uno. Al crear una cuenta se envía un correo electrónico de confirmación. Debe confirmar la cuenta para poder cargar un paquete.
+1. [Registrar una cuenta gratuita en nuget.org](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account) si aún no tiene uno. Al crear una cuenta se envía un correo electrónico de confirmación. Debe confirmar la cuenta para poder cargar un paquete.
 
 ## <a name="create-a-class-library-project"></a>Crear un proyecto de biblioteca de clases
 
@@ -174,7 +174,7 @@ De este modo, se incluirá un archivo denominado `readme.txt` en la raíz del pa
 ## <a name="related-topics"></a>Temas relacionados
 
 - [Crear un paquete](../create-packages/creating-a-package.md)
-- [Publicar un paquete](../create-packages/publish-a-package.md)
+- [Publicar un paquete](../nuget-org/publish-a-package.md)
 - [Paquetes de versión preliminar](../create-packages/Prerelease-Packages.md)
 - [Admitir varias plataformas de destino](../create-packages/supporting-multiple-target-frameworks.md)
 - [Control de versiones del paquete](../reference/package-versioning.md)
