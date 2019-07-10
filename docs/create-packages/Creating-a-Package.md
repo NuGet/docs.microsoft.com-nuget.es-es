@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5e362673acfab4b31c8a2e02a521afd8b19d2754
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: e3a40a521a3b16d9757ef1bbf2511a1537d8bddb
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812922"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425816"
 ---
 # <a name="creating-nuget-packages"></a>Creación de paquetes NuGet
 
 Con independencia de lo que haga el paquete o lo que contenga el código, use una de las herramientas de CLI, ya sea `nuget.exe` o `dotnet.exe`, para empaquetar esa funcionalidad en un componente que se pueda compartir y usar por parte de otros desarrolladores. Para instalar las herramientas de CLI de NuGet, consulte [Instalación de las herramientas del cliente NuGet](../install-nuget-client-tools.md). Tenga en cuenta que Visual Studio no incluye una herramienta de CLI de manera automática.
 
-- Para los proyectos de .NET Core y .NET Standard que usan el formato de estilo SDK ([atributo SDK](/dotnet/core/tools/csproj#additions)), y cualquier otro proyecto de estilo del SDK, NuGet usa la información del archivo de proyecto directamente para crear un paquete. Para obtener más información, vea [Crear paquetes de .NET Standard con Visual Studio 2017](../quickstart/create-and-publish-a-package-using-visual-studio.md) y [pack y restore de NuGet como destinos de MSBuild](../reference/msbuild-targets.md).
+- Para los proyectos de .NET Core y .NET Standard que usan el formato de estilo SDK ([atributo SDK](/dotnet/core/tools/csproj#additions)), y cualquier otro proyecto de estilo del SDK, NuGet usa la información del archivo de proyecto directamente para crear un paquete. Para obtener más información, vea [Crear paquetes de .NET Standard con Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md) y [pack y restore de NuGet como destinos de MSBuild](../reference/msbuild-targets.md).
 
 - Para los proyectos con estilo diferente de SDK, siga los pasos descritos en este artículo para crear un paquete.
 
@@ -27,7 +27,7 @@ Desde un punto de vista técnico, un paquete NuGet es simplemente un archivo ZIP
 El empaquetado comienza con el código compilado (ensamblados), símbolos y otros archivos que quiera entregar como un paquete (vea [Información general y flujo de trabajo](overview-and-workflow.md)). Este proceso es independiente de la compilación o, en otros casos, de la generación de los archivos que se incluyen en el paquete, aunque se puede extraer la información de un archivo de proyecto para mantener sincronizados los ensamblados y paquetes compilados.
 
 > [!Note]
-> Este tema se aplica a proyectos que no son de estilo SDK, generalmente proyectos que no son de .NET Core y .NET Standard que utilizan Visual Studio 2017 y NuGet 4.0+.
+> Este tema se aplica a proyectos que no son de estilo SDK, generalmente proyectos que no son de .NET Core y .NET Standard que usan Visual Studio 2017 y versiones superiores, así como NuGet 4.0 y versiones superiores.
 
 ## <a name="deciding-which-assemblies-to-package"></a>Decidir qué ensamblados empaquetar
 
@@ -177,7 +177,7 @@ La ventaja de este enfoque es que no es necesario especificar en el manifiesto q
 
 Las convenciones de carpeta son las siguientes:
 
-| Carpeta | Descripción | Acción tras la instalación del paquete |
+| Carpeta | DESCRIPCIÓN | Acción tras la instalación del paquete |
 | --- | --- | --- |
 | (raíz) | Ubicación de Léame.txt | Visual Studio muestra un archivo Léame.txt en la raíz del paquete cuando se instala el paquete. |
 | lib/{tfm} | Archivos de ensamblado (`.dll`), documentación (`.xml`) y símbolos (`.pdb`) para el Moniker de plataforma de destino (TFM) indicado | Los ensamblados se agregan como referencias para la compilación, así como el tiempo de ejecución; `.xml` y `.pdb` se copian en carpetas de proyecto. Vea [Compatibilidad con varias plataformas de destino](supporting-multiple-target-frameworks.md) para obtener información sobre cómo crear subcarpetas específicas de la plataforma de destino. |
@@ -408,7 +408,7 @@ En todos los casos, `nuget pack` excluye las carpetas que comienzan con un punto
 
 NuGet indica si hay errores en el archivo `.nuspec` que se deben corregir, como olvidar cambiar valores de marcador de posición en el manifiesto.
 
-Una vez que `nuget pack` es correcto, tendrá un archivo `.nupkg` que se puede publicar en una galería adecuada como se describe en [Publicación de un paquete](../create-packages/publish-a-package.md).
+Una vez que `nuget pack` es correcto, tendrá un archivo `.nupkg` que se puede publicar en una galería adecuada como se describe en [Publicación de un paquete](../nuget-org/publish-a-package.md).
 
 > [!Tip]
 > Una manera útil de examinar un paquete después de crearlo consiste en abrirlo en la herramienta [Explorador de paquetes](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer). Esto ofrece una vista gráfica del contenido del paquete y el manifiesto. También puede cambiar el nombre del archivo `.nupkg` resultante a un archivo `.zip` y explorar directamente su contenido.
@@ -445,7 +445,7 @@ Las opciones siguientes son algunas comunes en proyectos de Visual Studio:
 
 Antes de publicar un paquete, normalmente querrá probar el proceso de instalación de un paquete en un proyecto. Las pruebas aseguran que los archivos necesarios acaban en los lugares correctos en el proyecto.
 
-Puede probar las instalaciones de forma manual en Visual Studio o en la línea de comandos mediante los [pasos de instalación de paquetes](../consume-packages/ways-to-install-a-package.md) normales.
+Puede probar las instalaciones de forma manual en Visual Studio o en la línea de comandos mediante los [pasos de instalación de paquetes](../consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package) normales.
 
 Para las pruebas automatizadas, el proceso básico es el siguiente:
 
@@ -456,7 +456,7 @@ Para las pruebas automatizadas, el proceso básico es el siguiente:
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Una vez haya creado un paquete, que es un archivo `.nupkg`, puede publicarlo en la galería de su elección como se describe en [Publicación de un paquete](../create-packages/publish-a-package.md).
+Una vez haya creado un paquete, que es un archivo `.nupkg`, puede publicarlo en la galería de su elección como se describe en [Publicación de un paquete](../nuget-org/publish-a-package.md).
 
 Es posible que también quiera ampliar las funcionalidades del paquete o admitir otros escenarios, como se describe en los temas siguientes:
 

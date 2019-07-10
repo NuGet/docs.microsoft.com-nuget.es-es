@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: c547ae1d46079d040d7c3aa4c7678e70cd199dce
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 4b365488c8dd0e081449552b06451e7b40b5223b
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548018"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426612"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>Administración de las carpetas de paquetes globales, de caché y temporales
 
@@ -30,7 +30,7 @@ Mediante las carpetas *global-packages* y de caché, NuGet generalmente evita de
 
 Cuando se le pide que recupere un paquete, NuGet busca primero en la carpeta *global-packages*. Si la versión exacta del paquete no está, NuGet comprueba todos los orígenes de paquetes que no sean HTTP. Si todavía no se encuentra el paquete, NuGet lo busca en *http-cache* a menos que especifique `--no-cache` con comandos `dotnet.exe` o `-NoCache` con comandos `nuget.exe`. Si el paquete no está en la caché o esta no se usa, NuGet recupera luego el paquete por HTTP.
 
-Para más información, vea [¿Qué ocurre cuando se instala un paquete?](ways-to-install-a-package.md#what-happens-when-a-package-is-installed).
+Para obtener más información, vea [¿Qué ocurre cuando se instala un paquete?](../concepts/package-installation-process.md)
 
 ## <a name="viewing-folder-locations"></a>Visualización de ubicaciones de carpeta
 
@@ -100,7 +100,7 @@ nuget locals all -clear
 
 Los paquetes que se usen en proyectos que están actualmente abiertos en Visual Studio no se borran de la carpeta *global-packages*.
 
-En Visual Studio 2017, use el comando de menú **Herramientas > Administrador de paquetes NuGet > Configuración del Administrador de paquetes** y luego seleccione **Borrar todas las cachés de NuGet**. La administración de la memoria caché no está actualmente disponible a través de la consola del Administrador de paquetes. En Visual Studio 2015, en su lugar use los comandos de la CLI.
+A partir de Visual Studio 2017, use el comando de menú **Herramientas > Administrador de paquetes NuGet > Configuración del Administrador de paquetes** y, luego, seleccione **Borrar todas las cachés de NuGet**. La administración de la memoria caché no está actualmente disponible a través de la consola del Administrador de paquetes. En Visual Studio 2015, en su lugar use los comandos de la CLI.
 
 ![Comando de opciones de NuGet para borrar memorias caché](media/options-clear-caches.png)
 
@@ -108,14 +108,14 @@ En Visual Studio 2017, use el comando de menú **Herramientas > Administrador de
 
 Se pueden producir los siguientes errores al usar `nuget locals` o `dotnet nuget locals`:
 
-- *Error: El proceso no puede obtener acceso al archivo porque otro proceso <package> lo está utilizando* o *Error al borrar los recursos locales: no se pueden eliminar uno o varios archivos*.
+- *Error: El proceso no puede acceder al archivo <package> porque otro proceso lo está usando* o *Error al borrar los recursos locales: no se pueden eliminar uno o varios archivos*.
 
     Uno o varios archivos de la carpeta están en uso por otro proceso; por ejemplo, se abre un proyecto de Visual Studio que hace referencia a paquetes de la carpeta *global-packages*. Cierre los procesos y e inténtelo de nuevo.
 
-- *Error: se ha denegado el acceso a la ruta de acceso <path>* o *el directorio no está vacío*.
+- *Error: Se ha denegado el acceso a la ruta <path>* o *El directorio no está vacío*.
 
     No tiene permiso para eliminar archivos en la caché. Si es posible, cambie los permisos de carpeta e inténtelo de nuevo. Si no, póngase en contacto con el administrador del sistema.
 
-- *Error: la ruta de acceso especificada, el nombre de archivo o ambos son demasiado largos. El nombre de archivo completo debe ser inferior a 260 caracteres y el nombre del directorio debe ser inferior a 248*.
+- *Error: La ruta de acceso especificada, el nombre de archivo o ambos son demasiado largos. El nombre de archivo completo debe ser inferior a 260 caracteres y el nombre del directorio debe ser inferior a 248*.
 
     Acorte los nombres de carpeta e inténtelo de nuevo.

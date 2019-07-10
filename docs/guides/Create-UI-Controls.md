@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: dfbd6a3e6d59dfcea6394891703ea66bce5e8e92
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 522dbbb2a39eb1cb6f0d23f39a48158b07c9076d
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580280"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426852"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>Creación de controles de IU como paquetes NuGet
 
-Con Visual Studio 2017 puede sacar partido de las funcionalidades agregadas para los controles de UWP y WPF que se suministran en los paquetes de NuGet. En esta guía se describen estas funcionalidades en el contexto de los controles de UWP con el [ejemplo ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). Se aplica lo mismo a los controles de WPF, a menos que se indique lo contrario.
+A partir de Visual Studio 2017, puede sacar partido de las funcionalidades agregadas para los controles de UWP y WPF que se suministran en los paquetes de NuGet. En esta guía se describen estas funcionalidades en el contexto de los controles de UWP con el [ejemplo ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). Se aplica lo mismo a los controles de WPF, a menos que se indique lo contrario.
 
 ## <a name="prerequisites"></a>Requisitos previos
 

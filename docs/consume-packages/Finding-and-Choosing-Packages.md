@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: c86a07c30631b7ee99526b014ac9c3b9f136aa81
-ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
+ms.openlocfilehash: 8cd7529c4a1ecf659abde03fb1632e26431aebf3
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671193"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426751"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Búsqueda y evaluación de paquetes NuGet para el proyecto
 
@@ -54,15 +54,15 @@ De forma predeterminada, en nuget.org se muestran los paquetes de versión preli
 
 En Visual Studio, cuando se usa la CLI de NuGet, NuGet no incluye las versiones preliminares de forma predeterminada. Para cambiar este comportamiento, siga estos pasos:
 
-- **Interfaz de usuario del Administrador de paquetes en Visual Studio**: en la interfaz de usuario del **Administrador de paquetes NuGet**, active la casilla **Incluir versión preliminar**. Al activar o desactivar esta casilla se actualiza la interfaz de usuario del Administrador de paquetes y la lista de versiones disponibles que puede instalar.
+- **Interfaz de usuario del Administrador de paquetes en Visual Studio**: En la interfaz de usuario **Administrar paquetes NuGet**, active la casilla **Incluir versión preliminar**. Al activar o desactivar esta casilla se actualiza la interfaz de usuario del Administrador de paquetes y la lista de versiones disponibles que puede instalar.
 
     ![Casilla Incluir versión preliminar en Visual Studio](media/Prerelease_02-CheckPrerelease.png)
 
-- **Consola del Administrador de paquetes**: use el conmutador `-IncludePrerelease` con los comandos `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` y `Update-Package`. Consulte la [referencia de PowerShell](../tools/powershell-reference.md).
+- **Consola del Administrador de paquetes**: Use el conmutador `-IncludePrerelease` con los comandos `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` y `Update-Package`. Consulte la [referencia de PowerShell](../tools/powershell-reference.md).
 
-- **CLI de nuget.exe**: use el conmutador `-prerelease` con los comandos `install`, `update`, `delete` y `mirror`. Consulte la [referencia de la CLI de NuGet](../tools/nuget-exe-cli-reference.md)
+- **CLI de nuget.exe**: Use el conmutador `-prerelease` con los comandos `install`, `update`, `delete` y `mirror`. Consulte la [referencia de la CLI de NuGet](../tools/nuget-exe-cli-reference.md)
 
-- **CLI de dotnet.exe**: especifica la versión exacta de una versión preliminar con el argumento `-v`. Consulte la [Referencia de dotnet add package](/dotnet/core/tools/dotnet-add-package).
+- **CLI de dotnet.exe**: especifica la versión preliminar exacta con el argumento `-v`. Consulte la [Referencia de dotnet add package](/dotnet/core/tools/dotnet-add-package).
 
 <a name="native-cpp-packages"></a>
 
@@ -96,13 +96,13 @@ Al mismo tiempo, usar un paquete NuGet significa tomar una dependencia en él, p
 
 - *Entrevistar a los propietarios*: sin duda los nuevos desarrolladores pueden estar igual de comprometidos a crear paquetes excelentes para que los use, y es conveniente darles la oportunidad de aportar algo nuevo al ecosistema de NuGet. Con esto en mente, contacte directamente con los desarrolladores de paquetes a través de la opción **Póngase en contacto con los propietarios** bajo **Información** en la página de listado. Lo más probable es que estén encantados de trabajar con usted para satisfacer sus necesidades.
 
-- *Prefijos de identificador de paquete reservados*: muchos propietarios de paquetes han solicitado y se les ha concedido un [prefijo de identificador de paquete reservado](../reference/id-prefix-reservation.md). Cuando vea la marca de verificación visual junto a un identificador de paquete en [nuget.org](https://www.nuget.org/), o bien en Visual Studio, significa que el propietario del paquete ha cumplido nuestros [criterios](../reference/id-prefix-reservation.md#id-prefix-reservation-criteria) para la reserva del prefijo de identificador. Esto significa que el propietario del paquete está siendo claro en lo que respecta a su identificación y la del paquete.
+- *Prefijos de identificador de paquete reservados*: muchos propietarios de paquetes han solicitado y se les ha concedido un [prefijo de identificador de paquete reservado](../nuget-org/id-prefix-reservation.md). Cuando vea la marca de verificación visual junto a un identificador de paquete en [nuget.org](https://www.nuget.org/), o bien en Visual Studio, significa que el propietario del paquete ha cumplido nuestros [criterios](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria) para la reserva del prefijo de identificador. Esto significa que el propietario del paquete está siendo claro en lo que respecta a su identificación y la del paquete.
 
 > [!Note]
 > Siempre debe prestar atención a los términos de licencia de un paquete, que puede ver si selecciona **Información de licencia** en la página de listado de un paquete en nuget.org. Si un paquete no especifica los términos de licencia, póngase en contacto directamente con el propietario del paquete mediante el vínculo de **contacto con los propietarios** de la página del paquete. Microsoft no le ofrece licencia para propiedad intelectual de proveedores de paquetes de terceros ni es responsable de la información proporcionada por terceros.
 
 ## <a name="license-url-deprecation"></a>Desuso de la dirección URL de licencia
-A medida que hacemos la transición de [URL de licencia](../reference/nuspec#licenseurl) a [licencia](../reference/nuspec#license), es posible que algunos clientes y fuentes de NuGet aún no puedan mostrar información de licencias en algunos casos. Para mantener la compatibilidad con versiones anteriores, la dirección URL de licencia apunta a este documento, que trata sobre cómo recuperar la información de licencia en estos casos.
+A medida que hacemos la transición de [URL de licencia](../reference/nuspec.md#licenseurl) a [licencia](../reference/nuspec.md#license), es posible que algunos clientes y fuentes de NuGet aún no puedan mostrar información de licencias en algunos casos. Para mantener la compatibilidad con versiones anteriores, la dirección URL de licencia apunta a este documento, que trata sobre cómo recuperar la información de licencia en estos casos.
 
 Si al hacer clic en la dirección URL de licencia para un paquete llegó a esta página, el paquete contiene un archivo de licencia y
 * Está conectado a una fuente que aún no sabe cómo interpretar y exponer la nueva información de licencia para el cliente **O**
@@ -121,8 +121,8 @@ Aquí le mostramos cómo puede leer la información contenida en el archivo de l
 La búsqueda de paquetes NuGet funciona igual en nuget.org, desde la CLI de NuGet, y desde la extensión Administrador de paquetes NuGet en Visual Studio. En general, la búsqueda se aplica a palabras clave, así como a descripciones de paquetes.
 
 - **Palabras clave**: se buscan paquetes pertinentes que contengan cualquiera de las palabras clave proporcionadas. Ejemplo: `modern UI`. Para buscar paquetes que contengan todas las palabras clave proporcionadas, use "+" entre los términos, como `modern+UI`.
-- **Frases**: escribir términos entre comillas busca las coincidencias exactas sin distinción de mayúsculas y minúsculas de esos términos. Ejemplo: `"modern UI" package`
-- **Filtrado**: puede aplicar un término de búsqueda a una propiedad específica mediante la sintaxis `<property>:<term>` donde `<property>` (no distingue mayúsculas de minúsculas) puede ser `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` y `owner`. Los términos pueden incluirse entre comillas si es necesario y se pueden buscar varias propiedades al mismo tiempo. Además, las búsquedas por la propiedad `id` son coincidencias de subcadena, mientras que `packageid` usa una coincidencia exacta. Ejemplos:
+- **Frases**: al escribir términos entre comillas, se buscan las coincidencias exactas sin distinción de mayúsculas y minúsculas de esos términos. Ejemplo: `"modern UI" package`
+- **Filtrado**: puede aplicar un término de búsqueda a una propiedad específica mediante la sintaxis `<property>:<term>`, donde `<property>` (no distingue mayúsculas de minúsculas) puede ser `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` y `owner`. Los términos pueden incluirse entre comillas si es necesario y se pueden buscar varias propiedades al mismo tiempo. Además, las búsquedas por la propiedad `id` son coincidencias de subcadena, mientras que `packageid` usa una coincidencia exacta. Ejemplos:
 
     ```
     id:NuGet.Core                # Match any part of the id property

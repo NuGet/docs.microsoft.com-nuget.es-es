@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 45d8a6557ee02998f3d12b128ee2dc4fd6ae48bb
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: f05c3a7a51bdc0760097422004cfc4339bf9ee2c
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145597"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426607"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>Hospedar sus propias fuentes de NuGet
 
@@ -28,6 +28,7 @@ Hay muchos más productos de hospedaje de NuGet que admiten las fuentes privadas
 - [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish), que también está disponible en Team Foundation Server 2017 y versiones posteriores.
 - [MyGet](http://myget.org)
 - [ProGet](http://inedo.com/proget) de Inedo
+- [Registro del paquete de GitHub](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [NuGet Server](http://nugetserver.net/), un proyecto de la comunidad de Inedo
 - [NuGet Server (código abierto)](http://nuget-server.net), una implementación de código abierto parecida a NuGet Server de Inedo
 - [LiGet](https://github.com/ai-traders/liget), una implementación de código abierto del servidor NuGet V2 que se ejecuta en Kestrel en Docker

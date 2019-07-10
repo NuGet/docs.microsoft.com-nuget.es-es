@@ -1,72 +1,72 @@
 ---
 title: Restauración de paquetes NuGet
-description: Una descripción de cómo NuGet restaura paquetes de los que depende un proyecto, incluido cómo deshabilitar la restauración y la restricción de versiones.
+description: Descripción de la manera en que NuGet restaura los paquetes de los que depende un proyecto, incluida la forma de deshabilitar la restauración y la restricción de versiones.
 author: karann-msft
 ms.author: karann
-ms.date: 03/16/2018
+ms.date: 06/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9acb87a5f5731fb33c91a1ae9b106c6df492ddcd
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 3b64c035886818496339fe1bdd8f9abce060278a
+ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453538"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467796"
 ---
 # <a name="package-restore"></a>Restauración de paquetes
 
-Para promover un entorno de desarrollo más limpio y reducir el tamaño del repositorio, **Restauración de paquetes** NuGet instala todas las dependencias del proyecto tal y como aparecen en el archivo de proyecto o en `packages.config`. Visual Studio puede restaurar los paquetes automáticamente al compilar un proyecto. Los comandos `dotnet build` y `dotnet run`(.NET Core 2.0 y versiones posteriores) también realizan una restauración automática. También puede restaurar los paquetes siempre que quiera a través de Visual Studio, `nuget restore`, `dotnet restore` y xbuild en Mono.
+Para promover un entorno de desarrollo más limpio y reducir el tamaño del repositorio, la **Restauración de paquetes** NuGet instala todas las dependencias del proyecto que aparecen en el archivo de proyecto o en `packages.config`. Los comandos `dotnet build` y `dotnet run` de .NET Core 2.0 y versiones posteriores llevan a cabo una restauración de paquetes automática. Visual Studio puede restaurar los paquetes automáticamente cuando compila un proyecto, de modo que usted puede restaurar los paquetes en cualquier momento a través de Visual Studio, `nuget restore`, `dotnet restore` y xbuild en Mono.
 
-La restauración de paquetes se asegura de que todas las dependencia de un proyecto estén disponibles sin almacenar los paquetes de control de código fuente. Vea [Paquetes y control de código fuente](../consume-packages/packages-and-source-control.md) sobre cómo configurar el repositorio para excluir los archivos binarios del paquete.
+La Restauración de paquetes garantiza que todas las dependencias de un proyecto estén disponibles sin necesidad de almacenarlas en el código fuente. Si quiere configurar el repositorio de control de código fuente para excluir los archivos binarios del paquete, vea el artículo sobre los [paquetes y el control de código fuente](../consume-packages/packages-and-source-control.md). 
 
-## <a name="package-restore-overview"></a>Información general sobre restauración de paquetes
+## <a name="package-restore-overview"></a>Información general sobre la restauración de paquetes
 
-Al restaurar paquetes, se instalan primero las dependencias directas de un proyecto según sea necesario y luego se instalan todas las dependencias de los paquetes a lo largo del gráfico de dependencias completo.
+La Restauración de paquetes primero instala las dependencias directas de un proyecto según sea necesario y, luego, instala todas las dependencias de los paquetes a lo largo del gráfico de dependencias completo.
 
-Si un paquete no está ya instalado, NuGet primero intenta recuperarlo desde la [caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). Si el paquete no está en la memoria caché, NuGet intenta descargarlo y almacenarlo en caché en todos los orígenes habilitados (vea [Configuración del comportamiento de NuGet](Configuring-NuGet-Behavior.md); los orígenes también aparecen en la lista **Herramientas > Opciones > Administrador de paquetes NuGet > Orígenes del paquete** en Visual Studio). Durante la restauración, NuGet omite el orden de los orígenes de paquetes y usará el paquete del origen que primero responda a las solicitudes.
+Si un paquete todavía no está instalado, NuGet primero intenta recuperarlo de la [caché](../consume-packages/managing-the-global-packages-and-cache-folders.md). Si el paquete no está en la caché, NuGet intenta descargarlo de todos los orígenes habilitados en la lista de **Herramientas** > **Opciones** > **Administrador de paquetes NuGet**  > **Orígenes de paquetes** en Visual Studio. Durante la restauración, NuGet omite el orden de los orígenes de paquetes y usa el paquete del origen que primero responda a las solicitudes. Para obtener más información sobre el comportamiento de NuGet, consulte las [configuraciones comunes de NuGet](Configuring-NuGet-Behavior.md). 
 
 > [!Note]
-> NuGet no indica un error al restaurar un paquete hasta que se han comprobado todos los orígenes. En ese momento, NuGet solo informa del error del último origen de la lista. El error implica que el paquete no estaba presente en *ninguno* de los otros orígenes, aunque los errores no se muestran para cada uno de esos orígenes de forma individual.
+> NuGet no indica un error al restaurar un paquete hasta que se han comprobado todos los orígenes. En ese momento, NuGet solo informa del error del último origen de la lista. El error implica que el paquete no estaba presente en *ninguno* de los demás orígenes, aunque los errores no se muestran para cada uno de esos orígenes de forma individual.
 
-La restauración de paquetes se activa de las maneras siguientes:
+Puede desencadenar la Restauración de paquetes de cualquiera de las maneras siguientes:
 
-- **CLI de dotnet**: use el comando [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x), que restaura los paquetes incluidos en el archivo de proyecto (vea [PackageReference](../consume-packages/package-references-in-project-files.md)). Con .NET Core 2.0 y versiones posteriores, la restauración se realiza automáticamente con `dotnet build` y `dotnet run`.
+- **CLI de dotnet**: use el comando [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) para restaurar los paquetes incluidos en el archivo de proyecto con [PackageReference](../consume-packages/package-references-in-project-files.md). Con .NET Core 2.0 y versiones posteriores, la restauración se realiza automáticamente con los comandos `dotnet build` y `dotnet run`.  
 
-- **Interfaz de usuario del Administrador de paquetes (Visual Studio en Windows)**: los paquetes se restauran automáticamente al crear un proyecto a partir de una plantilla y al compilar un proyecto (sujeto a la opción descrita en [Habilitar y deshabilitar la restauración de paquetes](#enabling-and-disabling-package-restore)). En NuGet 4.0 y versiones posteriores, la restauración también se produce automáticamente al realizar cambios en un proyecto basado en el SDK de .NET Core.
+- **Administrador de paquetes**: en Visual Studio en Windows, la Restauración de paquetes se realiza automáticamente al crear un proyecto a partir de una plantilla o un proyecto de compilación, según las opciones indicadas en [Habilitación y deshabilitación de la Restauración de paquetes](#enable-and-disable-package-restore). En NuGet 4.0 y versiones posteriores, la restauración también se produce automáticamente al realizar cambios en un proyecto basado en el SDK de .NET Core.
 
-    Para la restauración manual, haga clic con el botón derecho en la solución en el Explorador de soluciones y seleccione **Restaurar paquetes NuGet**. Si uno o varios paquetes siguen sin estar instalados correctamente (lo que significa que el Explorador de soluciones muestra un icono de error), use la interfaz de usuario del Administrador de paquetes para desinstalar y reinstalar los paquetes afectados. Vea [Reinstalación y actualización de paquetes](../consume-packages/reinstalling-and-updating-packages.md)
+    Para restaurar los paquetes de forma manual, haga clic con el botón derecho en la solución en el **Explorador de soluciones** y seleccione **Restaurar paquetes NuGet**. Si uno o varios paquetes no se instalan correctamente, se mostrará un icono de error en el **Explorador de soluciones**. Haga clic con el botón derecho, seleccione **Administrar paquetes NuGet** y use el **Administrador de paquetes** para desinstalar y reinstalar los paquetes afectados. Para obtener más información, consulte [Cómo volver a instalar y actualizar paquetes](../consume-packages/reinstalling-and-updating-packages.md).
 
-    Si ve el error "Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo" o "Uno o varios paquetes de NuGet se deben restaurar, pero no pudieron restaurarse porque no se ha concedido el consentimiento", active la restauración automática mediante las instrucciones descritas en [Habilitar y deshabilitar la restauración de paquetes](#enabling-and-disabling-package-restore). Vea también [Solución de errores de restauración de paquetes](Package-restore-troubleshooting.md).
+    Si ve el error "Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo" o "Uno o varios paquetes de NuGet se deben restaurar, pero no pudieron restaurarse porque no se ha concedido el consentimiento", [habilite la restauración automática](#enable-and-disable-package-restore). Vea también [Solución de errores de restauración de paquetes](Package-restore-troubleshooting.md).
 
-- **CLI de NuGet**: use el comando [nuget restore](../tools/cli-ref-restore.md), que restaura los paquetes incluidos en el archivo de proyecto o en `packages.config`. También puede especificar un archivo de solución.
+- **CLI de nuget.exe**: use el comando [nuget restore](../tools/cli-ref-restore.md) para restaurar los paquetes incluidos en un archivo de proyecto o solución, o en `packages.config`. 
 
-- **MSBuild**: use el comando [msbuild -t:restore](../reference/msbuild-targets.md#restore-target), que restaura los paquetes incluidos en el archivo de proyecto (solo PackageReference). Disponible solo en 4.x y versiones posteriores y MSBuild 15.1 y versiones posteriores, que se incluyen con Visual Studio de 2017. `nuget restore` y `dotnet restore` usan este comando para los proyectos aplicables.
+- **MSBuild**: use el comando [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) para restaurar los paquetes incluidos en el archivo de proyecto con PackageReference. Este comando está disponible solo en NuGet 4.x y versiones posteriores y en MSBuild 15.1 y versiones posteriores, que se incluyen con Visual Studio 2017 y versiones posteriores. Tanto `nuget restore` como `dotnet restore` usan este comando para los proyectos aplicables.
 
-- **Visual Studio Team Services**: al crear una definición de compilación en Team Services, incluya la tarea [Restaurar NuGet](/vsts/build-release/tasks/package/nuget#restore-nuget-packages) o [.NET Core Restore](/vsts/build-release/tasks/build/dotnet-core#restore-nuget-packages) (Restaurar .NET Core) en la definición antes de cualquier tarea de compilación. Esta tarea se incluye de forma predeterminada en una serie de plantillas de compilación.
+- **Azure Pipelines**: al crear una definición de compilación en Azure Pipelines, incluya la tarea [restore](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) de NuGet o [restore](/azure/devops/pipelines/tasks/build/dotnet-core#restore-nuget-packages) de .NET Core en la definición antes de cualquier tarea de compilación. Algunas plantillas de compilación incluyen la tarea restore de forma predeterminada.
 
-- **Team Foundation Server**: TFS 2013 con TFS 2013 y versiones posteriores, los paquetes se restauran automáticamente de forma predeterminada durante la compilación, siempre que se use una plantilla de Team Build para TFS 2013 o posterior. Para la versión anterior de TFS, puede incluir un paso de compilación que invoque una de las opciones de restauración de línea de comandos anteriores. También tiene la posibilidad de migrar la plantilla de compilación a TFS 2013. Para obtener más información, vea el [tutorial sobre restauración de paquetes con Team Foundation Build](../consume-packages/team-foundation-build.md).
+- **Azure DevOps Server**: tanto Azure DevOps Server como TFS 2013 y versiones posteriores restauran los paquetes automáticamente durante la compilación, siempre y cuando use una plantilla de Team Build para TFS 2013 o versiones posteriores. En el caso de versiones anteriores de TFS, puede incluir un paso de compilación para ejecutar una opción de restauración de la línea de comandos, o bien migrar la plantilla de compilación a una versión posterior. Para obtener más información, consulte [Configurar la restauración de paquetes con Team Foundation Build](../consume-packages/team-foundation-build.md).
 
-## <a name="enabling-and-disabling-package-restore"></a>Habilitar y deshabilitar la restauración de paquetes
+## <a name="enable-and-disable-package-restore"></a>Habilitación y deshabilitación de la Restauración de paquetes
 
-La restauración de paquetes se habilita principalmente a través de **Herramientas > Opciones > Administrador de paquetes NuGet** en Visual Studio:
+En Visual Studio, la Restauración de paquetes se controla principalmente a través de **Herramientas** > **Opciones** > **Administrador de paquetes NuGet**:
 
-![Control de los comportamientos de restauración de paquetes a través de las opciones del Administrador de paquetes NuGet](media/Restore-01-AutoRestoreOptions.png)
+![Control de la Restauración de paquetes a través de las opciones del Administrador de paquetes NuGet](media/Restore-01-AutoRestoreOptions.png)
 
-- **Permitir a NuGet descargar los paquetes que falten**: controla todas las formas de restauración de paquetes cambiando la opción `packageRestore/enabled` en el archivo `NuGet.Config` como se muestra aquí (`%AppData%\NuGet\NuGet.Config` en Windows, `~/.nuget/NuGet/NuGet.Config` en Mac/Linux). En Visual Studio, este valor permite que funcione el comando **Restaurar paquetes NuGet** en el menú contextual de la solución.
+- **Permitir a NuGet descargar los paquetes que falten** controla todas las formas de restauración de paquetes mediante la modificación de la opción `packageRestore/enabled` en la [sección packageRestore](../reference/nuget-config-file.md#packagerestore-section) del archivo `NuGet.Config`, en `%AppData%\NuGet\` en Windows y en `~/.nuget/NuGet/` en Mac/Linux. Esta opción también habilita el comando **Restaurar paquetes NuGet** en el menú contextual de la solución en Visual Studio.
 
     ```xml
     <configuration>
         <packageRestore>
             <!-- The 'enabled' key is True when the "Allow NuGet to download missing packages" checkbox is set.
-                 Clearing the box sets this to False, disabling command-line, automatic, and MSBuild-Integrated restore. -->
+                 Clearing the box sets this to False, disabling command-line, automatic, and MSBuild-integrated restore. -->
             <add key="enabled" value="True" />
         </packageRestore>
     </configuration>
     ```
+    
+  > [!Note]
+  > Para invalidar de forma global la opción `packageRestore/enabled`, establezca la variable de entorno **EnableNuGetPackageRestore** con un valor de True o False antes de iniciar Visual Studio o una compilación.
 
-> [!Note]
->  La opción `packageRestore/enabled` se puede invalidar de forma global estableciendo una variable de entorno denominada **EnableNuGetPackageRestore** con un valor de TRUE o FALSE antes de iniciar Visual Studio o una compilación.
-
-- **Comprobar automáticamente los paquetes que falten durante la compilación en Visual Studio**: controla la restauración automática cambiando el ajuste `packageRestore/automatic` en el archivo `NuGet.Config` tal y como se muestra aquí (`%AppData%\NuGet\NuGet.Config` en Windows, `~/.nuget/NuGet/NuGet.Config` en Mac/Linux). Cuando se establece esta opción, al ejecutar una compilación de Visual Studio se restauran automáticamente todos los paquetes que falten. La opción no afecta a las compilaciones que se ejecutan desde la línea de comandos con MSBuild.
+- **Comprobar automáticamente los paquetes que falten durante la compilación en Visual Studio** controla la restauración automática mediante la modificación del ajuste `packageRestore/automatic` en la [sección packageRestore](../reference/nuget-config-file.md#packagerestore-section) del archivo `NuGet.Config`. Cuando esta opción se establece en True, al ejecutar una compilación de Visual Studio se restauran automáticamente todos los paquetes que falten. Esta configuración no afecta a las compilaciones que se ejecutan desde la línea de comandos de MSBuild.
 
     ```xml
     ...
@@ -80,24 +80,22 @@ La restauración de paquetes se habilita principalmente a través de **Herramien
     </configuration>
     ```
 
-Como referencia, vea el [archivo de configuración de NuGet: sección packageRestore](../reference/nuget-config-file.md#packagerestore-section).
-
-En algunos casos, es posible que un desarrollador o una empresa quiera habilitar o deshabilitar la restauración de paquetes para todos los usuarios de un equipo. Para ello, agregue la misma configuración anterior al archivo de configuración global de NuGet que se encuentra en `%ProgramData%\NuGet\Config` (Windows, posiblemente en una carpeta `\{IDE}\{Version}\{SKU}\` específica para Visual Studio) o `~/.local/share` (Mac/Linux). Después, los usuarios individuales pueden habilitar la restauración de forma selectiva cuando sea necesario en un nivel de proyecto. Vea [Configuración del comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied) para obtener información exacta sobre cómo prioriza NuGet varios archivos de configuración.
+Para habilitar o deshabilitar la Restauración de paquetes para todos los usuarios de un equipo, un desarrollador o una empresa pueden agregar los valores de configuración al archivo global `nuget.config`. El archivo global `nuget.config` se encuentra en Windows en `%ProgramData%\NuGet\Config`, a veces en una carpeta `\{IDE}\{Version}\{SKU}\` determinada de Visual Studio, o en Mac/Linux en `~/.local/share`. Después, los usuarios individuales pueden habilitar la restauración de forma selectiva cuando sea necesario en un nivel de proyecto. Para obtener más información sobre la manera en que NuGet prioriza varios archivos de configuración, consulte las [configuraciones comunes de NuGet](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied).
 
 > [!Important]
-> Si edita el valor `packageRestore` directamente en `nuget.config`, debe reiniciar Visual Studio para que el cuadro de diálogo de opciones muestre los valores actuales.
+> Si edita el valor `packageRestore` directamente en `nuget.config`, debe reiniciar Visual Studio para que en el cuadro de diálogo **Opciones** se muestren los valores actuales.
 
-## <a name="constraining-package-versions-with-restore"></a>Restricción de versiones de paquetes con la restauración
+## <a name="constrain-package-versions-with-restore"></a>Restricción de versiones de paquetes con la restauración
 
-Cuando NuGet restaure paquetes por cualquier método, respetará las restricciones especificadas en `packages.config` o el archivo de proyecto:
+Cuando NuGet restaure paquetes con cualquier método, respetará las restricciones que haya especificado en `packages.config` o en el archivo de proyecto:
 
-- `packages.config`: especifique un intervalo de versiones en la propiedad `allowedVersion` de la dependencia. Vea [Reinstalación y actualización de paquetes](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions). Por ejemplo:
+- En `packages.config`, puede especificar un intervalo de versiones en la propiedad `allowedVersion` de la dependencia. Consulte [Restringir las versiones de actualización](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions) para obtener más información. Por ejemplo:
 
     ```xml
     <package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
     ```
 
-- Archivo de proyecto (PackageReference): especifique un intervalo de versiones directamente con el número de versión de la dependencia. Por ejemplo:
+- En un archivo de proyecto, puede usar PackageReference para especificar directamente el intervalo de una dependencia. Por ejemplo:
 
     ```xml
     <PackageReference Include="Newtonsoft.json" Version="[6, 7)" />
@@ -105,24 +103,24 @@ Cuando NuGet restaure paquetes por cualquier método, respetará las restriccion
 
 En todos los casos, use la notación que se describe en [Package versioning](../reference/package-versioning.md) (Control de versiones de paquetes).
 
-## <a name="forcing-restore-from-package-sources"></a>Forzamiento de la restauración a partir de orígenes de paquetes
+## <a name="force-restore-from-package-sources"></a>Restauración forzada a partir de orígenes de paquetes
 
-De forma predeterminada, las operaciones de restauración de NuGet usan paquetes de las carpetas *global-packages* y *http-cache*, que se describen en [Administración de paquetes globales y carpetas de caché](managing-the-global-packages-and-cache-folders.md).
+De forma predeterminada, las operaciones de restauración de NuGet usan paquetes de las carpetas *global-packages* y *http-cache*, que se describen en [Administración de las carpetas de paquetes globales, de caché y temporales](managing-the-global-packages-and-cache-folders.md).
 
 Para evitar el uso de la carpeta *global-packages*, realice una de las siguientes acciones:
 
 - Borre la carpeta con `nuget locals global-packages -clear` o `dotnet nuget locals global-packages --clear`.
 - Cambie temporalmente la ubicación de la carpeta *global-packages* antes de la operación de restauración con uno de los métodos siguientes:
   - Establezca la variable de entorno NUGET_PACKAGES en otra carpeta.
-  - Crear un `NuGet.Config` archivo que establezca `globalPackagesFolder` (si se usa PackageReference) o `repositoryPath` (si se usa `packages.config`) en otra carpeta (vea [valores de configuración](../reference/nuget-config-file.md#config-section)).
+  - Cree un archivo `NuGet.Config` que establezca `globalPackagesFolder` (si usa PackageReference) o `repositoryPath` (si usa `packages.config`) en otra carpeta. Para obtener más información, vea los [valores de configuración](../reference/nuget-config-file.md#config-section).
   - Solo MSBuild: especifique otra carpeta con la propiedad `RestorePackagesPath`.
 
 Para evitar el uso de la memoria caché para los orígenes HTTP, realice una de las siguientes acciones:
 
-- Use la opción `-NoCache` con `nuget restore` o la opción `--no-cache` con `dotnet restore`. Estas opciones no afectan a las operaciones de restauración a través del la consola o la interfaz de usuario del Administrador de paquetes de Visual Studio.
+- Use la opción `-NoCache` con `nuget restore`, o bien la opción `--no-cache` con `dotnet restore`. Estas opciones no afectan a las operaciones de restauración mediante la consola o el Administrador de paquetes de Visual Studio.
 - Borre la memoria caché con `nuget locals http-cache -clear` o `dotnet nuget locals http-cache --clear`.
 - Establezca temporalmente la variable de entorno NUGET_HTTP_CACHE_PATH en otra carpeta.
 
 ## <a name="troubleshooting"></a>Solución de problemas
 
-Vea [Solucionar problemas de errores de restauración de paquetes en Visual Studio](package-restore-troubleshooting.md).
+Vea [Solución de errores de restauración de paquetes](package-restore-troubleshooting.md).

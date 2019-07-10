@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: aa5cd1a2f3e3a6707a9d68204306db85651b0a18
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d43f002b740b669de13f5872844ac0df97fc8fdc
+ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545205"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467781"
 ---
 # <a name="projectjson-archive"></a>archivo project.json
 
@@ -38,7 +38,7 @@ Funciona con `project.json`.
 
 ## <a name="constraining-package-versions-with-restore"></a>Restricción de versiones de paquetes con la restauración
 
-*Originalmente en [Restauración de paquetes](../consume-packages/package-restore.md#constraining-package-versions-with-restore).*
+*Originalmente en [Restauración de paquetes](../consume-packages/package-restore.md#constrain-package-versions-with-restore).*
 
 - `project.json`: especifique un intervalo de versiones directamente con el número de versión de la dependencia. Por ejemplo:
 
@@ -50,7 +50,7 @@ Funciona con `project.json`.
 
 - `nuget install` no funciona con `project.json`.
 - `nuget restore`: con proyectos que usan `project.json`, genera un archivo `project.lock.json` y, si es necesario, un archivo `<project>.nuget.props`. (Ambos archivos pueden omitirse del control de código fuente). El argumento `<projectPath>` puede apuntar a un archivo `project.json` y tiene el mismo comportamiento que apuntar a un archivo `packages.config` o de proyecto. En el orden de prioridad de las carpetas de paquete, se busca primero `%userprofile%\.nuget\packages` cuando se usa `project.json`.
-- `nuget update`: En Mono, este comando no funciona con proyectos que usen `project.json`.
+- `nuget update`: en Mono, este comando no funciona con proyectos que usen `project.json`.
 
 ## <a name="dependency-resolution-with-packagereference"></a>Resolución de dependencias con PackageReference
 
@@ -93,7 +93,7 @@ Otro medio de resolución de errores:
 
 *Originalmente en [Versiones de .NET Framework de destino](../reference/target-frameworks.md).*
 
-- [project.json](project-json.md): el nodo `frameworks` especifica las versiones de plataforma con las que se puede compilar el proyecto.
+- [project.json](project-json.md): el nodo `frameworks` especifica las versiones de marco con las que se puede compilar el proyecto.
 
 ## <a name="creating-a-package"></a>Creación de un paquete
 
@@ -105,7 +105,7 @@ With .NET Core 1.x, cuando se instala un paquete DotnetCliTool, Visual Studio lo
 
 Los tipos de paquetes se establecen en `project.json`.
 
-- `project.json`: indicar el tipo de paquete dentro de una propiedad `packOptions.packageType` de json:
+- `project.json`: indica el tipo de paquete en una propiedad `packOptions.packageType` de JSON:
 
     ```json
     {

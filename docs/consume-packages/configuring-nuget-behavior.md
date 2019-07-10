@@ -1,24 +1,24 @@
 ---
-title: Configuración del comportamiento de NuGet
+title: Configuraciones comunes de NuGet
 description: Los archivos NuGet.Config controlan el comportamiento de NuGet, tanto global como por proyecto, y se modifican con el comando nuget config.
 author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 963d1d59ea7e65e3d75bc7105b8864e3e4045938
-ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
+ms.openlocfilehash: 57b7f29b533a8e6d7db2710c7e42a239f50199a1
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266340"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426662"
 ---
-# <a name="configuring-nuget-behavior"></a>Configuración del comportamiento de NuGet
+# <a name="common-nuget-configurations"></a>Configuraciones comunes de NuGet
 
 El comportamiento de NuGet se controla mediante la configuración acumulada en uno o varios archivos `NuGet.Config` (XML) que pueden existir en los niveles del proyecto, usuario y todo el equipo. Un archivo `NuGetDefaults.Config` global configura también los orígenes de paquetes de forma específica. La configuración se aplica a todos los comandos emitidos en la CLI, la consola del Administrador de paquetes y la interfaz de usuario del Administrador de paquetes.
 
 ## <a name="config-file-locations-and-uses"></a>Usos y ubicaciones de los archivos de configuración
 
-| Ámbito | Ubicación del archivo NuGet.Config | Descripción |
+| Ámbito | Ubicación del archivo NuGet.Config | DESCRIPCIÓN |
 | --- | --- | --- |
 | Soluciones | Carpeta actual (también denominada carpeta de soluciones) o cualquier carpeta hasta la raíz de la unidad.| En una carpeta de soluciones, la configuración se aplica a todos los proyectos de las subcarpetas. Tenga en cuenta que si se coloca un archivo de configuración en una carpeta de proyecto, no tiene ningún efecto en ese proyecto. |
 | Usuario | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac o Linux: `~/.config/NuGet/NuGet.Config` o `~/.nuget/NuGet/NuGet.Config` (varía según la distribución del SO) | La configuración se aplica a todas las operaciones, pero se reemplaza por la configuración de nivel de proyecto. |
