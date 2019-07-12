@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 8119664b1bafe9238b12b1819cc46dc1ee7bdd00
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: de0b612e1335cafdcd6a0b802d54f2182d27ad22
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547999"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842246"
 ---
 # <a name="sync-package-package-manager-console-in-visual-studio"></a>Sync-Package (Consola del Administrador de paquetes en Visual Studio)
 
-*Versión 3.0 o superior; solo está disponible en el [NuGet Package Manager Console](package-manager-console.md) en Visual Studio en Windows.*
+*Versión 3.0 o superior; solo está disponible en el [Package Manager Console](package-manager-console.md) en Visual Studio en Windows.*
 
 Obtiene la versión del paquete instalado desde especificado (o predeterminada) del proyecto y sincroniza la versión para el resto de los proyectos de la solución.
 
@@ -28,13 +28,13 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
 
 ## <a name="parameters"></a>Parámetros
 
-| Parámetro | Descripción |
+| Parámetro | DESCRIPCIÓN |
 | --- | --- |
-| Id. | (Obligatorio) El identificador del paquete para sincronizar. -Identificador propio conmutador es opcional. |
+| Id | (Obligatorio) El identificador del paquete para sincronizar. -Identificador propio conmutador es opcional. |
 | IgnoreDependencies | Instalar solo este paquete y no a sus dependencias. |
 | NombreDelProyecto | El proyecto para sincronizar el paquete, de forma predeterminada el proyecto predeterminado. |
-| Versión | La versión del paquete para la sincronización, la versión actualmente instalada de forma predeterminada. |
-| Origen | La ruta de acceso URL o carpeta para buscar el origen del paquete. Las rutas de acceso de carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Sync-Package` busca el origen del paquete seleccionado actualmente. |
+| `Version` | La versión del paquete para la sincronización, la versión actualmente instalada de forma predeterminada. |
+| source | La ruta de acceso URL o carpeta para buscar el origen del paquete. Las rutas de acceso de carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Sync-Package` busca el origen del paquete seleccionado actualmente. |
 | IncludePrerelease | Incluye paquetes de versión preliminar de la sincronización. |
 | FileConflictAction | La acción que se realizará cuando se le pida sobrescribir u omitir los archivos existentes que se hace referencia el proyecto. Los valores posibles son *sobrescribir, omitir, None, OverwriteAll*, y *(3.0 y versiones posteriores)* *IgnoreAll*. |
 | DependencyVersion | La versión de los paquetes de dependencia para usar, que puede ser uno de los siguientes:<br/><ul><li>*Menor* (valor predeterminado): la versión más antigua</li><li>*HighestPatch*: la versión con la revisión menor principal, secundaria menor, más alta</li><li>*HighestMinor*: la versión con el menor principales, revisiones secundarias y de mayor más alto</li><li>*Mayor* (predeterminado para el paquete de actualización sin parámetros): la versión más alta</li></ul>Puede establecer el valor predeterminado con el [ `dependencyVersion` ](../reference/nuget-config-file.md#config-section) en el `Nuget.Config` archivo. |
@@ -44,7 +44,7 @@ Ninguno de estos parámetros aceptan caracteres comodín o de entrada de canaliz
 
 ## <a name="common-parameters"></a>Parámetros comunes
 
-`Sync-Package` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction y WarningVariable.
+`Sync-Package` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): Depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, detallado, WarningAction y WarningVariable.
 
 ## <a name="examples"></a>Ejemplos
 

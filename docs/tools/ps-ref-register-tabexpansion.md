@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 98171c598bd4a3468bd23e2d6060e267c38021b4
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 8adb80af85e2e32fa8c35e5272cf90ff0c0ddcbb
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546610"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842481"
 ---
 # <a name="register-tabexpansion-package-manager-console-in-visual-studio"></a>Register-TabExpansion (consola de administrador de paquetes en Visual Studio)
 
-*Solo está disponible en el [consola del Administrador de paquetes de NuGet](package-manager-console.md) en Visual Studio en Windows.*
+*Solo está disponible en el [Package Manager Console](package-manager-console.md) en Visual Studio en Windows.*
 
 Registra una expansión de pestañas para los parámetros del comando especificado, de modo que cuando se usa la pestaña al escribir un comando, los valores expandidos aparecen como opciones disponibles para el parámetro en cuestión. Se sobrescriben cualquier expansiones del comando anteriores.
 
@@ -26,16 +26,16 @@ Register-TabExpansion [-Name] <String> [-Definition] <Object> [<CommonParameters
 
 ## <a name="parameters"></a>Parámetros
 
-| Parámetro | Descripción |
+| Parámetro | DESCRIPCIÓN |
 | --- | --- |
-| nombre | (Obligatorio) El comando que se va a registrar las expansiones. -Nombre propio conmutador es opcional. |
-| de esquema JSON | (Obligatorio) Un objeto que describe el argumento en la sintaxis `@{'<parameter>' = {'<value1>', '<value2>', ...}}` donde `<parameter>` es el nombre del parámetro para modificar y cada `<value>` proporciona una expansión específica. Se aceptan las comillas simples y dobles. |
+| NOMBRE | (Obligatorio) El comando que se va a registrar las expansiones. -Nombre propio conmutador es opcional. |
+| Definición | (Obligatorio) Un objeto que describe el argumento en la sintaxis `@{'<parameter>' = {'<value1>', '<value2>', ...}}` donde `<parameter>` es el nombre del parámetro para modificar y cada `<value>` proporciona una expansión específica. Se aceptan las comillas simples y dobles. |
 
 Ninguno de estos parámetros aceptan caracteres comodín o de entrada de canalización.
 
 ## <a name="common-parameters"></a>Parámetros comunes
 
-`Register-TabExpansion` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction y WarningVariable.
+`Register-TabExpansion` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): Depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, detallado, WarningAction y WarningVariable.
 
 ## <a name="examples"></a>Ejemplos
 

@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: ae60473fbb716b23f40b0605be8aaa8515802315
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c95479103be2cba3b4eb6964ea761870477863bd
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551648"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842475"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package (Consola del Administrador de paquetes en Visual Studio)
 
-*Este tema describe el comando dentro de la [NuGet Package Manager Console](package-manager-console.md) en Visual Studio en Windows. El comando de PowerShell Uninstall-Package genérico, vea el [referencia de PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
+*Este tema describe el comando dentro de la [Package Manager Console](package-manager-console.md) en Visual Studio en Windows. El comando de PowerShell Uninstall-Package genérico, vea el [referencia de PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Quita un paquete desde un proyecto, quitar, opcionalmente, sus dependencias. Si otros paquetes dependen de este paquete, el comando fallará a menos que – Force se especifica la opción.
 
@@ -29,10 +29,10 @@ Si otros paquetes dependen de este paquete, el comando fallará a menos que – 
 
 ## <a name="parameters"></a>Parámetros
 
-| Parámetro | Descripción |
+| Parámetro | DESCRIPCIÓN |
 | --- | --- |
-| Id. | (Obligatorio) El identificador del paquete para desinstalar. -Identificador propio conmutador es opcional. |
-| Versión | La versión del paquete para desinstalar, la versión actualmente instalada de forma predeterminada. |
+| Id | (Obligatorio) El identificador del paquete para desinstalar. -Identificador propio conmutador es opcional. |
+| `Version` | La versión del paquete para desinstalar, la versión actualmente instalada de forma predeterminada. |
 | RemoveDependencies | Desinstale el paquete y sus dependencias no usadas. Es decir, si una dependencia tiene otro paquete que depende de él, se omitirá. |
 | NombreDelProyecto | El proyecto desde el que se va a desinstalar el paquete, de forma predeterminada el proyecto predeterminado. |
 | Force | Fuerza un paquete que se desinstalara, incluso si otros paquetes dependen de él. |
@@ -42,7 +42,7 @@ Ninguno de estos parámetros aceptan caracteres comodín o de entrada de canaliz
 
 ## <a name="common-parameters"></a>Parámetros comunes
 
-`Uninstall-Package` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction y WarningVariable.
+`Uninstall-Package` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): Depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, detallado, WarningAction y WarningVariable.
 
 ## <a name="examples"></a>Ejemplos
 

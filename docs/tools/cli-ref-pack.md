@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 9db24b2dd6ced0869ac84b25f9796ded5df10f86
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: c3a01b7747be96f02f7b93b3bf66f5d1783ceed7
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145649"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842554"
 ---
 # <a name="pack-command-nuget-cli"></a>Comando pack (CLI de NuGet)
 
@@ -31,15 +31,15 @@ donde `<nuspecPath>` y `<projectPath>` especificar el `.nuspec` o archivo de pro
 
 ## <a name="options"></a>Opciones
 
-| Opción | Descripción |
+| Opción | DESCRIPCIÓN |
 | --- | --- |
 | BasePath | Establece la ruta de acceso base de los archivos definidos en el `.nuspec` archivo. |
-| Compilar | Especifica que el proyecto debe compilarse antes de crear el paquete. |
+| Compilación | Especifica que el proyecto debe compilarse antes de crear el paquete. |
 | Excluir | Especifica uno o varios patrones de caracteres comodín para excluir al crear un paquete. Para especificar más de un patrón, repita el - marcador de exclusión. Vea el ejemplo siguiente. |
 | ExcludeEmptyDirectories | Impide la inclusión de directorios vacíos al crear el paquete. |
 | ForceEnglishOutput | *(3.5 y versiones posteriores)*  Fuerza nuget.exe se ejecute con una referencia cultural invariable, en inglés. |
 | ConfigFile | Especifique el archivo de configuración para el comando pack. |
-| Ayuda | Muestra información de ayuda para el comando. |
+| Help | Muestra información de ayuda para el comando. |
 | IncludeReferencedProjects | Indica que el paquete generado debe incluir los proyectos que se hace referencia como dependencias o como parte del paquete. Si un proyecto que se hace referencia tiene un correspondiente `.nuspec` archivo que tiene el mismo nombre que el proyecto y, a continuación, ese proyecto se agrega como una dependencia. En caso contrario, se agrega el proyecto que se hace referencia como parte del paquete. |
 | MinClientVersion | Establecer el *minClientVersion* atributo para el paquete creado. Este valor reemplazará el valor de la existente *minClientVersion* atributo (si existe) en el `.nuspec` archivo. |
 | MSBuildPath | *(4.0 y versiones posteriores)*  Especifica la ruta de acceso de MSBuild que use con el comando, tiene prioridad sobre `-MSBuildVersion`. |
@@ -47,12 +47,13 @@ donde `<nuspecPath>` y `<projectPath>` especificar el `.nuspec` o archivo de pro
 | NoDefaultExcludes | Evita la exclusión predeterminada de NuGet empaquetar archivos y archivos y carpetas de inicio con un punto, como `.svn` y `.gitignore`. |
 | NoPackageAnalysis | Especifica que el paquete no debe ejecutar el análisis de paquetes después de crear el paquete. |
 | OutputDirectory | Especifica la carpeta donde se almacena el paquete creado. Si se especifica ninguna carpeta, se usa la carpeta actual. |
-| Propiedades | Debe aparecer al final de la línea de comandos después de otras opciones. Especifica una lista de las propiedades que reemplazan los valores en el archivo de proyecto. consulte [propiedades comunes de proyectos de MSBuild](/visualstudio/msbuild/common-msbuild-project-properties) nombres de propiedad. Aquí el argumento de propiedades es una lista de pares de nombre-valor, separados por punto y coma, donde cada aparición de `$token$` en el `.nuspec` archivo se sustituirá con el valor especificado. Los valores pueden ser cadenas entre comillas. Tenga en cuenta que para la propiedad "Configuration", el valor predeterminado es "Debug". Para cambiar a una configuración de lanzamiento, utilice `-Properties Configuration=Release`. |
+| Properties (Propiedades) | Debe aparecer al final de la línea de comandos después de otras opciones. Especifica una lista de las propiedades que reemplazan los valores en el archivo de proyecto. consulte [propiedades comunes de proyectos de MSBuild](/visualstudio/msbuild/common-msbuild-project-properties) nombres de propiedad. Aquí el argumento de propiedades es una lista de pares de nombre-valor, separados por punto y coma, donde cada aparición de `$token$` en el `.nuspec` archivo se sustituirá con el valor especificado. Los valores pueden ser cadenas entre comillas. Tenga en cuenta que para la propiedad "Configuration", el valor predeterminado es "Debug". Para cambiar a una configuración de lanzamiento, utilice `-Properties Configuration=Release`. |
 | Sufijo | *(3.4.4+)*  Anexa un sufijo para el número de versión generada internamente, se utiliza normalmente para anexar las compilación u otros identificadores de versión preliminar. Por ejemplo, mediante `-suffix nightly` creará un paquete con un tipo de número de versión `1.2.3-nightly`. Sufijos deben empezar por una letra para evitar las advertencias, errores y las posibles incompatibilidades con distintas versiones de NuGet y el Administrador de paquetes de NuGet. |
 | Símbolos | Especifica que el paquete contiene orígenes y símbolos. Cuando se usa con un `.nuspec` archivo, esto crea un archivo de paquete NuGet normal y el correspondiente paquete de símbolos. De forma predeterminada crea un [paquete de símbolos heredado](../create-packages/Symbol-Packages.md). El nuevo formato recomendado para paquetes de símbolos es .snupkg. Vea [Crear paquetes de símbolos (.snupkg)](../create-packages/Symbol-Packages-snupkg.md). |
+| SymbolPackageFormat | Especifica el formato del paquete de símbolos: *symbols.nupkg* (heredado) o *snupkg* (recomendado). De forma predeterminada crea un [paquete de símbolos heredado](../create-packages/Symbol-Packages.md). Vea [Crear paquetes de símbolos (.snupkg)](../create-packages/Symbol-Packages-snupkg.md). |
 | Herramienta | Especifica que se deben colocar los archivos de salida del proyecto en el `tool` carpeta. |
-| Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
-| Versión | Invalida el número de versión desde el `.nuspec` archivo. |
+| Verbosity | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *quiet*, *detallada*. |
+| `Version` | Invalida el número de versión desde el `.nuspec` archivo. |
 
 Consulte también [variables de entorno](cli-ref-environment-variables.md)
 

@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: a28b29614dfe5abdeb24438b3451d96634a120db
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d0d25cb6e21f6d0d42389e08340b6f1e1baf8a64
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551447"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842517"
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (Consola del Administrador de paquetes en Visual Studio)
 
-*Este tema describe el comando dentro de la [NuGet Package Manager Console](package-manager-console.md) en Visual Studio en Windows. El comando de PowerShell Get-Package genérico, vea el [referencia de PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
+*Este tema describe el comando dentro de la [Package Manager Console](package-manager-console.md) en Visual Studio en Windows. El comando de PowerShell Get-Package genérico, vea el [referencia de PowerShell PackageManagement](/powershell/module/packagemanagement/?view=powershell-6).*
 
 Recupera la lista de los paquetes instalados en el repositorio local, se enumeran los paquetes disponibles desde un origen del paquete cuando se usa con el modificador - ListAvailable o listas de actualizaciones disponibles cuando se usa con-conmutador de actualización.
 
@@ -30,14 +30,14 @@ Sin parámetros, `Get-Package` muestra la lista de los paquetes instalados en el
 
 ## <a name="parameters"></a>Parámetros
 
-| Parámetro | Descripción |
+| Parámetro | DESCRIPCIÓN |
 | --- | --- |
-| Origen | La ruta de acceso URL o carpeta para el paquete. Las rutas de acceso de carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Get-Package` busca el origen del paquete seleccionado actualmente. Cuando se usa con - ListAvailable, valor predeterminado es en nuget.org. |
+| source | La ruta de acceso URL o carpeta para el paquete. Las rutas de acceso de carpeta local pueden ser absoluta o relativa a la carpeta actual. Si se omite, `Get-Package` busca el origen del paquete seleccionado actualmente. Cuando se usa con - ListAvailable, valor predeterminado es en nuget.org. |
 | ListAvailable | Enumera los paquetes disponibles desde un origen del paquete, de forma predeterminada en nuget.org. Muestra el valor predeterminado es 50 paquetes a menos que se especifica PageSize - o - primero. |
 | Actualizaciones | Enumera los paquetes que tienen una actualización disponible desde el origen del paquete. |
 | NombreDelProyecto | El proyecto desde el que se va a obtener los paquetes instalados. Si se omite, devuelve instala los proyectos de toda la solución. |
 | Filtro | Una cadena de filtro utilizada para restringir la lista de paquetes aplicando el Id. de paquete, descripción y etiquetas. |
-| First | El número de paquetes que se devolverán desde el principio de la lista. Si no se especifica, valor predeterminado es 50. |
+| Primero | El número de paquetes que se devolverán desde el principio de la lista. Si no se especifica, valor predeterminado es 50. |
 | Skip | Omite la primera &lt;int&gt; paquetes en la lista mostrada.  |
 | AllVersions | Muestra todas las versiones disponibles de cada paquete en lugar de solo la versión más reciente. |
 | IncludePrerelease | Incluye paquetes de versión preliminar en los resultados. |
@@ -47,7 +47,7 @@ Ninguno de estos parámetros aceptan caracteres comodín o de entrada de canaliz
 
 ## <a name="common-parameters"></a>Parámetros comunes
 
-`Get-Package` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction y WarningVariable.
+`Get-Package` admite las siguientes [parámetros comunes de PowerShell](http://go.microsoft.com/fwlink/?LinkID=113216): Depuración, acción del Error, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, detallado, WarningAction y WarningVariable.
 
 ## <a name="examples"></a>Ejemplos
 
