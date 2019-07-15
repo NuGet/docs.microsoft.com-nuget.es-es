@@ -15,7 +15,7 @@
 ### [Visual Studio para Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 ### [CLI de dotnet](consume-packages/install-use-packages-dotnet-cli.md)
 ### [CLI de nuget.exe](consume-packages/install-use-packages-nuget-cli.md)
-### [PowerShell](tools/package-manager-console.md)
+### [Consola del Administrador de paquetes (PowerShell)](tools/package-manager-console.md)
 ## Configuración de NuGet
 ### Opciones de restauración de paquetes
 #### [Opciones de restauración](consume-packages/package-restore.md)
@@ -31,21 +31,23 @@
 ### [packages.config](reference/packages-config.md)
 # Crear paquetes
 ## [Información general y flujo de trabajo](create-packages/overview-and-workflow.md)
-## [Creación de un paquete: CLI de nuget.exe](create-packages/creating-a-package.md)
+## [Creación de un paquete](create-packages/creating-a-package.md)
 ## [Creación de un paquete con MSBuild](reference/msbuild-targets.md)
 ## [Admitir varias plataformas de destino](create-packages/supporting-multiple-target-frameworks.md)
 ## [Compilación de un paquete de versión preliminar](create-packages/prerelease-packages.md)
 ## [Creación de un paquete de símbolos](create-packages/symbol-packages-snupkg.md)
 ## Tareas avanzadas
 ### [Modificación de archivos de código fuente y configuración](create-packages/source-and-config-file-transformations.md)
-### [Creación de un paquete localizado](create-packages/creating-localized-packages.md)
 ### [Selección de ensamblados a los que hacen referencia proyectos](create-packages/select-assemblies-referenced-by-projects.md)
+### [Definición del tipo de paquete](create-packages/set-package-type.md)
+### [Creación de un paquete localizado](create-packages/creating-localized-packages.md)
 ## Guías de contenido específico
 ### [Creación de un paquete UWP](guides/create-uwp-packages.md)
 ### [Creación de un paquete nativo](create-packages/native-packages.md)
 ### [Creación de controles de UI como paquete NuGet](guides/create-UI-controls.md)
 ### [Creación de un analizador como paquete NuGet](reference/analyzers-conventions.md)
 ### [Creación de un paquete para Xamarin con Visual Studio 2015](guides/create-packages-for-xamarin.md)
+### [Creación de paquetes con ensamblados de interoperabilidad COM](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## Firma de paquetes
 ### [Firma de un paquete](create-packages/sign-a-package.md)
 ### [Requisitos y firmas de paquetes firmados](reference/signed-packages-reference.md)
@@ -335,4 +337,5 @@
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
 ## [Preguntas más frecuentes](faqs/nuget-faq.md)
+## [Formato de proyecto](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
