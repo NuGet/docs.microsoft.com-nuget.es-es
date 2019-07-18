@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: tutorial
-ms.openlocfilehash: d737b70febd1e18aa8a39cc73a9a9cf333f758c6
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 81f78de02d9b6510f195e04c78436e38f9b7353d
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426845"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842415"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>Creación de paquetes para Xamarin con Visual Studio 2015
 
@@ -111,7 +111,7 @@ Para implementar una implementación específica de la plataforma de la interfaz
     ```
 
 1. Cambie el nombre de este archivo por `LoggingLibrary.nuspec` y ábralo en un editor.
-1. Actualice el archivo para que coincida con lo siguiente, reemplazando SU_NOMBRE por un valor adecuado. El valor, `<id>` en concreto, debe ser único en nuget.org (vea las convenciones de nomenclatura descritas en [Creación de un paquete](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)). Tenga en cuenta que también debe actualizar las etiquetas de autor y descripción, u obtendrá un error durante el paso de empaquetado.
+1. Actualice el archivo para que coincida con lo siguiente, reemplazando SU_NOMBRE por un valor adecuado. El valor, `<id>` en concreto, debe ser único en nuget.org (vea las convenciones de nomenclatura descritas en [Creación de un paquete](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)). Tenga en cuenta que también debe actualizar las etiquetas de autor y descripción, u obtendrá un error durante el paso de empaquetado.
 
     ```xml
     <?xml version="1.0"?>
@@ -268,5 +268,5 @@ Para que el paquete esté disponible para otros desarrolladores, siga las instru
 - [Paquetes de símbolos](../create-packages/symbol-packages.md)
 - [Control de versiones del paquete](../reference/package-versioning.md)
 - [Compatibilidad con varias versiones de .NET Framework](../create-packages/supporting-multiple-target-frameworks.md)
-- [Inclusión de propiedades y destinos de MSBuild en un paquete](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
+- [Incluir propiedades y destinos de MSBuild en un paquete](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [Creación de paquetes localizados](../create-packages/creating-localized-packages.md)
