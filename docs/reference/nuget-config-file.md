@@ -1,20 +1,20 @@
 ---
-title: Referencia del archivo NuGet.config
+title: Referencia del archivo Nuget. config
 description: Referencia del archivo NuGet.Config en la que se incluyen las secciones config, bindingRedirects, packageRestore, solution y packageSource.
 author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: 2eceb6e94a353cb29b83aea114c6cea2acbac266
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: b03bb8da0191a679671e5898ac70fff2024d52f2
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426148"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317221"
 ---
-# <a name="nugetconfig-reference"></a>referencia de NuGet.config
+# <a name="nugetconfig-reference"></a>referencia de Nuget. config
 
-Comportamiento de NuGet se controla mediante la configuración en diferentes `NuGet.Config` archivos como se describe en [configuraciones comunes NuGet](../consume-packages/configuring-nuget-behavior.md).
+El comportamiento de Nuget se controla mediante la `NuGet.Config` configuración de distintos archivos, tal y como se describe en [configuraciones comunes de Nuget](../consume-packages/configuring-nuget-behavior.md).
 
 `nuget.config` es un archivo XML que contiene un nodo `<configuration>` de nivel superior, que contiene los elementos de sección que se describen en este tema. Cada sección contiene cero o más elementos. Vea el [archivo de configuración de ejemplo](#example-config-file). Los nombres de opción distinguen mayúsculas de minúsculas, y los valores pueden usar [variables de entorno](#using-environment-variables).
 
@@ -41,18 +41,18 @@ En este tema:
 
 ## <a name="config-section"></a>Sección config
 
-Contiene varios valores de configuración, que se pueden establecer mediante el [comando `nuget config`](../tools/cli-ref-config.md).
+Contiene varios valores de configuración, que se pueden establecer mediante el [comando `nuget config`](../reference/cli-reference/cli-ref-config.md).
 
-`dependencyVersion` y `repositoryPath` solo se aplican a proyectos que usan `packages.config`. `globalPackagesFolder` se aplica solo a los proyectos con el formato PackageReference.
+`dependencyVersion`y `repositoryPath` solo se aplican a `packages.config`los proyectos que usan. `globalPackagesFolder`solo se aplica a los proyectos que usan el formato PackageReference.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | dependencyVersion (solo `packages.config`) | El valor predeterminado `DependencyVersion` para la instalación, restauración y actualización del paquete, cuando no se especifica directamente el modificador `-DependencyVersion`. Este valor también se usa en la interfaz de usuario del Administrador de paquetes NuGet. Los valores son `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
-| globalPackagesFolder (proyectos con PackageReference solo) | La ubicación de la carpeta de paquetes global predeterminada. El valor predeterminado es `%userprofile%\.nuget\packages` (Windows) o `~/.nuget/packages` (Mac o Linux). Se puede usar una ruta de acceso relativa en archivos `nuget.config` específicos del proyecto. Esta configuración se reemplaza por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
-| repositoryPath (solo `packages.config`) | La ubicación en la que se van a instalar los paquetes NuGet en lugar de la carpeta `$(Solutiondir)/packages` predeterminada. Se puede usar una ruta de acceso relativa en archivos `nuget.config` específicos del proyecto. Esta configuración se reemplaza por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
+| globalPackagesFolder (proyectos que solo usan PackageReference) | La ubicación de la carpeta de paquetes global predeterminada. El valor predeterminado es `%userprofile%\.nuget\packages` (Windows) o `~/.nuget/packages` (Mac o Linux). Se puede usar una ruta de acceso relativa en archivos `nuget.config` específicos del proyecto. Esta configuración es invalidada por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
+| repositoryPath (solo `packages.config`) | La ubicación en la que se van a instalar los paquetes NuGet en lugar de la carpeta `$(Solutiondir)/packages` predeterminada. Se puede usar una ruta de acceso relativa en archivos `nuget.config` específicos del proyecto. Esta configuración es invalidada por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
 | defaultPushSource | Identifica la dirección URL o ruta de acceso de origen del paquete que se debe usar como valor predeterminado si no se encuentra ningún otro origen del paquete para una operación. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Configuración de proxy que se usa al conectarse a orígenes de paquetes; `http_proxy` debe tener el formato `http://<username>:<password>@<domain>`. Las contraseñas están cifradas y no se pueden agregar de forma manual. Para `no_proxy`, el valor es una lista separada por comas de dominios que omiten el servidor proxy. Como alternativa, puede usar las variables de entorno http_proxy y no_proxy para esos valores. Para obtener más información, vea [Configuración de proxy de NuGet](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
-| signatureValidationMode | Especifica el modo de validación que se usa para comprobar las firmas de paquete de instalación del paquete y restaurar. Los valores son `accept`, `require`. Tiene como valor predeterminado `accept`.
+| signatureValidationMode | Especifica el modo de validación que se usa para comprobar las firmas del paquete para la instalación y restauración del paquete. Los valores `accept`son `require`,. Tiene como valor predeterminado `accept`.
 
 **Ejemplo**:
 
@@ -70,7 +70,7 @@ Contiene varios valores de configuración, que se pueden establecer mediante el 
 
 Configura si NuGet realiza redirecciones de enlaces automáticas cuando se instala un paquete.
 
-| Key | Valor |
+| Clave | Valor |
 | --- | --- |
 | skip | Un valor booleano que indica si se omiten las redirecciones de enlaces automáticas. El valor predeterminado es false. |
 
@@ -86,7 +86,7 @@ Configura si NuGet realiza redirecciones de enlaces automáticas cuando se insta
 
 Controla la restauración del paquete durante las compilaciones.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | enabled | Un valor booleano que indica si NuGet puede realizar la restauración automática. También se puede establecer la variable de entorno `EnableNuGetPackageRestore` con un valor de `True` en lugar de establecer esta clave en el archivo de configuración. |
 | automáticamente | Un valor booleano que indica si NuGet debe comprobar los paquetes que faltan durante una compilación. |
@@ -104,7 +104,7 @@ Controla la restauración del paquete durante las compilaciones.
 
 Controla si la carpeta `packages` de una solución se incluye en el control de código fuente. En esta sección solo funciona en los archivos `nuget.config` de la carpeta de una solución.
 
-| Key | Valor |
+| Clave | Valor |
 | --- | --- |
 | disableSourceControlIntegration | Un valor booleano que indica si se debe ignorar la carpeta de paquetes cuando se trabaja con el control de código fuente. El valor predeterminado es false. |
 
@@ -118,17 +118,17 @@ Controla si la carpeta `packages` de una solución se incluye en el control de c
 
 ## <a name="package-source-sections"></a>Secciones de origen del paquete
 
-El `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, `disabledPackageSources` y `trustedSigners` todo el trabajo conjuntamente para configurar el funcionamiento de NuGet con repositorios de paquetes durante la instalación, restauración y las operaciones de actualización.
+`packageSources` ,`packageSourceCredentials` ,,`trustedSigners`Yfuncionan conjuntamente para configurar el funcionamiento de NuGet con repositorios de paquetes durante las operaciones de instalación, restauración y actualización. `disabledPackageSources` `apikeys` `activePackageSource`
 
-El [ `nuget sources` comando](../tools/cli-ref-sources.md) generalmente se usa para administrar estos valores, excepto para `apikeys` que se administra mediante el [ `nuget setapikey` comando](../tools/cli-ref-setapikey.md), y `trustedSigners` que está administrado mediante el [ `nuget trusted-signers` comando](../tools/cli-ref-trusted-signers.md).
+El `apikeys` `trustedSigners` [ `nuget sources` comando](../reference/cli-reference/cli-ref-sources.md) se utiliza generalmente para administrar estos valores, excepto para el que se administra mediante el [ `nuget setapikey` comando](../reference/cli-reference/cli-ref-setapikey.md), y que se administra mediante el [ `nuget trusted-signers` comando](../reference/cli-reference/cli-ref-trusted-signers.md).
 
 Tenga en cuenta que la dirección URL de origen de nuget.org es `https://api.nuget.org/v3/index.json`.
 
 ### <a name="packagesources"></a>packageSources
 
-Enumera todos los orígenes de paquetes conocidos. Durante las operaciones de restauración y con cualquier proyecto con el formato PackageReference, se omite el orden. NuGet respeta el orden de los orígenes de instalación y las operaciones de actualización con proyectos que usan `packages.config`.
+Enumera todos los orígenes de paquetes conocidos. El orden se omite durante las operaciones de restauración y con cualquier proyecto que use el formato PackageReference. NuGet respeta el orden de los orígenes de las operaciones de instalación y actualización `packages.config`con proyectos que usan.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | (nombre para asignar al origen del paquete) | La ruta de acceso o dirección URL del origen del paquete. |
 
@@ -146,7 +146,7 @@ Enumera todos los orígenes de paquetes conocidos. Durante las operaciones de re
 
 Almacena nombres de usuario y contraseñas para los orígenes, normalmente especificados con los modificadores `-username` y `-password` con `nuget sources`. Las contraseñas se cifran de forma predeterminada a menos que también se use la opción `-storepasswordincleartext`.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | username | El nombre de usuario para el origen en texto sin formato. |
 | contraseña | La contraseña cifrada para el origen. |
@@ -186,9 +186,9 @@ Cuando se usan contraseñas sin cifrar:
 
 ### <a name="apikeys"></a>apikeys
 
-Almacena claves para los orígenes en los que se usa autenticación de clave de API, como se establece mediante el [comando `nuget setapikey`](../tools/cli-ref-setapikey.md).
+Almacena claves para los orígenes en los que se usa autenticación de clave de API, como se establece mediante el [comando `nuget setapikey`](../reference/cli-reference/cli-ref-setapikey.md).
 
-| Key | Valor |
+| Clave | Valor |
 | --- | --- |
 | (dirección URL de origen) | La clave de API cifrada. |
 
@@ -204,7 +204,7 @@ Almacena claves para los orígenes en los que se usa autenticación de clave de 
 
 Orígenes actualmente deshabilitados identificados. Puede estar vacía.
 
-| Key | Valor |
+| Clave | Valor |
 | --- | --- |
 | (nombre del origen) | Un valor booleano que indica si el origen está deshabilitado. |
 
@@ -225,7 +225,7 @@ Orígenes actualmente deshabilitados identificados. Puede estar vacía.
 
 Identifica al origen actualmente activo o indica la suma de todos los orígenes.
 
-| Key | Valor |
+| Clave | Valor |
 | --- | --- |
 | (nombre del origen) o `All` | Si la clave es el nombre de un origen, el valor es la ruta de acceso o la dirección URL del origen. Si es `All`, el valor debe ser `(Aggregate source)` para combinar todos los orígenes de paquetes que no estén deshabilitados. |
 
@@ -242,19 +242,19 @@ Identifica al origen actualmente activo o indica la suma de todos los orígenes.
 ```
 ## <a name="trustedsigners-section"></a>sección trustedSigners
 
-Almacenes de confianza de los firmantes que se usa para permitir que el paquete durante la instalación o la restauración. Esta lista no puede estar vacía cuando el usuario establece `signatureValidationMode` a `require`. 
+Almacena los firmantes de confianza que se usan para permitir el paquete durante la instalación o la restauración. Esta lista no puede estar vacía cuando el usuario `signatureValidationMode` establece `require`en. 
 
-En esta sección se puede actualizar con la [ `nuget trusted-signers` comando](../tools/cli-ref-trusted-signers.md).
+Esta sección se puede actualizar con el [ `nuget trusted-signers` comando](../reference/cli-reference/cli-ref-trusted-signers.md).
 
 **Esquema**:
 
-Un firmante de confianza tiene una colección de `certificate` elementos que se enumeran todos los certificados que identifican un firmante determinado. Un firmante de confianza puede ser un `Author` o `Repository`.
+Un firmante de confianza tiene una colección de `certificate` elementos que dan de alta todos los certificados que identifican un firmante determinado. Un firmante de confianza puede ser `Author` `Repository`o.
 
-Una confianza *repositorio* también especifica la `serviceIndex` para el repositorio (que tiene que ser válido `https` uri) y, opcionalmente, puede especificar una lista delimitada por punto y coma de `owners` para restringir aún más que es de confianza desde ese repositorio específico.
+Un *repositorio* de confianza también especifica `serviceIndex` el para el repositorio (que tiene que ser un `https` URI válido) y, opcionalmente, puede especificar una lista delimitada por `owners` punto y coma de para restringir aún más quién sea de confianza de esa Catálogo.
 
-Los algoritmos de hash compatibles utilizados para una huella digital de certificado son `SHA256`, `SHA384` y `SHA512`.
+Los algoritmos hash admitidos que se usan para una `SHA256`huella `SHA384` digital `SHA512`de certificado son, y.
 
-Si un `certificate` especifica `allowUntrustedRoot` como `true` el certificado especificado se permite encadenar a una raíz de confianza durante la compilación de la cadena de certificados como parte de la comprobación de signatura.
+Si un `certificate` especifica `allowUntrustedRoot` como `true` el certificado especificado está permitido para encadenarse a una raíz que no es de confianza mientras se compila la cadena de certificados como parte de la comprobación de la firma.
 
 **Ejemplo**:
 

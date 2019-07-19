@@ -1,74 +1,74 @@
 ---
-title: NuGet entre el complemento de autenticación de la plataforma
-description: NuGet entre los complementos de autenticación de la plataforma de NuGet.exe, dotnet.exe, msbuild.exe y Visual Studio
+title: Complemento de autenticación multiplataforma de NuGet
+description: Complementos de autenticación entre plataformas NuGet para NuGet. exe, dotnet. exe, MSBuild. exe y Visual Studio
 author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: b76fab1028ec9a4172d2390083fbf9adb4290a6c
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: a716737343ea826d28da6de46c32ca73aef590bd
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453512"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317279"
 ---
-# <a name="nuget-cross-platform-authentication-plugin"></a>NuGet entre el complemento de autenticación de la plataforma
+# <a name="nuget-cross-platform-authentication-plugin"></a>Complemento de autenticación multiplataforma de NuGet
 
-En la versión 4.8, NuGet todos los clientes (NuGet.exe, Visual Studio, dotnet.exe y MSBuild.exe) pueden usar un complemento de autenticación que se crean a partir de la [NuGet cross platform complementos](NuGet-Cross-Platform-Plugins.md) modelo.
+En la versión 4.8 +, todos los clientes de NuGet (NuGet. exe, Visual Studio, dotnet. exe y MSBuild. exe) pueden usar un complemento de autenticación basado en el modelo de complementos multiplataforma de [NuGet](NuGet-Cross-Platform-Plugins.md) .
 
-## <a name="authentication-in-dotnetexe"></a>Autenticación de dotnet.exe
+## <a name="authentication-in-dotnetexe"></a>Autenticación en dotnet. exe
 
-Visual Studio y NuGet.exe son interactivos de forma predeterminada. NuGet.exe contendrá un conmutador para que sea [no interactivo](../../tools/nuget-exe-CLI-Reference.md).
-Además, los complementos de NuGet.exe y Visual Studio preguntar al usuario para la entrada.
-En dotnet.exe no hay pedir confirmación y el valor predeterminado es no interactivo.
+Visual Studio y NuGet. exe son interactivos de forma predeterminada. NuGet. exe contiene un modificador para que [no sea interactivo](../nuget-exe-CLI-Reference.md).
+Además, los complementos NuGet. exe y Visual Studio solicitan al usuario una entrada.
+En dotnet. exe no hay ningún aviso y el valor predeterminado es no interactivo.
 
-El mecanismo de autenticación de dotnet.exe es flujo de dispositivos. Cuando la restauración o agregar la operación del paquete se ejecuta de forma interactiva, la operación se bloquea e instrucciones al usuario cómo para completar las autenticaciones se proporcionará en la línea de comandos.
-Cuando el usuario completa la autenticación de la operación continuará.
+El mecanismo de autenticación de dotnet. exe es el flujo del dispositivo. Cuando la operación de restauración o de adición de paquetes se ejecuta de forma interactiva, la operación bloquea e instrucciones al usuario Cómo completar las autenticaciones se proporcionarán en la línea de comandos.
+Cuando el usuario completa la autenticación, la operación continuará.
 
-Para que la operación sea interactivo, uno debe pasar `--interactive`.
-Actualmente solo la configuración explícita `dotnet restore` y `dotnet add package` comandos admiten un modificador interactivo.
+Para hacer que la operación sea interactiva, `--interactive`se debe pasar una.
+Actualmente, solo los `dotnet restore` comandos `dotnet add package` y explícitos admiten un modificador interactivo.
 No hay ningún conmutador interactivo en `dotnet build` y `dotnet publish`.
 
-## <a name="authentication-in-msbuild"></a>Autenticación de MSBuild
+## <a name="authentication-in-msbuild"></a>Autenticación en MSBuild
 
-Es similar a dotnet.exe, MSBuild.exe que no son que el mecanismo de autenticación de MSBuild.exe interactivo es flujo de dispositivos de forma predeterminada.
-Para permitir la restauración pausar y esperar la autenticación, llamar a la restauración con `msbuild -t:restore -p:NuGetInteractive="true"`.
+Al igual que dotnet. exe, MSBuild. exe no es interactivo de forma predeterminada el mecanismo de autenticación de MSBuild. exe es el flujo del dispositivo.
+Para permitir que la restauración se PAUSE y espere la autenticación, llame a `msbuild -t:restore -p:NuGetInteractive="true"`restore with.
 
-## <a name="creating-a-cross-platform-authentication-plugin"></a>Crear un complemento de autenticación multiplataforma
+## <a name="creating-a-cross-platform-authentication-plugin"></a>Creación de un complemento de autenticación multiplataforma
 
-Puede encontrar una implementación de ejemplo en [complemento de proveedor de credenciales de Microsoft](https://github.com/Microsoft/artifacts-credprovider).
+Puede encontrar una implementación de ejemplo en el [complemento de proveedor](https://github.com/Microsoft/artifacts-credprovider)de credenciales de Microsoft.
 
-Es muy importante que los complementos se ajustan a los requisitos de seguridad establecidos por las herramientas de cliente de NuGet.
-La mínima necesaria es la versión para un complemento como un complemento de autenticación *2.0.0*.
-NuGet llevará a cabo el protocolo de enlace con el complemento y la consulta para las notificaciones de la operación admitida.
-El paquete NuGet entre el complemento de plataforma, consulte [los mensajes del protocolo](NuGet-Cross-Platform-Plugins.md#protocol-messages-index) para obtener más información acerca de los mensajes específicos.
+Es muy importante que los complementos se ajusten a los requisitos de seguridad establecidos por las herramientas de cliente de NuGet.
+La versión mínima necesaria para que un complemento sea un complemento de autenticación es *2.0.0*.
+NuGet realizará el protocolo de enlace con el complemento y consultará las notificaciones de operaciones admitidas.
+Consulte los [mensajes de protocolo](NuGet-Cross-Platform-Plugins.md#protocol-messages-index) del complemento Cross Platform de NuGet para obtener más detalles sobre los mensajes específicos.
 
-NuGet establecerá el nivel de registro y proporcionar información de proxy para el complemento cuando sea aplicable.
-Registro para el paquete NuGet consola solo es aceptable después NuGet establece el nivel de registro en el complemento.
+NuGet establecerá el nivel de registro y proporcionará información del proxy al complemento cuando sea aplicable.
+El registro en la consola de NuGet solo es aceptable después de que NuGet haya establecido el nivel de registro en el complemento.
 
-- Comportamiento de autenticación de complemento de .NET framework
+- .NET Framework el comportamiento de autenticación del complemento
 
-En .NET Framework, los complementos pueden solicitar al usuario para la entrada, en forma de un cuadro de diálogo.
+En .NET Framework, se permite que los complementos pidan a un usuario una entrada, en forma de cuadro de diálogo.
 
-- Comportamiento de autenticación de complemento de .NET core
+- Comportamiento de autenticación del complemento de .NET Core
 
-En .NET Core, no se puede mostrar un cuadro de diálogo. Los complementos deben usar el flujo de dispositivos para autenticarse.
+En .NET Core, no se puede mostrar un cuadro de diálogo. Los complementos deben usar el flujo del dispositivo para realizar la autenticación.
 El complemento puede enviar mensajes de registro a NuGet con instrucciones para el usuario.
-Tenga en cuenta que está disponible el registro después de que se ha establecido el nivel de registro en el complemento.
-NuGet no tendrán ninguna entrada interactiva desde la línea de comandos.
+Tenga en cuenta que el registro está disponible después de que el nivel de registro se haya establecido en el complemento.
+NuGet no realizará ninguna entrada interactiva desde la línea de comandos.
 
-Cuando el cliente llama al complemento con un credenciales de autenticación obtener, los complementos deben ajustarse al conmutador interactividad y respeta el modificador de cuadro de diálogo. 
+Cuando el cliente llama al complemento con una obtención de credenciales de autenticación, los complementos deben ajustarse al conmutador de interactividad y respetar el modificador del cuadro de diálogo. 
 
 En la tabla siguiente se resume cómo debe comportarse el complemento para todas las combinaciones.
 
-| IsNonInteractive | CanShowDialog | Comportamiento de complemento |
+| IsNonInteractive | CanShowDialog | Comportamiento del complemento |
 | ---------------- | ------------- | --------------- |
-| true | true | El modificador IsNonInteractive tiene prioridad sobre el conmutador de cuadro de diálogo. El complemento no se puede abrir un cuadro de diálogo. Esta combinación solo es válida para los complementos de .NET Framework |
-| true | False | El modificador IsNonInteractive tiene prioridad sobre el conmutador de cuadro de diálogo. El complemento no se permite para bloquear. Esta combinación solo es válida para los complementos de .NET Core |
-| False | true | El complemento debe mostrar un cuadro de diálogo. Esta combinación solo es válida para los complementos de .NET Framework |
-| False | False | El complemento debe/puede no mostrar un cuadro de diálogo. El complemento debe usar el flujo de dispositivo para autenticar mediante el registro de un mensaje de la instrucción mediante el registrador. Esta combinación solo es válida para los complementos de .NET Core |
+| true | true | El modificador IsNonInteractive tiene prioridad sobre el modificador de diálogo. No se permite que el complemento abra un cuadro de diálogo. Esta combinación solo es válida para los complementos de .NET Framework |
+| true | false | El modificador IsNonInteractive tiene prioridad sobre el modificador de diálogo. No se permite el bloqueo del complemento. Esta combinación solo es válida para los complementos de .NET Core. |
+| false | true | El complemento debe mostrar un cuadro de diálogo. Esta combinación solo es válida para los complementos de .NET Framework |
+| false | false | El complemento no puede mostrar un cuadro de diálogo. El complemento debe usar el flujo de dispositivo para autenticarse mediante el registro de un mensaje de instrucción a través del registrador. Esta combinación solo es válida para los complementos de .NET Core. |
 
-Consulte las especificaciones siguientes antes de escribir un complemento.
+Consulte las siguientes especificaciones antes de escribir un complemento.
 
-- [Complemento de descarga del paquete de NuGet](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
-- [NuGet entre el complemento de autenticación plat](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
+- [Complemento de descarga del paquete NuGet](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
+- [Complemento de autenticación entre placas de NuGet](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
