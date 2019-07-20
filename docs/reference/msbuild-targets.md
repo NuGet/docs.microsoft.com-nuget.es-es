@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: acf80a9f919a56c9a9f21a9c8850dc5c1c67df33
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: b450a5bfa3dcf70056c99a951f51a78845ef8438
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317204"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342448"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -226,7 +226,9 @@ Cuando se usa `MSBuild -t:pack -p:IsTool=true`, todos los archivos de salida, co
 
 ### <a name="packing-using-a-nuspec"></a>Empaquetado mediante un archivo .nuspec
 
-Puede usar un `.nuspec` archivo para empaquetar el proyecto siempre que tenga un archivo de proyecto de SDK para `NuGet.Build.Tasks.Pack.targets` importar para que se pueda ejecutar la tarea del paquete. Todavía es necesario restaurar el proyecto para poder empaquetar un archivo nuspec. El marco de trabajo de destino del archivo de proyecto es irrelevante y no se usa cuando se empaqueta un archivo nuspec. Las tres propiedades de MSBuild siguientes son relevantes para el empaquetado mediante un archivo `.nuspec`:
+Aunque se recomienda [incluir todas las propiedades](../reference/msbuild-targets.md#pack-target) que suelen estar en el `.nuspec` archivo en el archivo del proyecto, puede optar por usar un `.nuspec` archivo para empaquetar el proyecto. Para un proyecto que no sea de estilo SDK que `PackageReference`use, debe importar `NuGet.Build.Tasks.Pack.targets` para que se pueda ejecutar la tarea del paquete. Todavía es necesario restaurar el proyecto para poder empaquetar un archivo nuspec. (Un proyecto de estilo SDK incluye los destinos Pack de forma predeterminada).
+
+El marco de trabajo de destino del archivo de proyecto es irrelevante y no se usa cuando se empaqueta un archivo nuspec. Las tres propiedades de MSBuild siguientes son relevantes para el empaquetado mediante un archivo `.nuspec`:
 
 1. `NuspecFile`: ruta de acceso relativa o absoluta al archivo `.nuspec` que se usa para el empaquetado.
 1. `NuspecProperties`: lista de pares clave=valor separados por punto y coma. Debido al funcionamiento del análisis de línea de comandos de MSBuild, se deben especificar varias propiedades como se indica a continuación: `-p:NuspecProperties=\"key1=value1;key2=value2\"`.  
@@ -246,7 +248,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 Tenga en cuenta que al empaquetar un archivo nuspec mediante dotnet. exe o MSBuild también se genera el proyecto de forma predeterminada. Esto se puede evitar pasando ```--no-build``` la propiedad a dotnet. exe, que es el equivalente de la configuración ```<NoBuild>true</NoBuild> ``` en el archivo de proyecto, junto ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` con el valor en el archivo de proyecto.
 
-Un ejemplo de un archivo csproj para empaquetar un archivo nuspec es el siguiente:
+Un ejemplo de un archivo *. csproj* para empaquetar un archivo nuspec es el siguiente:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">

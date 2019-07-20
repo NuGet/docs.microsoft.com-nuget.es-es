@@ -1,38 +1,39 @@
 ---
-title: Referencia de marcos de destino para NuGet
+title: Referencia de las plataformas de destino para NuGet
 description: Las referencias de las plataformas de destino de NuGet identifican y aíslan los componentes de un paquete que dependen de la plataforma.
 author: karann-msft
 ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 0b2a4fe45d0311b7540c73b481d6821357c723af
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: ea9f699b202d7f32648f0ccfeac3ceb1ca325b7e
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610652"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342441"
 ---
 # <a name="target-frameworks"></a>Versiones de .NET Framework de destino
 
 NuGet usa referencias de plataformas de destino en varios lugares para identificar y aislar de forma específica los componentes de un paquete que dependen de la plataforma:
 
-- [manifiesto .nuspec](../reference/nuspec.md): Un paquete puede indicar distintos paquetes que se incluirán en un proyecto en función de la plataforma de destino del proyecto.
-- [nombre de la carpeta .nupkg](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): Las carpetas dentro de un paquete `lib` carpeta se puede denominar según la plataforma de destino, cada uno de los cuales contiene los archivos DLL y otro contenido adecuado para esa plataforma.
-- [packages.config](../reference/packages-config.md): El `targetframework` atributo de una dependencia especifica la variante de un paquete para instalarlo.
+- [archivo de proyecto](../create-packages/multiple-target-frameworks-project-file.md): En el caso de los proyectos de estilo SDK, el *. csproj* contiene las referencias de la plataforma de destino.
+- [manifiesto de. nuspec](../reference/nuspec.md): Un paquete puede indicar que los paquetes distintos se van a incluir en un proyecto en función de la plataforma de destino del proyecto.
+- [nombre de la carpeta. nupkg](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): Se puede asignar un nombre a `lib` las carpetas dentro de la carpeta de un paquete según la plataforma de destino, cada una de las cuales contiene los archivos dll y otro contenido apropiado para ese marco.
+- [packages.config](../reference/packages-config.md): El `targetframework` atributo de una dependencia especifica la variante de un paquete que se va a instalar.
 
 > [!Note]
 > El código fuente del cliente de NuGet que calcula las siguientes tablas se encuentra en las siguientes ubicaciones:
-> - Nombres de plataforma admitidos: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> - Prioridad y asignación: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> - Nombres de marco compatibles: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> - Prioridad y asignación de Framework: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 ## <a name="supported-frameworks"></a>Marcos de trabajo admitidos
 
-A una plataforma normalmente se hace referencia mediante un moniker corto de la plataforma de destino o TFM. En .NET Standard Esto también se ha generalizado a *TxM* para permitir una referencia única a varias plataformas.
+A una plataforma normalmente se hace referencia mediante un moniker corto de la plataforma de destino o TFM. En .NET Standard esto también se generaliza a *TxM* para permitir una sola referencia a varios marcos de trabajo.
 
 Los clientes de NuGet admiten las plataformas indicadas en la tabla siguiente. Los equivalentes se muestran entre corchetes []. Tenga en cuenta que es posible que algunas herramientas, como `dotnet`, usen variaciones de TFM canónicos en algunos archivos. Por ejemplo, `dotnet pack` usa `.NETCoreApp2.0` en un archivo `.nuspec` en lugar de `netcoreapp2.0`. Las distintas herramientas del cliente de NuGet controlan estas variaciones sin problema, pero siempre debe usar TFM canónicos al editar archivos directamente.
 
-| Name | Abreviatura | TFMs/TxMs |
+| NOMBRE | Abreviatura | TFMs/TxMs |
 | ------------- | ------------ | --------- |
 |.NET Framework | net | net11 |
 | | | net20 |
@@ -68,7 +69,7 @@ Windows Phone (SL) | wp | wp [wp7] |
 Windows Phone (UWP) | | wpa81 |
 Plataforma universal de Windows | uap | uap [uap10.0] |
 | | | uap10.0 |
-| | | uap10.0.xxxxx (donde 10.0.xxxxx es la versión mínima de plataforma de destino de la aplicación consumidora) |
+| | | UAP 10.0. xxxxx (donde 10.0. xxxxx es la versión mínima de la plataforma de destino de la aplicación de consumo) |
 .NET Standard | netstandard | netstandard1.0 |
 | | | netstandard1.1 |
 | | | netstandard1.2 |
@@ -120,9 +121,9 @@ Hay una serie de plataformas relacionadas y compatibles entre sí, pero no neces
 | win (Microsoft Store) | winrt |
 | | |
 
-## <a name="net-platform-standard"></a>.NET Platform Standard
+## <a name="net-standard"></a>Estándar neto
 
-[.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md) simplifica las referencias entre plataformas compatibles con archivos binarios, lo que permite que una sola plataforma de destino haga referencia a una combinación de otras (para obtener información, vea el [manual de .NET](/dotnet/articles/standard/index)).
+[.Net Standard](/dotnet/standard/net-standard) simplifica las referencias entre los marcos de trabajo compatibles con binarios, lo que permite que una sola plataforma de destino haga referencia a una combinación de otras. (para obtener información, vea el [manual de .NET](/dotnet/articles/standard/index)).
 
 La herramienta de NuGet [Get Nearest Framework](https://aka.ms/s2m3th) simula lo que usa NuGet para seleccionar una plataforma entre los muchos recursos de plataformas disponibles en un paquete en función de la plataforma del proyecto.
 
@@ -131,7 +132,7 @@ La serie de monikers `dotnet` se debe usar en NuGet 3.3 y en versiones anteriore
 ## <a name="portable-class-libraries"></a>Bibliotecas de clases portables
 
 > [!Warning]
-> **No se recomiendan las PCL**. Aunque se admiten las PCL, los autores de paquetes deben admitir .NET Standard. .NET Platform Standard es una evolución de las PCL y representa la portabilidad binaria entre plataformas mediante un moniker único que no está vinculado a una biblioteca estática como *portable-a + b + c* monikers.
+> **No se recomiendan las PCL**. Aunque se admiten las PCL, los autores de paquetes deben admitir .NET Standard. .NET Platform Standard es una evolución de PCL y representa la portabilidad binaria entre plataformas con un solo moniker que no está vinculado a una biblioteca estática como monikers *portable-a + b + c* .
 
 Para definir una plataforma de destino que haga referencia a varias plataformas de destino secundarias, use la palabra clave `portable` para prefijar la lista de las plataformas a las que se hace referencia. Evite incluir artificialmente plataformas adicionales que no estén directamente compiladas, ya que puede provocar efectos secundarios imprevistos en esas plataformas.
 
@@ -282,7 +283,7 @@ Las plataformas adicionales definidas por terceros proporcionan compatibilidad c
 
 Además, los paquetes de NuGet que tienen como destino Xamarin pueden usar otras plataformas definidas por Xamarin. Vea [Manually Creating NuGet Packages for Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/) (Crear manualmente paquetes de NuGet para Xamarin).
 
-| Name | Descripción | .NET Standard |
+| NOMBRE | DESCRIPCIÓN | .NET Standard |
 | --- | --- | ---
 | monoandroid | Soporte mono para el sistema operativo Android | netstandard1.4 |
 | monotouch | Soporte mono para iOS | netstandard1.4 |
