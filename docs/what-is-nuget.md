@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: 087bb043ba4b388b9de6d94cd838915a2e7247f4
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: e11eed5c614a7634fa578ebc84c3ab2068522fe2
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426143"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842197"
 ---
 # <a name="an-introduction-to-nuget"></a>Una introducción a NuGet
 
@@ -45,8 +45,8 @@ Además de la compatibilidad con el hospedaje, NuGet también proporciona una va
 
 | Herramienta | Plataformas | Escenarios aplicables | DESCRIPCIÓN |
 | --- | --- | --- | --- |
-| [CLI de dotnet](consume-packages/install-use-packages-dotnet-cli.md) | Todas | Creación, Consumo | Herramienta CLI para las bibliotecas .NET Core y .NET Standard y para los proyectos de estilo SDK que tienen como destino .NET Framework (consulte [Atributo SDK](/dotnet/core/tools/csproj#additions)). Ofrece determinadas funcionalidades de la CLI de NuGet directamente en la cadena de herramientas de .NET Core. Al igual que con la CLI de NuGet, la CLI de dotnet no interactúa con proyectos de Visual Studio. |
-| [CLI de nuget.exe](consume-packages/install-use-packages-nuget-cli.md) | Todas | Creación, Consumo | Herramienta CLI para bibliotecas de .NET Framework y proyectos de estilo diferente de SDK que tienen como destino las bibliotecas de .NET Standard. Proporciona todas las funcionalidades de NuGet, con algunos comandos que se aplican de forma específica a los creadores del paquete, otros solo a los consumidores y otros a ambos. Por ejemplo, los creadores de paquetes usan el comando `nuget pack` para crear un paquete a partir de varios ensamblados y archivos relacionados, los consumidores de paquetes usan `nuget install` para incluir los paquetes en una carpeta de proyecto y todos usan `nuget config` para establecer variables de configuración de NuGet. Como herramienta independiente de la plataforma, la CLI de NuGet no interactúa con proyectos de Visual Studio. |
+| [CLI de dotnet](consume-packages/install-use-packages-dotnet-cli.md) | Todas | Creación, Consumo | Herramienta CLI para las bibliotecas .NET Core y .NET Standard y para los [proyectos de estilo SDK](resources/check-project-format.md) que tienen como destino .NET Framework. Ofrece determinadas funcionalidades de la CLI de NuGet directamente en la cadena de herramientas de .NET Core. Al igual que con la CLI de NuGet, la CLI de dotnet no interactúa con proyectos de Visual Studio. |
+| [CLI de nuget.exe](consume-packages/install-use-packages-nuget-cli.md) | Todas | Creación, Consumo | Herramienta CLI para bibliotecas .NET Framework y [proyectos que no son de estilo SDK](resources/check-project-format.md) que tienen como destino las bibliotecas .NET Standard. Proporciona todas las funcionalidades de NuGet, con algunos comandos que se aplican de forma específica a los creadores del paquete, otros solo a los consumidores y otros a ambos. Por ejemplo, los creadores de paquetes usan el comando `nuget pack` para crear un paquete a partir de varios ensamblados y archivos relacionados, los consumidores de paquetes usan `nuget install` para incluir los paquetes en una carpeta de proyecto y todos usan `nuget config` para establecer variables de configuración de NuGet. Como herramienta independiente de la plataforma, la CLI de NuGet no interactúa con proyectos de Visual Studio. |
 | [Consola del Administrador de paquetes](tools/package-manager-console.md) | Visual Studio en Windows | Consumo | Ofrece [comandos de PowerShell](tools/Powershell-Reference.md) para instalar y administrar paquetes en proyectos de Visual Studio. |
 | [Interfaz de usuario del administrador de paquetes](tools/package-manager-ui.md) | Visual Studio en Windows | Consumo | Ofrece una interfaz de usuario fácil de usar para instalar y administrar paquetes en proyectos de Visual Studio. |
 | [Administrar la interfaz de usuario de NuGet](/visualstudio/mac/nuget-walkthrough) | Visual Studio para Mac | Consumo | Ofrece una interfaz de usuario fácil de usar para instalar y administrar paquetes en proyectos de Visual Studio para Mac. |

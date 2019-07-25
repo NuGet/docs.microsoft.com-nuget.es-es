@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: c2fc11c0f5dd5d98c40c8b97f9d5a72c4a334b79
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: fd846632e7a1f5c49fa72d75b18e51cfc7539949
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427290"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67841957"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet.org
 
@@ -252,13 +252,15 @@ Siga los pasos indicados en la sección [Eliminación de la cuenta de nuget.org]
 
 Para eliminar la cuenta, tenga en cuenta que se recomienda transferir la propiedad de todos los paquetes de los que sea el único propietario. En [Administración de los propietarios de paquetes](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg) puede obtener más información sobre cómo hacerlo. Esto también nos ayudará a acelerar su solicitud.
 
+Si lo que busca es transformar su cuenta en una organización, siga los pasos indicados en [¿Cómo se transforma la cuenta de nuget.org en una organización?](#how-to-transform-my-nugetorg-account-to-an-organization)
+
 > [!Important]
 > La eliminación del usuario tendrá como resultado lo siguiente:
+>  1. Su nombre de usuario se reservará y nadie podrá volver a usarlo para crear una cuenta individual o una cuenta de organización.
 >  1. La revocación de las claves de API asociadas. 
->  2. La eliminación de la cuenta como propietario de todos los paquetes secundarios.
->  3. La desasociación de esta cuenta de todas las reservas de prefijo de identificador existentes anteriormente.
->  4. La eliminación de la cuenta como un miembro de todas las organizaciones.
->  5. El nombre de usuario se reservará y nadie podrá volver a usarlo de nuevo sin nuestro permiso.
+>  1. La eliminación de la cuenta como propietario de todos los paquetes secundarios.
+>  1. La desasociación de esta cuenta de todas las reservas de prefijo de identificador existentes anteriormente.
+>  1. La eliminación de la cuenta como un miembro de todas las organizaciones.
 
 Siga los pasos siguientes para continuar con la eliminación de la cuenta.
 1. [Inicie sesión en nuget.org](https://www.nuget.org/users/account/LogOn) con la cuenta que quiera eliminar.
