@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8cd7529c4a1ecf659abde03fb1632e26431aebf3
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 3af29e2f9b09ba5bd82779f9aacf314bd8933436
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426751"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317026"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Búsqueda y evaluación de paquetes NuGet para el proyecto
 
@@ -40,7 +40,7 @@ Algunos paquetes enumeran las plataformas que admiten directamente en la galerí
 
 Afortunadamente, puede determinar las plataformas admitidas a través de otros dos medios:
 
-1. Intentar instalar un paquete en un proyecto mediante el comando [`Install-Package`](../tools/ps-ref-install-package.md) en la consola del Administrador de paquetes NuGet. Si el paquete no es compatible, este comando muestra las plataformas admitidas del paquete.
+1. Intentar instalar un paquete en un proyecto mediante el comando [`Install-Package`](../reference/ps-reference/ps-ref-install-package.md) en la consola del Administrador de paquetes NuGet. Si el paquete no es compatible, este comando muestra las plataformas admitidas del paquete.
 
 1. Descargar el paquete desde su página en nuget.org mediante el vínculo **Descarga manual** bajo **Información**. Cambie la extensión de `.nupkg` a `.zip` y abra el archivo para examinar el contenido de su carpeta `lib`. Aquí se ven las subcarpetas de cada una de las plataformas admitidas, y cada subcarpeta se denomina con un moniker de la plataforma de destino (TFM; vea [Plataformas de destino](../reference/target-frameworks.md)). Si no ve ninguna subcarpeta bajo `lib` y solo un archivo DLL, debe intentar instalar el paquete en el proyecto para descubrir su compatibilidad.
 
@@ -58,9 +58,9 @@ En Visual Studio, cuando se usa la CLI de NuGet, NuGet no incluye las versiones 
 
     ![Casilla Incluir versión preliminar en Visual Studio](media/Prerelease_02-CheckPrerelease.png)
 
-- **Consola del Administrador de paquetes**: Use el conmutador `-IncludePrerelease` con los comandos `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` y `Update-Package`. Consulte la [referencia de PowerShell](../tools/powershell-reference.md).
+- **Consola del Administrador de paquetes**: Use el conmutador `-IncludePrerelease` con los comandos `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` y `Update-Package`. Consulte la [referencia de PowerShell](../reference/powershell-reference.md).
 
-- **CLI de nuget.exe**: Use el conmutador `-prerelease` con los comandos `install`, `update`, `delete` y `mirror`. Consulte la [referencia de la CLI de NuGet](../tools/nuget-exe-cli-reference.md)
+- **CLI de nuget.exe**: Use el conmutador `-prerelease` con los comandos `install`, `update`, `delete` y `mirror`. Consulte la [referencia de la CLI de NuGet](../reference/nuget-exe-cli-reference.md)
 
 - **CLI de dotnet.exe**: especifica la versión preliminar exacta con el argumento `-v`. Consulte la [Referencia de dotnet add package](/dotnet/core/tools/dotnet-add-package).
 

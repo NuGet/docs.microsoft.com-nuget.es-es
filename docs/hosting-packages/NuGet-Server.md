@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: e99d42744ec860976ae098be94e747ec4bc9a7c6
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 734f0a609f243c7bdb218a53ed664de68c707dd7
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551961"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317656"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -76,7 +76,7 @@ Si `packagesPath` se omite o se deja en blanco, la carpeta Paquetes es la carpet
 
 ## <a name="adding-packages-to-the-feed-externally"></a>Agregar paquetes a la fuente de forma externa
 
-Una vez que se esté ejecutando un sitio de NuGet.Server, puede agregar paquetes con el comando [nuget push](../tools/cli-ref-push.md), siempre y cuando establezca un valor de clave de API en `web.config`.
+Una vez que se esté ejecutando un sitio de NuGet.Server, puede agregar paquetes con el comando [nuget push](../reference/cli-reference/cli-ref-push.md), siempre y cuando establezca un valor de clave de API en `web.config`.
 
 Después de instalar el paquete NuGet.Server, `web.config` contiene un valor `appSetting/apiKey` vacío:
 
@@ -104,7 +104,7 @@ Si el servidor ya está protegido o no necesita una clave de API (por ejemplo, a
 
 ## <a name="removing-packages-from-the-feed"></a>Eliminación de paquetes de la fuente
 
-Con NuGet.Server, el comando [nuget delete](../tools/cli-ref-delete.md) quita un paquete del repositorio, siempre que incluya la clave de API con el comentario.
+Con NuGet.Server, el comando [nuget delete](../reference/cli-reference/cli-ref-delete.md) quita un paquete del repositorio, siempre que incluya la clave de API con el comentario.
 
 Si quiere cambiar el comportamiento para quitar el paquete de la lista (dejándolo disponible para la restauración del paquete), cambie la clave `enableDelisting` en `web.config` a true.
 

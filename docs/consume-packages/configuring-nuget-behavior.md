@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 57b7f29b533a8e6d7db2710c7e42a239f50199a1
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 5309d94fafea9cdfc3699d443393be5d381dd145
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426662"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317731"
 ---
 # <a name="common-nuget-configurations"></a>Configuraciones comunes de NuGet
 
@@ -32,7 +32,7 @@ Notas para versiones anteriores de NuGet:
 
 Un archivo `NuGet.Config` es un archivo de texto XML simple que contiene pares de clave y valor como se describe en el tema [Opciones de configuración de NuGet](../reference/nuget-config-file.md).
 
-La configuración se administra mediante el [comando config](../tools/cli-ref-config.md) de la CLI de NuGet:
+La configuración se administra mediante el [comando config](../reference/cli-reference/cli-ref-config.md) de la CLI de NuGet:
 - De forma predeterminada, los cambios se realizan en el archivo de configuración de nivel de usuario.
 - Para cambiar la configuración en un archivo diferente, use el modificador `-configFile`. En este caso, se puede usar cualquier nombre de archivo en los archivos.
 - Las claves siempre distinguen mayúsculas de minúsculas.

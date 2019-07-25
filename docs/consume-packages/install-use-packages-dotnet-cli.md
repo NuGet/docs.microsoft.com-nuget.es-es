@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: 64f3a1978cd336064a77c9f3872357e65c37fc10
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: a796c7a7537c3052259c7cf3f17d60981a495442
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842359"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317714"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>Instalación y administración de paquetes con la CLI de dotnet
 
@@ -18,7 +18,7 @@ La herramienta CLI permite instalar, desinstalar y actualizar fácilmente paquet
 
 La CLI de dotnet está diseñada para su uso en el proyecto de .NET Core y .NET Standard (tipos de proyecto de estilo SDK) y para cualquier otro proyecto de estilo SDK (por ejemplo, un proyecto de estilo SDK que tenga como destino .NET Framework). Para obtener más información, consulte [Atributo Sdk](/dotnet/core/tools/csproj#additions).
 
-En este artículo se muestra el uso básico de algunos de los comandos más comunes de la CLI de dotnet. Para la mayoría de estos comandos, la herramienta CLI busca un archivo de proyecto en el directorio actual, a menos que se especifique un archivo de proyecto en el comando (el archivo de proyecto es un modificador opcional). Para obtener una lista completa de los comandos y los argumentos que puede usar, consulte las [herramientas de la interfaz de la línea de comandos (CLI) de .NET Core](../tools/dotnet-commands.md).
+En este artículo se muestra el uso básico de algunos de los comandos más comunes de la CLI de dotnet. Para la mayoría de estos comandos, la herramienta CLI busca un archivo de proyecto en el directorio actual, a menos que se especifique un archivo de proyecto en el comando (el archivo de proyecto es un modificador opcional). Para obtener una lista completa de los comandos y los argumentos que puede usar, consulte las [herramientas de la interfaz de la línea de comandos (CLI) de .NET Core](../reference/dotnet-commands.md).
 
 ## <a name="prerequisites"></a>Requisitos previos
 

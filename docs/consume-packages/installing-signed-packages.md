@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8da57dc295ea78f2eb183226fc9b2f4a37e3f5db
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 7b92d07d19a2e9073ecc38ed37b4ee2491080443
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426633"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317773"
 ---
 # <a name="manage-package-trust-boundaries"></a>Administración de los límites de confianza de paquete
 
@@ -24,7 +24,7 @@ Los paquetes firmados no requieren ningún procedimiento específico para su ins
 > [!Note]
 > Requiere NuGet 4.9.0 o versiones posteriores y la versión 15.9 de Visual Studio u otra posterior en Windows.
 
-Para configurar la validación de las firmas de los paquetes por parte de los clientes NuGet, en el archivo [nuget.config](../reference/nuget-config-file.md) establezca la opción `signatureValidationMode` en `require` mediante el uso del comando [`nuget config`](../tools/cli-ref-config.md).
+Para configurar la validación de las firmas de los paquetes por parte de los clientes NuGet, en el archivo [nuget.config](../reference/nuget-config-file.md) establezca la opción `signatureValidationMode` en `require` mediante el uso del comando [`nuget config`](../reference/cli-reference/cli-ref-config.md).
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require
@@ -40,7 +40,7 @@ Este modo verificará que todos los paquetes se hayan firmado con alguno de los 
 
 ### <a name="trust-package-author"></a>Confianza en los autores de los paquetes
 
-Para confiar en los paquetes según la firma del autor, use el comando [`trusted-signers`](../tools/cli-ref-trusted-signers.md) para establecer la propiedad `author` en nuget.config.
+Para confiar en los paquetes según la firma del autor, use el comando [`trusted-signers`](../reference/cli-reference/cli-ref-trusted-signers.md) para establecer la propiedad `author` en nuget.config.
 
 ```cmd
 nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE40881FF5F0AD3E58965DA20A9F571EF1651A56933748E1BF1C99E537C4E039 -FingerprintAlgorithm SHA256
@@ -55,7 +55,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 ```
 
 >[!TIP]
->Use el [comando verify](../tools/cli-ref-verify.md) de `nuget.exe` para obtener el valor `SHA256` de la huella digital del certificado.
+>Use el [comando verify](../reference/cli-reference/cli-ref-verify.md) de `nuget.exe` para obtener el valor `SHA256` de la huella digital del certificado.
 
 
 ### <a name="trust-all-packages-from-a-repository"></a>Confianza en todos los paquetes de un repositorio
@@ -95,7 +95,7 @@ En algunos casos es posible que quiera activar la verificación para el uso de p
 
 ### <a name="sync-repository-certificates"></a>Sincronización de certificados de repositorios
 
-Los repositorios de paquetes deben indicar los certificados que usan en su [índice de servicios](../api/service-index.md). En algún momento el repositorio actualizará dichos certificados, por ejemplo, cuando expiren. Cuando esto ocurra, los clientes que tengan directivas específicas deberán actualizar la configuración para incluir el certificado que se acabe de agregar. Puede actualizar fácilmente los firmantes de confianza asociados a un repositorios mediante el [comando trusted-signers sync](../tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-) de `nuget.exe`.
+Los repositorios de paquetes deben indicar los certificados que usan en su [índice de servicios](../api/service-index.md). En algún momento el repositorio actualizará dichos certificados, por ejemplo, cuando expiren. Cuando esto ocurra, los clientes que tengan directivas específicas deberán actualizar la configuración para incluir el certificado que se acabe de agregar. Puede actualizar fácilmente los firmantes de confianza asociados a un repositorios mediante el [comando trusted-signers sync](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-) de `nuget.exe`.
 
 ### <a name="schema-reference"></a>Referencia del esquema
 

@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 20a55c6ba89478e70d8e6837aaebc1b7b7754a93
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 9094d6b4a2dbd6ea1899b4470624948ce7c21f43
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842438"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317621"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -36,9 +36,9 @@ Para más información, vea [Búsqueda y selección de paquetes](../consume-pack
 
 **¿Cómo se admite NuGet en los diferentes productos de Visual Studio?**
 
-- Visual Studio en Windows admite la [Interfaz de usuario del Administrador de paquetes](../tools/package-manager-ui.md) y la [Consola del Administrador de paquetes](../tools/package-manager-console.md).
+- Visual Studio en Windows admite la [Interfaz de usuario del Administrador de paquetes](../consume-packages/install-use-packages-visual-studio.md) y la [Consola del Administrador de paquetes](../consume-packages/install-use-packages-powershell.md).
 - Visual Studio para Mac tiene características integradas de NuGet, como se describe en [Incluir un paquete NuGet en el proyecto](/visualstudio/mac/nuget-walkthrough).
-- Visual Studio Code (todas las plataformas) no tiene ninguna integración directa de NuGet. Use la [CLI de NuGet](../tools/nuget-exe-cli-reference.md) o [la CLI de dotnet](../tools/dotnet-commands.md).
+- Visual Studio Code (todas las plataformas) no tiene ninguna integración directa de NuGet. Use la [CLI de NuGet](../reference/nuget-exe-cli-reference.md) o [la CLI de dotnet](../reference/dotnet-commands.md).
 - Azure DevOps proporciona [un paso de compilación para restaurar paquetes NuGet](/vsts/build-release/tasks/package/nuget). También puede [hospedar fuentes privadas de distribución de paquetes NuGet en Azure DevOps](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish).
 
 **¿Cómo puedo comprobar la versión exacta de las herramientas de NuGet que están instaladas?**
@@ -59,13 +59,13 @@ NuGet es totalmente compatible con una variedad de plantillas de proyecto como W
 
 **¿Cómo puedo actualizar los paquetes que forman parte de plantillas de Visual Studio?**
 
-Vaya a la pestaña **Actualizaciones** en la interfaz de usuario del Administrador de paquetes y seleccione **Actualizar todo**, o use el [comando `Update-Package`](../tools/ps-ref-update-package.md) desde la consola del Administrador de paquetes.
+Vaya a la pestaña **Actualizaciones** en la interfaz de usuario del Administrador de paquetes y seleccione **Actualizar todo**, o use el [comando `Update-Package`](../reference/ps-reference/ps-ref-update-package.md) desde la consola del Administrador de paquetes.
 
 Para actualizar la plantilla propiamente dicha, debe actualizar manualmente el repositorio de plantillas. Vea el [blog de Xavier Decoster](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages) sobre este tema. Tenga en cuenta que esto se realiza bajo su responsabilidad, ya que es posible que las actualizaciones manuales dañen la plantilla si la versión más reciente de todas las dependencias no es compatible entre sí.
 
 **¿Puedo usar NuGet fuera de Visual Studio?**
 
-Sí, NuGet funciona directamente desde la línea de comandos. Vea la [Guía de instalación](../install-nuget-client-tools.md) y la [Referencia de la CLI](../tools/nuget-exe-cli-reference.md).
+Sí, NuGet funciona directamente desde la línea de comandos. Vea la [Guía de instalación](../install-nuget-client-tools.md) y la [Referencia de la CLI](../reference/nuget-exe-cli-reference.md).
 
 ## <a name="nuget-command-line"></a>Línea de comandos de NuGet
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: 9b2a7b299a0cb944ad9045684e14cc7b83e1cff4
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 32b01e6066cf60f7a0942508e640fdd5658b4444
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426664"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68316972"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>Cómo volver a instalar y actualizar paquetes
 
@@ -61,7 +61,7 @@ En todos los casos, use la notación que se describe en [Package versioning](../
 
 ## <a name="using-update-package"></a>Usar Update-Package
 
-Si tiene en cuenta las [consideraciones](#considerations) que se describen a continuación, puede volver a instalar fácilmente cualquier paquete con el [comando Update-Package](../Tools/ps-ref-update-package.md) en la consola del Administrador de paquetes de Visual Studio (**Herramientas** > **Administrador de paquetes NuGet** > **Consola del Administrador de paquetes**):
+Si tiene en cuenta las [consideraciones](#considerations) que se describen a continuación, puede volver a instalar fácilmente cualquier paquete con el [comando Update-Package](../reference/ps-reference/ps-ref-update-package.md) en la consola del Administrador de paquetes de Visual Studio (**Herramientas** > **Administrador de paquetes NuGet** > **Consola del Administrador de paquetes**):
 
 ```ps
 Update-Package -Id <package_name> –reinstall
@@ -97,7 +97,7 @@ Update-Package
 
 Al actualizar paquetes de un proyecto o solución con [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md), se actualiza siempre a la versión más reciente del paquete (excepto los paquetes de versiones preliminares). Si quiere, los proyectos que usan `packages.config` pueden limitar las versiones de actualización, como se describe a continuación en [Restringir las versiones de actualización](#constraining-upgrade-versions).
 
-Para información detallada sobre el comando, vea la referencia de [Update-Package](../Tools/ps-ref-update-package.md).
+Para información detallada sobre el comando, vea la referencia de [Update-Package](../reference/ps-reference/ps-ref-update-package.md).
 
 ### <a name="considerations"></a>Consideraciones
 
