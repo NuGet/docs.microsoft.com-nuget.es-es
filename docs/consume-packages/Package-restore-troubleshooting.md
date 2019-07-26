@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3be8d1dad6552db2fc04b2f324145ac7ce86acb2
-ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
+ms.openlocfilehash: 287237cf4041870c562a6a7f48f233d8fdc8ef33
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467774"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842383"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Solución de errores de restauración de paquetes
 
-Este artículo se centra en los errores habituales al restaurar paquetes y los pasos necesarios para resolverlos. Para saber más sobre la restauración de paquetes, vea [Restauración de paquetes](../consume-packages/package-restore.md#enable-and-disable-package-restore).
+Este artículo se centra en los errores habituales al restaurar paquetes y los pasos necesarios para resolverlos. Para saber más sobre la restauración de paquetes, vea [Restauración de paquetes](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio).
 
 Si estas instrucciones no le ayudan, [registre un problema en GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) para que podamos examinar más detenidamente el escenario. No use el control "¿Le resultó útil esta página?" que puede aparecer en esta página, ya que no nos permite ponernos en contacto con usted para pedir más detalles.
 
@@ -29,7 +29,7 @@ Si está usando Visual Studio, primero habilite la restauración del paquete com
 
 ![Habilitar la restauración de paquetes de NuGet en Herramientas/Opciones](../consume-packages/media/restore-01-autorestoreoptions.png)
 
-Esta configuración también puede cambiarse en el archivo `NuGet.config`; vea la sección [Consentimiento](#consent).
+Esta configuración también puede cambiarse en el archivo `NuGet.config`; vea la sección [Consentimiento](#consent). Si el proyecto es uno anterior que usa la restauración de paquetes integrada de MSBuild, puede que tenga que [migrar](package-restore.md#migrate-to-automatic-package-restore-visual-studio) a la restauración automática de paquetes.
 
 <a name="missing"></a>
 
@@ -54,10 +54,10 @@ El error también se puede producir si el archivo de proyecto contiene rutas de 
 Use uno de estos métodos para restaurar los paquetes:
 
 - Si ha movido el archivo de proyecto, edite el archivo directamente para actualizar las referencias del paquete.
-- En Visual Studio, habilite la restauración del paquete seleccionando el comando de menú **Herramientas > Administrador de paquetes NuGet > Configuración del Administrador de paquetes**, establezca ambas opciones en **Restauración de paquetes** y seleccione **Aceptar**. Después vuelva a compilar la solución.
-- Para los proyectos de .NET Core, ejecute `dotnet restore` o `dotnet build` (que ejecuta automáticamente la restauración).
-- En la línea de comandos, ejecute `nuget restore` (excepto para los proyectos creados con `dotnet`, en cuyo caso se usa `dotnet restore`).
-- Para proyectos con el formato PackageReference, ejecute `msbuild -t:restore` en la línea de comandos.
+- (Visual Studio) Para habilitar la restauración de paquetes, seleccione el comando de menú **Herramientas > Administrador de paquetes NuGet > Configuración del Administrador de paquetes**, establezca ambas opciones en **Restauración de paquetes** y seleccione **Aceptar**. Después vuelva a compilar la solución.
+- (CLI de dotnet) En la línea de comandos, cambie a la carpeta que contiene el proyecto y, luego, ejecute `dotnet restore` o `dotnet build` (que ejecuta la restauración automáticamente).
+- (CLI de nuget.exe) En la línea de comandos, cambie a la carpeta que contiene el proyecto y, luego, ejecute `nuget restore` (excepto para proyectos creados con la CLI de `dotnet`, en cuyo caso debe usar `dotnet restore`).
+- (Proyectos migrados a PackageReference) En la línea de comandos, ejecute `msbuild -t:restore`.
 
 Después de una restauración correcta, el paquete debe estar presente en la carpeta *global-packages*. Para los proyectos con PackageReference, debe volverse a crear el archivo `obj/project.assets.json`; para los proyectos con `packages.config`, el paquete debe aparecer en la carpeta `packages` del proyecto . Ahora el proyecto debería compilarse correctamente. Si no es así, [registre un problema en GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) para que podamos realizar un seguimiento.
 

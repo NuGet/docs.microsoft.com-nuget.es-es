@@ -1,33 +1,34 @@
 ---
 title: Creación y publicación de un paquete de .NET Standard con Visual Studio en Windows
-description: Tutorial sobre la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio 2017 en Windows.
+description: Tutorial sobre la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio en Windows.
 author: karann-msft
 ms.author: karann
-ms.date: 05/24/2019
+ms.date: 07/09/2019
 ms.topic: quickstart
-ms.openlocfilehash: c75785d361f25564c8a59d7a2d85924c570a7b9a
-ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
+ms.openlocfilehash: d9eccfa373a5a283542fd158e76ba74b1872f3d6
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467814"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842145"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
 
 Es muy sencillo crear un paquete NuGet desde una biblioteca de clases de .NET Standard con Visual Studio en Windows y después publicarlo en nuget.org con una herramienta CLI.
 
 > [!Note]
-> Este inicio rápido se aplica solo a Visual Studio 2017 para Windows. Visual Studio para Mac no incluye las funcionalidades descritas aquí. En su lugar, use las [herramientas de la CLI de dotnet](create-and-publish-a-package-using-the-dotnet-cli.md).
+> Si usa Visual Studio para Mac, consulte [esta información](/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library) sobre cómo crear un paquete NuGet o use las [herramientas de la CLI de dotnet](create-and-publish-a-package-using-the-dotnet-cli.md).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-1. Instale cualquier edición de Visual Studio 2017 desde [visualstudio.com](https://www.visualstudio.com/) con cualquier carga de trabajo relacionada con .NET. Visual Studio de 2017 incluye automáticamente funcionalidades de NuGet cuando se instala una carga de trabajo. NET.
+1. Instale cualquier edición de Visual Studio 2017 o versiones superiores desde [visualstudio.com](https://www.visualstudio.com/) con cualquier carga de trabajo relacionada con .NET. Visual Studio 2017 y versiones superiores incluye automáticamente funcionalidades de NuGet cuando se instala una carga de trabajo. NET.
 
-1. Instale una de las herramientas de la CLI.
+1. Instale la CLI de `dotnet`.
 
-   * Para la CLI de `dotnet`, instale el [SDK de .NET Core](https://www.microsoft.com/net/download/). La CLI de dotnet es necesaria para los proyectos de .NET Standard que usan el formato de estilo SDK (atributo SDK).
-
-   * Para la CLI de `nuget.exe`, descárguela desde [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), guarde el archivo `.exe` en la carpeta adecuada y agregue esa carpeta a la variable de entorno PATH. La CLI de nuget.exe se usa para bibliotecas de .NET Standard en el formato de estilo diferente de SDK.
+   A partir de Visual Studio 2017, la CLI de `dotnet` se instala automáticamente con cualquier carga de trabajo relacionada con .NET Core. De lo contrario, instale el [SDK de .NET Core](https://www.microsoft.com/net/download/) para obtener la CLI de `dotnet`. La CLI de `dotnet` es necesaria para los proyectos .NET Standard que usan el [formato de estilo SDK](../resources/check-project-format.md) (atributo SDK). La plantilla de biblioteca de clases predeterminada en Visual Studio 2017 y versiones superiores, que se usa en este artículo, utiliza el atributo SDK.
+   
+   > [!Important]
+   > En este artículo, se recomienda la CLI de `dotnet`. Aunque puede publicar cualquier paquete NuGet mediante la CLI de `nuget.exe`, algunos de los pasos de este artículo son específicos de los proyectos de estilo SDK y de la CLI de dotnet. La CLI de nuget.exe se usa con [proyectos que no son de estilo SDK](../resources/check-project-format.md) (normalmente .NET Framework). Si está trabajando con un proyecto de este tipo, siga los procedimientos que se describen en [Creación y publicación de un paquete de .NET Framework (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) para crear y publicar el paquete.
 
 1. [Registrar una cuenta gratuita en nuget.org](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account) si aún no tiene uno. Al crear una cuenta se envía un correo electrónico de confirmación. Debe confirmar la cuenta para poder cargar un paquete.
 
@@ -59,7 +60,9 @@ namespace AppLogger
 
 ## <a name="configure-package-properties"></a>Configurar propiedades del paquete
 
-1. Seleccione el comando de menú **Proyecto > Propiedades** y luego la pestaña **Paquete**. (La pestaña **Paquete** solo aparece para proyectos de biblioteca de clases .NET Standard; si el destino es .NET Framework, vea [Create and publish a .NET Framework package](create-and-publish-a-package-using-visual-studio-net-framework.md) (Creación y publicación de un paquete de .NET Framework) en su lugar. Si no aparece para un proyecto de .NET Standard, es posible que tenga que actualizar Visual Studio 2017 a la versión más reciente).
+1. Haga clic con el botón derecho en el proyecto en el Explorador de soluciones, elija el comando de menú **Propiedades** y, luego, seleccione la pestaña **Paquete**.
+
+   La pestaña **Paquete** solo aparece con los proyectos de estilo SDK de Visual Studio, normalmente proyectos de la biblioteca de clases .NET Standard o .Net Core; si el proyecto de destino no es de estilo SDK (normalmente, .NET Framework), [migre el proyecto](../reference/migrate-packages-config-to-package-reference.md) y use la CLI de `dotnet`, o consulte en su lugar el artículo [Creación y publicación de un paquete de NET Framework](create-and-publish-a-package-using-visual-studio-net-framework.md) para instrucciones paso a paso.
 
     ![Propiedades del paquete NuGet en un proyecto de Visual Studio](media/qs_create-vs-01-package-properties.png)
 
@@ -75,6 +78,8 @@ namespace AppLogger
 
 1. Opcional: para ver las propiedades directamente en el archivo del proyecto, haga clic con el botón derecho en el proyecto en el Explorador de soluciones y seleccione **AppLogger.csproj editar**.
 
+   Esta opción solo está disponible a partir de Visual Studio 2017 para proyectos que usan el atributo de estilo SDK. En caso contrario, haga clic con el botón derecho en el proyecto y elija **Descargar proyecto**. Después, haga clic con el botón derecho en el proyecto descargado y elija **Editar AppLogger.csproj**.
+
 ## <a name="run-the-pack-command"></a>Ejecutar el comando pack
 
 1. Establezca la configuración en **Release**.
@@ -82,6 +87,8 @@ namespace AppLogger
 1. En el **Explorador de soluciones**, haga clic con el botón derecho en el proyecto y seleccione el comando **Empaquetar**:
 
     ![Comando pack de NuGet en el menú contextual de proyecto de Visual Studio](media/qs_create-vs-02-pack-command.png)
+
+    Si no ve el comando **Empaquetar**, es probable que el proyecto no sea un proyecto de estilo SDK y que tenga que usar la CLI de `nuget.exe`. [Migre el proyecto](../reference/migrate-packages-config-to-package-reference.md) y use la CLI de `dotnet`, o consulte el artículo [Creación y publicación de un paquete de .NET Framework](create-and-publish-a-package-using-visual-studio-net-framework.md) para obtener instrucciones paso a paso.
 
 1. Visual Studio compila el proyecto y crea el archivo `.nupkg`. Examine la ventana **Resultados** para obtener más información (similar a la siguiente), que contiene la ruta de acceso al archivo de paquete. Tenga en cuenta también que el ensamblado compilado se encuentra en `bin\Release\netstandard2.0`, ya que se adapta al destino de .NET Standard 2.0.
 
@@ -116,7 +123,9 @@ Cuando tenga un archivo `.nupkg`, publíquelo en nuget.org con la CLI de `nuget.
 
 ### <a name="publish-with-dotnet-nuget-push-dotnet-cli"></a>Publicar con dotnet nuget push (CLI de dotnet)
 
-Este paso es una alternativa al uso de `nuget.exe`.
+Este paso es la alternativa recomendada al uso de `nuget.exe`.
+
+Para poder publicar el paquete, primero debe abrir una línea de comandos.
 
 [!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
@@ -124,9 +133,9 @@ Este paso es una alternativa al uso de `nuget.exe`.
 
 Este paso es una alternativa al uso de `dotnet.exe`.
 
-1. Cambie a la carpeta que contiene el archivo `.nupkg`.
+1. Abra una línea de comandos y cambie a la carpeta que contiene el archivo `.nupkg`.
 
-1. Ejecute el comando siguiente, especificando el nombre del paquete y reemplazando el valor de clave por la clave de API:
+1. Ejecute el comando siguiente; especifique el nombre del paquete (identificador único del paquete) y reemplace el valor de clave por su clave de API:
 
     ```cli
     nuget push AppLogger.1.0.0.nupkg qz2jga8pl3dvn2akksyquwcs9ygggg4exypy3bhxy6w6x6 -Source https://api.nuget.org/v3/index.json
