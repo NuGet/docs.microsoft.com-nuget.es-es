@@ -1,27 +1,27 @@
 ---
-title: Notas de la versión 1.4 de NuGet
-description: Notas de la versión de NuGet 1.4 incluidos problemas conocidos, correcciones de errores, características agregadas y dcr.
+title: Notas de la versión de NuGet 1,4
+description: Notas de la versión de NuGet 1,4, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
 author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 3f4d712f83ea108a82a1bc4910c2a721a8c24d51
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: de76cf610e580a36014be9274b9c2c762b1015ac
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550636"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317164"
 ---
-# <a name="nuget-14-release-notes"></a>Notas de la versión 1.4 de NuGet
+# <a name="nuget-14-release-notes"></a>Notas de la versión de NuGet 1,4
 
-[Notas de la versión de NuGet 1.3](../release-notes/nuget-1.3.md) | [notas de la versión 1.5 de NuGet](../release-notes/nuget-1.5.md)
+[](../release-notes/nuget-1.3.md) | Notas de la versión de Nuget 1,3 notas de la[versión de Nuget 1,5](../release-notes/nuget-1.5.md)
 
-NuGet 1.4 se publicó en 17 de junio de 2011.
+NuGet 1,4 se lanzó el 17 de junio de 2011.
 
 ## <a name="features"></a>Características
 
-### <a name="update-package-improvements"></a>Mejoras en los paquetes de actualización
-NuGet 1.4 presenta muchas mejoras para el comando Update-Package, facilitando la tarea mantener los paquetes en la misma versión en varios proyectos en una solución. Por ejemplo, al actualizar un paquete a la versión más reciente, es muy común que desea que todos los proyectos con ese paquete instalado para actualizarse a la misma verision.
+### <a name="update-package-improvements"></a>Mejoras en el paquete de actualización
+NuGet 1,4 introduce una gran cantidad de mejoras en el comando Update-package, lo que facilita la tarea de mantener los paquetes con la misma versión en varios proyectos de una solución. Por ejemplo, al actualizar un paquete a la versión más reciente, es muy habitual que todos los proyectos con ese paquete instalado se actualicen en el mismo Verision.
 
 El `Update-Package` comando ahora facilita:
 
@@ -33,34 +33,34 @@ El `Update-Package` comando ahora facilita:
 
     Update-Package PackageId
 
-#### <a name="update-all-packages-in-all-projects"></a>Actualizar todos los paquetes en todos los proyectos
+#### <a name="update-all-packages-in-all-projects"></a>Actualizar todos los paquetes de todos los proyectos
 
     Update-Package
 
-#### <a name="perform-a-safe-update-on-all-packages"></a>Realizar una actualización "segura" de todos los paquetes
-El `-Safe` marca restringe las actualizaciones a las versiones sola con el mismo componente de versión principal y secundaria. Por ejemplo, si está instalada la versión 1.0.0 de un paquete y las versiones 1.0.1, 1.0.2 y 1.1 están disponibles en la fuente, el `-Safe` marca actualiza el paquete a la versión 1.0.2. Actualizar sin el `-Safe` marca sería actualizar el paquete a la versión más reciente, 1.1.
+#### <a name="perform-a-safe-update-on-all-packages"></a>Realizar una actualización "segura" en todos los paquetes
+La `-Safe` marca restringe las actualizaciones solo a las versiones con el mismo componente de versión principal y secundaria. Por ejemplo, si se instala la versión 1.0.0 de un paquete y las versiones 1.0.1, 1.0.2 y 1,1 están disponibles en la fuente, la `-Safe` marca actualiza el paquete a 1.0.2. La actualización sin la `-Safe` marca actualizaría el paquete a la versión más reciente, 1,1.
 
     Update-Package -Safe
 
-### <a name="managing-packages-at-the-solution-level"></a>Administración de paquetes en el nivel de solución
-Antes de NuGet 1.4, instalar un paquete en varios proyectos resultaba tan complejo mediante el cuadro de diálogo. Es necesario iniciar el cuadro de diálogo una vez por proyecto.
+### <a name="managing-packages-at-the-solution-level"></a>Administrar paquetes en el nivel de solución
+Antes de NuGet 1,4, la instalación de un paquete en varios proyectos era complicada mediante el cuadro de diálogo. Requiere que se inicie el cuadro de diálogo una vez por proyecto.
 
-NuGet 1.4 agrega compatibilidad para instalar, desinstalar o actualizar paquetes en varios proyectos al mismo tiempo. Basta con iniciar la derecha, haga clic en la solución y seleccionando el **administrar paquetes de NuGet** opción de menú.
+NuGet 1,4 agrega compatibilidad para instalar o desinstalar o actualizar paquetes en varios proyectos al mismo tiempo. Simplemente inicie el haciendo clic con el botón derecho en la solución y seleccionando la opción de menú **administrar paquetes NuGet** .
 
-![Cuadro de diálogo de solución Nivel administrar paquetes de NuGet](./media/manage-nuget-packages-solution-dialog.png)
+![Cuadro de diálogo administrar paquetes NuGet en el nivel de solución](./media/manage-nuget-packages-solution-dialog.png)
 
-Tenga en cuenta que en la barra de título del cuadro de diálogo, se muestra el nombre de la solución, no el nombre de un proyecto.
-Operaciones de paquetes ahora proporcionan una lista de casillas de verificación con la lista de proyectos que se debe aplicar a la operación.
+Observe que en la barra de título del cuadro de diálogo, se muestra el nombre de la solución, no el nombre de un proyecto.
+Las operaciones de paquete ahora proporcionan una lista de casillas con la lista de proyectos a los que se debe aplicar la operación.
 
-![Administrar la selección del proyecto de paquetes de NuGet](./media/manage-nuget-packages-project-selection.png)
+![Selección de proyectos de administración de paquetes NuGet](./media/manage-nuget-packages-project-selection.png)
 
-Para obtener más información, vea el tema en [administración de paquetes para la solución](../tools/package-manager-ui.md#managing-packages-for-the-solution).
+Para obtener más información, vea el tema sobre la [Administración de paquetes para la solución](../consume-packages/install-use-packages-visual-studio.md#manage-packages-for-the-solution).
 
-### <a name="constraining-upgrades-to-allowed-versions"></a>Restringir se actualiza a versiones
-De forma predeterminada, cuando se ejecuta el `Update-Package` comando en un paquete (o actualizar el paquete mediante el cuadro de diálogo), se actualizará a la versión más reciente de la fuente. Con la nueva compatibilidad para actualizar todos los paquetes, puede haber casos en los que desea bloquear un paquete a un intervalo de versiones específico. Por ejemplo, puede saber de antemano que la aplicación sólo funcionará con la versión 2.x de un paquete, pero no 3.0 y versiones posteriores. Con el fin de evitar la actualización del paquete accidentalmente a 3, NuGet 1.4 agrega compatibilidad para restringir el intervalo de versiones que se pueden actualizar los paquetes editando manualmente el `packages.config` archivo con el nuevo `allowedVersions` atributo.
+### <a name="constraining-upgrades-to-allowed-versions"></a>Restringir las actualizaciones a las versiones permitidas
+De forma predeterminada, al ejecutar `Update-Package` el comando en un paquete (o actualizar el paquete mediante el cuadro de diálogo), se actualizará a la versión más reciente de la fuente. Con la nueva compatibilidad para actualizar todos los paquetes, puede haber casos en los que desee bloquear un paquete a un intervalo de versiones específico. Por ejemplo, puede saber de antemano que la aplicación solo funcionará con la versión 2. * de un paquete, pero no 3,0 y versiones posteriores. Con el fin de evitar que se actualice el paquete accidentalmente a 3, NuGet 1,4 agrega compatibilidad para restringir el intervalo de versiones que los paquetes pueden actualizarse a mediante la edición `packages.config` manual del archivo mediante `allowedVersions` el nuevo atributo.
 
-Por ejemplo, en el ejemplo siguiente se muestra cómo bloquear la `SomePackage` la versión del paquete de intervalo (exclusivo) 2.0 y 3.0.
-El `allowedVersions` atributo acepta los valores mediante el [formato de intervalo de la versión](../reference/package-versioning.md#version-ranges-and-wildcards).
+Por ejemplo, en el ejemplo siguiente se muestra cómo bloquear `SomePackage` el paquete con el intervalo de versión 2,0-3,0 (exclusivo).
+El `allowedVersions` atributo acepta valores mediante el [formato de intervalo de versión](../reference/package-versioning.md#version-ranges-and-wildcards).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -69,52 +69,52 @@ El `allowedVersions` atributo acepta los valores mediante el [formato de interva
 </packages>
 ```
 
-Tenga en cuenta que en 1.4, bloqueo de un paquete a un intervalo específico de versión debe ser editados manualmente. En NuGet 1.5 tenemos previsto agregar compatibilidad para la colocación de este intervalo a través de la `Install-Package` comando.
+Tenga en cuenta que, en 1,4, se debe editar manualmente el bloqueo de un paquete en un intervalo de versiones específico. En NuGet 1,5 tenemos previsto agregar compatibilidad para colocar este intervalo a través del `Install-Package` comando.
 
-### <a name="package-visualizer"></a>Visualizador de paquete
-El nuevo visualizador de paquete, iniciado a través de la **herramientas** -> **Administrador de paquetes de biblioteca** -> **paquete visualizador** le permite la opción de menú visualizar con facilidad todos los proyectos y sus dependencias de paquete dentro de una solución.
+### <a name="package-visualizer"></a>Visualizador de paquetes
+El nuevo visualizador de paquetes, que se inicia mediante la opción de menú visualizador de paquetes del**Administrador** -> de paquetes de la biblioteca de **herramientas** -> , le permite visualizar fácilmente todos los proyectos y sus dependencias de paquete en un solución.
 
-_**Nota importante:** esta característica aprovecha la compatibilidad DGML en Visual Studio. Crear la visualización solo se admite en Visual Studio Ultimate. Ver un diagrama DGML solo se admite en Visual Studio Premium o superior._
+_**Nota importante:** Esta característica aprovecha la compatibilidad con DGML en Visual Studio. Solo se admite la creación de la visualización en Visual Studio Ultimate. La visualización de un diagrama de DGML solo se admite en Visual Studio Premium o superior._
 
-![Visualizador de paquete](./media/package-visualizer.png)
+![Visualizador de paquetes](./media/package-visualizer.png)
 
-### <a name="automatic-update-check-for-the-nuget-dialog"></a>Comprobación de actualización automática para el cuadro de diálogo de NuGet
-Algunas versiones de NuGet incorporan nuevas características que se expresan a través de la `.nuspec` archivo que no se entienden las versiones anteriores del cuadro de diálogo de NuGet.
-Un ejemplo es la introducción en NuGet 1.4 para [especificar los ensamblados de framework](../release-notes/nuget-1.2.md#framework-assembly-refs).
-Por este motivo, es importante usar la versión más reciente de NuGet para asegurarse de que se pueden utilizar los paquetes que aprovecha las características más recientes.
-Para realizar actualizaciones en NuGet más visible, el cuadro de diálogo de NuGet contiene lógica para resaltar cuando hay disponible una versión más reciente.
+### <a name="automatic-update-check-for-the-nuget-dialog"></a>Comprobación automática de actualizaciones para el cuadro de diálogo NuGet
+Algunas versiones de NuGet presentan nuevas características que se expresan a través del `.nuspec` archivo que no se entienden en las versiones anteriores del cuadro de diálogo de Nuget.
+Un ejemplo es la introducción a NuGet 1,4 para [especificar ensamblados de .NET Framework](../release-notes/nuget-1.2.md#framework-assembly-refs).
+Por este motivo, es importante usar la versión más reciente de NuGet para asegurarse de que puede usar los paquetes que aprovechan las características más recientes.
+Para que las actualizaciones de NuGet sean más visibles, el cuadro de diálogo NuGet contiene lógica que se resalta cuando hay disponible una versión más reciente.
 
-_**Tenga en cuenta**: solo se realiza la comprobación de si el **Online** pestaña se ha seleccionado en la sesión actual._
+_**Nota**: La comprobación solo se realiza si se ha seleccionado la pestaña en **línea** en la sesión actual._
 
-![Administrar el cuadro de diálogo de paquetes de NuGet con la nueva versión disponible](./media/manage-nuget-packages-update-notification.png)
+![Cuadro de diálogo administrar paquetes NuGet con la nueva versión disponible](./media/manage-nuget-packages-update-notification.png)
 
-Para desactivar la comprobación automática de actualizaciones, vaya al cuadro de diálogo de configuración de NuGet y desactive la opción **buscar automáticamente actualizaciones**.
+Para desactivar la comprobación automática de actualizaciones, vaya al cuadro de diálogo Configuración de NuGet y desactive la casilla **Buscar actualizaciones automáticamente**.
 
 ![Configuración de NuGet](./media/nuget-settings.png)
 
-Esta característica se agregó realmente en la versión 1.3 de NuGet, pero no estará visible, por supuesto, hasta que una actualización a 1.3, por ejemplo, NuGet 1.4, se puso a disposición.
+Esta característica se agregó realmente en NuGet 1,3, pero no sería visible, por supuesto, hasta que haya disponible una actualización de 1,3, como NuGet 1,4.
 
-### <a name="package-manager-dialog-improvements"></a>Mejoras de cuadro de diálogo Administrador de paquetes
-* **Los nombres de menús mejorado**: se han cambiado las opciones de menú para abrir el cuadro de diálogo para mayor claridad. La opción de menú es ahora **administrar paquetes de NuGet**.
-* **Panel de detalles muestra la fecha última actualización**: este cuadro de diálogo muestra la fecha de la actualización más reciente en el panel de detalles para un paquete cuando el **Online** o **actualiza** pestaña está seleccionada.
-* **Lista de etiquetas muestra**: este cuadro de diálogo muestra las etiquetas.
+### <a name="package-manager-dialog-improvements"></a>Mejoras en el cuadro de diálogo Administrador de paquetes
+* **Nombres de menús mejorados**: Se ha cambiado el nombre de las opciones de menú para iniciar el cuadro de diálogo para mayor claridad. La opción de menú es ahora **administrar paquetes NuGet**.
+* El **Panel de detalles muestra la fecha de actualización más reciente**: El cuadro de diálogo NuGet muestra la fecha de la última actualización en el panel de detalles de un paquete cuando se selecciona la pestaña **en línea** o **actualizaciones** .
+* **Lista de etiquetas mostradas**: En el cuadro de diálogo Nuget se muestran etiquetas.
 
 ### <a name="powershell-improvements"></a>Mejoras de PowerShell
-* **Scripts de PowerShell firmados**: NuGet incluye scripts de Powershell firmados Habilitar uso en entornos más restrictivos.
-* **Solicitar soporte técnico**: la consola de administrador de paquetes ahora admite los mensajes a través de la `$host.ui.Prompt` y `$host.ui.PromptForChoice` comandos.
-* **Nombres de origen del paquete**: proporcionando el nombre de un origen del paquete se admite cuando se especifica un origen de paquete mediante el `-Source` marca.
+* **Scripts de PowerShell firmados**: NuGet incluye scripts de PowerShell firmados que permiten el uso en entornos más restrictivos.
+* **Solicitando soporte técnico**: La consola del administrador de paquetes admite ahora la solicitud `$host.ui.Prompt` a `$host.ui.PromptForChoice` través de los comandos y.
+* **Nombres de origen del paquete**: Es posible proporcionar el nombre de un origen de paquete al especificar un origen de paquete mediante `-Source` la marca.
 
-### <a name="nugetexe-command-line-improvements"></a>mejoras de la línea de comandos de NuGet.exe
-* **Comandos de NuGet personalizados**: nuget.exe es extensible a través de comandos personalizados con MEF.
-* **Más sencillo el flujo de trabajo para crear paquetes de símbolos**: el `-Symbols` marca se puede aplicar a una estructura de carpetas de convención normal en función creando un paquete de símbolos mediante la inclusión de únicamente el origen y `.pdb` archivos dentro de la carpeta.
-* **Especificar varios orígenes**: el `NuGet install` comando admite la especificación de varios orígenes con punto y coma como delimitador o especificando `-Source` varias veces.
-* **Compatibilidad con autenticación de proxy**: NuGet 1.4 agrega compatibilidad para solicitar las credenciales de usuario cuando se usa NuGet detrás de un proxy que requiera autenticación.
-* **NuGet.exe actualizar cambio importante**: el `-Self` marca ahora es necesario para que nuget.exe para actualizarse automáticamente. `nuget.exe Update` Ahora tiene una ruta de acceso a la `packages.config` archivo e intentará actualizar paquetes. Tenga en cuenta que esta actualización es limitada, que no: ** actualizar, agregar, quitar el contenido del archivo de proyecto.
-** Ejecutan scripts de Powershell en el paquete.
+### <a name="nugetexe-command-line-improvements"></a>mejoras en la línea de comandos de Nuget. exe
+* **Comandos personalizados de Nuget**: Nuget. exe es extensible a través de comandos personalizados mediante MEF.
+* Es **más sencillo el flujo de trabajo para crear paquetes de símbolos**: La `-Symbols` marca se puede aplicar a una estructura de carpetas basada en Convención normal que crea un paquete de símbolos incluyendo solo `.pdb` los archivos de origen y de la carpeta.
+* **Especificar varios orígenes**: El `NuGet install` comando admite la especificación de varios orígenes mediante punto y coma como delimitador o `-Source` especificando varias veces.
+* **Compatibilidad con autenticación de proxy**: NuGet 1,4 agrega compatibilidad para solicitar credenciales de usuario al usar NuGet detrás de un proxy que requiere autenticación.
+* **cambio importante en la actualización de Nuget. exe**: La `-Self` marca ahora es necesaria para que Nuget. exe se actualice a sí mismo. `nuget.exe Update`Ahora toma una ruta de acceso al `packages.config` archivo e intentará actualizar los paquetes. Tenga en cuenta que esta actualización está limitada, ya que no se: * * actualizar, agregar y quitar contenido en el archivo de proyecto.
+\* * Ejecute scripts de PowerShell en el paquete.
 
-### <a name="nuget-server-support-for-pushing-packages-using-nugetexe"></a>Compatibilidad de servidor de NuGet para la inserción de paquetes con nuget.exe
-NuGet incluye una manera sencilla para hospedar un [web ligero en función de repositorio de NuGet](../hosting-packages/nuget-server.md) a través de la `NuGet.Server` paquete NuGet. Con NuGet 1.4, el servidor ligero admite la inserción y eliminación de paquetes con nuget.exe.
-La versión más reciente de `NuGet.Server` agrega un nuevo `appSetting`, denominado `apiKey`. Cuando la clave se omite o se deja en blanco, la inserción de paquetes en la fuente está deshabilitada. Si la apiKey en un valor (lo ideal es que una contraseña segura) permite insertar paquetes con nuget.exe.
+### <a name="nuget-server-support-for-pushing-packages-using-nugetexe"></a>Compatibilidad del servidor de NuGet para insertar paquetes con Nuget. exe
+NuGet incluye una forma sencilla de hospedar un [repositorio de Nuget basado en web ligero](../hosting-packages/nuget-server.md) mediante el `NuGet.Server` paquete Nuget. Con NuGet 1,4, el servidor ligero permite insertar y eliminar paquetes con Nuget. exe.
+La versión más reciente `NuGet.Server` de agrega un `appSetting`nuevo denominado `apiKey`. Cuando se omite la clave o se deja en blanco, se deshabilita la inserción de paquetes en la fuente. Al establecer apiKey en un valor (idealmente, una contraseña segura), se habilita la inserción de paquetes con Nuget. exe.
 
 ```xml
 <appSettings>
@@ -124,29 +124,29 @@ La versión más reciente de `NuGet.Server` agrega un nuevo `appSetting`, denomi
 </appSettings>
 ```
 
-### <a name="support-for-windows-phone-tools-mango-edition"></a>Compatibilidad con herramientas Mango Edition de Windows Phone
-NuGet ahora se admite en la versión release candidate de herramientas de Windows Phone de Mango.
-Actualmente, las herramientas de Windows Phone no tiene compatibilidad con el Administrador de la extensión de Visual Studio instalar las herramientas de NuGet para Windows Phone, es posible que deba descargar y ejecutar manualmente la extensión VSIX.
+### <a name="support-for-windows-phone-tools-mango-edition"></a>Compatibilidad con Windows Phone Tools mango Edition
+Ahora se admite NuGet en la versión Release Candidate de herramientas de Windows Phone para mango.
+Actualmente, Windows Phone Tools no es compatible con el administrador de extensiones de Visual Studio para instalar NuGet para herramientas de Windows Phone, puede que tenga que descargar y ejecutar VSIX manualmente.
 
-Para desinstalar herramientas de NuGet para Windows Phone, ejecute el siguiente comando.
+Para desinstalar NuGet para herramientas de Windows Phone, ejecute el siguiente comando.
 
      vsixinstaller.exe /uninstall:NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5
 
 ## <a name="bug-fixes"></a>Correcciones de errores
-NuGet 1.4 tenía un total de 88 fijo de elementos de trabajo. 71 de los que se marcaron como errores.
+NuGet 1,4 tenía un total de 88 elementos de trabajo fijos. 71 se marcaron como errores.
 
-Para obtener una lista completa de trabajo elementos corregidos en NuGet 1.4, por favor, ver el [Issue Tracker para esta versión de NuGet](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.4&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
+Para obtener una lista completa de los elementos de trabajo corregidos en NuGet 1,4, consulte el [seguimiento de problemas de Nuget en esta versión](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.4&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
 
-## <a name="bug-fixes-worth-noting"></a>Correcciones de errores, cabe destacar:
+## <a name="bug-fixes-worth-noting"></a>Las correcciones de errores merecen tener en cuenta:
 
-* [Problema 603](http://nuget.codeplex.com/workitem/603): dependencias de paquetes en distintos repositorios se resuelve correctamente al especificar un origen de paquete específico.
-* [Problema 1036](http://nuget.codeplex.com/workitem/1036): agregar `NuGet Pack SomeProject.csproj` al evento de generación posterior ya no produce un bucle infinito.
-* [Problema 961](http://nuget.codeplex.com/workitem/961): `-Source` marca admite rutas de acceso relativas.
+* [Problema 603](http://nuget.codeplex.com/workitem/603): Las dependencias de paquete entre diferentes repositorios se resuelven correctamente al especificar un origen de paquete específico.
+* [Problema 1036](http://nuget.codeplex.com/workitem/1036): Al `NuGet Pack SomeProject.csproj` agregar a un evento posterior a la compilación ya no se produce un bucle infinito.
+* [Problema 961](http://nuget.codeplex.com/workitem/961): `-Source` la marca es compatible con rutas de acceso relativas.
 
-## <a name="nuget-14-update"></a>Actualización de NuGet 1.4
-Poco después del lanzamiento de NuGet 1.4, encontramos un par de problemas que era importante para corregir.
-El número de versión específica de esta actualización a 1.4 es 1.4.20615.9020.
+## <a name="nuget-14-update"></a>Actualización de NuGet 1,4
+Poco después del lanzamiento de NuGet 1,4, encontramos un par de problemas que era importante corregir.
+El número de versión específico de esta actualización a 1,4 es 1.4.20615.9020.
 
 ### <a name="bug-fixes"></a>Correcciones de errores
-* [Problema 1220](http://nuget.codeplex.com/workitem/1220): no se ejecuta Update-Package `install.ps1` / `uninstall.ps1` en todos los proyectos cuando hay más de un proyecto
-* [Problema 1156](http://nuget.codeplex.com/workitem/1156): consola de administrador de paquetes atascado en W2K3/XP (cuando no está instalado el 2 de Powershell)
+* [Problema 1220](http://nuget.codeplex.com/workitem/1220): Update-package no se `install.ps1` ejecuta / `uninstall.ps1` en todos los proyectos cuando hay más de un proyecto
+* [Problema 1156](http://nuget.codeplex.com/workitem/1156): La consola del administrador de paquetes se bloqueó en W2K3/XP (cuando PowerShell 2 no está instalado)
