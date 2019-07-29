@@ -1,16 +1,16 @@
 ---
-title: Creación y publicación de un paquete de .NET Standard con Visual Studio en Windows
+title: Creación y publicación de un paquete NuGet de .NET Standard con Visual Studio en Windows
 description: Tutorial sobre la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio en Windows.
 author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: quickstart
-ms.openlocfilehash: d9eccfa373a5a283542fd158e76ba74b1872f3d6
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 86e71460094de9b799384db83456a68db57647af
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842145"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419924"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
 
@@ -21,9 +21,9 @@ Es muy sencillo crear un paquete NuGet desde una biblioteca de clases de .NET St
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-1. Instale cualquier edición de Visual Studio 2017 o versiones superiores desde [visualstudio.com](https://www.visualstudio.com/) con cualquier carga de trabajo relacionada con .NET. Visual Studio 2017 y versiones superiores incluye automáticamente funcionalidades de NuGet cuando se instala una carga de trabajo. NET.
+1. Instale cualquier edición de Visual Studio 2017 o versiones posteriores desde [visualstudio.com](https://www.visualstudio.com/) con una carga de trabajo relacionada con .NET Core.
 
-1. Instale la CLI de `dotnet`.
+1. Si aún no lo está, instale la CLI `dotnet`.
 
    A partir de Visual Studio 2017, la CLI de `dotnet` se instala automáticamente con cualquier carga de trabajo relacionada con .NET Core. De lo contrario, instale el [SDK de .NET Core](https://www.microsoft.com/net/download/) para obtener la CLI de `dotnet`. La CLI de `dotnet` es necesaria para los proyectos .NET Standard que usan el [formato de estilo SDK](../resources/check-project-format.md) (atributo SDK). La plantilla de biblioteca de clases predeterminada en Visual Studio 2017 y versiones superiores, que se usa en este artículo, utiliza el atributo SDK.
    
@@ -150,7 +150,7 @@ Este paso es una alternativa al uso de `dotnet.exe`.
     Your package was pushed.
     ```
 
-Vea [nuget push](../tools/cli-ref-push.md).
+Vea [nuget push](../reference/cli-reference/cli-ref-push.md).
 
 ### <a name="publish-errors"></a>Errores de publicación
 
@@ -185,7 +185,7 @@ De este modo, se incluirá un archivo denominado `readme.txt` en la raíz del pa
 - [Crear un paquete](../create-packages/creating-a-package.md)
 - [Publicar un paquete](../nuget-org/publish-a-package.md)
 - [Paquetes de versión preliminar](../create-packages/Prerelease-Packages.md)
-- [Admitir varias plataformas de destino](../create-packages/supporting-multiple-target-frameworks.md)
+- [Admitir varias plataformas de destino](../create-packages/multiple-target-frameworks-project-file.md)
 - [Control de versiones del paquete](../reference/package-versioning.md)
 - [Creación de paquetes localizados](../create-packages/creating-localized-packages.md)
 - [Documentación de la biblioteca de .NET Standard](/dotnet/articles/standard/library)
