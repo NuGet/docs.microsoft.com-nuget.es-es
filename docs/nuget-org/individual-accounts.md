@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: e1e31e0534706dab43f8d7b1b0db059cd6f29b80
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: c88b88015bd6d5bae4789765126c0a3dec527e24
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427140"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419858"
 ---
 # <a name="individual-accounts"></a>Cuentas individuales
 
@@ -45,3 +45,27 @@ Para crear una cuenta de NuGet.org, necesita una cuenta personal de Microsoft (M
 1. Haga clic en el botón **Registrar**.
 
 Ya tiene una cuenta de NuGet.org. Puede realizar la administración de la cuenta en la página de [configuración de la cuenta](https://www.nuget.org/account).
+
+## <a name="enable-two-factor-authentication-2fa"></a>Habilitación de la autenticación en dos fases (2FA)
+
+Para proteger mejor la cuenta, habilite la autenticación en dos fases (recomendado).
+
+1. Cuando haya iniciado sesión en la cuenta, abra su perfil y elija **Habilitar** en **Cuenta de inicio de sesión**.
+
+   ![Habilitación de la autenticación en dos fases](media/nuget-org-register-2fa.png)
+
+   Verá un mensaje que le indica que la próxima vez que inicie sesión en *nuget.org*, se le pedirán credenciales adicionales.
+
+2. Para completar la autenticación en este momento, cierre la sesión y vuelva a iniciarla.
+
+3. Cuando inicie sesión, elija si la segunda forma de autenticación será por texto o correo electrónico.
+
+   Compruebe el número de teléfono o el correo electrónico que ya tiene asociado con su cuenta de Microsoft. Es posible que tenga que escribir un nuevo número de teléfono o correo electrónico para la cuenta. Si es así, escriba la información necesaria tal como se indica y haga clic en **Siguiente**.
+
+   ![Habilitación de la autenticación en dos fases](media/nuget-org-sign-in-2fa.png)
+
+4. Revise el dispositivo o la cuenta de correo electrónico y escriba el código que acaba de recibir.
+
+   ![Habilitación de la autenticación en dos fases](media/nuget-org-enter-code-2fa.png)
+
+5. Siga cualquier instrucción adicional para completar la autenticación en dos fases.

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4b365488c8dd0e081449552b06451e7b40b5223b
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: f5d418fd5b6b9bb88958d6b7e9e3034f40485a7d
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426612"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419961"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>Administración de las carpetas de paquetes globales, de caché y temporales
 
@@ -18,7 +18,7 @@ Cada vez que instala, actualiza o restaura un paquete, NuGet administra los paqu
 
 | nombre | Descripción y ubicación (por usuario)|
 | --- | --- |
-| global‑packages | La carpeta *global-packages* es donde NuGet instala los paquetes que se descargan. Cada paquete se expande totalmente en una subcarpeta que coincida con el identificador y el número de versión del paquete. Los proyectos con el formato PackageReference siempre usan los paquetes directamente de esta carpeta. Cuando se usa `packages.config`, los paquetes se instalan en la carpeta *global-packages* y luego se copian en la carpeta `packages` del proyecto.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Se invalida mediante la variable de entorno NUGET_PACKAGES, las [opciones de configuración](../reference/nuget-config-file.md#config-section) `globalPackagesFolder` o `repositoryPath` (cuando se usa PackageReference y `packages.config`, respectivamente) o la propiedad `RestorePackagesPath` de MSBuild (solo MSBuild). La variable de entorno tiene prioridad sobre la opción de configuración.</li></ul> |
+| global‑packages | La carpeta *global-packages* es donde NuGet instala los paquetes que se descargan. Cada paquete se expande totalmente en una subcarpeta que coincida con el identificador y el número de versión del paquete. Los proyectos con el formato [PackageReference](package-references-in-project-files.md) siempre usan los paquetes directamente de esta carpeta. Cuando se usa [packages.config](../reference/packages-config.md), los paquetes se instalan en la carpeta *global-packages* y luego se copian en la carpeta `packages` del proyecto.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Se invalida mediante la variable de entorno NUGET_PACKAGES, las [opciones de configuración](../reference/nuget-config-file.md#config-section) `globalPackagesFolder` o `repositoryPath` (cuando se usa PackageReference y `packages.config`, respectivamente) o la propiedad `RestorePackagesPath` de MSBuild (solo MSBuild). La variable de entorno tiene prioridad sobre la opción de configuración.</li></ul> |
 | http-cache | El Administrador de paquetes de Visual Studio (NuGet 3.x y versiones posteriores) y la herramienta `dotnet` almacenan copias de los paquetes descargados en esta caché (guardados como archivos `.dat`), organizados en subcarpetas para cada origen de paquete. Los paquetes no se expanden y la caché tiene un plazo de expiración de 30 minutos.<br/><ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Se invalida mediante la variable de entorno NUGET_HTTP_CACHE_PATH.</li></ul> |
 | temp | Carpeta donde NuGet almacena los archivos temporales durante sus diversas operaciones.<br/><li>Windows: `%temp%\NuGetScratch`</li><li>Mac/Linux: `/tmp/NuGetScratch`</li></ul> |
 | plugins-cache **4.8+** | Carpeta en la que NuGet almacena los resultados de la solicitud de notificaciones de la operación.<br/><ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>Se invalida mediante la variable de entorno NUGET_PLUGINS_CACHE_PATH.</li></ul> |
@@ -34,7 +34,7 @@ Para obtener más información, vea [¿Qué ocurre cuando se instala un paquete?
 
 ## <a name="viewing-folder-locations"></a>Visualización de ubicaciones de carpeta
 
-Puede ver las ubicaciones mediante el [comando nuget locals](../tools/cli-ref-locals.md):
+Puede ver las ubicaciones mediante el [comando nuget locals](../reference/cli-reference/cli-ref-locals.md):
 
 ```cli
 # Display locals for all folders: global-packages, http cache, temp and plugins cache

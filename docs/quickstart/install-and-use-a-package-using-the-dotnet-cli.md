@@ -1,16 +1,16 @@
 ---
-title: Guía de introducción al uso de paquetes NuGet mediante la CLI de dotnet
+title: Instalación y uso de un paquete NuGet con la CLI de dotnet
 description: Tutorial sobre el proceso de instalación y uso de un paquete NuGet en un proyecto de .NET Core.
 author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 0d637c441cf9f36e8e3e04e47b524b2defecae52
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: ee456fd49675db37fee78dc14502a897d84a2b99
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67841666"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342462"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>Inicio rápido: Instalar y usar un paquete con la CLI de dotnet
 
@@ -101,9 +101,15 @@ Los paquetes NuGet pueden instalarse en todo tipo de proyecto de .NET. En este t
     }
     ```
 
-## <a name="related-articles"></a>Artículos relacionados
+## <a name="next-steps"></a>Pasos siguientes
 
-- [Instalación y uso de paquetes con la CLI de dotnet](../consume-packages/install-use-packages-dotnet-cli.md)
+¡Enhorabuena por instalar y usar su primer paquete NuGet!
+
+> [!div class="nextstepaction"]
+> [Instalación y uso de paquetes con la CLI de dotnet](../consume-packages/install-use-packages-dotnet-cli.md)
+
+Para explorar más de lo que NuGet ofrece, seleccione los siguientes vínculos.
+
 - [Información general y flujo de trabajo del consumo de paquetes](../consume-packages/overview-and-workflow.md)
 - [Búsqueda y selección de paquetes](../consume-packages/finding-and-choosing-packages.md)
-- [Configuraciones comunes de NuGet](../consume-packages/configuring-nuget-behavior.md)
+- [Referencias de paquete en archivos de proyecto](../consume-packages/package-references-in-project-files.md)

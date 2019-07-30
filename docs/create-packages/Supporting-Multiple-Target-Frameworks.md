@@ -3,22 +3,22 @@ title: Compatibilidad con múltiples versiones de paquetes NuGet
 description: Descripción de los distintos métodos para fijar como destino varias versiones de .NET Framework desde un único paquete de NuGet.
 author: karann-msft
 ms.author: karann
-ms.date: 09/27/2017
+ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: a755438c1f63d33271f636cb663cc5b51a5aecbc
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: d12b12c4670f5dcb4c1e7e475d77926bd5d3935b
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324817"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342506"
 ---
-# <a name="supporting-multiple-net-framework-versions"></a>Compatibilidad con varias versiones de .NET Framework
+# <a name="support-multiple-net-versions"></a>Compatibilidad con varias versiones de .NET
 
-*Para los proyectos de .NET Core en los que se usa NuGet 4.0+, vea [pack y restore de NuGet como destinos de MSBuild](../reference/msbuild-targets.md) para obtener más información sobre la compatibilidad cruzada.*
+Muchas bibliotecas tienen como destino una versión concreta de .NET Framework. Por ejemplo, podría tener una versión de la biblioteca que sea específica de UWP y otra que aproveche las ventajas de las características de la versión 4.6 de .NET Framework. Para adecuarse a esto, NuGet admite colocar varias versiones de la misma biblioteca en un solo paquete.
 
-Muchas bibliotecas tienen como destino una versión concreta de .NET Framework. Por ejemplo, podría tener una versión de la biblioteca que sea específica de UWP y otra que aproveche las ventajas de las características de la versión 4.6 de .NET Framework.
+En este artículo se describe el diseño de un paquete NuGet, independientemente de cómo se compila el paquete o los ensamblados (es decir, el diseño es el mismo ya sea que se usen archivos *.csproj* que no son de estilo SDK y un archivo *.nuspec* personalizado, o bien un solo archivo *.csproj* de estilo SDK con varios destinos). En el caso de un proyecto de estilo SDK, los [destinos de paquetes](../reference/msbuild-targets.md) de NuGet saben cómo se debe diseñar el paquete y automatizan la colocación de los ensamblados en las carpetas lib correctas y la creación de grupos de dependencias para cada marco de destino (TFM). Para instrucciones detalladas, consulte [Compatibilidad con varias versiones de .NET Framework en el archivo del proyecto](multiple-target-frameworks-project-file.md).
 
-Para dar cabida a esto, NuGet permite colocar varias versiones de la misma biblioteca en un único paquete cuando se usa el método de directorio de trabajo basado en convenciones, descrito en [Creating a package](../create-packages/creating-a-package.md#from-a-convention-based-working-directory) (Crear un paquete).
+Debe diseñar manualmente el paquete tal como se describe en este artículo al usar el método del directorio de trabajo basado en conversiones que se describe en [Creación de un paquete](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). En el caso de un proyecto de estilo SDK, se recomienda el método automatizado, pero también podría elegir diseñar manualmente el paquete tal como se describe en este artículo.
 
 ## <a name="framework-version-folder-structure"></a>Estructura de carpetas de la versión de las plataformas
 

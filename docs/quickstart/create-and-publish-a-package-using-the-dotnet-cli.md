@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: 4e96d9969c8b4570ee69501d6529986f891ea4dc
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 30a77b427fe0a33b41262c5784045e5a6b10852f
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842609"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419990"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Inicio rápido: Creación y publicación de un paquete (CLI de dotnet)
 
@@ -101,12 +101,18 @@ Cuando tenga un archivo `.nupkg`, publíquelo en nuget.org con el comando `dotne
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## <a name="related-topics"></a>Temas relacionados
+## <a name="next-steps"></a>Pasos siguientes
 
-- [Crear un paquete](../create-packages/creating-a-package.md)
+¡Enhorabuena por crear su primer paquete NuGet!
+
+> [!div class="nextstepaction"]
+> [Crear un paquete](../create-packages/creating-a-package-dotnet-cli.md)
+
+Para explorar más de lo que NuGet ofrece, seleccione los siguientes vínculos.
+
 - [Publicar un paquete](../nuget-org/publish-a-package.md)
 - [Paquetes de versión preliminar](../create-packages/Prerelease-Packages.md)
-- [Admitir varias plataformas de destino](../create-packages/supporting-multiple-target-frameworks.md)
+- [Admitir varias plataformas de destino](../create-packages/multiple-target-frameworks-project-file.md)
 - [Control de versiones del paquete](../reference/package-versioning.md)
 - [Creación de paquetes localizados](../create-packages/creating-localized-packages.md)
 - [Creación de paquetes de símbolos](../create-packages/symbol-packages-snupkg.md)

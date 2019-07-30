@@ -1,24 +1,24 @@
 ---
-title: Cómo crear un paquete NuGet
+title: Creación de un paquete NuGet con la CLI de nuget.exe
 description: Un guía detallada sobre el proceso de diseño y creación de un paquete NuGet, incluidos puntos de decisión clave como archivos y control de versiones.
 author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1dce8556448131c36680167fdc3605e4378b9178
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 894a39e9e67508234295db128928b09da7f468f0
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842305"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419820"
 ---
-# <a name="create-nuget-packages"></a>Creación de paquetes NuGet
+# <a name="create-a-package-using-the-nugetexe-cli"></a>Creación de un paquete con la CLI de nuget.exe
 
 Con independencia de lo que haga el paquete o lo que contenga el código, use una de las herramientas de CLI, ya sea `nuget.exe` o `dotnet.exe`, para empaquetar esa funcionalidad en un componente que se pueda compartir y usar por parte de otros desarrolladores. Para instalar las herramientas de CLI de NuGet, consulte [Instalación de las herramientas del cliente NuGet](../install-nuget-client-tools.md). Tenga en cuenta que Visual Studio no incluye una herramienta de CLI de manera automática.
 
-- Con los proyectos .NET Core y .NET Standard que usan el [formato de estilo SDK](../resources/check-project-format.md) y cualquier otro proyecto de estilo SDK, NuGet usa la información del archivo de proyecto directamente para crear un paquete. Para conocer los pasos detallados,, consulte [Create .NET Standard Packages with dotnet CLI](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) (Creación de paquetes de .NET Standard con la CLI de dotnet), [Create .NET Standard Packages with Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md) (Creación de paquetes de .NET Standard con Visual Studio) o [NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md) (Empaquetar paquetes NuGet y restaurarlos como destinos de MSBuild).
+- Con los proyectos que no son de estilo SDK, normalmente proyectos de .NET Framework, siga los pasos descritos en este artículo para crear un paquete. Para instrucciones paso a paso sobre cómo usar Visual Studio y la CLI de `nuget.exe`, consulte [Creación y publicación de un paquete de .NET Framework](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md).
 
-- Con los proyectos que no son de estilo SDK, normalmente proyectos de .NET Framework, siga los pasos descritos en este artículo para crear un paquete. También puede seguir los pasos descritos en [Creación y publicación de un paquete de .NET Framework](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md) para crear un paquete mediante la CLI de `nuget.exe` y Visual Studio.
+- En el caso de los proyectos de .NET Core y .NET Standard que usan el [formato de estilo SDK](../resources/check-project-format.md) y cualquier otro proyecto de estilo SDK, consulte [Creación de un paquete NuGet con la CLI de dotnet](creating-a-package-dotnet-cli.md).
 
 - Para los proyectos migrados desde `packages.config` a [PackageReference](../consume-packages/package-references-in-project-files.md), utilice [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
@@ -65,7 +65,7 @@ Propiedades opcionales comunes:
 
 - Notas de la versión
 - Información sobre copyright
-- Una descripción breve de la [interfaz de usuario del Administrador de paquetes en Visual Studio](../tools/package-manager-ui.md)
+- Una descripción breve de la [interfaz de usuario del Administrador de paquetes en Visual Studio](../consume-packages/install-use-packages-visual-studio.md)
 - Un Id. de configuración regional
 - URL de proyecto
 - Licencia como expresión o archivo (`licenseUrl` está en desuso; [emplee el elemento de metadatos nuspec `license`](../reference/nuspec.md#license))
@@ -369,7 +369,7 @@ Una vez que `nuget pack` es correcto, tendrá un archivo `.nupkg` que se puede p
 
 ### <a name="additional-options"></a>Opciones adicionales
 
-Puede usar diversos modificadores de línea de comandos con `nuget pack` para excluir archivos, reemplazar el número de versión en el manifiesto y cambiar la carpeta de salida, entre otras características. Para obtener una lista completa, consulte la [referencia del comando pack](../tools/cli-ref-pack.md).
+Puede usar diversos modificadores de línea de comandos con `nuget pack` para excluir archivos, reemplazar el número de versión en el manifiesto y cambiar la carpeta de salida, entre otras características. Para obtener una lista completa, consulte la [referencia del comando pack](../reference/cli-reference/cli-ref-pack.md).
 
 Las opciones siguientes son algunas comunes en proyectos de Visual Studio:
 
@@ -404,7 +404,7 @@ Puede probar las instalaciones de forma manual en Visual Studio o en la línea d
 Para las pruebas automatizadas, el proceso básico es el siguiente:
 
 1. Copie el archivo `.nupkg` en una carpeta local.
-1. Agregue la carpeta a los orígenes de paquete mediante el comando `nuget sources add -name <name> -source <path>` (vea [Orígenes de nuget](../tools/cli-ref-sources.md)). Tenga en cuenta que solo es necesario establecer este origen local una vez en un equipo determinado.
+1. Agregue la carpeta a los orígenes de paquete mediante el comando `nuget sources add -name <name> -source <path>` (vea [Orígenes de nuget](../reference/cli-reference/cli-ref-sources.md)). Tenga en cuenta que solo es necesario establecer este origen local una vez en un equipo determinado.
 1. Instale el paquete desde ese origen mediante `nuget install <packageID> -source <name>`, donde `<name>` coincide con el nombre del origen tal como se indicó a `nuget sources`. Especificar el origen asegura que el paquete se instala únicamente desde ese origen.
 1. Examine el sistema de archivos para comprobar que los archivos se instalan correctamente.
 

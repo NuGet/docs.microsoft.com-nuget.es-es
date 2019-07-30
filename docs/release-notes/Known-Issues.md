@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: fc338ba3810a125f638a937cf14456bf519a24a8
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: b104eb39ddeacd9ca1ea45937cf98ad57531112a
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548479"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317138"
 ---
 # <a name="known-issues-with-nuget"></a>Problemas conocidos con NuGet
 
@@ -29,7 +29,7 @@ $PAT = "Token de acceso personal" $Feed = "Dirección URL" .\nuget.exe sources a
 
 **Solución:**
 
-Almacene las contraseñas en un texto no cifrado con la opción [-StorePasswordInClearText](../tools/cli-ref-sources.md).
+Almacene las contraseñas en un texto no cifrado con la opción [-StorePasswordInClearText](../reference/cli-reference/cli-ref-sources.md).
 
 ## <a name="error-installing-packages-with-nuget-34-341"></a>Error al instalar paquetes con NuGet 3.4 y 3.4.1
 
@@ -45,7 +45,7 @@ El archivo `NuGet.Config` en la carpeta `%AppData%\NuGet\` (Windows) o `~/.nuget
 
 **Problema:**
 
-En NuGet 2.7 y en versiones posteriores, al intentar instalar cualquier paquete que contiene referencias de ensamblado, puede que reciba el mensaje de error **"La cadena de entrada no tiene el formato correcto"**, como se muestra a continuación:
+En NuGet 2.7 y en versiones posteriores, al intentar instalar cualquier paquete que contiene referencias de ensamblado, puede que reciba el mensaje de error **"La cadena de entrada no tiene el formato correcto"** , como se muestra a continuación:
 
 ```ps
 install-package log4net
@@ -75,7 +75,7 @@ Para más información sobre este error, vea este [elemento de trabajo](https://
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>Error de compilación después de la actualización de paquetes en VS 2012
 
-El problema: está usando VS 2012 RTM. Al actualizar paquetes de NuGet recibe este mensaje: "Uno o más paquetes no se pudieron desinstalar completamente" y se le pide que reinicie Visual Studio. Después de reiniciar VS, recibe errores de compilación extraños.
+El problema: Está usando VS 2012 RTM. Cuando actualiza los paquetes NuGet, recibe este mensaje: "Uno o más paquetes no se pudieron desinstalar completamente". y se le pide que reinicie Visual Studio. Después de reiniciar VS, recibe errores de compilación extraños.
 
 La causa está en que algunos archivos de los paquetes antiguos están bloqueados por un proceso de MSBuild de fondo. Incluso después de reiniciar VS, el proceso de MSBuild de fondo sigue usando los archivos de los paquetes antiguos, lo que provoca los errores de compilación.
 

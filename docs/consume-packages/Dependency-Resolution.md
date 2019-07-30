@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: a2aed3950b3e19e30d9d026ad1b9bdaef44c9d37
-ms.sourcegitcommit: 1ab750ff17e55c763d646c50e7630138804ce8b8
+ms.openlocfilehash: 178af1975fc4e6fcde8988d773812820f1f1bb84
+ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56247651"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433359"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Cómo resuelve NuGet las dependencias de paquetes
 
@@ -24,9 +24,10 @@ Cuando varios paquetes tienen la misma dependencia, entonces el mismo Id. de paq
 
 Al instalar paquetes en proyectos con el formato PackageReference, NuGet agrega referencias a un gráfico de paquete sin formato en el archivo adecuado y resuelve conflictos con antelación. Este proceso se conoce como *restauración transitiva*. La reinstalación o restauración de paquetes es un proceso de descarga de los paquetes enumerados en el gráfico, lo que produce compilaciones más rápidas y predecibles. También puede aprovechar las ventajas de las versiones comodín (flotantes), como 2.8.\*, lo que evita llamadas costosas y propensas a errores a `nuget update` en los equipos cliente y servidores de compilación.
 
-Cuando se ejecuta el proceso de restauración de NuGet antes de una compilación, primero se resuelven las dependencias en memoria y después se escribe el gráfico resultante en un archivo denominado `project.assets.json`. El archivo de recursos se encuentra en `MSBuildProjectExtensionsPath`, cuyo valor predeterminado es la carpeta "obj" del proyecto. Después, MSBuild lee este archivo y lo convierte en un conjunto de carpetas donde se pueden encontrar posibles referencias y luego se agregan al árbol del proyecto en memoria.
+Cuando se ejecuta el proceso de restauración de NuGet antes de una compilación, primero se resuelven las dependencias en memoria y después se escribe el gráfico resultante en un archivo denominado `project.assets.json`. También escribe las dependencias resultas en un archivo de bloqueo denominado `packages.lock.json`, si la [funcionalidad del archivo de bloqueo está habilitada](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#locking-dependencies).
+El archivo de recursos se encuentra en `MSBuildProjectExtensionsPath`, cuyo valor predeterminado es la carpeta "obj" del proyecto. Después, MSBuild lee este archivo y lo convierte en un conjunto de carpetas donde se pueden encontrar posibles referencias y luego se agregan al árbol del proyecto en memoria.
 
-El archivo de bloqueo es temporal y no se debe agregar al control de código fuente. Se muestra de forma predeterminada en `.gitignore` y `.tfignore`. Vea [Paquetes y control de código fuente](packages-and-source-control.md).
+El archivo `project.assets.json` es temporal y no se debe agregar al control de código fuente. Se muestra de forma predeterminada en `.gitignore` y `.tfignore`. Vea [Paquetes y control de código fuente](packages-and-source-control.md).
 
 ### <a name="dependency-resolution-rules"></a>Reglas de resolución de dependencias
 

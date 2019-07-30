@@ -1,16 +1,16 @@
 ---
-title: Creación y publicación de un paquete de NET Framework con Visual Studio en Windows
+title: Creación y publicación de un paquete NuGet de .NET Framework con Visual Studio en Windows
 description: Tutorial sobre la creación y publicación de un paquete NuGet de .NET Framework con Visual Studio en Windows.
 author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: bf561d36a06bf42c029eb96ff1b7930abffa4c0a
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 75160bf2b01f6d4707162e019a6263ddc64a6f5e
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842045"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342512"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Inicio rápido: Creación y publicación de un paquete con Visual Studio (.NET Framework, Windows)
 
@@ -162,7 +162,7 @@ Cuando tenga un archivo `.nupkg`, publíquelo en nuget.org con el comando `nuget
     Your package was pushed.
     ```
 
-Vea [nuget push](../tools/cli-ref-push.md).
+Vea [nuget push](../reference/cli-reference/cli-ref-push.md).
 
 ### <a name="publish-errors"></a>Errores de publicación
 
@@ -172,9 +172,15 @@ Vea [nuget push](../tools/cli-ref-push.md).
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## <a name="related-topics"></a>Temas relacionados
+## <a name="next-steps"></a>Pasos siguientes
 
-- [Crear un paquete](../create-packages/creating-a-package.md)
+¡Enhorabuena por crear su primer paquete NuGet!
+
+> [!div class="nextstepaction"]
+> [Crear un paquete](../create-packages/creating-a-package.md)
+
+Para explorar más de lo que NuGet ofrece, seleccione los siguientes vínculos.
+
 - [Publicar un paquete](../nuget-org/publish-a-package.md)
 - [Paquetes de versión preliminar](../create-packages/Prerelease-Packages.md)
 - [Admitir varias plataformas de destino](../create-packages/supporting-multiple-target-frameworks.md)

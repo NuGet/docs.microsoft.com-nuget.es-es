@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 845f0ea84bcb92fedf9e5f4fb2b1deee1462a004
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 726f983c2522fdb538dfce858fdf2371ec0ce188
+ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610499"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433336"
 ---
 # <a name="building-pre-release-packages"></a>Crear paquetes de versión preliminar
 
@@ -24,7 +24,7 @@ Para admitir el ciclo de vida de la versión de software, NuGet 1.6 y versiones 
 
 Puede especificar estas versiones mediante una de las maneras siguientes:
 
-- **Si el proyecto usa [`PackageReference`](../consume-packages/package-references-in-project-files.md)**: incluya el sufijo de versión semántica en el archivo `.csproj`, en el elemento [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion):
+- **Si el proyecto usa [`PackageReference`](../consume-packages/package-references-in-project-files.md)** : incluya el sufijo de versión semántica en el archivo `.csproj`, en el elemento [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion):
 
     ```xml
     <PropertyGroup>
@@ -32,7 +32,7 @@ Puede especificar estas versiones mediante una de las maneras siguientes:
     </PropertyGroup>
     ```
 
-- **Si el proyecto tiene un archivo [`packages.config`](../reference/packages-config.md)**: incluya el sufijo de versión semántica en el archivo [`.nuspec`](../reference/nuspec.md), en el elemento [`version`](../reference/nuspec.md#version):
+- **Si el proyecto tiene un archivo [`packages.config`](../reference/packages-config.md)** : incluya el sufijo de versión semántica en el archivo [`.nuspec`](../reference/nuspec.md), en el elemento [`version`](../reference/nuspec.md#version):
 
     ```xml
     <version>1.0.1-alpha</version>
@@ -50,9 +50,9 @@ De forma predeterminada, NuGet no incluye las versiones preliminares al trabajar
 
     Si marca o desmarca esta casilla, se actualizarán la interfaz de usuario del Administrador de paquetes y la lista de versiones disponibles que puede instalar.
 
-- **Consola del Administrador de paquetes**: Use el conmutador `-IncludePrerelease` con los comandos `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` y `Update-Package`. Consulte la [referencia de PowerShell](../tools/powershell-reference.md).
+- **Consola del Administrador de paquetes**: Use el conmutador `-IncludePrerelease` con los comandos `Find-Package`, `Get-Package`, `Install-Package`, `Sync-Package` y `Update-Package`. Consulte la [referencia de PowerShell](../reference/powershell-reference.md).
 
-- **CLI de NuGet**: Use el conmutador `-prerelease` con los comandos `install`, `update`, `delete` y `mirror`. Consulte la [referencia de la CLI de NuGet](../tools/nuget-exe-cli-reference.md)
+- **CLI de NuGet**: Use el conmutador `-prerelease` con los comandos `install`, `update`, `delete` y `mirror`. Consulte la [referencia de la CLI de NuGet](../reference/nuget-exe-cli-reference.md)
 
 ## <a name="semantic-versioning"></a>Control de versiones semántico
 
@@ -81,10 +81,12 @@ Use los sufijos que use, NuGet les dará prioridad en orden alfabético inverso:
     1.0.1-zzz
     1.0.1-rc
     1.0.1-open
-    1.0.1-beta12
-    1.0.1-beta05
+    1.0.1-beta.12
+    1.0.1-beta.5
     1.0.1-beta
-    1.0.1-alpha2
+    1.0.1-alpha.2
     1.0.1-alpha
 
-Como se muestra, la versión sin sufijo siempre tendrá prioridad sobre las versiones preliminares. Tenga en cuenta también que, si usa sufijos numéricos con etiquetas de versión preliminar que podrían usar números de dos dígitos (o más), use ceros iniciales como en beta01 y beta05 para asegurarse de que se ordenen correctamente cuando los números vayan aumentando.
+Como se muestra, la versión sin sufijo siempre tendrá prioridad sobre las versiones preliminares.
+
+No se necesitan ceros a la izquierda con semver2, pero sí con el esquema de versión anterior. Si usa sufijos numéricos con etiquetas de versión preliminar que podrían usar números de dos dígitos (o más), use ceros iniciales como en beta01 y beta05 para asegurarse de que se ordenen correctamente cuando los números vayan aumentando. Esta recomendación solo se aplica al esquema de versión anterior.
