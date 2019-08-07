@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8e662194fffc031d0cfc0aa129a5a15b555a4231
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 8403ae38b5d2e907c6f06b162a18cdcd5425565b
+ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68420016"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817524"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -18,7 +18,7 @@ ms.locfileid: "68420016"
 
 Con el formato [PackageReference](../consume-packages/package-references-in-project-files.md) , NuGet 4.0 + puede almacenar todos los metadatos del manifiesto directamente dentro de un archivo de proyecto `.nuspec` en lugar de usar un archivo independiente.
 
-Con MSBuild 15.1 y versiones posteriores, NuGet es también un ciudadano de MSBuild de primera clase con los destinos `pack` y `restore` como se describe a continuación. Estos destinos permiten trabajar con NuGet como lo haría con cualquier otra tarea o destino de MSBuild. (Para NuGet 3.x y versiones anteriores, los comandos [pack](../reference/cli-reference/cli-ref-pack.md) y [restore](../reference/cli-reference/cli-ref-restore.md) se usan a través de la CLI de NuGet en su lugar).
+Con MSBuild 15.1 y versiones posteriores, NuGet es también un ciudadano de MSBuild de primera clase con los destinos `pack` y `restore` como se describe a continuación. Estos destinos permiten trabajar con NuGet como lo haría con cualquier otra tarea o destino de MSBuild. Para obtener instrucciones sobre cómo crear un paquete NuGet con MSBuild, consulte [crear un paquete Nuget con MSBuild](../create-packages/creating-a-package-msbuild.md). (Para NuGet 3.x y versiones anteriores, los comandos [pack](../reference/cli-reference/cli-ref-pack.md) y [restore](../reference/cli-reference/cli-ref-restore.md) se usan a través de la CLI de NuGet en su lugar).
 
 ## <a name="target-build-order"></a>Orden de compilación de destinos
 
@@ -55,8 +55,8 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 | DESCRIPCIÓN | DESCRIPCIÓN | "Descripción del paquete" | |
 | Copyright | Copyright | vacío | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
-| Sin | PackageLicenseExpression | vacío | Corresponde a`<license type="expression">` |
-| Sin | PackageLicenseFile | vacío | Se corresponde con `<license type="file">`. Es posible que deba empaquetar explícitamente el archivo de licencia al que se hace referencia. |
+| sin | PackageLicenseExpression | vacío | Corresponde a`<license type="expression">` |
+| sin | PackageLicenseFile | vacío | Se corresponde con `<license type="file">`. Es posible que deba empaquetar explícitamente el archivo de licencia al que se hace referencia. |
 | LicenseUrl | PackageLicenseUrl | vacío | `licenseUrl`está en desuso, use la propiedad PackageLicenseExpression o PackageLicenseFile |
 | ProjectUrl | PackageProjectUrl | vacío | |
 | IconUrl | PackageIconUrl | vacío | |
