@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3af29e2f9b09ba5bd82779f9aacf314bd8933436
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: cbe6fd964e88b054b9e2c5c8ead71d1f9090d63c
+ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317026"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817564"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Búsqueda y evaluación de paquetes NuGet para el proyecto
 
@@ -82,6 +82,10 @@ Al mismo tiempo, usar un paquete NuGet significa tomar una dependencia en él, p
 
     ![Estadísticas de descargas en la página de listado de un paquete](media/Finding-03-Downloads.png)
 
+- *Uso de GitHub*: en la página del paquete, la sección **Uso de GitHub** enumera los principales repositorios de GitHub que dependen de este paquete. Suele ser mejor optar por un paquete del que dependan muchos repositorios populares de GitHub.
+
+    ![Uso de GitHub](media/GitHub-Usage.png)
+
 - *Historial de versiones*: en la página del paquete, busque en **Información** la fecha de la última actualización y examine el **Historial de versiones**. Un paquete con un mantenimiento correcto tiene actualizaciones recientes y un historial de versiones completo. Los paquetes desatendidos tienen pocas actualizaciones y a menudo no se han actualizado desde hace tiempo.
 
     ![Historial de versiones en la página de listado de un paquete](media/Finding-04-VersionHistory.png)
@@ -115,6 +119,7 @@ Aquí le mostramos cómo puede leer la información contenida en el archivo de l
 1. Debe tener una etiqueta como `<license type="file">license\license.txt</license>`. Esto implica que el archivo de licencia se denomina `license.txt` y está dentro de una carpeta denominada `license`, que a su vez estaría en la raíz de esa carpeta.
 1. Navegue hasta la carpeta `license` y abra el archivo `license.txt`.
 
+Para conocer la equivalencia de MSBuild al hecho de configurar la licencia en `.nuspec`, eche un vistazo a [Empaquetado de una expresión de licencia o un archivo de licencia](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
 
 ## <a name="search-syntax"></a>Sintaxis de búsqueda
 

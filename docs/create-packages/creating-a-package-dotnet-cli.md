@@ -5,20 +5,20 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: da5dbc8b1659cef66e8439b9a3c3bb2c9205cbe6
-ms.sourcegitcommit: f291ff91561a6b58c2aec41c624d798e00ce41fa
+ms.openlocfilehash: 8222e1edfa13951d2fda9a2384d93bba38ef4979
+ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68462466"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833292"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>Creación de un paquete NuGet con la CLI de dotnet
 
 Con independencia de lo que haga el paquete o lo que contenga el código, use una de las herramientas de CLI, ya sea `nuget.exe` o `dotnet.exe`, para empaquetar esa funcionalidad en un componente que se pueda compartir y usar por parte de otros desarrolladores. En este artículo se describe cómo crear un paquete con la CLI de dotnet. Para instalar la CLI de `dotnet`, consulte [Instalación de las herramientas del cliente NuGet](../install-nuget-client-tools.md). A partir de Visual Studio 2017, la CLI de dotnet se incluye con las cargas de trabajo de .NET Core.
 
-Con los proyectos .NET Core y .NET Standard que usan el [formato de estilo SDK](../resources/check-project-format.md) y cualquier otro proyecto de estilo SDK, NuGet usa la información del archivo de proyecto directamente para crear un paquete. Para tutoriales paso a paso, consulte [Creación de paquetes de .NET Standard con la CLI de dotnet](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md), [Creación de paquetes de .NET Standard con Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md).
+Con los proyectos .NET Core y .NET Standard que usan el [formato de estilo SDK](../resources/check-project-format.md) y cualquier otro proyecto de estilo SDK, NuGet usa la información del archivo de proyecto directamente para crear un paquete. Para consultar tutoriales paso a paso, vea [Creación de paquetes de .NET Standard con la CLI de dotnet](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) o [Creación de paquetes de .NET Standard con Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md).
 
-`msbuild -t:pack` es funcionalmente equivalente a `dotnet pack`. Para compilar con MSBuild, los conceptos son los mismos que se describen en este artículo, pero los comandos de la línea de comandos son ligeramente distintos. De manera similar, con un proyecto que no es de estilo SDK y `<PackageReference>`, puede usar `msbuild /t:pack`. En estos escenarios, necesita agregar el paquete NuGet.Build.Tasks.Pack a sus dependencias. Consulte [Empaquetado y restauración de NuGet como destinos de MSBuild](../reference/msbuild-targets.md).
+`msbuild -t:pack` es funcionalmente equivalente a `dotnet pack`. Para compilar con MSBuild, vea [Creación de un paquete de NuGet con MSBuild](creating-a-package-msbuild.md).
 
 > [!IMPORTANT]
 > Este tema se aplica a los proyectos de [estilo SDK](../resources/check-project-format.md), por lo general proyectos de .NET Core y .NET Standard.
@@ -35,46 +35,42 @@ Las propiedades siguientes se requieren para crear un paquete.
 
 En Visual Studio, puede establecer estos valores en las propiedades del proyecto (haga clic con el botón derecho en el proyecto en el Explorador de soluciones, elija **Propiedades** y seleccione la pestaña **Paquete**). También puede establecer estas propiedades directamente en los archivos del proyecto (`.csproj`).
 
-    ```xml
-    <PropertyGroup>
-      ...
-      <PackageId>AppLogger</PackageId>
-      <Version>1.0.0</Version>
-      <Authors>your_name</Authors>
-      <Company>your_company</Company>
-    </PropertyGroup>
-    ```
+```xml
+<PropertyGroup>
+  <PackageId>AppLogger</PackageId>
+  <Version>1.0.0</Version>
+  <Authors>your_name</Authors>
+  <Company>your_company</Company>
+</PropertyGroup>
+```
 
 > [!Important]
 > Asigne al paquete un identificador que sea único en nuget.org o en el origen de paquete que esté usando.
+
+En el ejemplo siguiente se muestra un archivo del proyecto sencillo y completo que incluye estas propiedades. (Puede crear un nuevo proyecto predeterminado mediante el comando `dotnet new classlib`).
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>AppLogger</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>your_name</Authors>
+    <Company>your_company</Company>
+  </PropertyGroup>
+</Project>
+```
 
 También puede establecer las propiedades opcionales, como `Title`, `PackageDescription` y `PackageTags`, tal como se describe en los [destinos de paquetes de MSBuild](../reference/msbuild-targets.md#pack-target), la sección [Controlar los recursos de dependencias](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets) y [Propiedades de los metadatos de NuGet](/dotnet/core/tools/csproj#nuget-metadata-properties).
 
 > [!NOTE]
 > En el caso de los paquetes creados para consumo público, preste especial atención la propiedad **PackageTags**, dado que estas etiquetas ayudan a otros usuarios a encontrar el paquete y comprender lo que hace.
 
-Para obtener más información sobre cómo declarar dependencias y especificar números de versión, vea [Control de versiones de paquetes](../reference/package-versioning.md). También es posible exponer recursos directamente desde las dependencias en el paquete mediante los atributos `<IncludeAssets>` y `<ExcludeAssets>`. Para más información, consulte [Controlar los recursos de dependencias](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+Para obtener más información sobre cómo declarar dependencias y especificar números de versión, vea [Referencias del paquete en archivos del proyecto](../consume-packages/package-references-in-project-files.md) y [Control de versiones de paquetes](../reference/package-versioning.md). También es posible exponer recursos directamente desde las dependencias en el paquete mediante los atributos `<IncludeAssets>` y `<ExcludeAssets>`. Para más información, consulte [Controlar los recursos de dependencias](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
 ## <a name="choose-a-unique-package-identifier-and-set-the-version-number"></a>Elección de un identificador de paquete único y establecimiento del número de versión
 
-El identificador del paquete y el número de versión son los dos valores más importantes del proyecto, ya que identifican de forma única el código exacto que se incluye en el paquete.
-
-**Procedimientos recomendados para el identificador del paquete:**
-
-- **Unicidad**: el identificador debe ser único en nuget.org o en la galería que hospede el paquete. Antes de decidirse por un identificador, busque en la galería aplicable para comprobar si el nombre ya está en uso. Para evitar conflictos, un buen patrón consiste en usar el nombre de la empresa como la primera parte del identificador, por ejemplo `Contoso.`.
-- **Nombres de tipo espacio de nombres**: siguen un patrón similar a los espacios de nombres de .NET, con notación de puntos en lugar de guiones. Por ejemplo, use `Contoso.Utility.UsefulStuff` en lugar de `Contoso-Utility-UsefulStuff` o `Contoso_Utility_UsefulStuff`. También es útil para los consumidores cuando el identificador del paquete coincide con los espacios de nombres que se usan en el código.
-- **Paquetes de ejemplo**: si genera un paquete de código de ejemplo que muestra cómo usar otro paquete, adjunte `.Sample` como sufijo al identificador, como en `Contoso.Utility.UsefulStuff.Sample`. (El paquete de ejemplo tendría evidentemente una dependencia en el otro paquete). Cuando cree un paquete de ejemplo, use el valor `contentFiles` en `<IncludeAssets>`. En la carpeta `content`, organice el código de ejemplo en una carpeta denominada `\Samples\<identifier>` como en `\Samples\Contoso.Utility.UsefulStuff.Sample`.
-
-**Procedimientos recomendados para la versión del paquete:**
-
-- En general, establezca la versión del paquete para que coincida con el proyecto (o ensamblado), aunque esto no es estrictamente necesario. Esto resulta muy sencillo cuando limita un paquete a un solo ensamblado. En general, recuerde que el propio NuGet trabaja con versiones del paquete al resolver las dependencias, no con versiones de ensamblado.
-- Cuando se usa un esquema de la versión no estándar, asegúrese de tener en cuenta las reglas de control de versiones de NuGet, como se explica en [Control de versiones de paquetes](../reference/package-versioning.md). NuGet es principalmente [compatible con semver 2](../reference/package-versioning.md#semantic-versioning-200).
-
-> Para información sobre la resolución de las dependencias, consulte [Resolución de dependencias con PackageReference](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference). Para información anterior que también podría ser útil para entender mejor el control de versiones, consulte esta serie de entradas de blog.
->
-> - [Parte 1: Taking on DLL Hell](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html) (Parte 1: Enfrentarse al infierno de los archivos DLL)
-> - [Parte 2: The core algorithm](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html) (Parte 2: El algoritmo básico)
-> - [Part 3: Unification via Binding Redirects](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html) (Parte 3: Unificación mediante redirecciones de enlaces)
+[!INCLUDE [choose-package-id](includes/choose-package-id.md)]
 
 ## <a name="run-the-pack-command"></a>Ejecutar el comando pack
 
@@ -85,7 +81,7 @@ Para compilar un paquete NuGet (un archivo `.nupkg`) desde el proyecto, ejecute 
 dotnet pack
 ```
 
-El resultado mostrará la ruta de acceso al archivo `.nupkg`:
+El resultado mostrará la ruta de acceso al archivo `.nupkg`.
 
 ```output
 Microsoft (R) Build Engine version 15.5.180.51428 for .NET Core
@@ -104,7 +100,7 @@ Para ejecutar automáticamente `dotnet pack` al ejecutar `dotnet build`, agregue
 <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 ```
 
-Cuando ejecute `dotnet pack` en una solución, se empaquetan todos los proyectos de la solución que se pueden empaquetar (la propiedad [<IsPackable>](/dotnet/core/tools/csproj#nuget-metadata-properties) se establece en `true`).
+Cuando ejecute `dotnet pack` en una solución, se empaquetarán todos los proyectos de la solución que lo permitan (la propiedad [<IsPackable>](/dotnet/core/tools/csproj#nuget-metadata-properties) se establece en `true`).
 
 > [!NOTE]
 > Cuando genera automáticamente el paquete, el tiempo de empaquetado aumenta el tiempo de compilación del proyecto.

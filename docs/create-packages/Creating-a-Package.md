@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 894a39e9e67508234295db128928b09da7f468f0
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: f33624cf50248d8a137216ed0d725ed88c0defd2
+ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419820"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833377"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Creación de un paquete con la CLI de nuget.exe
 
@@ -138,7 +138,7 @@ El siguiente archivo `.nuspec` es común (pero ficticio), con comentarios que de
 </package>
 ```
 
-Para obtener más información sobre cómo declarar dependencias y especificar números de versión, vea [Control de versiones de paquetes](../reference/package-versioning.md). También es posible exponer activos directamente desde las dependencias en el paquete mediante los atributos `include` y `exclude` del elemento `dependency`. Vea [Referencia de .nuspec: dependencias](../reference/nuspec.md#dependencies).
+Para obtener más información sobre cómo declarar dependencias y especificar números de versión, consulte [packages.config](../reference/packages-config.md) y [Control de versiones de paquetes](../reference/package-versioning.md). También es posible exponer activos directamente desde las dependencias en el paquete mediante los atributos `include` y `exclude` del elemento `dependency`. Vea [Referencia de .nuspec: dependencias](../reference/nuspec.md#dependencies).
 
 Dado que el manifiesto se incluye en el paquete creado a partir de él, puede buscar cualquier número de ejemplos adicionales mediante el examen de los paquetes existentes. Una buena fuente es la carpeta *global-packages* en el equipo, cuya ubicación se devuelve mediante el comando siguiente:
 

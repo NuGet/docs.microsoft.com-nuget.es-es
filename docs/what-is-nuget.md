@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: e8e806e0a893d62d9d3189396dc47250ae9c8cf3
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: f16cc6f66bc12727a4ec8eb5da4ff44a9eeb1764
+ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68420029"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833334"
 ---
 # <a name="an-introduction-to-nuget"></a>Una introducción a NuGet
 
@@ -105,7 +105,7 @@ Para que estos procesos funcionen de forma eficaz, NuGet realiza algunas optimiz
 
 Dentro de un proyecto individual, NuGet administra el gráfico general de dependencias, que incluye volver a resolver varias referencias a las distintas versiones del mismo paquete. Es bastante común que un proyecto tenga una relación de dependencia con uno o varios paquetes que, a su vez, tienen las mismas dependencias. Algunos de los paquetes de utilidad más prácticos de nuget.org se usan en otros muchos paquetes. En el gráfico de dependencias completo, podría tener fácilmente diez referencias distintas a versiones diferentes del mismo paquete. Para no incluir varias versiones de ese paquete en la propia aplicación, NuGet determina la única versión que pueden usar todos los consumidores. (Para obtener más información, vea [Inserción de dependencias](consume-packages/dependency-resolution.md)).
 
-Además, NuGet mantiene todas las especificaciones relacionadas con la estructura de los paquetes (incluida la [localización](create-packages/creating-localized-packages.md) y los [símbolos de depuración](create-packages/symbol-packages.md)) y cómo se hace referencia a ellos (incluidos los [intervalos de versiones](reference/package-versioning.md#version-ranges-and-wildcards) y [versiones preliminares](create-packages/prerelease-packages.md)). NuGet ofrece también varias API para trabajar con sus servicios mediante programación, así como compatibilidad para los desarrolladores que crean plantillas de proyecto y extensiones de Visual Studio.
+Además, NuGet mantiene todas las especificaciones relacionadas con la estructura de los paquetes (incluida la [localización](create-packages/creating-localized-packages.md) y los [símbolos de depuración](create-packages/symbol-packages.md)) y cómo se hace [referencia](consume-packages/package-references-in-project-files.md) a ellos (incluidos los [intervalos de versiones](reference/package-versioning.md#version-ranges-and-wildcards) y las [versiones preliminares](create-packages/prerelease-packages.md)). NuGet ofrece también varias API para trabajar con sus servicios mediante programación, así como compatibilidad para los desarrolladores que crean plantillas de proyecto y extensiones de Visual Studio.
 
 Dedique un momento a examinar la tabla de contenido de esta documentación, y podrá ver todas estas funcionalidades representadas, junto con notas de la versión que se remontan a los inicios de NuGet.
 

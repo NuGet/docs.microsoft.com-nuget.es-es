@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: ee456fd49675db37fee78dc14502a897d84a2b99
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 47593cc65ad707b8880d854dc43824b9234fd44a
+ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342462"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833302"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>Inicio rápido: Instalar y usar un paquete con la CLI de dotnet
 
@@ -30,6 +30,8 @@ Una vez instalado, haga referencia al paquete en el código con `using <namespac
 Los paquetes NuGet pueden instalarse en todo tipo de proyecto de .NET. En este tutorial, cree un proyecto simple de consola de .NET Core de la siguiente manera:
 
 1. Cree una carpeta para el proyecto.
+
+1. Abra un símbolo del sistema y cambie a la carpeta nueva.
 
 1. Cree el proyecto con el comando siguiente:
 
