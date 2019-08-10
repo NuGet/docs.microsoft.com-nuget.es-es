@@ -7,12 +7,12 @@ ms.date: 02/12/2018
 ms.topic: hub-page
 layout: HubPage
 hide_bc: true
-ms.openlocfilehash: 8f4fca447d61b6f435399a24ef4151604d43291d
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: a771fea20db11b573b8e0efc24180e6f54d3e571
+ms.sourcegitcommit: dec3fa44547c6a00d0ae6cbb6c64cdc65660d808
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833362"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68912605"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -131,7 +131,7 @@ ms.locfileid: "68833362"
                             <a href="create-packages/creating-a-package.md">Uso de CLI de nuget.exe</a>
                         </p>
                         <p>
-                            <a href="create-packages/creating-a-package.md">Uso de MSBuild</a>
+                            <a href="create-packages/creating-a-package-msbuild.md">Uso de MSBuild</a>
                         </p>
                         <p>
                             <a href="create-packages/multiple-target-frameworks-project-file.md">Compatibilidad con varias plataformas de destino</a>
