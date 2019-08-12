@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: quickstart
-ms.openlocfilehash: 86e71460094de9b799384db83456a68db57647af
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 0fc3b15c6d5ffa93eb6e26660f71cea2286ba77d
+ms.sourcegitcommit: aed04cc04b0902403612de6736a900d41c265afd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419924"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68821419"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
 
@@ -99,17 +99,24 @@ namespace AppLogger
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
 
-### <a name="alternate-option-pack-with-msbuild"></a>Opción alternativa: paquete con MSBuild
+### <a name="optional-generate-package-on-build"></a>(Opcional) Generación del paquete en la compilación
+
+Puede configurar Visual Studio para que genere automáticamente el paquete de NuGet al compilar el proyecto.
+
+1. En el Explorador de soluciones, haga clic con el botón derecho en el proyecto y, luego, elija **Propiedades**.
+
+2. En la pestaña **Paquete**, seleccione **Generar paquete de NuGet al compilar**.
+
+   ![Generación automática del paquete en la compilación](media/qs_create-vs-05-generate-on-build.png)
+
+> [!NOTE]
+> Cuando genera automáticamente el paquete, el tiempo de empaquetado aumenta el tiempo de compilación del proyecto.
+
+### <a name="optional-pack-with-msbuild"></a>(Opcional) Empaquetado con MSBuild
 
 Como alternativa al uso del comando de menú **Paquete**, NuGet 4.x y versiones posteriores y MSBuild 15.1 y versiones posteriores admiten un destino de `pack` cuando el proyecto contiene los datos de paquete necesarios. Abra un símbolo del sistema, navegue a la carpeta del proyecto y ejecute este comando. (Normalmente es preferible iniciar el "Símbolo del sistema para desarrolladores de Visual Studio" en el menú Inicio, ya que se configurará con todas las rutas de acceso necesarias para MSBuild).
 
-```cli
-msbuild -t:pack -p:Configuration=Release
-```
-
-El paquete puede encontrarse en la carpeta `bin\Release`.
-
-Para ver más opciones con `msbuild -t:pack`, consulte [pack y restore de NuGet como destinos de MSBuild: restaurar destino](../reference/msbuild-targets.md#pack-target).
+Para obtener más información, consulte [Creación de un paquete con MSBuild](../create-packages/creating-a-package-msbuild.md).
 
 ## <a name="publish-the-package"></a>Publicar el paquete
 
