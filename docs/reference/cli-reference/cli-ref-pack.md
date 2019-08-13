@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 0e12944bdd5d43b8b9e84908be480a5249dd924f
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: cab56cb87f46335f9fdebdbc1649fead16459877
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327662"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959723"
 ---
 # <a name="pack-command-nuget-cli"></a>Comando pack (CLI de NuGet)
 
 **Se aplica a:** &bullet; **versiones compatibles con** la creación de paquetes: 2.7+
 
-Crea un paquete de NuGet basado en el `.nuspec` archivo de proyecto o especificado. El `dotnet pack` comando (consulte los [comandos](../dotnet-Commands.md)de dotnet `msbuild -t:pack` ) y (vea [destinos de MSBuild](../msbuild-targets.md)) se puede usar como alternativa.
+Crea un paquete de NuGet basado en el archivo [. nuspec](../nuspec.md) o el archivo de proyecto especificado. El `dotnet pack` comando (consulte los [comandos](../dotnet-Commands.md)de dotnet `msbuild -t:pack` ) y (vea [destinos de MSBuild](../msbuild-targets.md)) se puede usar como alternativa.
 
 > [!Important]
 > En mono, no se admite la creación de un paquete a partir de un archivo de proyecto. También debe ajustar las rutas de acceso no locales en el `.nuspec` archivo a las rutas de acceso de estilo Unix, ya que Nuget. exe no convierte los nombres de usuario de Windows.
@@ -33,7 +33,7 @@ donde `<nuspecPath>` `.nuspec` y `<projectPath>` especifican el archivo de proye
 
 | Opción | DESCRIPCIÓN |
 | --- | --- |
-| BasePath | Establece la ruta de acceso base de los archivos definidos `.nuspec` en el archivo. |
+| BasePath | Establece la ruta de acceso base de los archivos definidos en el archivo [. nuspec](../nuspec.md) . |
 | Compilación | Especifica que el proyecto debe compilarse antes de compilar el paquete. |
 | Excluir | Especifica uno o más patrones de caracteres comodín que se deben excluir al crear un paquete. Para especificar más de un patrón, repita la marca-exclude. Vea el ejemplo siguiente. |
 | ExcludeEmptyDirectories | Impide la inclusión de directorios vacíos al compilar el paquete. |

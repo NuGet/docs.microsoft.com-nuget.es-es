@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 82113d460f7f5ff467b0a0552cc49283de95de25
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 211f24ff67c06da00d6a014e679cc422d493d6d5
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327642"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959742"
 ---
 # <a name="restore-command-nuget-cli"></a>comando restore (CLI de NuGet)
 
@@ -35,7 +35,7 @@ donde `<projectPath>` especifica la ubicación de una solución o un `packages.c
 | ConfigFile | El archivo de configuración de NuGet que se va a aplicar. Si no se especifica `%AppData%\NuGet\NuGet.Config` , se usa ( `~/.nuget/NuGet/NuGet.Config` Windows) o (Mac/Linux).|
 | DirectDownload | *(4.0 +)* Descarga paquetes directamente sin rellenar memorias caché con los archivos binarios o metadatos. |
 | DisableParallelProcessing | Deshabilita la restauración de varios paquetes en paralelo. |
-| FallbackSource | *(3,2 +)* Una lista de orígenes de paquetes que se usarán como reserva en caso de que el paquete no se encuentre en el origen principal o en el predeterminado. |
+| FallbackSource | *(3,2 +)* Una lista de orígenes de paquetes que se usarán como reserva en caso de que el paquete no se encuentre en el origen principal o en el predeterminado. Use un punto y coma para separar las entradas de la lista. |
 | ForceEnglishOutput | *(3.5 +)* Fuerza a Nuget. exe a ejecutarse mediante una referencia cultural invariable basada en inglés. |
 | Help | Muestra información de ayuda para el comando. |
 | MSBuildPath | *(4.0 +)* Especifica la ruta de acceso de MSBuild que se va a usar con el `-MSBuildVersion`comando, que tiene prioridad sobre. |
@@ -49,7 +49,7 @@ donde `<projectPath>` especifica la ubicación de una solución o un `packages.c
 | Recursiva | *(4.0 +)* Restaura todos los proyectos de referencias para los proyectos de UWP y .NET Core. No se aplica a los proyectos `packages.config`que usan. |
 | RequireConsent | Comprueba que la restauración de paquetes está habilitada antes de descargar e instalar los paquetes. Para obtener más información, vea [restauración de paquetes](../../consume-packages/package-restore.md). |
 | SolutionDirectory | Especifica la carpeta de la solución. No es válido al restaurar los paquetes de una solución. Obligatorio al restaurar con un `packages.config` archivo a menos que `OutputDirectory` `PackagesDirectory` se use o. |
-| source | Especifica la lista de orígenes de paquetes (como direcciones URL) que se va a usar para la restauración. Si se omite, el comando usa los orígenes proporcionados en los archivos de configuración, consulte [configuración del comportamiento de NuGet](../../consume-packages/configuring-nuget-behavior.md). |
+| source | Especifica la lista de orígenes de paquetes (como direcciones URL) que se va a usar para la restauración. Si se omite, el comando usa los orígenes proporcionados en los archivos de configuración, consulte [configuración del comportamiento de NuGet](../../consume-packages/configuring-nuget-behavior.md). Use un punto y coma para separar las entradas de la lista. |
 | Verbosity | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *silenciosa*, *detallado*. |
 
 Vea también [variables de entorno](cli-ref-environment-variables.md)
