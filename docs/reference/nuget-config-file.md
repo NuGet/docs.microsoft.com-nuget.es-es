@@ -3,36 +3,20 @@ title: Referencia del archivo Nuget. config
 description: Referencia del archivo NuGet.Config en la que se incluyen las secciones config, bindingRedirects, packageRestore, solution y packageSource.
 author: karann-msft
 ms.author: karann
-ms.date: 10/25/2017
+ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: b03bb8da0191a679671e5898ac70fff2024d52f2
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: a2955617b899bfadab42d1ae98dd20c8fc6ddca9
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317221"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020047"
 ---
 # <a name="nugetconfig-reference"></a>referencia de Nuget. config
 
 El comportamiento de Nuget se controla mediante la `NuGet.Config` configuración de distintos archivos, tal y como se describe en [configuraciones comunes de Nuget](../consume-packages/configuring-nuget-behavior.md).
 
 `nuget.config` es un archivo XML que contiene un nodo `<configuration>` de nivel superior, que contiene los elementos de sección que se describen en este tema. Cada sección contiene cero o más elementos. Vea el [archivo de configuración de ejemplo](#example-config-file). Los nombres de opción distinguen mayúsculas de minúsculas, y los valores pueden usar [variables de entorno](#using-environment-variables).
-
-En este tema:
-
-- [Sección config](#config-section)
-- [Sección bindingRedirects](#bindingredirects-section)
-- [Sección packageRestore](#packagerestore-section)
-- [Sección solution](#solution-section)
-- [Secciones de origen del paquete](#package-source-sections):
-  - [packageSources](#packagesources)
-  - [packageSourceCredentials](#packagesourcecredentials)
-  - [apikeys](#apikeys)
-  - [disabledPackageSources](#disabledpackagesources)
-  - [activePackageSource](#activepackagesource)
-- [sección trustedSigners](#trustedsigners-section)
-- [Uso de variables de entorno](#using-environment-variables)
-- [Archivo de configuración de ejemplo](#example-config-file)
 
 <a name="dependencyVersion"></a>
 <a name="globalPackagesFolder"></a>
@@ -45,7 +29,7 @@ Contiene varios valores de configuración, que se pueden establecer mediante el 
 
 `dependencyVersion`y `repositoryPath` solo se aplican a `packages.config`los proyectos que usan. `globalPackagesFolder`solo se aplica a los proyectos que usan el formato PackageReference.
 
-| Clave | Value |
+| Clave | Valor |
 | --- | --- |
 | dependencyVersion (solo `packages.config`) | El valor predeterminado `DependencyVersion` para la instalación, restauración y actualización del paquete, cuando no se especifica directamente el modificador `-DependencyVersion`. Este valor también se usa en la interfaz de usuario del Administrador de paquetes NuGet. Los valores son `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
 | globalPackagesFolder (proyectos que solo usan PackageReference) | La ubicación de la carpeta de paquetes global predeterminada. El valor predeterminado es `%userprofile%\.nuget\packages` (Windows) o `~/.nuget/packages` (Mac o Linux). Se puede usar una ruta de acceso relativa en archivos `nuget.config` específicos del proyecto. Esta configuración es invalidada por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
@@ -86,7 +70,7 @@ Configura si NuGet realiza redirecciones de enlaces automáticas cuando se insta
 
 Controla la restauración del paquete durante las compilaciones.
 
-| Clave | Value |
+| Clave | Valor |
 | --- | --- |
 | enabled | Un valor booleano que indica si NuGet puede realizar la restauración automática. También se puede establecer la variable de entorno `EnableNuGetPackageRestore` con un valor de `True` en lugar de establecer esta clave en el archivo de configuración. |
 | automáticamente | Un valor booleano que indica si NuGet debe comprobar los paquetes que faltan durante una compilación. |
@@ -104,7 +88,7 @@ Controla la restauración del paquete durante las compilaciones.
 
 Controla si la carpeta `packages` de una solución se incluye en el control de código fuente. En esta sección solo funciona en los archivos `nuget.config` de la carpeta de una solución.
 
-| Clave | Valor |
+| Clave | Value |
 | --- | --- |
 | disableSourceControlIntegration | Un valor booleano que indica si se debe ignorar la carpeta de paquetes cuando se trabaja con el control de código fuente. El valor predeterminado es false. |
 
@@ -128,7 +112,7 @@ Tenga en cuenta que la dirección URL de origen de nuget.org es `https://api.nug
 
 Enumera todos los orígenes de paquetes conocidos. El orden se omite durante las operaciones de restauración y con cualquier proyecto que use el formato PackageReference. NuGet respeta el orden de los orígenes de las operaciones de instalación y actualización `packages.config`con proyectos que usan.
 
-| Clave | Value |
+| Clave | Valor |
 | --- | --- |
 | (nombre para asignar al origen del paquete) | La ruta de acceso o dirección URL del origen del paquete. |
 
@@ -146,7 +130,7 @@ Enumera todos los orígenes de paquetes conocidos. El orden se omite durante las
 
 Almacena nombres de usuario y contraseñas para los orígenes, normalmente especificados con los modificadores `-username` y `-password` con `nuget sources`. Las contraseñas se cifran de forma predeterminada a menos que también se use la opción `-storepasswordincleartext`.
 
-| Clave | Value |
+| Clave | Valor |
 | --- | --- |
 | username | El nombre de usuario para el origen en texto sin formato. |
 | contraseña | La contraseña cifrada para el origen. |
@@ -204,7 +188,7 @@ Almacena claves para los orígenes en los que se usa autenticación de clave de 
 
 Orígenes actualmente deshabilitados identificados. Puede estar vacía.
 
-| Clave | Valor |
+| Clave | Value |
 | --- | --- |
 | (nombre del origen) | Un valor booleano que indica si el origen está deshabilitado. |
 
@@ -225,7 +209,7 @@ Orígenes actualmente deshabilitados identificados. Puede estar vacía.
 
 Identifica al origen actualmente activo o indica la suma de todos los orígenes.
 
-| Clave | Valor |
+| Clave | Value |
 | --- | --- |
 | (nombre del origen) o `All` | Si la clave es el nombre de un origen, el valor es la ruta de acceso o la dirección URL del origen. Si es `All`, el valor debe ser `(Aggregate source)` para combinar todos los orígenes de paquetes que no estén deshabilitados. |
 
@@ -240,6 +224,7 @@ Identifica al origen actualmente activo o indica la suma de todos los orígenes.
     <add key="All" value="(Aggregate source)" />
 </activePackageSource>
 ```
+
 ## <a name="trustedsigners-section"></a>sección trustedSigners
 
 Almacena los firmantes de confianza que se usan para permitir el paquete durante la instalación o la restauración. Esta lista no puede estar vacía cuando el usuario `signatureValidationMode` establece `require`en. 
@@ -268,6 +253,50 @@ Si un `certificate` especifica `allowUntrustedRoot` como `true` el certificado e
         <owners>microsoft;aspnet;nuget</owners>
     </repository>
 </trustedSigners>
+```
+
+## <a name="fallbackpackagefolders-section"></a>sección fallbackPackageFolders
+
+*(3.5 +)* Proporciona una manera de preinstalar paquetes para que no sea necesario realizar ningún trabajo si el paquete se encuentra en las carpetas de reserva. Las carpetas de paquetes de reserva tienen exactamente la misma estructura de archivos y carpetas que la carpeta de paquetes global: *. nupkg* está presente y se extraen todos los archivos.
+
+La lógica de búsqueda para esta configuración es:
+
+- Busca en la carpeta de paquetes globales para ver si ya se ha descargado el paquete o la versión.
+
+- Busque en las carpetas de reserva una coincidencia de paquete/versión.
+
+Si alguna búsqueda se realiza correctamente, no es necesario realizar ninguna descarga.
+
+Si no se encuentra ninguna coincidencia, NuGet comprueba los orígenes de archivos y, a continuación, los orígenes http y, a continuación, descarga los paquetes.
+
+| Clave | Valor |
+| --- | --- |
+| (nombre de la carpeta de reserva) | Ruta de acceso a la carpeta de reserva. |
+
+**Ejemplo**:
+
+```xml
+<fallbackPackageFolders>
+   <add key="XYZ Offline Packages" value="C:\somePath\someFolder\"/>
+</fallbackPackageFolders>
+```
+
+## <a name="packagemanagement-section"></a>sección packageManagement
+
+Establece el formato de administración de paquetes predeterminado, *Package. config* o PackageReference. Los proyectos de estilo SDK siempre usan PackageReference.
+
+| Clave | Valor |
+| --- | --- |
+| format | Un valor booleano que indica el formato de administración de paquetes predeterminado. Si `1`es, el formato es PackageReference. Si `0`es, Format es *packages. config*. |
+| deshabilitados | Un valor booleano que indica si se muestra el mensaje para seleccionar un formato de paquete predeterminado en la primera instalación del paquete. `False`oculta el símbolo del sistema. |
+
+**Ejemplo**:
+
+```xml
+<packageManagement>
+   <add key="format" value="1" />
+   <add key="disabled" value="False" />
+</packageManagement>
 ```
 
 ## <a name="using-environment-variables"></a>Uso de variables de entorno
