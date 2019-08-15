@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9eefed6f2c1a362f27c4a5d33d07645d743379fa
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 9ef990c16cca62a1fbad25ff1582bfa543135fab
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317747"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860581"
 ---
 # <a name="manage-packages-using-the-nugetexe-cli"></a>Administración de paquetes con la CLI de nuget.exe
 
@@ -110,14 +110,4 @@ nuget update
 
 ## <a name="restore-packages"></a>Restaurar paquetes
 
-Use el comando [restore](../reference/cli-reference/cli-ref-restore.md), que descarga e instala los paquetes que faltan en la carpeta *packages*.
-
-`restore` solo agrega paquetes en el disco, pero no cambia las dependencias de un proyecto. Para restaurar las dependencias del proyecto, modifique `packages.config` y use el comando `restore`.
-
-Como con los otros comandos de la CLI de `nuget.exe`, primero abra una línea de comandos y cambie al directorio que contiene el archivo de proyecto.
-
-Para restaurar un paquete con `restore`:
-
-```cli
-nuget restore MySolution.sln
-```
+[!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
