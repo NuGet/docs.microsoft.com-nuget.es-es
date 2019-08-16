@@ -1,27 +1,27 @@
 ---
-title: Contenido del paquete, NuGet API
+title: Contenido del paquete, API de NuGet
 description: La dirección base del paquete es una interfaz sencilla para capturar el propio paquete.
 author: joelverhagen
 ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 2f0f93e0cee78ea03cbd53194cdc2a10871fd7e1
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 5ec6c0e17a3e8b9a3f156a48685bcaafe42c744b
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426764"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488218"
 ---
 # <a name="package-content"></a>Contenido del paquete
 
-Es posible generar una dirección URL para capturar el contenido de un paquete arbitrario (el archivo .nupkg) mediante la API de V3. El recurso usado para recuperar el contenido del paquete es el `PackageBaseAddress` encontrar el recurso en el [índice de servicio](service-index.md). Este recurso también permite la detección de todas las versiones de un paquete, aparece o no enumerado.
+Es posible generar una dirección URL para capturar el contenido de un paquete arbitrario (el archivo. nupkg) mediante la API V3. El recurso que se usa para obtener el contenido del `PackageBaseAddress` paquete es el recurso que se encuentra en el [Índice de servicio](service-index.md). Este recurso también habilita la detección de todas las versiones de un paquete, enumeradas o no enumeradas.
 
-Este recurso se conoce comúnmente como el "paquete base dirección" o como contenedor"plano".
+Este recurso se conoce comúnmente como "dirección base del paquete" o como "contenedor plano".
 
 ## <a name="versioning"></a>Control de versiones
 
-La siguiente `@type` se usa el valor:
+Se usa `@type` el siguiente valor:
 
 Valor de@type              | Notas
 ------------------------ | -----
@@ -29,42 +29,42 @@ PackageBaseAddress/3.0.0 | La versión inicial
 
 ## <a name="base-url"></a>Dirección URL base
 
-La dirección URL base para las siguientes API es el valor de la `@id` propiedad asociada con el recurso mencionado anteriormente `@type` valor. En el siguiente documento, la dirección URL base del marcador de posición `{@id}` se usará.
+La dirección URL base para las siguientes API es el valor de `@id` la propiedad asociada al valor de `@type` recurso mencionado anteriormente. En el siguiente documento, se usará la dirección `{@id}` URL base del marcador de posición.
 
 ## <a name="http-methods"></a>Métodos HTTP
 
-Todas las direcciones URL se encuentra en la compatibilidad con recursos de registro de los métodos HTTP `GET` y `HEAD`.
+Todas las direcciones URL encontradas en el recurso de registro admiten `HEAD`los métodos `GET` http y.
 
 ## <a name="enumerate-package-versions"></a>Enumerar versiones de paquetes
 
-Si el cliente sabe que un identificador de paquete y desea descubrir que las versiones del paquete el paquete de código fuente disponible, el cliente puede construir una dirección URL de predicción para enumerar todas las versiones de paquete. Esta lista está pensada para ser una "lista de directorios" para la API de contenido de paquete que se mencionan a continuación.
+Si el cliente conoce un identificador de paquete y desea detectar qué versiones de paquete tiene el origen del paquete, el cliente puede crear una dirección URL de predicción para enumerar todas las versiones del paquete. Esta lista está pensada como una "lista de directorios" para la API de contenido de paquete que se menciona a continuación.
 
 > [!Note]
-> Esta lista contiene ambas versiones del paquete figuran.
+> Esta lista contiene las versiones de paquetes que se muestran y que no figuran en la lista.
 
     GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name     | En     | Tipo    | Obligatorio | Notas
+NOMBRE     | En     | Type    | Obligatorio | Notas
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | Resolución    | cadena  | sí      | El identificador del paquete, en minúsculas
+LOWER_ID | URL    | string  | sí      | El identificador del paquete, en minúsculas
 
-El `LOWER_ID` valor es el identificador de paquete deseado utilizando las reglas implementadas por en minúsculas. La red [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
+El `LOWER_ID` valor es el identificador de paquete deseado en minúsculas mediante las reglas implementadas por. Método de [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) la red.
 
 ### <a name="response"></a>Respuesta
 
-Si el origen del paquete no tiene que no hay ninguna versión del identificador del paquete suministrado, se devuelve un código de 404 estado.
+Si el origen del paquete no tiene ninguna versión del identificador de paquete proporcionado, se devuelve un código de estado 404.
 
-Si el origen del paquete tiene una o varias versiones, se devuelve un código de 200 estado. El cuerpo de respuesta es un objeto JSON con la siguiente propiedad:
+Si el origen del paquete tiene una o más versiones, se devuelve un código de estado 200. El cuerpo de la respuesta es un objeto JSON con la siguiente propiedad:
 
-Name     | Tipo             | Obligatorio | Notas
+NOMBRE     | Type             | Obligatorio | Notas
 -------- | ---------------- | -------- | -----
-versiones | matriz de cadenas | sí      | El paquete Id. disponibles
+versiones | matriz de cadenas | sí      | Los identificadores de paquete disponibles
 
-Las cadenas en el `versions` matriz todos minúscula, [normalizar las cadenas de versión de NuGet](../reference/package-versioning.md#normalized-version-numbers). Las cadenas de versión no contienen los metadatos de la compilación de SemVer 2.0.0.
+Las cadenas de la `versions` matriz están todas en minúsculas, con las [cadenas de versión de NuGet normalizadas](../concepts/package-versioning.md#normalized-version-numbers). Las cadenas de versión no contienen metadatos de compilación de SemVer 2.0.0.
 
-La intención es que las cadenas de versión que se encuentra en esta matriz se pueden usar literalmente para el `LOWER_VERSION` tokens que se encuentra en los siguientes puntos de conexión.
+La intención es que las cadenas de versión encontradas en esta matriz se puedan usar literalmente para `LOWER_VERSION` los tokens que se encuentran en los puntos de conexión siguientes.
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
@@ -74,29 +74,29 @@ La intención es que las cadenas de versión que se encuentra en esta matriz se 
 
 [!code-JSON [package-base-address-index.json](./_data/package-base-address-index.json)]
 
-## <a name="download-package-content-nupkg"></a>Descargar contenido de paquete (archivo .nupkg)
+## <a name="download-package-content-nupkg"></a>Descargar contenido de paquete (. nupkg)
 
-Si el cliente sabe que un identificador de paquete y la versión y desea descargar el contenido del paquete, solo deberá construir la dirección URL siguiente:
+Si el cliente conoce un identificador y una versión del paquete y desea descargar el contenido del paquete, solo necesita construir la dirección URL siguiente:
 
     GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name          | En     | Tipo   | Obligatorio | Notas
+NOMBRE          | En     | Type   | Obligatorio | Notas
 ------------- | ------ | ------ | -------- | -----
-LOWER_ID      | Resolución    | cadena | sí      | El identificador del paquete, en minúsculas
-LOWER_VERSION | Resolución    | cadena | sí      | La versión del paquete, normalizar y en minúsculas
+LOWER_ID      | URL    | string | sí      | El identificador del paquete, en minúsculas
+LOWER_VERSION | URL    | string | sí      | Versión del paquete, normalizado y en minúsculas
 
-Ambos `LOWER_ID` y `LOWER_VERSION` están en minúsculas utilizando las reglas implementadas por. La red [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)
+`LOWER_ID` Y`LOWER_VERSION` están en minúsculas mediante las reglas implementadas por. De la red[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)
 .
 
-El `LOWER_VERSION` se normaliza la versión del paquete deseado mediante la versión de NuGet [reglas de normalización](../reference/package-versioning.md#normalized-version-numbers). Esto significa que los metadatos de compilación que se permiten la especificación de SemVer 2.0.0 en este caso se deben excluir.
+Es la versión del paquete deseada normalizada con [las reglas](../concepts/package-versioning.md#normalized-version-numbers)de normalización de la versión de NuGet. `LOWER_VERSION` Esto significa que los metadatos de compilación permitidos por la especificación SemVer 2.0.0 deben excluirse en este caso.
 
 ### <a name="response-body"></a>Cuerpo de la respuesta
 
-Si el paquete existe en el origen del paquete, se devuelve un código de 200 estado. El cuerpo de respuesta será el contenido del paquete.
+Si el paquete existe en el origen del paquete, se devuelve un código de estado 200. El cuerpo de la respuesta será el contenido del paquete.
 
-Si el paquete no existe en el origen del paquete, se devuelve un código de 404 estado.
+Si el paquete no existe en el origen del paquete, se devuelve un código de estado 404.
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
@@ -104,30 +104,30 @@ Si el paquete no existe en el origen del paquete, se devuelve un código de 404 
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 
-El flujo binario que es el archivo .nupkg para Newtonsoft.Json 9.0.1.
+El flujo binario que es el archivo. nupkg para Newtonsoft. JSON 9.0.1.
 
-## <a name="download-package-manifest-nuspec"></a>Descargue el manifiesto del paquete (.nuspec)
+## <a name="download-package-manifest-nuspec"></a>Descargar el manifiesto del paquete (. nuspec)
 
-Si el cliente sabe que un identificador de paquete y la versión y desea descargar el manifiesto del paquete, solo deberá construir la dirección URL siguiente:
+Si el cliente conoce un identificador y una versión del paquete y desea descargar el manifiesto del paquete, solo necesita construir la dirección URL siguiente:
 
     GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name          | En     | Tipo   | Obligatorio | Notas
+NOMBRE          | En     | Type   | Obligatorio | Notas
 ------------- | ------ | ------ | -------- | -----
-LOWER_ID      | Resolución    | cadena | sí      | El identificador del paquete, en minúsculas
-LOWER_VERSION | Resolución    | cadena | sí      | La versión del paquete, normalizar y en minúsculas
+LOWER_ID      | URL    | string | sí      | El identificador del paquete, en minúsculas
+LOWER_VERSION | URL    | string | sí      | Versión del paquete, normalizado y en minúsculas
 
-Ambos `LOWER_ID` y `LOWER_VERSION` están en minúsculas utilizando las reglas implementadas por. La red [ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) método.
+`LOWER_ID` Y`LOWER_VERSION` están en minúsculas mediante las reglas implementadas por. Método de [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) la red.
 
-El `LOWER_VERSION` se normaliza la versión del paquete deseado mediante la versión de NuGet [reglas de normalización](../reference/package-versioning.md#normalized-version-numbers). Esto significa que los metadatos de compilación que se permiten la especificación de SemVer 2.0.0 en este caso se deben excluir.
+Es la versión del paquete deseada normalizada con [las reglas](../concepts/package-versioning.md#normalized-version-numbers)de normalización de la versión de NuGet. `LOWER_VERSION` Esto significa que los metadatos de compilación permitidos por la especificación SemVer 2.0.0 deben excluirse en este caso.
 
 ### <a name="response-body"></a>Cuerpo de la respuesta
 
-Si el paquete existe en el origen del paquete, se devuelve un código de 200 estado. El cuerpo de respuesta será el manifiesto del paquete, que es el archivo .nuspec contenidos en los archivos .nupkg correspondiente. El archivo .nuspec es un documento XML.
+Si el paquete existe en el origen del paquete, se devuelve un código de estado 200. El cuerpo de la respuesta será el manifiesto del paquete, que es el archivo. nuspec incluido en el archivo. nupkg correspondiente. El archivo. nuspec es un documento XML.
 
-Si el paquete no existe en el origen del paquete, se devuelve un código de 404 estado.
+Si el paquete no existe en el origen del paquete, se devuelve un código de estado 404.
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 

@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 67bc95135f746c4a4685773808756df399cbf01e
-ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
+ms.openlocfilehash: f931ed297a6a1e9e24ce5eb30a8158f59925bb39
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959703"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488681"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -36,7 +36,7 @@ En este tema:
 
    Si va a crear un paquete mediante `dotnet.exe pack` o `msbuild pack target`, le recomendamos que incluya en su lugar [todas las propiedades](../reference/msbuild-targets.md#pack-target) que suelen `.nuspec` estar en el archivo en el archivo del proyecto. Sin embargo, en su lugar, puede elegir [usar `.nuspec` un archivo para empaquetar `msbuild pack target`con `dotnet.exe` o ](../reference/msbuild-targets.md#packing-using-a-nuspec).
 
-- En el caso de los `packages.config` proyectos migrados de `.nuspec` a [PackageReference](../consume-packages/package-references-in-project-files.md), no es necesario un archivo para crear el paquete. En su lugar, use [msbuild-t:Pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
+- En el caso de los `packages.config` proyectos migrados de `.nuspec` a [PackageReference](../consume-packages/package-references-in-project-files.md), no es necesario un archivo para crear el paquete. En su lugar, use [msbuild-t:Pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
 ## <a name="general-form-and-schema"></a>Esquema y forma general
 
@@ -74,7 +74,7 @@ Estos elementos deben aparecer dentro de un elemento `<metadata>`.
 #### <a name="id"></a>id 
 El identificador del paquete que no distingue entre mayúsculas y minúsculas, que debe ser único en nuget.org o en cualquier galería en la que resida el paquete. Los identificadores no pueden contener espacios ni caracteres no válidos para una dirección URL y normalmente seguirán las reglas de espacios de nombres de .NET. Vea [Choosing a unique package identifier](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number) (Elegir un identificador de paquete único) para obtener instrucciones.
 #### <a name="version"></a>version
-La versión del paquete, siguiendo el patrón *mayor.menor.revisión*. Los números de versión pueden incluir un sufijo de versión preliminar, tal y como se describe en [Control de versiones de paquetes](../reference/package-versioning.md#pre-release-versions). 
+La versión del paquete, siguiendo el patrón *mayor.menor.revisión*. Los números de versión pueden incluir un sufijo de versión preliminar, tal y como se describe en [Control de versiones de paquetes](../concepts/package-versioning.md#pre-release-versions). 
 #### <a name="description"></a>description
 Una descripción larga del paquete para su visualización en la interfaz de usuario. 
 #### <a name="authors"></a>authors
@@ -281,7 +281,7 @@ El elemento `<dependencies>` dentro de `<metadata>` contiene cualquier número d
 | Atributo | DESCRIPCIÓN |
 | --- | --- |
 | `id` | (Obligatorio) El identificador de paquete de la dependencia, como "EntityFramework" y "NUnit", que es el nombre del paquete nuget.org que se muestra en una página del paquete. |
-| `version` | (Obligatorio) Intervalo de versiones aceptable como dependencia. Vea [Control de versiones de paquetes](../reference/package-versioning.md#version-ranges-and-wildcards) para consultar la sintaxis exacta. No se admiten las versiones de carácter comodín (flotante). |
+| `version` | (Obligatorio) Intervalo de versiones aceptable como dependencia. Vea [Control de versiones de paquetes](../concepts/package-versioning.md#version-ranges-and-wildcards) para consultar la sintaxis exacta. No se admiten las versiones de carácter comodín (flotante). |
 | include | Lista delimitada por comas de etiquetas de inclusión/exclusión (vea más abajo) que indican la dependencia que se va a incluir en el paquete final. El valor predeterminado es `all`. |
 | exclude | Lista delimitada por comas de etiquetas de inclusión/exclusión (vea más abajo) que indican la dependencia que se va a excluir en el paquete final. El valor predeterminado es `build,analyzers` que se puede sobrescribir. Pero `content/ ContentFiles` también se excluyen implícitamente en el paquete final que no se puede sobrescribir. Las etiquetas especificadas con `exclude` tienen prioridad sobre las que se especifican con `include`. Por ejemplo, `include="runtime, compile" exclude="compile"` es lo mismo que `include="runtime"`. |
 
