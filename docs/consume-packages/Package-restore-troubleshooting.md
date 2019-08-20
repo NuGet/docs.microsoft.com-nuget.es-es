@@ -5,16 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 287237cf4041870c562a6a7f48f233d8fdc8ef33
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: a1f9f1d03e9a6e58466fa92426bd655d5e8ed83d
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842383"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860617"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Solución de errores de restauración de paquetes
 
-Este artículo se centra en los errores habituales al restaurar paquetes y los pasos necesarios para resolverlos. Para saber más sobre la restauración de paquetes, vea [Restauración de paquetes](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio).
+Este artículo se centra en los errores habituales al restaurar paquetes y los pasos necesarios para resolverlos. 
+
+La restauración de paquetes intenta instalar todas las dependencias de paquete en el estado correcto que coincida con las referencias del paquete en el archivo de proyecto ( *.csproj*) o el archivo *packages.config*. (En Visual Studio, las referencias aparecen en Explorador de soluciones en el nodo**Dependencias \ NuGet** o **Referencias**). Para seguir los pasos necesarios para restaurar paquetes, consulte [Restauración de paquetes](../consume-packages/package-restore.md#restore-packages). Si las referencias del paquete en el archivo de proyecto ( *.csproj*) o el archivo *packages.config* son incorrectos (no coinciden con el estado deseado después de la restauración de paquetes), debe instalar o actualizar los paquetes en lugar de usar la restauración de los mismos.
 
 Si estas instrucciones no le ayudan, [registre un problema en GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) para que podamos examinar más detenidamente el escenario. No use el control "¿Le resultó útil esta página?" que puede aparecer en esta página, ya que no nos permite ponernos en contacto con usted para pedir más detalles.
 
@@ -44,8 +46,8 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 Este error se produce cuando se intenta compilar un proyecto que contiene referencias a uno o varios paquetes NuGet, pero estos paquetes no están actualmente instalados en el equipo ni en el proyecto.
 
-- Cuando se utiliza el formato de administración PackageReference, el error implica que el paquete no está instalado en la carpeta *global-packages*, tal como se describe en[Administración de paquetes globales y carpetas de caché](managing-the-global-packages-and-cache-folders.md).
-- Cuando se usa `packages.config`, el error indica que el paquete no está instalado en la carpeta `packages` en la raíz de la solución.
+- Cuando se utiliza el formato de administración [PackageReference](package-references-in-project-files.md), el error implica que el paquete no está instalado en la carpeta *global-packages*, tal como se describe en [Administración de paquetes globales y carpetas de caché](managing-the-global-packages-and-cache-folders.md).
+- Cuando se usa [packages.config](../reference/packages-config.md), el error indica que el paquete no está instalado en la carpeta `packages` en la raíz de la solución.
 
 Esta situación se suele producir cuando obtiene el código fuente del proyecto del control de código fuente u otra descarga. Los paquetes se suelen omitir desde el control de código fuente o las descargas porque se pueden restaurar desde fuentes de paquete como nuget.org (vea [Omitir paquetes de NuGet en sistemas de control de código fuente](Packages-and-Source-Control.md)). Si se incluyen, se provocaría el sobredimensionamiento del repositorio o se crearían archivos .zip innecesariamente grandes.
 
@@ -54,10 +56,12 @@ El error también se puede producir si el archivo de proyecto contiene rutas de 
 Use uno de estos métodos para restaurar los paquetes:
 
 - Si ha movido el archivo de proyecto, edite el archivo directamente para actualizar las referencias del paquete.
-- (Visual Studio) Para habilitar la restauración de paquetes, seleccione el comando de menú **Herramientas > Administrador de paquetes NuGet > Configuración del Administrador de paquetes**, establezca ambas opciones en **Restauración de paquetes** y seleccione **Aceptar**. Después vuelva a compilar la solución.
-- (CLI de dotnet) En la línea de comandos, cambie a la carpeta que contiene el proyecto y, luego, ejecute `dotnet restore` o `dotnet build` (que ejecuta la restauración automáticamente).
-- (CLI de nuget.exe) En la línea de comandos, cambie a la carpeta que contiene el proyecto y, luego, ejecute `nuget restore` (excepto para proyectos creados con la CLI de `dotnet`, en cuyo caso debe usar `dotnet restore`).
-- (Proyectos migrados a PackageReference) En la línea de comandos, ejecute `msbuild -t:restore`.
+- [Visual Studio](package-restore.md#restore-using-visual-studio) ([restauración automática](package-restore.md#restore-packages-automatically-using-visual-studio) o [restauración manual](package-restore.md#restore-packages-manually-using-visual-studio))
+- [CLI de dotnet](package-restore.md#restore-using-the-dotnet-cli)
+- [CLI de nuget.exe](package-restore.md#restore-using-the-nugetexe-cli)
+- [MSBuild](package-restore.md#restore-using-msbuild)
+- [Azure Pipelines](package-restore.md#restore-using-azure-pipelines)
+- [Azure DevOps Server](package-restore.md#restore-using-azure-devops-server)
 
 Después de una restauración correcta, el paquete debe estar presente en la carpeta *global-packages*. Para los proyectos con PackageReference, debe volverse a crear el archivo `obj/project.assets.json`; para los proyectos con `packages.config`, el paquete debe aparecer en la carpeta `packages` del proyecto . Ahora el proyecto debería compilarse correctamente. Si no es así, [registre un problema en GitHub](https://github.com/NuGet/docs.microsoft.com-nuget/issues) para que podamos realizar un seguimiento.
 

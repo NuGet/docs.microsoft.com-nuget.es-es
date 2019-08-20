@@ -1,11 +1,7 @@
 ---
 title: Cómo publicar paquetes de símbolos de NuGet con el nuevo formato de paquete de símbolos ".snupkg" | Microsoft Docs
-author:
-- cristinamanu
-- kraigb
-ms.author:
-- cristinamanu
-- kraigb
+author: cristinamanu
+ms.author: cristinamanu
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
@@ -16,12 +12,12 @@ keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, comp
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 9f9cdd188cf2ec678bc9047604e618f1af9124ae
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: e62d1872497e0e5e703bf7c49a87249ce9a996c7
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842462"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959676"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Crear paquetes de símbolos (.snupkg)
 
@@ -112,14 +108,17 @@ El archivo .nupkg debería ser exactamente el mismo que el de hoy, pero el archi
 
 1) El archivo .snupkg debe tener el mismo id. y la misma versión que el archivo .nupkg correspondiente.
 2) El archivo .snupkg debe tener la misma estructura de carpetas exacta que el archivo .nupkg para cualquier archivo DLL o EXE con distinción de que, en vez de los archivos DLL o EXE, los archivos PDB correspondientes deben estar incluidos en la misma jerarquía de carpetas. El archivo .snupkg no debe incluir ningún archivos o carpetas con extensiones que no sean PDB.
-3) El archivo .nuspec del archivo .snupkg también debe especificar un nuevo PackageType, tal y como se muestra a continuación. Este debería ser el único PackageType especificado. 
-``` 
-<packageTypes>
-  <packageType name="SymbolsPackage"/>
-</packageTypes>
-```
+3) El archivo .nuspec del archivo .snupkg también debe especificar un nuevo PackageType, tal y como se muestra a continuación. Este debería ser el único PackageType especificado.
+
+   ```xml
+   <packageTypes>
+      <packageType name="SymbolsPackage"/>
+   </packageTypes>
+   ```
+
 4) Si un autor decide usar un archivo .nuspec personalizado para compilar sus archivos .nupkg y .snupkg, estos deben tener la misma jerarquía de carpetas y archivos mostrados en el punto 2.
 5) Los campos ```authors``` y ```owners``` deben excluirse del archivo .nuspec del archivo .snupkg.
+6) No utilice el elemento <license>. Se trata un .snupkg con la misma licencia que el .nupk correspondiente.
 
 ## <a name="see-also"></a>Otras referencias
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 16a14a72f8bb2e5d5a56f6c3c277f0988869273d
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 05ece5f36ff7ae5920960c42cfde8b271dc3e712
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426695"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020008"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
 
@@ -105,7 +105,9 @@ A continuación se muestran los valores permitidos para estas etiquetas, con var
 | compile | Contenido de la carpeta `lib` y controla si el proyecto se puede compilar con los ensamblados dentro de la carpeta |
 | motor en tiempo de ejecución | Contenido de las carpetas `lib` y `runtimes` y controla si estos ensamblados se copiarán en el directorio de salida de compilación |
 | contentFiles | Contenido de la carpeta `contentfiles` |
-| compilación | Propiedades y destinos de la carpeta `build` |
+| compilación | `.props` y `.targets` en la carpeta `build` |
+| buildMultitargeting | `.props` y `.targets` en la carpeta `buildMultitargeting`, de los destinos multiplataforma |
+| buildTransitive | *(5.0+)* `.props` y `.targets` en la carpeta `buildTransitive`, para los recursos que fluyen de manera transitiva a cualquier proyecto de consumo. Vea la página de la [característica](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior). |
 | analyzers | Analizadores de .NET |
 | nativas | Contenido de la carpeta `native` |
 | ninguna | No se usa ninguno de los anteriores. |

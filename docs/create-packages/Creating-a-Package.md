@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: f33624cf50248d8a137216ed0d725ed88c0defd2
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: a9224ce4e515cf98893a7134077c90a47df1862a
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833377"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020070"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Creación de un paquete con la CLI de nuget.exe
 
@@ -184,7 +184,9 @@ Las convenciones de carpeta son las siguientes:
 | ref/{tfm} | Archivos de ensamblado (`.dll`) y símbolos (`.pdb`) para el Moniker de la plataforma de destino (TFM) indicado | Los ensamblados se agregan como referencias solo durante el tiempo de compilación; así pues, nada se copiará en la carpeta bin del proyecto. |
 | runtimes | Archivo de ensamblado (`.dll`), símbolos (`.pdb`) y recursos nativos (`.pri`) específicos de la arquitectura | Los ensamblados se agregan como referencias solo durante el tiempo de ejecución; los demás archivos se copian en carpetas de proyecto. Siempre debe haber un ensamblado específico de `AnyCPU` (TFM) correspondiente en la carpeta `/ref/{tfm}` para proporcionar el ensamblado de tiempo de compilación correspondiente. Vea [Compatibilidad con varias plataformas de destino](supporting-multiple-target-frameworks.md). |
 | contenido | Archivos arbitrarios | El contenido se copia en la raíz del proyecto. Piense en la carpeta **content** como la raíz de la aplicación de destino que consume el paquete en última instancia. Para que el paquete agregue una imagen en la carpeta */images* de la aplicación, colóquelo en la carpeta *content/images* del paquete. |
-| compilación | Archivos `.targets` y `.props` de MSBuild | Se insertan automáticamente en el archivo de proyecto o en `project.lock.json` (NuGet 3.x y versiones posteriores). |
+| compilación | Archivos `.targets` y `.props` de MSBuild | Se insertan automáticamente en el proyecto (NuGet 3.x+). |
+| buildMultiTargeting | Los archivos `.targets` y `.props` de MSBuild de los destinos multiplataforma | Se insertan automáticamente en el proyecto. |
+| buildTransitive | *(5.0 +)*  Los archivos `.targets` y `.props` de MSBuild que fluyen de manera transitiva a cualquier proyecto de consumo. Vea la página de la [característica](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior). | Se insertan automáticamente en el proyecto. |
 | tools | Scripts de PowerShell y programas accesibles desde la consola del Administrador de paquetes | La carpeta `tools` se agrega a la variable de entorno `PATH` solo para la consola del Administrador de paquetes (en concreto, *no* a `PATH` como se establece para MSBuild al compilar el proyecto). |
 
 Dado que la estructura de carpetas puede contener cualquier número de ensamblados para cualquier número de plataformas de destino, este método es necesario al crear paquetes que admiten varias plataformas.
@@ -218,7 +220,15 @@ nuget spec
 
 El archivo `<project-name>.nuspec` resultante contiene *tokens* que se reemplazan durante el empaquetado con valores del proyecto, incluidas las referencias a todos los demás paquetes que ya se han instalado.
 
-Un token está delimitado por símbolos `$` en ambos lados de la propiedad del proyecto. Por ejemplo, el valor `<id>` en un manifiesto generado de este modo normalmente tiene este aspecto:
+Si tiene dependencias de paquete que se van a incluir en el archivo *.nuspec*, use en su lugar `nuget pack` y obtenga el archivo *.nuspec* en el archivo *.nupkg* generado. Por ejemplo, use el siguiente comando:
+
+```cli
+# Use in a folder containing a project file <project-name>.csproj or <project-name>.vbproj
+nuget pack myproject.csproj
+```
+```
+
+A token is delimited by `$` symbols on both sides of the project property. For example, the `<id>` value in a manifest generated in this way typically appears as follows:
 
 ```xml
 <id>$id$</id>
@@ -339,7 +349,7 @@ Cuando NuGet instala un paquete con archivos `\build`, agrega elementos `<Import
 
 Los archivos `.props` y `.targets` de MSBuild de los destinos multiplataforma pueden colocarse en la carpeta `\buildMultiTargeting`. Durante la instalación de paquetes, NuGet agrega los elementos `<Import>` correspondientes al archivo de proyecto, con la condición de que no se establezca la plataforma de destino (la propiedad `$(TargetFramework)` de MSBuild debe estar vacía).
 
-Con NuGet 3.x, los destinos no se agregan al proyecto pero en su lugar se ponen a disposición a través de `project.lock.json`.
+Con NuGet 3.x, los destinos no se agregan al proyecto pero en su lugar se ponen a disposición a través de `{projectName}.nuget.g.targets` y `{projectName}.nuget.g.props`.
 
 ## <a name="run-nuget-pack-to-generate-the-nupkg-file"></a>Ejecución del paquete nuget para generar el archivo .nupkg
 

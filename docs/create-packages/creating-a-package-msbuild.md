@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: a0db6dc95ffa5ad73741ae53a6be9d6f937c1dbf
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: 92b42f0a6133565844d0b6df2cb50770793055ec
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833229"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860633"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>Creación de un paquete NuGet con MSBuild
 
@@ -68,7 +68,7 @@ También puede establecer las propiedades opcionales, como `Title`, `PackageDesc
 > [!NOTE]
 > En el caso de los paquetes creados para consumo público, preste especial atención la propiedad **PackageTags**, dado que estas etiquetas ayudan a otros usuarios a encontrar el paquete y comprender lo que hace.
 
-Para obtener más información sobre cómo declarar dependencias y especificar números de versión, vea [Referencias del paquete (PackageReference) en archivos del proyecto](../consume-packages/package-references-in-project-files.md) y [Control de versiones de paquetes](../reference/package-versioning.md). También es posible exponer recursos directamente desde las dependencias en el paquete mediante los atributos `<IncludeAssets>` y `<ExcludeAssets>`. Para más información, consulte [Controlar los recursos de dependencias](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+Para obtener más información sobre cómo declarar dependencias y especificar números de versión, vea [Referencias del paquete en archivos del proyecto](../consume-packages/package-references-in-project-files.md) y [Control de versiones de paquetes](../reference/package-versioning.md). También es posible exponer recursos directamente desde las dependencias en el paquete mediante los atributos `<IncludeAssets>` y `<ExcludeAssets>`. Para más información, consulte [Controlar los recursos de dependencias](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
 
 ## <a name="choose-a-unique-package-identifier-and-set-the-version-number"></a>Elección de un identificador de paquete único y establecimiento del número de versión
 
@@ -105,7 +105,7 @@ Si usa MSBuild con un proyecto sin SDK y PackageReference, agregue el paquete Nu
 
 Para compilar un paquete NuGet (un archivo `.nupkg`) desde el proyecto, ejecute el comando `msbuild -t:pack`, que también genera el proyecto automáticamente:
 
-En el símbolo del sistema para desarrolladores, escriba el siguiente comando:
+En el símbolo del sistema para desarrolladores de Visual Studio, escriba el comando siguiente:
 
 ```cmd
 # Uses the project file in the current folder by default

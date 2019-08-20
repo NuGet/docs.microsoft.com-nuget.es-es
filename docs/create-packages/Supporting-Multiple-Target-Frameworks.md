@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: d12b12c4670f5dcb4c1e7e475d77926bd5d3935b
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 14483264030dd3bb32c7295886f2d37d52e735cc
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342506"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020036"
 ---
 # <a name="support-multiple-net-versions"></a>Compatibilidad con varias versiones de .NET
 
@@ -120,6 +120,32 @@ Los perfiles compatibles son los siguientes:
 - `full`: perfil completo
 - `wp`: Windows Phone
 - `cf`: Compact Framework
+
+## <a name="declaring-dependencies-advanced"></a>Declaración de dependencias (avanzado)
+
+Al empaquetar un archivo del proyecto, NuGet intenta generar automáticamente las dependencias del proyecto. La información de esta sección sobre el uso de un archivo *.nuspec* para declarar dependencias suele ser necesaria solo para escenarios avanzados.
+
+*(Versión 2.0+)* Puede declarar dependencias de paquete en el archivo *.nuspec* correspondiente a la plataforma de destino del proyecto de destino usando elementos `<group>` dentro del elemento `<dependencies>`. Para más información, consulte el [elemento de dependencias](../reference/nuspec.md#dependencies-element).
+
+Cada grupo tiene un atributo denominado `targetFramework` y contiene cero o más elementos `<dependency>`. Estas dependencias se instalan conjuntamente cuando la plataforma de destino es compatible con el perfil de plataforma del proyecto. Vea [Target frameworks](../reference/target-frameworks.md) (Plataformas de destino) para ver los identificadores de plataforma exactos.
+
+Se recomienda usar un grupo por el moniker de la plataforma de destino (TFM) para los archivos de las carpetas *lib/* y *ref/* .
+
+En el ejemplo siguiente se muestran diferentes variaciones del elemento `<group>`:
+
+```xml
+<dependencies>
+
+    <group targetFramework="net472">
+        <dependency id="jQuery" version="1.10.2" />
+        <dependency id="WebActivatorEx" version="2.2.0" />
+    </group>
+
+    <group targetFramework="net20">
+    </group>
+
+</dependencies>
+```
 
 ## <a name="determining-which-nuget-target-to-use"></a>Determinar qué destino de NuGet se debe usar
 
