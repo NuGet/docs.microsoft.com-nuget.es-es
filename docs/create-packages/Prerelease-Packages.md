@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 726f983c2522fdb538dfce858fdf2371ec0ce188
-ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
+ms.openlocfilehash: a7d07da30daf3f94db99476b88d9abaad1bb8a07
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433336"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488866"
 ---
 # <a name="building-pre-release-packages"></a>Crear paquetes de versión preliminar
 
@@ -20,7 +20,7 @@ Cada vez que libere un paquete actualizado con un nuevo número de versión, NuG
 
 Una versión estable es aquella que se considera lo suficientemente confiable para su uso en producción. La versión estable más reciente también es la que se instalará como actualización del paquete o durante la restauración del paquete (sujeta a restricciones, tal y como se describe en [Reinstalación y actualización de paquetes](../consume-packages/reinstalling-and-updating-packages.md)).
 
-Para admitir el ciclo de vida de la versión de software, NuGet 1.6 y versiones posteriores permite la distribución de paquetes de versión preliminar, donde el número de versión incluye un sufijo de control de versiones semántico como `-alpha`, `-beta` o `-rc`. Para más información, vea [Package versioning](../reference/package-versioning.md#pre-release-versions) (Control de versiones de paquetes).
+Para admitir el ciclo de vida de la versión de software, NuGet 1.6 y versiones posteriores permite la distribución de paquetes de versión preliminar, donde el número de versión incluye un sufijo de control de versiones semántico como `-alpha`, `-beta` o `-rc`. Para más información, vea [Package versioning](../concepts/package-versioning.md#pre-release-versions) (Control de versiones de paquetes).
 
 Puede especificar estas versiones mediante una de las maneras siguientes:
 
@@ -38,7 +38,7 @@ Puede especificar estas versiones mediante una de las maneras siguientes:
     <version>1.0.1-alpha</version>
     ```
 
-Cuando esté listo para liberar una versión estable, quite el sufijo y el paquete tendrá prioridad sobre las demás versiones preliminares. Una vez más, vea [Package versioning](../reference/package-versioning.md#pre-release-versions) (Control de versiones de paquetes).
+Cuando esté listo para liberar una versión estable, quite el sufijo y el paquete tendrá prioridad sobre las demás versiones preliminares. Una vez más, vea [Package versioning](../concepts/package-versioning.md#pre-release-versions) (Control de versiones de paquetes).
 
 ## <a name="installing-and-updating-pre-release-packages"></a>Instalar y actualizar paquetes de versión preliminar
 

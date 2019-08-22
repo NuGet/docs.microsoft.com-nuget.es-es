@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8c85c1a89469c491c6be1f81961197450744349c
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 34b08f06f04efdcf7bf73efc2cbdb5a5494ae2d9
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545578"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488195"
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>Impacto de project.json al crear paquetes
 
@@ -25,7 +25,7 @@ Los paquetes tradicionales de NuGet admiten una serie de características que no
 
 ### <a name="install-and-uninstall-scripts-are-ignored"></a>Los scripts de instalación y desinstalación se omiten
 
-El modelo de restauración transitiva, descrito en [Dependency resolution](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference) (Resolución de dependencias), no tiene un concepto de "período de instalación de paquetes". Un paquete está presente o no, pero no hay ningún proceso coherente que tenga lugar cuando se instala un paquete.
+El modelo de restauración transitiva, descrito en [Dependency resolution](../concepts/dependency-resolution.md#dependency-resolution-with-packagereference) (Resolución de dependencias), no tiene un concepto de "período de instalación de paquetes". Un paquete está presente o no, pero no hay ningún proceso coherente que tenga lugar cuando se instala un paquete.
 
 Además, los scripts de instalación solo se admitían en Visual Studio. Otros IDE tenían que simular la API de extensibilidad de Visual Studio para intentar admitir estos scripts, y no había compatibilidad disponible en los editores y herramientas de línea de comandos comunes.
 

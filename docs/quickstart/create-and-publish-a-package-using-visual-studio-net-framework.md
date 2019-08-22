@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: 75160bf2b01f6d4707162e019a6263ddc64a6f5e
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 7bfe041c01114ac61e811497ecc31ebfdad45029
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342512"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488900"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Inicio rápido: Creación y publicación de un paquete con Visual Studio (.NET Framework, Windows)
 
@@ -184,5 +184,5 @@ Para explorar más de lo que NuGet ofrece, seleccione los siguientes vínculos.
 - [Publicar un paquete](../nuget-org/publish-a-package.md)
 - [Paquetes de versión preliminar](../create-packages/Prerelease-Packages.md)
 - [Admitir varias plataformas de destino](../create-packages/supporting-multiple-target-frameworks.md)
-- [Control de versiones del paquete](../reference/package-versioning.md)
+- [Control de versiones del paquete](../concepts/package-versioning.md)
 - [Creación de paquetes localizados](../create-packages/creating-localized-packages.md)

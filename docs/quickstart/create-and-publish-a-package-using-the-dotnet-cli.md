@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: f663b1b2176a5f0ae5bc6d82873193638e0efdaa
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: c0e6de2c3b9978538d504f4af6e744ece43b4a4d
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833385"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488943"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Inicio rápido: Creación y publicación de un paquete (CLI de dotnet)
 
@@ -119,7 +119,7 @@ Para explorar más de lo que NuGet ofrece, seleccione los siguientes vínculos.
 - [Publicar un paquete](../nuget-org/publish-a-package.md)
 - [Paquetes de versión preliminar](../create-packages/Prerelease-Packages.md)
 - [Admitir varias plataformas de destino](../create-packages/multiple-target-frameworks-project-file.md)
-- [Control de versiones del paquete](../reference/package-versioning.md)
+- [Control de versiones del paquete](../concepts/package-versioning.md)
 - [Creación de paquetes localizados](../create-packages/creating-localized-packages.md)
 - [Creación de paquetes de símbolos](../create-packages/symbol-packages-snupkg.md)
 - [Firma de paquetes](../create-packages/Sign-a-package.md)

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: 1198a781543e581f55740cc0ae5a212d3f8a8b61
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 11dce27b93c3d09a2d27dc79f8d4fed86df879ba
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842452"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488971"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Creación de paquetes de .NET Standard y .NET Framework con Visual Studio 2015
 
@@ -125,7 +125,7 @@ Si tiene dependencias en otros paquetes de NuGet, muéstrelos en una lista en el
 </dependencies>
 ```
 
-La sintaxis del atributo *version* aquí indica que la versión 8.0.3 o una versión posterior es aceptable. Para especificar distintos intervalos de versiones, vea [Control de versiones de paquetes](../reference/package-versioning.md).
+La sintaxis del atributo *version* aquí indica que la versión 8.0.3 o una versión posterior es aceptable. Para especificar distintos intervalos de versiones, vea [Control de versiones de paquetes](../concepts/package-versioning.md).
 
 ### <a name="adding-a-readme"></a>Agregar un archivo Léame
 
@@ -170,6 +170,6 @@ Tenga en cuenta que `pack` requiere Mono 4.4.2 en Mac OS X y no funciona en los 
 - [Incluir propiedades y destinos de MSBuild en un paquete](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [Creación de paquetes localizados](../create-packages/creating-localized-packages.md)
 - [Paquetes de símbolos](../create-packages/symbol-packages.md)
-- [Control de versiones del paquete](../reference/package-versioning.md)
+- [Control de versiones del paquete](../concepts/package-versioning.md)
 - [Documentación de la biblioteca de .NET Standard](/dotnet/articles/standard/library)
 - [Portabilidad a .NET Core desde .NET Framework](/dotnet/articles/core/porting/index)

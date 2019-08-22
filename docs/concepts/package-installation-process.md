@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5676239bedb7f8fbe9f74725864afd297405d5c1
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 69ef02e3c935287759b4012aadcfb1cb9811367c
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842329"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488443"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>¿Qué ocurre cuando se instala un paquete NuGet?
 
@@ -39,7 +39,7 @@ El proceso general es el siguiente:
 
 4. Si se descarga, instale el paquete en la carpeta *global-packages* por usuario. NuGet crea una subcarpeta para cada identificador de paquete y luego crea subcarpetas para cada versión instalada del paquete.
 
-5. NuGet instala las dependencias de paquetes según sea necesario. Puede que este proceso actualice las versiones del paquete en el proceso, tal y como se describe en el artículo sobre [resolución de dependencias](../consume-packages/dependency-resolution.md).
+5. NuGet instala las dependencias de paquetes según sea necesario. Puede que este proceso actualice las versiones del paquete en el proceso, tal y como se describe en el artículo sobre [resolución de dependencias](../concepts/dependency-resolution.md).
 
 6. Actualice otros archivos y carpetas del proyecto:
 

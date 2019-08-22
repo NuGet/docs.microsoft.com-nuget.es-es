@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0b3ecb535c07459bff517102b3cf6f4e6dc42195
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: ddd1d163e18ed4ce1e7cbf41ed152acc40c1c423
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317056"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488779"
 ---
 # <a name="package-consumption-workflow"></a>Flujo de trabajo de consumo de paquetes
 
@@ -29,13 +29,13 @@ NuGet recuerda la identidad y el número de versión de cada paquete instalado, 
 
 Al instalar paquetes, NuGet suele comprobar si el paquete ya está disponible en su memoria caché. Puede borrar manualmente esta memoria caché desde la línea de comandos, tal y como se describe en [Administración de paquetes globales y carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
-NuGet también garantiza que las plataformas de destino admitidas por el paquete son compatibles con el proyecto. Si el paquete no contiene ensamblados compatibles, NuGet muestra un mensaje de error. Vea [Resolución de errores de paquetes incompatibles](dependency-resolution.md#resolving-incompatible-package-errors).
+NuGet también garantiza que las plataformas de destino admitidas por el paquete son compatibles con el proyecto. Si el paquete no contiene ensamblados compatibles, NuGet muestra un mensaje de error. Vea [Resolución de errores de paquetes incompatibles](../concepts/dependency-resolution.md#resolving-incompatible-package-errors).
 
 Al agregar el código del proyecto a un repositorio de origen, no se suelen incluir los paquetes de NuGet. Quienes más adelante clonen el repositorio o de alguna manera adquieran el proyecto (por ejemplo, agentes de compilación en sistemas como Visual Studio Team Services), tendrán que restaurar los paquetes necesarios antes de ejecutar una compilación:
 
 ![Flujo para restaurar paquetes de NuGet clonando un repositorio y usando un comando de restauración](media/Overview-02-RestoreFlow.png)
 
-La [restauración de paquetes](../consume-packages/package-restore.md) usa la información del archivo de proyecto o de `packages.config` para volver a instalar todas las dependencias. Tenga en cuenta que existen diferencias en el proceso implicado, como se describe en [Dependency Resolution](../consume-packages/dependency-resolution.md) (Resolución de dependencias). Además, en el diagrama anterior no se muestra un comando de restauración para la consola del Administrador de paquetes porque, si se encuentra en la consola, ya está en el contexto de Visual Studio, que normalmente restaura los paquetes de forma automática y proporciona el comando de nivel de la solución, tal y como se muestra.
+La [restauración de paquetes](../consume-packages/package-restore.md) usa la información del archivo de proyecto o de `packages.config` para volver a instalar todas las dependencias. Tenga en cuenta que existen diferencias en el proceso implicado, como se describe en [Dependency Resolution](../concepts/dependency-resolution.md) (Resolución de dependencias). Además, en el diagrama anterior no se muestra un comando de restauración para la consola del Administrador de paquetes porque, si se encuentra en la consola, ya está en el contexto de Visual Studio, que normalmente restaura los paquetes de forma automática y proporciona el comando de nivel de la solución, tal y como se muestra.
 
 A veces es necesario volver a instalar los paquetes que ya están incluidos en un proyecto, que también podrían volver a instalar las dependencias. Esto resulta sencillo con el comando `nuget reinstall` o la consola del Administrador de paquetes NuGet. Para más información, vea [Reinstalación y actualización de paquetes](../consume-packages/reinstalling-and-updating-packages.md).
 

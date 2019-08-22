@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/27/2017
 ms.topic: reference
-ms.openlocfilehash: e4d8b5b9ab4605516827ead8939f278d110c7a48
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5ecbcd4855de8ea7b6301a5e307779216baf96fc
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547789"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488293"
 ---
 # <a name="projectjson-reference"></a>referencia de project.json
 
@@ -62,7 +62,7 @@ El identificador del paquete se corresponde con el identificador del paquete en 
 
 Al restaurar paquetes, la restricción de versión de `"5.0.0"` implica `>= 5.0.0`. Es decir, si 5.0.0 no está disponible en el servidor pero 5.0.1 sí lo está, NuGet instala 5.0.1 y le advierte de la actualización. En caso contrario, NuGet elige la versión más baja posible en el servidor que coincida con la restricción.
 
-Vea [Resolución de dependencias](../consume-packages/dependency-resolution.md) para obtener más detalles sobre las reglas de resolución.
+Vea [Resolución de dependencias](../concepts/dependency-resolution.md) para obtener más detalles sobre las reglas de resolución.
 
 ### <a name="managing-dependency-assets"></a>Administración de recursos de dependencia
 
