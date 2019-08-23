@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5bf75bb724846f652725bfcf636908c34adc174f
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.openlocfilehash: dfe5f2ef4f0ababd81b91073938752aab2bdc01e
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860680"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488810"
 ---
 # <a name="restore-packages-using-package-restore"></a>Restauración de paquetes
 
@@ -181,7 +181,7 @@ Cuando NuGet restaure paquetes con cualquier método, respetará las restriccion
     <PackageReference Include="Newtonsoft.json" Version="[6, 7)" />
     ```
 
-En todos los casos, use la notación que se describe en [Package versioning](../reference/package-versioning.md) (Control de versiones de paquetes).
+En todos los casos, use la notación que se describe en [Package versioning](../concepts/package-versioning.md) (Control de versiones de paquetes).
 
 ## <a name="force-restore-from-package-sources"></a>Restauración forzada a partir de orígenes de paquetes
 
