@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 05ece5f36ff7ae5920960c42cfde8b271dc3e712
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: ae80206117eed639140a0c7977043d8330bc37bb
+ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020008"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69564570"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
 
@@ -20,7 +20,7 @@ Con PackageReference, también puede usar las condiciones de MSBuild para elegir
 
 ## <a name="project-type-support"></a>Compatibilidad con tipo de proyecto
 
-De forma predeterminada, PackageReference se usa para proyectos de .NET Core, proyectos de .NET Standard y proyectos de UWP que tengan como destino Windows 10 Build 15063 (Creators Update) y versiones posteriores, con la excepción de los proyectos de UWP en C++. Los proyectos de .NET Framework admiten PackageReference, pero actualmente tienen como valor predeterminado `packages.config`. Para usar PackageReference, [migre](../reference/migrate-packages-config-to-package-reference.md) las dependencias de `packages.config` al archivo de proyecto y luego quite packages.config.
+De forma predeterminada, PackageReference se usa para proyectos de .NET Core, proyectos de .NET Standard y proyectos de UWP que tengan como destino Windows 10 Build 15063 (Creators Update) y versiones posteriores, con la excepción de los proyectos de UWP en C++. Los proyectos de .NET Framework admiten PackageReference, pero actualmente tienen como valor predeterminado `packages.config`. Para usar PackageReference, [migre](../consume-packages/migrate-packages-config-to-package-reference.md) las dependencias de `packages.config` al archivo de proyecto y luego quite packages.config.
 
 Las aplicaciones ASP.NET destinadas a .NET Framework por completo solo incluyen [compatibilidad limitada](https://github.com/NuGet/Home/issues/5877) para PackageReference. Los tipos de proyecto de C++y JavaScript no son compatibles.
 
@@ -48,7 +48,7 @@ La convención para especificar la versión de un paquete es la misma que cuando
 </ItemGroup>
 ```
 
-En el ejemplo anterior, 3.6.0 hace referencia a cualquier versión que sea > = 3.6.0 con preferencia para la versión más antigua, tal como se describe en [Package versioning](../reference/package-versioning.md#version-ranges-and-wildcards) (Control de versiones de paquetes).
+En el ejemplo anterior, 3.6.0 hace referencia a cualquier versión que sea > = 3.6.0 con preferencia para la versión más antigua, tal como se describe en [Package versioning](../concepts/package-versioning.md#version-ranges-and-wildcards) (Control de versiones de paquetes).
 
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>Uso de una PackageReference para un proyecto sin PackageReferences
 Avanzado: Si no tiene paquetes instalados en un proyecto (ninguna PackageReference en el archivo de proyecto y ningún archivo packages.config), pero quiere que el proyecto se restaure como de estilo PackageReference, puede establecer una propiedad de proyecto RestoreProjectStyle en PackageReference en el archivo de proyecto.
@@ -63,7 +63,7 @@ Esto puede resultar útil si hace referencia a proyectos de estilo PackageRefere
 
 ## <a name="floating-versions"></a>Versiones flotantes
 
-Las [versiones flotantes](../consume-packages/dependency-resolution.md#floating-versions) son compatibles con `PackageReference`:
+Las [versiones flotantes](../concepts/dependency-resolution.md#floating-versions) son compatibles con `PackageReference`:
 
 ```xml
 <ItemGroup>
@@ -106,7 +106,7 @@ A continuación se muestran los valores permitidos para estas etiquetas, con var
 | motor en tiempo de ejecución | Contenido de las carpetas `lib` y `runtimes` y controla si estos ensamblados se copiarán en el directorio de salida de compilación |
 | contentFiles | Contenido de la carpeta `contentfiles` |
 | compilación | `.props` y `.targets` en la carpeta `build` |
-| buildMultitargeting | `.props` y `.targets` en la carpeta `buildMultitargeting`, de los destinos multiplataforma |
+| buildMultitargeting | *(4.0)* `.props` y `.targets` en la carpeta `buildMultitargeting`, para los destinos multiplataforma |
 | buildTransitive | *(5.0+)* `.props` y `.targets` en la carpeta `buildTransitive`, para los recursos que fluyen de manera transitiva a cualquier proyecto de consumo. Vea la página de la [característica](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior). |
 | analyzers | Analizadores de .NET |
 | nativas | Contenido de la carpeta `native` |
@@ -130,6 +130,9 @@ En el ejemplo siguiente, todo excepto los archivos de contenido del paquete ser�
 ```
 
 Tenga en cuenta que, dado que `build` no se incluye con `PrivateAssets`, los destinos y las propiedades *irán* al proyecto principal. Imagínese, por ejemplo, que la referencia anterior se usa en un proyecto que genera un paquete de NuGet llamado AppLogger. AppLogger puede consumir los destinos y las propiedades de `Contoso.Utility.UsefulStuff`, igual que los proyectos que consumen AppLogger.
+
+> [!NOTE]
+> Cuando `developmentDependency` se establece en `true` en un archivo `.nuspec`, esto marca un paquete como una dependencia de solo desarrollo, que impide que el paquete se incluya como una dependencia en otros paquetes. Con PackageReference *(NuGet 4.8 +)* , esta marca también significa que excluirá los recursos en tiempo de compilación de la compilación. Para más información, consulte [Compatibilidad de DevelopmentDependency para PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference).
 
 ## <a name="adding-a-packagereference-condition"></a>Agregar una condición PackageReference
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: b1c2511c1fbafc7f52029c23521fa55671b0b5c5
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: dbc3781bd17f815c6b32fc70b275469337148f41
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546900"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488832"
 ---
 # <a name="creating-localized-nuget-packages"></a>Creación de paquetes localizados de NuGet
 
@@ -77,7 +77,7 @@ Un paquete de ejemplo que usa este enfoque es [Microsoft.Data.OData 5.4.0](http:
 
 La agrupación de todos los idiomas en un único paquete presenta algunas desventajas:
 
-1. **Metadatos compartidos**: dado que un paquete de NuGet solo puede contener un único archivo `.nuspec`, puede proporcionar metadatos solo para un idioma. Es decir, NuGet no presenta metadatos localizados de soporte.
+1. **Metadatos compartidos**: dado que un paquete NuGet solo puede contener un único archivo `.nuspec`, puede proporcionar metadatos solo para un idioma. Es decir, NuGet no presenta metadatos localizados de soporte.
 1. **Tamaño del paquete**: dependiendo del número de idiomas admitidos, la biblioteca puede ser bastante extensa, lo que ralentiza la instalación y la restauración del paquete.
 1. **Versiones simultáneas**: la agrupación de archivos localizados en un único paquete requiere que se liberen todos los recursos de ese paquete de forma simultánea, en lugar de poder liberar cada localización por separado. Además, todas las actualizaciones que se hagan en cualquier localización requieren una nueva versión del paquete entero.
 
@@ -101,7 +101,7 @@ Luego, un ensamblado satélite usa la convención de nomenclatura `{identifier}.
 
 Dado que se trata de un paquete independiente, tiene su propio archivo `.nuspec` que contiene metadatos localizados. Tenga en cuenta que el idioma del archivo `.nuspec` **debe** coincidir con el que se usa en el nombre de archivo.
 
-El ensamblado satélite también **debe** declarar una versión exacta del paquete principal como dependencia, mediante la notación de versión [] \(vea [Package versioning](../reference/package-versioning.md) [Control de versiones de paquetes]). Por ejemplo, `ContosoUtilities.de.1.0.0.nupkg` debe declarar una dependencia en `ContosoUtilities.1.0.0.nupkg` mediante la notación `[1.0.0]`. El paquete satélite, por supuesto, puede tener un número de versión diferente que el paquete principal.
+El ensamblado satélite también **debe** declarar una versión exacta del paquete principal como dependencia, mediante la notación de versión [] \(vea [Package versioning](../concepts/package-versioning.md) [Control de versiones de paquetes]). Por ejemplo, `ContosoUtilities.de.1.0.0.nupkg` debe declarar una dependencia en `ContosoUtilities.1.0.0.nupkg` mediante la notación `[1.0.0]`. El paquete satélite, por supuesto, puede tener un número de versión diferente que el paquete principal.
 
 Después, la estructura del paquete satélite debe incluir el ensamblado de recursos y el archivo XML de IntelliSense en una subcarpeta que coincida con `{language}` en el nombre de archivo del paquete:
 
