@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: f931ed297a6a1e9e24ce5eb30a8158f59925bb39
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 29c52b6684dff252e9c45bf5365d83b6a3fe5201
+ms.sourcegitcommit: c65e7a889ddf64a8e2ff7bc59ec08edb308e16ca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488681"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060246"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -76,7 +76,7 @@ El identificador del paquete que no distingue entre mayúsculas y minúsculas, q
 #### <a name="version"></a>version
 La versión del paquete, siguiendo el patrón *mayor.menor.revisión*. Los números de versión pueden incluir un sufijo de versión preliminar, tal y como se describe en [Control de versiones de paquetes](../concepts/package-versioning.md#pre-release-versions). 
 #### <a name="description"></a>description
-Una descripción larga del paquete para su visualización en la interfaz de usuario. 
+Descripción del paquete para la presentación de la interfaz de usuario.
 #### <a name="authors"></a>authors
 Una lista separada por comas de los autores de los paquetes, que coinciden con los nombres de perfil de nuget.org. Estos se muestran en la galería de NuGet, en nuget.org, y se usan para hacer referencias cruzadas a paquetes de los mismos autores. 
 
@@ -152,6 +152,9 @@ Valor booleano que especifica si el cliente debe pedir al consumidor que acepte 
 *(2.8+)* Valor booleano que especifica si el paquete se debe marcar como una dependencia de solo desarrollo, que impide que el paquete se incluya como una dependencia en otros paquetes. Con PackageReference (NuGet 4.8 +), esta marca también significa que excluirá los recursos en tiempo de compilación de la compilación. Consulte [compatibilidad con DevelopmentDependency para PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
 
 #### <a name="summary"></a>resumen
+> [!Important]
+> `summary`está en desuso. Utilice `description` en su lugar.
+
 Descripción breve del paquete para su visualización en la interfaz de usuario. Si se omite, se usará una versión truncada de `description`.
 
 #### <a name="releasenotes"></a>releaseNotes
