@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: dfe5f2ef4f0ababd81b91073938752aab2bdc01e
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 93a94a5468b48179d27b89825cebf2447657c8f2
+ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488810"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999983"
 ---
 # <a name="restore-packages-using-package-restore"></a>Restauración de paquetes
 
@@ -44,7 +44,7 @@ La restauración de paquetes intenta instalar todas las dependencias de paquete 
 
    En el caso de los proyectos que usan PackageReference, después de una restauración correcta, el paquete debe estar presente en la carpeta *global-packages* y el archivo `obj/project.assets.json` se vuelve a crear. En el caso de los proyectos que usan `packages.config`, el paquete debe aparecer en la carpeta del proyecto `packages`. Ahora el proyecto debería compilarse correctamente. 
 
-2. Después de ejecutar la restauración de paquetes, si sigue teniendo paquetes que faltan o errores relacionados con paquetes (como iconos de error en Explorador de soluciones de Visual Studio), es posible que tenga que [volver a instalar y actualizar los paquetes](../consume-packages/reinstalling-and-updating-packages.md).
+2. Tras ejecutar la restauración de paquetes, si sigue teniendo errores relacionados con los paquetes (como iconos de error en el Explorador de soluciones de Visual Studio) o faltan paquetes, es posible que deba seguir las instrucciones descritas en [Solución de errores de restauración de paquetes](package-restore-troubleshooting.md). Si lo prefiere, puede [reinstalar y actualizar los paquetes](../consume-packages/reinstalling-and-updating-packages.md).
 
    En Visual Studio, la consola del administrador de paquetes proporciona varias opciones flexibles para volver a instalar los paquetes. Consulte [Uso de Package-Update](reinstalling-and-updating-packages.md#using-update-package).
 

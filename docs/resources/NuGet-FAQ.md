@@ -5,14 +5,16 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9b12b1fa27308cf41b58b0c244ea648d3eecdc95
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 8cc990e0c9eed07c59c8dffb04d104be47051736
+ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520395"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999941"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
+
+Para conocer las preguntas más frecuentes sobre nuget.org, como aquellas relativas a las cuentas de nuget.org, vea [Preguntas más frecuentes de nuget.org](../nuget-org/nuget-org-faq.md).
 
 **¿Qué se necesita para ejecutar NuGet?**
 

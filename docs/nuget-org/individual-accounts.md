@@ -1,18 +1,18 @@
 ---
-title: Cuentas individuales
+title: 'Cuentas individuales: nuget.org'
 description: Se requieren cuentas individuales en NuGet.org para publicar paquetes.
 author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: c88b88015bd6d5bae4789765126c0a3dec527e24
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 63c6b5eb5ad635e436b4d53a5f833af35f72d76f
+ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419858"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999964"
 ---
-# <a name="individual-accounts"></a>Cuentas individuales
+# <a name="individual-accounts-on-nugetorg"></a>Cuentas individuales en nuget.org
 
 Debe crear una cuenta individual para publicar y administrar paquetes en NuGet.org.
 
@@ -69,3 +69,7 @@ Para proteger mejor la cuenta, habilite la autenticación en dos fases (recomend
    ![Habilitación de la autenticación en dos fases](media/nuget-org-enter-code-2fa.png)
 
 5. Siga cualquier instrucción adicional para completar la autenticación en dos fases.
+
+## <a name="delete-a-nugetorg-account"></a>Eliminación de una cuenta de nuget.org
+
+Para obtener ayuda con las tareas adicionales relacionadas con las cuentas, como la eliminación de una cuenta de nuget.org, vea [Administración de cuentas de nuget.org](nuget-org-faq.md#nugetorg-account-management).
