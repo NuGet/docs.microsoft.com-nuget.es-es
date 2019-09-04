@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: b898b389ee6c962831ce789a7c304c75e6bd8774
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: be25e9bf72b9115de8ae55f6296195fed3152f10
+ms.sourcegitcommit: ac9a00ccaf90e539a381e92b650074910b21eb0d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488207"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70235118"
 ---
 # <a name="search"></a>Buscar
 
@@ -99,7 +99,7 @@ title          | string                     | No       |
 totalDownloads | integer                    | No       | Este valor se puede inferir por la suma de descargas de la `versions` matriz.
 demasiado       | boolean                    | No       | Un valor booleano JSON que indica si se [comprueba](../nuget-org/id-prefix-reservation.md) el paquete
 
-En nuget.org, un paquete comprobado es aquél que tiene un identificador de paquete que coincide con un prefijo de identificador reservado y es propiedad de uno de los propietarios del prefijo reservado. Para obtener más información, consulte la [documentación sobre la reserva de](../reference/id-prefix-reservation.md)prefijos de identificador.
+En nuget.org, un paquete comprobado es aquél que tiene un identificador de paquete que coincide con un prefijo de identificador reservado y es propiedad de uno de los propietarios del prefijo reservado. Para obtener más información, consulte la [documentación sobre la reserva de prefijos de identificador](../reference/id-prefix-reservation.md).
 
 Los metadatos contenidos en el objeto de resultado de la búsqueda se toman de la versión más reciente del paquete. Cada elemento de la `versions` matriz es un objeto JSON con las siguientes propiedades:
 
@@ -111,7 +111,7 @@ carga | integer | sí      | El número de descargas para esta versión de paque
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-    GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
+    GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
 
 ### <a name="sample-response"></a>Respuesta de ejemplo
 
