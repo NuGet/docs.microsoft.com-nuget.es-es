@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 29c52b6684dff252e9c45bf5365d83b6a3fe5201
-ms.sourcegitcommit: c65e7a889ddf64a8e2ff7bc59ec08edb308e16ca
+ms.openlocfilehash: ea40f80a482a290b7399e5a6abc69e0c6fe32b77
+ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060246"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70384452"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -143,7 +143,36 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 ```
 
 #### <a name="iconurl"></a>iconUrl
+
+> [!Important]
+> el iconUrl está en desuso. En su lugar, use el icono.
+
 Dirección URL para una imagen de 64 x 64 con fondo transparente para usarla como icono para el paquete en la visualización de la interfaz de usuario. Asegúrese de que este elemento contiene la *dirección URL directa a la imagen* y no la dirección URL de una página web que contiene la imagen. Por ejemplo, para usar una imagen de GitHub, use la dirección URL de archivo <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>sin formato como. 
+   
+#### <a name="icon"></a>icono
+
+Es una ruta de acceso a un archivo de imagen dentro del paquete, que a menudo se muestra en ius como nuget.org como el icono de paquete. El tamaño del archivo de imagen está limitado a 1 MB. Entre los formatos de archivo admitidos se incluyen JPEG y PNG. Se recomienda una imagen resoulution de 64 x 64.
+
+Por ejemplo, debe agregar lo siguiente a su archivo nuspec al crear un paquete con Nuget. exe:
+
+```xml
+<package>
+  <metadata>
+    ...
+    <icon>images\icon.png</icon>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="..\icon.png" target="images\" />
+    ...
+  </files>
+</package>
+```
+
+[Icono de paquete de ejemplo de nuspec.](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
+
+Para el equivalente de MSBuild, eche un vistazo a [empaquetar un archivo de imagen de icono](msbuild-targets.md#packing-an-icon-image-file).
 
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 Valor booleano que especifica si el cliente debe pedir al consumidor que acepte la licencia del paquete antes de instalarlo.
@@ -354,7 +383,7 @@ En el ejemplo siguiente se muestran diferentes variaciones del elemento `<group>
 
 ## <a name="explicit-assembly-references"></a>Referencias de ensamblado explícitas
 
-`<references>` Los`packages.config` proyectos utilizan el elemento para especificar explícitamente los ensamblados a los que debe hacer referencia el proyecto de destino al utilizar el paquete. Las referencias explícitas se suelen usar para ensamblados que solo son de tiempo de diseño. Para obtener más información, vea la página de selección de ensamblados a los [que se hace referencia en proyectos](../create-packages/select-assemblies-referenced-by-projects.md) .
+`<references>` Los`packages.config` proyectos utilizan el elemento para especificar explícitamente los ensamblados a los que debe hacer referencia el proyecto de destino al utilizar el paquete. Las referencias explícitas se suelen usar para ensamblados que solo son de tiempo de diseño. Para obtener más información, vea la página de [selección de ensamblados a los que se hace referencia en proyectos](../create-packages/select-assemblies-referenced-by-projects.md) .
 
 Por ejemplo, el siguiente elemento `<references>` indica a NuGet que agregue referencias solo a `xunit.dll` y `xunit.extensions.dll`, incluso si hay ensamblados adicionales en el paquete:
 
