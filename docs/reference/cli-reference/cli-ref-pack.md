@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: cab56cb87f46335f9fdebdbc1649fead16459877
-ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
+ms.openlocfilehash: 76829d45ea9821da3b7fdaa2f88d30dbb104fea1
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959723"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815364"
 ---
 # <a name="pack-command-nuget-cli"></a>Comando pack (CLI de NuGet)
 
@@ -35,6 +35,7 @@ donde `<nuspecPath>` `.nuspec` y `<projectPath>` especifican el archivo de proye
 | --- | --- |
 | BasePath | Establece la ruta de acceso base de los archivos definidos en el archivo [. nuspec](../nuspec.md) . |
 | Compilación | Especifica que el proyecto debe compilarse antes de compilar el paquete. |
+| Determinista | Especifique si el comando debe crear un paquete determinista. Varias invocaciones del comando Pack generarán el mismo paquete de byte a byte exacto. La salida del comando Pack no se ve afectada por el estado ambiente de la máquina. En concreto, las entradas zip se marcarán como 1980-01-01. Para lograr un determinismo completo, los ensamblados deben compilarse con la opción del compilador respectivo [-determinista](/dotnet/csharp/language-reference/compiler-options/deterministic-compiler-option). |
 | Excluir | Especifica uno o más patrones de caracteres comodín que se deben excluir al crear un paquete. Para especificar más de un patrón, repita la marca-exclude. Vea el ejemplo siguiente. |
 | ExcludeEmptyDirectories | Impide la inclusión de directorios vacíos al compilar el paquete. |
 | ForceEnglishOutput | *(3.5 +)* Fuerza a Nuget. exe a ejecutarse mediante una referencia cultural invariable basada en inglés. |

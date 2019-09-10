@@ -1,87 +1,89 @@
 ---
-title: NuGet entre los complementos de plataforma
-description: NuGet cross platform complementos de NuGet.exe, dotnet.exe, msbuild.exe y Visual Studio
+title: Complementos entre plataformas de NuGet
+description: Complementos de la plataforma NuGet para NuGet. exe, dotnet. exe, MSBuild. exe y Visual Studio
 author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: fdefc5b6189051fd83b2de644080284c09dd85f4
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 74b80b1791dcb403c90bb3032c009717c11ffe57
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548211"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815307"
 ---
-# <a name="nuget-cross-platform-plugins"></a>NuGet entre los complementos de plataforma
+# <a name="nuget-cross-platform-plugins"></a>Complementos entre plataformas de NuGet
 
-En NuGet 4.8 se ha agregado compatibilidad con entre los complementos de la plataforma.
-Con esto se logra mediante la creación de un nuevo modelo de extensibilidad de complemento, que tiene que ajustarse a un conjunto estricto de reglas de operación.
-Los complementos son aplicaciones ejecutables autónomas (runnables en el mundo de .NET Core), que los clientes de NuGet que se inicie en un proceso independiente.
-Se trata de una escritura true una vez, ejecutar en cualquier parte de complemento. Funcionará con todas las herramientas de cliente de NuGet.
-Los complementos pueden ser .NET Framework (NuGet.exe, MSBuild.exe y Visual Studio) o .NET Core (dotnet.exe).
-Se define un protocolo de comunicación con control de versiones entre el cliente de NuGet y el complemento. Durante el protocolo de enlace de inicio, los 2 procesos negocian la versión del protocolo.
+En NuGet, se ha agregado compatibilidad con NuGet 4.8 para complementos multiplataforma.
+Esto se logra mediante la creación de un nuevo modelo de extensibilidad de complementos, que tiene que ajustarse a un estricto conjunto de reglas de funcionamiento.
+Los complementos son archivos ejecutables independientes (runnables en el mundo de .NET Core), que los clientes de NuGet se inician en un proceso independiente.
+Se trata de una escritura auténtica una vez, ejecute el complemento Everywhere. Funcionará con todas las herramientas de cliente de NuGet.
+Los complementos pueden ser .NET Framework (NuGet. exe, MSBuild. exe y Visual Studio) o .NET Core (dotnet. exe).
+Se define un protocolo de comunicación con versión entre el cliente de NuGet y el complemento. Durante el protocolo de enlace de inicio, los dos procesos negocian la versión del protocolo.
 
-Con el fin de cubrir todos los escenarios de herramientas de cliente de NuGet, uno necesitaría un .NET Framework y un complemento de .NET Core.
-La continuación se describen las combinaciones de marco del cliente de los complementos.
+Con el fin de cubrir todos los escenarios de herramientas de cliente de NuGet, se necesitaría un complemento de .NET Framework y de .NET Core.
+A continuación se describen las combinaciones de cliente/marco de trabajo de los complementos.
 
 | Herramienta de cliente  | Framework |
 | ------------ | --------- |
-| Programa para la mejora | .NET Framework |
+| Visual Studio | .NET Framework |
 | dotnet.exe | Núcleo de .NET |
-| NuGet.exe | .NET Framework |
-| MSBuild.exe | .NET Framework |
-| NuGet.exe en Mono | .NET Framework |
+| NuGet. exe | .NET Framework |
+| MSBuild. exe | .NET Framework |
+| NuGet. exe en mono | .NET Framework |
 
-## <a name="how-does-it-work"></a>¿Cómo funciona
+## <a name="how-does-it-work"></a>Cómo funciona
 
-El flujo de trabajo de alto nivel puede describirse como sigue:
+El flujo de trabajo de alto nivel puede describirse de la siguiente manera:
 
-1. NuGet detecta complementos disponibles.
-1. Cuando sea aplicable, NuGet se iterará en los complementos en el orden de prioridad e inicia uno por uno.
+1. NuGet detecta los complementos disponibles.
+1. Cuando sea aplicable, NuGet recorrerá en iteración los complementos en orden de prioridad y los iniciará uno por uno.
 1. NuGet usará el primer complemento que puede atender la solicitud.
-1. Los complementos se cerrará cuando ya no se necesitan.
+1. Los complementos se cerrarán cuando ya no se necesiten.
 
-## <a name="general-plugin-requirements"></a>Requisitos del complemento de general
+## <a name="general-plugin-requirements"></a>Requisitos generales del complemento
 
-La versión actual del protocolo es *2.0.0*.
+La versión del protocolo actual es *2.0.0*.
 En esta versión, los requisitos son los siguientes:
 
-- Tiene un ensamblados de la firma Authenticode de válido y de confianza que se ejecutarán en Windows y Mono. No hay ningún requisito especial de confianza para los ensamblados que se ejecutan en Linux y Mac todavía. [Problema pertinente](https://github.com/NuGet/Home/issues/6702)
-- Admite iniciar sin estado en el contexto de seguridad actual de las herramientas de cliente de NuGet. Por ejemplo, las herramientas de cliente de NuGet no realizará elevación o inicialización adicional fuera el protocolo de complemento que se describe más adelante.
-- Ser no interactivo, a menos que especifique explícitamente.
-- Atenerse a la versión del protocolo negociado complemento.
+- Tener un ensamblado de firma Authenticode válido y de confianza que se ejecutará en Windows y mono. Todavía no hay ningún requisito de confianza especial para los ensamblados que se ejecutan en Linux y Mac. [Problema relevante](https://github.com/NuGet/Home/issues/6702)
+- Admita el inicio sin estado en el contexto de seguridad actual de las herramientas de cliente de NuGet. Por ejemplo, las herramientas de cliente de NuGet no realizarán la elevación o la inicialización adicional fuera del Protocolo de complemento que se describe más adelante.
+- No ser interactivo, a menos que se especifique explícitamente.
+- Respetar la versión del Protocolo de complementos negociados.
 - Responder a todas las solicitudes dentro de un período de tiempo razonable.
-- Aceptar las solicitudes de cancelación para cualquier operación en curso.
+- Respetar las solicitudes de cancelación de cualquier operación en curso.
 
-La especificación técnica se describe con más detalle en las especificaciones siguientes:
+La especificación técnica se describe con más detalle en las siguientes especificaciones:
 
-- [Complemento de descarga del paquete de NuGet](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
-- [NuGet entre el complemento de autenticación plat](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
+- [Complemento de descarga del paquete NuGet](https://github.com/NuGet/Home/wiki/NuGet-Package-Download-Plugin)
+- [Complemento de autenticación entre placas de NuGet](https://github.com/NuGet/Home/wiki/NuGet-cross-plat-authentication-plugin)
 
-## <a name="client---plugin-interaction"></a>Cliente: interacción de complemento
+## <a name="client---plugin-interaction"></a>Interacción entre cliente y complemento
 
-Las herramientas de cliente de NuGet y los complementos de comunican con JSON a través de los flujos estándar (stdin, stdout, stderr). Todos los datos deben estar codificados en UTF-8.
-Los complementos se inician con el argumento "-Plugin". En caso de que un usuario inicia directamente un complemento ejecutable sin este argumento, el complemento puede proporcionar un mensaje informativo en lugar de esperar un protocolo de enlace de protocolo.
-El tiempo de espera del protocolo de enlace de protocolo es 5 segundos. El complemento debe completar la instalación de como aparte de una cantidad como sea posible.
-Las herramientas de cliente de NuGet consultará las operaciones admitidas de un complemento pasando el índice de servicio para un origen de NuGet. Un complemento puede utilizar el índice de servicio para comprobar la presencia de tipos de servicios admitidos.
+Las herramientas de cliente de NuGet y los complementos se comunican con JSON a través de flujos estándar (stdin, stdout y stderr). Todos los datos deben estar codificados en UTF-8.
+Los complementos se inician con el argumento "-plugin". En caso de que un usuario inicie directamente un ejecutable de complemento sin este argumento, el complemento puede proporcionar un mensaje informativo en lugar de esperar a un protocolo de enlace.
+El tiempo de espera del Protocolo de enlace es de 5 segundos. El complemento debe completar la configuración en el menor número posible.
+Las herramientas de cliente de NuGet consultarán las operaciones admitidas de un complemento pasando el índice de servicio para un origen de NuGet. Un complemento puede utilizar el índice de servicio para comprobar la presencia de tipos de servicio admitidos.
 
-La comunicación entre las herramientas de cliente de NuGet y el complemento es bidireccional. Cada solicitud tiene un tiempo de espera de 5 segundos. Si se supone que las operaciones que tarden más el proceso respectivo debe enviar un mensaje de progreso para evitar que la solicitud de tiempo de espera. Después de un minuto de inactividad de un complemento se considera inactivo y se cierra.
+La comunicación entre las herramientas de cliente de NuGet y el complemento es bidireccional. Cada solicitud tiene un tiempo de espera de 5 segundos. Si se supone que las operaciones tardan más tiempo, el proceso respectivo debe enviar un mensaje de progreso para evitar que se agote el tiempo de espera de la solicitud. Después de 1 minuto de inactividad, se considera que un complemento está inactivo y se apaga.
 
-## <a name="plugin-installation-and-discovery"></a>Detección e instalación del complemento
+## <a name="plugin-installation-and-discovery"></a>Instalación y detección de complementos
 
 Los complementos se detectarán a través de una estructura de directorios basada en convenciones.
-Escenarios de integración y entrega continuas y usuarios avanzados pueden usar una variable de entorno para invalidar el comportamiento.
+Los escenarios de CI/CD y los usuarios avanzados pueden usar variables de entorno para invalidar el comportamiento. Tenga en `NUGET_NETFX_PLUGIN_PATHS` cuenta `NUGET_NETCORE_PLUGIN_PATHS` que y solo están disponibles con la versión 5.3 + de las herramientas de NuGet y versiones posteriores.
 
-- `NUGET_PLUGIN_PATHS` -define los complementos que se usará para ese proceso de NuGet, prioridad reservado. Si se establece esta variable de entorno, invalida la detección basada en convenciones.
--  Ubicación del usuario, la ubicación de la página principal de NuGet en `%UserProfile%/.nuget/plugins`. Esta ubicación no puede invalidarse. Se usará un directorio raíz diferente para los complementos de .NET Core y .NET Framework.
+- `NUGET_NETFX_PLUGIN_PATHS`: define los complementos que usarán las herramientas basadas en .NET Framework (NuGet. exe/MSBuild. exe/Visual Studio). Tiene prioridad sobre `NUGET_PLUGIN_PATHS`. (Solo NuGet versión 5.3 +)
+- `NUGET_NETCORE_PLUGIN_PATHS`: define los complementos que usarán las herramientas basadas en .NET Core (dotnet. exe). Tiene prioridad sobre `NUGET_PLUGIN_PATHS`. (Solo NuGet versión 5.3 +)
+- `NUGET_PLUGIN_PATHS`: define los complementos que se usarán para ese proceso de NuGet, con prioridad reservada. Si se establece esta variable de entorno, invalida la detección basada en convenciones. Se omite si se especifica cualquiera de las variables específicas del marco de trabajo.
+-  Ubicación de usuario, la ubicación de inicio de `%UserProfile%/.nuget/plugins`NuGet en. Esta ubicación no se puede invalidar. Se usará un directorio raíz diferente para los complementos .NET Core y .NET Framework.
 
-| Framework | Ubicación raíz de detección  |
+| Framework | Ubicación de detección raíz  |
 | ------- | ------------------------ |
 | Núcleo de .NET |  `%UserProfile%/.nuget/plugins/netcore` |
 | .NET Framework | `%UserProfile%/.nuget/plugins/netfx` |
 
 Cada complemento debe instalarse en su propia carpeta.
-El punto de entrada de complemento será el nombre de la carpeta instalado, con las extensiones de archivo .dll para .NET Core y la extensión .exe para .NET Framework.
+El punto de entrada del complemento será el nombre de la carpeta instalada, con las extensiones. dll para .NET Core y la extensión. exe para .NET Framework.
 
 ```
 .nuget
@@ -99,202 +101,202 @@ El punto de entrada de complemento será el nombre de la carpeta instalado, con 
 ```
 
 > [!Note]
-> Actualmente no hay ningún caso de usuario para la instalación de los complementos. Es tan fácil como mover los archivos necesarios en la ubicación predeterminada.
+> Actualmente no hay ningún caso de usuario para la instalación de los complementos. Es tan sencillo como mover los archivos necesarios a la ubicación predeterminada.
 
 ## <a name="supported-operations"></a>Operaciones admitidas
 
-Se admiten dos operaciones en el nuevo protocolo de complemento.
+Se admiten dos operaciones en el nuevo protocolo de complementos.
 
-| Nombre de la operación | Versión mínima del protocolo | Versión mínima de cliente de NuGet |
+| Nombre de la operación | Versión mínima del Protocolo | Versión mínima del cliente de NuGet |
 | -------------- | ----------------------- | --------------------- |
 | Descargar paquete | 1.0.0 | 4.3.0 |
 | [Autenticación](NuGet-Cross-Platform-Authentication-Plugin.md) | 2.0.0 | 4.8.0 |
 
-## <a name="running-plugins-under-the-correct-runtime"></a>Ejecutar complementos en el runtime correcto
+## <a name="running-plugins-under-the-correct-runtime"></a>Ejecutar complementos en el tiempo de ejecución correcto
 
-Para el paquete NuGet en escenarios de dotnet.exe, deben poder ejecutarse en ese tiempo de ejecución específico de la dotnet.exe complementos.
-Está en el proveedor del complemento y el consumidor para asegurarse de que se utiliza una combinación de dotnet.exe/plugin compatible.
-Podría producirse un problema potencial con los complementos de la ubicación del usuario cuando, por ejemplo, un dotnet.exe en el tiempo de ejecución 2.0 intenta usar un complemento escrito para el tiempo de ejecución 2.1.
+Para NuGet en escenarios dotnet. exe, los complementos deben poder ejecutarse en ese tiempo de ejecución específico de dotnet. exe.
+Está en el proveedor de complementos y en el consumidor para asegurarse de que se usa una combinación de dotnet. exe/plugin compatible.
+Podría surgir un posible problema con los complementos de ubicación de usuario cuando, por ejemplo, un dotnet. exe en el tiempo de ejecución de 2,0 intenta utilizar un complemento escrito para el tiempo de ejecución de 2,1.
 
-## <a name="capabilities-caching"></a>Capacidades de almacenamiento en caché
+## <a name="capabilities-caching"></a>Almacenamiento en caché de funcionalidades
 
-La comprobación de seguridad y la creación de instancias de los complementos es costoso. La operación de descarga se produce con más frecuencia que la operación de autenticación, sin embargo, el usuario medio de NuGet solo es probable que tenga un complemento de autenticación.
-Para mejorar la experiencia, NuGet almacenará en caché las notificaciones de operación para la solicitud dada. Esta caché es por complemento con la clave de complemento que se va a la ruta de acceso del complemento y la expiración de caché capacidades es de 30 días. 
+La comprobación de seguridad y la creación de instancias de los complementos son costosas. La operación de descarga se realiza de forma más frecuente que la operación de autenticación; sin embargo, es probable que el usuario de NuGet medio solo tenga un complemento de autenticación.
+Para mejorar la experiencia, NuGet almacenará en caché las notificaciones de operación para la solicitud dada. Esta caché es por complemento con la clave de complemento que es la ruta de acceso del complemento y la expiración de esta caché de funcionalidades es de 30 días. 
 
-La memoria caché se encuentra en `%LocalAppData%/NuGet/plugins-cache` y puede invalidarse con la variable de entorno `NUGET_PLUGINS_CACHE_PATH`. Para borrar este [caché](../../consume-packages/managing-the-global-packages-and-cache-folders.md), puede ejecutar las variables locales con el `plugins-cache` opción.
-El `all` opción variables locales, ahora también se eliminarán la memoria caché de complementos. 
+La memoria caché se encuentra `%LocalAppData%/NuGet/plugins-cache` en y se reemplaza con la variable `NUGET_PLUGINS_CACHE_PATH`de entorno. Para borrar esta [memoria caché](../../consume-packages/managing-the-global-packages-and-cache-folders.md), se puede ejecutar el comando variables locales `plugins-cache` con la opción.
+La `all` opción variables locales ahora también eliminará la memoria caché de complementos. 
 
-## <a name="protocol-messages-index"></a>Índice de los mensajes de protocolo
+## <a name="protocol-messages-index"></a>Índice de mensajes de protocolo
 
-Versión del protocolo *1.0.0* mensajes:
+Mensajes de la versión *1.0.0* del Protocolo:
 
 1.  Cerrar
-    * Solicitar dirección: NuGet -> plugin
-    * La solicitud no contendrá ninguna carga.
-    * Se espera ninguna respuesta.  Es la respuesta apropiada para que el proceso del complemento salir con prontitud.
+    * Dirección de la solicitud:  Complemento de > NuGet
+    * La solicitud no contendrá ninguna carga
+    * No se espera ninguna respuesta.  La respuesta correcta es que el proceso de complementos salga de forma rápida.
 
-2.  Copiar los archivos de paquete
-    * Solicitar dirección: NuGet -> plugin
+2.  Copiar archivos en el paquete
+    * Dirección de la solicitud:  Complemento de > NuGet
     * La solicitud contendrá:
-        * el identificador de paquete y versión
-        * la ubicación del repositorio de origen de paquete
-        * ruta de acceso de directorio de destino
-        * una colección enumerable de archivos en el paquete que se copiarán en la ruta de acceso del directorio de destino
-    * Contendrá una respuesta:
+        * el identificador y la versión del paquete
+        * Ubicación del repositorio de origen del paquete
+        * Ruta de acceso del directorio de destino
+        * un enumerable de archivos del paquete que se va a copiar en la ruta de acceso del directorio de destino.
+    * Una respuesta contendrá:
         * un código de respuesta que indica el resultado de la operación
-        * una colección enumerable de rutas de acceso completas de los archivos copiados en el directorio de destino si la operación se realizó correctamente
+        * un enumerable de rutas de acceso completas para los archivos copiados en el directorio de destino si la operación se realizó correctamente
 
-3.  Copie el archivo de paquete (archivo .nupkg)
-    * Solicitar dirección: NuGet -> plugin
+3.  Copiar archivo de paquete (. nupkg)
+    * Dirección de la solicitud:  Complemento de > NuGet
     * La solicitud contendrá:
-        * el identificador de paquete y versión
-        * la ubicación del repositorio de origen de paquete
-        * la ruta de acceso del archivo de destino
-    * Contendrá una respuesta:
+        * el identificador y la versión del paquete
+        * Ubicación del repositorio de origen del paquete
+        * Ruta de acceso del archivo de destino
+    * Una respuesta contendrá:
         * un código de respuesta que indica el resultado de la operación
 
 4.  Obtener credenciales
-    * Solicitar dirección: complemento -> NuGet
+    * Dirección de la solicitud: complemento de > NuGet
     * La solicitud contendrá:
-        * la ubicación del repositorio de origen de paquete
-        * el código de estado HTTP obtenido en el repositorio de origen del paquete mediante las credenciales actuales
-    * Contendrá una respuesta:
+        * Ubicación del repositorio de origen del paquete
+        * el código de Estado HTTP obtenido del repositorio de origen del paquete con las credenciales actuales
+    * Una respuesta contendrá:
         * un código de respuesta que indica el resultado de la operación
         * un nombre de usuario, si está disponible
         * una contraseña, si está disponible
 
-5.  Obtener archivos de paquete
-    * Solicitar dirección: NuGet -> plugin
+5.  Obtener archivos en el paquete
+    * Dirección de la solicitud:  Complemento de > NuGet
     * La solicitud contendrá:
-        * el identificador de paquete y versión
-        * la ubicación del repositorio de origen de paquete
-    * Contendrá una respuesta:
+        * el identificador y la versión del paquete
+        * Ubicación del repositorio de origen del paquete
+    * Una respuesta contendrá:
         * un código de respuesta que indica el resultado de la operación
-        * una colección enumerable de rutas de acceso de archivo en el paquete si la operación se realizó correctamente
+        * un enumerable de rutas de acceso de archivo en el paquete si la operación se realizó correctamente
 
 6.  Obtener notificaciones de operación 
-    * Solicitar dirección: NuGet -> plugin
+    * Dirección de la solicitud:  Complemento de > NuGet
     * La solicitud contendrá:
-        * el index.json de servicio para un origen del paquete
-        * la ubicación del repositorio de origen de paquete
-    * Contendrá una respuesta:
+        * el servicio index. JSON para un origen de paquete
+        * Ubicación del repositorio de origen del paquete
+    * Una respuesta contendrá:
         * un código de respuesta que indica el resultado de la operación
-        * una colección enumerable de las operaciones admitidas (p. ej.: descarga del paquete) si la operación se realizó correctamente.  Si un complemento no es compatible con el origen del paquete, el complemento debe devolver un conjunto vacío de las operaciones admitidas.
+        * enumerable de las operaciones admitidas (por ejemplo, descarga de paquetes) si la operación se realizó correctamente.  Si un complemento no admite el origen del paquete, el complemento debe devolver un conjunto vacío de operaciones admitidas.
 
 > [!Note]
-> Este mensaje se ha actualizado en la versión *2.0.0*. Es en el cliente para mantener la compatibilidad con versiones anteriores.
+> Este mensaje se ha actualizado en la versión *2.0.0*. Está en el cliente para mantener la compatibilidad con versiones anteriores.
 
-7.  Obtener el hash de paquete
-    * Solicitar dirección: NuGet -> plugin
+7.  Obtener hash de paquete
+    * Dirección de la solicitud:  Complemento de > NuGet
     * La solicitud contendrá:
-        * el identificador de paquete y versión
-        * la ubicación del repositorio de origen de paquete
-        * el algoritmo hash
-    * Contendrá una respuesta:
+        * el identificador y la versión del paquete
+        * Ubicación del repositorio de origen del paquete
+        * algoritmo hash
+    * Una respuesta contendrá:
         * un código de respuesta que indica el resultado de la operación
-        * un hash de archivo de paquete mediante el algoritmo hash solicitado si la operación se realizó correctamente
+        * un hash de archivo de paquete que usa el algoritmo hash solicitado Si la operación se realizó correctamente
 
-8.  Obtener las versiones del paquete
-    * Solicitar dirección: NuGet -> plugin
+8.  Obtener versiones del paquete
+    * Dirección de la solicitud:  Complemento de > NuGet
     * La solicitud contendrá:
-        * el identificador del paquete
-        * la ubicación del repositorio de origen de paquete
-    * Contendrá una respuesta:
+        * IDENTIFICADOR del paquete
+        * Ubicación del repositorio de origen del paquete
+    * Una respuesta contendrá:
         * un código de respuesta que indica el resultado de la operación
-        * una colección enumerable de versiones del paquete si la operación se realizó correctamente
+        * un enumerable de versiones de paquete si la operación se realizó correctamente
 
-9.  Obtiene el índice de servicio
-    * Solicitar dirección: complemento -> NuGet
+9.  Obtener índice de servicio
+    * Dirección de la solicitud: complemento de > NuGet
     * La solicitud contendrá:
-        * la ubicación del repositorio de origen de paquete
-    * Contendrá una respuesta:
+        * Ubicación del repositorio de origen del paquete
+    * Una respuesta contendrá:
         * un código de respuesta que indica el resultado de la operación
         * el índice de servicio si la operación se realizó correctamente
 
-10.  Protocolo de enlace
-     * Solicitar dirección: complemento de NuGet <> –
+10.  Enlace
+     * Dirección de la solicitud:  Complemento NuGet <->
      * La solicitud contendrá:
-         * la versión actual del protocolo de complemento
-         * la versión de protocolo de complemento mínima admitida
-     * Contendrá una respuesta:
+         * versión actual del protocolo del complemento
+         * versión mínima admitida del Protocolo de complementos
+     * Una respuesta contendrá:
          * un código de respuesta que indica el resultado de la operación
-         * la versión de protocolo negociado si la operación se realizó correctamente.  Finalización del complemento producirá un error.
+         * la versión del protocolo negociada si la operación se realizó correctamente.  Un error provocará la finalización del complemento.
 
-11.  inicializar
-     * Solicitar dirección: NuGet -> plugin
+11.  Initialize
+     * Dirección de la solicitud:  Complemento de > NuGet
      * La solicitud contendrá:
-         * la herramienta de versión de cliente de NuGet
-         * el lenguaje eficaz de la herramienta de cliente NuGet.  Esto toma en consideración la configuración ForceEnglishOutput, si usa.
-         * la solicitud tiempo de espera predeterminado, que reemplaza el valor predeterminado de protocolo.
-     * Contendrá una respuesta:
-         * un código de respuesta que indica el resultado de la operación.  Finalización del complemento producirá un error.
+         * versión de la herramienta cliente de NuGet
+         * lenguaje efectivo de la herramienta de cliente de NuGet.  Esto tiene en cuenta el valor de ForceEnglishOutput, si se usa.
+         * el tiempo de espera de solicitud predeterminado, que sustituye al valor predeterminado del protocolo.
+     * Una respuesta contendrá:
+         * código de respuesta que indica el resultado de la operación.  Un error provocará la finalización del complemento.
 
 12.  Registro
-     * Solicitar dirección: complemento -> NuGet
+     * Dirección de la solicitud: complemento de > NuGet
      * La solicitud contendrá:
-         * el nivel de registro para la solicitud
+         * el nivel de registro de la solicitud
          * un mensaje para registrar
-     * Contendrá una respuesta:
-         * un código de respuesta que indica el resultado de la operación.
+     * Una respuesta contendrá:
+         * código de respuesta que indica el resultado de la operación.
 
-13.  Supervisar la salida del proceso de NuGet
-     * Solicitar dirección: NuGet -> plugin
+13.  Supervisar el cierre del proceso de NuGet
+     * Dirección de la solicitud:  Complemento de > NuGet
      * La solicitud contendrá:
          * el identificador de proceso de NuGet
-     * Contendrá una respuesta:
-         * un código de respuesta que indica el resultado de la operación.
+     * Una respuesta contendrá:
+         * código de respuesta que indica el resultado de la operación.
 
-14.  Captura previa de paquete
-     * Solicitar dirección: NuGet -> plugin
+14.  Paquete de captura previa
+     * Dirección de la solicitud:  Complemento de > NuGet
      * La solicitud contendrá:
-         * el identificador de paquete y versión
-         * la ubicación del repositorio de origen de paquete
-     * Contendrá una respuesta:
+         * el identificador y la versión del paquete
+         * Ubicación del repositorio de origen del paquete
+     * Una respuesta contendrá:
          * un código de respuesta que indica el resultado de la operación
 
 15.  Establecer credenciales
-     * Solicitar dirección: NuGet -> plugin
+     * Dirección de la solicitud:  Complemento de > NuGet
      * La solicitud contendrá:
-         * la ubicación del repositorio de origen de paquete
-         * el último paquete conocidos origen nombre de usuario, si está disponible
-         * la última contraseña de origen de paquetes conocidos, si está disponible
-         * el último conocido nombre de usuario proxy, si está disponible
-         * la última contraseña proxy conocidos, si está disponible
-     * Contendrá una respuesta:
+         * Ubicación del repositorio de origen del paquete
+         * el nombre de usuario del origen del último paquete conocido, si está disponible
+         * la última contraseña de origen del paquete conocido, si está disponible
+         * el último nombre de usuario de proxy conocido, si está disponible
+         * la última contraseña de proxy conocida, si está disponible
+     * Una respuesta contendrá:
          * un código de respuesta que indica el resultado de la operación
 
-16.  Definir el nivel de registro
-     * Solicitar dirección: NuGet -> plugin
+16.  Establecer nivel de registro
+     * Dirección de la solicitud:  Complemento de > NuGet
      * La solicitud contendrá:
          * el nivel de registro predeterminado
-     * Contendrá una respuesta:
+     * Una respuesta contendrá:
          * un código de respuesta que indica el resultado de la operación
 
-Versión del protocolo *2.0.0* mensajes
+Mensajes de versión *2.0.0* del Protocolo
 
 17. Obtener notificaciones de operación
 
-* Solicitar dirección: NuGet -> plugin
+* Dirección de la solicitud:  Complemento de > NuGet
     * La solicitud contendrá:
-        * el index.json de servicio para un origen del paquete
-        * la ubicación del repositorio de origen de paquete
-    * Contendrá una respuesta:
+        * el servicio index. JSON para un origen de paquete
+        * Ubicación del repositorio de origen del paquete
+    * Una respuesta contendrá:
         * un código de respuesta que indica el resultado de la operación
-        * una colección enumerable de las operaciones admitidas si la operación se realizó correctamente.  Si un complemento no es compatible con el origen del paquete, el complemento debe devolver un conjunto vacío de las operaciones admitidas.
+        * enumerable de las operaciones admitidas si la operación se realizó correctamente.  Si un complemento no admite el origen del paquete, el complemento debe devolver un conjunto vacío de operaciones admitidas.
 
-    Si el origen del índice y el paquete de servicio es null, el complemento puede responder con la autenticación.
+    Si el índice de servicio y el origen del paquete son nulos, el complemento puede responder con la autenticación.
 
-18. Obtener las credenciales de autenticación
+18. Obtención de credenciales de autenticación
 
-* Solicitar dirección: NuGet -> plugin
+* Dirección de la solicitud: Complemento de > NuGet
 * La solicitud contendrá:
     * URI
     * isRetry
-    * No interactivo
+    * NonInteractive
     * CanShowDialog
-* Contendrá una respuesta
+* Una respuesta contendrá
     * Nombre de usuario
     * Contraseña
-    * Mensaje
+    * Message
     * Lista de tipos de autenticación
     * MessageResponseCode
