@@ -1,17 +1,17 @@
 ---
 title: Reserva de prefijo de identificador
 description: Guía de autor y descripción de características de la reserva de prefijo de identificador de paquete.
-author: diverdan92
-ms.author: diverdan92
-ms.date: 10/09/2017
+author: karann-msft
+ms.author: karann
+ms.date: 09/07/2019
 ms.topic: reference
-ms.reviewer: ananguar
-ms.openlocfilehash: 650f570ec65a665e3d452af732ea22337835d8d9
-ms.sourcegitcommit: cae759ad8518c049575a30ad3bf04fe5d06244fb
+ms.reviewer: karann
+ms.openlocfilehash: 630c2b193500ec0b9aa5a7fe4af3ea95ae52aeec
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616804"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815282"
 ---
 # <a name="package-id-prefix-reservation"></a>Reserva de prefijo de identificador de paquete
 
@@ -88,6 +88,8 @@ Al revisar una solicitud de reserva de prefijo de identificador, el equipo de [n
 1. ¿Son claras y coherentes las propiedades de identificación de los paquetes que coinciden con el prefijo de identificador de paquete? (En particular, el autor del paquete).
 
 1. ¿Tienen los paquetes una licencia? (Mediante el elemento de metadatos [license](../reference/nuspec.md#license), en lugar de licenseUrl, que está en desuso).
+
+1. Si los paquetes tienen un icono (mediante el elemento de metadatos iconUrl), ¿están usando el elemento de metadatos [icon](../reference/nuspec.md#icon) también (no es un requisito para quitar iconUrl)?
 
 ## <a name="third-party-feed-provider-scenarios"></a>Escenarios de proveedores de fuentes de terceros
 

@@ -5,23 +5,23 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: 7bfe041c01114ac61e811497ecc31ebfdad45029
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 40e240478918d327fbea0013bbf271ea2ee1fc47
+ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488900"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70384498"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>Inicio rápido: Creación y publicación de un paquete con Visual Studio (.NET Framework, Windows)
 
 Crear un paquete NuGet desde una biblioteca de clases de .NET Framework implica crear el archivo DLL con Visual Studio en Windows y, después, usar la herramienta de línea de comandos nuget.exe para crear y publicar el paquete.
 
 > [!Note]
-> Este inicio rápido se aplica solo a Visual Studio 2017 para Windows. Visual Studio para Mac no incluye las funcionalidades descritas aquí. En su lugar, use las [herramientas de la CLI de dotnet](create-and-publish-a-package-using-the-dotnet-cli.md).
+> Esta guía de inicio rápido solo se aplica a Visual Studio 2017 y versiones posteriores para Windows. Visual Studio para Mac no incluye las funcionalidades descritas aquí. En su lugar, use las [herramientas de la CLI de dotnet](create-and-publish-a-package-using-the-dotnet-cli.md).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-1. Instale cualquier edición de Visual Studio 2017 desde [visualstudio.com](https://www.visualstudio.com/) con cualquier carga de trabajo relacionada con .NET. Visual Studio de 2017 incluye automáticamente funcionalidades de NuGet cuando se instala una carga de trabajo. NET.
+1. Instale cualquier edición de Visual Studio 2017 o versiones superiores desde [visualstudio.com](https://www.visualstudio.com/) con cualquier carga de trabajo relacionada con .NET. Visual Studio de 2017 incluye automáticamente funcionalidades de NuGet cuando se instala una carga de trabajo. NET.
 
 1. Instale la CLI de `nuget.exe` descargándola desde [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe), guarde el archivo `.exe` en la carpeta adecuada y agregue esa carpeta a la variable de entorno PATH.
 
