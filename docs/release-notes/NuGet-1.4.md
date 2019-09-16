@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: de76cf610e580a36014be9274b9c2c762b1015ac
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 5f1d3ed6a1b20fb07437f1718faafaac0a193773
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317164"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488707"
 ---
 # <a name="nuget-14-release-notes"></a>Notas de la versión de NuGet 1,4
 
-[](../release-notes/nuget-1.3.md) | Notas de la versión de Nuget 1,3 notas de la[versión de Nuget 1,5](../release-notes/nuget-1.5.md)
+[Notas de la versión 1.3 de NuGet](../release-notes/nuget-1.3.md) | [Notas de la versión 1.5 de NuGet](../release-notes/nuget-1.5.md)
 
 NuGet 1,4 se lanzó el 17 de junio de 2011.
 
@@ -60,7 +60,7 @@ Para obtener más información, vea el tema sobre la [Administración de paquete
 De forma predeterminada, al ejecutar `Update-Package` el comando en un paquete (o actualizar el paquete mediante el cuadro de diálogo), se actualizará a la versión más reciente de la fuente. Con la nueva compatibilidad para actualizar todos los paquetes, puede haber casos en los que desee bloquear un paquete a un intervalo de versiones específico. Por ejemplo, puede saber de antemano que la aplicación solo funcionará con la versión 2. * de un paquete, pero no 3,0 y versiones posteriores. Con el fin de evitar que se actualice el paquete accidentalmente a 3, NuGet 1,4 agrega compatibilidad para restringir el intervalo de versiones que los paquetes pueden actualizarse a mediante la edición `packages.config` manual del archivo mediante `allowedVersions` el nuevo atributo.
 
 Por ejemplo, en el ejemplo siguiente se muestra cómo bloquear `SomePackage` el paquete con el intervalo de versión 2,0-3,0 (exclusivo).
-El `allowedVersions` atributo acepta valores mediante el [formato de intervalo de versión](../reference/package-versioning.md#version-ranges-and-wildcards).
+El `allowedVersions` atributo acepta valores mediante el [formato de intervalo de versión](../concepts/package-versioning.md#version-ranges-and-wildcards).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -72,7 +72,7 @@ El `allowedVersions` atributo acepta valores mediante el [formato de intervalo d
 Tenga en cuenta que, en 1,4, se debe editar manualmente el bloqueo de un paquete en un intervalo de versiones específico. En NuGet 1,5 tenemos previsto agregar compatibilidad para colocar este intervalo a través del `Install-Package` comando.
 
 ### <a name="package-visualizer"></a>Visualizador de paquetes
-El nuevo visualizador de paquetes, que se inicia mediante la opción de menú visualizador de paquetes del**Administrador** -> de paquetes de la biblioteca de **herramientas** -> , le permite visualizar fácilmente todos los proyectos y sus dependencias de paquete en un solución.
+El nuevo visualizador de paquetes, que se inicia mediante la opción de menú**visualizador** de paquetes del**Administrador** -> de paquetes de la biblioteca de **herramientas** -> , le permite visualizar fácilmente todos los proyectos y sus dependencias de paquete en un solución.
 
 _**Nota importante:** Esta característica aprovecha la compatibilidad con DGML en Visual Studio. Solo se admite la creación de la visualización en Visual Studio Ultimate. La visualización de un diagrama de DGML solo se admite en Visual Studio Premium o superior._
 

@@ -13,7 +13,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 07/23/2019
 ms.locfileid: "68419830"
 ---
-# <a name="nuget-server-api"></a>API de servidor NuGet
+# <a name="nuget-server-api"></a>API del servidor de NuGet
 
 La API de servidor de NuGet es un conjunto de puntos de conexión HTTP que se pueden usar para descargar paquetes, capturar metadatos, publicar paquetes nuevos y realizar la mayoría de las demás operaciones disponibles en los clientes de NuGet oficiales.
 
@@ -67,7 +67,7 @@ En general, todos los datos no binarios devueltos por un recurso de API se seria
 En el futuro, a medida que evolucione el protocolo, se pueden agregar nuevas propiedades a las respuestas JSON. Para que el cliente sea una prueba futura, la implementación no debe suponer que el esquema de respuesta es final y no puede incluir datos adicionales. Todas las propiedades que la implementación no entiende deben omitirse.
 
 > [!Note]
-> Cuando un origen no implementa `SearchAutocompleteService` ningún comportamiento de autocompletar debe deshabilitarse correctamente. Cuando `ReportAbuseUriTemplate` no se implementa, el cliente de Nuget oficial recurre a la dirección URL de la notificación de abuso de la [](https://github.com/NuGet/Home/issues/4924)organización. Otros clientes pueden optar por no mostrar simplemente la dirección URL de un informe de abuso para el usuario.
+> Cuando un origen no implementa `SearchAutocompleteService` ningún comportamiento de autocompletar debe deshabilitarse correctamente. Cuando `ReportAbuseUriTemplate` no se implementa, el cliente de NuGet oficial recurre a la dirección URL de la notificación de abuso de nuget.rog (rastreada por [NuGet/Home#4924](https://github.com/NuGet/Home/issues/4924)). Otros clientes pueden optar por no mostrar simplemente la dirección URL de un informe de abuso para el usuario.
 
 ### <a name="undocumented-resources-on-nugetorg"></a>Recursos no documentados en nuget.org
 
@@ -80,7 +80,7 @@ En segundo lugar, no documentamos recursos que nunca se enviaron en una versión
 
 En tercer lugar, no se documentan los recursos estrechamente acoplados con el protocolo v2, que a su vez no se documenta. El `LegacyGallery` recurso pertenece a esta categoría. Este recurso permite que un índice de servicio V3 señale a una dirección URL de origen de V2 correspondiente. Este recurso es compatible `nuget.exe list`con.
 
-Si un recurso no se documenta aquí, se  recomienda encarecidamente que no tome una dependencia en ellos. Es posible que se quite o cambie el comportamiento de estos recursos no documentados, lo que podría interrumpir la implementación de maneras inesperadas.
+Si un recurso no se documenta aquí, se recomienda *encarecidamente* que no tome una dependencia en ellos. Es posible que se quite o cambie el comportamiento de estos recursos no documentados, lo que podría interrumpir la implementación de maneras inesperadas.
 
 ## <a name="timestamps"></a>Marcas de tiempo
 
