@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 5ec6c0e17a3e8b9a3f156a48685bcaafe42c744b
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 7aea28d6224a89149aa33be035c82a45db3058f0
+ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488218"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094119"
 ---
 # <a name="package-content"></a>Contenido del paquete
 
@@ -60,7 +60,7 @@ Si el origen del paquete tiene una o más versiones, se devuelve un código de e
 
 NOMBRE     | Type             | Obligatorio | Notas
 -------- | ---------------- | -------- | -----
-versiones | matriz de cadenas | sí      | Los identificadores de paquete disponibles
+versiones | Matriz de cadenas | sí      | Las versiones disponibles
 
 Las cadenas de la `versions` matriz están todas en minúsculas, con las [cadenas de versión de NuGet normalizadas](../concepts/package-versioning.md#normalized-version-numbers). Las cadenas de versión no contienen metadatos de compilación de SemVer 2.0.0.
 
@@ -90,7 +90,7 @@ LOWER_VERSION | URL    | string | sí      | Versión del paquete, normalizado y
 `LOWER_ID` Y`LOWER_VERSION` están en minúsculas mediante las reglas implementadas por. De la red[`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)
 .
 
-Es la versión del paquete deseada normalizada con [las reglas](../concepts/package-versioning.md#normalized-version-numbers)de normalización de la versión de NuGet. `LOWER_VERSION` Esto significa que los metadatos de compilación permitidos por la especificación SemVer 2.0.0 deben excluirse en este caso.
+Es la versión del paquete deseada normalizada con [las reglas de normalización](../concepts/package-versioning.md#normalized-version-numbers)de la versión de NuGet. `LOWER_VERSION` Esto significa que los metadatos de compilación permitidos por la especificación SemVer 2.0.0 deben excluirse en este caso.
 
 ### <a name="response-body"></a>Cuerpo de la respuesta
 
@@ -121,7 +121,7 @@ LOWER_VERSION | URL    | string | sí      | Versión del paquete, normalizado y
 
 `LOWER_ID` Y`LOWER_VERSION` están en minúsculas mediante las reglas implementadas por. Método de [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) la red.
 
-Es la versión del paquete deseada normalizada con [las reglas](../concepts/package-versioning.md#normalized-version-numbers)de normalización de la versión de NuGet. `LOWER_VERSION` Esto significa que los metadatos de compilación permitidos por la especificación SemVer 2.0.0 deben excluirse en este caso.
+Es la versión del paquete deseada normalizada con [las reglas de normalización](../concepts/package-versioning.md#normalized-version-numbers)de la versión de NuGet. `LOWER_VERSION` Esto significa que los metadatos de compilación permitidos por la especificación SemVer 2.0.0 deben excluirse en este caso.
 
 ### <a name="response-body"></a>Cuerpo de la respuesta
 
