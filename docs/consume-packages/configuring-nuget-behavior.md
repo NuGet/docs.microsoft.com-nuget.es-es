@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 5309d94fafea9cdfc3699d443393be5d381dd145
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 89127203df0aa1eb24f36b8ec64c5bb4a4d59319
+ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317731"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094075"
 ---
 # <a name="common-nuget-configurations"></a>Configuraciones comunes de NuGet
 
@@ -25,7 +25,7 @@ El comportamiento de NuGet se controla mediante la configuración acumulada en u
 | Equipo | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. Si `$XDG_DATA_HOME` es null o está vacío, se usará `~/.local/share` o `/usr/local/share` (varía según la distribución del SO)  | La configuración se aplica a todas las operaciones en el equipo, pero se reemplaza por cualquier configuración de nivel de proyecto o de usuario. |
 
 Notas para versiones anteriores de NuGet:
-- En NuGet 3.3 y versiones anteriores se usaba una carpeta `.nuget` para la configuración de toda la solución. Este archivo no se usa en NuGet 3.4 y versiones posteriores.
+- En NuGet 3.3 y versiones anteriores se usaba una carpeta `.nuget` para la configuración de toda la solución. Esta carpeta no se usa en NuGet 3.4 y versiones posteriores.
 - Para NuGet 2.6 a 3.x, el archivo de configuración de nivel de equipo en Windows se encontraba en %ProgramData%\NuGet\Config[\\{IDE}[\\{Versión}[\\{SKU}]]]\NuGet.Config, donde *{IDE}* podía ser *VisualStudio*, *{Versión}* era la versión de Visual Studio como *14.0* y *{SKU}* era *Community*, *Pro* o *Enterprise*. Para migrar la configuración a NuGet 4.0 y versiones posteriores, simplemente copie el archivo de configuración a %ProgramFiles(x86)%\NuGet\Config. Esta ubicación anterior era /etc/opt, en Linux, y /Biblioteca/Application Support, en Mac.
 
 ## <a name="changing-config-settings"></a>Cambiar los valores de configuración
