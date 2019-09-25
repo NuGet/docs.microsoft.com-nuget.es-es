@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: f16bfe5481009f7924a61f03233d288d25ac618f
-ms.sourcegitcommit: f4bfdbf62302c95f1f39e81ccf998f8bbc6d56b0
+ms.openlocfilehash: 96d176beaa6b2f0c4f53488390e585b70c9ba846
+ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70774090"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71248161"
 ---
 # <a name="nuget-53-release-notes"></a>Notas de la versión de NuGet 5,3
 
@@ -18,11 +18,11 @@ Vehículos de distribución de NuGet:
 
 | Versión de NuGet | Disponible en la versión de Visual Studio| Disponible en los SDK de .NET|
 |:---|:---|:---|
-| [**5.3.0-preview3**](https://nuget.org/downloads) | [Visual Studio 2019 versión 16,3 Preview 3](https://visualstudio.microsoft.com/vs/preview/) | [3.0.100-preview9](https://dotnet.microsoft.com/download/dotnet-core/3.0) <sup>1</sup> |
+| [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 versión 16,3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0) <sup>1</sup> |
 
 <sup>1</sup> Instalado con Visual Studio 2019 con la carga de trabajo de .NET Core
 
-## <a name="summary-whats-new-in-53-preview-3"></a>Resumen: Novedades de 5,3 Preview 3
+## <a name="summary-whats-new-in-53"></a>Resumen: Novedades de 5,3
 
 * [El icono de paquete se puede incrustar en el paquete](../reference/msbuild-targets.md#packing-an-icon-image-file), en lugar de tener una dirección URL externa. - [#352](https://github.com/NuGet/Home/issues/352)
 
@@ -32,6 +32,10 @@ Vehículos de distribución de NuGet:
 
 **Errores**
 
+* Los usuarios de 2,2 SDK no pueden usar los paquetes de NuGet generados con el SDK de 3.0.100-preview9... en función de la zona horaria [#8603](https://github.com/NuGet/Home/issues/8603)
+
+* Los caracteres de Comillas en la ruta de acceso causan un error de `nuget restore` caracteres no válidos en la ruta de acceso en [#8168](https://github.com/NuGet/Home/issues/8168)
+
 * VS: los ensamblados son totalmente Ngen-Ed no parcialmente Ngen-Ed- [#8513](https://github.com/NuGet/Home/issues/8513)
 
 * Reducir el uso de memoria (cancelar la suscripción a eventos)- [#8471](https://github.com/NuGet/Home/issues/8471)
@@ -40,7 +44,7 @@ Vehículos de distribución de NuGet:
 
 * Mejoras de NU1403: validar todos los paquetes, incluir los valores Sha esperados/reales- [#8424](https://github.com/NuGet/Home/issues/8424)
 
-* Enumeración múltiple en NuGetPackageManager. PreviewUpdatePackagesAsync- [#8401](https://github.com/NuGet/Home/issues/8401)
+* Enumeración múltiple `NuGetPackageManager.PreviewUpdatePackagesAsync`en  -  [#8401](https://github.com/NuGet/Home/issues/8401)
 
 * Revertir el cambio de "público > interno" en PluginProcess- [#8390](https://github.com/NuGet/Home/issues/8390)
 
@@ -64,7 +68,7 @@ Vehículos de distribución de NuGet:
 
 * Hacer que la configuración sea leída en VS Lazy- [#8156](https://github.com/NuGet/Home/issues/8156)
 
-* La regresión en ' Nuget sources Add ' hace que "el carácter ': ', valor hexadecimal 0x3A, no se incluya en un nombre" Errors- [#7948](https://github.com/NuGet/Home/issues/7948)
+* La regresión `Nuget sources add` en causa "el carácter ': ', el valor hexadecimal 0x3A, no se puede incluir en un nombre" Errors- [#7948](https://github.com/NuGet/Home/issues/7948)
 
 * Proveedores de credenciales de complemento NuGet: ocultar la ventana de proceso- [#7511](https://github.com/NuGet/Home/issues/7511)
 
@@ -86,6 +90,4 @@ Vehículos de distribución de NuGet:
 
 * Opciones Add-SolutionDirectory y-PackageDirectory para el paquete Nuget. exe- [#7163](https://github.com/NuGet/Home/issues/7163)
 
-* Habilitar el paquete de NuGet para que sea determinista [#6229](https://github.com/NuGet/Home/issues/6229)
-
-**[Lista de todos los problemas corregidos en esta versión: 5,3 Preview 3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
+**[Lista de todos los problemas corregidos en esta versión: 5,3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
