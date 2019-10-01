@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: d9937a2b087fd88c1e6fd9f07a513b5047bdcf2e
-ms.sourcegitcommit: ac9a00ccaf90e539a381e92b650074910b21eb0d
+ms.openlocfilehash: 92fc78a88733d0308dc26e10c5b0bafb86b78045
+ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70235088"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71307231"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>Inicio rápido: Instalación y uso de un paquete en Visual Studio (solo Windows)
 
@@ -33,7 +33,7 @@ Si utiliza Visual Studio para Mac, consulte [Instalación y uso de un paquete e
 
 Los paquetes NuGet pueden instalarse en cualquier proyecto. NET, siempre que el paquete sea compatible con la misma plataforma de destino que el proyecto.
 
-Para este tutorial, use una aplicación WPF sencilla. Para crear un proyecto en Visual Studio, vaya a **Archivo > Nuevo proyecto…** , escriba **.NET** en el cuadro de búsqueda y, luego, seleccione **Aplicación de WPF (.NET Framework)** . Haga clic en **Siguiente**. Acepte los valores predeterminados para **Marco** cuando se le solicite.
+Para este tutorial, use una aplicación WPF sencilla. Para crear un proyecto en Visual Studio, vaya a **Archivo** > **Nuevo proyecto**, escriba **.NET** en el cuadro de búsqueda y, luego, seleccione **Aplicación de WPF (.NET Framework)** . Haga clic en **Siguiente**. Acepte los valores predeterminados para **Marco** cuando se le solicite.
 
 Visual Studio crea el proyecto, el que se abre en el Explorador de soluciones.
 
@@ -63,7 +63,7 @@ Para instalar el paquete, puede usar el Administrador de paquetes NuGet o la con
 
 ### <a name="package-manager-console"></a>Consola del Administrador de paquetes
 
-1. Seleccione el comando de menú **Herramientas > Administrador de paquetes NuGet > Consola del Administrador de paquetes**.
+1. Seleccione el comando de menú **Herramientas** > **Administrador de paquetes NuGet** > **Consola del Administrador de paquetes**.
 
 1. Cuando se abra la consola, compruebe que la lista desplegable **Proyecto predeterminado** muestra el proyecto en el que quiere instalar el paquete. Si tiene un único proyecto en la solución, ya está seleccionado.
 
@@ -117,7 +117,7 @@ Con el paquete Newtonsoft.Json en el proyecto, puede llamar a su método `JsonCo
     using Newtonsoft.Json;
     ```
 
-1. Compile y ejecute la aplicación presionando F5 o seleccionando **Depurar > Iniciar depuración**:
+1. Para compilar y ejecutar la aplicación, presione F5 o seleccione **Depuración** > **Iniciar depuración**:
 
     ![Resultado inicial de la aplicación WPF](media/QS_Use-06-AppStart.png)
 
