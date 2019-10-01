@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: 96d176beaa6b2f0c4f53488390e585b70c9ba846
-ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
+ms.openlocfilehash: 683ee7d1bef30d0a7414ec1694a9735d79b2ab45
+ms.sourcegitcommit: c529f5944868a0692ca8550b716a73e05df0ccbf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71248161"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71687890"
 ---
 # <a name="nuget-53-release-notes"></a>Notas de la versión de NuGet 5,3
 
@@ -27,6 +27,8 @@ Vehículos de distribución de NuGet:
 * [El icono de paquete se puede incrustar en el paquete](../reference/msbuild-targets.md#packing-an-icon-image-file), en lugar de tener una dirección URL externa. - [#352](https://github.com/NuGet/Home/issues/352)
 
 * Seguridad mejorada con seguimiento y cumplimiento de SHA para packages. config- [#7281](https://github.com/NuGet/Home/issues/7281)
+
+* Habilitar la degradación de paquetes de NuGet obsoletos/heredados [#2867](https://github.com/NuGet/Home/issues/2867)[entrada de blog](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/)de  |   | [documentos](https://docs.microsoft.com/en-us/nuget/nuget-org/deprecate-packages)
 
 ### <a name="issues-fixed-in-this-release"></a>Problemas corregidos en esta versión
 
