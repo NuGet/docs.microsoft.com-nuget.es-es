@@ -6,26 +6,26 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: ea9f699b202d7f32648f0ccfeac3ceb1ca325b7e
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: caa1509fd996c54f7de17e86559ea62ef67f749f
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342441"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380481"
 ---
 # <a name="target-frameworks"></a>Versiones de .NET Framework de destino
 
 NuGet usa referencias de plataformas de destino en varios lugares para identificar y aislar de forma específica los componentes de un paquete que dependen de la plataforma:
 
-- [archivo de proyecto](../create-packages/multiple-target-frameworks-project-file.md): En el caso de los proyectos de estilo SDK, el *. csproj* contiene las referencias de la plataforma de destino.
-- [manifiesto de. nuspec](../reference/nuspec.md): Un paquete puede indicar que los paquetes distintos se van a incluir en un proyecto en función de la plataforma de destino del proyecto.
-- [nombre de la carpeta. nupkg](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): Se puede asignar un nombre a `lib` las carpetas dentro de la carpeta de un paquete según la plataforma de destino, cada una de las cuales contiene los archivos dll y otro contenido apropiado para ese marco.
-- [packages.config](../reference/packages-config.md): El `targetframework` atributo de una dependencia especifica la variante de un paquete que se va a instalar.
+- [archivo de proyecto](../create-packages/multiple-target-frameworks-project-file.md): en el caso de los proyectos de estilo SDK, el archivo *. csproj* contiene las referencias de la plataforma de destino.
+- [Manifiesto .nuspec](../reference/nuspec.md): un paquete puede indicar que se incluyan distintos paquetes en un proyecto en función de la plataforma de destino del proyecto.
+- [Nombre de la carpeta .nupkg](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): las carpetas que están dentro de la carpeta `lib` de un paquete se pueden denominar según la plataforma de destino, cada una de las cuales contiene los archivos DLL y otro contenido adecuado para esa plataforma.
+- [packages.config](../reference/packages-config.md): el atributo `targetframework` de una dependencia especifica la variante de un paquete que se va a instalar.
 
 > [!Note]
 > El código fuente del cliente de NuGet que calcula las siguientes tablas se encuentra en las siguientes ubicaciones:
-> - Nombres de marco compatibles: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> - Prioridad y asignación de Framework: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> - Nombres de plataforma admitidos: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> - Prioridad y asignación de plataformas: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 ## <a name="supported-frameworks"></a>Marcos de trabajo admitidos
 
@@ -33,7 +33,7 @@ A una plataforma normalmente se hace referencia mediante un moniker corto de la 
 
 Los clientes de NuGet admiten las plataformas indicadas en la tabla siguiente. Los equivalentes se muestran entre corchetes []. Tenga en cuenta que es posible que algunas herramientas, como `dotnet`, usen variaciones de TFM canónicos en algunos archivos. Por ejemplo, `dotnet pack` usa `.NETCoreApp2.0` en un archivo `.nuspec` en lugar de `netcoreapp2.0`. Las distintas herramientas del cliente de NuGet controlan estas variaciones sin problema, pero siempre debe usar TFM canónicos al editar archivos directamente.
 
-| NOMBRE | Abreviatura | TFMs/TxMs |
+| Name | Abreviatura | TFMs/TxMs |
 | ------------- | ------------ | --------- |
 |.NET Framework | net | net11 |
 | | | net20 |
@@ -70,7 +70,7 @@ Windows Phone (UWP) | | wpa81 |
 Plataforma universal de Windows | uap | uap [uap10.0] |
 | | | uap10.0 |
 | | | UAP 10.0. xxxxx (donde 10.0. xxxxx es la versión mínima de la plataforma de destino de la aplicación de consumo) |
-.NET Standard | netstandard | netstandard1.0 |
+Estándar .NET | netstandard | netstandard1.0 |
 | | | netstandard1.1 |
 | | | netstandard1.2 |
 | | | netstandard1.3 |
@@ -83,6 +83,7 @@ Aplicación .NET core | netcoreapp | netcoreapp1.0 |
 | | | netcoreapp2.0 |
 | | | netcoreapp2.1 |
 | | | netcoreapp2.2 |
+| | | netcoreapp3.0 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
@@ -138,7 +139,7 @@ Para definir una plataforma de destino que haga referencia a varias plataformas 
 
 Las plataformas adicionales definidas por terceros proporcionan compatibilidad con otros entornos que son accesibles de este modo. Además, existen números de perfil abreviados disponibles para hacer referencia a estas combinaciones de plataformas relacionadas como `Profile#`, pero no es una práctica recomendada para usar estos números, ya que reduce la legibilidad de las carpetas y de `.nuspec`.
 
-| Número de perfil | Marcos de trabajo | Nombre completo | .NET Standard |
+| Número de perfil | Marcos de trabajo | Nombre completo | Estándar .NET |
  --- | --- | --- | ---
  Perfil2 | .NET Framework 4.0 | portable-net40+win8+sl4+wp7 |
  | | Windows 8.0 | |
@@ -283,7 +284,7 @@ Las plataformas adicionales definidas por terceros proporcionan compatibilidad c
 
 Además, los paquetes de NuGet que tienen como destino Xamarin pueden usar otras plataformas definidas por Xamarin. Vea [Manually Creating NuGet Packages for Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/) (Crear manualmente paquetes de NuGet para Xamarin).
 
-| NOMBRE | DESCRIPCIÓN | .NET Standard |
+| Name | Descripción | Estándar .NET |
 | --- | --- | ---
 | monoandroid | Soporte mono para el sistema operativo Android | netstandard1.4 |
 | monotouch | Soporte mono para iOS | netstandard1.4 |

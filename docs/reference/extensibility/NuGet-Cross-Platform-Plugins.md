@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: 74b80b1791dcb403c90bb3032c009717c11ffe57
-ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
+ms.openlocfilehash: 00410214500c7f5256be243dd6fca0907ba9b0c4
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70815307"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380498"
 ---
 # <a name="nuget-cross-platform-plugins"></a>Complementos entre plataformas de NuGet
 
@@ -26,7 +26,7 @@ A continuación se describen las combinaciones de cliente/marco de trabajo de lo
 
 | Herramienta de cliente  | Framework |
 | ------------ | --------- |
-| Visual Studio | .NET Framework |
+| Programa para la mejora | .NET Framework |
 | dotnet.exe | Núcleo de .NET |
 | NuGet. exe | .NET Framework |
 | MSBuild. exe | .NET Framework |
@@ -70,12 +70,12 @@ La comunicación entre las herramientas de cliente de NuGet y el complemento es 
 ## <a name="plugin-installation-and-discovery"></a>Instalación y detección de complementos
 
 Los complementos se detectarán a través de una estructura de directorios basada en convenciones.
-Los escenarios de CI/CD y los usuarios avanzados pueden usar variables de entorno para invalidar el comportamiento. Tenga en `NUGET_NETFX_PLUGIN_PATHS` cuenta `NUGET_NETCORE_PLUGIN_PATHS` que y solo están disponibles con la versión 5.3 + de las herramientas de NuGet y versiones posteriores.
+Los escenarios de CI/CD y los usuarios avanzados pueden usar variables de entorno para invalidar el comportamiento. Cuando se usan variables de entorno, solo se permiten rutas de acceso absolutas. Tenga en cuenta que `NUGET_NETFX_PLUGIN_PATHS` y `NUGET_NETCORE_PLUGIN_PATHS` solo están disponibles con la versión 5.3 + de las herramientas de NuGet y versiones posteriores.
 
 - `NUGET_NETFX_PLUGIN_PATHS`: define los complementos que usarán las herramientas basadas en .NET Framework (NuGet. exe/MSBuild. exe/Visual Studio). Tiene prioridad sobre `NUGET_PLUGIN_PATHS`. (Solo NuGet versión 5.3 +)
 - `NUGET_NETCORE_PLUGIN_PATHS`: define los complementos que usarán las herramientas basadas en .NET Core (dotnet. exe). Tiene prioridad sobre `NUGET_PLUGIN_PATHS`. (Solo NuGet versión 5.3 +)
-- `NUGET_PLUGIN_PATHS`: define los complementos que se usarán para ese proceso de NuGet, con prioridad reservada. Si se establece esta variable de entorno, invalida la detección basada en convenciones. Se omite si se especifica cualquiera de las variables específicas del marco de trabajo.
--  Ubicación de usuario, la ubicación de inicio de `%UserProfile%/.nuget/plugins`NuGet en. Esta ubicación no se puede invalidar. Se usará un directorio raíz diferente para los complementos .NET Core y .NET Framework.
+- `NUGET_PLUGIN_PATHS`: define los complementos que se usarán para ese proceso de NuGet, con prioridad conservada. Si se establece esta variable de entorno, invalida la detección basada en convenciones. Se omite si se especifica cualquiera de las variables específicas del marco de trabajo.
+-  Ubicación de usuario, la ubicación de inicio de NuGet en `%UserProfile%/.nuget/plugins`. Esta ubicación no se puede invalidar. Se usará un directorio raíz diferente para los complementos .NET Core y .NET Framework.
 
 | Framework | Ubicación de detección raíz  |
 | ------- | ------------------------ |
@@ -123,20 +123,20 @@ Podría surgir un posible problema con los complementos de ubicación de usuario
 La comprobación de seguridad y la creación de instancias de los complementos son costosas. La operación de descarga se realiza de forma más frecuente que la operación de autenticación; sin embargo, es probable que el usuario de NuGet medio solo tenga un complemento de autenticación.
 Para mejorar la experiencia, NuGet almacenará en caché las notificaciones de operación para la solicitud dada. Esta caché es por complemento con la clave de complemento que es la ruta de acceso del complemento y la expiración de esta caché de funcionalidades es de 30 días. 
 
-La memoria caché se encuentra `%LocalAppData%/NuGet/plugins-cache` en y se reemplaza con la variable `NUGET_PLUGINS_CACHE_PATH`de entorno. Para borrar esta [memoria caché](../../consume-packages/managing-the-global-packages-and-cache-folders.md), se puede ejecutar el comando variables locales `plugins-cache` con la opción.
-La `all` opción variables locales ahora también eliminará la memoria caché de complementos. 
+La memoria caché se encuentra en `%LocalAppData%/NuGet/plugins-cache` y se invalidará con la variable de entorno `NUGET_PLUGINS_CACHE_PATH`. Para borrar esta [memoria caché](../../consume-packages/managing-the-global-packages-and-cache-folders.md), se puede ejecutar el comando variables locales con la opción `plugins-cache`.
+La opción `all` variables locales ahora también eliminará la memoria caché de complementos. 
 
 ## <a name="protocol-messages-index"></a>Índice de mensajes de protocolo
 
 Mensajes de la versión *1.0.0* del Protocolo:
 
 1.  Cerrar
-    * Dirección de la solicitud:  Complemento de > NuGet
+    * Dirección de la solicitud: complemento NuGet->
     * La solicitud no contendrá ninguna carga
     * No se espera ninguna respuesta.  La respuesta correcta es que el proceso de complementos salga de forma rápida.
 
 2.  Copiar archivos en el paquete
-    * Dirección de la solicitud:  Complemento de > NuGet
+    * Dirección de la solicitud: complemento NuGet->
     * La solicitud contendrá:
         * el identificador y la versión del paquete
         * Ubicación del repositorio de origen del paquete
@@ -147,7 +147,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
         * un enumerable de rutas de acceso completas para los archivos copiados en el directorio de destino si la operación se realizó correctamente
 
 3.  Copiar archivo de paquete (. nupkg)
-    * Dirección de la solicitud:  Complemento de > NuGet
+    * Dirección de la solicitud: complemento NuGet->
     * La solicitud contendrá:
         * el identificador y la versión del paquete
         * Ubicación del repositorio de origen del paquete
@@ -166,7 +166,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
         * una contraseña, si está disponible
 
 5.  Obtener archivos en el paquete
-    * Dirección de la solicitud:  Complemento de > NuGet
+    * Dirección de la solicitud: complemento NuGet->
     * La solicitud contendrá:
         * el identificador y la versión del paquete
         * Ubicación del repositorio de origen del paquete
@@ -175,7 +175,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
         * un enumerable de rutas de acceso de archivo en el paquete si la operación se realizó correctamente
 
 6.  Obtener notificaciones de operación 
-    * Dirección de la solicitud:  Complemento de > NuGet
+    * Dirección de la solicitud: complemento NuGet->
     * La solicitud contendrá:
         * el servicio index. JSON para un origen de paquete
         * Ubicación del repositorio de origen del paquete
@@ -187,7 +187,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
 > Este mensaje se ha actualizado en la versión *2.0.0*. Está en el cliente para mantener la compatibilidad con versiones anteriores.
 
 7.  Obtener hash de paquete
-    * Dirección de la solicitud:  Complemento de > NuGet
+    * Dirección de la solicitud: complemento NuGet->
     * La solicitud contendrá:
         * el identificador y la versión del paquete
         * Ubicación del repositorio de origen del paquete
@@ -197,7 +197,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
         * un hash de archivo de paquete que usa el algoritmo hash solicitado Si la operación se realizó correctamente
 
 8.  Obtener versiones del paquete
-    * Dirección de la solicitud:  Complemento de > NuGet
+    * Dirección de la solicitud: complemento NuGet->
     * La solicitud contendrá:
         * IDENTIFICADOR del paquete
         * Ubicación del repositorio de origen del paquete
@@ -214,7 +214,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
         * el índice de servicio si la operación se realizó correctamente
 
 10.  Enlace
-     * Dirección de la solicitud:  Complemento NuGet <->
+     * Dirección de la solicitud: complemento NuGet <->
      * La solicitud contendrá:
          * versión actual del protocolo del complemento
          * versión mínima admitida del Protocolo de complementos
@@ -223,7 +223,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
          * la versión del protocolo negociada si la operación se realizó correctamente.  Un error provocará la finalización del complemento.
 
 11.  Initialize
-     * Dirección de la solicitud:  Complemento de > NuGet
+     * Dirección de la solicitud: complemento NuGet->
      * La solicitud contendrá:
          * versión de la herramienta cliente de NuGet
          * lenguaje efectivo de la herramienta de cliente de NuGet.  Esto tiene en cuenta el valor de ForceEnglishOutput, si se usa.
@@ -240,14 +240,14 @@ Mensajes de la versión *1.0.0* del Protocolo:
          * código de respuesta que indica el resultado de la operación.
 
 13.  Supervisar el cierre del proceso de NuGet
-     * Dirección de la solicitud:  Complemento de > NuGet
+     * Dirección de la solicitud: complemento NuGet->
      * La solicitud contendrá:
          * el identificador de proceso de NuGet
      * Una respuesta contendrá:
          * código de respuesta que indica el resultado de la operación.
 
 14.  Paquete de captura previa
-     * Dirección de la solicitud:  Complemento de > NuGet
+     * Dirección de la solicitud: complemento NuGet->
      * La solicitud contendrá:
          * el identificador y la versión del paquete
          * Ubicación del repositorio de origen del paquete
@@ -255,7 +255,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
          * un código de respuesta que indica el resultado de la operación
 
 15.  Establecer credenciales
-     * Dirección de la solicitud:  Complemento de > NuGet
+     * Dirección de la solicitud: complemento NuGet->
      * La solicitud contendrá:
          * Ubicación del repositorio de origen del paquete
          * el nombre de usuario del origen del último paquete conocido, si está disponible
@@ -266,7 +266,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
          * un código de respuesta que indica el resultado de la operación
 
 16.  Establecer nivel de registro
-     * Dirección de la solicitud:  Complemento de > NuGet
+     * Dirección de la solicitud: complemento NuGet->
      * La solicitud contendrá:
          * el nivel de registro predeterminado
      * Una respuesta contendrá:
@@ -276,7 +276,7 @@ Mensajes de versión *2.0.0* del Protocolo
 
 17. Obtener notificaciones de operación
 
-* Dirección de la solicitud:  Complemento de > NuGet
+* Dirección de la solicitud: complemento NuGet->
     * La solicitud contendrá:
         * el servicio index. JSON para un origen de paquete
         * Ubicación del repositorio de origen del paquete
@@ -288,15 +288,15 @@ Mensajes de versión *2.0.0* del Protocolo
 
 18. Obtención de credenciales de autenticación
 
-* Dirección de la solicitud: Complemento de > NuGet
+* Dirección de la solicitud: complemento NuGet->
 * La solicitud contendrá:
     * URI
     * isRetry
-    * NonInteractive
+    * No interactiva
     * CanShowDialog
 * Una respuesta contendrá
     * Nombre de usuario
     * Contraseña
-    * Message
+    * Mensaje
     * Lista de tipos de autenticación
     * MessageResponseCode
