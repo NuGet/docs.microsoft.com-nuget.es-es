@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8c1d8a479747f6f7bce388c1555589543c8824a0
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: 1d23759433efb405fa5f0035049befced2c43d6b
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020056"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380684"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>Compatibilidad con varias versiones de .NET Framework en el archivo del proyecto
 
@@ -37,7 +37,7 @@ En el caso de los proyectos de estilo SDK, puede configurar la compatibilidad co
 
    Asegúrese de cambiar el elemento XML modificado de singular a plural (agregue "s" a las etiquetas de apertura y cierre).
 
-3. Si tiene algún código que solo funciona en un TFM, puede usar `#if NET45` o `#if NETSTANDARD20` para separar el código que depende de TFM. (Para más información, consulte [Cómo lograr la compatibilidad con múltiples versiones](/dotnet/core/tutorials/libraries#how-to-multitarget)). Por ejemplo, puede usar este código:
+3. Si tiene algún código que solo funciona en un TFM, puede usar `#if NET45` o `#if NETSTANDARD2_0` para separar el código que depende de TFM. (Para más información, consulte [Cómo lograr la compatibilidad con múltiples versiones](/dotnet/core/tutorials/libraries#how-to-multitarget)). Por ejemplo, puede usar este código:
 
    ```csharp
    public string Platform {

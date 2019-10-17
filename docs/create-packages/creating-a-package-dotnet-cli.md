@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 40a42be91d3848db3e721a674e3fec4096fccd08
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: ec37057d40ddc9ed1826b0628aaa573c342b92b6
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69489022"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380752"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>Creación de un paquete NuGet con la CLI de dotnet
 
@@ -131,4 +131,4 @@ Es posible que también quiera ampliar las funcionalidades del paquete o admitir
 Por último, hay tipos de paquete adicionales que tener en cuenta:
 
 - [Paquetes nativos](../guides/native-packages.md)
-- [Paquetes de símbolos](../create-packages/symbol-packages.md)
+- [Paquetes de símbolos](../create-packages/symbol-packages-snupkg.md)

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3093761bda456ff5463f708c4d2d12f606dcecbd
-ms.sourcegitcommit: 7dba5be7b983ff508834c60caaa8b504f5fa1ae8
+ms.openlocfilehash: 6a49e410617c14e22f0d4a67d8bfe280f64f5505
+ms.sourcegitcommit: 8a424829b1f70cf7590e95db61997af6ae2d7a41
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 10/16/2019
-ms.locfileid: "72393013"
+ms.locfileid: "72510796"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -382,6 +382,10 @@ Otra configuración de restauración puede proceder de propiedades de MSBuild en
 | RestoreUseSkipNonexistentTargets  | Cuando los proyectos se recopilan a través de MSBuild, determina si se recopilan con la optimización `SkipNonexistentTargets`. Cuando no se establece, el valor predeterminado es `true`. La consecuencia es un comportamiento de error rápido cuando no se pueden importar los destinos de un proyecto. |
 | MSBuildProjectExtensionsPath | Carpeta de salida, de forma predeterminada `BaseIntermediateOutputPath` y la carpeta `obj`. |
 | RestoreForce | En los proyectos basados en PackageReference, fuerza la resolución de todas las dependencias, incluso si la última restauración se realizó correctamente. Especificar esta marca es similar a eliminar el archivo `project.assets.json`. Esto no omite la memoria caché http. |
+| RestorePackagesWithLockFile | Opta por el uso de un archivo de bloqueo. |
+| RestoreLockedMode | Ejecutar restauración en modo bloqueado. Esto significa que la restauración no volverá a evaluar las dependencias. |
+| NuGetLockFilePath | Una ubicación personalizada para el archivo de bloqueo. La ubicación predeterminada está junto al proyecto y se denomina `packages.lock.json`. |
+| RestoreForceEvaluate | Fuerza la restauración para volver a calcular las dependencias y actualizar el archivo de bloqueo sin ninguna advertencia. | 
 
 #### <a name="examples"></a>Ejemplos
 
