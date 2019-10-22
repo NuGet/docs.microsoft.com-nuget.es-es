@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1b373f245e934f2447acec2f97472d69999ae679
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.openlocfilehash: 24e35f4b2c047d5f337a1779e63846b11b0c1011
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999957"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380576"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet.org
 
@@ -80,7 +80,7 @@ En primer lugar, asegúrese de que está usando la versión más reciente de NuG
 
 *Para capturar MTR:*
 
-- Descarga de WinMTR de [http://winmtr.net/download/](http://winmtr.net/)
+- Descargue [WinMTR](https://sourceforge.net/projects/winmtr/files/WinMTR-v092.zip/download).
 - Escriba `api.nuget.org` como nombre de host y haga clic en **Start** (Iniciar).
 - Espere hasta que el valor de la columna **Sent** (Enviados) sea >= 100.
 
@@ -148,7 +148,7 @@ No se puede cambiar el inicio de sesión asociado a una cuenta Microsoft que est
 
 **He olvidado que tenía otra cuenta de nuget.org, ¿cómo averiguo de qué cuenta de nuget.org se trata?**
 
-Inicie sesión con la segunda cuenta de Microsoft en la [página de inicio de sesión](https://www.nuget.org/users/account/LogOn?returnUrl=%2F# "login page"). Esto iniciará la sesión en la cuenta de nuget.org que esté asociada actualmente a la segunda cuenta Microsoft. Después, podrá ver los paquetes cargados y realizar la administración en esta cuenta.
+Inicie sesión con la segunda cuenta de Microsoft en la [página de inicio de sesión](https://www.nuget.org/users/account/LogOn?returnUrl=%2F# "página de inicio de sesión"). Esto iniciará la sesión en la cuenta de nuget.org que esté asociada actualmente a la segunda cuenta Microsoft. Después, podrá ver los paquetes cargados y realizar la administración en esta cuenta.
 
 **No me interesa esta segunda cuenta de nuget.org; quiero cambiar el inicio de sesión de la primera cuenta de nuget.org por la segunda cuenta Microsoft. ¿Qué hago?**
 

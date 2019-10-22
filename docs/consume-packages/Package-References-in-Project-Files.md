@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: ae80206117eed639140a0c7977043d8330bc37bb
-ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
+ms.openlocfilehash: 892483760a9f3568da7101663e93c69ce3d70b96
+ms.sourcegitcommit: 8a424829b1f70cf7590e95db61997af6ae2d7a41
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69564570"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510802"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
 
@@ -236,11 +236,12 @@ ProjectA
 Si `ProjectA` tiene una dependencia de la versión `2.0.0` de `PackageX` y también hace referencia a `ProjectB`, que depende de la versión `1.0.0` de `PackageX`, el archivo de bloqueo para `ProjectB` mostrará una dependencia de la versión `1.0.0` de `PackageX`. Sin embargo, al crearse `ProjectA`, su archivo de bloqueo contendrá una dependencia de la versión **`2.0.0`** de `PackageX` y **no** `1.0.0` como se muestra en el archivo de bloqueo para `ProjectB`. Por tanto, el archivo de bloqueo de un proyecto de código común tiene poco que decir sobre los paquetes resueltos para los proyectos que dependen de él.
 
 ### <a name="lock-file-extensibility"></a>Extensibilidad del archivo de bloqueo
+
 Puede controlar diversos comportamientos de la restauración con el archivo de bloqueo como se describe a continuación:
 
-| Opción | Opción equivalente de MSBuild | 
-|:---  |:--- |
-| `--use-lock-file` | Uso de arranques del archivo de bloqueo para un proyecto. De forma alternativa, puede establecer la propiedad `RestorePackagesWithLockFile` en el archivo del proyecto | 
-| `--locked-mode` | Habilita el modo de bloqueo para la restauración. Esto resulta útil en los escenarios de CI/CD en los que desea obtener las compilaciones repetibles. También puede ser estableciendo la propiedad MSBuild `RestoreLockedMode` en `true` |  
-| `--force-evaluate` | Esta opción es útil con los paquetes con la versión flotante definida en el proyecto. De forma predeterminada, la restauración de NuGet no actualizará la versión del paquete automáticamente tras cada restauración a menos que ejecute esta con la opción `--force-evaluate`. |
-| `--lock-file-path` | Define una ubicación del archivo de bloqueo personalizada para un proyecto. Esto también puede lograrse estableciendo la propiedad MSBuild `NuGetLockFilePath`. De forma predeterminada, NuGet admite `packages.lock.json` en el directorio raíz. Si tiene varios proyectos en el mismo directorio, NuGet admite el archivo de bloqueo específico del proyecto `packages.<project_name>.lock.json` |
+| Opción | Opción equivalente de MSBuild | DESCRIPCIÓN|
+|:---  |:--- |:--- |
+| `--use-lock-file` | RestorePackagesWithLockFile | Opta por el uso de un archivo de bloqueo. | 
+| `--locked-mode` | RestoreLockedMode | Habilita el modo de bloqueo para la restauración. Esto resulta útil en escenarios de CI/CD donde se necesitan compilaciones repetibles.|   
+| `--force-evaluate` | RestoreForceEvaluate | Esta opción es útil con los paquetes con la versión flotante definida en el proyecto. De forma predeterminada, la restauración de NuGet no actualizará la versión del paquete automáticamente tras cada restauración a menos que la ejecute con esta opción. |
+| `--lock-file-path` | NuGetLockFilePath | Define una ubicación del archivo de bloqueo personalizada para un proyecto. De forma predeterminada, NuGet admite `packages.lock.json` en el directorio raíz. Si tiene varios proyectos en el mismo directorio, NuGet admite el archivo de bloqueo específico del proyecto `packages.<project_name>.lock.json` |

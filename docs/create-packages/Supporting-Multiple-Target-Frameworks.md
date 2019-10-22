@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 14483264030dd3bb32c7295886f2d37d52e735cc
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: 4413779361dad3a650da36b3c69bbb55b62804ee
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020036"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380731"
 ---
 # <a name="support-multiple-net-versions"></a>Compatibilidad con varias versiones de .NET
 
 Muchas bibliotecas tienen como destino una versión concreta de .NET Framework. Por ejemplo, podría tener una versión de la biblioteca que sea específica de UWP y otra que aproveche las ventajas de las características de la versión 4.6 de .NET Framework. Para adecuarse a esto, NuGet admite colocar varias versiones de la misma biblioteca en un solo paquete.
 
-En este artículo se describe el diseño de un paquete NuGet, independientemente de cómo se compila el paquete o los ensamblados (es decir, el diseño es el mismo ya sea que se usen archivos *.csproj* que no son de estilo SDK y un archivo *.nuspec* personalizado, o bien un solo archivo *.csproj* de estilo SDK con varios destinos). En el caso de un proyecto de estilo SDK, los [destinos de paquetes](../reference/msbuild-targets.md) de NuGet saben cómo se debe diseñar el paquete y automatizan la colocación de los ensamblados en las carpetas lib correctas y la creación de grupos de dependencias para cada marco de destino (TFM). Para instrucciones detalladas, consulte [Compatibilidad con varias versiones de .NET Framework en el archivo del proyecto](multiple-target-frameworks-project-file.md).
+En este artículo se describe el diseño de un paquete NuGet, independientemente de cómo se compila el paquete o los ensamblados (es decir, el diseño es el mismo ya sea que se usen varios archivos *.csproj* y un archivo *.nuspec* personalizado, o un único archivo *.csproj* de estilo SDK con varios destinos). En el caso de un proyecto de estilo SDK, los [destinos de paquetes](../reference/msbuild-targets.md) de NuGet saben cómo se debe diseñar el paquete y automatizan la colocación de los ensamblados en las carpetas lib correctas y la creación de grupos de dependencias para cada marco de destino (TFM). Para instrucciones detalladas, consulte [Compatibilidad con varias versiones de .NET Framework en el archivo del proyecto](multiple-target-frameworks-project-file.md).
 
 Debe diseñar manualmente el paquete tal como se describe en este artículo al usar el método del directorio de trabajo basado en conversiones que se describe en [Creación de un paquete](../create-packages/creating-a-package.md#from-a-convention-based-working-directory). En el caso de un proyecto de estilo SDK, se recomienda el método automatizado, pero también podría elegir diseñar manualmente el paquete tal como se describe en este artículo.
 
@@ -65,9 +65,9 @@ Si tiene ensamblados específicos de la arquitectura (es decir, ensamblados inde
             \native
             \lib\uap10.0
 
-Estos ensamblados solo estarán disponibles en tiempo de ejecución, por lo que si también desea proporcionar el ensamblado de tiempo de compilación correspondiente, incluya el ensamblado `AnyCPU` en la carpeta `/ref{tfm}`. 
+Estos ensamblados solo estarán disponibles en tiempo de ejecución, por lo que si también desea proporcionar el ensamblado de tiempo de compilación correspondiente, incluya el ensamblado `AnyCPU` en la carpeta `/ref/{tfm}`. 
 
-Tenga en cuenta que NuGet siempre selecciona estos recursos de tiempo de ejecución o compilación desde una carpeta, por lo que si hay algunos recursos compatibles desde `/ref`, se omitirá `/lib` para agregar ensamblados de tiempo de compilación. De forma similar, si hay algunos recursos compatibles desde `/runtime`, también se omitirá `/lib` durante el tiempo de ejecución.
+Tenga en cuenta que NuGet siempre selecciona estos recursos de tiempo de ejecución o compilación desde una carpeta, por lo que si hay algunos recursos compatibles desde `/ref`, se omitirá `/lib` para agregar ensamblados de tiempo de compilación. Igualmente, si hay algunos recursos compatibles desde `/runtime`, también se omitirá `/lib` durante el tiempo de ejecución.
 
 Vea [Crear paquetes UWP](../guides/create-uwp-packages.md) para ver un ejemplo de cómo hacer referencia a estos archivos en el manifiesto de `.nuspec`.
 
