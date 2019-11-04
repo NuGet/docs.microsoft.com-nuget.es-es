@@ -36,8 +36,8 @@ donde los términos de búsqueda opcionales filtrarán la lista mostrada. Los t�
 | Help | Muestra información de ayuda para el comando. |
 | IncludeDelisted | *(3,2 +)* Muestra los paquetes que no aparecen en la lista. |
 | NonInteractive | Suprime los mensajes de entrada o confirmaciones de usuario. |
-| Versión preliminar | Incluye paquetes de versiones preliminares en la lista. |
-| source | Especifica una lista de los orígenes de paquetes que se van a buscar. |
+| PreRelease | Incluye paquetes de versiones preliminares en la lista. |
+| Source | Especifica una lista de los orígenes de paquetes que se van a buscar. |
 | Verbosity | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *silenciosa*, *detallado*. |
 
 Vea también [variables de entorno](cli-ref-environment-variables.md)
