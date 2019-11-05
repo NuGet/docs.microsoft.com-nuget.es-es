@@ -1,68 +1,68 @@
 ---
-title: Tools.JSON para detectar versiones de nuget.exe
-description: El punto de conexión para
+title: tools.json for discovering nuget.exe versions
+description: The endpoint for
 author: jver
 ms.author: jver
 ms.date: 08/16/2018
 ms.topic: conceptual
 ms.reviewer: kraigb
-ms.openlocfilehash: 003139abac7808dbdaef4aa66119e09772db2b4f
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: a186db9727bdfd1b55bf73a1f29283352555dede
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852538"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611031"
 ---
-# <a name="toolsjson-for-discovering-nugetexe-versions"></a>Tools.JSON para detectar versiones de nuget.exe
+# <a name="toolsjson-for-discovering-nugetexe-versions"></a>tools.json for discovering nuget.exe versions
 
-En la actualidad, hay varias maneras de obtener la versión más reciente de nuget.exe en el equipo de forma que permite ejecutar scripts. Por ejemplo, puede descargar y extraer el [ `NuGet.CommandLine` ](https://www.nuget.org/packages/NuGet.CommandLine/) paquetes de nuget.org. Esto presenta cierta complejidad, ya que lo bien requiere que ya tenga nuget.exe (para `nuget.exe install`) o tendrá que descomprimir los archivos .nupkg mediante una herramienta de descompresión básica y busque el interior binario.
+Today, there are a few ways to get the latest version of nuget.exe on your machine in a scriptable fashion. For example, you can download and extract the [`NuGet.CommandLine`](https://www.nuget.org/packages/NuGet.CommandLine/) package from nuget.org. This has some complexity since it either requires that you already have nuget.exe (for `nuget.exe install`) or you have to unzip the .nupkg using a basic unzip tool and find the binary inside.
 
-Si ya tiene nuget.exe, también puede usar `nuget.exe update -self`; sin embargo, esto también requiere tener una copia existente de nuget.exe. Este enfoque también actualiza a la versión más reciente. No se permite el uso de una versión específica.
+If you already have nuget.exe, you can also use `nuget.exe update -self`, however this also requires having an existing copy of nuget.exe. This approach also updates you to the latest version. It does not allow the use of a specific version.
 
-El `tools.json` extremo está disponible para ambos solucionar el problema de arranque y para proporcionar control de la versión de nuget.exe que descargar. Esto puede usarse en entornos de CI/CD o en scripts personalizados para detectar y descargar cualquier versión de lanzamiento de nuget.exe.
+The `tools.json` endpoint is available to both solve the bootstrapping problem and to give control of the version of nuget.exe that you download. This can be used in CI/CD environments or in custom scripts to discover and download any released version of nuget.exe.
 
-El `tools.json` punto de conexión se puede recuperar mediante una solicitud HTTP no autenticada (por ejemplo, `Invoke-WebRequest` en PowerShell o `wget`). Puede analizar mediante un deserializador JSON y descargar nuget.exe subsiguientes mediante que también se pueden recuperar las direcciones URL sin autenticar las solicitudes HTTP.
+The `tools.json` endpoint can be fetched using an unauthenticated HTTP request (e.g. `Invoke-WebRequest` in PowerShell or `wget`). It can be parsed using a JSON deserializer and subsequent nuget.exe download URLs can also be fetched using unauthenticated HTTP requests.
 
-El punto de conexión se puede recuperar mediante el `GET` método:
+The endpoint can be fetched using the `GET` method:
 
     GET https://dist.nuget.org/tools.json
 
-El [esquema JSON](http://json-schema.org/) para el punto de conexión está disponible aquí:
+The [JSON schema](https://json-schema.org/) for the endpoint is available here:
 
     GET https://dist.nuget.org/tools.schema.json
 
 ## <a name="response"></a>Respuesta
 
-La respuesta es un documento JSON que contiene todas las versiones disponibles de nuget.exe.
+The response is a JSON document containing all of the available versions of nuget.exe.
 
-El objeto JSON de raíz tiene la siguiente propiedad:
+The root JSON object has the following property:
 
-nombre      | Tipo             | Obligatorio
+Name      | Type             | Requerido
 --------- | ---------------- | --------
-nuget.exe | matriz de objetos | sí
+nuget.exe | array of objects | sí
 
-Cada objeto en el `nuget.exe` matriz tiene las siguientes propiedades:
+Each object in the `nuget.exe` array has the following properties:
 
-nombre     | Tipo   | Obligatorio | Notas
+Name     | Type   | Requerido | Notas
 -------- | ------ | -------- | -----
-version  | cadena | sí      | Una cadena de SemVer 2.0.0
-url      | cadena | sí      | Una dirección URL absoluta para la descarga de esta versión de nuget.exe
-Fase    | cadena | sí      | Una cadena de enum
-cargado | cadena | sí      | Una marca de tiempo ISO 8601 aproximado de cuando estaba disponible la versión
+version  | cadena | sí      | A SemVer 2.0.0 string
+url      | cadena | sí      | An absolute URL for downloading this version of nuget.exe
+stage    | cadena | sí      | An enum string
+uploaded | cadena | sí      | An approximate ISO 8601 timestamp of when the version was made available
 
-Los elementos de la matriz se ordenarán en sentido descendente, SemVer 2.0.0. Esta garantía está pensada para reducir la carga de un cliente que está interesado en mayor número de versión. Sin embargo, esto significa que la lista no está ordenada en orden cronológico. Por ejemplo, si se repara una versión inferior principal en una fecha posterior a una versión principal superior, esta versión revisada no aparecerá en la parte superior de la lista. Si desea que la versión más reciente publicada por *timestamp*, solo tiene que ordenar la matriz por la `uploaded` cadena. Esto funciona porque el `uploaded` marca de tiempo está en el [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) formato que se puede ordenar cronológicamente mediante el uso de una ordenación lexicográfica (es decir, una ordenación por cadena simple).
+The items in the array will be sorted in descending, SemVer 2.0.0 order. This guarantee is meant to reduce the burden of a client that is interested in highest version number. However this does mean that the list is not sorted in chronological order. For example, if a lower major version is serviced at a date later than a higher major version, this serviced version will not appear at the top of the list. If you want the latest version released by *timestamp*, simply sort the array by the `uploaded` string. This works because the `uploaded` timestamp is in the [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format which can be sorted chronologically by using a lexicographical sort (i.e. a simple string sort).
 
-El `stage` propiedad indica cómo supervisadas es de esta versión de la herramienta. 
+The `stage` property indicates how vetted this version of the tool is. 
 
 Fase              | Significado
 ------------------ | ------
-EarlyAccessPreview | Aún no está visible en el [página web de descarga](https://www.nuget.org/downloads) y debe validarse por socios
-Lanzamiento           | Se encuentra disponible en el sitio de descarga, pero aún no está recomendado para su uso generalizado
-ReleasedAndBlessed | Disponible en el sitio de descarga y se recomienda para su uso
+EarlyAccessPreview | Not yet visible on the [download web page](https://www.nuget.org/downloads) and should be validated by partners
+Lanzamiento           | Available on the download site but is not yet recommended for wide-spread consumption
+ReleasedAndBlessed | Available on the download site and is recommended for consumption
 
-Un enfoque sencillo para tener la versión más reciente, versión recomendada es tomar la primera versión de la lista que tiene el `stage` valor `ReleasedAndBlessed`. Esto funciona porque las versiones se ordenan en orden de SemVer 2.0.0.
+One simple approach for having the latest, recommended version is to take the first version in the list that has the `stage` value of `ReleasedAndBlessed`. This works because the versions are sorted in SemVer 2.0.0 order.
 
-El `NuGet.CommandLine` paquete en nuget.org normalmente solo se actualiza con `ReleasedAndBlessed` versiones.
+The `NuGet.CommandLine` package on nuget.org is typically only updated with `ReleasedAndBlessed` versions.
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
