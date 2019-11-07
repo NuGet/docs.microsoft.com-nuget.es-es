@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0e69491525fce03e504d9d455bee2718510c83c2
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549890"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610999"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Configurar la restauración de paquetes con Team Foundation Build
 
@@ -31,7 +31,7 @@ Si usa Visual Studio Team Services o Team Foundation Server 2013 con sus plantil
 
 Una ventaja a la hora de usar NuGet es que puede usarlo para evitar el registro de archivos binarios en el sistema de control de versiones.
 
-Esto resulta muy interesante si usa un [sistema de control de versiones distribuido](http://en.wikipedia.org/wiki/Distributed_revision_control) como Git, porque los desarrolladores necesitan clonar la totalidad del repositorio, incluido el historial completo, antes de poder empezar a trabajar de forma local. El registro de archivos binarios puede causar un importante sobredimensionamiento de repositorios, ya que estos archivos se suelen almacenar sin compresión delta.
+Esto resulta muy interesante si usa un [sistema de control de versiones distribuido](https://en.wikipedia.org/wiki/Distributed_revision_control) como Git, porque los desarrolladores necesitan clonar la totalidad del repositorio, incluido el historial completo, antes de poder empezar a trabajar de forma local. El registro de archivos binarios puede causar un importante sobredimensionamiento de repositorios, ya que estos archivos se suelen almacenar sin compresión delta.
 
 NuGet lleva admitiendo desde hace tiempo la [restauración de paquetes](../consume-packages/package-restore.md) como parte de la compilación. La implementación anterior tuvo el dilema del huevo y la gallina en cuanto a los paquetes que querían ampliar el proceso de compilación porque NuGet restauró los paquetes al crear el proyecto. Pero MSBuild no permite extender la compilación durante el proceso. Alguien podría decir que se trata de un problema de MSBuild, pero yo diría que se trata de un problema inherente. En función del aspecto que necesite ampliar, puede que ya sea demasiado tarde para registrarlo en el momento en que se restaure el paquete.
 
@@ -50,7 +50,7 @@ En el siguiente proyecto de demostración se muestra cómo configurar la compila
 
 ## <a name="repository-structure"></a>Estructura del repositorio
 
-Nuestro proyecto de demostración es una simple herramienta de línea de comandos que usa el argumento de la línea de comandos para efectuar consultas en Bing. Tiene como destino .NET Framework 4 y usa muchos de los [paquetes BCL](http://www.nuget.org/profiles/dotnetframework/) ([Microsoft.Net.Http](http://www.nuget.org/packages/Microsoft.Net.Http), [Microsoft.Bcl](http://www.nuget.org/packages/Microsoft.Bcl), [Microsoft.Bcl.Async](http://www.nuget.org/packages/Microsoft.Bcl.Async) y [Microsoft.Bcl.Build](http://www.nuget.org/packages/Microsoft.Bcl.Build)).
+Nuestro proyecto de demostración es una simple herramienta de línea de comandos que usa el argumento de la línea de comandos para efectuar consultas en Bing. Tiene como destino .NET Framework 4 y usa muchos de los [paquetes BCL](https://www.nuget.org/profiles/dotnetframework/) ([Microsoft.Net.Http](https://www.nuget.org/packages/Microsoft.Net.Http), [Microsoft.Bcl](https://www.nuget.org/packages/Microsoft.Bcl), [Microsoft.Bcl.Async](https://www.nuget.org/packages/Microsoft.Bcl.Async) y [Microsoft.Bcl.Build](https://www.nuget.org/packages/Microsoft.Bcl.Build)).
 
 La estructura del repositorio tiene el siguiente aspecto:
 

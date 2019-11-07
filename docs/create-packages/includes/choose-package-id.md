@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7ebe3c0f75b8de158879119bce4df26217849251
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: c92f6e0c34347ee8555d416140d95ea2df5a3fbb
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488963"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610545"
 ---
 El identificador del paquete y el número de versión son los dos valores más importantes del proyecto, ya que identifican de forma única el código exacto que se incluye en el paquete.
 
@@ -21,6 +21,6 @@ El identificador del paquete y el número de versión son los dos valores más i
 
 > Para información sobre la resolución de las dependencias, consulte [Resolución de dependencias con PackageReference](../../concepts/dependency-resolution.md#dependency-resolution-with-packagereference). Para información anterior que también podría ser útil para entender mejor el control de versiones, consulte esta serie de entradas de blog.
 >
-> - [Parte 1: Taking on DLL Hell](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html) (Parte 1: Enfrentarse al infierno de los archivos DLL)
-> - [Parte 2: The core algorithm](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html) (Parte 2: El algoritmo básico)
-> - [Part 3: Unification via Binding Redirects](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html) (Parte 3: Unificación mediante redirecciones de enlaces)
+> - [Parte 1: Taking on DLL Hell](https://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html) (Parte 1: Enfrentarse al infierno de los archivos DLL)
+> - [Parte 2: The core algorithm](https://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html) (Parte 2: El algoritmo básico)
+> - [Part 3: Unification via Binding Redirects](https://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html) (Parte 3: Unificación mediante redirecciones de enlaces)

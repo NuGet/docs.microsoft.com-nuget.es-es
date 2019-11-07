@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: f85042b8fe1511934d6a3ac7de34da92c575f6e0
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.openlocfilehash: 6e352fef9fc36646f6feedbc390f847119cb00bf
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432531"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611367"
 ---
 # <a name="nuget-48-release-notes"></a>Notas de la versión de NuGet 4.8
 
@@ -36,7 +36,7 @@ También están disponibles las versiones de la línea de comandos de esta misma
 ### <a name="installing-signed-packages-on-a-ci-machine-or-in-an-offline-environment-takes-longer-than-usual"></a>La instalación de los paquetes firmados en un equipo de integración continua o en un entorno sin conexión tarda más de lo normal.
 
 #### <a name="issue"></a>Problema
-Si la máquina tiene restringido el acceso a Internet (por ejemplo, una máquina de compilación en un escenario de CI/CD), instalar o restaurar un paquete NuGet firmado dará como resultado una advertencia ([NU3028](https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu3028)), puesto que no se puede acceder a los servidores de revocación. Esto es normal. Sin embargo, en algunos casos, esto puede tener consecuencias no deseadas, como, por ejemplo, que la instalación o restauración de paquetes tarden más de lo habitual.
+Si la máquina tiene restringido el acceso a Internet (por ejemplo, una máquina de compilación en un escenario de CI/CD), instalar o restaurar un paquete NuGet firmado dará como resultado una advertencia ([NU3028](https://docs.microsoft.com/nuget/reference/errors-and-warnings/nu3028)), puesto que no se puede acceder a los servidores de revocación. Esto es normal. Sin embargo, en algunos casos, esto puede tener consecuencias no deseadas, como, por ejemplo, que la instalación o restauración de paquetes tarden más de lo habitual.
 
 #### <a name="workaround"></a>Solución
 Actualizar a Visual Studio 15.8.4 y NuGet.exe 4.8.1, donde se introdujo una variable de entorno para cambiar el modo de comprobación de revocación.

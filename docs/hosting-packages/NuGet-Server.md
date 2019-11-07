@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 734f0a609f243c7bdb218a53ed664de68c707dd7
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 82b353450ff1da23a17e5b1c6a825ad32782bf75
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317656"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610594"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -53,7 +53,7 @@ Si tiene más preguntas sobre NuGet.Server, registre un problema en [https://git
 
 1. Haga clic **aquí** en el área indicada anteriormente para ver la fuente OData de los paquetes.
 
-1. La primera vez que ejecute la aplicación, NuGet.Server reestructura la carpeta `Packages` para que contenga una carpeta para cada paquete. Esto coincide con el [diseño de almacenamiento local](http://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands) introducido con NuGet 3.3 para mejorar el rendimiento. Al agregar más paquetes, siga esta estructura.
+1. La primera vez que ejecute la aplicación, NuGet.Server reestructura la carpeta `Packages` para que contenga una carpeta para cada paquete. Esto coincide con el [diseño de almacenamiento local](https://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands) introducido con NuGet 3.3 para mejorar el rendimiento. Al agregar más paquetes, siga esta estructura.
 
 1. Una vez que haya probado la implementación local, implemente la aplicación en cualquier otro sitio interno o externo según sea necesario.
 

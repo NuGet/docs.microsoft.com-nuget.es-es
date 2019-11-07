@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: a7d07da30daf3f94db99476b88d9abaad1bb8a07
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 1c19f962dc9e42154c0f4374432548e867e9538a
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488866"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610709"
 ---
 # <a name="building-pre-release-packages"></a>Crear paquetes de versión preliminar
 
@@ -56,7 +56,7 @@ De forma predeterminada, NuGet no incluye las versiones preliminares al trabajar
 
 ## <a name="semantic-versioning"></a>Control de versiones semántico
 
-En [Semantic Versioning or SemVer convention](http://semver.org/spec/v1.0.0.html) (Control de versiones semántico o convención SemVer) se describe cómo usar las cadenas en los números de versión para expresar el significado del código subyacente.
+En [Semantic Versioning or SemVer convention](https://semver.org/spec/v1.0.0.html) (Control de versiones semántico o convención SemVer) se describe cómo usar las cadenas en los números de versión para expresar el significado del código subyacente.
 
 En esta convención, cada versión tiene tres partes, `Major.Minor.Patch`, con el significado siguiente:
 
@@ -73,7 +73,7 @@ Teniendo esto en cuenta, se recomienda seguir unas convenciones de nomenclatura 
 - `-rc`: versión candidata para lanzamiento. Suele ser una versión potencialmente definitiva (estable) a menos que surjan errores importantes.
 
 > [!Note]
-> NuGet 4.3.0 y versiones posteriores admite [Versionamiento semántico v2.0.0](http://semver.org/spec/v2.0.0.html), que es compatible con números de versión preliminar con notación de puntos, como en `1.0.1-build.23`. La notación de puntos no es compatible con versiones de NuGet anteriores a 4.3.0. En versiones anteriores de NuGet, podría usar un formulario como `1.0.1-build23`, pero esto siempre se considera una versión preliminar.
+> NuGet 4.3.0 y versiones posteriores admite [Versionamiento semántico v2.0.0](https://semver.org/spec/v2.0.0.html), que es compatible con números de versión preliminar con notación de puntos, como en `1.0.1-build.23`. La notación de puntos no es compatible con versiones de NuGet anteriores a 4.3.0. En versiones anteriores de NuGet, podría usar un formulario como `1.0.1-build23`, pero esto siempre se considera una versión preliminar.
 
 Use los sufijos que use, NuGet les dará prioridad en orden alfabético inverso:
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/16/2019
 ms.topic: quickstart
-ms.openlocfilehash: 9552f6c5291f950430bfb723cb713bf76a79ea66
-ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
+ms.openlocfilehash: ef1bda19c5ca3c6b5a4bd9b9d4e3ef41d7dadb53
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69564589"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610637"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
 
@@ -30,7 +30,7 @@ Es muy sencillo crear un paquete NuGet desde una biblioteca de clases de .NET St
    > [!Important]
    > Si está trabajando con un proyecto de este tipo, siga los procedimientos que se describen en [Creación y publicación de un paquete de .NET Framework (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) para crear y publicar el paquete en su lugar. En este artículo, se recomienda la CLI de `dotnet`. Aunque puede publicar cualquier paquete NuGet mediante la CLI de `nuget.exe`, algunos de los pasos de este artículo son específicos de los proyectos de estilo SDK y de la CLI de dotnet. La CLI de nuget.exe se usa con [proyectos que no son de estilo SDK](../resources/check-project-format.md) (normalmente .NET Framework).
 
-1. [Registrar una cuenta gratuita en nuget.org](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account) si aún no tiene uno. Al crear una cuenta se envía un correo electrónico de confirmación. Debe confirmar la cuenta para poder cargar un paquete.
+1. [Registrar una cuenta gratuita en nuget.org](https://docs.microsoft.com/nuget/nuget-org/individual-accounts#add-a-new-individual-account) si aún no tiene uno. Al crear una cuenta se envía un correo electrónico de confirmación. Debe confirmar la cuenta para poder cargar un paquete.
 
 ## <a name="create-a-class-library-project"></a>Crear un proyecto de biblioteca de clases
 

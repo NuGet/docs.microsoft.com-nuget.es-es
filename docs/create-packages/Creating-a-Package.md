@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 353654d12e137222ab24417f30fd22e9f027c324
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: 12ecfb8374c43a04d57d32575556adebc991d053
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380707"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610704"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Creación de un paquete con la CLI de nuget.exe
 
@@ -276,9 +276,9 @@ El identificador del paquete (el elemento `<id>`) y el número de versión (el e
 
 > La siguiente serie de entradas de blog breves también es útil para entender el control de versiones:
 >
-> - [Parte 1: Taking on DLL Hell](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html) (Parte 1: Enfrentarse al infierno de los archivos DLL)
-> - [Parte 2: The core algorithm](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html) (Parte 2: El algoritmo básico)
-> - [Part 3: Unification via Binding Redirects](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html) (Parte 3: Unificación mediante redirecciones de enlaces)
+> - [Parte 1: Taking on DLL Hell](https://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html) (Parte 1: Enfrentarse al infierno de los archivos DLL)
+> - [Parte 2: The core algorithm](https://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html) (Parte 2: El algoritmo básico)
+> - [Part 3: Unification via Binding Redirects](https://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html) (Parte 3: Unificación mediante redirecciones de enlaces)
 
 ## <a name="add-a-readme-and-other-files"></a>Adición de un archivo Léame y otros archivos
 

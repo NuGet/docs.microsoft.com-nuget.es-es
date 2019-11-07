@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: 417388872a74b29a469d6a5c17c079a0d1a35dc3
-ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
+ms.openlocfilehash: 09c859c0ab6767ea80b6a64c194aa2623ee5c505
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70384471"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610518"
 ---
 # <a name="install-nuget-client-tools"></a>Instalación de las herramientas del cliente NuGet
 
@@ -46,7 +46,7 @@ Para obtener información sobre cómo usar comandos básicos con la CLI de dotne
 
 ### <a name="nugetexe-cli"></a>CLI de nuget.exe
 
-La CLI de `nuget.exe`, `nuget.exe`, es la utilidad de línea de comandos para Windows que ofrece todas las funcionalidades de NuGet. También se puede ejecutar en Mac OS X y Linux con [Mono](http://www.mono-project.com/docs/getting-started/install/), con algunas limitaciones.
+La CLI de `nuget.exe`, `nuget.exe`, es la utilidad de línea de comandos para Windows que ofrece todas las funcionalidades de NuGet. También se puede ejecutar en Mac OS X y Linux con [Mono](https://www.mono-project.com/docs/getting-started/install/), con algunas limitaciones.
 
 Para obtener información sobre cómo usar comandos básicos con la CLI de `nuget.exe`, consulte [Instalar y usar paquetes mediante la CLI de nuget.exe](consume-packages/install-use-packages-nuget-cli.md).
 

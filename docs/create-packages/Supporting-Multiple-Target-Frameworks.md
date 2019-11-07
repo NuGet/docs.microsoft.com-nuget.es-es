@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4413779361dad3a650da36b3c69bbb55b62804ee
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: 69e12ce1c78f8d4d50cbad7a0237d767064193ab
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380731"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610652"
 ---
 # <a name="support-multiple-net-versions"></a>Compatibilidad con varias versiones de .NET
 
@@ -151,8 +151,8 @@ En el ejemplo siguiente se muestran diferentes variaciones del elemento `<group>
 
 Al empaquetar bibliotecas que tienen como destino la biblioteca de clases portable, puede resultar difícil determinar qué destino de NuGet se debe usar en los nombres de carpeta y en el archivo `.nuspec`, sobre todo si se tiene como destino un solo subconjunto de la biblioteca de clases portable. Los siguientes recursos externos le ayudarán con esto:
 
-- [Perfiles de .NET Framework](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (stephencleary.com)
-- [Perfiles de biblioteca de clases portable](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) (plnkr.co): tabla en la que se muestran los perfiles PCL y los destinos de NuGet equivalentes
+- [Perfiles de .NET Framework](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (stephencleary.com)
+- [Perfiles de biblioteca de clases portable](https://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) (plnkr.co): tabla en la que se muestran los perfiles PCL y los destinos de NuGet equivalentes
 - [Herramienta de perfiles de la biblioteca de clases portable](https://github.com/StephenCleary/PortableLibraryProfiles) (github.com): herramienta de línea de comandos para determinar los perfiles PCL disponibles en el sistema
 
 ## <a name="content-files-and-powershell-scripts"></a>Archivos de contenido y scripts de PowerShell

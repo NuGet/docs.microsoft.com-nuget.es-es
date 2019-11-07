@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 7c6992d6bf3142eb6aca70f1fa3c46f72efd25a0
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: e0014a812ea591ef40c961e13864652d75ebdf6c
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520355"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610985"
 ---
 # <a name="package-versioning"></a>Control de versiones de paquetes
 
@@ -32,7 +32,7 @@ Un número de versión específico tiene el formato *.Revisión[-Sufijo]* , dond
 - *VersiónPrincipal*: Cambios importantes
 - *VersiónSecundaria*: nuevas características, compatibles con versiones anteriores
 - *Revisión*: solo correcciones de errores compatibles con versiones anteriores
-- *-Sufijo* (opcional): un guión seguido de una cadena que denota una versión preliminar (según la [convención de Versionamiento Semántico o SemVer 1.0](http://semver.org/spec/v1.0.0.html)).
+- *-Sufijo* (opcional): un guión seguido de una cadena que denota una versión preliminar (según la [convención de Versionamiento Semántico o SemVer 1.0](https://semver.org/spec/v1.0.0.html)).
 
 **Ejemplos:**
 
@@ -55,7 +55,7 @@ Dicho esto, los desarrolladores de paquetes generalmente siguen las convenciones
 - `-rc`: versión candidata para lanzamiento. Suele ser una versión potencialmente definitiva (estable) a menos que surjan errores importantes.
 
 > [!Note]
-> NuGet 4.3.0+ admite [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html), que es compatible con números de versión preliminar con notación de puntos, como en *1.0.1-build.23*. La notación de puntos no es compatible con versiones de NuGet anteriores a 4.3.0. Puede usar un formato como *1.0.1-build23*.
+> NuGet 4.3.0+ admite [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html), que es compatible con números de versión preliminar con notación de puntos, como en *1.0.1-build.23*. La notación de puntos no es compatible con versiones de NuGet anteriores a 4.3.0. Puede usar un formato como *1.0.1-build23*.
 
 Cuando resuelva referencias de paquete y varias versiones de paquete solo se diferencien en el sufijo, NuGet elegirá primero una versión sin sufijo y luego aplicará la prioridad a las versiones preliminares en orden alfabético inverso. Por ejemplo, se elegirían las siguientes versiones en el orden exacto mostrado:
 
@@ -70,7 +70,7 @@ Cuando resuelva referencias de paquete y varias versiones de paquete solo se dif
 
 ## <a name="semantic-versioning-200"></a>Versionamiento Semántico 2.0.0
 
-Con Nuget 4.3.0+ y Visual Studio 2017 versión 15.3+, NuGet admite [Versionamiento Semántico 2.0.0](http://semver.org/spec/v2.0.0.html).
+Con Nuget 4.3.0+ y Visual Studio 2017 versión 15.3+, NuGet admite [Versionamiento Semántico 2.0.0](https://semver.org/spec/v2.0.0.html).
 
 Ciertas semánticas de SemVer v2.0.0 no se admiten en los clientes más antiguos. NuGet considera que una versión de paquete es específica de SemVer v2.0.0 si alguna de las siguientes afirmaciones es verdadera:
 

@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 10651e2cc26f7df4115e4de5dac8c91c93af7374
-ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
+ms.openlocfilehash: 3ca023c8d39b9b36388f5f517b50ca5cd2347cc0
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70815291"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610455"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>Hospedar sus propias fuentes de NuGet
 
@@ -29,13 +29,13 @@ También hay otros productos de hospedaje de NuGet, como [Azure Artifacts](https
 - [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish), que también está disponible en Team Foundation Server 2017 y versiones posteriores.
 - [BaGet](https://github.com/loic-sharma/BaGet), una implementación de código abierto del servidor NuGet V3 integrado en .NET Core
 - [Cloudsmith](https://cloudsmith.io/l/nuget-feed/), un SaaS de administración de paquetes totalmente administrado.
-- [GitHub Package Registry](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
+- [Registro del paquete de GitHub](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [LiGet](https://github.com/ai-traders/liget), una implementación de código abierto del servidor NuGet V2 que se ejecuta en Kestrel en Docker
-- [MyGet](http://myget.org)
-- [Nexus](http://www.sonatype.org/nexus/) de Sonatype.
-- [NuGet Server (código abierto)](http://nuget-server.net), una implementación de código abierto parecida a NuGet Server de Inedo
+- [MyGet](https://myget.org)
+- [Nexus](https://www.sonatype.org/nexus/) de Sonatype.
+- [NuGet Server (código abierto)](https://github.com/svenkle/nuget-server), una implementación de código abierto parecida a NuGet Server de Inedo
 - [NuGet Server](http://nugetserver.net/), un proyecto de la comunidad de Inedo
-- [ProGet](http://inedo.com/proget) de Inedo
+- [ProGet](https://inedo.com/proget) de Inedo
 - [Sleet](https://github.com/emgarten/sleet), un generador de fuentes estáticas NuGet V3 de código abierto
 - [TeamCity](https://www.jetbrains.com/teamcity/) de JetBrains.
 

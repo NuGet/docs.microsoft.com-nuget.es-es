@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: cbe6fd964e88b054b9e2c5c8ead71d1f9090d63c
-ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
+ms.openlocfilehash: 9947a490e4373bb0b8b7fb0814828ff2a60615a8
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817564"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611071"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Búsqueda y evaluación de paquetes NuGet para el proyecto
 
-Al iniciar de cualquier proyecto de .NET, o cada vez que identifique una necesidad funcional para la aplicación o el servicio, puede ahorrar mucho tiempo y evitar problemas si usa paquetes NuGet existentes que satisfagan esa necesidad. Estos paquetes pueden proceder de la colección pública en [nuget.org](http://www.nuget.org/packages/) o de un origen privado proporcionado por su organización o por terceros.
+Al iniciar de cualquier proyecto de .NET, o cada vez que identifique una necesidad funcional para la aplicación o el servicio, puede ahorrar mucho tiempo y evitar problemas si usa paquetes NuGet existentes que satisfagan esa necesidad. Estos paquetes pueden proceder de la colección pública en [nuget.org](https://www.nuget.org/packages/) o de un origen privado proporcionado por su organización o por terceros.
 
 ## <a name="finding-packages"></a>Búsqueda de paquetes
 
