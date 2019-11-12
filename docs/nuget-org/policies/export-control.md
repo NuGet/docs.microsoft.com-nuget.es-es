@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/27/2019
 ms.topic: conceptual
-ms.openlocfilehash: 97e7b253bed84fc6e9a97922c19756d138dd0381
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 4ea2d2f23a02088b54982b825a5be3c872e27c37
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426930"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611307"
 ---
 # <a name="export-control-policy"></a>Directiva de control de exportaciones
 
@@ -28,4 +28,4 @@ Tal como se especifica en las secciones 742.15(b) y 734.3(b)(3) de las regulacio
 
 La liberación del código fuente disponible públicamente de la jurisdicción de control de exportaciones a través del proceso de notificación descrito anteriormente *no se aplica* al software comercial que incorpore dichos elementos o que se derive de ellos.  Usted es el único responsable de cumplir las leyes de exportación que se aplican a cualquier software comercial que incorpore código fuente o de objeto hospedado a través de NuGet.org o que se derive de este.
 
-Para obtener más información sobre la exportación y sus restricciones geográficas, visite https://www.microsoft.com/en-us/exporting.
+Para más información sobre la exportación y sus restricciones geográficas, visite [Exportación de Microsoft](https://www.microsoft.com/exporting).

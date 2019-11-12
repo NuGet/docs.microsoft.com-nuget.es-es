@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann
-ms.openlocfilehash: f6c4a18366b4df20fb210f718d3779e85c08d550
-ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
+ms.openlocfilehash: da464cc44d8c874e13c0cdfab871f31e643b577f
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71248120"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610486"
 ---
 # <a name="package-id-prefix-reservation"></a>Reserva de prefijo de identificador de paquete
 
@@ -93,7 +93,7 @@ Al revisar una solicitud de reserva de prefijo de identificador, el equipo de [n
 
 ## <a name="third-party-feed-provider-scenarios"></a>Escenarios de proveedores de fuentes de terceros
 
-Si un proveedor de fuentes de terceros está interesado en implementar su propio servicio para proporcionar reservas de prefijo, es posible permitirlo al modificar el servicio de búsqueda en los proveedores de fuentes de NuGet V3. La adición del servicio de búsqueda de fuentes se lleva a cabo al agregar la propiedad *verified*. Encontrará más abajo ejemplos de fuentes de V3. El cliente de NuGet no será compatible con la propiedad agregada en la fuente de V2.
+Si un proveedor de fuentes de terceros está interesado en implementar su propio servicio para proporcionar reservas de prefijo, puede hacerlo modificando el servicio de búsqueda en los proveedores de fuentes de NuGet V3. El cambio en el servicio de búsqueda de fuentes consiste en agregar la propiedad `verified`. El cliente de NuGet no será compatible con la propiedad agregada en la fuente de V2.
 
 Para obtener más información, consulte la [documentación sobre el servicio de búsqueda de API](../api/search-query-service-resource.md).
 

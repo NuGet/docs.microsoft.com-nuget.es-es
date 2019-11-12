@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 6d183100a8319b517347567f34d276e94eb4e15d
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 937d051ff6dc49e3204f7d0cb22c4f29b99a2a7d
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427190"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610611"
 ---
 # <a name="publishing-packages"></a>Publicar paquetes
 
@@ -64,7 +64,7 @@ Para insertar paquetes en nuget.org debe usar [la versión 4.1.0 o una versión 
     nuget setApiKey <your_API_key>
     ```
 
-    Este comando almacena la clave de API en la configuración de NuGet así que tiene que repetir de nuevo este paso en el mismo equipo.
+    Este comando almacena la clave de API en la configuración de NuGet para no tener que repetir este paso en el mismo equipo.
 
 1. Inserte el paquete en la galería de NuGet con el siguiente comando:
 
@@ -115,7 +115,7 @@ Aquí tiene varias opciones:
 1. Agregue un propietario en **Add Owner** (Agregar propietario); para ello, escriba el nombre de usuario del propietario y un mensaje y seleccione **Add** (Agregar). Esta acción envía un correo electrónico a ese nuevo copropietario con un vínculo de confirmación. Una vez confirmado, esa persona tiene permisos completos para agregar y quitar propietarios (mientras no esté confirmado, en la sección **Current Owners** (Propietarios actuales) esa persona aparece como ["pending approval" pendiente de aprobación]).
 1. Para transferir la propiedad (por ejemplo, si se modifica la propiedad o se publica un paquete con una cuenta incorrecta), agregue el nuevo propietario y, cuando este haya confirmado la propiedad, podrá quitarlo de la lista.
 
-Para asignar la propiedad a una empresa o a un grupo, cree una cuenta de nuget.org con un alias de correo electrónico que se reenvíe a los miembros correctos del equipo. Por ejemplo, varios paquetes de Microsoft ASP.NET son propiedad de las cuentas [microsoft](http://nuget.org/profiles/microsoft) y [aspnet](http://nuget.org/profiles/aspnet), que simplifican estos alias.
+Para asignar la propiedad a una empresa o a un grupo, cree una cuenta de nuget.org con un alias de correo electrónico que se reenvíe a los miembros correctos del equipo. Por ejemplo, varios paquetes de Microsoft ASP.NET son propiedad de las cuentas [microsoft](https://nuget.org/profiles/microsoft) y [aspnet](https://nuget.org/profiles/aspnet), que simplifican estos alias.
 
 ### <a name="recovering-package-ownership"></a>Recuperar la propiedad de un paquete
 
