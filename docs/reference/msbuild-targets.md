@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 6a49e410617c14e22f0d4a67d8bfe280f64f5505
-ms.sourcegitcommit: 8a424829b1f70cf7590e95db61997af6ae2d7a41
+ms.openlocfilehash: 1c2af0b42e88623fa7a1216c17aa269e9b0a58cf
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72510796"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096906"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -59,17 +59,17 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 | Copyright | Copyright | vacío | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | sin | PackageLicenseExpression | vacío | Corresponde a `<license type="expression">` |
-| sin | PackageLicenseFile | vacío | Se corresponde con `<license type="file">`. Es posible que deba empaquetar explícitamente el archivo de licencia al que se hace referencia. |
+| sin | PackageLicenseFile | vacío | Se corresponde con `<license type="file">`. Debe empaquetar explícitamente el archivo de licencia al que se hace referencia. |
 | LicenseUrl | PackageLicenseUrl | vacío | `PackageLicenseUrl` está en desuso, use la propiedad PackageLicenseExpression o PackageLicenseFile |
 | ProjectUrl | PackageProjectUrl | vacío | |
-| Iconos | PackageIcon | vacío | Es posible que deba empaquetar explícitamente el archivo de imagen de icono al que se hace referencia.|
-| IconUrl | PackageIconUrl | vacío | `PackageIconUrl` está en desuso, use la propiedad PackageIcon |
+| Iconos | PackageIcon | vacío | Debe empaquetar explícitamente el archivo de imagen de icono al que se hace referencia.|
+| IconUrl | PackageIconUrl | vacío | Para obtener la mejor experiencia de nivel inferior, `PackageIconUrl` debe especificarse además de `PackageIcon`. A largo plazo, `PackageIconUrl` quedarán en desuso. |
 | Etiquetas | PackageTags | vacío | Las etiquetas están delimitadas mediante punto y coma. |
 | ReleaseNotes | PackageReleaseNotes | vacío | |
 | Repositorio/dirección URL | RepositoryUrl | vacío | Dirección URL del repositorio usada para clonar o recuperar el código fuente. Ejemplo: *https://github.com/NuGet/NuGet.Client.git* |
 | Repositorio/tipo | RepositoryType | vacío | Tipo de repositorio. Ejemplos: *git*, *TFS*. |
 | Repositorio/rama | RepositoryBranch | vacío | Información opcional de la rama del repositorio. También se debe especificar *RepositoryUrl* para que se incluya esta propiedad. Ejemplo: *maestra* (NuGet 4.7.0 +) |
-| Repositorio/confirmar | RepositoryCommit | vacío | Confirmación o conjunto de cambios de repositorio opcional para indicar en qué origen se compiló el paquete. También se debe especificar *RepositoryUrl* para que se incluya esta propiedad. Ejemplo: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) |
+| Repositorio/confirmar | RepositoryCommit | vacío | Confirmación o conjunto de cambios opcionales de repositorio para indicar en qué origen se ha compilado el paquete. También se debe especificar *RepositoryUrl* para que se incluya esta propiedad. Ejemplo: *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | Resumen | No compatibles | | |
 
@@ -118,12 +118,18 @@ Para suprimir las dependencias de paquete del paquete de NuGet generado, estable
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-> [!Important]
-> PackageIconUrl está en desuso con NuGet 5.3 + & Visual Studio 2019 versión 16.3 +. Use [PackageIcon](#packing-an-icon-image-file) en su lugar.
+`PackageIconUrl` quedarán en desuso en favor de la nueva propiedad [`PackageIcon`](#packageicon) .
 
-### <a name="packing-an-icon-image-file"></a>Empaquetar un archivo de imagen de icono
+A partir de NuGet 5,3 & Visual Studio 2019 versión 16,3, `pack` producirá una advertencia [NU5048](errors-and-warnings/nu5048) si los metadatos del paquete solo especifican `PackageIconUrl`.
 
-Al empaquetar un archivo de imagen de icono, debe usar la propiedad PackageIcon para especificar la ruta de acceso del paquete, relativa a la raíz del paquete. Además, debe asegurarse de que el archivo está incluido en el paquete. El tamaño del archivo de imagen está limitado a 1 MB. Entre los formatos de archivo admitidos se incluyen JPEG y PNG. Se recomienda una resolución de imagen de 64 x 64.
+### <a name="packageicon"></a>PackageIcon
+
+> [!Tip]
+> Debe especificar `PackageIcon` y `PackageIconUrl` para mantener la compatibilidad con versiones anteriores de clientes y orígenes que aún no admiten `PackageIcon`. Visual Studio admitirá `PackageIcon` para los paquetes procedentes de un origen basado en carpetas en una versión futura.
+
+#### <a name="packing-an-icon-image-file"></a>Empaquetar un archivo de imagen de icono
+
+Al empaquetar un archivo de imagen de icono, debe usar `PackageIcon` propiedad para especificar la ruta de acceso del paquete, relativa a la raíz del paquete. Además, debe asegurarse de que el archivo está incluido en el paquete. El tamaño del archivo de imagen está limitado a 1 MB. Entre los formatos de archivo admitidos se incluyen JPEG y PNG. Se recomienda una resolución de imagen de 64 x 64.
 
 Por ejemplo:
 
@@ -276,7 +282,7 @@ Si se usa MSBuild para empaquetar el proyecto, use un comando similar al siguien
 msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
-Tenga en cuenta que al empaquetar un archivo nuspec mediante dotnet. exe o MSBuild también se genera el proyecto de forma predeterminada. Esto se puede evitar pasando @no__t propiedad-0 a dotnet. exe, que equivale a establecer ```<NoBuild>true</NoBuild> ``` en el archivo de proyecto, junto con el valor @no__t 2 en el archivo de proyecto.
+Tenga en cuenta que al empaquetar un archivo nuspec mediante dotnet. exe o MSBuild también se genera el proyecto de forma predeterminada. Esto se puede evitar pasando ```--no-build``` propiedad a dotnet. exe, que es el equivalente de establecer ```<NoBuild>true</NoBuild> ``` en el archivo del proyecto, junto con el valor ```<IncludeBuildOutput>false</IncludeBuildOutput> ``` en el archivo del proyecto.
 
 Un ejemplo de un archivo *. csproj* para empaquetar un archivo nuspec es el siguiente:
 

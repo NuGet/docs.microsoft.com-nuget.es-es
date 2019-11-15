@@ -1,147 +1,147 @@
 ---
-title: Package Metadata, NuGet API
-description: The package registration base URL allows fetching metadata about packages.
+title: Metadatos de paquete, API de NuGet
+description: La dirección URL base de registro de paquetes permite capturar metadatos sobre los paquetes.
 author: joelverhagen
 ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: e98e8d1258377818b3852762d317750a6b3e59ad
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: eb8d59e253f85fbbb8546a5f71856df842ce94d6
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611032"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096897"
 ---
 # <a name="package-metadata"></a>Metadatos de paquete
 
-It is possible to fetch metadata about the packages available on a package source using the NuGet V3 API. This metadata can be fetched using the `RegistrationsBaseUrl` resource found in the [service index](service-index.md).
+Es posible capturar metadatos acerca de los paquetes disponibles en un origen de paquete mediante la API de NuGet V3. Estos metadatos se pueden capturar mediante el `RegistrationsBaseUrl` recurso que se encuentra en el [Índice de servicio](service-index.md).
 
-The collection of the documents found under `RegistrationsBaseUrl` are often called "registrations" or "registration blobs". The set of documents under a single `RegistrationsBaseUrl` is referred to as a "registration hive". A registration hive contains all metadata about every package available on a package source.
+La colección de los documentos que se encuentran en `RegistrationsBaseUrl` a menudo se denominan "registros" o "blobs de registro". El conjunto de documentos en una sola `RegistrationsBaseUrl` se conoce como "registro de subárbol". Un subárbol de registro contiene todos los metadatos de todos los paquetes disponibles en el origen de un paquete.
 
 ## <a name="versioning"></a>Control de versiones
 
-The following `@type` values are used:
+Se usan los siguientes valores de `@type`:
 
 Valor de@type                     | Notas
 ------------------------------- | -----
-RegistrationsBaseUrl            | The initial release
-RegistrationsBaseUrl/3.0.0-beta | Alias of `RegistrationsBaseUrl`
-RegistrationsBaseUrl/3.0.0-rc   | Alias of `RegistrationsBaseUrl`
-RegistrationsBaseUrl/3.4.0      | Gzipped responses
-RegistrationsBaseUrl/3.6.0      | Includes SemVer 2.0.0 packages
+RegistrationsBaseUrl            | La versión inicial
+RegistrationsBaseUrl/3.0.0-beta | Alias de `RegistrationsBaseUrl`
+RegistrationsBaseUrl/3.0.0-RC   | Alias de `RegistrationsBaseUrl`
+RegistrationsBaseUrl/3.4.0      | Respuestas de gzip
+RegistrationsBaseUrl/3.6.0      | Incluye paquetes SemVer 2.0.0
 
-This represents three distinct registration hives available for various client versions.
+Esto representa tres subárboles de registro distintos disponibles para varias versiones de cliente.
 
 ### <a name="registrationsbaseurl"></a>RegistrationsBaseUrl
 
-These registrations are not compressed (meaning they use an implied `Content-Encoding: identity`). SemVer 2.0.0 packages are **excluded** from this hive.
+Estos registros no se comprimen (lo que significa que usan un `Content-Encoding: identity`implícito). Los paquetes de SemVer 2.0.0 se **excluyen** de este subárbol.
 
 ### <a name="registrationsbaseurl340"></a>RegistrationsBaseUrl/3.4.0
 
-These registrations are compressed using `Content-Encoding: gzip`. SemVer 2.0.0 packages are **excluded** from this hive.
+Estos registros se comprimen mediante `Content-Encoding: gzip`. Los paquetes de SemVer 2.0.0 se **excluyen** de este subárbol.
 
 ### <a name="registrationsbaseurl360"></a>RegistrationsBaseUrl/3.6.0
 
-These registrations are compressed using `Content-Encoding: gzip`. SemVer 2.0.0 packages are **included** in this hive.
-For more information about SemVer 2.0.0, see [SemVer 2.0.0 support for nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29).
+Estos registros se comprimen mediante `Content-Encoding: gzip`. Los paquetes de SemVer 2.0.0 se **incluyen** en este subárbol.
+Para obtener más información acerca de SemVer 2.0.0, consulte [SemVer 2.0.0 Support for Nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29).
 
 ## <a name="base-url"></a>Dirección URL base
 
-The base URL for the following APIs is the value of the `@id` property associated with the aforementioned resource `@type` values. In the following document, the placeholder base URL `{@id}` will be used.
+La dirección URL base para las siguientes API es el valor de la propiedad `@id` asociada a los valores de `@type` de recursos mencionados anteriormente. En el siguiente documento, se usará la dirección URL base del marcador de posición `{@id}`.
 
-## <a name="http-methods"></a>HTTP methods
+## <a name="http-methods"></a>Métodos HTTP
 
-All URLs found in the registration resource support the HTTP methods `GET` and `HEAD`.
+Todas las direcciones URL que se encuentran en el recurso de registro admiten los métodos HTTP `GET` y `HEAD`.
 
-## <a name="registration-index"></a>Registration index
+## <a name="registration-index"></a>Índice de registro
 
-The registration resource groups package metadata by package ID. It is not possible to get data about more than one package ID at a time. This resource provides no way to discover package IDs. Instead the client is assumed to already know the desired package ID. Available metadata about each package version varies by server implementation. The package registration blobs have the following hierarchical structure:
+El recurso de registro agrupa los metadatos del paquete por identificador de paquete. No es posible obtener datos sobre más de un identificador de paquete a la vez. Este recurso no proporciona ninguna manera de detectar los identificadores de paquete. En su lugar, se supone que el cliente ya conoce el identificador de paquete deseado. Los metadatos disponibles sobre cada versión del paquete varían según la implementación del servidor. Los blobs de registro del paquete tienen la siguiente estructura jerárquica:
 
-- **Index**: the entry point for the package metadata, shared by all packages on a source with the same package ID.
-- **Page**: a grouping of package versions. The number of package versions in a page is defined by server implementation.
-- **Leaf**: a document specific to a single package version.
+- **Índice**: el punto de entrada de los metadatos del paquete, compartido por todos los paquetes en un origen con el mismo identificador de paquete.
+- **Página**: una agrupación de versiones de paquete. El número de versiones de paquete en una página se define mediante la implementación de servidor.
+- **Hoja**: documento específico de una versión de paquete única.
 
-The URL of the registration index is predictable and can be determined by the client given a package ID and the registration resource's `@id` value from the service index. The URLs for the registration pages and leaves are discovered by inspecting the registration index.
+La dirección URL del índice de registro es predecible y la puede determinar el cliente dado un identificador de paquete y el valor de `@id` del recurso de registro del índice de servicio. Las direcciones URL de las páginas de registro y las hojas se detectan examinando el índice de registro.
 
-### <a name="registration-pages-and-leaves"></a>Registration pages and leaves
+### <a name="registration-pages-and-leaves"></a>Páginas y hojas de registro
 
-Although it's not strictly required for a server implementation to store registration leafs in seperate registration page documents, it's a recommended practice to conserve client-side memory. Instead of inlining all registration leaves in the index or immediately storing leaves in page documents, it's recommended that the server implementation define some heuristic to choose between the two approaches based on the number of package versions or cumulative size of package leaves.
+Aunque no es estrictamente necesario para que una implementación de servidor almacene hojas de registro en documentos de páginas de registro independientes, se recomienda conservar la memoria del lado cliente. En lugar de insertar todo el registro en el índice o almacenar de inmediato hojas en documentos de página, se recomienda que la implementación del servidor defina alguna heurística para elegir entre los dos enfoques en función del número de versiones del paquete o tamaño acumulado del paquete.
 
-Storing all package versions (leaves) in the registration index saves on the number of HTTP requests necessary to fetch package metadata but means that a larger document must be downloaded and more client memory must be allocated. On the other hand, if the server implementation immediately stores registration leaves in seperate page documents, the client must perform more HTTP requests to get the information it needs.
+El almacenamiento de todas las versiones del paquete (hojas) en el índice de registro se guarda en el número de solicitudes HTTP necesarias para capturar los metadatos del paquete, pero significa que se debe descargar un documento más grande y se debe asignar más memoria del cliente. Por otro lado, si la implementación del servidor almacena inmediatamente las hojas de registro en documentos de página independientes, el cliente debe realizar más solicitudes HTTP para obtener la información que necesita.
 
-The heuristic that nuget.org uses is as follows: if there are 128 or more versions of a package, break the leaves into pages of size 64. If there are less than 128 versions, inline all leaves into the registration index.
+La heurística que usa nuget.org es la siguiente: si hay 128 o más versiones de un paquete, divida las hojas en páginas de tamaño 64. Si hay menos de 128 versiones, inserta todas las hojas en el índice de registro. Tenga en cuenta que esto significa que los paquetes con las versiones 65 a 127 tendrán dos páginas en el índice, pero ambas páginas se insertarán.
 
     GET {@id}/{LOWER_ID}/index.json
 
-### <a name="request-parameters"></a>Request parameters
+### <a name="request-parameters"></a>Parámetros de solicitud
 
 Name     | En     | Type    | Requerido | Notas
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | Resolución    | cadena  | sí      | The package ID, lowercased
+LOWER_ID | Resolución    | cadena  | sí      | El identificador del paquete, en minúsculas
 
-The `LOWER_ID` value is the desired package ID lowercased using the rules implemented by .NET's [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) method.
+El valor `LOWER_ID` es el identificador del paquete deseado en minúsculas con las reglas implementadas por. Método [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) de la red.
 
 ### <a name="response"></a>Respuesta
 
-The response is a JSON document which has a root object with the following properties:
+La respuesta es un documento JSON que tiene un objeto raíz con las siguientes propiedades:
 
 Name  | Type             | Requerido | Notas
 ----- | ---------------- | -------- | -----
-count | enteros          | sí      | The number of registration pages in the index
-items | array of objects | sí      | The array of registration pages
+count | enteros          | sí      | El número de páginas de registro del índice
+items | matriz de objetos | sí      | La matriz de páginas de registro
 
-Each item in the index object's `items` array is a JSON object representing a registration page.
+Cada elemento de la matriz `items` del objeto index es un objeto JSON que representa una página de registro.
 
-#### <a name="registration-page-object"></a>Registration page object
+#### <a name="registration-page-object"></a>Objeto de página de registro
 
-The registration page object found in the registration index has the following properties:
+El objeto de página de registro que se encuentra en el índice de registro tiene las siguientes propiedades:
 
 Name   | Type             | Requerido | Notas
 ------ | ---------------- | -------- | -----
-@id    | cadena           | sí      | The URL to the registration page
-count  | enteros          | sí      | The number of registration leaves in the page
-items  | array of objects | No       | The array of registration leaves and their associate metadata
-lower  | cadena           | sí      | The lowest SemVer 2.0.0 version in the page (inclusive)
+@id    | cadena           | sí      | La dirección URL de la página de registro
+count  | enteros          | sí      | El número de hojas de registro en la página
+items  | matriz de objetos | No       | La matriz de las hojas de registro y sus metadatos asociados
+inferiores  | cadena           | sí      | La versión más baja de SemVer 2.0.0 en la página (inclusivo)
 parent | cadena           | No       | Dirección URL del índice de registro.
-upper  | cadena           | sí      | The highest SemVer 2.0.0 version in the page (inclusive)
+esquina superior  | cadena           | sí      | La versión más alta de SemVer 2.0.0 en la página (inclusiva)
 
-The `lower` and `upper` bounds of the page object are useful when the metadata for a specific page version is needed.
-These bounds can be used to fetch the only registration page needed. The version strings adhere to [NuGet's version rules](../concepts/package-versioning.md). The version strings are normalized and do not include build metadata. As with all versions in the NuGet ecosystem, comparison of version strings is implemented using [SemVer 2.0.0's version precedence rules](https://semver.org/spec/v2.0.0.html#spec-item-11).
+Los límites `lower` y `upper` del objeto Page son útiles cuando se necesitan los metadatos de una versión de página concreta.
+Estos límites se pueden usar para capturar la única página de registro necesaria. Las cadenas de versión se adhieren a [las reglas de versión de NuGet](../concepts/package-versioning.md). Las cadenas de versión se normalizan y no incluyen los metadatos de la compilación. Como con todas las versiones del ecosistema de NuGet, la comparación de las cadenas de versión se implementa con [las reglas de prioridad de la versión de SemVer 2.0.0](https://semver.org/spec/v2.0.0.html#spec-item-11).
 
-The `parent` property will only appear if the registration page object has the `items` property.
+La propiedad `parent` solo aparecerá si el objeto de la página de registro tiene la propiedad `items`.
 
-If the `items` property is not present in the registration page object, the URL specified in the `@id` must be used to fetch metadata about individual package versions. The `items` array is sometimes excluded from the page object as an optimization. If the number of versions of a single package ID is very large, then the registration index document will be massive and wasteful to process for a client that only cares about a specific version or small range of versions.
+Si la propiedad `items` no está presente en el objeto de la página de registro, se debe usar la dirección URL especificada en el `@id` para recuperar los metadatos acerca de las versiones individuales del paquete. A veces, la matriz de `items` se excluye del objeto de página como una optimización. Si el número de versiones de un único identificador de paquete es muy grande, el documento de índice de registro será masivo y impedirá el procesamiento de un cliente que solo se ocupa de una versión específica o de una pequeña gama de versiones.
 
-Note that if the `items` property is present, the `@id` property need not be used, since all of the page data is already inlined in the `items` property.
+Tenga en cuenta que si la propiedad `items` está presente, no es necesario usar la propiedad `@id`, ya que todos los datos de la página ya están insertados en la propiedad `items`.
 
-Each item in the page object's `items` array is a JSON object representing a registration leaf and it's associated metadata.
+Cada elemento de la matriz de `items` del objeto de página es un objeto JSON que representa una hoja de registro y sus metadatos asociados.
 
-#### <a name="registration-leaf-object-in-a-page"></a>Registration leaf object in a page
+#### <a name="registration-leaf-object-in-a-page"></a>Objeto hoja de registro en una página
 
-The registration leaf object found in a registration page has the following properties:
+El objeto hoja de registro que se encuentra en una página de registro tiene las siguientes propiedades:
 
 Name           | Type   | Requerido | Notas
 -------------- | ------ | -------- | -----
 @id            | cadena | sí      | La dirección URL de la hoja de registro
-catalogEntry   | object | sí      | The catalog entry containing the package metadata
+catalogEntry   | object | sí      | Entrada del catálogo que contiene los metadatos del paquete
 packageContent | cadena | sí      | La dirección URL del contenido del paquete (. nupkg)
 
-Each registration leaf object represents data associated with a single package version.
+Cada objeto hoja de registro representa los datos asociados a una única versión de paquete.
 
-#### <a name="catalog-entry"></a>Catalog entry
+#### <a name="catalog-entry"></a>Entrada del catálogo
 
-The `catalogEntry` property in the registration leaf object has the following properties:
+La propiedad `catalogEntry` del objeto hoja de registro tiene las siguientes propiedades:
 
 Name                     | Type                       | Requerido | Notas
 ------------------------ | -------------------------- | -------- | -----
-@id                      | cadena                     | sí      | The URL to document used to produce this object
-authors                  | string or array of strings | No       | 
-dependencyGroups         | array of objects           | No       | The dependencies of the package, grouped by target framework
-deprecation              | object                     | No       | The deprecation associated with the package
+@id                      | cadena                     | sí      | Dirección URL del documento que se usa para generar este objeto.
+authors                  | cadena o matriz de cadenas | No       | 
+dependencyGroups         | matriz de objetos           | No       | Las dependencias del paquete, agrupadas por la plataforma de destino
+desuso              | object                     | No       | El desuso asociado al paquete
 Descripción              | cadena                     | No       | 
 iconUrl                  | cadena                     | No       | 
-identificador                       | cadena                     | sí      | The ID of the package
+identificador                       | cadena                     | sí      | Identificador del paquete.
 licenseUrl               | cadena                     | No       |
 licenseExpression        | cadena                     | No       | 
 lista                   | booleano                    | No       | Se debe considerar como si no estuviera presente
@@ -150,60 +150,73 @@ projectUrl               | cadena                     | No       |
 sin                | cadena                     | No       | Una cadena que contiene una marca de tiempo ISO 8601 de Cuándo se publicó el paquete
 requireLicenseAcceptance | booleano                    | No       | 
 resumen                  | cadena                     | No       | 
-etiquetas                     | string or array of string  | No       | 
+etiquetas                     | cadena o matriz de cadena  | No       | 
 título                    | cadena                     | No       | 
-version                  | cadena                     | sí      | The full version string after normalization
+version                  | cadena                     | sí      | La cadena de versión completa después de la normalización
 
-The package `version` property is the full version string after normalization. This means that SemVer 2.0.0 build data can be included here.
+La propiedad `version` del paquete es la cadena de versión completa después de la normalización. Esto significa que los datos de compilación de SemVer 2.0.0 pueden incluirse aquí.
 
-The `dependencyGroups` property is an array of objects representing the dependencies of the package, grouped by target framework. If the package has no dependencies, the `dependencyGroups` property is missing, an empty array, or the `dependencies` property of all groups is empty or missing.
+La propiedad `dependencyGroups` es una matriz de objetos que representan las dependencias del paquete, agrupadas por la plataforma de destino. Si el paquete no tiene dependencias, falta la propiedad `dependencyGroups`, una matriz vacía o la propiedad `dependencies` de todos los grupos está vacía o falta.
 
-The value of the `licenseExpression` property complies with [NuGet license expression syntax](https://docs.microsoft.com/nuget/reference/nuspec#license).
+El valor de la propiedad `licenseExpression` cumple con la [Sintaxis](https://docs.microsoft.com/nuget/reference/nuspec#license)de las expresiones de licencia de NuGet.
 
-#### <a name="package-dependency-group"></a>Package dependency group
+> [!Note]
+> En nuget.org, el valor `published` se establece en Year 1900 cuando se ha desactivado el paquete.
 
-Each dependency group object has the following properties:
+#### <a name="package-dependency-group"></a>Grupo de dependencias de paquete
+
+Cada objeto de grupo de dependencias tiene las siguientes propiedades:
 
 Name            | Type             | Requerido | Notas
 --------------- | ---------------- | -------- | -----
-targetFramework | cadena           | No       | The target framework that these dependencies are applicable to
-dependencias    | array of objects | No       |
+targetFramework | cadena           | No       | Plataforma de destino a la que se aplican estas dependencias.
+dependencias    | matriz de objetos | No       |
 
-The `targetFramework` string uses the format implemented by NuGet's .NET library [NuGet.Frameworks](https://www.nuget.org/packages/NuGet.Frameworks/). If no `targetFramework` is specified, the dependency group applies to all target frameworks.
+La cadena de `targetFramework` usa el formato implementado por la biblioteca .NET de Nuget de NuGet [. frameworks](https://www.nuget.org/packages/NuGet.Frameworks/). Si no se especifica ningún `targetFramework`, el grupo de dependencias se aplica a todas las plataformas de destino.
 
-The `dependencies` property is an array of objects, each representing a package dependency of the current package.
+La propiedad `dependencies` es una matriz de objetos, cada uno de los cuales representa una dependencia del paquete del paquete actual.
 
-#### <a name="package-dependency"></a>Package dependency
+#### <a name="package-dependency"></a>Dependencia de paquete
 
-Each package dependency has the following properties:
+Cada dependencia del paquete tiene las siguientes propiedades:
 
 Name         | Type   | Requerido | Notas
 ------------ | ------ | -------- | -----
-identificador           | cadena | sí      | The ID of the package dependency
-range        | object | No       | The allowed [version range](../concepts/package-versioning.md#version-ranges-and-wildcards) of the dependency
-registro | cadena | No       | The URL to the registration index for this dependency
+identificador           | cadena | sí      | Identificador de la dependencia del paquete.
+range        | object | No       | El [intervalo de versiones](../concepts/package-versioning.md#version-ranges-and-wildcards) permitido de la dependencia
+registro | cadena | No       | Dirección URL del índice de registro para esta dependencia.
 
-If the `range` property is excluded or an empty string, the client should default to the version range `(, )`. That is, any version of the dependency is allowed.
+Si la propiedad `range` está excluida o es una cadena vacía, el cliente debería tener como valor predeterminado el intervalo de versión `(, )`. Es decir, se permite cualquier versión de la dependencia. No se permite el valor de `*` para la propiedad `range`.
 
-#### <a name="package-deprecation"></a>Package deprecation
+#### <a name="package-deprecation"></a>Desuso de paquetes
 
-Each package deprecation has the following properties:
+Cada desuso de paquetes tiene las siguientes propiedades:
 
 Name             | Type             | Requerido | Notas
 ---------------- | ---------------- | -------- | -----
-reasons          | array of strings | sí      | The reasons why the package was deprecated
-message          | cadena           | No       | The additional details about this deprecation
-alternatePackage | object           | No       | The package dependency that should be used instead
+principales          | Matriz de cadenas | sí      | Los motivos por los que el paquete quedó en desuso
+message          | cadena           | No       | Detalles adicionales sobre este desuso
+alternatePackage | object           | No       | El paquete alternativo que se debe usar en su lugar
 
-The `reasons` property must contain at least one string and should only contains strings from the following table:
+La propiedad `reasons` debe contener al menos una cadena y solo debe contener cadenas de la tabla siguiente:
 
 Motivo       | Descripción             
 ------------ | -----------
-Heredado       | The package is no longer maintained
-CriticalBugs | The package has bugs which make it unsuitable for usage
-Otro        | The package is deprecated due to a reason not on this list
+Heredado       | El paquete ya no se mantiene
+CriticalBugs | El paquete tiene errores que hacen que no sea adecuado para el uso
+Otro        | El paquete está en desuso debido a un motivo que no está en esta lista
 
-If the `reasons` property contains strings that are not from the known set, they should be ignored. The strings are case-insensitive, so `legacy` should be treated the same as `Legacy`. There is no ordering restriction on the array, so the strings can arranged in any arbitrary order. Additionally, if the property contains only strings that are not from the known set, it should be treated as if it only contained the "Other" string.
+Si la propiedad `reasons` contiene cadenas que no son del conjunto conocido, se deben omitir. Las cadenas no distinguen mayúsculas de minúsculas, por lo que `legacy` se deben tratar como `Legacy`. No hay ninguna restricción de ordenación en la matriz, por lo que las cadenas pueden organizarse en cualquier orden arbitrario. Además, si la propiedad solo contiene cadenas que no son del conjunto conocido, debe tratarse como si solo contuviera la cadena "Other".
+
+#### <a name="alternate-package"></a>Paquete alternativo
+
+El objeto de paquete alternativo tiene las siguientes propiedades:
+
+Name         | Type   | Requerido | Notas
+------------ | ------ | -------- | -----
+identificador           | cadena | sí      | IDENTIFICADOR del paquete alternativo
+range        | object | No       | El [intervalo de versiones](../concepts/package-versioning.md#version-ranges-and-wildcards)permitido o `*` si se permite cualquier versión
+registro | cadena | No       | La dirección URL del índice de registro para este paquete alternativo
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
@@ -213,24 +226,27 @@ If the `reasons` property contains strings that are not from the known set, they
 
 [!code-JSON [package-registration-index.json](./_data/package-registration-index.json)]
 
-In this particular case, the registration index has the registration page inlined so no extra requests are needed to fetch metadata about individual package versions.
+En este caso concreto, el índice de registro tiene la página de registro insertada, por lo que no se necesitan solicitudes adicionales para capturar metadatos sobre versiones de paquetes individuales.
 
-## <a name="registration-page"></a>Registration page
+## <a name="registration-page"></a>Página de registro
 
-The registration page contains registration leaves. The URL to fetch a registration page is determined by the `@id` property in the [registration page object](#registration-page-object) mentioned above.
+La página de registro contiene las hojas de registro. La dirección URL para obtener una página de registro viene determinada por la propiedad `@id` en el objeto de la [Página de registro](#registration-page-object) mencionado anteriormente. La dirección URL no está diseñada para ser predecible y debe detectarse siempre por medio del documento de índice.
 
-When the `items` array is not provided in the registration index, an HTTP GET request of the `@id` value will return a JSON document which has an object as its root. The object has the following properties:
+> [!Warning]
+> En nuget.org, la dirección URL del documento de la página de registro contiene casualmente el límite inferior y superior de la página. Sin embargo, esta suposición nunca debe ser realizada por un cliente, ya que las implementaciones de servidor son gratuitas para cambiar la forma de la dirección URL siempre que el documento de índice tenga un vínculo válido.
+
+Cuando no se proporciona la matriz de `items` en el índice de registro, una solicitud HTTP GET del valor de `@id` devolverá un documento JSON que tiene un objeto como raíz. El objeto tiene las siguientes propiedades:
 
 Name   | Type             | Requerido | Notas
 ------ | ---------------- | -------- | -----
-@id    | cadena           | sí      | The URL to the registration page
-count  | enteros          | sí      | The number of registration leaves in the page
-items  | array of objects | sí      | The array of registration leaves and their associate metadata
-lower  | cadena           | sí      | The lowest SemVer 2.0.0 version in the page (inclusive)
+@id    | cadena           | sí      | La dirección URL de la página de registro
+count  | enteros          | sí      | El número de hojas de registro en la página
+items  | matriz de objetos | sí      | La matriz de las hojas de registro y sus metadatos asociados
+inferiores  | cadena           | sí      | La versión más baja de SemVer 2.0.0 en la página (inclusivo)
 parent | cadena           | sí      | Dirección URL del índice de registro.
-upper  | cadena           | sí      | The highest SemVer 2.0.0 version in the page (inclusive)
+esquina superior  | cadena           | sí      | La versión más alta de SemVer 2.0.0 en la página (inclusiva)
 
-The shape of the registration leaf objects is the same as in the registration index [above](#registration-leaf-object-in-a-page).
+La forma de los objetos hoja de registro es la misma que en el índice de registro [anterior](#registration-leaf-object-in-a-page).
 
 ## <a name="sample-request"></a>Solicitud de ejemplo
 
@@ -240,11 +256,14 @@ The shape of the registration leaf objects is the same as in the registration in
 
 [!code-JSON [package-registration-page.json](./_data/package-registration-page.json)]
 
-## <a name="registration-leaf"></a>Registration leaf
+## <a name="registration-leaf"></a>Hoja de registro
 
-The registration leaf contains information about a specific package ID and version. Es posible que los metadatos acerca de la versión específica no estén disponibles en este documento. Los metadatos del paquete se deben capturar desde el [Índice de registro](#registration-index) o desde la [Página de registro](#registration-page) (que se detecta mediante el índice de registro).
+La hoja de registro contiene información sobre un identificador de paquete y una versión específicos. Es posible que los metadatos acerca de la versión específica no estén disponibles en este documento. Los metadatos del paquete se deben capturar desde el [Índice de registro](#registration-index) o desde la [Página de registro](#registration-page) (que se detecta mediante el índice de registro).
 
-La dirección URL para capturar una hoja de registro se obtiene de la propiedad `@id` de un objeto hoja de registro en un índice de registro o en una página de registro.
+La dirección URL para capturar una hoja de registro se obtiene de la propiedad `@id` de un objeto hoja de registro en un índice de registro o en una página de registro. Como con el documento de página. la dirección URL no está diseñada para ser predecible y debe detectarse siempre por medio del objeto de página de registro.
+
+> [!Warning]
+> En nuget.org, la dirección URL del documento hoja de registro contiene casualmente la versión del paquete. Sin embargo, esta suposición nunca debe ser realizada por un cliente, ya que las implementaciones de servidor son gratuitas para cambiar la forma de la dirección URL siempre que el documento primario tenga un vínculo válido. 
 
 La hoja de registro es un documento JSON con un objeto raíz con las siguientes propiedades:
 

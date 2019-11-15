@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 6bd730db16d8e8783f0d949bb04cf3b52c642cd0
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: ff8f988a4d47e18d74945d274be5cca78d3ff8e5
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380551"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096915"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -149,7 +149,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 Dirección URL para una imagen de 64 x 64 con fondo transparente para usarla como icono para el paquete en la visualización de la interfaz de usuario. Asegúrese de que este elemento contiene la *dirección URL directa a la imagen* y no la dirección URL de una página web que contiene la imagen. Por ejemplo, para usar una imagen de GitHub, use la dirección URL de archivo sin formato, como <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
    
-#### <a name="icon"></a>Icono
+#### <a name="icon"></a>icono
 
 Es una ruta de acceso a un archivo de imagen dentro del paquete, que a menudo se muestra en ius como nuget.org como el icono de paquete. El tamaño del archivo de imagen está limitado a 1 MB. Entre los formatos de archivo admitidos se incluyen JPEG y PNG. Se recomienda una imagen resoulution de 64 x 64.
 
@@ -173,6 +173,9 @@ Por ejemplo, debe agregar lo siguiente a su archivo nuspec al crear un paquete c
 [Icono de paquete de ejemplo de nuspec.](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
 
 Para el equivalente de MSBuild, eche un vistazo a [empaquetar un archivo de imagen de icono](msbuild-targets.md#packing-an-icon-image-file).
+
+> [!Tip]
+> Puede especificar `icon` y `iconUrl` para mantener la compatibilidad con versiones anteriores de los orígenes que no admiten `icon`. Visual Studio admitirá `icon` para los paquetes procedentes de un origen basado en carpetas en una versión futura.
 
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 Valor booleano que especifica si el cliente debe pedir al consumidor que acepte la licencia del paquete antes de instalarlo.
@@ -346,7 +349,7 @@ Las líneas siguientes indican dependencias en los mismos paquetes, pero especif
 ```
 
 > [!Important]
-> Al crear un `.nuspec` desde un proyecto con `nuget spec`, las dependencias que existen en ese proyecto no se incluyen automáticamente en el archivo @no__t 2 resultante. En su lugar, use `nuget pack myproject.csproj` y obtenga el archivo *. nuspec* en el archivo *. nupkg* generado. Este archivo *. nuspec* contiene las dependencias.
+> Al crear una `.nuspec` a partir de un proyecto mediante `nuget spec`, las dependencias que existen en ese proyecto no se incluyen automáticamente en el archivo de `.nuspec` resultante. En su lugar, use `nuget pack myproject.csproj` y obtenga el archivo *. nuspec* en el archivo *. nupkg* generado. Este archivo *. nuspec* contiene las dependencias.
 
 ### <a name="dependency-groups"></a>Grupos de dependencia
 
