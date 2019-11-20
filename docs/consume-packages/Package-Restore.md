@@ -159,11 +159,11 @@ Para restaurar los paquetes mostrados en el archivo del proyecto con PackageRefe
 
 ## <a name="restore-using-azure-pipelines"></a>Restauración con Azure Pipelines
 
-al crear una definición de compilación en Azure Pipelines, incluya la tarea [restore](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) de NuGet o [restore](/azure/devops/pipelines/tasks/build/dotnet-core-cli?view=azure-devops) de .NET Core en la definición antes de cualquier tarea de compilación. Algunas plantillas de compilación incluyen la tarea restore de forma predeterminada.
+Al crear una definición de compilación en Azure Pipelines, incluya la tarea [restore](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) de NuGet o [restore](/azure/devops/pipelines/tasks/build/dotnet-core-cli?view=azure-devops) de .NET Core en la definición antes de cualquier tarea de compilación. Algunas plantillas de compilación incluyen la tarea restore de forma predeterminada.
 
 ## <a name="restore-using-azure-devops-server"></a>Restauración con Azure DevOps Server
 
-tanto Azure DevOps Server como TFS 2013 y versiones posteriores restauran los paquetes automáticamente durante la compilación, siempre y cuando use una plantilla de Team Build para TFS 2013 o versiones posteriores. En el caso de versiones anteriores de TFS, puede incluir un paso de compilación para ejecutar una opción de restauración de la línea de comandos, o bien migrar la plantilla de compilación a una versión posterior. Para obtener más información, consulte [Configurar la restauración de paquetes con Team Foundation Build](../consume-packages/team-foundation-build.md).
+Tanto Azure DevOps Server como TFS 2013 y versiones posteriores restauran los paquetes automáticamente durante la compilación, siempre y cuando use una plantilla de Team Build para TFS 2013 o versiones posteriores. En el caso de versiones anteriores de TFS, puede incluir un paso de compilación para ejecutar una opción de restauración de la línea de comandos, o bien migrar la plantilla de compilación a una versión posterior. Para obtener más información, consulte [Configurar la restauración de paquetes con Team Foundation Build](../consume-packages/team-foundation-build.md).
 
 ## <a name="constrain-package-versions-with-restore"></a>Restricción de versiones de paquetes con la restauración
 
@@ -213,7 +213,7 @@ Para migrar a la restauración automática de paquetes, realice lo siguiente:
 2. Elimine los archivos *.nuget/nuget.exe* y *.nuget/NuGet.targets*.
 3. Para cada archivo del proyecto, quite el elemento `<RestorePackages>` y todas las referencias a *NuGet.targets*.
 
-Para probara la restauración automática de paquetes, realice lo siguiente:
+Para probar la restauración automática de paquetes, realice lo siguiente:
 
 1. Quite la carpeta *paquetes* de la solución.
 2. Abra la solución en Visual Studio e inicie una compilación.
