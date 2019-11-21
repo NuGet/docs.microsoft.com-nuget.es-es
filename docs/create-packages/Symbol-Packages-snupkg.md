@@ -12,12 +12,12 @@ keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, comp
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 0197902e4dbc18893d68833fbcfe4263f185a594
-ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
+ms.openlocfilehash: 03ab4e1f3501055abedf430395de095d773bc9da
+ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71307185"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74253925"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Crear paquetes de símbolos (.snupkg)
 
@@ -130,7 +130,7 @@ El archivo .nupkg debería ser exactamente el mismo que el de hoy, pero el archi
 5) Los campos ```authors``` y ```owners``` deben excluirse del archivo .nuspec del archivo .snupkg.
 6) No utilice el elemento ```<license>```. Se trata un .snupkg con la misma licencia que el .nupkg correspondiente.
 
-## <a name="see-also"></a>Otras referencias
+## <a name="see-also"></a>Vea también
 
 Considere la posibilidad de usar el vínculo de origen para habilitar la depuración de código fuente de ensamblados .NET. Para obtener más información, vea la [guía de vínculos de origen](/dotnet/standard/library-guidance/sourcelink).
 

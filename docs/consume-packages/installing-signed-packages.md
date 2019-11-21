@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 89b5fcbd76b85b77489ab36caa215c3a2fedf032
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 034b9dd9699af529e4d82d6ee5b1c42214673341
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610973"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096852"
 ---
 # <a name="manage-package-trust-boundaries"></a>Administración de los límites de confianza de paquete
 
@@ -95,7 +95,7 @@ En algunos casos es posible que quiera activar la verificación para el uso de p
 
 ### <a name="sync-repository-certificates"></a>Sincronización de certificados de repositorios
 
-Los repositorios de paquetes deben indicar los certificados que usan en su [índice de servicios](../api/service-index.md). En algún momento el repositorio actualizará dichos certificados, por ejemplo, cuando expiren. Cuando esto ocurra, los clientes que tengan directivas específicas deberán actualizar la configuración para incluir el certificado que se acabe de agregar. Puede actualizar fácilmente los firmantes de confianza asociados a un repositorio mediante `nuget.exe` [Comando de sincronización trusted-signers](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-name
+Los repositorios de paquetes deben indicar los certificados que usan en su [índice de servicios](../api/service-index.md). En algún momento el repositorio actualizará dichos certificados, por ejemplo, cuando expiren. Cuando esto ocurra, los clientes que tengan directivas específicas deberán actualizar la configuración para incluir el certificado que se acabe de agregar. Puede actualizar fácilmente los firmantes de confianza asociados a un repositorios mediante el [comando trusted-signers sync](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-name) de `nuget.exe`.
 
 ### <a name="schema-reference"></a>Referencia del esquema
 
