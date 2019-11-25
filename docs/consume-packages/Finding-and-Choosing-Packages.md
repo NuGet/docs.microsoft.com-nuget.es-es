@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9947a490e4373bb0b8b7fb0814828ff2a60615a8
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 0691660f20f9b5a1ff0dad110ee87c6e29c0a56e
+ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611071"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74253932"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Búsqueda y evaluación de paquetes NuGet para el proyecto
 
@@ -82,9 +82,12 @@ Al mismo tiempo, usar un paquete NuGet significa tomar una dependencia en él, p
 
     ![Estadísticas de descargas en la página de listado de un paquete](media/Finding-03-Downloads.png)
 
-- *Uso de GitHub*: en la página del paquete, la sección **Uso de GitHub** enumera los principales repositorios de GitHub que dependen de este paquete. Suele ser mejor optar por un paquete del que dependan muchos repositorios populares de GitHub.
+- *Uso de GitHub*: en la página del paquete, la sección **Uso de GitHub** enumera los principales repositorios de GitHub que dependen de este paquete y que tienen un número elevado de estrellas en GitHub. El número de estrellas de un repositorio GitHub generalmente indica la popularidad del repositorio entre los usuarios de GitHub (más estrellas por lo general significan mayor popularidad). Visite la [página de Introducción de GitHub](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars) para obtener más información sobre el sistema de clasificación de estrellas y repositorios de GitHub.
 
     ![Uso de GitHub](media/GitHub-Usage.png)
+
+    > [!Note]
+    > La sección de uso de GitHub de un paquete se genera de forma automática, periódicamente, sin revisión humana de repositorios individuales y solo con fines informativos para mostrarle los repositorios de GitHub que dependen del paquete y que son populares entre los usuarios de GitHub.
 
 - *Historial de versiones*: en la página del paquete, busque en **Información** la fecha de la última actualización y examine el **Historial de versiones**. Un paquete con un mantenimiento correcto tiene actualizaciones recientes y un historial de versiones completo. Los paquetes desatendidos tienen pocas actualizaciones y a menudo no se han actualizado desde hace tiempo.
 

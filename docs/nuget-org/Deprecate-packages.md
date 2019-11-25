@@ -6,12 +6,12 @@ ms.author: anangaur
 ms.date: 09/23/2019
 ms.topic: conceptual
 ms.reviewer: karann-msft
-ms.openlocfilehash: 120b463fda856fe9dd407b6eba32d60e0918f763
-ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
+ms.openlocfilehash: 70666ddf9cd7bdc448d29d4235e57bc91e2c003e
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71248886"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096882"
 ---
 # <a name="deprecating-packages"></a>Paquetes en desuso
 
@@ -45,7 +45,7 @@ Una vez que un paquete se ha dejado en desuso, se informa a sus consumidores de 
 ### <a name="visual-studio"></a>Programa para la mejora 
 *Disponible a partir de Visual Studio 2019, versión 16.3*
 
-Visual Studio advierte sobre el uso de un paquete en desuso en la pestaña `Installed`. Le llevará al paquete y a su información de desuso (incluida la razón por la que se ha dejado en desuso y el paquete alternativo que debe usar en su lugar, de haberlo).
+Visual Studio advierte sobre el uso de un paquete en desuso en la pestaña `Installed`. Mostrará una advertencia sobre el paquete y su información de desuso (incluida la razón por la que ha quedado en desuso y el paquete alternativo que debe usar en su lugar, de haberlo).
 
    ![Paquetes en desuso en la pestaña Instalados de Visual Studio del administrador de paquetes](media/deprecation-vs.png)
 

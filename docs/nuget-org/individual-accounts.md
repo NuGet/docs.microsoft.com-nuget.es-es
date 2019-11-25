@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 63c6b5eb5ad635e436b4d53a5f833af35f72d76f
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.openlocfilehash: 7951b3db0cdcaee0a1eb955a5bf6fedce24c79c9
+ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999964"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74253956"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>Cuentas individuales en nuget.org
 
@@ -48,7 +48,7 @@ Ya tiene una cuenta de NuGet.org. Puede realizar la administración de la cuenta
 
 ## <a name="enable-two-factor-authentication-2fa"></a>Habilitación de la autenticación en dos fases (2FA)
 
-Para proteger mejor la cuenta, habilite la autenticación en dos fases (recomendado).
+La autenticación en dos fases, o 2FA, es una capa de seguridad adicional que se usa al iniciar sesión en sitios web o aplicaciones. Con 2FA, tiene que iniciar sesión con su cuenta de Microsoft (MSA) y ofrecer otra forma de autenticación que solo usted conoce o a la que tiene acceso. Para proteger mejor la cuenta, habilite la autenticación en dos fases (recomendado).
 
 1. Cuando haya iniciado sesión en la cuenta, abra su perfil y elija **Habilitar** en **Cuenta de inicio de sesión**.
 
@@ -69,6 +69,9 @@ Para proteger mejor la cuenta, habilite la autenticación en dos fases (recomend
    ![Habilitación de la autenticación en dos fases](media/nuget-org-enter-code-2fa.png)
 
 5. Siga cualquier instrucción adicional para completar la autenticación en dos fases.
+
+> [!Tip]
+> La habilitación de 2FA para la cuenta de nuget.org no afecta a la configuración de autenticación para otras cuentas o servicios que puedan estar vinculados a la cuenta de Microsoft que se usa para iniciar sesión en NuGet.org.
 
 ## <a name="delete-a-nugetorg-account"></a>Eliminación de una cuenta de nuget.org
 
