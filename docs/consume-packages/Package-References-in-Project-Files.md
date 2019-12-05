@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 231947148295e0c06dcec5aa0e1f479d654a8803
-ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
+ms.openlocfilehash: b6a009832430ee08f51ea1028feb878a39f45222
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74096873"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825145"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
 
@@ -53,6 +53,7 @@ En el ejemplo anterior, 3.6.0 hace referencia a cualquier versión que sea > = 3
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>Uso de una PackageReference para un proyecto sin PackageReferences
 
 Avanzado: Si no tiene paquetes instalados en un proyecto (ninguna PackageReference en el archivo de proyecto y ningún archivo packages.config), pero quiere que el proyecto se restaure como de estilo PackageReference, puede establecer una propiedad de proyecto RestoreProjectStyle en PackageReference en el archivo de proyecto.
+
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -60,6 +61,7 @@ Avanzado: Si no tiene paquetes instalados en un proyecto (ninguna PackageReferen
     <!--- ... -->
 </PropertyGroup>    
 ```
+
 Esto puede resultar útil si hace referencia a proyectos de estilo PackageReference (csproj existente o proyectos de estilo SDK). Esto permitirá que el proyecto haga referencia "de manera transitiva" a los paquetes a los que hacen referencia dichos proyectos.
 
 ## <a name="packagereference-and-sources"></a>PackageReference y los orígenes
@@ -206,16 +208,19 @@ Si NuGet detecta un cambio en las dependencias definidas tal como se menciona en
 En CI/CD y otros escenarios, en los que no desearía cambiar las dependencias de paquetes en el camino, puede hacerlo estableciendo `lockedmode` en `true`:
 
 En dotnet.exe,ejecute:
+
 ```
 > dotnet.exe restore --locked-mode
 ```
 
 En msbuild.exe, ejecute:
+
 ```
 > msbuild.exe -t:restore -p:RestoreLockedMode=true
 ```
 
 También puede establecer esta propiedad MSBuild condicional en su archivo del proyecto:
+
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -232,12 +237,14 @@ Si crea una aplicación, un archivo ejecutable y el proyecto en cuestión se enc
 Sin embargo, si su proyecto es un proyecto de biblioteca que no envía o un proyecto de código común del que dependen otros proyectos, **no debe** insertar en el repositorio el archivo de bloqueo como parte de su código fuente. No hay nada malo en el hecho de conservar el archivo de bloqueo, pero es posible que no se usen las dependencias de paquetes bloqueadas para el proyecto de código común, como se muestra en el archivo de bloqueo, durante la restauración/creación de un proyecto que depende de este proyecto de código común.
 
 Ejemplo
+
 ```
 ProjectA
   |------> PackageX 2.0.0
   |------> ProjectB
              |------>PackageX 1.0.0
 ```
+
 Si `ProjectA` tiene una dependencia de la versión `2.0.0` de `PackageX` y también hace referencia a `ProjectB`, que depende de la versión `1.0.0` de `PackageX`, el archivo de bloqueo para `ProjectB` mostrará una dependencia de la versión `1.0.0` de `PackageX`. Sin embargo, al crearse `ProjectA`, su archivo de bloqueo contendrá una dependencia de la versión **`2.0.0`** de `PackageX` y **no** `1.0.0` como se muestra en el archivo de bloqueo para `ProjectB`. Por tanto, el archivo de bloqueo de un proyecto de código común tiene poco que decir sobre los paquetes resueltos para los proyectos que dependen de él.
 
 ### <a name="lock-file-extensibility"></a>Extensibilidad del archivo de bloqueo

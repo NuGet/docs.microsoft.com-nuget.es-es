@@ -12,12 +12,12 @@ keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, comp
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 03ab4e1f3501055abedf430395de095d773bc9da
-ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
+ms.openlocfilehash: 8528261f90e75e2dfac8cb746b396d227c3741f4
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74253925"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825185"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Crear paquetes de símbolos (.snupkg)
 
@@ -42,7 +42,7 @@ Si usa dotnet.exe o MSBuild, debe establecer las propiedades `IncludeSymbols` y 
 
 * O bien especificar estas propiedades en la línea de comandos:
 
-     ```cli
+     ```dotnetcli
      dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
      ```
 
@@ -54,7 +54,7 @@ Si usa dotnet.exe o MSBuild, debe establecer las propiedades `IncludeSymbols` y 
 
 Si usa NuGet.exe, puede emplear los siguientes comandos para crear un archivo .snupkg, además del archivo .nupkg:
 
-```
+```cli
 nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg

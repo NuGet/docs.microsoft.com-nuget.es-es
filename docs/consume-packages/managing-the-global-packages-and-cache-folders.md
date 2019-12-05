@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: f5d418fd5b6b9bb88958d6b7e9e3034f40485a7d
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: e2672aa0bf57242526364639f0df74f9d1adb934
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419961"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825208"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>Administración de las carpetas de paquetes globales, de caché y temporales
 
 Cada vez que instala, actualiza o restaura un paquete, NuGet administra los paquetes y la información de paquete en varias externas a la estructura del proyecto:
 
-| nombre | Descripción y ubicación (por usuario)|
+| Name | Descripción y ubicación (por usuario)|
 | --- | --- |
 | global‑packages | La carpeta *global-packages* es donde NuGet instala los paquetes que se descargan. Cada paquete se expande totalmente en una subcarpeta que coincida con el identificador y el número de versión del paquete. Los proyectos con el formato [PackageReference](package-references-in-project-files.md) siempre usan los paquetes directamente de esta carpeta. Cuando se usa [packages.config](../reference/packages-config.md), los paquetes se instalan en la carpeta *global-packages* y luego se copian en la carpeta `packages` del proyecto.<br/><ul><li>Windows: `%userprofile%\.nuget\packages`</li><li>Mac/Linux: `~/.nuget/packages`</li><li>Se invalida mediante la variable de entorno NUGET_PACKAGES, las [opciones de configuración](../reference/nuget-config-file.md#config-section) `globalPackagesFolder` o `repositoryPath` (cuando se usa PackageReference y `packages.config`, respectivamente) o la propiedad `RestorePackagesPath` de MSBuild (solo MSBuild). La variable de entorno tiene prioridad sobre la opción de configuración.</li></ul> |
 | http-cache | El Administrador de paquetes de Visual Studio (NuGet 3.x y versiones posteriores) y la herramienta `dotnet` almacenan copias de los paquetes descargados en esta caché (guardados como archivos `.dat`), organizados en subcarpetas para cada origen de paquete. Los paquetes no se expanden y la caché tiene un plazo de expiración de 30 minutos.<br/><ul><li>Windows: `%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/v3-cache`</li><li>Se invalida mediante la variable de entorno NUGET_HTTP_CACHE_PATH.</li></ul> |
@@ -54,7 +54,7 @@ plugins-cache: C:\Users\user1\AppData\Local\NuGet\plugins-cache
 
 También puede ver las ubicaciones de carpeta mediante el [comando dotnet nuget locals](/dotnet/core/tools/dotnet-nuget-locals):
 
-```cli
+```dotnetcli
 dotnet nuget locals all --list
 ```
 
