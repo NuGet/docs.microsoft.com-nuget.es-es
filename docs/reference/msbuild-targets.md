@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: ed3545454a811c311190a191c566d9e9192f3fcc
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: 2c2b5b21569e2644154670d502146f1e0f9c4c81
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825067"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385019"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -52,7 +52,7 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 | Version | PackageVersion | Version | Esto es compatible con semver, por ejemplo, "1.0.0", "1.0.0-beta" o "1.0.0-beta-00345" |
 | VersionPrefix | PackageVersionPrefix | vacío | Al establecer PackageVersion se sobrescribe PackageVersionPrefix. |
 | VersionSuffix | PackageVersionSuffix | vacío | $(VersionSuffix) de MSBuild. Al establecer PackageVersion se sobrescribe PackageVersionSuffix. |
-| Authors | Authors | Nombre del usuario actual | |
+| Autores | Autores | Nombre del usuario actual | |
 | Owners | N/A | No está presente en el archivo NuSpec | |
 | Title | Title | El identificador de paquete| |
 | Descripción | Descripción | "Descripción del paquete" | |
@@ -79,7 +79,7 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 - SuppressDependenciesWhenPacking
 - PackageVersion
 - PackageId
-- Authors
+- Autores
 - Descripción
 - Copyright
 - PackageRequireLicenseAcceptance
@@ -120,7 +120,7 @@ Para suprimir las dependencias de paquete del paquete de NuGet generado, estable
 
 `PackageIconUrl` quedarán en desuso en favor de la nueva propiedad [`PackageIcon`](#packageicon) .
 
-A partir de NuGet 5,3 & Visual Studio 2019 versión 16,3, `pack` producirá una advertencia [NU5048](errors-and-warnings/nu5048) si los metadatos del paquete solo especifican `PackageIconUrl`.
+A partir de NuGet 5,3 & Visual Studio 2019 versión 16,3, `pack` producirá una advertencia [NU5048](./errors-and-warnings/nu5048.md) si los metadatos del paquete solo especifican `PackageIconUrl`.
 
 ### <a name="packageicon"></a>PackageIcon
 
@@ -371,7 +371,7 @@ El destino de `restore` **solo** funciona para los proyectos que usan el formato
 
 Otra configuración de restauración puede proceder de propiedades de MSBuild en el archivo de proyecto. También se pueden establecer valores desde la línea de comandos mediante el modificador `-p:` (vea los ejemplos siguientes).
 
-| Propiedad. | Descripción |
+| La propiedad | Descripción |
 |--------|--------|
 | RestoreSources | Lista delimitada por punto y coma de orígenes de paquetes. |
 | RestorePackagesPath | Ruta de acceso de la carpeta de paquetes de usuario. |

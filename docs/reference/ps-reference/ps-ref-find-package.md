@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 6/1/2017
 ms.topic: reference
-ms.openlocfilehash: 4bb6d090b97dd55fc1be0625855aab27a0d181c4
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 4118b5a38f80a2300b3945738315d56bda096f9a
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327392"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384638"
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>Find-Package (Consola del Administrador de paquetes en Visual Studio)
 
@@ -25,24 +25,24 @@ Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
     [-Skip <int>] [-IncludePrerelease] [-ExactMatch] [-StartWith] [<CommonParameters>]
 ```
 
-## <a name="parameters"></a>Parámetros
+## <a name="parameters"></a>Parameters
 
-| Parámetro | DESCRIPCIÓN |
+| Parámetro | Descripción |
 | --- | --- |
-| Palabras &lt;clave de ID.&gt; | Desee Palabras clave que se deben usar al buscar en el origen del paquete. Use-ExactMatch para devolver solo los paquetes cuyo identificador de paquete coincida con las palabras clave. Si no se proporciona ninguna palabra `Find-Package` clave, devuelve una lista de los 20 primeros paquetes por descargas o el número especificado por-First. Tenga en cuenta que-ID es opcional y no es operativo. |
-| source | La dirección URL o la ruta de acceso de la carpeta del origen del paquete que se va a buscar. Las rutas de acceso de la carpeta local pueden ser absolutas o relativas a la carpeta actual. Si se omite `Find-Package` , busca el origen del paquete seleccionado actualmente. |
+| ID &lt;palabras clave&gt; | Desee Palabras clave que se deben usar al buscar en el origen del paquete. Use-ExactMatch para devolver solo los paquetes cuyo identificador de paquete coincida con las palabras clave. Si no se proporcionan palabras clave, `Find-Package` devuelve una lista de los 20 primeros paquetes por descargas o el número especificado por-First. Tenga en cuenta que-ID es opcional y no es operativo. |
+| Origen | La dirección URL o la ruta de acceso de la carpeta del origen del paquete que se va a buscar. Las rutas de acceso de la carpeta local pueden ser absolutas o relativas a la carpeta actual. Si se omite, `Find-Package` busca en el origen del paquete seleccionado actualmente. |
 | AllVersions | Muestra todas las versiones disponibles de cada paquete en lugar de la versión más reciente. |
-| Primero | Número de paquetes que se van a devolver desde el principio de la lista; el valor predeterminado es 20. |
-| Skip | Omite los primeros &lt;paquetes int&gt; de la lista mostrada.  |
+| First | Número de paquetes que se van a devolver desde el principio de la lista; el valor predeterminado es 20. |
+| Skip | Omite la primera &lt;int&gt; paquetes de la lista mostrada.  |
 | IncludePrerelease | Incluye paquetes de versiones preliminares en los resultados. |
-| ExactMatch | Se especifica para &lt;usar&gt; palabras clave como un identificador de paquete que distingue entre mayúsculas y minúsculas. |
-| StartWith | Devuelve paquetes cuyo identificador de paquete comienza &lt;con&gt;palabras clave. |
+| ExactMatch | Se especifica para usar &lt;palabras clave&gt; como un identificador de paquete que distingue entre mayúsculas y minúsculas. |
+| StartWith | Devuelve los paquetes cuyo identificador de paquete comienza con &lt;palabras clave&gt;. |
 
 Ninguno de estos parámetros acepta caracteres comodín o de entrada de canalización.
 
 ## <a name="common-parameters"></a>Parámetros comunes
 
-`Find-Package`admite los siguientes [parámetros de PowerShell comunes](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, error Action, ErrorVariable, outbuffer, outvariable, PipelineVariable, verbose, WarningAction y WarningVariable.
+`Find-Package` admite los siguientes [parámetros comunes de PowerShell](https://go.microsoft.com/fwlink/?LinkID=113216): debug, error Action, ErrorVariable, outbuffer, outvariable, PipelineVariable, verbose, WarningAction y WarningVariable.
 
 ## <a name="examples"></a>Ejemplos
 
