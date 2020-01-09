@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: 0b052bd03625172f1b941c365cbedf7629809d6f
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: d6cad228eb052563fe57ea635bff0ea548cedc1f
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825193"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383569"
 ---
 # <a name="nugetconfig-reference"></a>referencia de Nuget. config
 
@@ -287,7 +287,7 @@ Establece el formato de administración de paquetes predeterminado, *Package. co
 
 | Key | {2&gt;Value&lt;2} |
 | --- | --- |
-| format | Un valor booleano que indica el formato de administración de paquetes predeterminado. Si `1`, el formato es PackageReference. Si `0`, Format es *packages. config*. |
+| formato | Un valor booleano que indica el formato de administración de paquetes predeterminado. Si `1`, el formato es PackageReference. Si `0`, Format es *packages. config*. |
 | deshabilitados | Un valor booleano que indica si se muestra el mensaje para seleccionar un formato de paquete predeterminado en la primera instalación del paquete. `False` oculta el aviso. |
 
 **Ejemplo**:
@@ -305,7 +305,7 @@ Puede usar variables de entorno en valores `nuget.config` (NuGet 3.4 o versiones
 
 Por ejemplo, si la variable de entorno `HOME` en Windows se establece en `c:\users\username`, el valor de `%HOME%\NuGetRepository` en el archivo de configuración se resuelve como `c:\users\username\NuGetRepository`.
 
-De forma similar, si `HOME` en Mac/Linux se establece en `/home/myStuff`, `%HOME%/NuGetRepository` en el archivo de configuración se resuelve como `/home/myStuff/NuGetRepository`.
+De forma similar, si `HOME` en Mac/Linux se establece en `/home/myStuff`, `$HOME/NuGetRepository` en el archivo de configuración se resuelve como `/home/myStuff/NuGetRepository`.
 
 Si no se encuentra una variable de entorno, NuGet usa el valor literal del archivo de configuración.
 
