@@ -1,35 +1,35 @@
 ---
-title: Notas de la versión 1.5 de NuGet
-description: Notas de la versión 1.5 de NuGet incluidos problemas conocidos, correcciones de errores, características agregadas y dcr.
+title: Notas de la versión de NuGet 1,5
+description: Notas de la versión de NuGet 1,5, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
 author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: c2b549f65e675e5fde9ae1dfea3f44f7d691a86b
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 940a19cdc485d611d03b52ee3102bc95a78a36bb
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548730"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383354"
 ---
-# <a name="nuget-15-release-notes"></a>Notas de la versión 1.5 de NuGet
+# <a name="nuget-15-release-notes"></a>Notas de la versión de NuGet 1,5
 
-[Notas de la versión de NuGet 1.4](../release-notes/nuget-1.4.md) | [notas de la versión 1.6 de NuGet](../release-notes/nuget-1.6.md)
+[Notas de la versión de nuget 1,4](../release-notes/nuget-1.4.md) | notas de la [versión de Nuget 1,6](../release-notes/nuget-1.6.md)
 
-NuGet 1.5 se publicó en el 30 de agosto de 2011.
+NuGet 1,5 se lanzó el 30 de agosto de 2011.
 
 ## <a name="features"></a>Características
 
-### <a name="project-templates-with-preinstalled-nuget-packages"></a>Plantillas de proyecto con paquetes de NuGet preinstalados
-Al crear una nueva plantilla de proyecto de ASP.NET MVC 3, las bibliotecas de scripts de jQuery incluidas en el proyecto realmente están colocadas ahí mediante la instalación de paquetes de NuGet.
+### <a name="project-templates-with-preinstalled-nuget-packages"></a>Plantillas de proyecto con paquetes NuGet preinstalados
+Al crear una nueva plantilla de proyecto de ASP.NET MVC 3, las bibliotecas de scripts de jQuery incluidas en el proyecto se colocan realmente allí mediante la instalación de paquetes NuGet.
 
-La plantilla de proyecto de ASP.NET MVC 3 incluye un conjunto de paquetes de NuGet que se instalan cuando se invoca la plantilla de proyecto. Esta capacidad para incluir los paquetes de NuGet con una plantilla de proyecto ahora es una característica de NuGet que _cualquier_ plantilla de proyecto puede ahora aprovechar.
+La plantilla de proyecto ASP.NET MVC 3 incluye un conjunto de paquetes NuGet que se instalan cuando se invoca la plantilla de proyecto. Esta capacidad para incluir paquetes NuGet con una plantilla de proyecto es ahora una característica de NuGet en la que _cualquier_ plantilla de proyecto puede aprovecharse ahora.
 
-Para obtener más información sobre esta característica, lea esta [por el desarrollador de la característica de entrada de blog](http://blogs.msdn.com/b/marcinon/archive/2011/07/08/project-templates-and-preinstalled-nuget-packages.aspx).
+Para obtener más información acerca de esta característica, lea esta [entrada de blog del desarrollador de la característica](https://blogs.msdn.com/b/marcinon/archive/2011/07/08/project-templates-and-preinstalled-nuget-packages.aspx).
 
 ### <a name="explicit-assembly-references"></a>Referencias de ensamblado explícitas
 
-Agrega un nuevo `<references />` elemento utilizado para especificar explícitamente qué ensamblados dentro de la se debe hacer referencia el paquete.
+Se ha agregado un nuevo elemento `<references />` que se usa para especificar explícitamente a qué ensamblados del paquete se debe hacer referencia.
 
 Por ejemplo, si agrega lo siguiente:
 
@@ -40,18 +40,18 @@ Por ejemplo, si agrega lo siguiente:
 </references>
 ```
 
-A continuación, solo el `xunit.dll` y `xunit.extensions.dll` se hará referencia con la correspondiente [subcarpeta del marco de trabajo o el perfil](../reference/nuspec.md#explicit-assembly-references) de la `lib` incluso si hay otros ensamblados en la carpeta de la carpeta.
+A continuación, solo se hará referencia a los `xunit.dll` y `xunit.extensions.dll` desde la subcarpeta de [marco/perfil](../reference/nuspec.md#explicit-assembly-references) adecuada de la carpeta `lib`, aunque haya otros ensamblados en la carpeta.
 
-Si se omite este elemento y, después, se aplica el comportamiento habitual, que consiste en hacer referencia a todos los ensamblados en el `lib` carpeta.
+Si se omite este elemento, se aplica el comportamiento habitual, que consiste en hacer referencia a todos los ensamblados de la carpeta `lib`.
 
-__¿Para qué se usa esta característica?__
+__¿Para qué sirve esta característica?__
 
-Esta característica admite sólo los ensamblados de tiempo de diseño. Por ejemplo, al usar Code Contracts, los ensamblados de contrato deben estar junto a los ensamblados en tiempo de ejecución que alimentan de modo que Visual Studio pueda encontrarlos, pero los ensamblados de contrato no realmente se deben hacer referencia el proyecto y no se deben copiar en el `bin` carpeta.
+Esta característica admite ensamblados solo en tiempo de diseño. Por ejemplo, al usar contratos de código, es necesario que los ensamblados del contrato estén junto a los ensamblados en tiempo de ejecución que aumentan para que Visual Studio pueda encontrarlos, pero el proyecto no debe hacer referencia realmente a los ensamblados del contrato y no debe copiarse en la carpeta `bin`.
 
-Del mismo modo, la característica puede usarse para marcos de pruebas unitarias como XUnit, que necesitan sus ensamblados de las herramientas que se encuentra junto a los ensamblados en tiempo de ejecución, pero se incluyen en las referencias de proyecto.
+Del mismo modo, la característica se puede usar para los marcos de pruebas unitarias, como XUnit, que necesitan que sus ensamblados de herramientas se ubiquen junto a los ensamblados en tiempo de ejecución, pero se excluyen de las referencias del proyecto.
 
-### <a name="added-ability-to-exclude-files-in-the-nuspec"></a>Se agregó la posibilidad de excluir archivos en el archivo .nuspec
-El `<file>` elemento dentro de un `.nuspec` archivo puede usarse para incluir un archivo específico o un conjunto de archivos mediante un carácter comodín. Cuando se usa un carácter comodín, no hay ninguna manera para excluir un subconjunto específico de los archivos incluidos. Por ejemplo, suponga que desea que todos los archivos de texto dentro de una carpeta, excepto uno específico.
+### <a name="added-ability-to-exclude-files-in-the-nuspec"></a>Se ha agregado la capacidad de excluir archivos en el archivo. nuspec
+El elemento `<file>` dentro de un archivo de `.nuspec` se puede usar para incluir un archivo específico o un conjunto de archivos mediante un carácter comodín. Cuando se usa un carácter comodín, no hay forma de excluir un subconjunto específico de los archivos incluidos. Por ejemplo, supongamos que desea todos los archivos de texto dentro de una carpeta excepto uno específico.
 
 ```xml
 <files>
@@ -67,7 +67,7 @@ Use punto y coma para especificar varios archivos.
 </files>
 ```
 
-O utilice un carácter comodín para excluir un conjunto de archivos, como todos los archivos de copia de seguridad
+O bien, use un carácter comodín para excluir un conjunto de archivos, como todos los archivos de copia de seguridad.
 
 ```xml
 <files>
@@ -75,50 +75,50 @@ O utilice un carácter comodín para excluir un conjunto de archivos, como todos
 </files>
 ```
 
-### <a name="removing-packages-using-the-dialog-prompts-to-remove-dependencies"></a>Eliminación de paquetes mediante el cuadro de diálogo le pide que quite las dependencias
-Cuando se desinstala un paquete con las dependencias, NuGet le pide, lo que permite la eliminación de las dependencias de un paquete junto con el paquete.
+### <a name="removing-packages-using-the-dialog-prompts-to-remove-dependencies"></a>Quitar paquetes mediante el cuadro de diálogo para quitar las dependencias
+Al desinstalar un paquete con dependencias, NuGet solicita que se quiten las dependencias de un paquete junto con el paquete.
 
-![Quitar los paquetes dependientes](./media/remove-dependent-packages.png)
+![Quitar paquetes dependientes](./media/remove-dependent-packages.png)
 
 
-### <a name="get-package-command-improvement"></a>`Get-Package` mejora de comando
-El `Get-Package` comando ahora es compatible con un `-ProjectName` parámetro. Por lo que el comando
+### <a name="get-package-command-improvement"></a>mejora del comando `Get-Package`
+El comando `Get-Package` admite ahora un parámetro `-ProjectName`. Por lo tanto, el comando
 
     Get-Package –ProjectName A
 
-mostrará una lista de todos los paquetes instalados en el proyecto A.
+enumerará todos los paquetes instalados en el proyecto A.
 
-### <a name="support-for-proxies-that-require-authentication"></a>Compatibilidad con servidores proxy que requiere autenticación
-Cuando se usa NuGet detrás de un proxy que requiere autenticación, NuGet ahora le pedirá las credenciales de proxy. Permite que escribir las credenciales de NuGet para conectarse al repositorio remoto.
+### <a name="support-for-proxies-that-require-authentication"></a>Compatibilidad con servidores proxy que requieren autenticación
+Cuando se usa NuGet detrás de un proxy que requiere autenticación, NuGet ahora solicitará las credenciales de proxy. Al escribir las credenciales se permite a NuGet conectarse al repositorio remoto.
 
-### <a name="support-for-repositories-that-require-authentication"></a>Compatibilidad con los repositorios que requieren autenticación
-NuGet ahora admite la conexión a [repositorios privados](../hosting-packages/local-feeds.md) que requieren autenticación básica o NTLM.
+### <a name="support-for-repositories-that-require-authentication"></a>Compatibilidad con repositorios que requieren autenticación
+NuGet ahora admite la conexión a [repositorios privados](../hosting-packages/local-feeds.md) que requieren la autenticación básica o NTLM.
 
-Se agregará compatibilidad para la autenticación implícita en una versión futura.
+La compatibilidad con la autenticación implícita se agregará en una versión futura.
 
 ### <a name="performance-improvements-to-the-nugetorg-repository"></a>Mejoras de rendimiento en el repositorio de nuget.org
-Hemos realizado varias mejoras de rendimiento en la Galería de nuget.org para que paquete listado y la búsqueda con más rapidez.
+Hemos realizado varias mejoras de rendimiento en la galería de nuget.org para que la lista de paquetes y la búsqueda sean más rápidas.
 
-### <a name="solution-dialog-project-filtering"></a>Filtrado de proyecto de cuadro de diálogo de solución
-En el cuadro de diálogo nivel de la solución, cuando se pida confirmación para que los proyectos instalar, solo se muestran los proyectos que son compatibles con el paquete seleccionado.
+### <a name="solution-dialog-project-filtering"></a>Cuadro de diálogo de solución filtrado de proyecto
+En el cuadro de diálogo de nivel de solución, al preguntar qué proyectos instalar, solo se muestran los proyectos que son compatibles con el paquete seleccionado.
 
-### <a name="package-release-notes"></a>Notas de la versión de paquete
-Paquetes de NuGet ahora incluyen compatibilidad con notas de la versión. La notas de la versión permite mostrar sólo copia al ver _actualizaciones_ para un paquete, por lo que no tiene sentido para agregarlos a la primera versión.
+### <a name="package-release-notes"></a>Notas de la versión del paquete
+Los paquetes NuGet ahora incluyen compatibilidad con las notas de la versión. Las notas de la versión solo se muestran al ver _las actualizaciones_ de un paquete, por lo que no tiene sentido agregarlas a la primera versión.
 
 ![Notas de la versión en la pestaña actualizaciones](./media/manage-nuget-packages-release-notes.png)
 
-Para agregar notas a un paquete, use el nuevo `<releaseNotes />` elemento de metadatos en el archivo NuSpec.
+Para agregar notas de la versión a un paquete, use el nuevo elemento de metadatos de `<releaseNotes />` en el archivo NuSpec.
 
-### <a name="nuspec-ltfiles-gt-improvement"></a>.NuSpec & ltfiles /&gt; mejora
-El `.nuspec` archivo ahora permite vacía `<files />` elemento, que indica a nuget.exe no debe incluir cualquier archivo en el paquete.
+### <a name="nuspec-ltfiles-gt-improvement"></a>mejora de ltfiles/&gt; de. nuspec &
+El archivo `.nuspec` ahora permite un elemento `<files />` vacío, que indica a Nuget. exe que no incluya ningún archivo en el paquete.
 
 ## <a name="bug-fixes"></a>Correcciones de errores
-NuGet 1.5 tenía un total de 107 fijo de elementos de trabajo. 103 de los que se marcaron como errores.
+NuGet 1,5 tenía un total de 107 elementos de trabajo fijos. 103 se marcaron como errores.
 
-Para obtener una lista completa de trabajo elementos corregidos en NuGet 1.5, por favor, ver el [Issue Tracker para esta versión de NuGet](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.5&assignedTo=All&component=All&sortField=Summary&sortDirection=Descending&page=0).
+Para obtener una lista completa de los elementos de trabajo corregidos en NuGet 1,5, consulte el [seguimiento de problemas de Nuget en esta versión](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%201.5&assignedTo=All&component=All&sortField=Summary&sortDirection=Descending&page=0).
 
-## <a name="bug-fixes-worth-noting"></a>Correcciones de errores, cabe destacar:
+## <a name="bug-fixes-worth-noting"></a>Las correcciones de errores merecen tener en cuenta:
 
-* [Problema 1273](http://nuget.codeplex.com/workitem/1273): realizados `packages.config` más descriptivo ordenar alfabéticamente los paquetes y quitando los espacios en blanco adicionales de control de versiones.
-* [Problema 844](http://nuget.codeplex.com/workitem/844): ahora se normalizan los números de versión para que `Install-Package 1.0` funciona en un paquete con la versión `1.0.0`.
-* [Problema 1060](http://nuget.codeplex.com/workitem/1060): al crear un paquete usa nuget.exe, la `-Version` marca invalidaciones el `<version />` elemento.
+* [Problema 1273](http://nuget.codeplex.com/workitem/1273): se ha realizado `packages.config` el control de versiones más descriptivo al ordenar los paquetes alfabéticamente y quitar el espacio en blanco adicional.
+* [Problema 844](http://nuget.codeplex.com/workitem/844): los números de versión ahora están normalizados para que `Install-Package 1.0` funcione en un paquete con la versión `1.0.0`.
+* [Problema 1060](http://nuget.codeplex.com/workitem/1060): al crear un paquete con Nuget. exe, la marca `-Version` invalida el elemento `<version />`.
