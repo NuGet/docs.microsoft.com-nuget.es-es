@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 1053a18926f63e02f0b1c100e7cc1cd293654ced
-ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
+ms.openlocfilehash: 00fe1d5fa81132b5d6826203a0d26e56aa8d4755
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71307214"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383987"
 ---
 # <a name="signing-nuget-packages"></a>Firma de paquetes NuGet
 
@@ -19,7 +19,7 @@ Los paquetes firmados permiten llevar a cabo las comprobaciones pertinentes para
 
 ## <a name="get-a-code-signing-certificate"></a>Obtención de un certificado de firma de código
 
-Se pueden obtener certificados válidos de una gran variedad de entidades de certificación públicas, como [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml), etc. La lista completa de entidades de certificación de confianza para Microsoft se puede consultar en [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners).
+Se pueden obtener certificados válidos de una gran variedad de entidades de certificación públicas, como [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml), etc. La lista completa de entidades de certificación de confianza para Microsoft se puede consultar en [http://aka.ms/trustcertpartners](https://aka.ms/trustcertpartners).
 
 Si quiere realizar una prueba, también puede usar un certificado de emisión propia. Sin embargo, los paquetes firmados con certificados propios no se admiten en NuGet.org. Obtenga más información sobre [cómo crear un certificado de prueba](#create-a-test-certificate).
 

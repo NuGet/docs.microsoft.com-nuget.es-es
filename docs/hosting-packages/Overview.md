@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 3ca023c8d39b9b36388f5f517b50ca5cd2347cc0
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 81acf15ac69d78d39d2784e77c18ba38bfea126d
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610455"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385547"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>Hospedar sus propias fuentes de NuGet
 
@@ -32,7 +32,7 @@ También hay otros productos de hospedaje de NuGet, como [Azure Artifacts](https
 - [Registro del paquete de GitHub](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [LiGet](https://github.com/ai-traders/liget), una implementación de código abierto del servidor NuGet V2 que se ejecuta en Kestrel en Docker
 - [MyGet](https://myget.org)
-- [Nexus](https://www.sonatype.org/nexus/) de Sonatype.
+- [Nexus Repository OSS](https://www.sonatype.com/nexus-repository-oss) de Sonatype.
 - [NuGet Server (código abierto)](https://github.com/svenkle/nuget-server), una implementación de código abierto parecida a NuGet Server de Inedo
 - [NuGet Server](http://nugetserver.net/), un proyecto de la comunidad de Inedo
 - [ProGet](https://inedo.com/proget) de Inedo

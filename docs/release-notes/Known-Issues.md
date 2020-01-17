@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: b104eb39ddeacd9ca1ea45937cf98ad57531112a
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 8f2b33a7290301bd16db3b1979ae496eee602f55
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317138"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383663"
 ---
 # <a name="known-issues-with-nuget"></a>Problemas conocidos con NuGet
 
@@ -71,7 +71,7 @@ Ejecute este comando desde un **símbolo del sistema con privilegios elevados** 
 
 Si se produce un error en el comando, compruebe si el archivo existe en esa ubicación.
 
-Para más información sobre este error, vea este [elemento de trabajo](https://nuget.codeplex.com/workitem/3609 "Elemento de trabajo 3609").
+Para más información sobre este error, consulte este [elemento de trabajo](https://nuget.codeplex.com/workitem/3609 "Elemento de trabajo 3609").
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>Error de compilación después de la actualización de paquetes en VS 2012
 
@@ -90,7 +90,7 @@ Si está ejecutando VS 2010 SP1, puede que encuentre el siguiente mensaje de err
 Al consultar los registros, puede que vea una mención a una excepción `SignatureMismatchException`.
 
 Para evitar que esto ocurra, puede instalar una [revisión de Visual Studio 2010 SP1](http://bit.ly/vsixcertfix).
-Como alternativa, la solución consiste en desinstalar NuGet (ejecutando Visual Studio como administrador) e instalarlo desde la galería de extensiones de VS.  Para más información, vea [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019).
+Como alternativa, la solución consiste en desinstalar NuGet (ejecutando Visual Studio como administrador) e instalarlo desde la galería de extensiones de VS. Vea <https://support.microsoft.com/kb/2581019> para obtener más información.
 
 ## <a name="package-manager-console-throws-an-exception-when-the-reflector-visual-studio-add-in-is-also-installed"></a>La consola del Administrador de paquetes genera una excepción cuando también se instala el complemento Reflector Visual Studio.
 
@@ -159,7 +159,7 @@ Si intenta desinstalar NuGet con el Administrador de extensiones de Visual Studi
 
 ## <a name="the-package-manager-console-crashes-when-i-open-it-in-windows-xp-whats-wrong"></a>La consola del Administrador de paquetes se bloquea cuando se abre en Windows XP. ¿Qué ocurre?
 
-NuGet requiere Powershell 2.0 en tiempo de ejecución. Windows XP, de forma predeterminada, no tiene Powershell 2.0. Puede descargar el runtime de Powershell 2.0 desde [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929). Después de su instalación, reinicie Visual Studio y debería poder abrir la consola del Administrador de paquetes.
+NuGet requiere Powershell 2.0 en tiempo de ejecución. Windows XP, de forma predeterminada, no tiene Powershell 2.0. Puede descargar el runtime de Powershell 2.0 desde <https://support.microsoft.com/kb/968929>. Después de su instalación, reinicie Visual Studio y debería poder abrir la consola del Administrador de paquetes.
 
 ## <a name="visual-studio-2010-sp1-beta-crashes-on-exit-if-the-package-manager-console-is-open"></a>Visual Studio 2010 SP1 Beta se bloquea al salir si la consola del Administrador de paquetes está abierta.
 
