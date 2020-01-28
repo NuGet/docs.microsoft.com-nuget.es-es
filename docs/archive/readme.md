@@ -1,1 +1,0 @@
-Esta carpeta es una ubicación de almacenamiento para el contenido que se va a quitar de la documentación principal, que normalmente es material que probablemente se va a mover a una ubicación de archivo permanente.
