@@ -1,6 +1,6 @@
 ---
-title: Límites, API de NuGet de frecuencia
-description: Las APIs NuGet habrá aplica límites de velocidad para evitar abusos.
+title: Límites de frecuencia, API de NuGet
+description: Las API de NuGet tendrán límites de frecuencia aplicados para evitar el abuso.
 author: cmanu
 ms.author: cmanu
 ms.date: 03/20/2018
@@ -9,16 +9,16 @@ ms.reviewer:
 - skofman
 - anangaur
 - kraigb
-ms.openlocfilehash: 70b478ae17cd10b17f9d6ecb0f5776c1effcea58
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 9e60c0236bd4e6f1374b50a236447faf80dddb38
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548682"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813200"
 ---
 # <a name="rate-limits"></a>Límites de velocidad
 
-La API de NuGet.org aplica la limitación de velocidad para evitar abusos. Las solicitudes que superen el límite de velocidad devuelven el error siguiente: 
+La API de NuGet.org aplica la limitación de velocidad para impedir el abuso. Las solicitudes que superan el límite de velocidad devuelven el siguiente error: 
 
   ~~~
     {
@@ -27,7 +27,7 @@ La API de NuGet.org aplica la limitación de velocidad para evitar abusos. Las s
     }
   ~~~
 
-Además de los límites de frecuencia de uso de la limitación de solicitudes, algunas API de aplicar la cuota. Las solicitudes que superan la cuota, devuelven el error siguiente:
+Además de la limitación de solicitudes con límites de frecuencia, algunas API también aplican la cuota. Las solicitudes que superan la cuota devuelven el siguiente error:
 
   ~~~
     {
@@ -36,24 +36,23 @@ Además de los límites de frecuencia de uso de la limitación de solicitudes, a
     }
   ~~~
 
-Las siguientes tablas enumeran los límites de frecuencia para la API de NuGet.org.
+En las tablas siguientes se enumeran los límites de frecuencia de la API de NuGet.org.
 
 ## <a name="package-search"></a>Búsqueda de paquetes
 
 > [!Note]
-> Se recomienda el uso de NuGet.org [API V3](https://docs.microsoft.com/nuget/api/search-query-service-resource) actualmente para la búsqueda de alto rendimiento y no tienen ningún límite. API de búsquedas de V1 y V2, se aplican los límites de followins:
+> Se recomienda el uso de las [API de búsqueda de V3](search-query-service-resource.md) en la organización, ya que no tiene una tasa limitada actualmente. En el caso de las API de búsqueda V1 y V2, se aplican los límites siguientes:
 
-
-| API | Tipo de límite | Valor de límite | API usecase |
+| API | Tipo de límite | Valor límite | API usecase |
 |:---|:---|:---|:---|
-**OBTENER** `/api/v1/Packages` | IP | 1000 / minuto | Consultar los metadatos del paquete de NuGet a través de OData v1 `Packages` colección |
-**OBTENER** `/api/v1/Search()` | IP | 3000 / minuto | Buscar paquetes de NuGet a través del punto de conexión v1 búsqueda | 
-**OBTENER** `/api/v2/Packages` | IP | 20000 / minuto | Consultar los metadatos de paquete de NuGet a través de OData v2 `Packages` colección | 
-**OBTENER** `/api/v2/Packages/$count` | IP | 100 / minuto | Consultar el número de paquetes de NuGet a través de OData v2 `Packages` colección | 
+**Obtener** `/api/v1/Packages` | IP | 1000/minuto | Consulta de metadatos de paquetes NuGet mediante la colección de `Packages` de OData de v1 |
+**Obtener** `/api/v1/Search()` | IP | 3000/minuto | Buscar paquetes NuGet a través del punto de conexión de búsqueda v1 | 
+**Obtener** `/api/v2/Packages` | IP | 20000/minuto | Consulta de metadatos de paquetes NuGet a través de V2 OData `Packages` colección | 
+**Obtener** `/api/v2/Packages/$count` | IP | 100/minuto | Consultar el recuento de paquetes NuGet mediante la colección de `Packages` OData V2 | 
 
-## <a name="package-push-and-unlist"></a>Paquete de insertar y quitar de la lista
+## <a name="package-push-and-unlist"></a>Instalación y deslista de paquetes
 
-| API | Tipo de límite | Valor de límite | API usecase | 
+| API | Tipo de límite | Valor límite | API usecase | 
 |:---|:---|:---|:--- |
-**PUT** `/api/v2/package` | Clave de API | 250 / hora | Cargar un nuevo paquete de NuGet (versión) a través del punto de conexión de inserción de v2 
-**ELIMINAR** `/api/v2/package/{id}/{version}` | Clave de API | 250 / hora | Quitar de la lista un paquete de NuGet (versión) a través del punto de conexión v2 
+**Colocar** `/api/v2/package` | Clave de API | 350 por hora | Carga de un nuevo paquete NuGet (versión) a través del punto de conexión de inserciones V2 
+**Eliminar** `/api/v2/package/{id}/{version}` | Clave de API | 250 por hora | Mostrar un paquete NuGet (versión) a través del punto de conexión V2 

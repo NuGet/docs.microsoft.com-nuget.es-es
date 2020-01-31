@@ -1,61 +1,61 @@
 ---
-title: Package Details URL Template, NuGet API
-description: The package details URL template allows clients to display in their UI a web link to more package details
+title: Plantilla de URL de detalles de paquete, API de NuGet
+description: La plantilla de dirección URL de detalles del paquete permite a los clientes Mostrar en su interfaz de usuario un vínculo Web a más detalles del paquete.
 author: joelverhagen
 ms.author: jver
 ms.date: 3/1/2019
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 3102cb9a20f354e92a0da8bba6457dc2ad0f0f2d
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 1b84c6e88a56216e5747d5bc602219af6695c305
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610958"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812940"
 ---
-# <a name="package-details-url-template"></a>Package details URL template
+# <a name="package-details-url-template"></a>Plantilla de URL de detalles de paquete
 
-It is possible for a client to build a URL that can be used by the user to see more package details in their web browser. This is useful when a package source wants to show additional information about a package that may not fit within the scope of what the NuGet client application shows.
+Un cliente puede crear una dirección URL que el usuario pueda usar para ver más detalles del paquete en su explorador Web. Esto resulta útil cuando un origen de paquete desea mostrar información adicional sobre un paquete que puede no ajustarse dentro del ámbito de lo que muestra la aplicación cliente de NuGet.
 
-The resource used for building this URL is the `PackageDetailsUriTemplate` resource found in the [service index](service-index.md).
+El recurso usado para generar esta dirección URL es el `PackageDetailsUriTemplate` recurso que se encuentra en el [Índice de servicio](service-index.md).
 
 ## <a name="versioning"></a>Control de versiones
 
-The following `@type` values are used:
+Se usan los siguientes valores de `@type`:
 
-Valor de@type                     | Notas
+Valor de @type                     | Notas
 ------------------------------- | -----
-PackageDetailsUriTemplate/5.1.0 | The initial release
+PackageDetailsUriTemplate/5.1.0 | La versión inicial
 
-## <a name="url-template"></a>URL template
+## <a name="url-template"></a>Plantilla de dirección URL
 
-The URL for the following API is the value of the `@id` property associated with one of the aforementioned resource `@type` values.
+La dirección URL de la siguiente API es el valor de la propiedad `@id` asociada a uno de los valores de `@type` de recursos mencionados anteriormente.
 
-## <a name="http-methods"></a>HTTP methods
+## <a name="http-methods"></a>Métodos HTTP
 
-Although the client is not intended to make requests to the package details URL on behalf of the user, the web page should support the `GET` method to allow a clicked URL to be easily opened in a web browser.
+Aunque el cliente no está diseñado para realizar solicitudes a la dirección URL del paquete de detalles en nombre del usuario, la página web debe admitir el método `GET` para permitir que se pueda abrir fácilmente una dirección URL en un explorador Web.
 
-## <a name="construct-the-url"></a>Construct the URL
+## <a name="construct-the-url"></a>Construir la dirección URL
 
-Given a known package ID and version, the client implementation can construct a URL used to access a web interface. The client implementation should display this constructed URL (or clickable link) to the user allowing them to open a web browser to the URL and to learn more about the package. The contents of the package details page is determined by the server implementation.
+Dado un identificador de paquete conocido y una versión, la implementación del cliente puede construir una dirección URL que se usa para tener acceso a una interfaz Web. La implementación del cliente debe mostrar esta dirección URL construida (o vínculo en el que se pueda hacer clic) al usuario, lo que le permite abrir un explorador Web en la dirección URL y obtener más información sobre el paquete. El contenido de la página de detalles del paquete viene determinado por la implementación del servidor.
 
-The URL must be an absolute URL and the scheme (protocol) must be HTTPS.
+La dirección URL debe ser una dirección URL absoluta y el esquema (Protocolo) debe ser HTTPS.
 
-The value of the `@id` in the service index is a URL string containing any of the following placeholder tokens:
+El valor de la `@id` en el índice de servicio es una cadena de dirección URL que contiene cualquiera de los siguientes tokens de marcador de posición:
 
-### <a name="url-placeholders"></a>URL placeholders
+### <a name="url-placeholders"></a>Marcadores de posición de dirección URL
 
-Name        | Type    | Requerido | Notas
+Name        | Tipo de    | Requerido | Notas
 ----------- | ------- | -------- | -----
-`{id}`      | cadena  | No       | The package ID to get details for
-`{version}` | cadena  | No       | The package version to get details for
+`{id}`      | cadena  | No       | Identificador del paquete para el que se van a obtener detalles.
+`{version}` | cadena  | No       | La versión del paquete para obtener detalles
 
-The server should accept `{id}` and `{version}` values with any casing. In addition, the server should not be sensitive to whether the version is [normalized](https://docs.microsoft.com/nuget/concepts/package-versioning#normalized-version-numbers). In other words, the server should accept also accept non-normalized versions.
+El servidor debe aceptar los valores `{id}` y `{version}` con cualquier grafía. Además, el servidor no debe ser sensible a si la versión está [normalizada](../concepts/package-versioning.md#normalized-version-numbers). En otras palabras, el servidor debe aceptar también aceptar versiones no normalizadas.
 
-For example, nuget.org's package details template looks like this:
+Por ejemplo, la plantilla de detalles del paquete de Nuget. org tiene el siguiente aspecto:
 
     https://www.nuget.org/packages/{id}/{version}
 
-If the client implementation needs to display a link to the package details for NuGet.Versioning 4.3.0, it would produce the following URL and provide it to the user:
+Si la implementación del cliente necesita mostrar un vínculo a los detalles del paquete de NuGet. control de versiones 4.3.0, generaría la siguiente dirección URL y la proporcionará al usuario:
 
     https://www.nuget.org/packages/NuGet.Versioning/4.3.0

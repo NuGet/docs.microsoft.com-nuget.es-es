@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: eb8d59e253f85fbbb8546a5f71856df842ce94d6
-ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
+ms.openlocfilehash: c62e5b7b53d30a1b362e87dbbea26355a36b1274
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74096897"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813278"
 ---
 # <a name="package-metadata"></a>Metadatos de paquete
 
@@ -23,11 +23,11 @@ La colección de los documentos que se encuentran en `RegistrationsBaseUrl` a me
 
 Se usan los siguientes valores de `@type`:
 
-Valor de@type                     | Notas
+Valor de @type                     | Notas
 ------------------------------- | -----
 RegistrationsBaseUrl            | La versión inicial
 RegistrationsBaseUrl/3.0.0-beta | Alias de `RegistrationsBaseUrl`
-RegistrationsBaseUrl/3.0.0-RC   | Alias de `RegistrationsBaseUrl`
+RegistrationsBaseUrl/3.0.0-rc   | Alias de `RegistrationsBaseUrl`
 RegistrationsBaseUrl/3.4.0      | Respuestas de gzip
 RegistrationsBaseUrl/3.6.0      | Incluye paquetes SemVer 2.0.0
 
@@ -76,9 +76,9 @@ La heurística que usa nuget.org es la siguiente: si hay 128 o más versiones de
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name     | En     | Type    | Requerido | Notas
+Name     | En     | Tipo de    | Requerido | Notas
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | Resolución    | cadena  | sí      | El identificador del paquete, en minúsculas
+LOWER_ID | Dirección URL    | cadena  | sí      | El identificador del paquete, en minúsculas
 
 El valor `LOWER_ID` es el identificador del paquete deseado en minúsculas con las reglas implementadas por. Método [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) de la red.
 
@@ -86,10 +86,10 @@ El valor `LOWER_ID` es el identificador del paquete deseado en minúsculas con l
 
 La respuesta es un documento JSON que tiene un objeto raíz con las siguientes propiedades:
 
-Name  | Type             | Requerido | Notas
+Name  | Tipo de             | Requerido | Notas
 ----- | ---------------- | -------- | -----
 count | enteros          | sí      | El número de páginas de registro del índice
-items | matriz de objetos | sí      | La matriz de páginas de registro
+elementos | matriz de objetos | sí      | La matriz de páginas de registro
 
 Cada elemento de la matriz `items` del objeto index es un objeto JSON que representa una página de registro.
 
@@ -97,11 +97,11 @@ Cada elemento de la matriz `items` del objeto index es un objeto JSON que repres
 
 El objeto de página de registro que se encuentra en el índice de registro tiene las siguientes propiedades:
 
-Name   | Type             | Requerido | Notas
+Name   | Tipo de             | Requerido | Notas
 ------ | ---------------- | -------- | -----
 @id    | cadena           | sí      | La dirección URL de la página de registro
 count  | enteros          | sí      | El número de hojas de registro en la página
-items  | matriz de objetos | No       | La matriz de las hojas de registro y sus metadatos asociados
+elementos  | matriz de objetos | No       | La matriz de las hojas de registro y sus metadatos asociados
 inferiores  | cadena           | sí      | La versión más baja de SemVer 2.0.0 en la página (inclusivo)
 parent | cadena           | No       | Dirección URL del índice de registro.
 esquina superior  | cadena           | sí      | La versión más alta de SemVer 2.0.0 en la página (inclusiva)
@@ -121,10 +121,10 @@ Cada elemento de la matriz de `items` del objeto de página es un objeto JSON qu
 
 El objeto hoja de registro que se encuentra en una página de registro tiene las siguientes propiedades:
 
-Name           | Type   | Requerido | Notas
+Name           | Tipo de   | Requerido | Notas
 -------------- | ------ | -------- | -----
 @id            | cadena | sí      | La dirección URL de la hoja de registro
-catalogEntry   | object | sí      | Entrada del catálogo que contiene los metadatos del paquete
+catalogEntry   | Objeto de | sí      | Entrada del catálogo que contiene los metadatos del paquete
 packageContent | cadena | sí      | La dirección URL del contenido del paquete (. nupkg)
 
 Cada objeto hoja de registro representa los datos asociados a una única versión de paquete.
@@ -133,32 +133,32 @@ Cada objeto hoja de registro representa los datos asociados a una única versió
 
 La propiedad `catalogEntry` del objeto hoja de registro tiene las siguientes propiedades:
 
-Name                     | Type                       | Requerido | Notas
+Name                     | Tipo de                       | Requerido | Notas
 ------------------------ | -------------------------- | -------- | -----
 @id                      | cadena                     | sí      | Dirección URL del documento que se usa para generar este objeto.
 authors                  | cadena o matriz de cadenas | No       | 
 dependencyGroups         | matriz de objetos           | No       | Las dependencias del paquete, agrupadas por la plataforma de destino
-desuso              | object                     | No       | El desuso asociado al paquete
+desuso              | Objeto de                     | No       | El desuso asociado al paquete
 Descripción              | cadena                     | No       | 
 iconUrl                  | cadena                     | No       | 
 identificador                       | cadena                     | sí      | Identificador del paquete.
 licenseUrl               | cadena                     | No       |
 licenseExpression        | cadena                     | No       | 
-lista                   | booleano                    | No       | Se debe considerar como si no estuviera presente
+enumerados                   | booleano                    | No       | Se debe considerar como si no estuviera presente
 minClientVersion         | cadena                     | No       | 
 projectUrl               | cadena                     | No       | 
-sin                | cadena                     | No       | Una cadena que contiene una marca de tiempo ISO 8601 de Cuándo se publicó el paquete
+published                | cadena                     | No       | Una cadena que contiene una marca de tiempo ISO 8601 de Cuándo se publicó el paquete
 requireLicenseAcceptance | booleano                    | No       | 
 resumen                  | cadena                     | No       | 
 etiquetas                     | cadena o matriz de cadena  | No       | 
 título                    | cadena                     | No       | 
-version                  | cadena                     | sí      | La cadena de versión completa después de la normalización
+Versión de                  | cadena                     | sí      | La cadena de versión completa después de la normalización
 
 La propiedad `version` del paquete es la cadena de versión completa después de la normalización. Esto significa que los datos de compilación de SemVer 2.0.0 pueden incluirse aquí.
 
 La propiedad `dependencyGroups` es una matriz de objetos que representan las dependencias del paquete, agrupadas por la plataforma de destino. Si el paquete no tiene dependencias, falta la propiedad `dependencyGroups`, una matriz vacía o la propiedad `dependencies` de todos los grupos está vacía o falta.
 
-El valor de la propiedad `licenseExpression` cumple con la [Sintaxis](https://docs.microsoft.com/nuget/reference/nuspec#license)de las expresiones de licencia de NuGet.
+El valor de la propiedad `licenseExpression` cumple con la [Sintaxis](../reference/nuspec.md#license)de las expresiones de licencia de NuGet.
 
 > [!Note]
 > En nuget.org, el valor `published` se establece en Year 1900 cuando se ha desactivado el paquete.
@@ -167,7 +167,7 @@ El valor de la propiedad `licenseExpression` cumple con la [Sintaxis](https://do
 
 Cada objeto de grupo de dependencias tiene las siguientes propiedades:
 
-Name            | Type             | Requerido | Notas
+Name            | Tipo de             | Requerido | Notas
 --------------- | ---------------- | -------- | -----
 targetFramework | cadena           | No       | Plataforma de destino a la que se aplican estas dependencias.
 dependencias    | matriz de objetos | No       |
@@ -180,10 +180,10 @@ La propiedad `dependencies` es una matriz de objetos, cada uno de los cuales rep
 
 Cada dependencia del paquete tiene las siguientes propiedades:
 
-Name         | Type   | Requerido | Notas
+Name         | Tipo de   | Requerido | Notas
 ------------ | ------ | -------- | -----
 identificador           | cadena | sí      | Identificador de la dependencia del paquete.
-range        | object | No       | El [intervalo de versiones](../concepts/package-versioning.md#version-ranges-and-wildcards) permitido de la dependencia
+range        | Objeto de | No       | El [intervalo de versiones](../concepts/package-versioning.md#version-ranges-and-wildcards) permitido de la dependencia
 registro | cadena | No       | Dirección URL del índice de registro para esta dependencia.
 
 Si la propiedad `range` está excluida o es una cadena vacía, el cliente debería tener como valor predeterminado el intervalo de versión `(, )`. Es decir, se permite cualquier versión de la dependencia. No se permite el valor de `*` para la propiedad `range`.
@@ -192,11 +192,11 @@ Si la propiedad `range` está excluida o es una cadena vacía, el cliente deber�
 
 Cada desuso de paquetes tiene las siguientes propiedades:
 
-Name             | Type             | Requerido | Notas
+Name             | Tipo de             | Requerido | Notas
 ---------------- | ---------------- | -------- | -----
-principales          | Matriz de cadenas | sí      | Los motivos por los que el paquete quedó en desuso
+principales          | matriz de cadenas | sí      | Los motivos por los que el paquete quedó en desuso
 message          | cadena           | No       | Detalles adicionales sobre este desuso
-alternatePackage | object           | No       | El paquete alternativo que se debe usar en su lugar
+alternatePackage | Objeto de           | No       | El paquete alternativo que se debe usar en su lugar
 
 La propiedad `reasons` debe contener al menos una cadena y solo debe contener cadenas de la tabla siguiente:
 
@@ -212,10 +212,10 @@ Si la propiedad `reasons` contiene cadenas que no son del conjunto conocido, se 
 
 El objeto de paquete alternativo tiene las siguientes propiedades:
 
-Name         | Type   | Requerido | Notas
+Name         | Tipo de   | Requerido | Notas
 ------------ | ------ | -------- | -----
 identificador           | cadena | sí      | IDENTIFICADOR del paquete alternativo
-range        | object | No       | El [intervalo de versiones](../concepts/package-versioning.md#version-ranges-and-wildcards)permitido o `*` si se permite cualquier versión
+range        | Objeto de | No       | El [intervalo de versiones](../concepts/package-versioning.md#version-ranges-and-wildcards)permitido o `*` si se permite cualquier versión
 registro | cadena | No       | La dirección URL del índice de registro para este paquete alternativo
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
@@ -237,11 +237,11 @@ La página de registro contiene las hojas de registro. La dirección URL para ob
 
 Cuando no se proporciona la matriz de `items` en el índice de registro, una solicitud HTTP GET del valor de `@id` devolverá un documento JSON que tiene un objeto como raíz. El objeto tiene las siguientes propiedades:
 
-Name   | Type             | Requerido | Notas
+Name   | Tipo de             | Requerido | Notas
 ------ | ---------------- | -------- | -----
 @id    | cadena           | sí      | La dirección URL de la página de registro
 count  | enteros          | sí      | El número de hojas de registro en la página
-items  | matriz de objetos | sí      | La matriz de las hojas de registro y sus metadatos asociados
+elementos  | matriz de objetos | sí      | La matriz de las hojas de registro y sus metadatos asociados
 inferiores  | cadena           | sí      | La versión más baja de SemVer 2.0.0 en la página (inclusivo)
 parent | cadena           | sí      | Dirección URL del índice de registro.
 esquina superior  | cadena           | sí      | La versión más alta de SemVer 2.0.0 en la página (inclusiva)
@@ -267,13 +267,13 @@ La dirección URL para capturar una hoja de registro se obtiene de la propiedad 
 
 La hoja de registro es un documento JSON con un objeto raíz con las siguientes propiedades:
 
-Name           | Type    | Requerido | Notas
+Name           | Tipo de    | Requerido | Notas
 -------------- | ------- | -------- | -----
 @id            | cadena  | sí      | La dirección URL de la hoja de registro
 catalogEntry   | cadena  | No       | La dirección URL de la entrada del catálogo que generó estas hojas
-lista         | booleano | No       | Se debe considerar como si no estuviera presente
+enumerados         | booleano | No       | Se debe considerar como si no estuviera presente
 packageContent | cadena  | No       | La dirección URL del contenido del paquete (. nupkg)
-sin      | cadena  | No       | Una cadena que contiene una marca de tiempo ISO 8601 de Cuándo se publicó el paquete
+published      | cadena  | No       | Una cadena que contiene una marca de tiempo ISO 8601 de Cuándo se publicó el paquete
 registro   | cadena  | No       | Dirección URL del índice de registro.
 
 > [!Note]

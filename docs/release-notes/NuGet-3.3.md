@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 482c03a4f6ca39edf317b6ef8d535e79b53d5d16
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: aa8290c80cc500b59d1779bf76662c07382fd277
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317040"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813785"
 ---
 # <a name="nuget-33-release-notes"></a>Notas de la versión de NuGet 3,3
 
@@ -20,7 +20,7 @@ NuGet 3,3 se lanzó el 30 de noviembre de 2015 con un número significativo de a
 
 ## <a name="new-features"></a>Características nuevas
 
-* Se han introducido proveedores de credenciales que permiten a los clientes de la línea de comandos de NuGet trabajar sin problemas con una fuente autenticada. Las [instrucciones sobre cómo instalar el proveedor de credenciales de Visual Studio Team Services](../api/nuget-exe-credential-providers.md) y configurar los clientes de Nuget para usarlo están disponibles en los documentos de Nuget.
+* Se han introducido proveedores de credenciales que permiten a los clientes de la línea de comandos de NuGet trabajar sin problemas con una fuente autenticada. Las [instrucciones sobre cómo instalar el proveedor de credenciales de Visual Studio Team Services](../reference/extensibility/nuget-exe-credential-providers.md) y configurar los clientes de Nuget para usarlo están disponibles en los documentos de Nuget.
 
 ## <a name="new-user-interface-features"></a>Nuevas características de la interfaz de usuario
 
@@ -37,11 +37,11 @@ NuGet 3,3 se lanzó el 30 de noviembre de 2015 con un número significativo de a
 
 ## <a name="new-command-line-features"></a>Nuevas características de la línea de comandos
 
-En esta versión se presentaron los `add` comandos `init` y para inicializar los repositorios basados en carpetas, tal y como se describe en la [referencia de Nuget. exe](../reference/nuget-exe-cli-reference.md). Los repositorios que se construyen y mantienen con esta estructura de carpetas proporcionarán [ventajas de rendimiento significativas](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) , como se describe en nuestro blog.
+En esta versión se presentaron los comandos `add` y `init` para inicializar los repositorios basados en carpetas, tal y como se describe en la [referencia de Nuget. exe](../reference/nuget-exe-cli-reference.md). Los repositorios que se construyen y mantienen con esta estructura de carpetas proporcionarán [ventajas de rendimiento significativas](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) , como se describe en nuestro blog.
 
 ## <a name="contentfiles"></a>ContentFiles
 
-Ahora se admite el contenido `project.json` en los proyectos administrados `contentFiles` a través `.nuspec` de la nueva notación de carpeta y `contentFiles` elemento.  Este contenido puede especificarse más directamente por el autor del paquete para las interacciones con los sistemas del proyecto.  Puede encontrar más información sobre cómo configurar contentFiles en `.nuspec` un documento en la referencia de [. nuspec](../reference/nuspec.md).
+Ahora se admite el contenido en `project.json` proyectos administrados a través de la nueva carpeta de `contentFiles` y `.nuspec` notación de elemento de `contentFiles`.  Este contenido puede especificarse más directamente por el autor del paquete para las interacciones con los sistemas del proyecto.  Puede encontrar más información sobre cómo configurar contentFiles en un documento de `.nuspec` en la [referencia de. nuspec](../reference/nuspec.md).
 
 ## <a name="nuget-locals-cache-management"></a>Administración de caché de variables locales de NuGet
 
@@ -59,4 +59,4 @@ La lista de problemas corregidos en la versión de línea de comandos 3,3 se reg
 
 ## <a name="known-issues"></a>Problemas conocidos
 
-Seguimos realizando un seguimiento de los problemas de la lista de problemas de GitHub que se puede encontrar en:[http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
+Seguimos realizando un seguimiento de los problemas de la lista de problemas de GitHub que encontrará en: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
