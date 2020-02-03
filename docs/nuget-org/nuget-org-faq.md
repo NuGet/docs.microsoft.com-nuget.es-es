@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: e2b6a64b8010f16d0fc33cca437b348d8f784fd7
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 915f6e4cfc0b21d2b10006c62e8230720d07ce74
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610493"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813746"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet.org
 
@@ -175,7 +175,7 @@ Si ha intentado iniciar sesión con la cuenta de Microsoft, por ejemplo, con el 
 
 Cuando se crea una cuenta en nuget.org, hay una dirección de correo electrónico de comunicación asociada a esa cuenta. Esta suele ser la misma dirección de correo electrónico que se ha usado para la cuenta de Microsoft asociada. Pero podría elegir especificar otra dirección de correo electrónico para la comunicación. Por tanto, técnicamente, podría tener otra cuenta Microsoft, por ejemplo, con `account2@outlook.com`, vinculada a la cuenta de nuget.org con la dirección de correo electrónico de comunicación como `account1@outlook.com`.
 
-Por tanto, el error anterior significa que ya existe la cuenta de nuget.org con la dirección de correo electrónico de comunicación `account1@outlook.com`, pero está asociada a otra cuenta Microsoft con un correo electrónico **que no es** `account1@outlook.com`.
+Por tanto, el error anterior significa que ya existe la cuenta de NuGet.org con la dirección de correo electrónico de comunicación `account1@outlook.com`, pero está asociada a otra cuenta Microsoft con un correo electrónico **que no es** `account1@outlook.com`.
 
 **¿Cómo averiguo qué cuenta de Microsoft está vinculada con esta cuenta de nuget.org?**
 
@@ -242,7 +242,7 @@ Puede [crear](https://www.microsoft.com/account) una cuenta de Microsoft (con un
 
 ### <a name="how-do-i-change-my-nugetorg-account-username"></a>¿Cómo puedo cambiar el nombre de usuario de la cuenta de nuget.org?
 
-No se puede. De acuerdo a la directiva, todavía no se permite el cambio de los nombres de usuario. La única forma de cambiar el nombre de usuario consiste en crear una cuenta con el nombre de usuario deseado. Se recomienda eliminar la cuenta existente antes de crear una nueva; en caso contrario, no podrá volver a usar la cuenta de Microsoft registrada.
+No se puede. De acuerdo con la directiva, no se permite el cambio de los nombres de usuario. Además, realizar esta acción conlleva un cambio importante para los usuarios que puedan haber definido [directivas de confianza de paquetes basadas en el propietario del paquete](../consume-packages/installing-signed-packages.md#trust-package-owners). La única forma de cambiar el nombre de usuario consiste en crear una cuenta con el nombre de usuario deseado. Se recomienda eliminar la cuenta existente antes de crear una nueva; en caso contrario, no podrá volver a usar la cuenta de Microsoft registrada.
 > [!Important]
 > Al eliminar el usuario se seguirá **reservando** el `username`. No podrá volver a usar el mismo nombre de usuario, **incluido el cambio de mayúsculas y minúsculas**. Por ejemplo, si ha creado un usuario con el nombre de usuario `mycoolname` y quiere cambiarlo a `MyCoolName`(cambio de mayúsculas y minúsculas), no será posible después de eliminar el usuario.
 
@@ -250,7 +250,7 @@ Siga los pasos indicados en la sección [Eliminación de la cuenta de nuget.org]
 
 ### <a name="how-to-delete-my-nugetorg-account"></a>¿Cómo elimino mi cuenta de nuget.org?
 
-Para eliminar la cuenta, tenga en cuenta que se recomienda transferir la propiedad de todos los paquetes de los que sea el único propietario. En [Administración de los propietarios de paquetes](https://docs.microsoft.com/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg) puede obtener más información sobre cómo hacerlo. Esto también nos ayudará a acelerar su solicitud.
+Para eliminar la cuenta, tenga en cuenta que se recomienda transferir la propiedad de todos los paquetes de los que sea el único propietario. En [Administración de los propietarios de paquetes](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg) puede obtener más información sobre cómo hacerlo. Esto también nos ayudará a acelerar su solicitud.
 
 Si lo que busca es transformar su cuenta en una organización, consulte [¿Cómo se transforma la cuenta de nuget.org en una organización?](#how-to-transform-my-nugetorg-account-to-an-organization) siga los pasos indicados.
 

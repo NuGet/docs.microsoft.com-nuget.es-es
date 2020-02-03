@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0691660f20f9b5a1ff0dad110ee87c6e29c0a56e
-ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
+ms.openlocfilehash: 9f427005251bc2bf7a8a79285e39b4bd49062dbf
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74253932"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813356"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Búsqueda y evaluación de paquetes NuGet para el proyecto
 
@@ -122,25 +122,25 @@ Aquí le mostramos cómo puede leer la información contenida en el archivo de l
 1. Debe tener una etiqueta como `<license type="file">license\license.txt</license>`. Esto implica que el archivo de licencia se denomina `license.txt` y está dentro de una carpeta denominada `license`, que a su vez estaría en la raíz de esa carpeta.
 1. Navegue hasta la carpeta `license` y abra el archivo `license.txt`.
 
-Para conocer la equivalencia de MSBuild al hecho de configurar la licencia en `.nuspec`, eche un vistazo a [Empaquetado de una expresión de licencia o un archivo de licencia](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file).
+Para conocer la equivalencia de MSBuild al hecho de configurar la licencia en `.nuspec`, eche un vistazo a [Empaquetado de una expresión de licencia o un archivo de licencia](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file).
 
 ## <a name="search-syntax"></a>Sintaxis de búsqueda
 
 La búsqueda de paquetes NuGet funciona igual en nuget.org, desde la CLI de NuGet, y desde la extensión Administrador de paquetes NuGet en Visual Studio. En general, la búsqueda se aplica a palabras clave, así como a descripciones de paquetes.
 
-- **Palabras clave**: se buscan paquetes pertinentes que contengan cualquiera de las palabras clave proporcionadas. Ejemplo: `modern UI`. Para buscar paquetes que contengan todas las palabras clave proporcionadas, use "+" entre los términos, como `modern+UI`.
-- **Frases**: al escribir términos entre comillas, se buscan las coincidencias exactas sin distinción de mayúsculas y minúsculas de esos términos. Ejemplo: `"modern UI" package`
-- **Filtrado**: puede aplicar un término de búsqueda a una propiedad específica mediante la sintaxis `<property>:<term>`, donde `<property>` (no distingue mayúsculas de minúsculas) puede ser `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` y `owner`. Los términos pueden incluirse entre comillas si es necesario y se pueden buscar varias propiedades al mismo tiempo. Además, las búsquedas por la propiedad `id` son coincidencias de subcadena, mientras que `packageid` usa una coincidencia exacta. Ejemplos:
+- **Filtrado**: puede aplicar un término de búsqueda a una propiedad específica mediante la sintaxis `<property>:<term>`, donde `<property>` (no distingue mayúsculas de minúsculas) puede ser `id`, `packageid`, `version`, `title`, `tags`, `author`, `description`, `summary` y `owner`. Puede buscar varias propiedades al mismo tiempo. Las búsquedas en la propiedad `id` son coincidencias de subcadena, mientras que `packageid` y `owner` usan una coincidencia exacta sin distinción entre mayúsculas y minúsculas. Ejemplos:
 
-    ```
-    id:NuGet.Core                # Match any part of the id property
-    Id:"Nuget.Core"
-    ID:jQuery
-    title:jquery                 # Searches title as shown on the package listing
-    PackageId:jquery             # Match the package id exactly
-    id:jquery id:ui              # Search for multiple terms in the id
-    id:jquery tags:validation    # Search multiple properties
-    id:"jquery.ui"               # Phrase search
-    invalid:jquery ui            # Unsupported properties are ignored, so this
-                                 # is the same as searching on jquery ui
-    ```
+```
+PackageId:jquery             # Match the package ID in an exact, case-insensitive manner
+
+owner:microsoft              # Match the owner in an exact, case-insensitive manner
+
+id:NuGet.Core                # Match any part of the ID property
+Id:"Nuget.Core"
+ID:jQuery
+id:jquery id:ui              # Search for multiple terms in the ID
+id:jquery tags:validation    # Search multiple properties
+
+invalid:jquery ui            # Unsupported properties are ignored, so this
+                             # is the same as searching on ui
+```

@@ -12,12 +12,12 @@ keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, comp
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: de37cbf1f63da3de07774281eceef99c51abdaa5
-ms.sourcegitcommit: 96aab8a1ad35eca0c029679d0158d9cc93d66009
+ms.openlocfilehash: 0109aea95ec255b3e0abcdff4cf51b4bfeafbb8c
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75676385"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813486"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Crear paquetes de símbolos (.snupkg)
 
@@ -127,7 +127,7 @@ El archivo .nupkg debería ser exactamente el mismo que el de hoy, pero el archi
    ```
 
 4) Si un autor decide usar un archivo .nuspec personalizado para compilar sus archivos .nupkg y .snupkg, estos deben tener la misma jerarquía de carpetas y archivos mostrados en el punto 2.
-5) Los campos ```authors``` y ```owners``` deben excluirse del archivo .nuspec del archivo .snupkg.
+5) Los siguientes campos se excluirán del archivo .nuspec del archivo .snupkg: ```authors```, ```owners```, ```requireLicenseAcceptance```, ```license type```, ```licenseUrl``` y ```icon```.
 6) No utilice el elemento ```<license>```. Se trata un .snupkg con la misma licencia que el .nupkg correspondiente.
 
 ## <a name="see-also"></a>Vea también
