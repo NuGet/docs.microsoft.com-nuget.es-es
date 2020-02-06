@@ -12,24 +12,24 @@ keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, comp
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 0109aea95ec255b3e0abcdff4cf51b4bfeafbb8c
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 839c38ec165372bab9b93dec25e5c8e8e9439bfa
+ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813486"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036895"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Crear paquetes de símbolos (.snupkg)
 
-Los paquetes de símbolos permiten mejorar la experiencia de depuración de los paquetes de NuGet.
+Una buena experiencia de depuración se basa en la presencia de símbolos de depuración, ya que proporcionan información crítica, como la asociación entre el código de origen y el compilado, los nombres de variables locales, los seguimientos de la pila, etc. Puede usar paquetes de símbolos (.snupkg) para distribuir estos símbolos y mejorar la experiencia de depuración de los paquetes NuGet.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-[nuget.exe v4.9.0 o una versión superior](https://www.nuget.org/downloads) o [dotnet.exe v2.2.0 o una versión superior](https://www.microsoft.com/net/download/dotnet-core/2.2), que implementan los [protocolos de NuGet](../api/nuget-protocols.md) requeridos.
+[nuget.exe 4.9.0 o una versión superior](https://www.nuget.org/downloads) o [la CLI de dotnet 2.2.0 o una versión superior](https://www.microsoft.com/net/download/dotnet-core/2.2), que implementan los [protocolos de NuGet](../api/nuget-protocols.md) requeridos.
 
 ## <a name="creating-a-symbol-package"></a>Crear un paquete de símbolos
 
-Si usa dotnet.exe o MSBuild, debe establecer las propiedades `IncludeSymbols` y `SymbolPackageFormat` para crear un archivo .snupkg además del archivo .nupkg.
+Si usa la CLI de dotnet o MSBuild, debe establecer las propiedades `IncludeSymbols` y `SymbolPackageFormat` para crear un archivo .snupkg además del archivo .nupkg.
 
 * Puede agregar las siguientes propiedades al archivo .csproj:
 
@@ -108,17 +108,17 @@ Los paquetes de símbolos publicados en NuGet.org producirán un error de valida
 
 Los paquetes de símbolos publicados en [NuGet.org](https://www.nuget.org/) se someten a varias validaciones, como análisis de malware. Si un paquete no supera la comprobación de validación, la página de detalles del paquete mostrará un mensaje de error. Además, los propietarios del paquete recibirán un correo electrónico con instrucciones sobre cómo corregir los problemas identificados.
 
-Cuando el paquete de símbolos haya superado todas las validaciones, los símbolos se indexarán mediante los servidores de símbolos de NuGet.org. Una vez indexado, el símbolo estará disponible para su consumo desde los servidores de símbolos de NuGet.org.
+Cuando el paquete de símbolos haya superado todas las validaciones, los símbolos se indexarán mediante los servidores de símbolos de NuGet.org y estarán listos para su consumo.
 
 La validación y la indexación del paquete suelen tardar menos de 15 minutos. Si la publicación del paquete tarda más de lo esperado, visite [status.nuget.org](https://status.nuget.org/) para comprobar si NuGet.org está experimentando alguna interrupción. Si todos los sistemas están operativos y el paquete no se ha publicado correctamente en una hora, inicie sesión en nuget.org y póngase en contacto con nosotros mediante el vínculo de contacto con el equipo de soporte técnico de la página de detalles del paquete.
 
 ## <a name="symbol-package-structure"></a>Estructura del paquete de símbolos
 
-El archivo .nupkg debería ser exactamente el mismo que el de hoy, pero el archivo .snupkg debería tener las siguientes características:
+El paquete de símbolos (.snupkg) tiene las siguientes características:
 
-1) El archivo .snupkg debe tener el mismo id. y la misma versión que el archivo .nupkg correspondiente.
-2) El archivo .snupkg debe tener la misma estructura de carpetas exacta que el archivo .nupkg para cualquier archivo DLL o EXE con distinción de que, en vez de los archivos DLL o EXE, los archivos PDB correspondientes deben estar incluidos en la misma jerarquía de carpetas. El archivo .snupkg no debe incluir ningún archivos o carpetas con extensiones que no sean PDB.
-3) El archivo .nuspec del archivo .snupkg también debe especificar un nuevo PackageType, tal y como se muestra a continuación. Este debería ser el único PackageType especificado.
+1) El .snupkg tiene el mismo identificador y la misma versión que el paquete NuGet correspondiente (.nupkg).
+2) El archivo .snupkg tiene la misma estructura de carpetas que el archivo .nupkg correspondiente para cualquier archivo DLL o EXE con la diferencia de que, en vez de los archivos DLL o EXE, los archivos PDB correspondientes deben estar incluidos en la misma jerarquía de carpetas. El archivo .snupkg no debe incluir ningún archivos o carpetas con extensiones que no sean PDB.
+3) El archivo .nuspec del paquete de símbolos tiene el tipo de paquete `SymbolsPackage`:
 
    ```xml
    <packageTypes>
