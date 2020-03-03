@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 906d07eb22599eb423b00300954ff2601dd33369
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 13b6f5abe93a17c809564265990f86f6780aa67e
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75383556"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230816"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>Autenticar fuentes en Visual Studio con proveedores de credenciales de NuGet
 
@@ -19,6 +19,8 @@ Después de instalar un proveedor de credenciales de NuGet para Visual Studio, l
 
 En [el ejemplo VsCredentialProvider](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)se puede encontrar una implementación de ejemplo.
 
+En Visual Studio, NuGet usa un `VsCredentialProviderImporter` interno que también examina los proveedores de credenciales de complemento. Estos proveedores de credenciales de complemento deben ser detectables como una exportación MEF de tipo `IVsCredentialProvider`.
+
 A partir de 4.8 + NuGet en Visual Studio, también se admiten los nuevos complementos de autenticación multiplataforma, pero no son el enfoque recomendado por motivos de rendimiento.
 
 > [!Note]
@@ -26,16 +28,6 @@ A partir de 4.8 + NuGet en Visual Studio, también se admiten los nuevos complem
 >
 > Los proveedores de credenciales de NuGet para Visual Studio solo funcionan en Visual Studio (no en dotnet restore o Nuget. exe). Para los proveedores de credenciales con Nuget. exe, consulte [proveedores de credenciales de Nuget. exe](nuget-exe-Credential-providers.md).
 > Para los proveedores de credenciales en dotnet y MSBuild, consulte [Complementos entre plataformas NuGet](nuget-cross-platform-authentication-plugin.md)
-
-## <a name="available-nuget-credential-providers-for-visual-studio"></a>Proveedores de credenciales de NuGet disponibles para Visual Studio
-
-Hay un proveedor de credenciales integrado en la extensión NuGet de Visual Studio para admitir Visual Studio Team Services.
-
-La extensión NuGet de Visual Studio usa una `VsCredentialProviderImporter` interna que también examina los proveedores de credenciales de complementos. Estos proveedores de credenciales de complemento deben ser detectables como una exportación MEF de tipo `IVsCredentialProvider`.
-
-Los proveedores de credenciales de complementos disponibles incluyen:
-
-- [Proveedor de credenciales de MyGet para Visual Studio](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio)
 
 ## <a name="creating-a-nuget-credential-provider-for-visual-studio"></a>Creación de un proveedor de credenciales de NuGet para Visual Studio
 

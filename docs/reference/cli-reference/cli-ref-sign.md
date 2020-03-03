@@ -6,12 +6,12 @@ ms.author: dtivel
 ms.date: 03/06/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 746f7a421bd855b77716388b4af2fecbd5cf5a68
-ms.sourcegitcommit: 96aab8a1ad35eca0c029679d0158d9cc93d66009
+ms.openlocfilehash: e596fd5eb3de8ca4802d9b7b8e7cb623568e3dcb
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75676411"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231128"
 ---
 # <a name="sign-command-nuget-cli"></a>Comando sign (CLI de NuGet)
 
@@ -22,7 +22,7 @@ Firma todos los paquetes que coinciden con el primer argumento con un certificad
 > [!Note]
 > La firma de paquetes todavía no se admite en .NET Core, en mono o en plataformas que no son de Windows.
 
-## <a name="usage"></a>Usage
+## <a name="usage"></a>Uso
 
 ```cli
 nuget sign <package(s)> [options]
@@ -42,11 +42,11 @@ donde `<package(s)>` es uno o varios archivos de `.nupkg`.
 | CertificateSubjectName | Especifica el nombre de sujeto del certificado utilizado para buscar el certificado en un almacén de certificados local.  La búsqueda es una comparación de cadenas que distingue entre mayúsculas y minúsculas mediante el valor proporcionado, que encontrará todos los certificados con el nombre de sujeto que contiene esa cadena, independientemente de otros valores de asunto.  El almacén de certificados se puede especificar mediante las opciones-CertificateStoreName y-CertificateStoreLocation. |
 | ConfigFile | El archivo de configuración de NuGet que se va a aplicar. Si no se especifica, se usa `%AppData%\NuGet\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).|
 | ForceEnglishOutput | Fuerza a Nuget. exe a ejecutarse mediante una referencia cultural invariable basada en inglés. |
-| HashAlgorithm | Algoritmo hash que se va a usar para firmar el paquete. El valor predeterminado es SHA256. |
-| Ayuda de | Muestra información de ayuda para el comando. |
+| HashAlgorithm | Algoritmo hash que se va a usar para firmar el paquete. El valor predeterminado es SHA256. Los valores posibles son SHA256, SHA384 y SHA512. |
+| Help | Muestra información de ayuda para el comando. |
 | NonInteractive | Suprime los mensajes de entrada o confirmaciones de usuario. |
 | OutputDirectory | Especifica el directorio en el que se debe guardar el paquete firmado. De forma predeterminada, el paquete firmado sobrescribe el paquete original. |
-| Overwrite | Cambie para indicar si se debe sobrescribir la firma actual. De forma predeterminada, se producirá un error en el comando si el paquete ya tiene una firma. |
+| Sobrescribir | Cambie para indicar si se debe sobrescribir la firma actual. De forma predeterminada, se producirá un error en el comando si el paquete ya tiene una firma. |
 | Marca de tiempo | Dirección URL a un servidor de marca de tiempo RFC 3161. |
 | TimestampHashAlgorithm | Algoritmo hash que va a usar el servidor de marca de tiempo RFC 3161. El valor predeterminado es SHA256. |
 | Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *silenciosa*, *detallado*. |

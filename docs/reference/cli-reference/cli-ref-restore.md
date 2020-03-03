@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 8ba61fa87118108c36e9dc73f30d964380d02dab
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: d1768a741e3f1c48e94d854fa7d365ebfa3513ea
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380457"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231154"
 ---
 # <a name="restore-command-nuget-cli"></a>comando restore (CLI de NuGet)
 
@@ -36,21 +36,25 @@ donde `<projectPath>` especifica la ubicación de una solución o un archivo `pa
 | DirectDownload | *(4.0 +)* Descarga paquetes directamente sin rellenar memorias caché con los archivos binarios o metadatos. |
 | DisableParallelProcessing | Deshabilita la restauración de varios paquetes en paralelo. |
 | FallbackSource | *(3,2 +)* Una lista de orígenes de paquetes que se usarán como reserva en caso de que el paquete no se encuentre en el origen principal o en el predeterminado. Use un punto y coma para separar las entradas de la lista. |
+| Force | En los proyectos basados en PackageReference, fuerza la resolución de todas las dependencias, incluso si la última restauración se realizó correctamente. Especificar esta marca es similar a eliminar el archivo de `project.assets.json`. Esto no omite la memoria caché http. |
 | ForceEnglishOutput | *(3.5 +)* Fuerza a Nuget. exe a ejecutarse mediante una referencia cultural invariable basada en inglés. |
+| ForceEvaluate | Fuerza a la restauración a volver a evaluar todas las dependencias incluso si ya existe un archivo de bloqueo. |
 | Help | Muestra información de ayuda para el comando. |
+| LockFilePath | Ubicación de salida donde se escribe el archivo de bloqueo del proyecto. De forma predeterminada, es "PROJECT_ROOT \packages.Lock.JSON". |
+| LockedMode | No permite actualizar el archivo de bloqueo del proyecto. |
 | MSBuildPath | *(4.0 +)* Especifica la ruta de acceso de MSBuild que se va a usar con el comando, que tiene prioridad sobre `-MSBuildVersion`. |
 | MSBuildVersion | *(3,2 +)* Especifica la versión de MSBuild que se va a usar con este comando. Los valores admitidos son 4, 12, 14, 15,1, 15,3, 15,4, 15,5, 15,6, 15,7, 15,8, 15,9. De forma predeterminada, se selecciona MSBuild en la ruta de acceso; de lo contrario, el valor predeterminado es la versión más alta instalada de MSBuild. |
 | NoCache | Impide que NuGet use paquetes almacenados en caché. Consulte [Administración de paquetes globales y carpetas de caché](../../consume-packages/managing-the-global-packages-and-cache-folders.md). |
 | NonInteractive | Suprime los mensajes de entrada o confirmaciones de usuario. |
 | OutputDirectory | Especifica la carpeta en la que se instalan los paquetes. Si no se especifica ninguna carpeta, se usa la carpeta actual. Obligatorio al restaurar con un archivo de `packages.config` a menos que se use `PackagesDirectory` o `SolutionDirectory`.|
 | PackageSaveMode | Especifica los tipos de archivos que se van a guardar después de la instalación del paquete: uno de `nuspec`, `nupkg`o `nuspec;nupkg`. |
-| PackagesDirectory | Igual que `OutputDirectory`. Obligatorio al restaurar con un archivo de `packages.config` a menos que se use `OutputDirectory` o `SolutionDirectory`. |
+| PackagesDirectory | Igual a `OutputDirectory`. Obligatorio al restaurar con un archivo de `packages.config` a menos que se use `OutputDirectory` o `SolutionDirectory`. |
 | Project2ProjectTimeOut | Tiempo de espera en segundos para resolver las referencias entre proyectos. |
 | Recursiva | *(4.0 +)* Restaura todos los proyectos de referencias para los proyectos de UWP y .NET Core. No se aplica a los proyectos de mediante `packages.config`. |
 | RequireConsent | Comprueba que la restauración de paquetes está habilitada antes de descargar e instalar los paquetes. Para obtener más información, vea [restauración de paquetes](../../consume-packages/package-restore.md). |
 | SolutionDirectory | Especifica la carpeta de la solución. No es válido al restaurar los paquetes de una solución. Obligatorio al restaurar con un archivo de `packages.config` a menos que se use `PackagesDirectory` o `OutputDirectory`. |
 | Origen | Especifica la lista de orígenes de paquetes (como direcciones URL) que se va a usar para la restauración. Si se omite, el comando usa los orígenes proporcionados en los archivos de configuración, consulte [configuración del comportamiento de NuGet](../../consume-packages/configuring-nuget-behavior.md). Use un punto y coma para separar las entradas de la lista. |
-| Aplica | En los proyectos basados en PackageReference, fuerza la resolución de todas las dependencias, incluso si la última restauración se realizó correctamente. Especificar esta marca es similar a eliminar el archivo de `project.assets.json`. Esto no omite la memoria caché http. |
+| UseLockFile | Permite generar y usar el archivo de bloqueo del proyecto con la restauración. |
 | Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *silenciosa*, *detallado*. |
 
 Vea también [variables de entorno](cli-ref-environment-variables.md)
