@@ -24,6 +24,7 @@
 ### [Reinstalación y actualización de paquetes](consume-packages/reinstalling-and-updating-packages.md)
 ### [Administración de paquetes globales y carpetas de caché](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ### [Administración de los límites de confianza de paquete](consume-packages/installing-signed-packages.md)
+### [Trabajo con fuentes autenticadas](consume-packages/consuming-packages-authenticated-feeds.md)
 ### [Uso de sistemas de control de código fuente](consume-packages/packages-and-source-control.md)
 ### [Configuraciones comunes de NuGet](consume-packages/configuring-nuget-behavior.md)
 ## Paquetes de referencia en el proyecto
@@ -45,7 +46,8 @@
 ### [Definición del tipo de paquete](create-packages/set-package-type.md)
 ### [Creación de un paquete localizado](create-packages/creating-localized-packages.md)
 ## Guías de contenido específico
-### [Creación de un paquete UWP](guides/create-uwp-packages.md)
+### [Creación de un paquete UWP (C++)](guides/create-uwp-packages.md)
+### [Creación de un paquete UWP (C#)](guides/create-uwp-packages-CS.md)
 ### [Creación de un paquete nativo](guides/native-packages.md)
 ### [Creación de controles de UI como paquete NuGet](guides/create-UI-controls.md)
 ### [Creación de un analizador como paquete NuGet](guides/analyzers-conventions.md)
