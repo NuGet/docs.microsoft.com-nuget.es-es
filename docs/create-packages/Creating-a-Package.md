@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 12ecfb8374c43a04d57d32575556adebc991d053
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: b3e6f0efc9e2e12de186ffd4ce29d496d07d5fc4
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610704"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230959"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Creación de un paquete con la CLI de nuget.exe
 
@@ -77,7 +77,7 @@ El siguiente archivo `.nuspec` es común (pero ficticio), con comentarios que de
 
 ```xml
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <!-- The identifier that must be unique within the hosting gallery -->
         <id>Contoso.Utility.UsefulStuff</id>
@@ -177,7 +177,7 @@ La ventaja de este enfoque es que no es necesario especificar en el manifiesto q
 
 Las convenciones de carpeta son las siguientes:
 
-| Carpeta | DESCRIPCIÓN | Acción tras la instalación del paquete |
+| Carpeta | Descripción | Acción tras la instalación del paquete |
 | --- | --- | --- |
 | (raíz) | Ubicación de Léame.txt | Visual Studio muestra un archivo Léame.txt en la raíz del paquete cuando se instala el paquete. |
 | lib/{tfm} | Archivos de ensamblado (`.dll`), documentación (`.xml`) y símbolos (`.pdb`) para el Moniker de plataforma de destino (TFM) indicado | Los ensamblados se agregan como referencias para la compilación, así como el tiempo de ejecución; `.xml` y `.pdb` se copian en carpetas de proyecto. Vea [Compatibilidad con varias plataformas de destino](supporting-multiple-target-frameworks.md) para obtener información sobre cómo crear subcarpetas específicas de la plataforma de destino. |
@@ -286,7 +286,7 @@ Para especificar directamente los archivos que se van a incluir en el paquete, u
 
 ```xml
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
     <!-- ... -->
     </metadata>
