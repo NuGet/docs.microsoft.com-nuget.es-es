@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 92fc78a88733d0308dc26e10c5b0bafb86b78045
-ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
+ms.openlocfilehash: 96e138561390984d9def495ba5e091c43023cc92
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71307231"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231336"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>Inicio rápido: Instalación y uso de un paquete en Visual Studio (solo Windows)
 
@@ -124,6 +124,12 @@ Con el paquete Newtonsoft.Json en el proyecto, puede llamar a su método `JsonCo
 1. Seleccione el botón para ver el contenido del TextBlock reemplazado por algún texto JSON:
 
     ![Resultado de la aplicación WPF después de seleccionar el botón](media/QS_Use-07-AppEnd.png)
+
+## <a name="related-video"></a>Vídeo relacionado
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/Install-and-Use-a-NuGet-Package-with-Visual-Studio-2-of-5/player]
+
+Encuentre más vídeos de NuGet en [Channel 9](https://channel9.msdn.com/Series/NuGet-101) y [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 6f659af6b09a12be54a5ef843d34f956119b33f4
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 8e825410d621ff2946e23e80173292f24f9d21f2
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520495"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231279"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Migración de packages.config a PackageReference
 
@@ -29,6 +29,8 @@ Visual Studio 2017 versión 15.7, y versiones posteriores, admite la migración 
 * PackageReference de NuGet no está disponible en Visual Studio 2015 y versiones anteriores. Los proyectos migrados solo se pueden abrir en Visual Studio 2017 y versiones posteriores.
 * La migración no está disponible actualmente para proyectos de C++ y ASP.NET.
 * Es posible que algunos paquetes no sean totalmente compatibles con PackageReference. Para más información, consulte los [problemas de compatibilidad de paquetes](#package-compatibility-issues).
+
+Además, hay algunas diferencias en cómo funciona PackageReference en comparación con packages.config. Por ejemplo: [restringir las versiones de actualización](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions) no es compatible con PackageReference, pero se agrega compatibilidad con [Versiones flotantes](../consume-packages/package-references-in-project-files.md#floating-versions).
 
 ### <a name="known-issues"></a>Problemas conocidos
 

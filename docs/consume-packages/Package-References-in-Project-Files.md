@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: b6a009832430ee08f51ea1028feb878a39f45222
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825145"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230621"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
 
@@ -48,7 +48,7 @@ La convención para especificar la versión de un paquete es la misma que cuando
 </ItemGroup>
 ```
 
-En el ejemplo anterior, 3.6.0 hace referencia a cualquier versión que sea > = 3.6.0 con preferencia para la versión más antigua, tal como se describe en [Package versioning](../concepts/package-versioning.md#version-ranges-and-wildcards) (Control de versiones de paquetes).
+En el ejemplo anterior, 3.6.0 hace referencia a cualquier versión que sea > = 3.6.0 con preferencia para la versión más antigua, tal como se describe en [Package versioning](../concepts/package-versioning.md#version-ranges) (Control de versiones de paquetes).
 
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>Uso de una PackageReference para un proyecto sin PackageReferences
 
@@ -99,7 +99,7 @@ Puede que esté usando una dependencia únicamente como instrumento de desarroll
 
 Las siguientes etiquetas de metadatos controlan los recursos de dependencia:
 
-| Etiqueta | DESCRIPCIÓN | Valor predeterminado |
+| Etiqueta | Descripción | Valor predeterminado |
 | --- | --- | --- |
 | IncludeAssets | Se consumirán estos recursos | todo |
 | ExcludeAssets | No se consumirán estos recursos | ninguna |
@@ -107,7 +107,7 @@ Las siguientes etiquetas de metadatos controlan los recursos de dependencia:
 
 A continuación se muestran los valores permitidos para estas etiquetas, con varios valores separados por un punto y coma, salvo `all` y `none`, que deben aparecer por sí mismos:
 
-| Valor | DESCRIPCIÓN |
+| Valor | Descripción |
 | --- | ---
 | compile | Contenido de la carpeta `lib` y controla si el proyecto se puede compilar con los ensamblados dentro de la carpeta |
 | motor en tiempo de ejecución | Contenido de las carpetas `lib` y `runtimes` y controla si estos ensamblados se copiarán en el directorio de salida de compilación |
@@ -170,7 +170,107 @@ Las condiciones también se pueden aplicar a nivel de `ItemGroup` y se aplicará
 </ItemGroup>
 ```
 
+## <a name="generatepathproperty"></a>GeneratePathProperty
+
+Esta característica está disponible con NuGet **5.0** o una versión superior y con Visual Studio 2019 **16.0** o una versión superior.
+
+A veces es conveniente hacer referencia a los archivos de un paquete desde un destino de MSBuild.
+En los proyectos basados en `packages.config`, los paquetes se instalan en una carpeta relativa al archivo del proyecto. Sin embargo, en PackageReference, los paquetes se [consumen](../concepts/package-installation-process.md) de la carpeta *global-packages*, que puede variar de una máquina a otra.
+
+Para salvar esa diferencia, NuGet ha presentado una propiedad que apunta a la ubicación desde la que se va a consumir el paquete.
+
+Ejemplo:
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Some.Package" Version="1.0.0" GeneratePathProperty="true" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgSome_Package)\something.exe" />
+  </Target>
+````
+
+Además, NuGet generará automáticamente las propiedades de los paquetes que contengan una carpeta herramientas.
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Package.With.Tools" Version="1.0.0" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
+  </Target>
+````
+
+Las propiedades de MSBuild y las identidades de paquete no tienen las mismas restricciones, por lo que la identidad de paquete debe cambiarse por un nombre descriptivo de MSBuild, precedido por la palabra `Pkg`.
+Para comprobar el nombre exacto de la propiedad generada, examine el archivo [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) generado.
+
+## <a name="nuget-warnings-and-errors"></a>Advertencias y errores de NuGet
+
+*Esta característica está disponible con NuGet **4.3** o una versión superior y con Visual Studio 2017 **15.3** o una versión superior.*
+
+En muchos escenarios de paquetes y restauración, todas las advertencias y errores de NuGet se codifican y comienzan con `NU****`. Todas las advertencias y errores de NuGet se enumeran en la documentación de [referencia](../reference/errors-and-warnings.md).
+
+NuGet observa las propiedades de advertencia siguientes:
+
+- `TreatWarningsAsErrors`, se tratan todas las advertencias como errores.
+- `WarningsAsErrors`, se tratan las advertencias específicas como errores.
+- `NoWarn`, se ocultan las advertencias concretas, en todo el proyecto o en todo el paquete.
+
+Ejemplos:
+
+```xml
+<PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1603;NU1605</WarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <NoWarn>$(NoWarn);NU5124</NoWarn>
+</PropertyGroup>
+...
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0" NoWarn="NU1605" />
+</ItemGroup>
+```
+
+### <a name="suppressing-nuget-warnings"></a>Supresión de advertencias de NuGet
+
+Aunque se recomienda resolver todas las advertencias de NuGet durante las operaciones de paquete y restauración, en determinadas situaciones está garantizada la supresión.
+Para suprimir una advertencia en todo el proyecto, le recomendamos que haga lo siguiente:
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1"/>
+</ItemGroup>
+```
+
+A veces, las advertencias solo se aplican a un determinado paquete del grafo. Podemos optar por suprimir esa advertencia de manera más selectiva al agregar `NoWarn` en el elemento PackageReference. 
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1" NoWarn="NU1603" />
+</ItemGroup>
+```
+
+#### <a name="suppressing-nuget-package-warnings-in-visual-studio"></a>Supresión de advertencias de paquete NuGet en Visual Studio
+
+En Visual Studio, también puede [suprimir las advertencias](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages
+) a través del IDE.
+
 ## <a name="locking-dependencies"></a>Cargando las dependencias
+
 *Esta característica está disponible con NuGet **4.9** o superior y con Visual Studio 2017 **15.9** o superior.*
 
 La entrada a la restauración de NuGet es un conjunto de referencias de paquete del archivo del proyecto (dependencias de nivel superior o directas) y la salida es un cierre completo de todas las dependencias de paquetes, incluidas las dependencias transitivas. NuGet siempre intenta producir el mismo cierre completo de dependencias de paquetes si no ha cambiado la lista PackageReference de entrada. Sin embargo, hay algunos escenarios en los que no se puede hacer. Por ejemplo:
@@ -185,6 +285,7 @@ La entrada a la restauración de NuGet es un conjunto de referencias de paquete 
 * Se quita una versión del paquete especificada del repositorio. Aunque nuget.org no permite la eliminación de paquetes, no todos los repositorios de paquetes tienen estas restricciones. Esto da lugar a la búsqueda por parte de NuGet de la mejor coincidencia cuando no puede llevar a cabo la resolución de la versión eliminada.
 
 ### <a name="enabling-lock-file"></a>Habilitación del archivo de bloqueo
+
 A fin de mantener el cierre completo de dependencias de paquetes, puede participar en la característica del archivo de bloqueo estableciendo la propiedad MSBuild `RestorePackagesWithLockFile` para su proyecto:
 
 ```xml
@@ -245,15 +346,15 @@ ProjectA
              |------>PackageX 1.0.0
 ```
 
-Si `ProjectA` tiene una dependencia de la versión `2.0.0` de `PackageX` y también hace referencia a `ProjectB`, que depende de la versión `1.0.0` de `PackageX`, el archivo de bloqueo para `ProjectB` mostrará una dependencia de la versión `1.0.0` de `PackageX`. Sin embargo, al crearse `ProjectA`, su archivo de bloqueo contendrá una dependencia de la versión **`2.0.0`** de `PackageX` y **no** `1.0.0` como se muestra en el archivo de bloqueo para `ProjectB`. Por tanto, el archivo de bloqueo de un proyecto de código común tiene poco que decir sobre los paquetes resueltos para los proyectos que dependen de él.
+Si `ProjectA` tiene una dependencia de la versión `2.0.0` de `PackageX` y también hace referencia a `ProjectB`, que depende de la versión `1.0.0` de `PackageX`, el archivo de bloqueo para `ProjectB` mostrará una dependencia de la versión `1.0.0` de `PackageX`. Sin embargo, al compilarse `ProjectA`, su archivo de bloqueo contendrá una dependencia de la versión **`2.0.0`** de `PackageX` y **no** en la `1.0.0`, como se muestra en el archivo de bloqueo para `ProjectB`. Por tanto, el archivo de bloqueo de un proyecto de código común tiene poco que decir sobre los paquetes resueltos para los proyectos que dependen de él.
 
 ### <a name="lock-file-extensibility"></a>Extensibilidad del archivo de bloqueo
 
 Puede controlar diversos comportamientos de la restauración con el archivo de bloqueo como se describe a continuación:
 
-| Opción | Opción equivalente de MSBuild | DESCRIPCIÓN|
-|:---  |:--- |:--- |
-| `--use-lock-file` | RestorePackagesWithLockFile | Opta por el uso de un archivo de bloqueo. | 
-| `--locked-mode` | RestoreLockedMode | Habilita el modo de bloqueo para la restauración. Esto resulta útil en escenarios de CI/CD donde se necesitan compilaciones repetibles.|   
-| `--force-evaluate` | RestoreForceEvaluate | Esta opción es útil con los paquetes con la versión flotante definida en el proyecto. De forma predeterminada, la restauración de NuGet no actualizará la versión del paquete automáticamente tras cada restauración a menos que la ejecute con esta opción. |
-| `--lock-file-path` | NuGetLockFilePath | Define una ubicación del archivo de bloqueo personalizada para un proyecto. De forma predeterminada, NuGet admite `packages.lock.json` en el directorio raíz. Si tiene varios proyectos en el mismo directorio, NuGet admite el archivo de bloqueo específico del proyecto `packages.<project_name>.lock.json` |
+| Opción NuGet.exe | Opción dotnet | Opción equivalente de MSBuild | Descripción |
+|:--- |:--- |:--- |:--- |
+| `-UseLockFile` |`--use-lock-file` | RestorePackagesWithLockFile | Opta por el uso de un archivo de bloqueo. |
+| `-LockedMode` | `--locked-mode` | RestoreLockedMode | Habilita el modo de bloqueo para la restauración. Esto resulta útil en escenarios de CI/CD donde se necesitan compilaciones repetibles.|   
+| `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | Esta opción es útil con los paquetes con la versión flotante definida en el proyecto. De forma predeterminada, la restauración de NuGet no actualizará la versión del paquete automáticamente tras cada restauración a menos que la ejecute con esta opción. |
+| `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | Define una ubicación del archivo de bloqueo personalizada para un proyecto. De forma predeterminada, NuGet admite `packages.lock.json` en el directorio raíz. Si tiene varios proyectos en el mismo directorio, NuGet admite el archivo de bloqueo específico del proyecto `packages.<project_name>.lock.json` |

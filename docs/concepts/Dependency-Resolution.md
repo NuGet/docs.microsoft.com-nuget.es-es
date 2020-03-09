@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: c6f50e6eb21826afebcdcd4045c7ab8b6e6489e3
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813330"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231089"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Cómo resuelve NuGet las dependencias de paquetes
 
@@ -22,7 +22,7 @@ Cuando varios paquetes tienen la misma dependencia, entonces el mismo Id. de paq
 
 ## <a name="dependency-resolution-with-packagereference"></a>Resolución de dependencias con PackageReference
 
-Al instalar paquetes en proyectos con el formato PackageReference, NuGet agrega referencias a un gráfico de paquete sin formato en el archivo adecuado y resuelve conflictos con antelación. Este proceso se conoce como *restauración transitiva*. La reinstalación o restauración de paquetes es un proceso de descarga de los paquetes enumerados en el gráfico, lo que produce compilaciones más rápidas y predecibles. También puede aprovechar las ventajas de las versiones comodín (flotantes), como 2.8.\*, lo que evita llamadas costosas y propensas a errores a `nuget update` en los equipos cliente y servidores de compilación.
+Al instalar paquetes en proyectos con el formato PackageReference, NuGet agrega referencias a un gráfico de paquete sin formato en el archivo adecuado y resuelve conflictos con antelación. Este proceso se conoce como *restauración transitiva*. La reinstalación o restauración de paquetes es un proceso de descarga de los paquetes enumerados en el gráfico, lo que produce compilaciones más rápidas y predecibles. También se pueden aprovechar las versiones flotantes, como la 2.8.\*, con el fin de evitar que se modifique el proyecto que va a usar la versión más reciente de un paquete.
 
 Cuando se ejecuta el proceso de restauración de NuGet antes de una compilación, primero se resuelven las dependencias en memoria y después se escribe el gráfico resultante en un archivo denominado `project.assets.json`. También escribe las dependencias resultas en un archivo de bloqueo denominado `packages.lock.json`, si la [funcionalidad del archivo de bloqueo está habilitada](../consume-packages/package-references-in-project-files.md#locking-dependencies).
 El archivo de recursos se encuentra en `MSBuildProjectExtensionsPath`, cuyo valor predeterminado es la carpeta "obj" del proyecto. Después, MSBuild lee este archivo y lo convierte en un conjunto de carpetas donde se pueden encontrar posibles referencias y luego se agregan al árbol del proyecto en memoria.
@@ -53,16 +53,16 @@ Cuando una aplicación especifica un número de versión exacto, como 1.2, que n
 
 <a name="floating-versions"></a>
 
-#### <a name="floating-wildcard-versions"></a>Versiones flotantes (comodín)
+#### <a name="floating-versions"></a>Versiones flotantes
 
-Una versión de dependencia flotante o comodín se especifica con el carácter comodín \*, como en 6.0.\*. Esta especificación de versión dice "usar la versión 6.0.x más reciente"; 4.\* significa "usar la versión más reciente de 4.x". El uso de un carácter comodín permite que un paquete de dependencia siga evolucionando sin necesidad de un cambio en la aplicación (o paquete) que lo consume.
+Se especifica una versión de dependencia flotante con el carácter \*. Por ejemplo: `6.0.*`. Esta especificación de versión dice "usar la versión 6.0.x más reciente"; `4.*` significa "usar la versión 4.x más reciente". Usar una versión flotante reduce los cambios en el archivo del proyecto, a la vez que se mantiene actualizado con la versión más reciente de una dependencia.
 
-Cuando se usa un carácter comodín, NuGet resuelve la versión más alta de un paquete que coincide con el patrón de versión, por ejemplo 6.0.\* obtiene la versión más alta de un paquete que empieza por 6.0:
+Cuando se usa una versión flotante, NuGet resuelve la versión más alta de un paquete que coincide con el patrón de versión. Por ejemplo, `6.0.*` obtiene la versión más alta de un paquete que empieza por 6.0:
 
 ![Elección de la versión 6.0.1 cuando se solicita una versión flotante 6.0.*.](media/projectJson-dependency-4.png)
 
 > [!Note]
-> Para obtener información sobre el comportamiento de los caracteres comodín y versiones preliminares, vea [Control de versiones de paquetes](package-versioning.md#version-ranges-and-wildcards).
+> Para obtener información sobre el comportamiento de las versiones flotantes y versiones preliminares, vea [Control de versiones de paquetes](package-versioning.md#version-ranges).
 
 
 <a name="nearest-wins"></a>

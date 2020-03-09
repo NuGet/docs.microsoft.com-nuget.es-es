@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 937d051ff6dc49e3204f7d0cb22c4f29b99a2a7d
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 02c6c8f3018bfd063c2d16a10381f88b54cac840
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610611"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231349"
 ---
 # <a name="publishing-packages"></a>Publicar paquetes
 
@@ -65,6 +65,10 @@ Para insertar paquetes en nuget.org debe usar [la versión 4.1.0 o una versión 
     ```
 
     Este comando almacena la clave de API en la configuración de NuGet para no tener que repetir este paso en el mismo equipo.
+
+    > [!NOTE]
+    > La clave de API no se utiliza para la autenticación con la fuente privada. Consulte el [comando `nuget sources` ](../reference/cli-reference/cli-ref-sources.md) a fin de administrar las credenciales para la autenticación con el origen.
+    > Las claves de API se pueden obtener de los servidores de NuGet individuales. A fin de crear y administrar claves de API para nuget.org, consulte [publish-api-key](../quickstart/includes/publish-api-key.md).
 
 1. Inserte el paquete en la galería de NuGet con el siguiente comando:
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 93a94a5468b48179d27b89825cebf2447657c8f2
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.openlocfilehash: c1f1957c58839ac763238938b476eb0882c56a59
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999983"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231218"
 ---
 # <a name="restore-packages-using-package-restore"></a>Restauración de paquetes
 
@@ -119,6 +119,17 @@ Para habilitar o deshabilitar la Restauración de paquetes para todos los usuari
 
 > [!Important]
 > Si edita el valor `packageRestore` directamente en `nuget.config`, debe reiniciar Visual Studio para que en el cuadro de diálogo **Opciones** se muestren los valores actuales.
+
+### <a name="choose-default-package-management-format"></a>Elección del formato predeterminado de administración de paquetes
+
+![Control del formato predeterminado de administración de paquetes a través de las opciones del Administrador de paquetes de NuGet](media/Restore-02-PackageFormatOptions.png)
+
+NuGet dispone de dos formatos en los que un proyecto puede usar paquetes: [`PackageReference`](package-references-in-project-files.md) y [`packages.config`](../reference/packages-config.md). El formato predeterminado se puede seleccionar en la lista desplegable situada debajo del encabezado **Administración de paquetes**. También está disponible una opción que le preguntará cuando el primer paquete esté instalado en un proyecto.
+
+> [!Note]
+> Si un proyecto no admite ambos formatos de administración de paquetes, el formato de administración de paquetes utilizado será el que sea compatible con el proyecto y, por lo tanto, puede que no sea el conjunto predeterminado en las opciones. Además, NuGet no solicitará que se seleccione en la primera instalación del paquete, aunque la opción esté seleccionada en la ventana Opciones.
+>
+> Si se usa la consola del Administrador de paquetes para instalar el primer paquete en un proyecto, NuGet no solicitará la selección de formato, aunque la opción esté seleccionada en la ventana Opciones.
 
 ## <a name="restore-using-the-dotnet-cli"></a>Restauración mediante la CLI de dotnet
 

@@ -3,14 +3,14 @@ title: Creación de un paquete NuGet con la CLI de dotnet
 description: Un guía detallada sobre el proceso de diseño y creación de un paquete NuGet, incluidos puntos de decisión clave como archivos y control de versiones.
 author: karann-msft
 ms.author: karann
-ms.date: 07/09/2019
+ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: c198bb73f0e4f5a59826db905eaf4622fe8543bc
-ms.sourcegitcommit: 1799d4ac23c8aacee7498fdc72c40dd1646d267b
+ms.openlocfilehash: 712e4c7159aa9719052330d8e45f63e18e390325
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77476261"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230594"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>Creación de un paquete NuGet con la CLI de dotnet
 
@@ -67,6 +67,10 @@ También puede establecer las propiedades opcionales, como `Title`, `PackageDesc
 > En el caso de los paquetes creados para consumo público, preste especial atención la propiedad **PackageTags**, dado que estas etiquetas ayudan a otros usuarios a encontrar el paquete y comprender lo que hace.
 
 Para obtener más información sobre cómo declarar dependencias y especificar números de versión, vea [Referencias del paquete en archivos del proyecto](../consume-packages/package-references-in-project-files.md) y [Control de versiones de paquetes](../concepts/package-versioning.md). También es posible exponer recursos directamente desde las dependencias en el paquete mediante los atributos `<IncludeAssets>` y `<ExcludeAssets>`. Para más información, consulte [Controlar los recursos de dependencias](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+
+## <a name="add-an-optional-description-field"></a>Adición de un campo opcional de descripción
+
+[!INCLUDE [add description to package](includes/add-description.md)]
 
 ## <a name="choose-a-unique-package-identifier-and-set-the-version-number"></a>Elección de un identificador de paquete único y establecimiento del número de versión
 

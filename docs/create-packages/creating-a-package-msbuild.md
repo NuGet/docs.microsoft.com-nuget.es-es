@@ -3,14 +3,14 @@ title: Creación de un paquete NuGet con MSBuild
 description: Un guía detallada sobre el proceso de diseño y creación de un paquete NuGet, incluidos puntos de decisión clave como archivos y control de versiones.
 author: karann-msft
 ms.author: karann
-ms.date: 08/05/2019
+ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: b45c25a92c0134228fb507ab321cb00ce156527f
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 7166d622ef9d3975fc1c931d30caf570a765a6da
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610553"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231323"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>Creación de un paquete NuGet con MSBuild
 
@@ -34,6 +34,10 @@ Las propiedades siguientes se requieren para crear un paquete.
 - El título del paquete como debe aparecer en el host (por ejemplo, nuget.org)
 - `Authors`, información del autor y el propietario. Si no se especifica, el valor predeterminado es `AssemblyName`.
 - `Company`, el nombre de la empresa. Si no se especifica, el valor predeterminado es `AssemblyName`.
+
+Además, si va a empaquetar proyectos que no son de estilo SDK y que usan PackageReference, se requiere lo siguiente:
+
+- `PackageOutputPath`, la carpeta de salida para el paquete generado al llamar al paquete.
 
 En Visual Studio, puede establecer estos valores en las propiedades del proyecto (haga clic con el botón derecho en el proyecto en el Explorador de soluciones, elija **Propiedades** y seleccione la pestaña **Paquete**). También puede establecer estas propiedades directamente en los archivos del proyecto ( *.csproj*).
 
@@ -69,6 +73,10 @@ También puede establecer las propiedades opcionales, como `Title`, `PackageDesc
 > En el caso de los paquetes creados para consumo público, preste especial atención la propiedad **PackageTags**, dado que estas etiquetas ayudan a otros usuarios a encontrar el paquete y comprender lo que hace.
 
 Para obtener más información sobre cómo declarar dependencias y especificar números de versión, vea [Referencias del paquete en archivos del proyecto](../consume-packages/package-references-in-project-files.md) y [Control de versiones de paquetes](../concepts/package-versioning.md). También es posible exponer recursos directamente desde las dependencias en el paquete mediante los atributos `<IncludeAssets>` y `<ExcludeAssets>`. Para más información, consulte [Controlar los recursos de dependencias](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets).
+
+## <a name="add-an-optional-description-field"></a>Adición de un campo opcional de descripción
+
+[!INCLUDE [add description to package](includes/add-description.md)]
 
 ## <a name="choose-a-unique-package-identifier-and-set-the-version-number"></a>Elección de un identificador de paquete único y establecimiento del número de versión
 

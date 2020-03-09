@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: e0014a812ea591ef40c961e13864652d75ebdf6c
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 912c0d015e2f499bc7386483bc6c35ecd765d3d4
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610985"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230868"
 ---
 # <a name="package-versioning"></a>Control de versiones de paquetes
 
@@ -22,7 +22,7 @@ Al crear un paquete, se asigna un número de versión específico con un sufijo 
 En este tema:
 
 - [Aspectos básicos de la versión](#version-basics), incluidos los sufijos de versión preliminar.
-- [Intervalos de versiones y caracteres comodín](#version-ranges-and-wildcards)
+- [Rangos de versiones](#version-ranges)
 - [Números de versión normalizados](#normalized-version-numbers)
 
 ## <a name="version-basics"></a>Aspectos básicos de la versión
@@ -98,11 +98,11 @@ Clientes de terceros:
 <!-- For compatibility with previous dependency-versions page -->
 <a name="version-ranges"></a>
 
-## <a name="version-ranges-and-wildcards"></a>Intervalos de versiones y caracteres comodín
+## <a name="version-ranges"></a>Rangos de versiones
 
 Cuando se hace referencia a las dependencias de paquete, NuGet admite el uso de la notación de intervalo para especificar intervalos de versión, que se resumen de la siguiente manera:
 
-| Notation | Regla aplicada | DESCRIPCIÓN |
+| Notation | Regla aplicada | Descripción |
 |----------|--------------|-------------|
 | 1.0 | x ≥ 1.0 | Versión mínima, incluida |
 | (1.0,) | x > 1.0 | Versión mínima, excluida |
@@ -114,7 +114,7 @@ Cuando se hace referencia a las dependencias de paquete, NuGet admite el uso de 
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | Versión mínima incluida y versión máxima excluida mezcladas |
 | (1.0)    | no válidos | no válidos |
 
-Cuando se usa el formato PackageReference, NuGet admite también el uso de una notación de caracteres comodín, \*, en las partes del número de versión principal, versión secundaria, revisión y sufijo de versión preliminar. Los caracteres comodín no se admiten con el formato `packages.config`.
+Cuando se usa el formato PackageReference, NuGet admite también el uso de una notación flotante, \*, en las partes del número de versión principal, versión secundaria, revisión y sufijo de versión preliminar. Las versiones flotantes no se admiten con el formato `packages.config`.
 
 > [!Note]
 > Los intervalos de versiones de PackageReference incluyen las versiones preliminares. Por diseño, las versiones flotantes no resuelven las versiones preliminares, a menos que se opte por ellas. Para ver el estado de la solicitud de características relacionadas, consulte el [problema 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297).

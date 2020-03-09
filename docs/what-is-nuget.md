@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: a08ac24ce6b1d64496c9fc1b20604850e9711dd6
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: c326cf184ff20fb798a5770f0a4cf9bf42bed3f5
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380670"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230699"
 ---
 # <a name="an-introduction-to-nuget"></a>Una introducción a NuGet
 
@@ -43,7 +43,7 @@ Los desarrolladores de paquetes que requieren las API fuera de .NET Standard, po
 
 Además de la compatibilidad con el hospedaje, NuGet también proporciona una variedad de herramientas que usan tanto creadores como consumidores. Vea [Instalación de las herramientas del cliente NuGet](install-nuget-client-tools.md) para saber cómo obtener herramientas específicas.
 
-| Herramienta | Plataformas | Escenarios aplicables | DESCRIPCIÓN |
+| Herramienta | Plataformas | Escenarios aplicables | Descripción |
 | --- | --- | --- | --- |
 | [CLI de dotnet](consume-packages/install-use-packages-dotnet-cli.md) | Todas | Creación, Consumo | Herramienta CLI para las bibliotecas .NET Core y .NET Standard y para los proyectos de estilo SDK que tienen como destino .NET Framework (consulte [Atributo SDK](/dotnet/core/tools/csproj#additions)). Ofrece determinadas funcionalidades de la CLI de NuGet directamente en la cadena de herramientas de .NET Core. Al igual que con la CLI de `nuget.exe`, la CLI de dotnet no interactúa con proyectos de Visual Studio. |
 | [CLI de nuget.exe](consume-packages/install-use-packages-nuget-cli.md) | Todas | Creación, Consumo | Herramienta CLI para bibliotecas de .NET Framework y proyectos de estilo diferente de SDK que tienen como destino las bibliotecas de .NET Standard. Proporciona todas las funcionalidades de NuGet, con algunos comandos que se aplican de forma específica a los creadores del paquete, otros solo a los consumidores y otros a ambos. Por ejemplo, los creadores de paquetes usan el comando `nuget pack` para crear un paquete a partir de varios ensamblados y archivos relacionados, los consumidores de paquetes usan `nuget install` para incluir los paquetes en una carpeta de proyecto y todos usan `nuget config` para establecer variables de configuración de NuGet. Como herramienta independiente de la plataforma, la CLI de NuGet no interactúa con proyectos de Visual Studio. |
@@ -105,9 +105,15 @@ Para que estos procesos funcionen de forma eficaz, NuGet realiza algunas optimiz
 
 Dentro de un proyecto individual, NuGet administra el gráfico general de dependencias, que incluye volver a resolver varias referencias a las distintas versiones del mismo paquete. Es bastante común que un proyecto tenga una relación de dependencia con uno o varios paquetes que, a su vez, tienen las mismas dependencias. Algunos de los paquetes de utilidad más prácticos de nuget.org se usan en otros muchos paquetes. En el gráfico de dependencias completo, podría tener fácilmente diez referencias distintas a versiones diferentes del mismo paquete. Para no incluir varias versiones de ese paquete en la propia aplicación, NuGet determina la única versión que pueden usar todos los consumidores. (Para obtener más información, vea [Inserción de dependencias](concepts/dependency-resolution.md)).
 
-Además, NuGet mantiene todas las especificaciones relacionadas con la estructura de los paquetes (incluida la [localización](create-packages/creating-localized-packages.md) y los [símbolos de depuración](create-packages/symbol-packages-snupkg.md)) y cómo se hace [referencia](consume-packages/package-references-in-project-files.md) a ellos (incluidos los [intervalos de versiones](concepts/package-versioning.md#version-ranges-and-wildcards) y las [versiones preliminares](create-packages/prerelease-packages.md)). NuGet ofrece también varias API para trabajar con sus servicios mediante programación, así como compatibilidad para los desarrolladores que crean plantillas de proyecto y extensiones de Visual Studio.
+Además, NuGet mantiene todas las especificaciones relacionadas con la estructura de los paquetes (incluida la [localización](create-packages/creating-localized-packages.md) y los [símbolos de depuración](create-packages/symbol-packages-snupkg.md)) y cómo se hace [referencia](consume-packages/package-references-in-project-files.md) a ellos (incluidos los [intervalos de versiones](concepts/package-versioning.md#version-ranges) y las [versiones preliminares](create-packages/prerelease-packages.md)). NuGet ofrece también varias API para trabajar con sus servicios mediante programación, así como compatibilidad para los desarrolladores que crean plantillas de proyecto y extensiones de Visual Studio.
 
 Dedique un momento a examinar la tabla de contenido de esta documentación, y podrá ver todas estas funcionalidades representadas, junto con notas de la versión que se remontan a los inicios de NuGet.
+
+## <a name="related-video"></a>Vídeo relacionado
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/What-is-NuGet-1-of-5/player]
+
+Encuentre más vídeos de NuGet en [Channel 9](https://channel9.msdn.com/Series/NuGet-101) y [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).
 
 ## <a name="comments-contributions-and-issues"></a>Comentarios, contribuciones y problemas
 
