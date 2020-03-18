@@ -6,11 +6,11 @@ ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
 ms.openlocfilehash: 00410214500c7f5256be243dd6fca0907ba9b0c4
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380498"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428388"
 ---
 # <a name="nuget-cross-platform-plugins"></a>Complementos entre plataformas de NuGet
 
@@ -24,10 +24,10 @@ Se define un protocolo de comunicación con versión entre el cliente de NuGet y
 Con el fin de cubrir todos los escenarios de herramientas de cliente de NuGet, se necesitaría un complemento de .NET Framework y de .NET Core.
 A continuación se describen las combinaciones de cliente/marco de trabajo de los complementos.
 
-| Herramienta de cliente  | Framework |
+| Herramienta de cliente  | marco |
 | ------------ | --------- |
-| Programa para la mejora | .NET Framework |
-| dotnet.exe | Núcleo de .NET |
+| Visual Studio | .NET Framework |
+| dotnet.exe | .NET Core |
 | NuGet. exe | .NET Framework |
 | MSBuild. exe | .NET Framework |
 | NuGet. exe en mono | .NET Framework |
@@ -77,9 +77,9 @@ Los escenarios de CI/CD y los usuarios avanzados pueden usar variables de entorn
 - `NUGET_PLUGIN_PATHS`: define los complementos que se usarán para ese proceso de NuGet, con prioridad conservada. Si se establece esta variable de entorno, invalida la detección basada en convenciones. Se omite si se especifica cualquiera de las variables específicas del marco de trabajo.
 -  Ubicación de usuario, la ubicación de inicio de NuGet en `%UserProfile%/.nuget/plugins`. Esta ubicación no se puede invalidar. Se usará un directorio raíz diferente para los complementos .NET Core y .NET Framework.
 
-| Framework | Ubicación de detección raíz  |
+| marco | Ubicación de detección raíz  |
 | ------- | ------------------------ |
-| Núcleo de .NET |  `%UserProfile%/.nuget/plugins/netcore` |
+| .NET Core |  `%UserProfile%/.nuget/plugins/netcore` |
 | .NET Framework | `%UserProfile%/.nuget/plugins/netfx` |
 
 Cada complemento debe instalarse en su propia carpeta.
@@ -103,7 +103,7 @@ El punto de entrada del complemento será el nombre de la carpeta instalada, con
 > [!Note]
 > Actualmente no hay ningún caso de usuario para la instalación de los complementos. Es tan sencillo como mover los archivos necesarios a la ubicación predeterminada.
 
-## <a name="supported-operations"></a>Operaciones admitidas
+## <a name="supported-operations"></a>Operaciones compatibles
 
 Se admiten dos operaciones en el nuevo protocolo de complementos.
 
@@ -123,7 +123,7 @@ Podría surgir un posible problema con los complementos de ubicación de usuario
 La comprobación de seguridad y la creación de instancias de los complementos son costosas. La operación de descarga se realiza de forma más frecuente que la operación de autenticación; sin embargo, es probable que el usuario de NuGet medio solo tenga un complemento de autenticación.
 Para mejorar la experiencia, NuGet almacenará en caché las notificaciones de operación para la solicitud dada. Esta caché es por complemento con la clave de complemento que es la ruta de acceso del complemento y la expiración de esta caché de funcionalidades es de 30 días. 
 
-La memoria caché se encuentra en `%LocalAppData%/NuGet/plugins-cache` y se invalidará con la variable de entorno `NUGET_PLUGINS_CACHE_PATH`. Para borrar esta [memoria caché](../../consume-packages/managing-the-global-packages-and-cache-folders.md), se puede ejecutar el comando variables locales con la opción `plugins-cache`.
+La memoria caché se encuentra en `%LocalAppData%/NuGet/plugins-cache` y se puede invalidar con la variable de entorno `NUGET_PLUGINS_CACHE_PATH`. Para borrar esta [memoria caché](../../consume-packages/managing-the-global-packages-and-cache-folders.md), se puede ejecutar el comando variables locales con la opción `plugins-cache`.
 La opción `all` variables locales ahora también eliminará la memoria caché de complementos. 
 
 ## <a name="protocol-messages-index"></a>Índice de mensajes de protocolo
@@ -196,7 +196,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
         * un código de respuesta que indica el resultado de la operación
         * un hash de archivo de paquete que usa el algoritmo hash solicitado Si la operación se realizó correctamente
 
-8.  Obtener versiones del paquete
+8.  Obtener la versión de los paquetes
     * Dirección de la solicitud: complemento NuGet->
     * La solicitud contendrá:
         * IDENTIFICADOR del paquete
@@ -222,7 +222,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
          * un código de respuesta que indica el resultado de la operación
          * la versión del protocolo negociada si la operación se realizó correctamente.  Un error provocará la finalización del complemento.
 
-11.  Initialize
+11.  Inicializar
      * Dirección de la solicitud: complemento NuGet->
      * La solicitud contendrá:
          * versión de la herramienta cliente de NuGet
@@ -231,7 +231,7 @@ Mensajes de la versión *1.0.0* del Protocolo:
      * Una respuesta contendrá:
          * código de respuesta que indica el resultado de la operación.  Un error provocará la finalización del complemento.
 
-12.  Registro
+12.  Log
      * Dirección de la solicitud: complemento de > NuGet
      * La solicitud contendrá:
          * el nivel de registro de la solicitud
@@ -290,13 +290,13 @@ Mensajes de versión *2.0.0* del Protocolo
 
 * Dirección de la solicitud: complemento NuGet->
 * La solicitud contendrá:
-    * URI
-    * isRetry
-    * No interactiva
+    * Identificador URI
+    * IsRetry
+    * NonInteractive
     * CanShowDialog
 * Una respuesta contendrá
     * Nombre de usuario
     * Contraseña
-    * Mensaje
+    * Message
     * Lista de tipos de autenticación
     * MessageResponseCode
