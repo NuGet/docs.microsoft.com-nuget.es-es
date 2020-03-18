@@ -7,11 +7,11 @@ ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
 ms.openlocfilehash: 19e7934e2f249056c532369fa5e8ee6e35cc8086
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230608"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428382"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -75,14 +75,14 @@ Estos elementos deben aparecer dentro de un elemento `<metadata>`.
 El identificador del paquete que no distingue entre mayúsculas y minúsculas, que debe ser único en nuget.org o en cualquier galería en la que resida el paquete. Los identificadores no pueden contener espacios ni caracteres no válidos para una dirección URL y normalmente seguirán las reglas de espacios de nombres de .NET. Vea [Choosing a unique package identifier](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number) (Elegir un identificador de paquete único) para obtener instrucciones.
 #### <a name="version"></a>version
 La versión del paquete, siguiendo el patrón *mayor.menor.revisión*. Los números de versión pueden incluir un sufijo de versión preliminar, tal y como se describe en [Control de versiones de paquetes](../concepts/package-versioning.md#pre-release-versions). 
-#### <a name="description"></a>Descripción
+#### <a name="description"></a>description
 Descripción del paquete para la presentación de la interfaz de usuario.
 #### <a name="authors"></a>authors
 Una lista separada por comas de autores de paquetes, que coincide con los nombres de perfil en nuget.org. Estos se muestran en la galería de NuGet en nuget.org y se usan para hacer referencias cruzadas de paquetes por los mismos autores. 
 
 ### <a name="optional-metadata-elements"></a>Elementos de metadatos opcionales
 
-#### <a name="owners"></a>propietarios
+#### <a name="owners"></a>owners
 Lista separada por comas de los creadores de paquetes que usan nombres de perfil en nuget.org. Suele ser la misma lista que en `authors`y se omite al cargar el paquete en nuget.org. Consulte [Administración de propietarios de paquetes en Nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
 
 #### <a name="projecturl"></a>projectUrl
@@ -94,7 +94,7 @@ Una dirección URL de la página principal del paquete, que a menudo se muestra 
 
 Una dirección URL para la licencia del paquete, que a menudo se muestra en ius como nuget.org.
 
-#### <a name="license"></a>licencia
+#### <a name="license"></a>license
 Una expresión de licencia de SPDX o una ruta de acceso a un archivo de licencia dentro del paquete, que a menudo se muestra en ius como nuget.org. Si tiene licencia para el paquete con una licencia común, como MIT o la cláusula BSD-2, use el identificador de [licencia de SPDX](https://spdx.org/licenses/)asociado. Por ejemplo:
 
 `<license type="expression">MIT</license>`
@@ -149,7 +149,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 Una dirección URL para una imagen de 128x128 con fondo de transparencia que se usará como icono para el paquete en la visualización de la interfaz de usuario. Asegúrese de que este elemento contiene la *dirección URL directa a la imagen* y no la dirección URL de una página web que contiene la imagen. Por ejemplo, para usar una imagen de GitHub, use la dirección URL de archivo sin formato, como <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>. 
    
-#### <a name="icon"></a>icono
+#### <a name="icon"></a>icon
 
 Es una ruta de acceso a un archivo de imagen dentro del paquete, que a menudo se muestra en ius como nuget.org como el icono de paquete. El tamaño del archivo de imagen está limitado a 1 MB. Entre los formatos de archivo admitidos se incluyen JPEG y PNG. Se recomienda una resolución de imagen de 128x128.
 
@@ -183,9 +183,9 @@ Valor booleano que especifica si el cliente debe pedir al consumidor que acepte 
 #### <a name="developmentdependency"></a>developmentDependency
 *(2.8+)* Valor booleano que especifica si el paquete se debe marcar como una dependencia de solo desarrollo, que impide que el paquete se incluya como una dependencia en otros paquetes. Con PackageReference (NuGet 4.8 +), esta marca también significa que excluirá los recursos en tiempo de compilación de la compilación. Consulte [compatibilidad con DevelopmentDependency para PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
 
-#### <a name="summary"></a>resumen
+#### <a name="summary"></a>summary
 > [!Important]
-> `summary` está en desuso. Utilice `description` en su lugar.
+> `summary` está en desuso. En su lugar, use `description`.
 
 Descripción breve del paquete para su visualización en la interfaz de usuario. Si se omite, se usará una versión truncada de `description`.
 
@@ -195,7 +195,7 @@ Descripción breve del paquete para su visualización en la interfaz de usuario.
 #### <a name="copyright"></a>copyright
 *(1.5+)* Información de copyright del paquete.
 
-#### <a name="language"></a>lenguaje
+#### <a name="language"></a>language
 Identificador de configuración regional del paquete. Vea [Creación de paquetes localizados](../create-packages/creating-localized-packages.md).
 
 #### <a name="tags"></a>etiquetas
@@ -204,8 +204,8 @@ Lista de etiquetas y palabras clave, delimitadas por espacios, que describen el 
 #### <a name="serviceable"></a>reparables por 
 *(3.3+)* Solo para uso interno de NuGet.
 
-#### <a name="repository"></a>repositorio
-Metadatos del repositorio, que constan de cuatro atributos opcionales: `type` y `url` *(4.0 +)*, y `branch` y `commit` *(4.6 +)*. Estos atributos permiten asignar el `.nupkg` al repositorio que lo compiló, con la posibilidad de obtener el valor que se obtiene como el nombre de la bifurcación individual o el hash de SHA-1 de confirmación que compiló el paquete. Debe ser una dirección URL disponible públicamente que un software de control de versiones pueda invocar directamente. No debe ser una página HTML, ya que está destinada al equipo. Para vincular a la página del proyecto, use el campo `projectUrl` en su lugar.
+#### <a name="repository"></a>repository
+Metadatos del repositorio, que constan de cuatro atributos opcionales: `type` y `url` *(4.0 +)* , y `branch` y `commit` *(4.6 +)* . Estos atributos permiten asignar el `.nupkg` al repositorio que lo compiló, con la posibilidad de obtener el valor que se obtiene como el nombre de la bifurcación individual o el hash de SHA-1 de confirmación que compiló el paquete. Debe ser una dirección URL disponible públicamente que un software de control de versiones pueda invocar directamente. No debe ser una página HTML, ya que está destinada al equipo. Para vincular a la página del proyecto, use el campo `projectUrl` en su lugar.
 
 Por ejemplo:
 ```xml
@@ -226,7 +226,7 @@ Título descriptivo del paquete que se puede usar en algunas pantallas de la int
 
 #### <a name="packagetypes"></a>Elemento packagetypes
 *(3.5+)* Colección de cero o más elementos `<packageType>` que especifican el tipo del paquete si es distinto de un paquete de dependencias tradicional. Cada tipo de paquete tiene atributos de *name* y *version*. Vea [Establecimiento de un tipo de paquete](../create-packages/set-package-type.md).
-#### <a name="dependencies"></a>dependencias
+#### <a name="dependencies"></a>dependencies
 Colección de cero o más elementos `<dependency>` que especifican las dependencias del paquete. Cada dependencia tiene atributos de *id*, *version*, *include* (3.x+) y *exclude* (3.x+). Vea [Dependencias](#dependencies-element) a continuación.
 #### <a name="frameworkassemblies"></a>frameworkAssemblies
 *(1.2+)* Colección de cero o más elementos `<frameworkAssembly>` que identifican las referencias de ensamblado de .NET Framework que requiere este paquete, lo que garantiza que se agreguen las referencias a los proyectos que consumen el paquete. Cada frameworkAssembly tiene atributos *assemblyName* y *targetFramework*. Vea [Referencias de ensamblado de plataforma](#specifying-framework-assembly-references-gac) a continuación.
@@ -234,7 +234,7 @@ Colección de cero o más elementos `<dependency>` que especifican las dependenc
 *(1.5+)* Colección de cero o más elementos `<reference>` que nombran ensamblados en la carpeta `lib` del paquete que se agregan como referencias de proyecto. Cada referencia tiene un atributo *file*. `<references>` también puede contener un elemento `<group>` con un atributo *targetFramework*, que contiene elementos `<reference>`. Si se omite, se incluyen todas las referencias de `lib`. Vea [Referencias de ensamblado explícitas](#specifying-explicit-assembly-references) a continuación.
 #### <a name="contentfiles"></a>contentFiles
 *(3.3+)* Colección de elementos `<files>` que identifican archivos de contenido que se incluirán en el proyecto de consumo. Estos archivos se especifican con un conjunto de atributos que describen cómo se deben usar en el sistema del proyecto. Vea [Incluir archivos de ensamblado](#specifying-files-to-include-in-the-package) a continuación.
-#### <a name="files"></a>archivos 
+#### <a name="files"></a>files 
 El nodo `<package>` puede contener un nodo de `<files>` como un elemento relacionado con `<metadata>`y un `<contentFiles>` secundario en `<metadata>`, para especificar qué archivos de ensamblado y de contenido se van a incluir en el paquete. Vea las secciones [Incluir archivos de ensamblado](#including-assembly-files) e [Incluir archivos de contenido](#including-content-files), que aparecen más adelante en este tema, para más información.
 
 ### <a name="metadata-attributes"></a>atributos de metadatos
@@ -283,9 +283,9 @@ Normalmente, cuando tiene un proyecto, crea el archivo `.nuspec` al principio co
 
 Con la excepción de `$configuration$`, se usan los valores del proyecto con preferencia a cualquier valor asignado al mismo token en la línea de comandos.
 
-| Token | Origen del valor | Valor
+| Token | Origen del valor | Value
 | --- | --- | ---
-| **$id$** | Archivo de proyecto | AssemblyName (title) del archivo de proyecto |
+| **$id$** | Archivo del proyecto | AssemblyName (title) del archivo de proyecto |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion si está presente. En caso contrario, AssemblyVersion |
 | **$author$** | AssemblyInfo | AssemblyCompany |
 | **$title $** | AssemblyInfo | AssemblyTitle |
@@ -323,12 +323,12 @@ El elemento `<dependencies>` dentro de `<metadata>` contiene cualquier número d
 | Etiqueta Include o Exclude | Carpetas afectadas del destino |
 | --- | --- |
 | contentFiles | Contenido |
-| motor en tiempo de ejecución | Runtime, Resources y FrameworkAssemblies |
-| compilar | lib |
-| compilación | build (propiedades y destinos de MSBuild) |
-| nativos | nativos |
-| ninguna | Sin carpetas |
-| todo | Todas las carpetas |
+| en tiempo de ejecución | Runtime, Resources y FrameworkAssemblies |
+| compile | lib |
+| build | build (propiedades y destinos de MSBuild) |
+| nativas | nativas |
+| None | Sin carpetas |
+| all | Todas las carpetas |
 
 Por ejemplo, las siguientes líneas indican las dependencias en `PackageA` versión 1.1.0 o posterior y en `PackageB` versión 1.x.
 
@@ -480,7 +480,7 @@ Cada elemento `<file>` especifica los siguientes atributos:
 | Atributo | Descripción |
 | --- | --- |
 | **src** | Ubicación de los archivos que se deben incluir, sujeta a exclusiones especificadas por el atributo `exclude`. La ruta de acceso es relativa al archivo `.nuspec`, a menos que se especifique una ruta de acceso absoluta. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
-| **target** | La ruta de acceso relativa a la carpeta del paquete donde se colocan los archivos de código fuente, que debe comenzar por `lib`, `content`, `build` o `tools`. Vea [Creating a .nuspec from a convention-based working directory](../create-packages/creating-a-package.md#from-a-convention-based-working-directory) (Crear un archivo .nuspec desde un directorio de trabajo basado en convenciones). |
+| **Destino** | La ruta de acceso relativa a la carpeta del paquete donde se colocan los archivos de código fuente, que debe comenzar por `lib`, `content`, `build` o `tools`. Vea [Creating a .nuspec from a convention-based working directory](../create-packages/creating-a-package.md#from-a-convention-based-working-directory) (Crear un archivo .nuspec desde un directorio de trabajo basado en convenciones). |
 | **exclude** | Una lista delimitada por punto y coma de archivos o patrones de archivo que se deben excluir de la ubicación `src`. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
 
 ### <a name="examples"></a>Ejemplos

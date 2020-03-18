@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
 ms.openlocfilehash: 940582d5173f5a53dcd04cf1258fc02a2439af4e
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825282"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428298"
 ---
 # <a name="nuget-25-release-notes"></a>Notas de la versión de NuGet 2,5
 
@@ -50,7 +50,7 @@ Nos gustaría dar las gracias a los siguientes colaboradores externos por sus co
 También agradecemos las siguientes personas para encontrar errores con NuGet 2,5 beta/RC que se han aprobado y corregido antes de la versión final:
 
 1. [Tony Wall](https://www.codeplex.com/site/users/view/CodeChief) ([@CodeChief](https://twitter.com/codechief))
-    - [#3200](https://nuget.codeplex.com/workitem/3200) : MSTest dividido con última 2.4 de NuGet y 2,5 compilaciones
+    - [#3200](https://nuget.codeplex.com/workitem/3200) -MSTest interrumpido con las compilaciones más recientes de NuGet 2,4 y 2,5
 
 ## <a name="notable-features-in-the-release"></a>Características destacadas de la versión
 

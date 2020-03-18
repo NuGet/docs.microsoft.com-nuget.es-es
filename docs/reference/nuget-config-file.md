@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 08/13/2019
 ms.topic: reference
 ms.openlocfilehash: cd321084c46709e3d1d22872c37485edacd33afa
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230531"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428406"
 ---
 # <a name="nugetconfig-reference"></a>referencia de Nuget. config
 
@@ -29,14 +29,14 @@ Contiene varios valores de configuración, que se pueden establecer mediante el 
 
 `dependencyVersion` y `repositoryPath` solo se aplican a los proyectos que usan `packages.config`. `globalPackagesFolder` solo se aplica a los proyectos que usan el formato PackageReference.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | dependencyVersion (solo `packages.config`) | El valor predeterminado `DependencyVersion` para la instalación, restauración y actualización del paquete, cuando no se especifica directamente el modificador `-DependencyVersion`. Este valor también se usa en la interfaz de usuario del Administrador de paquetes NuGet. Los valores son `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`. |
 | globalPackagesFolder (proyectos que solo usan PackageReference) | La ubicación de la carpeta de paquetes global predeterminada. El valor predeterminado es `%userprofile%\.nuget\packages` (Windows) o `~/.nuget/packages` (Mac o Linux). Se puede usar una ruta de acceso relativa en archivos `nuget.config` específicos del proyecto. Este valor se reemplaza por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
 | repositoryPath (solo `packages.config`) | La ubicación en la que se van a instalar los paquetes NuGet en lugar de la carpeta `$(Solutiondir)/packages` predeterminada. Se puede usar una ruta de acceso relativa en archivos `nuget.config` específicos del proyecto. Este valor se reemplaza por la variable de entorno NUGET_PACKAGES, que tiene prioridad. |
 | defaultPushSource | Identifica la dirección URL o ruta de acceso de origen del paquete que se debe usar como valor predeterminado si no se encuentra ningún otro origen del paquete para una operación. |
 | http_proxy http_proxy.user http_proxy.password no_proxy | Configuración de proxy que se usa al conectarse a orígenes de paquetes; `http_proxy` debe tener el formato `http://<username>:<password>@<domain>`. Las contraseñas están cifradas y no se pueden agregar de forma manual. Para `no_proxy`, el valor es una lista separada por comas de dominios que omiten el servidor proxy. Como alternativa, puede usar las variables de entorno http_proxy y no_proxy para esos valores. Para obtener más información, vea [Configuración de proxy de NuGet](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com). |
-| signatureValidationMode | Especifica el modo de validación que se usa para comprobar las firmas del paquete para la instalación y restauración del paquete. Los valores son `accept`, `require`. Tiene como valor predeterminado `accept`.
+| signatureValidationMode | Especifica el modo de validación que se usa para comprobar las firmas del paquete para la instalación y restauración del paquete. Los valores son `accept`, `require`. Su valor predeterminado es `accept`.
 
 **Ejemplo**:
 
@@ -54,7 +54,7 @@ Contiene varios valores de configuración, que se pueden establecer mediante el 
 
 Configura si NuGet realiza redirecciones de enlaces automáticas cuando se instala un paquete.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | skip | Un valor booleano que indica si se omiten las redirecciones de enlaces automáticas. El valor predeterminado es false. |
 
@@ -70,7 +70,7 @@ Configura si NuGet realiza redirecciones de enlaces automáticas cuando se insta
 
 Controla la restauración del paquete durante las compilaciones.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | enabled | Un valor booleano que indica si NuGet puede realizar la restauración automática. También se puede establecer la variable de entorno `EnableNuGetPackageRestore` con un valor de `True` en lugar de establecer esta clave en el archivo de configuración. |
 | automatic | Un valor booleano que indica si NuGet debe comprobar los paquetes que faltan durante una compilación. |
@@ -88,7 +88,7 @@ Controla la restauración del paquete durante las compilaciones.
 
 Controla si la carpeta `packages` de una solución se incluye en el control de código fuente. En esta sección solo funciona en los archivos `nuget.config` de la carpeta de una solución.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | disableSourceControlIntegration | Un valor booleano que indica si se debe ignorar la carpeta de paquetes cuando se trabaja con el control de código fuente. El valor predeterminado es false. |
 
@@ -112,7 +112,7 @@ Tenga en cuenta que la dirección URL de origen de nuget.org es `https://api.nug
 
 Enumera todos los orígenes de paquetes conocidos. El orden se omite durante las operaciones de restauración y con cualquier proyecto que use el formato PackageReference. NuGet respeta el orden de los orígenes de las operaciones de instalación y actualización con proyectos que usan `packages.config`.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | (nombre para asignar al origen del paquete) | La ruta de acceso o dirección URL del origen del paquete. |
 
@@ -133,13 +133,13 @@ Enumera todos los orígenes de paquetes conocidos. El orden se omite durante las
 
 Almacena nombres de usuario y contraseñas para los orígenes, normalmente especificados con los modificadores `-username` y `-password` con `nuget sources`. Las contraseñas se cifran de forma predeterminada a menos que también se use la opción `-storepasswordincleartext`.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | username | El nombre de usuario para el origen en texto sin formato. |
-| contraseña | La contraseña cifrada para el origen. |
+| password | La contraseña cifrada para el origen. |
 | cleartextpassword | La contraseña no cifrada para el origen. |
 
-**Ejemplo:**
+**Ejemplo**:
 
 En el archivo de configuración, el elemento `<packageSourceCredentials>` contiene nodos secundarios para cada nombre de origen aplicable (los espacios en el nombre se reemplazan por `_x0020_`). Es decir, para los orígenes denominados "Contoso" y "Test Source", el archivo de configuración contiene lo siguiente cuando se usan contraseñas cifradas:
 
@@ -175,7 +175,7 @@ Cuando se usan contraseñas sin cifrar:
 
 Almacena claves para los orígenes en los que se usa autenticación de clave de API, como se establece mediante el [comando `nuget setapikey`](../reference/cli-reference/cli-ref-setapikey.md).
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | (dirección URL de origen) | La clave de API cifrada. |
 
@@ -189,13 +189,13 @@ Almacena claves para los orígenes en los que se usa autenticación de clave de 
 
 ### <a name="disabledpackagesources"></a>disabledPackageSources
 
-Orígenes actualmente deshabilitados identificados. Puede estar vacía.
+Orígenes actualmente deshabilitados identificados. Puede estar vacío.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | (nombre del origen) | Un valor booleano que indica si el origen está deshabilitado. |
 
-**Ejemplo:**
+**Ejemplo**:
 
 ```xml
 <disabledPackageSources>
@@ -212,7 +212,7 @@ Orígenes actualmente deshabilitados identificados. Puede estar vacía.
 
 Identifica al origen actualmente activo o indica la suma de todos los orígenes.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | (nombre del origen) o `All` | Si la clave es el nombre de un origen, el valor es la ruta de acceso o la dirección URL del origen. Si es `All`, el valor debe ser `(Aggregate source)` para combinar todos los orígenes de paquetes que no estén deshabilitados. |
 
@@ -272,7 +272,7 @@ Si alguna búsqueda se realiza correctamente, no es necesario realizar ninguna d
 
 Si no se encuentra ninguna coincidencia, NuGet comprueba los orígenes de archivos y, a continuación, los orígenes http y, a continuación, descarga los paquetes.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | (nombre de la carpeta de reserva) | Ruta de acceso a la carpeta de reserva. |
 
@@ -288,10 +288,10 @@ Si no se encuentra ninguna coincidencia, NuGet comprueba los orígenes de archiv
 
 Establece el formato de administración de paquetes predeterminado, *Package. config* o PackageReference. Los proyectos de estilo SDK siempre usan PackageReference.
 
-| Key | Valor |
+| Clave | Value |
 | --- | --- |
 | format | Un valor booleano que indica el formato de administración de paquetes predeterminado. Si `1`, el formato es PackageReference. Si `0`, Format es *packages. config*. |
-| deshabilitados | Un valor booleano que indica si se muestra el mensaje para seleccionar un formato de paquete predeterminado en la primera instalación del paquete. `False` oculta el aviso. |
+| deshabilitado | Un valor booleano que indica si se muestra el mensaje para seleccionar un formato de paquete predeterminado en la primera instalación del paquete. `False` oculta el aviso. |
 
 **Ejemplo**:
 
