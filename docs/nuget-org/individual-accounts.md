@@ -6,11 +6,11 @@ ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
 ms.openlocfilehash: 7951b3db0cdcaee0a1eb955a5bf6fedce24c79c9
-ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74253956"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428634"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>Cuentas individuales en nuget.org
 
@@ -28,7 +28,7 @@ Para crear una cuenta de NuGet.org, necesita una cuenta personal de Microsoft (M
 
 1. Vaya a la [página de inicio de sesión de NuGet.org](https://www.nuget.org/users/account/LogOn).
 
-1. Haga clic en el botón **Sign in with Microsoft** (Inicio de sesión con Microsoft).
+1. Haga clic en el botón**Sign in with Microsoft** (Inicio de sesión con Microsoft).
 
 1. Especifique los detalles de su cuenta Microsoft o de Azure Active Directory.
 

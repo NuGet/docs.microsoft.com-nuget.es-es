@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
 ms.openlocfilehash: 2769f0ef0373b26eedb4bac6242fee0e814310c5
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230544"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428466"
 ---
 # <a name="install-nuget-client-tools"></a>Instalación de las herramientas del cliente NuGet
 
