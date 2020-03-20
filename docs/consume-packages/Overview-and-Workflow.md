@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
 ms.openlocfilehash: ddd1d163e18ed4ce1e7cbf41ed152acc40c1c423
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488779"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428520"
 ---
 # <a name="package-consumption-workflow"></a>Flujo de trabajo de consumo de paquetes
 
@@ -18,7 +18,7 @@ Entre la galería de nuget.org y las galerías de paquetes privadas que puede es
 
 ![Flujo para ir al origen de un paquete, buscar un paquete, instalarlo en un proyecto y agregar una instrucción Using y llamadas a la API del paquete](media/Overview-01-GeneralFlow.png)
 
-\* Solo _Visual Studio y `dotnet.exe`. El comando `nuget install` no modifica los archivos de proyecto ni el archivo `packages.config`; las entradas tienen que administrarse manualmente._
+\* Solo _Visual Studio y `dotnet.exe`. El comando `nuget install` no modifica los archivos de proyecto ni el archivo `packages.config`; las entradas tienen que administrarse manualmente._
 
 Para más información, vea [Búsqueda y evaluación de paquetes](../consume-packages/finding-and-choosing-packages.md) y [¿Qué sucede cuando se instala un paquete?](../concepts/package-installation-process.md)
 
@@ -45,7 +45,7 @@ Por último, el comportamiento de NuGet se controla con los archivos `Nuget.Conf
 
 Los paquetes NuGet se descargan y se instalan mediante cualquiera de los métodos de la tabla siguiente.
 
-| Herramienta | DESCRIPCIÓN |
+| Herramienta | Descripción |
 | --- | --- |
 | [CLI de dotnet.exe](install-use-packages-dotnet-cli.md) | (Todas las plataformas) Herramienta CLI para las bibliotecas .NET Core y .NET Standard y para los proyectos de estilo SDK que tienen como destino .NET Framework (consulte [Atributo Sdk](/dotnet/core/tools/csproj#additions)). Recupera el paquete identificado con \<package_name\> y agrega una referencia al archivo del proyecto. También recupera e instala las dependencias. |
 | Programa para la mejora | (Windows and Mac) Ofrece una interfaz de usuario a través de la cual puede examinar, seleccionar e instalar paquetes con sus dependencias en un proyecto desde el origen del paquete especificado. Agrega las referencias a paquetes instalados en el archivo de proyecto.<ul><li>[Instalación y administración de paquetes con Visual Studio](install-use-packages-visual-studio.md)</li><li>[Incluir un paquete NuGet en el proyecto (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
