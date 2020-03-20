@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 08/16/2019
 ms.topic: quickstart
 ms.openlocfilehash: 32dcc1d233154463e2950b1ce46554b1cb89956e
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78231297"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428646"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
 
@@ -130,7 +130,7 @@ Cuando tenga un archivo `.nupkg`, publíquelo en nuget.org con la CLI de `nuget.
 
 ### <a name="publish-with-the-dotnet-cli-or-nugetexe-cli"></a>Publicación con la CLI de dotnet o la CLI de nuget.exe
 
-Seleccione la pestaña de la herramienta de la CLI, **CLI de .NET Core**  (CLI de dotnet) o **NuGet** (CLI de nuget.exe).
+Seleccione la pestaña de la herramienta de la CLI, **CLI de .NET Core** (CLI de dotnet) o **NuGet** (CLI de nuget.exe).
 
 # <a name="net-core-cli"></a>[CLI de .NET Core](#tab/netcore-cli)
 
