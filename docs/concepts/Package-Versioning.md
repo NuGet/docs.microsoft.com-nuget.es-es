@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 912c0d015e2f499bc7386483bc6c35ecd765d3d4
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.openlocfilehash: c79976c2f4ded2fba3796fb847d3c90807d7b86c
+ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79428478"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80147453"
 ---
 # <a name="package-versioning"></a>Control de versiones de paquetes
 
@@ -221,6 +221,10 @@ Al obtener paquetes de un repositorio durante las operaciones de instalación, r
 
         1.0.0.0 is treated as 1.0.0
         1.0.01.0 is treated as 1.0.1
+        
+- Se eliminarán los metadatos de la compilación 2.0.0 de SemVer.
+
+        1.0.7+r3456 is treated as 1.0.7
 
 Las operaciones `pack` y `restore` normalizan las versiones siempre que sea posible. En el caso de los paquetes ya creados, esta normalización no afecta a los números de versión de los propios paquetes; solo afecta al modo en que NuGet coincide con las versiones cuando se resuelven las dependencias.
 

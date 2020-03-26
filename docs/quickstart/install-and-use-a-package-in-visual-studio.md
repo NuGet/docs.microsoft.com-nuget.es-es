@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 96e138561390984d9def495ba5e091c43023cc92
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.openlocfilehash: 10bc34653d294cf70b5c91ce79a79cf6532fba1b
+ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78231336"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80147492"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>Inicio rápido: Instalación y uso de un paquete en Visual Studio (solo Windows)
 
-Los paquetes de NuGet son unidades de código reutilizable que otros desarrolladores ponen a su disposición para que los use en sus proyectos. Consulte [¿Qué es NuGet?](../What-is-NuGet.md) para obtener más información. Los paquetes se instalan en un proyecto de Visual Studio mediante el Administrador de paquetes NuGet o la consola del Administrador de paquetes. En este artículo se muestra el proceso con el conocido paquete [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) y un proyecto de Windows Presentation Foundation (WPF). El mismo proceso se aplica a cualquier otro proyecto de .NET o .NET Core.
+Los paquetes de NuGet son unidades de código reutilizable que otros desarrolladores ponen a su disposición para que los use en sus proyectos. Consulte [¿Qué es NuGet?](../What-is-NuGet.md) para obtener más información. Los paquetes se instalan en un proyecto de Visual Studio mediante el Administrador de paquetes NuGet, la [Consola del Administrador de paquetes](../consume-packages/install-use-packages-powershell) o la [CLI de dotnet](install-and-use-a-package-using-the-dotnet-cli.md). En este artículo se muestra el proceso con el conocido paquete [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) y un proyecto de Windows Presentation Foundation (WPF). El mismo proceso se aplica a cualquier otro proyecto de .NET o .NET Core.
 
 Una vez instalado, haga referencia al paquete en el código con `using <namespace>`, donde \<namespace\> es específico del paquete que está usando. Una vez efectuada la referencia, puede llamar al paquete a través de su API.
 
