@@ -6,50 +6,50 @@ ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
 ms.openlocfilehash: 006fff8360ac62393e4b88c1a253514591d22f4c
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231284"
 ---
-# <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a><span data-ttu-id="9da6d-103">Inicio rápido: Instalar y usar un paquete con la CLI de dotnet</span><span class="sxs-lookup"><span data-stu-id="9da6d-103">Quickstart: Install and use a package using the dotnet CLI</span></span>
+# <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a><span data-ttu-id="039f6-103">Inicio rápido: Instalar y usar un paquete con la CLI de dotnet</span><span class="sxs-lookup"><span data-stu-id="039f6-103">Quickstart: Install and use a package using the dotnet CLI</span></span>
 
-<span data-ttu-id="9da6d-104">Los paquetes de NuGet son unidades de código reutilizable que otros desarrolladores ponen a su disposición para que los use en sus proyectos.</span><span class="sxs-lookup"><span data-stu-id="9da6d-104">NuGet packages contain reusable code that other developers make available to you for use in your projects.</span></span> <span data-ttu-id="9da6d-105">Consulte [¿Qué es NuGet?](../What-is-NuGet.md) para obtener más información.</span><span class="sxs-lookup"><span data-stu-id="9da6d-105">See [What is NuGet?](../What-is-NuGet.md) for background.</span></span> <span data-ttu-id="9da6d-106">Los paquetes se instalan en un proyecto de .NET Core con el comando `dotnet add package` tal y como se describe en este artículo para el popular paquete [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/).</span><span class="sxs-lookup"><span data-stu-id="9da6d-106">Packages are installed into a .NET Core project using the `dotnet add package` command as described in this article for the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package.</span></span>
+<span data-ttu-id="039f6-104">Los paquetes de NuGet son unidades de código reutilizable que otros desarrolladores ponen a su disposición para que los use en sus proyectos.</span><span class="sxs-lookup"><span data-stu-id="039f6-104">NuGet packages contain reusable code that other developers make available to you for use in your projects.</span></span> <span data-ttu-id="039f6-105">Consulte [¿Qué es NuGet?](../What-is-NuGet.md) para obtener más información.</span><span class="sxs-lookup"><span data-stu-id="039f6-105">See [What is NuGet?](../What-is-NuGet.md) for background.</span></span> <span data-ttu-id="039f6-106">Los paquetes se instalan en un proyecto de .NET Core con el comando `dotnet add package` tal y como se describe en este artículo para el popular paquete [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/).</span><span class="sxs-lookup"><span data-stu-id="039f6-106">Packages are installed into a .NET Core project using the `dotnet add package` command as described in this article for the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package.</span></span>
 
-<span data-ttu-id="9da6d-107">Una vez instalado, haga referencia al paquete en el código con `using <namespace>`, donde \<namespace\> es específico del paquete que está usando.</span><span class="sxs-lookup"><span data-stu-id="9da6d-107">Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using.</span></span> <span data-ttu-id="9da6d-108">A continuación, puede usar la API del paquete.</span><span class="sxs-lookup"><span data-stu-id="9da6d-108">You can then use the package's API.</span></span>
+<span data-ttu-id="039f6-107">Una vez instalado, haga referencia al paquete en el código con `using <namespace>`, donde \<namespace\> es específico del paquete que está usando.</span><span class="sxs-lookup"><span data-stu-id="039f6-107">Once installed, refer to the package in code with `using <namespace>` where \<namespace\> is specific to the package you're using.</span></span> <span data-ttu-id="039f6-108">A continuación, puede usar la API del paquete.</span><span class="sxs-lookup"><span data-stu-id="039f6-108">You can then use the package's API.</span></span>
 
 > [!Tip]
-> <span data-ttu-id="9da6d-109">**Comience con nuget.org**: la exploración de nuget.org es la forma en que los desarrolladores de .NET suelen buscar componentes que pueden reutilizar en sus propias aplicaciones.</span><span class="sxs-lookup"><span data-stu-id="9da6d-109">**Start with nuget.org**: Browsing nuget.org is how .NET developers typically find components they can reuse in their own applications.</span></span> <span data-ttu-id="9da6d-110">Puede buscar directamente en nuget.org o buscar e instalar paquetes en Visual Studio, tal y como se indica en este artículo.</span><span class="sxs-lookup"><span data-stu-id="9da6d-110">You can search nuget.org directly or find and install packages within Visual Studio as shown in this article.</span></span>
+> <span data-ttu-id="039f6-109">**Comience con nuget.org**: la exploración de nuget.org es la forma en que los desarrolladores de .NET suelen buscar componentes que pueden reutilizar en sus propias aplicaciones.</span><span class="sxs-lookup"><span data-stu-id="039f6-109">**Start with nuget.org**: Browsing nuget.org is how .NET developers typically find components they can reuse in their own applications.</span></span> <span data-ttu-id="039f6-110">Puede buscar directamente en nuget.org o buscar e instalar paquetes en Visual Studio, tal y como se indica en este artículo.</span><span class="sxs-lookup"><span data-stu-id="039f6-110">You can search nuget.org directly or find and install packages within Visual Studio as shown in this article.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="9da6d-111">Requisitos previos</span><span class="sxs-lookup"><span data-stu-id="9da6d-111">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="039f6-111">Prerequisites</span><span class="sxs-lookup"><span data-stu-id="039f6-111">Prerequisites</span></span>
 
-- <span data-ttu-id="9da6d-112">El [SDK de .NET Core](https://www.microsoft.com/net/download/), que ofrece la herramienta de línea de comandos de `dotnet`.</span><span class="sxs-lookup"><span data-stu-id="9da6d-112">The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool.</span></span> <span data-ttu-id="9da6d-113">A partir de Visual Studio 2017, la CLI de dotnet se instala automáticamente con cualquier carga de trabajo relacionada con .NET Core.</span><span class="sxs-lookup"><span data-stu-id="9da6d-113">Starting in Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads.</span></span>
+- <span data-ttu-id="039f6-112">El [SDK de .NET Core](https://www.microsoft.com/net/download/), que ofrece la herramienta de línea de comandos de `dotnet`.</span><span class="sxs-lookup"><span data-stu-id="039f6-112">The [.NET Core SDK](https://www.microsoft.com/net/download/), which provides the `dotnet` command-line tool.</span></span> <span data-ttu-id="039f6-113">A partir de Visual Studio 2017, la CLI de dotnet se instala automáticamente con cualquier carga de trabajo relacionada con .NET Core.</span><span class="sxs-lookup"><span data-stu-id="039f6-113">Starting in Visual Studio 2017, the dotnet CLI is automatically installed with any .NET Core related workloads.</span></span>
 
-## <a name="create-a-project"></a><span data-ttu-id="9da6d-114">Crear un proyecto</span><span class="sxs-lookup"><span data-stu-id="9da6d-114">Create a project</span></span>
+## <a name="create-a-project"></a><span data-ttu-id="039f6-114">Crear un proyecto</span><span class="sxs-lookup"><span data-stu-id="039f6-114">Create a project</span></span>
 
-<span data-ttu-id="9da6d-115">Los paquetes NuGet pueden instalarse en todo tipo de proyecto de .NET.</span><span class="sxs-lookup"><span data-stu-id="9da6d-115">NuGet packages can be installed into a .NET project of some kind.</span></span> <span data-ttu-id="9da6d-116">En este tutorial, cree un proyecto simple de consola de .NET Core de la siguiente manera:</span><span class="sxs-lookup"><span data-stu-id="9da6d-116">For this walkthrough, create a simple .NET Core console project as follows:</span></span>
+<span data-ttu-id="039f6-115">Los paquetes NuGet pueden instalarse en todo tipo de proyecto de .NET.</span><span class="sxs-lookup"><span data-stu-id="039f6-115">NuGet packages can be installed into a .NET project of some kind.</span></span> <span data-ttu-id="039f6-116">En este tutorial, cree un proyecto simple de consola de .NET Core de la siguiente manera:</span><span class="sxs-lookup"><span data-stu-id="039f6-116">For this walkthrough, create a simple .NET Core console project as follows:</span></span>
 
-1. <span data-ttu-id="9da6d-117">Cree una carpeta para el proyecto.</span><span class="sxs-lookup"><span data-stu-id="9da6d-117">Create a folder for the project.</span></span>
+1. <span data-ttu-id="039f6-117">Cree una carpeta para el proyecto.</span><span class="sxs-lookup"><span data-stu-id="039f6-117">Create a folder for the project.</span></span>
 
-1. <span data-ttu-id="9da6d-118">Abra un símbolo del sistema y cambie a la carpeta nueva.</span><span class="sxs-lookup"><span data-stu-id="9da6d-118">Open a command prompt and switch to the new folder.</span></span>
+1. <span data-ttu-id="039f6-118">Abra un símbolo del sistema y cambie a la carpeta nueva.</span><span class="sxs-lookup"><span data-stu-id="039f6-118">Open a command prompt and switch to the new folder.</span></span>
 
-1. <span data-ttu-id="9da6d-119">Cree el proyecto con el comando siguiente:</span><span class="sxs-lookup"><span data-stu-id="9da6d-119">Create the project using the following command:</span></span>
+1. <span data-ttu-id="039f6-119">Cree el proyecto con el comando siguiente:</span><span class="sxs-lookup"><span data-stu-id="039f6-119">Create the project using the following command:</span></span>
 
     ```dotnetcli
     dotnet new console
     ```
 
-1. <span data-ttu-id="9da6d-120">Utilice `dotnet run` para comprobar que la aplicación se ha creado correctamente.</span><span class="sxs-lookup"><span data-stu-id="9da6d-120">Use `dotnet run` to test that the app has been created properly.</span></span>
+1. <span data-ttu-id="039f6-120">Utilice `dotnet run` para comprobar que la aplicación se ha creado correctamente.</span><span class="sxs-lookup"><span data-stu-id="039f6-120">Use `dotnet run` to test that the app has been created properly.</span></span>
 
-## <a name="add-the-newtonsoftjson-nuget-package"></a><span data-ttu-id="9da6d-121">Agregar el paquete de NuGet Newtonsoft.Json</span><span class="sxs-lookup"><span data-stu-id="9da6d-121">Add the Newtonsoft.Json NuGet package</span></span>
+## <a name="add-the-newtonsoftjson-nuget-package"></a><span data-ttu-id="039f6-121">Agregar el paquete de NuGet Newtonsoft.Json</span><span class="sxs-lookup"><span data-stu-id="039f6-121">Add the Newtonsoft.Json NuGet package</span></span>
 
-1. <span data-ttu-id="9da6d-122">Use el comando siguiente para instalar el paquete `Newtonsoft.json`:</span><span class="sxs-lookup"><span data-stu-id="9da6d-122">Use the following command to install the `Newtonsoft.json` package:</span></span>
+1. <span data-ttu-id="039f6-122">Use el comando siguiente para instalar el paquete `Newtonsoft.json`:</span><span class="sxs-lookup"><span data-stu-id="039f6-122">Use the following command to install the `Newtonsoft.json` package:</span></span>
 
     ```dotnetcli
     dotnet add package Newtonsoft.Json
     ```
 
-2. <span data-ttu-id="9da6d-123">Una vez completado el comando, abra el archivo `.csproj` para ver la referencia agregada:</span><span class="sxs-lookup"><span data-stu-id="9da6d-123">After the command completes, open the `.csproj` file to see the added reference:</span></span>
+2. <span data-ttu-id="039f6-123">Una vez completado el comando, abra el archivo `.csproj` para ver la referencia agregada:</span><span class="sxs-lookup"><span data-stu-id="039f6-123">After the command completes, open the `.csproj` file to see the added reference:</span></span>
 
     ```xml
    <ItemGroup>
@@ -57,15 +57,15 @@ ms.locfileid: "78231284"
    </ItemGroup>
     ```
 
-## <a name="use-the-newtonsoftjson-api-in-the-app"></a><span data-ttu-id="9da6d-124">Usar la API de Newtonsoft.Json en la aplicación</span><span class="sxs-lookup"><span data-stu-id="9da6d-124">Use the Newtonsoft.Json API in the app</span></span>
+## <a name="use-the-newtonsoftjson-api-in-the-app"></a><span data-ttu-id="039f6-124">Usar la API de Newtonsoft.Json en la aplicación</span><span class="sxs-lookup"><span data-stu-id="039f6-124">Use the Newtonsoft.Json API in the app</span></span>
 
-1. <span data-ttu-id="9da6d-125">Abra el archivo `Program.cs` y agréguele la línea siguiente al principio:</span><span class="sxs-lookup"><span data-stu-id="9da6d-125">Open the `Program.cs` file and add the following line at the top of the file:</span></span>
+1. <span data-ttu-id="039f6-125">Abra el archivo `Program.cs` y agréguele la línea siguiente al principio:</span><span class="sxs-lookup"><span data-stu-id="039f6-125">Open the `Program.cs` file and add the following line at the top of the file:</span></span>
 
     ```cs
     using Newtonsoft.Json;
     ```
 
-1. <span data-ttu-id="9da6d-126">Agregue el código siguiente antes de llamar a la línea `class Program`:</span><span class="sxs-lookup"><span data-stu-id="9da6d-126">Add the following code before the `class Program` line:</span></span>
+1. <span data-ttu-id="039f6-126">Agregue el código siguiente antes de llamar a la línea `class Program`:</span><span class="sxs-lookup"><span data-stu-id="039f6-126">Add the following code before the `class Program` line:</span></span>
 
     ```cs
     public class Account
@@ -76,7 +76,7 @@ ms.locfileid: "78231284"
     }
     ```
 
-1. <span data-ttu-id="9da6d-127">reemplace la función `Main` por lo siguiente:</span><span class="sxs-lookup"><span data-stu-id="9da6d-127">Replace the `Main` function with the following:</span></span>
+1. <span data-ttu-id="039f6-127">reemplace la función `Main` por lo siguiente:</span><span class="sxs-lookup"><span data-stu-id="039f6-127">Replace the `Main` function with the following:</span></span>
 
     ```cs
     static void Main(string[] args)
@@ -93,7 +93,7 @@ ms.locfileid: "78231284"
     }
     ```
 
-1. <span data-ttu-id="9da6d-128">Compile y ejecute la aplicación mediante el comando `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="9da6d-128">Build and run the app by using the `dotnet run` command.</span></span> <span data-ttu-id="9da6d-129">El resultado debe ser la representación JSON del objeto `Account` en el código:</span><span class="sxs-lookup"><span data-stu-id="9da6d-129">The output should be the JSON representation of the `Account` object in the code:</span></span>
+1. <span data-ttu-id="039f6-128">Compile y ejecute la aplicación mediante el comando `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="039f6-128">Build and run the app by using the `dotnet run` command.</span></span> <span data-ttu-id="039f6-129">El resultado debe ser la representación JSON del objeto `Account` en el código:</span><span class="sxs-lookup"><span data-stu-id="039f6-129">The output should be the JSON representation of the `Account` object in the code:</span></span>
 
     ```output
     {
@@ -102,21 +102,21 @@ ms.locfileid: "78231284"
       "DOB": "1980-02-20T00:00:00Z"
     }
     ```
-## <a name="related-video"></a><span data-ttu-id="9da6d-130">Vídeo relacionado</span><span class="sxs-lookup"><span data-stu-id="9da6d-130">Related video</span></span>
+## <a name="related-video"></a><span data-ttu-id="039f6-130">Vídeo relacionado</span><span class="sxs-lookup"><span data-stu-id="039f6-130">Related video</span></span>
 
 > [!Video https://channel9.msdn.com/Series/NuGet-101/Install-and-Use-a-NuGet-Package-with-the-NET-CLI-3-of-5/player]
 
-<span data-ttu-id="9da6d-131">Encuentre más vídeos de NuGet en [Channel 9](https://channel9.msdn.com/Series/NuGet-101) y [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).</span><span class="sxs-lookup"><span data-stu-id="9da6d-131">Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).</span></span>
+<span data-ttu-id="039f6-131">Encuentre más vídeos de NuGet en [Channel 9](https://channel9.msdn.com/Series/NuGet-101) y [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).</span><span class="sxs-lookup"><span data-stu-id="039f6-131">Find more NuGet videos on [Channel 9](https://channel9.msdn.com/Series/NuGet-101) and [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_).</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="9da6d-132">Pasos siguientes</span><span class="sxs-lookup"><span data-stu-id="9da6d-132">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="039f6-132">Pasos siguientes</span><span class="sxs-lookup"><span data-stu-id="039f6-132">Next steps</span></span>
 
-<span data-ttu-id="9da6d-133">¡Enhorabuena por instalar y usar su primer paquete NuGet!</span><span class="sxs-lookup"><span data-stu-id="9da6d-133">Congratulations on installing and using your first NuGet package!</span></span>
+<span data-ttu-id="039f6-133">¡Enhorabuena por instalar y usar su primer paquete NuGet!</span><span class="sxs-lookup"><span data-stu-id="039f6-133">Congratulations on installing and using your first NuGet package!</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="9da6d-134">Instalación y uso de paquetes con la CLI de dotnet</span><span class="sxs-lookup"><span data-stu-id="9da6d-134">Install and use packages using the dotnet CLI</span></span>](../consume-packages/install-use-packages-dotnet-cli.md)
+> [<span data-ttu-id="039f6-134">Instalación y uso de paquetes con la CLI de dotnet</span><span class="sxs-lookup"><span data-stu-id="039f6-134">Install and use packages using the dotnet CLI</span></span>](../consume-packages/install-use-packages-dotnet-cli.md)
 
-<span data-ttu-id="9da6d-135">Para explorar más de lo que NuGet ofrece, seleccione los siguientes vínculos.</span><span class="sxs-lookup"><span data-stu-id="9da6d-135">To explore more that NuGet has to offer, select the links below.</span></span>
+<span data-ttu-id="039f6-135">Para explorar más de lo que NuGet ofrece, seleccione los siguientes vínculos.</span><span class="sxs-lookup"><span data-stu-id="039f6-135">To explore more that NuGet has to offer, select the links below.</span></span>
 
-- [<span data-ttu-id="9da6d-136">Información general y flujo de trabajo del consumo de paquetes</span><span class="sxs-lookup"><span data-stu-id="9da6d-136">Overview and workflow of package consumption</span></span>](../consume-packages/overview-and-workflow.md)
-- [<span data-ttu-id="9da6d-137">Búsqueda y selección de paquetes</span><span class="sxs-lookup"><span data-stu-id="9da6d-137">Finding and choosing packages</span></span>](../consume-packages/finding-and-choosing-packages.md)
-- [<span data-ttu-id="9da6d-138">Referencias de paquete en archivos de proyecto</span><span class="sxs-lookup"><span data-stu-id="9da6d-138">Package references in project files</span></span>](../consume-packages/package-references-in-project-files.md)
+- [<span data-ttu-id="039f6-136">Información general y flujo de trabajo del consumo de paquetes</span><span class="sxs-lookup"><span data-stu-id="039f6-136">Overview and workflow of package consumption</span></span>](../consume-packages/overview-and-workflow.md)
+- [<span data-ttu-id="039f6-137">Búsqueda y selección de paquetes</span><span class="sxs-lookup"><span data-stu-id="039f6-137">Finding and choosing packages</span></span>](../consume-packages/finding-and-choosing-packages.md)
+- [<span data-ttu-id="039f6-138">Referencias de paquete en archivos de proyecto</span><span class="sxs-lookup"><span data-stu-id="039f6-138">Package references in project files</span></span>](../consume-packages/package-references-in-project-files.md)

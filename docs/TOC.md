@@ -1,6 +1,6 @@
 # [Docs de un vistazo](index.yml)
 # [¿Qué es NuGet?](what-is-nuget.md)
-# Primeros pasos
+# Introducción
 ## [Instalación de las herramientas del cliente NuGet](install-nuget-client-tools.md)
 ## [Instalar y usar un paquete (CLI de dotnet)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
 ## [Instalar y usar un paquete (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
@@ -82,7 +82,7 @@
 ### [help or ?](reference/cli-reference/cli-ref-help.md)
 ### [init](reference/cli-reference/cli-ref-init.md)
 ### [install](reference/cli-reference/cli-ref-install.md)
-### [lista](reference/cli-reference/cli-ref-list.md)
+### [list](reference/cli-reference/cli-ref-list.md)
 ### [locals](reference/cli-reference/cli-ref-locals.md)
 ### [mirror](reference/cli-reference/cli-ref-mirror.md)
 ### [pack](reference/cli-reference/cli-ref-pack.md)
@@ -122,7 +122,7 @@
 #### [Búsqueda](api/search-query-service-resource.md)
 #### [Índice de servicio](api/service-index.md)
 ### [Consulta de todos los paquetes mediante la API](guides/api/query-for-all-published-packages.md)
-### [Límites de velocidad](api/rate-limits.md)
+### [Límites de frecuencia](api/rate-limits.md)
 ### [Protocolos de nuget.org](api/nuget-protocols.md)
 ### [tools.json](api/tools-json.md)
 ## [SDK cliente de NuGet](reference/nuget-client-sdk.md)
