@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 07/27/2017
 ms.topic: reference
 ms.openlocfilehash: 5ecbcd4855de8ea7b6301a5e307779216baf96fc
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69488293"
 ---
 # <a name="projectjson-reference"></a>referencia de project.json
@@ -71,12 +71,12 @@ Los activos que fluyen desde las dependencias al proyecto de nivel superior se c
 | Etiqueta Include o Exclude | Carpetas afectadas del destino |
 | --- | --- |
 | contentFiles | Contenido  |
-| motor en tiempo de ejecución | Runtime, Resources y FrameworkAssemblies  |
+| en tiempo de ejecución | Runtime, Resources y FrameworkAssemblies  |
 | compile | lib |
-| compilación | build (propiedades y destinos de MSBuild) |
+| build | build (propiedades y destinos de MSBuild) |
 | nativas | nativas |
-| ninguna | Sin carpetas |
-| todo | Todas las carpetas |
+| None | Sin carpetas |
+| all | Todas las carpetas |
 
 Las etiquetas especificadas con `exclude` tienen prioridad sobre las que se especifican con `include`. Por ejemplo, `include="runtime, compile" exclude="compile"` es lo mismo que `include="runtime"`.
 
@@ -136,7 +136,7 @@ Enumera los sistemas operativos y arquitecturas en los que se ejecuta la aplicac
 Un paquete con una PCL que se puede ejecutar en cualquier runtime no tiene que especificar un runtime. Esto también se aplica a todas las dependencias; en caso contrario, se deben especificar runtimes.
 
 
-## <a name="supports"></a>Supports
+## <a name="supports"></a>Es compatible con
 
 Define un conjunto de comprobaciones de dependencias de paquete. Puede definir dónde se espera que se ejecute la PCL o aplicación. Las definiciones no son restrictivas, dado que es posible que el código se ejecute en otro lugar. Pero, al especificar estas comprobaciones, NuGet debe comprobar que se cumplan todas las dependencias en los TxM indicados. Ejemplos de los valores para esto son: `net46.app`, `uwp.10.0.app`, etc.
 

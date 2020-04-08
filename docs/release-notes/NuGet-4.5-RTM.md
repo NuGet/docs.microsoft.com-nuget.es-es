@@ -6,11 +6,11 @@ ms.author: anangaur
 ms.date: 12/4/2017
 ms.topic: conceptual
 ms.openlocfilehash: 321aedb471bc6f86e9c03878093b199267e31195
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432509"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496580"
 ---
 # <a name="nuget-45-release-notes"></a>Notas de la versión de NuGet 4.5
 

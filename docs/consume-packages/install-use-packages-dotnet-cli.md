@@ -6,10 +6,10 @@ ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
 ms.openlocfilehash: 67cca81c48970c7f2e2cf0a64ee5ba57704a31e2
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "74825159"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>Instalación y administración de paquetes con la CLI de dotnet
@@ -20,7 +20,7 @@ La CLI de dotnet está diseñada para su uso en el proyecto de .NET Core y .NET 
 
 En este artículo se muestra el uso básico de algunos de los comandos más comunes de la CLI de dotnet. Para la mayoría de estos comandos, la herramienta CLI busca un archivo de proyecto en el directorio actual, a menos que se especifique un archivo de proyecto en el comando (el archivo de proyecto es un modificador opcional). Para obtener una lista completa de los comandos y los argumentos que puede usar, consulte las [herramientas de la interfaz de la línea de comandos (CLI) de .NET Core](../reference/dotnet-commands.md).
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 - El [SDK de .NET Core](https://www.microsoft.com/net/download/), que ofrece la herramienta de línea de comandos de `dotnet`. A partir de Visual Studio 2017, la CLI de dotnet se instala automáticamente con cualquier carga de trabajo relacionada con .NET Core.
 
@@ -90,7 +90,7 @@ dotnet remove package Newtonsoft.Json
 
 ## <a name="update-a-package"></a>Actualización de un paquete
 
-A menos que se especifique la versión del paquete (modificador `-v`), NuGet instala la versión más reciente del paquete cuando se usa el comando `dotnet add package`.
+A menos que se especifique la versión del paquete (modificador `dotnet add package`), NuGet instala la versión más reciente del paquete cuando se usa el comando `-v`.
 
 ## <a name="restore-packages"></a>Restaurar paquetes
 

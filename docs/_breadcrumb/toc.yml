@@ -6,7 +6,7 @@
       tocHref: /nuget/
       topicHref: /nuget
       items:
-        - name: Primeros pasos
+        - name: Introducción
           tocHref: /nuget/quickstart/
           topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
         - name: Consumir paquetes

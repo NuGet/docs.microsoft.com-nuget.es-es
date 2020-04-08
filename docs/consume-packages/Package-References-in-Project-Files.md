@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
 ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428508"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
@@ -101,24 +101,24 @@ Las siguientes etiquetas de metadatos controlan los recursos de dependencia:
 
 | Etiqueta | Descripción | Valor predeterminado |
 | --- | --- | --- |
-| IncludeAssets | Se consumirán estos recursos | todo |
-| ExcludeAssets | No se consumirán estos recursos | ninguna |
+| IncludeAssets | Se consumirán estos recursos | all |
+| ExcludeAssets | No se consumirán estos recursos | None |
 | PrivateAssets | Estos recursos se consumirán, pero no irán al proyecto principal | archivos de contenido; analizadores; compilación |
 
 A continuación se muestran los valores permitidos para estas etiquetas, con varios valores separados por un punto y coma, salvo `all` y `none`, que deben aparecer por sí mismos:
 
-| Valor | Descripción |
+| Value | Descripción |
 | --- | ---
 | compile | Contenido de la carpeta `lib` y controla si el proyecto se puede compilar con los ensamblados dentro de la carpeta |
-| motor en tiempo de ejecución | Contenido de las carpetas `lib` y `runtimes` y controla si estos ensamblados se copiarán en el directorio de salida de compilación |
+| en tiempo de ejecución | Contenido de las carpetas `lib` y `runtimes` y controla si estos ensamblados se copiarán en el directorio de salida de compilación |
 | contentFiles | Contenido de la carpeta `contentfiles` |
-| compilación | `.props` y `.targets` en la carpeta `build` |
+| build | `.props` y `.targets` en la carpeta `build` |
 | buildMultitargeting | *(4.0)* `.props` y `.targets` en la carpeta `buildMultitargeting`, para los destinos multiplataforma |
 | buildTransitive | *(5.0+)* `.props` y `.targets` en la carpeta `buildTransitive`, para los recursos que fluyen de manera transitiva a cualquier proyecto de consumo. Vea la página de la [característica](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior). |
 | analyzers | Analizadores de .NET |
 | nativas | Contenido de la carpeta `native` |
-| ninguna | No se usa ninguno de los anteriores. |
-| todo | Todo lo anterior (excepto `none`) |
+| None | No se usa ninguno de los anteriores. |
+| all | Todo lo anterior (excepto `none`) |
 
 En el ejemplo siguiente, todo excepto los archivos de contenido del paquete sería consumido por el proyecto y todo excepto los analizadores y los archivos de contenido iría al proyecto principal.
 
@@ -276,11 +276,11 @@ En Visual Studio, también puede [suprimir las advertencias](/visualstudio/ide/
 La entrada a la restauración de NuGet es un conjunto de referencias de paquete del archivo del proyecto (dependencias de nivel superior o directas) y la salida es un cierre completo de todas las dependencias de paquetes, incluidas las dependencias transitivas. NuGet siempre intenta producir el mismo cierre completo de dependencias de paquetes si no ha cambiado la lista PackageReference de entrada. Sin embargo, hay algunos escenarios en los que no se puede hacer. Por ejemplo:
 
 * Al usar versiones flotantes como `<PackageReference Include="My.Sample.Lib" Version="4.*"/>`. Aunque la intención aquí es hacer flotante la última versión de todas las restauraciones de paquetes, hay escenarios en los que los usuarios necesitan que el gráfico se bloquee hacia una versión más reciente determinada y hacen flotante una versión posterior, en caso de estar disponible, en un gesto explícito.
-* Se publica una versión más reciente del paquete que coincide con los requisitos de la versión PackageReference. P. ej., 
+* Se publica una versión más reciente del paquete que coincide con los requisitos de la versión PackageReference. Por ejemplo, 
 
   * Día 1: si especificó `<PackageReference Include="My.Sample.Lib" Version="4.0.0"/>`, pero las versiones disponibles en los repositorios NuGet eran 4.1.0, 4.2.0 y 4.3.0. En este caso, NuGet habría llevado a cabo la resolución de la versión 4.1.0 (la versión mínima más cercana)
 
-  * Día 2: Se publica la versión 4.0.0. Ahora, NuGet encontrará la coincidencia exacta e iniciará la resolución de la versión 4.0.0
+  * Día 2: se publica la versión 4.0.0. Ahora, NuGet encontrará la coincidencia exacta e iniciará la resolución de la versión 4.0.0
 
 * Se quita una versión del paquete especificada del repositorio. Aunque nuget.org no permite la eliminación de paquetes, no todos los repositorios de paquetes tienen estas restricciones. Esto da lugar a la búsqueda por parte de NuGet de la mejor coincidencia cuando no puede llevar a cabo la resolución de la versión eliminada.
 
@@ -337,7 +337,7 @@ Si crea una aplicación, un archivo ejecutable y el proyecto en cuestión se enc
 
 Sin embargo, si su proyecto es un proyecto de biblioteca que no envía o un proyecto de código común del que dependen otros proyectos, **no debe** insertar en el repositorio el archivo de bloqueo como parte de su código fuente. No hay nada malo en el hecho de conservar el archivo de bloqueo, pero es posible que no se usen las dependencias de paquetes bloqueadas para el proyecto de código común, como se muestra en el archivo de bloqueo, durante la restauración/creación de un proyecto que depende de este proyecto de código común.
 
-Ejemplo
+P. ej.
 
 ```
 ProjectA
@@ -346,7 +346,7 @@ ProjectA
              |------>PackageX 1.0.0
 ```
 
-Si `ProjectA` tiene una dependencia de la versión `2.0.0` de `PackageX` y también hace referencia a `ProjectB`, que depende de la versión `1.0.0` de `PackageX`, el archivo de bloqueo para `ProjectB` mostrará una dependencia de la versión `1.0.0` de `PackageX`. Sin embargo, al compilarse `ProjectA`, su archivo de bloqueo contendrá una dependencia de la versión **`2.0.0`** de `PackageX` y **no** en la `1.0.0`, como se muestra en el archivo de bloqueo para `ProjectB`. Por tanto, el archivo de bloqueo de un proyecto de código común tiene poco que decir sobre los paquetes resueltos para los proyectos que dependen de él.
+Si `ProjectA` tiene una dependencia de la versión `PackageX` de `2.0.0` y también hace referencia a `ProjectB`, que depende de la versión `PackageX` de `1.0.0`, el archivo de bloqueo para `ProjectB` mostrará una dependencia de la versión `PackageX` de `1.0.0`. Sin embargo, al compilarse `ProjectA`, su archivo de bloqueo contendrá una dependencia de la versión `PackageX` **`2.0.0` de**  y **no** en la `1.0.0`, como se muestra en el archivo de bloqueo para `ProjectB`. Por tanto, el archivo de bloqueo de un proyecto de código común tiene poco que decir sobre los paquetes resueltos para los proyectos que dependen de él.
 
 ### <a name="lock-file-extensibility"></a>Extensibilidad del archivo de bloqueo
 

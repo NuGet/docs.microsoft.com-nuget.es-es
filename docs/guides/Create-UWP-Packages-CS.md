@@ -6,10 +6,10 @@ ms.author: rrelyea
 ms.date: 02/28/2020
 ms.topic: tutorial
 ms.openlocfilehash: 61f46f2623769927f881877cfe3f96132211b442
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231756"
 ---
 # <a name="create-uwp-packages-c"></a>Creación de paquetes UWP (C#)
@@ -18,11 +18,11 @@ La [Plataforma universal de Windows (UWP)](/windows/uwp) proporciona una platafo
 
 En este tutorial se creará un paquete NuGet con un componente de C# de UWP (incluido un control XAML) que se puede usar en proyectos administrados y nativos.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 1. Visual Studio 2019. Instale la versión 2019 Community Edition gratuitamente desde [visualstudio.com](https://www.visualstudio.com/); también puede usar las ediciones Professional y Enterprise.
 
-1. CLI de NuGet. Descargue la versión más reciente de `nuget.exe` desde [nuget.org/downloads](https://nuget.org/downloads) y guárdela en la ubicación que prefiera (se descarga directamente el `.exe`). Después, agregue esa ubicación a la variable de entorno PATH si aún no está. [Más información](/nuget/reference/nuget-exe-cli-reference#windows).
+1. CLI de NuGet. Descargue la versión más reciente de `nuget.exe` desde [nuget.org/downloads](https://nuget.org/downloads) y guárdela en la ubicación que prefiera (se descarga directamente el `.exe`). Después, agregue esa ubicación a la variable de entorno PATH si aún no está. [Más detalles](/nuget/reference/nuget-exe-cli-reference#windows).
 
 ## <a name="create-a-uwp-windows-runtime-component"></a>Crear un componente de Windows Runtime para UWP
 
@@ -203,7 +203,7 @@ Con el archivo `.nuspec` completado haciendo referencia a todos los archivos que
 nuget pack ImageEnhancer.nuspec
 ```
 
-Así se genera `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Al abrir este archivo en una herramienta como el [Explorador de paquetes NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) y expandir todos los nodos, se ve el contenido siguiente:
+Así se genera `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Al abrir este archivo en una herramienta como el [Explorador de paquetes NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) y expandir todos los nodos, verá el contenido siguiente:
 
 ![Explorador de paquetes NuGet en el que se muestra el paquete ImageEnhancer](media/UWP-PackageExplorer.png)
 
@@ -219,4 +219,4 @@ Para que el paquete esté disponible para otros desarrolladores, siga las instru
 - [Control de versiones del paquete](../concepts/package-versioning.md)
 - [Compatibilidad con varias versiones de .NET Framework](../create-packages/supporting-multiple-target-frameworks.md)
 - [Incluir propiedades y destinos de MSBuild en un paquete](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
-- [Creación de paquetes localizados](../create-packages/creating-localized-packages.md)
+- [Creación de paquetes de localizados](../create-packages/creating-localized-packages.md)

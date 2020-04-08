@@ -6,17 +6,17 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
 ms.openlocfilehash: 8c09d6d5662ed6ff0deffa5d45b823ad0992f399
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231310"
 ---
-# <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Inicio rápido: Creación y publicación de un paquete (CLI de dotnet)
+# <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Inicio rápido: Crear y publicar un paquete (CLI de dotnet)
 
 La creación de un paquete NuGet desde una biblioteca de clases de .NET y su publicación en nuget.org con la interfaz de la línea de comandos (CLI) de `dotnet` es un proceso simple.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 1. Instalar el [SDK de .NET Core](https://www.microsoft.com/net/download/), que incluye la CLI de `dotnet`. A partir de Visual Studio 2017, la CLI de dotnet se instala automáticamente con cualquier carga de trabajo relacionada con .NET Core.
 
@@ -120,7 +120,7 @@ Encuentre más vídeos de NuGet en [Channel 9](https://channel9.msdn.com/Series/
 
 Para explorar más de lo que NuGet ofrece, seleccione los siguientes vínculos.
 
-- [Publicar un paquete](../nuget-org/publish-a-package.md)
+- [Publicación de un paquete](../nuget-org/publish-a-package.md)
 - [Paquetes de versión preliminar](../create-packages/Prerelease-Packages.md)
 - [Admitir varias plataformas de destino](../create-packages/multiple-target-frameworks-project-file.md)
 - [Control de versiones del paquete](../concepts/package-versioning.md)

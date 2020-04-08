@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
 ms.openlocfilehash: 034b9dd9699af529e4d82d6ee5b1c42214673341
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428604"
 ---
 # <a name="manage-package-trust-boundaries"></a>Administración de los límites de confianza de paquete
@@ -24,7 +24,7 @@ Los paquetes firmados no requieren ningún procedimiento específico para su ins
 > [!Note]
 > Requiere NuGet 4.9.0 o versiones posteriores y la versión 15.9 de Visual Studio u otra posterior en Windows.
 
-Para configurar la validación de las firmas de los paquetes por parte de los clientes NuGet, en el archivo [nuget.config](../reference/nuget-config-file.md) establezca la opción `signatureValidationMode` en `require` mediante el uso del comando [`nuget config`](../reference/cli-reference/cli-ref-config.md).
+Para configurar la validación de las firmas de los paquetes por parte de los clientes NuGet, en el archivo `signatureValidationMode`nuget.config`require` establezca la opción [ en ](../reference/nuget-config-file.md) mediante el uso del comando [`nuget config`](../reference/cli-reference/cli-ref-config.md).
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require
@@ -55,7 +55,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 ```
 
 >[!TIP]
->Use el [comando verify](../reference/cli-reference/cli-ref-verify.md) de `nuget.exe` para obtener el valor `SHA256` de la huella digital del certificado.
+>Use el `nuget.exe`comando verify[ de ](../reference/cli-reference/cli-ref-verify.md) para obtener el valor `SHA256` de la huella digital del certificado.
 
 
 ### <a name="trust-all-packages-from-a-repository"></a>Confianza en todos los paquetes de un repositorio
@@ -95,7 +95,7 @@ En algunos casos es posible que quiera activar la verificación para el uso de p
 
 ### <a name="sync-repository-certificates"></a>Sincronización de certificados de repositorios
 
-Los repositorios de paquetes deben indicar los certificados que usan en su [índice de servicios](../api/service-index.md). En algún momento el repositorio actualizará dichos certificados, por ejemplo, cuando expiren. Cuando esto ocurra, los clientes que tengan directivas específicas deberán actualizar la configuración para incluir el certificado que se acabe de agregar. Puede actualizar fácilmente los firmantes de confianza asociados a un repositorios mediante el [comando trusted-signers sync](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-name) de `nuget.exe`.
+Los repositorios de paquetes deben indicar los certificados que usan en su [índice de servicios](../api/service-index.md). En algún momento el repositorio actualizará dichos certificados, por ejemplo, cuando expiren. Cuando esto ocurra, los clientes que tengan directivas específicas deberán actualizar la configuración para incluir el certificado que se acabe de agregar. Puede actualizar fácilmente los firmantes de confianza asociados a un repositorios mediante el `nuget.exe`comando trusted-signers sync[ de ](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-name).
 
 ### <a name="schema-reference"></a>Referencia del esquema
 

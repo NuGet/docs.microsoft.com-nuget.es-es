@@ -6,10 +6,10 @@ ms.author: nikolev
 ms.date: 02/28/2020
 ms.topic: conceptual
 ms.openlocfilehash: bb624ec6987dd5c6ee38d5bb7e01200487dd4bed
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231744"
 ---
 # <a name="consuming-packages-from-authenticated-feeds"></a>Uso de paquetes desde fuentes autenticadas
@@ -27,7 +27,7 @@ Para autenticarse con fuentes http privadas, los dos enfoques son los siguientes
 En el caso de los distintos clientes de NuGet, el propio proveedor de fuente privada es responsable de la autenticación.
 Todos los clientes de NuGet tienen métodos de extensibilidad para admitir esto. Se trata de una extensión de Visual Studio o un complemento que puede comunicarse con NuGet para recuperar las credenciales.
 
-### <a name="visual-studio"></a>Programa para la mejora
+### <a name="visual-studio"></a>Visual Studio
 
 En Visual Studio, NuGet expone una interfaz que los proveedores de fuentes pueden implementar y proporcionar a sus clientes. Para obtener más información, consulte la documentación sobre [cómo crear un proveedor de credenciales de Visual Studio](../reference/extensibility/NuGet-Credential-Providers-for-Visual-Studio.md).
 

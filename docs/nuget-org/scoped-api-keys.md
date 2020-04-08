@@ -6,17 +6,17 @@ ms.author: mikejo
 ms.date: 06/04/2019
 ms.topic: conceptual
 ms.openlocfilehash: 12d12d5294a474c4d3e4f5d3cad468bb515d21d5
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "67426950"
 ---
 # <a name="scoped-api-keys"></a>Claves de API con ámbito
 
 Si quiere que NuGet sea un entorno más seguro para la distribución de paquetes, puede controlar las claves de API mediante la adición de ámbitos.
 
-La funcionalidad de proporcionar un ámbito para las claves de API le permite controlar mejor las API. Puede realizar lo siguiente:
+La funcionalidad de proporcionar un ámbito para las claves de API le permite controlar mejor las API. Puede:
 
 - Crear diversas claves de API con ámbito que se pueden usar para varios paquetes con diferentes períodos de expiración.
 - Obtener claves de API de forma segura.
@@ -29,7 +29,7 @@ Nuestro objetivo al admitir estas claves consiste en ofrecerle la opción de ten
 
 - **Una clave de API para controlar todos los paquetes**. Al usar una sola clave de API para administrar todos los paquetes, es difícil compartirla de forma segura cuando varios desarrolladores participan con distintos paquetes y comparten una cuenta de publicador.
 - **Todos los permisos o ninguno**. Cualquier persona con acceso a la clave de API tiene todos los permisos (publicar, insertar y quitar de la lista) en los paquetes. A menudo, esto no es conveniente en un entorno con varios equipos.
-- **Un único punto de error**. El hecho de tener una sola clave de API significa que hay un único punto de error. Si la clave está en peligro, todos los paquetes asociados con la cuenta también podrían estarlo. La única manera de detener la fuga y evitar la interrupción del flujo de trabajo de CI/CD consiste en actualizar la clave de API. Además, en algunas ocasiones le interesará revocar el acceso de un usuario individual a la clave de API (por ejemplo, cuando un empleado abandona la organización). Actualmente, no existe una manera eficaz de controlar esto.
+- **Único punto de error**. El hecho de tener una sola clave de API significa que hay un único punto de error. Si la clave está en peligro, todos los paquetes asociados con la cuenta también podrían estarlo. La única manera de detener la fuga y evitar la interrupción del flujo de trabajo de CI/CD consiste en actualizar la clave de API. Además, en algunas ocasiones le interesará revocar el acceso de un usuario individual a la clave de API (por ejemplo, cuando un empleado abandona la organización). Actualmente, no existe una manera eficaz de controlar esto.
 
 Con claves de API con ámbito, intentamos solucionar estos problemas con la garantía de que ninguno de los flujos de trabajo existentes se interrumpa.
 

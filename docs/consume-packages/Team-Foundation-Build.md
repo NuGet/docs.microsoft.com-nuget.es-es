@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
 ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73610999"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>Configurar la restauración de paquetes con Team Foundation Build
@@ -48,7 +48,7 @@ Cuando el proceso de compilación restaura paquetes antes de compilar el código
 
 En el siguiente proyecto de demostración se muestra cómo configurar la compilación de tal manera que las carpetas `packages` y los archivos `.targets` no tengan que registrarse. También se muestra cómo configurar una compilación automatizada en Team Foundation Service para este proyecto de ejemplo.
 
-## <a name="repository-structure"></a>Estructura del repositorio
+## <a name="repository-structure"></a>Estructura de repositorios
 
 Nuestro proyecto de demostración es una simple herramienta de línea de comandos que usa el argumento de la línea de comandos para efectuar consultas en Bing. Tiene como destino .NET Framework 4 y usa muchos de los [paquetes BCL](https://www.nuget.org/profiles/dotnetframework/) ([Microsoft.Net.Http](https://www.nuget.org/packages/Microsoft.Net.Http), [Microsoft.Bcl](https://www.nuget.org/packages/Microsoft.Bcl), [Microsoft.Bcl.Async](https://www.nuget.org/packages/Microsoft.Bcl.Async) y [Microsoft.Bcl.Build](https://www.nuget.org/packages/Microsoft.Bcl.Build)).
 
@@ -113,7 +113,7 @@ El archivo `.gitignore` es [bastante eficaz](https://www.kernel.org/pub/software
     packages
     !packages/**/*.targets
 
-Se excluirán todas las carpetas `packages`, pero se volverán a incluir todos los archivos `.targets` incluidos. Por cierto, [aquí](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) encontrará una plantilla para archivos `.gitignore` diseñada específicamente para las necesidades de los desarrolladores de Visual Studio.
+Se excluirán todas las carpetas `packages`, pero se volverán a incluir todos los archivos `.targets` incluidos. Por cierto, `.gitignore`aquí[ encontrará una plantilla para archivos ](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) diseñada específicamente para las necesidades de los desarrolladores de Visual Studio.
 
 El control de versiones de TF admite un mecanismo muy parecido mediante el archivo [.tfignore](/vsts/tfvc/add-files-server#customize-which-files-are-ignored-by-version-control). La sintaxis es prácticamente la misma:
 

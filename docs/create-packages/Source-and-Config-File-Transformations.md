@@ -7,10 +7,10 @@ ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 2fefd9cff4d151111023521c31d58878743775bf
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231180"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>Transformar archivos de código fuente y de configuración

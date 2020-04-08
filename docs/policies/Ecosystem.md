@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 31243076f36f6ff274c4377c1773ea59dda8c834
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548149"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64495498"
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>Una introducción al ecosistema de NuGet
 
@@ -64,7 +64,7 @@ Se trata de herramientas y utilidades integradas en NuGet:
 - [Orchard](http://www.orchardproject.net/) (los módulos CMS se obtienen de una fuente de NuGet v1 hospedada en la Galería de Orchard)
 - [Implementación de Java del servidor de NuGet](http://jonnyzzz.com/blog/2012/03/07/nuget-server-in-pure-java/)
 - [NuGetLatest](https://twitter.com/NuGetLatest) (bot de Twitter que envía tweets sobre publicaciones de paquetes nuevos)
-- [DefinitelyTyped](http://definitelytyped.org/) ([Definiciones publicadas en NuGet](http://www.nuget.org/packages?q=DefinitelyTyped) de tipos de TypeScript [automáticos](https://github.com/DefinitelyTyped/NugetAutomation/))
+- [DefinitelyTyped](http://definitelytyped.org/) ([Definiciones publicadas en NuGet](https://github.com/DefinitelyTyped/NugetAutomation/) de tipos de TypeScript [automáticos](http://www.nuget.org/packages?q=DefinitelyTyped))
 
 ## <a name="training-materials-and-references"></a>Materiales de aprendizaje y referencias
 

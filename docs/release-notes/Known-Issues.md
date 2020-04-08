@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
 ms.openlocfilehash: 8f2b33a7290301bd16db3b1979ae496eee602f55
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "75383663"
 ---
 # <a name="known-issues-with-nuget"></a>Problemas conocidos con NuGet
@@ -27,7 +27,7 @@ Al usar el siguiente comando para almacenar las credenciales, se acaba cifrando 
 
 $PAT = "Token de acceso personal" $Feed = "Dirección URL" .\nuget.exe sources add -Name Test -Source $Feed -UserName $UserName -Password $PAT
 
-**Solución:**
+**Solución alternativa:**
 
 Almacene las contraseñas en un texto no cifrado con la opción [-StorePasswordInClearText](../reference/cli-reference/cli-ref-sources.md).
 
@@ -75,7 +75,7 @@ Para más información sobre este error, consulte este [elemento de trabajo](htt
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>Error de compilación después de la actualización de paquetes en VS 2012
 
-El problema: Está usando VS 2012 RTM. Cuando actualiza los paquetes NuGet, recibe este mensaje: "Uno o más paquetes no se pudieron desinstalar completamente". y se le pide que reinicie Visual Studio. Después de reiniciar VS, recibe errores de compilación extraños.
+El problema: está usando VS 2012 RTM. Al actualizar paquetes de NuGet recibe este mensaje: "Uno o más paquetes no se pudieron desinstalar completamente" y se le pide que reinicie Visual Studio. Después de reiniciar VS, recibe errores de compilación extraños.
 
 La causa está en que algunos archivos de los paquetes antiguos están bloqueados por un proceso de MSBuild de fondo. Incluso después de reiniciar VS, el proceso de MSBuild de fondo sigue usando los archivos de los paquetes antiguos, lo que provoca los errores de compilación.
 
@@ -90,7 +90,7 @@ Si está ejecutando VS 2010 SP1, puede que encuentre el siguiente mensaje de err
 Al consultar los registros, puede que vea una mención a una excepción `SignatureMismatchException`.
 
 Para evitar que esto ocurra, puede instalar una [revisión de Visual Studio 2010 SP1](http://bit.ly/vsixcertfix).
-Como alternativa, la solución consiste en desinstalar NuGet (ejecutando Visual Studio como administrador) e instalarlo desde la galería de extensiones de VS. Vea <https://support.microsoft.com/kb/2581019> para obtener más información.
+Como alternativa, la solución consiste en desinstalar NuGet (ejecutando Visual Studio como administrador) e instalarlo desde la galería de extensiones de VS. Consulte <https://support.microsoft.com/kb/2581019> para obtener más información.
 
 ## <a name="package-manager-console-throws-an-exception-when-the-reflector-visual-studio-add-in-is-also-installed"></a>La consola del Administrador de paquetes genera una excepción cuando también se instala el complemento Reflector Visual Studio.
 
@@ -105,7 +105,7 @@ Al ejecutar la consola del Administrador de paquetes, puede que encuentre el sig
     Command execution stopped because the preference variable "ErrorActionPreference" or common parameter
     is set to Stop: Unable to find type
 
-o
+or
 
     System.Management.Automation.CmdletInvocationException: Could not load file or assembly 'Scripts\nuget.psm1' or one of its dependencies. <br />The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) ---&gt; System.IO.FileLoadException: Could not load file or <br />assembly 'Scripts\nuget.psm1' or one of its dependencies. The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) <br />---&gt; System.ArgumentException: Illegal characters in path.
        at System.IO.Path.CheckInvalidPathChars(String path)
@@ -171,7 +171,7 @@ Si ha instalado paquetes compilados con una versión preliminar de NuGet, podrí
 
 ## <a name="attempting-to-install-or-uninstall-results-in-the-error-cannot-create-a-file-when-that-file-already-exists"></a>Al intentar instalar o desinstalar se produce el error "No se puede crear un archivo cuando ese archivo ya existe".
 
-Por algún motivo, las extensiones de Visual Studio pueden adoptar un estado extraño, en el que se ha desinstalado la extensión VSIX pero se han olvidado algunos archivos. Para solucionar este problema:
+Por algún motivo, las extensiones de Visual Studio pueden adoptar un estado extraño, en el que se ha desinstalado la extensión VSIX pero se han olvidado algunos archivos. Para evitar este problema:
 
 1. Salir de Visual Studio
 1. Abra la carpeta siguiente (puede que esté en otra unidad de su equipo)
@@ -201,7 +201,7 @@ De forma predeterminada, FluentNHibernate requiere NHibernate 3.0.0.2001, pero p
 
 ## <a name="write-error-command-doesnt-work-inside-installps1uninstallps1initps1"></a>El comando Write-Error no funciona dentro de install.ps1/uninstall.ps1/init.ps1
 
-Se trata de un problema conocido. En lugar de llamar a Write-Error, intente llamar a throw.
+Este es un problema conocido. En lugar de llamar a Write-Error, intente llamar a throw.
 
     throw "My error message"
 
@@ -223,6 +223,6 @@ Herramientas de Windows Phone no tiene compatibilidad con el Administrador de ex
 
 Tal y como se describe con detalle en [este problema de GitHub](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932), se pueden cambiar las mayúsculas y minúsculas de los paquetes de NuGet por compatibilidad con NuGet, pero se crean complicaciones durante la restauración de los paquetes de los usuarios que tienen paquetes (con un uso de mayúsculas y minúsculas diferente) en la carpeta *global-packages*. Se recomienda únicamente solicitar un cambio de mayúsculas y minúsculas si dispone de un método de comunicación con los usuarios existentes del paquete para notificarles la interrupción que se puede producir en la restauración de paquetes en tiempo de compilación.
 
-## <a name="reporting-issues"></a>Notificar problemas
+## <a name="reporting-issues"></a>Información sobre los problemas
 
 Para informar sobre problemas de NuGet, visite [https://github.com/nuget/home/issues](https://github.com/nuget/home/issues).

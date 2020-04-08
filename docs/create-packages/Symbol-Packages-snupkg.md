@@ -12,18 +12,18 @@ keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, comp
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 839c38ec165372bab9b93dec25e5c8e8e9439bfa
-ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
+ms.openlocfilehash: c42032f1869f4be0af44ffa8fbd5ad522f73c459
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036895"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80380423"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Crear paquetes de símbolos (.snupkg)
 
 Una buena experiencia de depuración se basa en la presencia de símbolos de depuración, ya que proporcionan información crítica, como la asociación entre el código de origen y el compilado, los nombres de variables locales, los seguimientos de la pila, etc. Puede usar paquetes de símbolos (.snupkg) para distribuir estos símbolos y mejorar la experiencia de depuración de los paquetes NuGet.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 [nuget.exe 4.9.0 o una versión superior](https://www.nuget.org/downloads) o [la CLI de dotnet 2.2.0 o una versión superior](https://www.microsoft.com/net/download/dotnet-core/2.2), que implementan los [protocolos de NuGet](../api/nuget-protocols.md) requeridos.
 
@@ -46,7 +46,7 @@ Si usa la CLI de dotnet o MSBuild, debe establecer las propiedades `IncludeSymbo
      dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
      ```
 
-  o
+  or
 
   ```cli
   msbuild MyPackage.csproj /t:pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
@@ -99,7 +99,7 @@ NuGet.org admite su propio repositorio de servidor de símbolos y solo acepta el
 NuGet.org tiene estas restricciones para los paquetes de símbolos:
 
 - Solo se permiten las siguientes extensiones de archivo en los paquetes de símbolos: `.pdb`, `.nuspec`, `.xml`, `.psmdcp`, `.rels`, `.p7s`
-- En estos momentos, solo se admiten archivos [PDB portátiles](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md) en el servidor de símbolos de NuGet.org.
+- En estos momentos, solo se admiten archivos [PDB portátiles](https://github.com/dotnet/runtime/blob/87572a799bfd37779c079faf28544e3f9a16be58/src/libraries/System.Reflection.Metadata/specs/PortablePdb-Metadata.md) en el servidor de símbolos de NuGet.org.
 - Los archivos PDB y las DLL de .nupkg asociadas deben compilarse con el compilador de la versión 15.9 de Visual Studio o una superior (vea [hash criptográfico de PDB](https://github.com/dotnet/roslyn/issues/24429)).
 
 Los paquetes de símbolos publicados en NuGet.org producirán un error de validación si no se cumplen estas restricciones. 
@@ -130,7 +130,7 @@ El paquete de símbolos (.snupkg) tiene las siguientes características:
 5) Los siguientes campos se excluirán del archivo .nuspec del archivo .snupkg: ```authors```, ```owners```, ```requireLicenseAcceptance```, ```license type```, ```licenseUrl``` y ```icon```.
 6) No utilice el elemento ```<license>```. Se trata un .snupkg con la misma licencia que el .nupkg correspondiente.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 Considere la posibilidad de usar el vínculo de origen para habilitar la depuración de código fuente de ensamblados .NET. Para obtener más información, vea la [guía de vínculos de origen](/dotnet/standard/library-guidance/sourcelink).
 

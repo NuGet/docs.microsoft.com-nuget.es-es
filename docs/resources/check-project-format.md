@@ -6,10 +6,10 @@ ms.author: mikejo
 ms.date: 07/09/2019
 ms.topic: conceptual
 ms.openlocfilehash: b151547e40e567b38acc2b0b9ee84c50d85000c9
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69488478"
 ---
 # <a name="identify-the-project-format"></a>Identificación del formato del proyecto
@@ -21,7 +21,7 @@ El hecho de que el proyecto sea del estilo de SDK o no depende del método que s
 | Proyecto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Formato de proyecto predeterminado | Herramienta de la CLI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Notas |
 |:------------- |:-------------|:-----|:-----|
 | .NET Standard | Estilo de SDK | [CLI de dotnet](../install-nuget-client-tools.md#dotnetexe-cli) | Los proyectos creados antes de Visual Studio 2017 no son del estilo de SDK. Use la CLI de `nuget.exe`. |
-| Núcleo de .NET | Estilo de SDK | [CLI de dotnet](../install-nuget-client-tools.md#dotnetexe-cli) | Los proyectos creados antes de Visual Studio 2017 no son del estilo de SDK. Use la CLI de `nuget.exe`. |
+| .NET Core | Estilo de SDK | [CLI de dotnet](../install-nuget-client-tools.md#dotnetexe-cli) | Los proyectos creados antes de Visual Studio 2017 no son del estilo de SDK. Use la CLI de `nuget.exe`. |
 | .NET Framework | Estilo no de SDK | [CLI de nuget.exe](../install-nuget-client-tools.md#nugetexe-cli) | Los proyectos de .NET Framework creados con otros métodos pueden ser del estilo de SDK. En su lugar, use la [CLI de dotnet](../install-nuget-client-tools.md#dotnetexe-cli) para estos. |
 | Proyecto .NET [migrado](../consume-packages/migrate-packages-config-to-package-reference.md) | Estilo no de SDK| Para crear paquetes, use [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration). | Para crear paquetes, se recomienda `msbuild -t:pack`. También puede usar la [CLI de dotnet](../install-nuget-client-tools.md#dotnetexe-cli). Los proyectos migrados no son proyectos del estilo de SDK. |
 
@@ -48,7 +48,7 @@ Si trabaja en Visual Studio, puede comprobar rápidamente el formato del proyect
 
 - En el Explorador de soluciones haga clic con el botón derecho en el proyecto y seleccione **Editar myprojectname.csproj**.
 
-   Esta opción solo está disponible a partir de Visual Studio 2017 para los proyectos que usan el atributo del estilo de SDK. También puede usar el otro método.
+   Esta opción solo está disponible a partir de Visual Studio 2017 para proyectos que usan el atributo de estilo SDK. También puede usar el otro método.
 
    ![Edición del archivo del proyecto](media/edit-project-file.png)
 
@@ -62,7 +62,7 @@ Si trabaja en Visual Studio, puede comprobar rápidamente el formato del proyect
 
    Después, haga clic con el botón derecho en el proyecto descargado y elija **Editar myprojectname.csproj**.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Creación de paquetes de .NET Standard con la CLI de dotnet](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
 - [Creación de paquetes de .NET Standard con Visual Studio](../quickstart/create-and-publish-a-package-using-visual-studio.md)

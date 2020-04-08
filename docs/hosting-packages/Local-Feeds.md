@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 12/06/2017
 ms.topic: conceptual
 ms.openlocfilehash: 42a5c30c058a9efb35338c1b484235b6ad111bd0
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "68317588"
 ---
 # <a name="local-feeds"></a>Fuentes locales

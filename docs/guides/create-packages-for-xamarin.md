@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/05/2019
 ms.topic: tutorial
 ms.openlocfilehash: 0cb653bad9e853d908039b3f7a94e1dd7eefdde5
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78230907"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2017-or-2019"></a>Creación de paquetes para Xamarin con Visual Studio 2017 o 2019
@@ -25,7 +25,7 @@ En este tutorial usará Visual Studio 2017 o 2019 para crear un paquete NuGet m
 1. [Empaquetar el componente](#package-the-component)
 1. [Temas relacionados](#related-topics)
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 1. Visual Studio 2017 o 2019 con la Plataforma universal de Windows (UWP) y Xamarin. Instale la edición Community gratuita desde [visualstudio.com](https://www.visualstudio.com/); también puede usar las ediciones Professional y Enterprise, por supuesto. Para incluir las herramientas de UWP y Xamarin, seleccione una instalación personalizada y active las opciones adecuadas.
 1. CLI de NuGet. Descargue la versión más reciente de nuget.exe desde [nuget.org/downloads](https://nuget.org/downloads) y guárdela en una ubicación de su elección. Después, agregue esa ubicación a la variable de entorno PATH si aún no está.
@@ -176,7 +176,7 @@ Para incluir ensamblados de referencia específicos de la plataforma, agregue lo
 > [!Note]
 > Para reducir los nombres de los archivos DLL y XML, haga clic con el botón derecho en cualquier proyecto, seleccione la pestaña **Biblioteca** y cambie los nombres de ensamblado.
 
-### <a name="add-dependencies"></a>Agregar dependencias
+### <a name="add-dependencies"></a>Adición de dependencias
 
 Si tiene dependencias específicas para implementaciones nativas, use el elemento `<dependencies>` con elementos `<group>` para especificarlas, por ejemplo:
 
@@ -265,7 +265,7 @@ Con el archivo `.nuspec` completado haciendo referencia a todos los archivos que
 nuget pack LoggingLibrary.nuspec
 ```
 
-Esto generará `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Al abrir este archivo en una herramienta como el [Explorador de paquetes NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) y expandir todos los nodos, se ve el contenido siguiente:
+Esto generará `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Al abrir este archivo en una herramienta como el [Explorador de paquetes NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) y expandir todos los nodos, verá el contenido siguiente:
 
 ![Explorador de paquetes NuGet que en el que se muestra el paquete LoggingLibrary](media/Cross-Platform-PackageExplorer.png)
 
@@ -281,4 +281,4 @@ Para que el paquete esté disponible para otros desarrolladores, siga las instru
 - [Control de versiones del paquete](../concepts/package-versioning.md)
 - [Compatibilidad con varias versiones de .NET Framework](../create-packages/supporting-multiple-target-frameworks.md)
 - [Incluir propiedades y destinos de MSBuild en un paquete](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
-- [Creación de paquetes localizados](../create-packages/creating-localized-packages.md)
+- [Creación de paquetes de localizados](../create-packages/creating-localized-packages.md)

@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
 ms.openlocfilehash: 101c6d6b9d93da912f60c40b27559e80327154b8
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428430"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>Cómo volver a instalar y actualizar paquetes
@@ -36,10 +36,10 @@ En este artículo:
 
 ## <a name="when-to-reinstall-a-package"></a>Cuándo se debe volver a instalar un paquete
 
-1. **Referencias rotas después de restaurar paquetes**: si ha abierto un proyecto y ha restaurado paquetes NuGet, pero aún ve referencias rotas, intente volver a instalar cada uno de esos paquetes.
+1. **Referencias rotas después de restaurar paquetes**: si ha abierto un proyecto y ha restaurado paquetes de NuGet, pero aún ve referencias rotas, intente volver a instalar cada uno de esos paquetes.
 1. **El proyecto está roto por culpa de archivos eliminados**: NuGet no impide que el usuario elimine elementos agregados de paquetes, por lo que resulta fácil modificar accidentalmente el contenido instalado desde un paquete e interrumpir el proyecto. Para restaurar el proyecto, vuelva a instalar los paquetes afectados.
 1. **La actualización del paquete interrumpió el proyecto**: si una actualización de un paquete interrumpe un proyecto, el error se suele deber a un paquete de dependencias que posiblemente también se haya actualizado. Para restaurar el estado de la dependencia, vuelva a instalar ese paquete en concreto.
-1. **Redestinación o actualización de un proyecto**: puede resultar útil si se ha redestinado o actualizado un proyecto y si el paquete debe volver a instalarse debido al cambio en el marco de destino. En NuGet se muestra un error de compilación en esos casos justo después de efectuar la redestinación del proyecto. Las advertencias de compilación posteriores le indican que es posible que se deba reinstalar el paquete. Para la actualización de proyectos, NuGet muestra un error en el registro de actualización de proyectos.
+1. **Redestinación o actualización de un proyecto**: puede resultar útil si se ha redestinado o actualizado un proyecto y si el paquete debe volver a instalarse debido al cambio en la plataforma de destino. En NuGet se muestra un error de compilación en esos casos justo después de efectuar la redestinación del proyecto. Las advertencias de compilación posteriores le indican que es posible que se deba reinstalar el paquete. Para la actualización de proyectos, NuGet muestra un error en el registro de actualización de proyectos.
 1. **Volver a instalar un paquete durante su desarrollo**: los autores de paquetes a menudo necesitan volver a instalar la misma versión del paquete que están desarrollando para probar el comportamiento. El comando `Install-Package` no proporciona ninguna opción para forzar una reinstalación, así que es mejor que use `Update-Package -reinstall`.
 
 ## <a name="constraining-upgrade-versions"></a>Restringir las versiones de actualización

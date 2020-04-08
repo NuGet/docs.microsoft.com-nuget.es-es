@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 01/09/2017
 ms.topic: reference
 ms.openlocfilehash: 00a64d95c943e9e5cb3a279358a6495125a1bd87
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551375"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64495932"
 ---
 # <a name="nuget-support-for-the-visual-studio-project-system"></a>Compatibilidad de NuGet para el sistema de proyectos de Visual Studio
 
@@ -25,7 +25,7 @@ Para integrarse con NuGet, un sistema de proyectos debe anunciar su propia compa
 
 El cliente de NuGet determina qué paquetes son compatibles con el tipo de proyecto en función de las [capacidades del proyecto](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md), tal y como se describe en la tabla siguiente.
 
-| Función | Descripción |
+| Capacidad | Descripción |
 | --- | --- |
 | AssemblyReferences | Indica que el proyecto admite referencias de ensamblado (distintas de WinRTReferences). |
 | DeclaredSourceItems | Indica que el proyecto es un proyecto típico de MSBuild (no DNX) porque declara los elementos de origen en el propio proyecto. |
@@ -103,7 +103,7 @@ No olvide agregar o quitar capacidades del conjunto de `ActualProjectCapabilitie
 
 Un proyecto declara esta capacidad admitiendo la propiedad `VSHPROPID_ProjectCapabilitiesChecker` mediante `IVsHierarchy::GetProperty`. Debe devolver una instancia de `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`, que se define en el ensamblado `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll`. Haga referencia a este ensamblado instalando [su paquete NuGet](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime).
 
-Por ejemplo, podría agregar la siguiente instrucción `case` a la instrucción `switch` del método `IVsHierarchy::GetProperty`:
+Por ejemplo, podría agregar la siguiente instrucción `case` a la instrucción `IVsHierarchy::GetProperty` del método `switch`:
 
 ```cs
 case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:

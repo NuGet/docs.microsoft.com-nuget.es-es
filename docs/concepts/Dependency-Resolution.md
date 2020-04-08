@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428472"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Cómo resuelve NuGet las dependencias de paquetes
@@ -55,7 +55,7 @@ Cuando una aplicación especifica un número de versión exacto, como 1.2, que n
 
 #### <a name="floating-versions"></a>Versiones flotantes
 
-Se especifica una versión de dependencia flotante con el carácter \*. Por ejemplo: `6.0.*`. Esta especificación de versión dice "usar la versión 6.0.x más reciente"; `4.*` significa "usar la versión 4.x más reciente". Usar una versión flotante reduce los cambios en el archivo del proyecto, a la vez que se mantiene actualizado con la versión más reciente de una dependencia.
+Se especifica una versión de dependencia flotante con el carácter \*. Por ejemplo, `6.0.*`. Esta especificación de versión dice "usar la versión 6.0.x más reciente"; `4.*` significa "usar la versión 4.x más reciente". Usar una versión flotante reduce los cambios en el archivo del proyecto, a la vez que se mantiene actualizado con la versión más reciente de una dependencia.
 
 Cuando se usa una versión flotante, NuGet resuelve la versión más alta de un paquete que coincide con el patrón de versión. Por ejemplo, `6.0.*` obtiene la versión más alta de un paquete que empieza por 6.0:
 

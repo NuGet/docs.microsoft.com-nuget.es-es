@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 01/03/2018
 ms.topic: conceptual
 ms.openlocfilehash: be7c10fb6ce60375f77e38f9b604ec33063e52fc
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550515"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64498246"
 ---
 # <a name="packages-in-visual-studio-templates"></a>Paquetes en plantillas de Visual Studio
 
@@ -23,7 +23,7 @@ Para obtener más información sobre la creación de las plantillas propiamente 
 En el resto de esta sección se describen los pasos específicos para seguir al crear una plantilla a fin de incluir correctamente paquetes NuGet.
 
 - [Agregar paquetes a una plantilla](#adding-packages-to-a-template)
-- [Procedimientos recomendados](#best-practices)
+- [procedimientos recomendados](#best-practices)
 
 Para obtener un ejemplo, vea el [ejemplo NuGetInVsTemplates](https://bitbucket.org/marcind/nugetinvstemplates).
 
@@ -129,7 +129,7 @@ Los SDK que se instalaron mediante MSI pueden instalar paquetes NuGet directamen
         </packages>
         ```
 
-## <a name="best-practices"></a>Procedimientos recomendados
+## <a name="best-practices"></a>Prácticas recomendadas
 
 1. Declare una dependencia en la VSIX de NuGet agregando una referencia a ella en el manifiesto de VSIX:
 

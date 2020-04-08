@@ -6,21 +6,21 @@ ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
 ms.openlocfilehash: b16bf422e2627be3b8516a875d749639734064a9
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72380718"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>Creación de paquetes de .NET Standard y .NET Framework con Visual Studio 2015
 
-**Nota:** Se recomienda usar Visual Studio 2017 para desarrollar bibliotecas de .NET Standard. Visual Studio 2015 puede funcionar pero las herramientas de .NET Core solo se llevaron al estado de versión preliminar. Vea [Creación y publicación de un paquete con Visual Studio 2017](../quickstart/create-and-publish-a-package-using-visual-studio.md) para trabajar con NuGet 4.x y versiones posteriores y Visual Studio 2017.
+**Nota**: Se recomienda usar Visual Studio 2017 para desarrollar bibliotecas de .NET Standard. Visual Studio 2015 puede funcionar pero las herramientas de .NET Core solo se llevaron al estado de versión preliminar. Vea [Creación y publicación de un paquete con Visual Studio 2017](../quickstart/create-and-publish-a-package-using-visual-studio.md) para trabajar con NuGet 4.x y versiones posteriores y Visual Studio 2017.
 
 La [biblioteca .NET Standard](/dotnet/articles/standard/library) es una especificación formal de las API de .NET diseñada para estar disponible en todos los runtimes de .NET, lo que establece mayor uniformidad en el ecosistema de .NET. La biblioteca de .NET Standard define un conjunto uniforme de API de BCL (biblioteca de clases base) para que todas las plataformas de .NET lo implementen, independientemente de la carga de trabajo. Permite a los desarrolladores generar código que se pueda usar en todos los runtimes de .NET y reduce, si no las elimina, las directivas de compilación condicional específicas de la plataforma en código compartido.
 
 En esta guía se describe la creación de un paquete NuGet destinado a la biblioteca de .NET Standard 1.4 o un paquete destinado a .NET Framework 4.6. Una biblioteca de .NET Standard 1.4 funcionará en .NET Framework 4.6.1, la Plataforma universal de Windows 10, .NET Core y Mono/Xamarin. Para más información, vea la [tabla de asignación de .NET Standard](/dotnet/standard/net-standard#net-implementation-support) (documentación de .NET). Puede elegir otra versión de la biblioteca de .NET si lo prefiere.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerequisites
 
 1. Visual Studio 2015 Update 3
 1. (Solo .NET Standard) [SDK de .NET Core](https://www.microsoft.com/net/download/)
