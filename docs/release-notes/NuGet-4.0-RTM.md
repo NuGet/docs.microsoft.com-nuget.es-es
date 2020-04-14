@@ -6,11 +6,11 @@ ms.author: anangaur
 ms.date: 03/03/2017
 ms.topic: conceptual
 ms.openlocfilehash: c27d0aa2e5c9af9cb15d2f487b93e93aca666214
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547766"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496603"
 ---
 # <a name="nuget-40-rtm-release-notes"></a>Notas de la versión de NuGet 4.0 RTM
 
@@ -252,7 +252,7 @@ No hay ninguna solución alternativa para este problema.
 
 - La lista de errores contiene un error después de la solución de compilación, que descarga el proyecto al que se hace referencia: [#4208](https://github.com/NuGet/Home/issues/4208)
 
-- MSB4057: El destino "_GenerateRestoreGraphProjectEntry" no existe en el proyecto:[#4194](https://github.com/NuGet/Home/issues/4194)
+- MSB4057: El destino "_GenerateRestoreGraphProjectEntry" no existe en el proyecto. - [#4194](https://github.com/NuGet/Home/issues/4194)
 
 - vsfeedback: la interfaz de usuario del administrador de NuGet de la solución se bloquea cuando se seleccionan todos los proyectos: [#4191](https://github.com/NuGet/Home/issues/4191)
 
@@ -264,11 +264,11 @@ No hay ninguna solución alternativa para este problema.
 
 - Retraso enviado por NuGet.Build.Tasks.Pack.dll firmado en VS2017 (d15rel 26014.00): [#4122](https://github.com/NuGet/Home/issues/4122)
 
-- VSFeedback: se produce un error de restauración para un proyecto de VS 2015 generado con CMake 3.7.1: [#4114](https://github.com/NuGet/Home/issues/4114)
+- VSFeedback: Se produce un error de restauración para un proyecto de VS 2015 generado con CMake 3.7.1: [#4114](https://github.com/NuGet/Home/issues/4114)
 
-- VSFeedback: los errores de restauración pueden ocultar mensajes de error más completos que podría proporcionar la compilación: [#4113](https://github.com/NuGet/Home/issues/4113)
+- VSFeedback: Los errores de restauración pueden ocultar mensajes de error más completos que podría proporcionar la compilación: [#4113](https://github.com/NuGet/Home/issues/4113)
 
-- [VSFeedback] Se ha producido un error al restaurar los paquetes de NuGet para un proyecto de sitio web: El valor no puede ser nulo:[#4092](https://github.com/NuGet/Home/issues/4092)
+- [VSFeedback] Se ha producido un error al restaurar los paquetes de NuGet para un proyecto de sitio web: Value cannot be null. - [#4092](https://github.com/NuGet/Home/issues/4092)
 
 - La migración genera una "excepción de referencia a objeto" en NuGet.PackageManagement.VisualStudio.SolutionRestoreWorker: [#4067](https://github.com/NuGet/Home/issues/4067)
 
