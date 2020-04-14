@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 07/17/2017
 ms.topic: conceptual
 ms.openlocfilehash: ac3c137dd0ba50571737093eef11c8ab0ef932b2
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548669"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64494370"
 ---
 # <a name="projectjson-and-uwp"></a>project.json y UWP
 
@@ -115,9 +115,9 @@ En este ejemplo, todos los ensamblados de los directorios `ref` serían idéntic
 
 La carpeta runtimes contiene ensamblados y bibliotecas nativas que se deben ejecutar en "runtimes" específicos, que generalmente se definen por el sistema operativo y la arquitectura de CPU. Estos tiempos de ejecución se identifican mediante [identificadores en tiempo de ejecución (RID)](/dotnet/core/rid-catalog) como `win`, `win-x86`, `win7-x86`, `win8-64`, etc.
 
-## <a name="native-helpers-to-use-platform-specific-apis"></a>Aplicaciones auxiliares nativas para usar las API específicas de la plataforma
+## <a name="native-helpers-to-use-platform-specific-apis"></a>Asistentes nativas para usar las API específicas de la plataforma
 
-En el ejemplo siguiente se muestra un paquete que tiene una implementación estrictamente administrada para varias plataformas, pero que usa aplicaciones auxiliares nativas en Windows 8, donde puede llamar a API nativas específicas de Windows 8.
+En el ejemplo siguiente se muestra un paquete que tiene una implementación estrictamente administrada para varias plataformas, pero que usa asistentes nativos en Windows 8, donde puede llamar a API nativas específicas de Windows 8.
 
     └───MyLibrary
          ├───lib
@@ -147,7 +147,7 @@ Dado el paquete anterior, sucede lo siguiente:
 
 - Cuando se encuentra en Windows 8, se usa `runtimes/win8-<architecture>/lib/MyLibrary.dll` y `native/MyNativeHelper.dll` se copia en la salida de la compilación.
 
-En el ejemplo anterior el ensamblado `lib/net40` es simplemente código administrado, mientras que los ensamblados en la carpeta runtimes se invocarán en el ensamblado auxiliar nativo para llamar a las API específicas de Windows 8.
+En el ejemplo anterior el ensamblado `lib/net40` es simplemente código administrado, mientras que los ensamblados en la carpeta runtimes se invocarán en el ensamblado del asistente nativo para llamar a las API específicas de Windows 8.
 
 Solo se selecciona una carpeta `lib`, por lo que, si hay una carpeta específica del entorno en tiempo de ejecución, se elige sobre `lib`, que no es específica del entorno en tiempo de ejecución. La carpeta nativa es aditiva; si existe, se copia en la salida de la compilación.
 

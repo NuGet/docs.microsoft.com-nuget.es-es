@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 83414a824676844f9e44eab874e5eac788d50583
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73610938"
 ---
 # <a name="creating-localized-nuget-packages"></a>Creación de paquetes localizados de NuGet
@@ -99,7 +99,7 @@ Para ello, el paquete principal usa la convención de nomenclatura `{identifier}
 
 Luego, un ensamblado satélite usa la convención de nomenclatura `{identifier}.{language}.{version}.nupkg` (por ejemplo, `ContosoUtilities.de.1.0.0.nupkg`). El identificador **debe** coincidir exactamente con el del paquete principal.
 
-Dado que se trata de un paquete independiente, tiene su propio archivo `.nuspec` que contiene metadatos localizados. Tenga en cuenta que el idioma del archivo `.nuspec` **debe** coincidir con el que se usa en el nombre de archivo.
+Dado que se trata de un paquete independiente, tiene su propio archivo `.nuspec` que contiene metadatos localizados. Tenga en cuenta que el idioma del archivo `.nuspec` **debe** coincidir con el empleado en el nombre de archivo.
 
 El ensamblado satélite también **debe** declarar una versión exacta del paquete principal como dependencia, mediante la notación de versión [] \(vea [Package versioning](../concepts/package-versioning.md) [Control de versiones de paquetes]). Por ejemplo, `ContosoUtilities.de.1.0.0.nupkg` debe declarar una dependencia en `ContosoUtilities.1.0.0.nupkg` mediante la notación `[1.0.0]`. El paquete satélite, por supuesto, puede tener un número de versión diferente que el paquete principal.
 

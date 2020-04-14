@@ -7,11 +7,11 @@ ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
 ms.openlocfilehash: 0bd21c427b5b89ae9e5f1500d75e1bf63a96e828
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551083"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64498231"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>Consultar todos los paquetes publicados en nuget.org
 
@@ -110,7 +110,7 @@ git clone https://github.com/NuGet/Samples.git
 
 ### <a name="catalog-sdk"></a>SDK del catálogo
 
-La forma más fácil de consumir el catálogo consiste en usar el paquete de versión preliminar del SDK del catálogo de .NET: [NuGet.Protocol.Catalog](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog). Este paquete está disponible en la fuente de MyGet `nuget-build`, para la que se debe usar la dirección URL de origen del paquete de NuGet `https://dotnet.myget.org/F/nuget-build/api/v3/index.json`.
+La forma más fácil de emplear el catálogo es usar el paquete de versión preliminar del SDK del catálogo de .NET: [NuGet.Protocol.Catalog](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog). Este paquete está disponible en la fuente de MyGet `nuget-build`, para la que se debe usar la dirección URL de origen del paquete de NuGet `https://dotnet.myget.org/F/nuget-build/api/v3/index.json`.
 
 Puede instalar este paquete en un proyecto compatible con `netstandard1.3` o una versión posterior (por ejemplo, .NET Framework 4.6).
 
