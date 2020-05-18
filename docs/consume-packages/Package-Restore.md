@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: c1f1957c58839ac763238938b476eb0882c56a59
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 11d0a7c321e6cd12c82b83054ec85d5f05755434
+ms.sourcegitcommit: 0a63956bf12aaf1b1b45e680bc8e90f97347988c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428442"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83367926"
 ---
 # <a name="restore-packages-using-package-restore"></a>Restauración de paquetes
 
@@ -143,7 +143,7 @@ NuGet dispone de dos formatos en los que un proyecto puede usar paquetes: [`Pack
 [!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
 
 > [!IMPORTANT]
-> El comando `restore`no modifica un archivo del proyecto o *packages.config*. Para agregar una dependencia, puede agregar un paquete mediante la interfaz de usuario del Administrador de paquetes o la consola en Visual Studio, o bien modificar *packages.config* y, luego, ejecutar `install` o `restore`.
+> El comando `restore` no modifica un archivo del proyecto o *packages.config*. Para agregar una dependencia, puede agregar un paquete mediante la interfaz de usuario del Administrador de paquetes o la consola en Visual Studio, o bien modificar *packages.config* y, luego, ejecutar `install` o `restore`.
 
 ## <a name="restore-using-msbuild"></a>Restauración con MSBuild
 
