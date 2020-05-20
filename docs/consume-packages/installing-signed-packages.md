@@ -24,7 +24,7 @@ Los paquetes firmados no requieren ningún procedimiento específico para su ins
 > [!Note]
 > Requiere NuGet 4.9.0 o versiones posteriores y la versión 15.9 de Visual Studio u otra posterior en Windows.
 
-Para configurar la validación de las firmas de los paquetes por parte de los clientes NuGet, en el archivo `signatureValidationMode`nuget.config`require` establezca la opción [ en ](../reference/nuget-config-file.md) mediante el uso del comando [`nuget config`](../reference/cli-reference/cli-ref-config.md).
+Para configurar la validación de las firmas de los paquetes por parte de los clientes NuGet, en el archivo [nuget.config](../reference/nuget-config-file.md) establezca la opción `signatureValidationMode` en `require` mediante el uso del comando [`nuget config`](../reference/cli-reference/cli-ref-config.md).
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require

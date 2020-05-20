@@ -346,7 +346,7 @@ ProjectA
              |------>PackageX 1.0.0
 ```
 
-Si `ProjectA` tiene una dependencia de la versión `PackageX` de `2.0.0` y también hace referencia a `ProjectB`, que depende de la versión `PackageX` de `1.0.0`, el archivo de bloqueo para `ProjectB` mostrará una dependencia de la versión `PackageX` de `1.0.0`. Sin embargo, al compilarse `ProjectA`, su archivo de bloqueo contendrá una dependencia de la versión `PackageX` **`2.0.0` de**  y **no** en la `1.0.0`, como se muestra en el archivo de bloqueo para `ProjectB`. Por tanto, el archivo de bloqueo de un proyecto de código común tiene poco que decir sobre los paquetes resueltos para los proyectos que dependen de él.
+Si `ProjectA` tiene una dependencia de la versión `2.0.0` de `PackageX` y también hace referencia a `ProjectB`, que depende de la versión `1.0.0` de `PackageX`, el archivo de bloqueo para `ProjectB` mostrará una dependencia de la versión `1.0.0` de `PackageX`. Sin embargo, al compilarse `ProjectA`, su archivo de bloqueo contendrá una dependencia de la versión `PackageX` **`2.0.0` de**  y **no** en la `1.0.0`, como se muestra en el archivo de bloqueo para `ProjectB`. Por tanto, el archivo de bloqueo de un proyecto de código común tiene poco que decir sobre los paquetes resueltos para los proyectos que dependen de él.
 
 ### <a name="lock-file-extensibility"></a>Extensibilidad del archivo de bloqueo
 

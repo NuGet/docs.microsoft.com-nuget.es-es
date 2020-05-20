@@ -113,7 +113,7 @@ El archivo `.gitignore` es [bastante eficaz](https://www.kernel.org/pub/software
     packages
     !packages/**/*.targets
 
-Se excluirán todas las carpetas `packages`, pero se volverán a incluir todos los archivos `.targets` incluidos. Por cierto, `.gitignore`aquí[ encontrará una plantilla para archivos ](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) diseñada específicamente para las necesidades de los desarrolladores de Visual Studio.
+Se excluirán todas las carpetas `packages`, pero se volverán a incluir todos los archivos `.targets` incluidos. Por cierto, [aquí](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) encontrará una plantilla para archivos `.gitignore` diseñada específicamente para las necesidades de los desarrolladores de Visual Studio.
 
 El control de versiones de TF admite un mecanismo muy parecido mediante el archivo [.tfignore](/vsts/tfvc/add-files-server#customize-which-files-are-ignored-by-version-control). La sintaxis es prácticamente la misma:
 

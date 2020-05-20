@@ -8,7 +8,7 @@ ms.locfileid: "80151378"
 ---
 La descripción opcional del paquete, que se muestra en la página NuGet.org del paquete, se extrae del elemento `<description></description>` que se usa en el archivo `.csproj` o a través del elemento `$description` en el [archivo .nuspec](../../reference/nuspec.md).
 
-En el siguiente texto XML del archivo _de un paquete .NET se muestra un ejemplo de un campo de_descripción `.csproj`:
+En el siguiente texto XML del archivo `.csproj` de un paquete .NET se muestra un ejemplo de un campo de _descripción _:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">

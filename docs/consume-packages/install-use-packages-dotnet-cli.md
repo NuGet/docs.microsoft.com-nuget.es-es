@@ -90,7 +90,7 @@ dotnet remove package Newtonsoft.Json
 
 ## <a name="update-a-package"></a>Actualización de un paquete
 
-A menos que se especifique la versión del paquete (modificador `dotnet add package`), NuGet instala la versión más reciente del paquete cuando se usa el comando `-v`.
+A menos que se especifique la versión del paquete (modificador `-v`), NuGet instala la versión más reciente del paquete cuando se usa el comando `dotnet add package`.
 
 ## <a name="restore-packages"></a>Restaurar paquetes
 
