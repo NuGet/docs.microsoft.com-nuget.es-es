@@ -6,9 +6,9 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 04/07/2020
 ms.locfileid: "80151378"
 ---
-<span data-ttu-id="54e78-101">La descripción opcional del paquete, que se muestra en la página NuGet.org del paquete, se extrae del elemento `<description></description>` que se usa en el archivo `.csproj` o a través del elemento `$description` en el [archivo .nuspec](../../reference/nuspec.md).</span><span class="sxs-lookup"><span data-stu-id="54e78-101">The package's optional description, displayed on the package's NuGet.org page, is either pulled in from the `<description></description>` used in the `.csproj` file or pulled in via the `$description` in the [.nuspec file](../../reference/nuspec.md).</span></span>
+<span data-ttu-id="60fbc-101">La descripción opcional del paquete, que se muestra en la página NuGet.org del paquete, se extrae del elemento `<description></description>` que se usa en el archivo `.csproj` o a través del elemento `$description` en el [archivo .nuspec](../../reference/nuspec.md).</span><span class="sxs-lookup"><span data-stu-id="60fbc-101">The package's optional description, displayed on the package's NuGet.org page, is either pulled in from the `<description></description>` used in the `.csproj` file or pulled in via the `$description` in the [.nuspec file](../../reference/nuspec.md).</span></span>
 
-<span data-ttu-id="54e78-102">En el siguiente texto XML del archivo _de un paquete .NET se muestra un ejemplo de un campo de_descripción `.csproj`:</span><span class="sxs-lookup"><span data-stu-id="54e78-102">An example of a _description_ field is shown in the following XML text of the `.csproj` file for a .NET package:</span></span>
+<span data-ttu-id="60fbc-102">En el siguiente texto XML del archivo `.csproj` de un paquete .NET se muestra un ejemplo de un campo de _descripción _:</span><span class="sxs-lookup"><span data-stu-id="60fbc-102">An example of a _description_ field is shown in the following XML text of the `.csproj` file for a .NET package:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
