@@ -64,7 +64,7 @@ Se trata de herramientas y utilidades integradas en NuGet:
 - [Orchard](http://www.orchardproject.net/) (los módulos CMS se obtienen de una fuente de NuGet v1 hospedada en la Galería de Orchard)
 - [Implementación de Java del servidor de NuGet](http://jonnyzzz.com/blog/2012/03/07/nuget-server-in-pure-java/)
 - [NuGetLatest](https://twitter.com/NuGetLatest) (bot de Twitter que envía tweets sobre publicaciones de paquetes nuevos)
-- [DefinitelyTyped](http://definitelytyped.org/) ([Definiciones publicadas en NuGet](https://github.com/DefinitelyTyped/NugetAutomation/) de tipos de TypeScript [automáticos](http://www.nuget.org/packages?q=DefinitelyTyped))
+- [DefinitelyTyped](http://definitelytyped.org/) ([Definiciones publicadas en NuGet](http://www.nuget.org/packages?q=DefinitelyTyped) de tipos de TypeScript [automáticos](https://github.com/DefinitelyTyped/NugetAutomation/))
 
 ## <a name="training-materials-and-references"></a>Materiales de aprendizaje y referencias
 
