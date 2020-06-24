@@ -6,251 +6,259 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 8e4fb376e471a207333d241aeb414da7d5c3571e
-ms.sourcegitcommit: 2a9d149bc6f5ff76b0b657324820bd0429cddeef
+ms.openlocfilehash: ffbcb8dc18542f39c32a6d84b279c8eccaf98fc3
+ms.sourcegitcommit: 7e9c0630335ef9ec1e200e2ee9065f702e52a8ec
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67496540"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85292323"
 ---
 # <a name="catalog"></a>Catálogo
 
-El **catálogo** es un recurso que registra todas las operaciones de paquete en un origen de paquete, como la creación y eliminación. El recurso de catálogo tiene el `Catalog` escriba en el [índice de servicio](service-index.md). Puede utilizar este recurso para [de consulta de todos los paquetes publican](../guides/api/query-for-all-published-packages.md).
+El **Catálogo** es un recurso que registra todas las operaciones de paquetes en un origen de paquete, como creaciones y eliminaciones. El recurso de catálogo tiene el `Catalog` tipo en el [Índice de servicio](service-index.md). Puede usar este recurso para [consultar todos los paquetes publicados](../guides/api/query-for-all-published-packages.md).
 
 > [!Note]
-> Dado que el catálogo no se usa el cliente NuGet oficial, no todos los orígenes de paquetes implementan el catálogo.
+> Dado que el cliente de NuGet oficial no usa el catálogo, no todos los orígenes de paquete implementan el catálogo.
 
 > [!Note]
-> Actualmente, el catálogo de nuget.org no está disponible en China. Para obtener más información, consulte [NuGet/NuGetGallery #4949](https://github.com/NuGet/NuGetGallery/issues/4949).
+> Actualmente, el catálogo de nuget.org no está disponible en China. Para obtener más información, consulte [NuGet/NuGetGallery # 4949](https://github.com/NuGet/NuGetGallery/issues/4949).
 
 ## <a name="versioning"></a>Control de versiones
 
-La siguiente `@type` se usa el valor:
+`@type`Se usa el siguiente valor:
 
 Valor de@type   | Notas
 ------------- | -----
-Catalog/3.0.0 | La versión inicial
+Catálogo/3.0.0 | La versión inicial
 
-## <a name="base-url"></a>Dirección URL base
+## <a name="base-url"></a>URL base
 
-La dirección URL de punto de entrada para las siguientes API es el valor de la `@id` propiedad asociada con el recurso mencionado anteriormente `@type` valores. Este tema usa la dirección URL del marcador de posición `{@id}`.
+La dirección URL del punto de entrada para las siguientes API es el valor de la `@id` propiedad asociada a los valores de recursos mencionados anteriormente `@type` . En este tema se utiliza la dirección URL del marcador de posición `{@id}` .
 
 ## <a name="http-methods"></a>Métodos HTTP
 
-Todas las direcciones URL se encuentra en el soporte del catálogo de recursos solo los métodos HTTP `GET` y `HEAD`.
+Todas las direcciones URL encontradas en el recurso de catálogo solo admiten los métodos HTTP `GET` y `HEAD` .
 
 ## <a name="catalog-index"></a>Índice del catálogo
 
-El índice del catálogo es un documento en una ubicación conocida que tiene una lista de elementos de catálogo, ordenados cronológicamente. Es el punto de entrada del recurso de catálogo.
+El índice del catálogo es un documento en una ubicación conocida que tiene una lista de elementos de catálogo, ordenada cronológicamente. Es el punto de entrada del recurso de catálogo.
 
-El índice se compone de páginas del catálogo. Cada página del catálogo contiene los elementos del catálogo. Cada elemento de catálogo representa un evento relativa a un único paquete en un momento dado. Un elemento de catálogo puede representar un paquete que se creó, dados de baja, de vuelto o eliminadas desde el origen del paquete. Mediante el procesamiento de los elementos del catálogo en orden cronológico, el cliente puede crear una vista actualizada de cada paquete que existe en el origen del paquete V3.
+El índice está formado por páginas de catálogo. Cada página de catálogo contiene elementos de catálogo. Cada elemento del catálogo representa un evento relacionado con un solo paquete en un momento dado. Un elemento de catálogo puede representar un paquete que se ha creado, quitado de la lista, se ha eliminado de la lista o eliminado del origen del paquete. Al procesar los elementos del catálogo en orden cronológico, el cliente puede crear una vista actualizada de cada paquete que existe en el origen del paquete V3.
 
-En resumen, los blobs de catálogo tienen la siguiente estructura jerárquica:
+En Resumen, los blobs de catálogo tienen la siguiente estructura jerárquica:
 
-- **Índice**: el punto de entrada para el catálogo.
-- **Página**: una agrupación de elementos del catálogo.
-- **Hoja**: un documento que representa un elemento de catálogo, que es una instantánea del estado de un paquete único.
+- **Index**: el punto de entrada del catálogo.
+- **Página**: una agrupación de elementos de catálogo.
+- **Hoja**: documento que representa un elemento de catálogo, que es una instantánea del estado de un paquete único.
 
-Cada objeto de catálogo tiene una propiedad denominada el `commitTimeStamp` que representa cuando se agregó el elemento en el catálogo. Los elementos del catálogo se agregan a una página de catálogo por lotes que se denominan confirmaciones. Todos los elementos del catálogo en la misma confirmación tienen la misma marca de tiempo de confirmación (`commitTimeStamp`) y el Id. de confirmación (`commitId`). Elementos de catálogo que se colocan en la misma confirmación representan eventos que se produjeron alrededor del mismo punto en el tiempo en el origen del paquete. No hay ningún orden dentro de una confirmación de catálogo.
+Cada objeto de catálogo tiene una propiedad denominada `commitTimeStamp` que representa el momento en que se agregó el elemento al catálogo. Los elementos de catálogo se agregan a una página de catálogo en los lotes denominados confirmaciones. Todos los elementos de catálogo de la misma confirmación tienen la misma marca de tiempo de confirmación ( `commitTimeStamp` ) y el identificador de confirmación ( `commitId` ). Los elementos de catálogo colocados en la misma confirmación representan eventos que se produjeron aproximadamente en el mismo momento en el origen del paquete. No hay ninguna ordenación dentro de una confirmación del catálogo.
 
-Dado que cada identificador de paquete y la versión son único, nunca habrá más de un elemento de catálogo en una confirmación. Esto garantiza que los elementos del catálogo para un único paquete siempre se pueden ordenar sin ambigüedad con respecto a la marca de tiempo de confirmación.
+Dado que cada identificador y versión de paquete es único, nunca habrá más de un elemento de catálogo en una confirmación. Esto garantiza que los elementos de catálogo para un único paquete siempre se pueden ordenar de forma no ambigua con respecto a la marca de tiempo de confirmación.
 
-Hay que no ser nunca más de una confirmación en el catálogo por `commitTimeStamp`. En otras palabras, el `commitId` es redundante con el `commitTimeStamp`.
+Nunca hay más de una confirmación en el catálogo por `commitTimeStamp` . En otras palabras, el `commitId` es redundante con `commitTimeStamp` .
 
-Por el contrario el [recurso de metadatos de paquete](registration-base-url-resource.md), indizada por Id. de paquete, el catálogo está indizada (y puede consultar) solo por tiempo.
+A diferencia del [recurso de metadatos del paquete](registration-base-url-resource.md), que está indizado por el identificador del paquete, el catálogo se indexa (y se consulta) solo por tiempo.
 
-Siempre se agregan los elementos del catálogo en el catálogo en un orden cronológico progresión. Esto significa que si se agrega una confirmación de catálogo en el momento X, a continuación, no hay ninguna confirmación catálogo nunca se agregará con un tiempo inferior o igual a X.
+Los elementos del catálogo siempre se agregan al catálogo en un orden cronológico de progresión continua. Esto significa que, si se agrega una confirmación de catálogo en el tiempo X, no se agregará ninguna confirmación de catálogo con una hora menor o igual que X.
 
-La siguiente solicitud recupera el índice del catálogo.
+La solicitud siguiente captura el índice del catálogo.
 
     GET {@id}
 
 El índice del catálogo es un documento JSON que contiene un objeto con las siguientes propiedades:
 
-Name            | Tipo             | Obligatorio | Notas
+Nombre            | Tipo             | Obligatorio | Notas
 --------------- | ---------------- | -------- | -----
-commitId        | cadena           | sí      | Un identificador único asociado con la confirmación más reciente
-commitTimeStamp | cadena           | sí      | Una marca de tiempo de la confirmación más reciente
-count           | enteros          | sí      | El número de páginas del índice
-items           | matriz de objetos | sí      | Una matriz de objetos, cada objeto que representa una página
+commitId        | string           | sí      | Un identificador único asociado a la confirmación más reciente
+commitTimeStamp | string           | sí      | Marca de tiempo de la confirmación más reciente
+count           | integer          | sí      | Número de páginas del índice
+items           | matriz de objetos | sí      | Matriz de objetos, cada objeto que representa una página.
 
-Cada elemento en el `items` matriz es un objeto con algunos detalles mínimos sobre cada página. Estos objetos de página no contienen las hojas del catálogo (elementos). No se define el orden de los elementos de esta matriz. Las páginas se pueden ordenar por el cliente en memoria mediante sus `commitTimeStamp` propiedad.
+Cada elemento de la `items` matriz es un objeto con algunos detalles mínimos sobre cada página. Estos objetos de página no contienen el catálogo (items). No se ha definido el orden de los elementos de esta matriz. Las páginas se pueden ordenar por el cliente en memoria mediante su `commitTimeStamp` propiedad.
 
-Medida se introducen nuevas páginas, el `count` se incrementa y nuevos objetos aparecerán en el `items` matriz.
+A medida que se introducen nuevas páginas, se `count` incrementarán y los nuevos objetos aparecerán en la `items` matriz.
 
-Cuando se agregan elementos a, el índice del catálogo `commitId` cambiará y `commitTimeStamp` aumentará. Estas dos propiedades son básicamente un resumen sobre todas las página `commitId` y `commitTimeStamp` valores en el `items` matriz.
+A medida que se agregan elementos al catálogo, cambiará el del índice `commitId` y `commitTimeStamp` aumentará. Estas dos propiedades son básicamente un resumen de todas las páginas `commitId` y `commitTimeStamp` los valores de la `items` matriz.
 
-### <a name="catalog-page-object-in-the-index"></a>Objeto de página en el índice del catálogo
+### <a name="catalog-page-object-in-the-index"></a>Objeto de página de catálogo en el índice
 
-Los objetos de la página de catálogo se encuentran en el índice de catálogo `items` propiedad tiene las siguientes propiedades:
+Los objetos de la página de catálogo que se encuentran en la propiedad del índice del catálogo `items` tienen las siguientes propiedades:
 
-Name            | Tipo    | Obligatorio | Notas
+Nombre            | Tipo    | Obligatorio | Notas
 --------------- | ------- | -------- | -----
-@id             | cadena  | sí      | La dirección URL para obtener la página de catálogo
-commitId        | cadena  | sí      | Un identificador único asociado con la confirmación más reciente en esta página
-commitTimeStamp | cadena  | sí      | Una marca de tiempo de la confirmación más reciente en esta página
-count           | enteros | sí      | El número de elementos en la página del catálogo
+@id             | string  | sí      | La página dirección URL para recuperar el catálogo
+commitId        | string  | sí      | Un identificador único asociado a la confirmación más reciente en esta página
+commitTimeStamp | string  | sí      | Marca de tiempo de la confirmación más reciente en esta página
+count           | integer | sí      | El número de elementos en la página del catálogo
 
-Por el contrario el [recurso de metadatos de paquete](registration-base-url-resource.md) que en algunos casos inlines deja en el índice, nunca se alinean en el índice de hojas del catálogo y siempre se deben buscar mediante el uso de la página `@id` dirección URL.
+A diferencia del [recurso de metadatos del paquete](registration-base-url-resource.md) que en algunos casos los inserta en el índice, los catálogos no se insertan nunca en el índice y siempre se deben capturar mediante la dirección URL de la página `@id` .
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
     GET https://api.nuget.org/v3/catalog0/index.json
 
-### <a name="sample-response"></a>Respuesta de ejemplo
+### <a name="sample-response"></a>Respuesta de muestra
 
 [!code-JSON [catalog-index.json](./_data/catalog-index.json)]
 
 ## <a name="catalog-page"></a>Página del catálogo
 
-La página del catálogo es una colección de elementos del catálogo. Es un documento que se capturan mediante uno de los `@id` valores que se encuentran en el índice del catálogo. La dirección URL a una página de catálogo no pretende ser predecible y se debe detectar mediante solo el índice del catálogo.
+La página del catálogo es una colección de elementos de catálogo. Se trata de un documento capturado con uno de los `@id` valores que se encuentran en el índice del catálogo. La dirección URL de una página de catálogo no está diseñada para ser predecible y debe detectarse solo con el índice de catálogo.
 
-Nuevos elementos de catálogo se agregan a la página en el índice del catálogo solo con la marca de tiempo máximo de confirmación o a una página nueva. Una vez que se agrega una página con una marca de tiempo mayor de confirmación en el catálogo, las páginas anteriores nunca se agregan o cambian.
+Los elementos de catálogo nuevos se agregan a la página en el índice del catálogo solo con la marca de tiempo de confirmación más alta o en una nueva página. Una vez que se agrega al catálogo una página con una marca de tiempo de confirmación superior, las páginas anteriores nunca se agregan o se cambian.
 
-El documento de página del catálogo es un objeto JSON con las siguientes propiedades:
+El documento de la página del catálogo es un objeto JSON con las siguientes propiedades:
 
-Name            | Tipo             | Obligatorio | Notas
+Nombre            | Tipo             | Obligatorio | Notas
 --------------- | ---------------- | -------- | -----
-commitId        | cadena           | sí      | Un identificador único asociado con la confirmación más reciente en esta página
-commitTimeStamp | cadena           | sí      | Una marca de tiempo de la confirmación más reciente en esta página
-count           | enteros          | sí      | El número de elementos en la página
-items           | matriz de objetos | sí      | Los elementos del catálogo en esta página
-parent          | cadena           | sí      | Una dirección URL para el índice del catálogo
+commitId        | string           | sí      | Un identificador único asociado a la confirmación más reciente en esta página
+commitTimeStamp | string           | sí      | Marca de tiempo de la confirmación más reciente en esta página
+count           | integer          | sí      | El número de elementos de la página
+items           | matriz de objetos | sí      | Elementos del catálogo en esta página
+primario          | string           | sí      | Una dirección URL al índice del catálogo
 
-Cada elemento en el `items` matriz es un objeto con algunos detalles mínimos sobre el elemento de catálogo. Estos objetos de elemento no contienen todos los datos del elemento de catálogo. El orden de los elementos de la página `items` matriz no está definida. Los elementos se pueden ordenar por el cliente en memoria mediante sus `commitTimeStamp` propiedad.
+Cada elemento de la `items` matriz es un objeto con algunos detalles mínimos sobre el elemento de catálogo. Estos objetos de elemento no contienen todos los datos del elemento de catálogo. No se ha definido el orden de los elementos de la matriz de la página `items` . Los elementos se pueden ordenar por el cliente en memoria mediante su `commitTimeStamp` propiedad.
 
-El número de elementos de catálogo en una página se define mediante la implementación del servidor. Para nuget.org, a lo sumo hay 550 elementos en cada página, aunque el número real puede ser menor para algunas páginas según el tamaño del lote de confirmación siguiente en el punto en el tiempo.
+El número de elementos de catálogo de una página se define mediante la implementación de servidor. En el caso de nuget.org, hay como máximo 550 elementos en cada página, aunque el número real puede ser menor para algunas páginas, según el tamaño del siguiente lote de confirmación en el momento dado.
 
-Medida se introducen nuevos elementos, el `count` es objetos de elemento de catálogo incrementado y nuevos aparecen en la `items` matriz.
+A medida que se introducen nuevos elementos, `count` se incrementa y los nuevos objetos de elemento de catálogo aparecen en la `items` matriz.
 
-Cuando se agregan elementos a la página, el `commitId` cambios y la `commitTimeStamp` aumenta. Estas dos propiedades son básicamente un resumen sobre las `commitId` y `commitTimeStamp` valores en el `items` matriz.
+A medida que se agregan elementos a la página, los `commitId` cambios y `commitTimeStamp` aumentan. Estas dos propiedades son básicamente un resumen de todos `commitId` los `commitTimeStamp` valores y de la `items` matriz.
 
-### <a name="catalog-item-object-in-a-page"></a>Objeto de elemento de una página del catálogo
+### <a name="catalog-item-object-in-a-page"></a>Objeto de elemento de catálogo en una página
 
-Los objetos de elemento de catálogo se encontraron en la página catálogo `items` propiedad tiene las siguientes propiedades:
+Los objetos de elemento de catálogo que se encuentran en la propiedad de la página de catálogo `items` tienen las siguientes propiedades:
 
-Name            | Tipo    | Obligatorio | Notas
+Nombre            | Tipo    | Obligatorio | Notas
 --------------- | ------- | -------- | -----
-@id             | cadena  | sí      | La dirección URL para recuperar el elemento de catálogo
-@type           | cadena  | sí      | El tipo del elemento del catálogo
-commitId        | cadena  | sí      | El identificador de confirmación asociado con este elemento de catálogo
-commitTimeStamp | cadena  | sí      | La marca de tiempo de confirmación de este elemento de catálogo
-nuget:id        | cadena  | sí      | El identificador del paquete que está relacionado con esta hoja
-nuget:version   | cadena  | sí      | La versión del paquete que está relacionado con esta hoja
+@id             | string  | sí      | Dirección URL para capturar el elemento de catálogo.
+@type           | string  | sí      | El tipo del elemento de catálogo
+commitId        | string  | sí      | El ID. de confirmación asociado a este elemento de catálogo
+commitTimeStamp | string  | sí      | Marca de tiempo de confirmación de este elemento de catálogo
+Nuget: ID.        | string  | sí      | Identificador del paquete al que está relacionada esta hoja.
+Nuget: versión   | string  | sí      | La versión del paquete con la que está relacionada esta hoja
 
-El `@type` tendrá uno de los dos valores siguientes:
+El `@type` valor será uno de los dos valores siguientes:
 
-1. `nuget:PackageDetails`: corresponde al `PackageDetails` tipo en el documento de hoja de catálogo.
-1. `nuget:PackageDelete`: Esto se corresponde con el `PackageDelete` tipo en el documento de hoja de catálogo.
+1. `nuget:PackageDetails`: se corresponde con `PackageDetails` el tipo del documento de hoja del catálogo.
+1. `nuget:PackageDelete`: corresponde al tipo del `PackageDelete` documento hoja del catálogo.
 
-Para obtener más detalles sobre cada tipo de qué significa, consulte el [correspondientes elementos de tipo](#item-types) a continuación.
+Para obtener más información sobre lo que significa cada tipo, vea el [tipo de elementos correspondiente](#item-types) a continuación.
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
     GET https://api.nuget.org/v3/catalog0/page2926.json
 
-### <a name="sample-response"></a>Respuesta de ejemplo
+### <a name="sample-response"></a>Respuesta de muestra
 
 [!code-JSON [catalog-page.json](./_data/catalog-page.json)]
 
-## <a name="catalog-leaf"></a>Hoja de catálogo
+## <a name="catalog-leaf"></a>Hoja del catálogo
 
-La hoja de catálogo contiene metadatos sobre un identificador de paquete específico y la versión en algún momento en el tiempo. Es un documento que se obtienen mediante la `@id` valor se encuentra en una página del catálogo. La dirección URL a una hoja de catálogo no pretende ser predecible y se debe detectar mediante solo una página del catálogo.
+La hoja de catálogo contiene metadatos sobre un identificador de paquete y una versión específicos en algún momento. Se trata de un documento capturado mediante el `@id` valor que se encuentra en una página de catálogo. La dirección URL a una hoja de catálogo no está diseñada para ser predecible y debe detectarse solo con una página de catálogo.
 
-El documento de hoja de catálogo es un objeto JSON con las siguientes propiedades:
+El documento hoja del catálogo es un objeto JSON con las siguientes propiedades:
 
-Name                    | Tipo                       | Obligatorio | Notas
+Nombre                    | Tipo                       | Obligatorio | Notas
 ----------------------- | -------------------------- | -------- | -----
-@type                   | cadena o matriz de cadenas | sí      | Los tipos del elemento del catálogo
-catalog:commitId        | cadena                     | sí      | Un identificador de confirmación asociado con este elemento de catálogo
-catalog:commitTimeStamp | cadena                     | sí      | La marca de tiempo de confirmación de este elemento de catálogo
-id                      | cadena                     | sí      | El identificador del paquete del elemento del catálogo
-Publicado               | cadena                     | sí      | La fecha de publicación del elemento del catálogo de paquetes
-version                 | cadena                     | sí      | La versión del paquete del elemento del catálogo
+@type                   | cadena o matriz de cadenas | sí      | Los tipos del elemento de catálogo
+Catálogo: commitId        | string                     | sí      | Un ID. de confirmación asociado a este elemento de catálogo
+Catálogo: commitTimeStamp | string                     | sí      | Marca de tiempo de confirmación de este elemento de catálogo
+id                      | string                     | sí      | Identificador del paquete del elemento de catálogo.
+published               | string                     | sí      | Fecha de publicación del elemento del catálogo de paquetes
+version                 | string                     | sí      | Versión del paquete del elemento de catálogo
 
 ### <a name="item-types"></a>Tipos de elemento
 
-El `@type` propiedad es una cadena o matriz de cadenas. Para mayor comodidad, si la `@type` valor es una cadena, debe tratarse como una matriz de tamaño. No todos los valores posibles para `@type` están documentados. Sin embargo, cada elemento de catálogo tiene exactamente uno de los dos valores de tipo de cadena siguientes:
+La `@type` propiedad es una cadena o una matriz de cadenas. Para mayor comodidad, si el `@type` valor es una cadena, debe tratarse como cualquier matriz de tamaño uno. No se documentan todos los valores posibles para `@type` . Sin embargo, cada elemento de catálogo tiene exactamente uno de los dos valores de tipo de cadena siguientes:
 
-1. `PackageDetails`: representa una instantánea de los metadatos del paquete
-1. `PackageDelete`: representa un paquete que se ha eliminado
+1. `PackageDetails`: representa una instantánea de metadatos del paquete.
+1. `PackageDelete`: representa un paquete que se ha eliminado.
 
-### <a name="package-details-catalog-items"></a>Elementos del catálogo los detalles del paquete
+### <a name="package-details-catalog-items"></a>Elementos del catálogo de detalles de paquetes
 
-Elementos con el tipo de catálogo `PackageDetails` contienen una instantánea de los metadatos del paquete para un paquete específico (combinación de identificador y la versión). Un elemento de catálogo los detalles de paquete se genera cuando un origen del paquete encuentra cualquiera de los siguientes escenarios:
+Los elementos del catálogo con el tipo `PackageDetails` contienen una instantánea de los metadatos del paquete para un paquete específico (combinación de identificador y versión). Un elemento de catálogo de detalles de paquete se genera cuando un origen de paquete encuentra alguno de los escenarios siguientes:
 
-1. Un paquete es **insertado**.
-1. Un paquete es **enumerados**.
-1. Un paquete es **dados de baja**.
-1. Un paquete es **adaptarse**.
+1. Se **inserta**un paquete.
+1. **Aparece**un paquete.
+1. Un paquete no está en la **lista**.
+1. Se **refluye**un paquete.
 
-Un reflujo de paquete es un gesto administrativo que básicamente genera una falsa inserción de un paquete existente sin cambios al propio paquete. En nuget.org, se usa un reflujo después de corregir un error en uno de los trabajos en segundo plano que consumen el catálogo.
+Un reflujo de paquetes es un gesto administrativo que genera esencialmente una extracción falsa de un paquete existente sin cambios en el propio paquete. En nuget.org, se usa un reflujo después de corregir un error en uno de los trabajos en segundo plano que consumen el catálogo.
 
-Los clientes de consumo de los elementos de catálogo no deben intentar determinar cuál de estos escenarios provocan el elemento de catálogo. En su lugar, el cliente simplemente debe actualizar cualquier vista mantenida o índice con los metadatos contenidos en el elemento de catálogo. Además, deben controlarse los elementos del catálogo duplicados o redundantes (manera idempotente).
+Los clientes que consumen los elementos del catálogo no deben intentar determinar cuál de estos escenarios generó el elemento de catálogo. En su lugar, el cliente simplemente debe actualizar cualquier vista o índice mantenido con los metadatos contenidos en el elemento de catálogo. Además, los elementos de catálogo duplicados o redundantes se deben controlar correctamente (manera idempotente).
 
-Elementos del catálogo de los detalles de paquete tienen las siguientes propiedades además de los [incluida en todas las hojas del catálogo](#catalog-leaf).
+Los elementos del catálogo de detalles del paquete tienen las siguientes propiedades además de las [incluidas en todas las hojas del catálogo](#catalog-leaf).
 
-Name                    | Tipo                       | Obligatorio | Notas
+Nombre                    | Tipo                       | Obligatorio | Notas
 ----------------------- | -------------------------- | -------- | -----
-authors                 | cadena                     | No       |
-created                 | cadena                     | No       | Una marca de tiempo de cuando se creó el paquete por primera vez. Propiedad de reserva: `published`.
-dependencyGroups        | matriz de objetos           | No       | Las dependencias del paquete, agrupados por .NET framework de destino ([mismo formato que el recurso de metadatos de paquete](registration-base-url-resource.md#package-dependency-group))
-Degradación             | objeto                     | No       | El desuso asociado al paquete ([mismo formato que el recurso de metadatos de paquete](registration-base-url-resource.md#package-deprecation))
-Descripción             | cadena                     | No       |
-iconUrl                 | cadena                     | No       |
-isPrerelease            | booleano                    | No       | Si la versión del paquete es una versión preliminar. Se pueden detectar desde `version`.
-lenguaje                | cadena                     | No       |
-licenseUrl              | cadena                     | No       |
-lista                  | booleano                    | No       | Si aparece el paquete
-minClientVersion        | cadena                     | No       |
-packageHash             | cadena                     | sí      | El hash del paquete, la codificación mediante [estándar en base 64](https://tools.ietf.org/html/rfc4648#section-4)
-packageHashAlgorithm    | cadena                     | sí      |
-packageSize             | enteros                    | sí      | El tamaño de los archivos .nupkg de paquete en bytes
-projectUrl              | cadena                     | No       |
-releaseNotes            | cadena                     | No       |
-requireLicenseAgreement | booleano                    | No       | Suponga `false` Si excluye
-resumen                 | cadena                     | No       |
-etiquetas                    | matriz de cadenas           | No       |
-título                   | cadena                     | No       |
-verbatimVersion         | cadena                     | No       | La cadena de versión que originalmente se encuentra en el archivo .nuspec
+authors                 | string                     | no       |
+created                 | string                     | no       | Marca de tiempo de la primera vez que se creó el paquete. Propiedad fallback: `published` .
+dependencyGroups        | matriz de objetos           | no       | Las dependencias del paquete, agrupadas por la plataforma de destino ([el mismo formato que el recurso de metadatos del paquete](registration-base-url-resource.md#package-dependency-group))
+desuso             | objeto                     | no       | El desuso asociado al paquete (el[mismo formato que el recurso de metadatos del paquete](registration-base-url-resource.md#package-deprecation))
+description             | string                     | no       |
+iconUrl                 | string                     | no       |
+isPrerelease            | boolean                    | no       | Indica si la versión del paquete está en versión preliminar. Se puede detectar desde `version` .
+lenguaje                | string                     | no       |
+licenseUrl              | string                     | no       |
+lista                  | boolean                    | no       | Indica si el paquete aparece o no
+minClientVersion        | string                     | no       |
+packageHash             | string                     | sí      | El hash del paquete, codificar con [base estándar 64](https://tools.ietf.org/html/rfc4648#section-4)
+packageHashAlgorithm    | string                     | sí      |
+Empaquetar             | integer                    | sí      | Tamaño del paquete. nupkg en bytes
+packageTypes            | matriz de objetos           | no       | Los tipos de paquetes especificados por el autor.
+projectUrl              | string                     | no       |
+releaseNotes            | string                     | no       |
+requireLicenseAgreement | boolean                    | no       | Asuma `false` si está excluido
+summary                 | string                     | no       |
+etiquetas                    | Matriz de cadenas           | no       |
+title                   | string                     | no       |
+verbatimVersion         | string                     | no       | La cadena de versión tal y como se encontró originalmente en el archivo. nuspec
 
-El paquete `version` propiedad es la cadena de versión completa después de la normalización. Esto significa que los datos de generación de SemVer 2.0.0 se pueden incluidos aquí.
+La propiedad del paquete `version` es la cadena de versión completa después de la normalización. Esto significa que los datos de compilación de SemVer 2.0.0 pueden incluirse aquí.
 
-El `created` marca de tiempo es cuando se recibe por primera vez el paquete por el origen del paquete, que suele ser poco tiempo antes de la marca de tiempo de confirmación del elemento de catálogo.
+La `created` marca de tiempo es cuando el origen del paquete recibió el paquete por primera vez, que suele ser un breve período antes de la marca de tiempo de confirmación del elemento de catálogo.
 
-El `packageHashAlgorithm` es una cadena definida por la implementación del servidor que representa el algoritmo hash utilizado para generar el `packageHash`. NuGet.org siempre utilizado la `packageHashAlgorithm` valor `SHA512`.
+`packageHashAlgorithm`Es una cadena definida por la implementación del servidor que representa el algoritmo hash utilizado para generar `packageHash` . nuget.org siempre usó el `packageHashAlgorithm` valor de `SHA512` .
 
-El `published` marca de tiempo es la hora cuando el paquete por última vez enumerado.
+La `packageTypes` propiedad solo estará presente si el autor especificó un tipo de paquete. Si está presente, siempre tendrá al menos una (1) entrada. Cada elemento de la `packageTypes` matriz es un objeto JSON con las siguientes propiedades:
+
+Nombre      | Tipo    | Obligatorio | Notas
+--------- | ------- | -------- | -----
+name      | string  | sí      | Nombre del tipo de paquete.
+version    | string  | no       | Versión del tipo de paquete. Solo está presente si el autor especificó explícitamente una versión en el archivo nuspec.
+
+La `published` marca de tiempo es la hora a la que se muestra el paquete por última vez.
 
 > [!Note]
-> En nuget.org, el `published` valor se establece en el año 1900 cuando se da de baja el paquete.
+> En nuget.org, el `published` valor se establece en el año 1900 cuando el paquete no está en la lista.
 
 #### <a name="sample-request"></a>Solicitud de ejemplo
 
 GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
 
-#### <a name="sample-response"></a>Respuesta de ejemplo
+#### <a name="sample-response"></a>Respuesta de muestra
 
 [!code-JSON [catalog-package-details.json](./_data/catalog-package-details.json)]
 
-### <a name="package-delete-catalog-items"></a>Elementos del catálogo de eliminación de paquete
+### <a name="package-delete-catalog-items"></a>Elementos del catálogo de eliminación de paquetes
 
-Elementos con el tipo de catálogo `PackageDelete` contienen un conjunto mínimo de información que indique a los clientes del catálogo que un paquete se ha eliminado del origen del paquete y ya no está disponible para cualquier operación de paquete (por ejemplo, restauración).
+Los elementos de catálogo con el tipo `PackageDelete` contienen un conjunto mínimo de información que indica a los clientes de catálogo que se ha eliminado un paquete del origen del paquete y que ya no está disponible para ninguna operación de paquete (por ejemplo, restore).
 
 > [!NOTE]
-> Es posible que un paquete va a eliminar y posteriormente se han vuelto a publicar utilizando el mismo Id. de paquete y la versión. En nuget.org, este es un caso muy poco frecuente, porque interrumpe suposición oficial del cliente que un identificador de paquete y versión implican un contenido de paquete específico. Para obtener más información acerca de la eliminación del paquete en nuget.org, vea [nuestra directiva](../nuget-org/policies/deleting-packages.md).
+> Es posible que un paquete se elimine y se vuelva a publicar posteriormente con el mismo identificador de paquete y versión. En nuget.org, este es un caso muy poco frecuente, ya que interrumpe la suposición del cliente oficial de que un identificador de paquete y una versión implican un contenido de paquete específico. Para obtener más información sobre la eliminación de paquetes en nuget.org, consulte [nuestra directiva](../nuget-org/policies/deleting-packages.md).
 
-Los elementos del catálogo de eliminación de paquete no tienen ninguna propiedad adicional además de los [incluida en todas las hojas del catálogo](#catalog-leaf).
+Los elementos del catálogo de eliminación de paquetes no tienen propiedades adicionales además de las que se [incluyen en todas las hojas del catálogo](#catalog-leaf).
 
-El `version` propiedad es la cadena de versión original se encuentra en el archivo .nuspec del paquete.
+La `version` propiedad es la cadena de versión original que se encuentra en package. nuspec.
 
-El `published` propiedad es el tiempo cuando se eliminó el paquete, que normalmente es como poco tiempo antes de la marca de tiempo de confirmación del elemento de catálogo.
+La `published` propiedad es la hora a la que se eliminó el paquete, que suele ser una hora corta antes de la marca de tiempo de confirmación del elemento de catálogo.
 
 #### <a name="sample-request"></a>Solicitud de ejemplo
 
 GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
 
-#### <a name="sample-response"></a>Respuesta de ejemplo
+#### <a name="sample-response"></a>Respuesta de muestra
 
 [!code-JSON [catalog-package-delete.json](./_data/catalog-package-delete.json)]
 
@@ -258,72 +266,72 @@ GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_li
 
 ### <a name="overview"></a>Información general
 
-Esta sección describe un concepto de cliente que, aunque no está necesariamente asignada por el protocolo, debe ser parte de cualquier implementación de cliente de catálogo práctico.
+En esta sección se describe un concepto de cliente que, aunque no es necesariamente obligatorio por el protocolo, debe formar parte de cualquier implementación de cliente de catálogo práctico.
 
-Dado que el catálogo es una estructura de datos de solo anexión indizada por tiempo, el cliente debe almacenar un **cursor** localmente, que representa hasta qué punto en el tiempo que el cliente ha procesado los elementos del catálogo. Tenga en cuenta que este valor de cursor nunca se debe generar utilizando el reloj del equipo del cliente. En su lugar, el valor debe provenir de un objeto de catálogo `commitTimestamp` valor.
+Dado que el catálogo es una estructura de datos de solo anexar indizada por tiempo, el cliente debe almacenar un **cursor** localmente, que representa hasta qué punto en el tiempo el cliente ha procesado elementos de catálogo. Tenga en cuenta que este valor de cursor nunca debe generarse mediante el reloj del equipo del cliente. En su lugar, el valor debe proviene del valor de un objeto de catálogo `commitTimestamp` .
 
-Cada vez que el cliente desea procesar nuevos eventos en el origen del paquete, necesita sólo consulta el catálogo para todos los elementos de catálogo con una marca de tiempo de confirmación mayor que su cursor almacenado. Una vez que el cliente procesa correctamente todos los nuevos elementos de catálogo, registra la marca de tiempo de confirmación más reciente de los elementos del catálogo que solo se procesan como su nuevo valor de cursor.
+Cada vez que el cliente desea procesar nuevos eventos en el origen del paquete, solo necesita consultar el catálogo de todos los elementos del catálogo con una marca de tiempo de confirmación mayor que su cursor almacenado. Una vez que el cliente procesa correctamente todos los elementos de catálogo nuevos, registra la marca de tiempo de confirmación más reciente de los elementos de catálogo que se han procesado como el nuevo valor de cursor.
 
-Con este enfoque, el cliente puede estar seguro de que nunca se pierdan los eventos de paquete que se ha producido en el origen del paquete.
-Además, el cliente nunca debe volver a procesar los eventos antiguos antes de la marca de tiempo de confirmación registrado del cursor.
+Con este enfoque, el cliente puede estar seguro de que nunca se han perdido los eventos de paquete que se produjeron en el origen del paquete.
+Además, el cliente nunca tiene que volver a procesar los eventos anteriores antes de la marca de tiempo de confirmación registrada del cursor.
 
-Este concepto eficaz de los cursores se utiliza para muchos de los trabajos en segundo plano de nuget.org y se usa para mantener actualizada la propia API V3. 
+Este importante concepto de cursores se usa para muchos de los trabajos en segundo plano de nuget.org y se usa para mantener la API de V3 actualizada. 
 
 ### <a name="initial-value"></a>Valor inicial
 
-Cuando el cliente de catálogo se inicia por primera vez (y, por tanto, no tiene ningún valor del cursor), debe usar valor predeterminado es cursor. La red `System.DateTimeOffset.MinValue` o alguna noción tal análoga de marca de tiempo mínimo que se puede representar.
+Cuando el cliente del catálogo se inicia por primera vez (y, por tanto, no tiene ningún valor de cursor), debe utilizar un valor de cursor predeterminado de. La red `System.DateTimeOffset.MinValue` o alguna de estas nociones análogas de la marca de tiempo mínima que se va a representar.
 
 ### <a name="iterating-over-catalog-items"></a>Recorrer en iteración los elementos del catálogo
 
 Para consultar el siguiente conjunto de elementos de catálogo que se va a procesar, el cliente debe:
 
-1. Capturar el valor del cursor grabados desde un almacén local.
+1. Captura el valor de cursor registrado desde un almacén local.
 1. Descargar y deserializar el índice del catálogo.
-1. Buscar todas las páginas con una marca de tiempo de confirmación de catálogo *mayor* el cursor.
-1. Declare una lista vacía de elementos de catálogo que se va a procesar.
-1. Para cada página del catálogo hacen coincidir en el paso 3:
-   1. Descargar y deserializar la página del catálogo.
-   1. Buscar todos los elementos con una marca de tiempo de confirmación del catálogo *mayor* el cursor.
-   1. Agregar todos los elementos de catálogo correspondiente a la lista que se declara en el paso 4.
-1. Ordenar la lista de elementos de catálogo por marca de tiempo de confirmación.
-1. Procesar cada elemento de catálogo de secuencia:
+1. Busque todas las páginas del catálogo con una marca de tiempo de confirmación *mayor que* el cursor.
+1. Declare una lista vacía de elementos de catálogo para procesar.
+1. Para cada página de catálogo que coincida con el paso 3:
+   1. Descargar y deserializar la página de catálogos.
+   1. Buscar todos los elementos del catálogo con una marca de tiempo de confirmación *mayor que* el cursor.
+   1. Agregue todos los elementos de catálogo coincidentes a la lista declarada en el paso 4.
+1. Ordene la lista de elementos de catálogo por marca de tiempo de confirmación.
+1. Procese cada elemento del catálogo en secuencia:
    1. Descargar y deserializar el elemento de catálogo.
-   1. Reaccionar de manera apropiada para el tipo de elemento de catálogo.
-   1. Procesar el documento de elemento de catálogo de forma específica del cliente.
-1. Registre la marca de tiempo de confirmación del último elemento catálogo como el nuevo valor del cursor.
+   1. Reaccione correctamente en el tipo de elemento de catálogo.
+   1. Procesar el documento de elemento de catálogo en un modo específico del cliente.
+1. Registra la marca de tiempo de confirmación del último elemento del catálogo como el nuevo valor del cursor.
 
-Con este algoritmo básico, la implementación del cliente puede crear una vista completa de todos los paquetes disponibles en el origen del paquete. El cliente sólo tendrá que ejecutar este algoritmo periódicamente para que siempre sea consciente de los cambios más recientes para el origen del paquete.
+Con este algoritmo básico, la implementación del cliente puede crear una vista completa de todos los paquetes disponibles en el origen del paquete. El cliente solo necesita ejecutar este algoritmo periódicamente para tener siempre en cuenta los últimos cambios en el origen del paquete.
 
 > [!Note]
-> Este es el algoritmo que nuget.org se usa para mantener la [los metadatos del paquete](registration-base-url-resource.md), [contenido del paquete](package-base-address-resource.md), [búsqueda](search-query-service-resource.md) y [Autocompletar](search-autocomplete-service-resource.md) recursos actualizados.
+> Este es el algoritmo que nuget.org usa para mantener actualizados los [metadatos del paquete](registration-base-url-resource.md), el [contenido del paquete](package-base-address-resource.md), la [búsqueda](search-query-service-resource.md) y los recursos de [Autocompletar](search-autocomplete-service-resource.md) .
 
 ### <a name="dependent-cursors"></a>Cursores dependientes
 
-Supongamos que hay dos clientes de catálogo que tienen una dependencia inherente que salida de un cliente depende de salida de otro cliente. 
+Suponga que hay dos clientes de catálogo que tienen una dependencia inherente en la que la salida de un cliente depende de la salida de otro cliente. 
 
 #### <a name="example"></a>Ejemplo
 
-Por ejemplo, en nuget.org un paquete publicado recientemente no debe aparecer en el recurso de búsqueda antes de que aparezca en el recurso de metadatos de paquete. Esto es porque la operación de "restauración" realizada por el cliente NuGet oficial usa el recurso de metadatos del paquete. Si un cliente detecta un paquete con el servicio de búsqueda, debería poder restaurar correctamente ese paquete con el recurso de metadatos del paquete. En otras palabras, el recurso de búsqueda depende el recurso de metadatos del paquete. Cada recurso tiene un trabajo en segundo plano del cliente de catálogo actualizar ese recurso. Cada cliente tiene su propio cursor.
+Por ejemplo, en nuget.org un paquete recién publicado no debe aparecer en el recurso de búsqueda antes de que aparezca en el recurso de metadatos del paquete. Esto se debe a que la operación de restauración realizada por el cliente de NuGet oficial usa el recurso de metadatos del paquete. Si un cliente detecta un paquete mediante el servicio de búsqueda, debería poder restaurarlo correctamente mediante el recurso de metadatos del paquete. En otras palabras, el recurso de búsqueda depende del recurso de metadatos del paquete. Cada recurso tiene un trabajo en segundo plano del cliente del catálogo que actualiza ese recurso. Cada cliente tiene su propio cursor.
 
-Dado que ambos recursos se crean en el catálogo, el cursor del cliente de catálogo que actualiza el recurso de búsqueda *no debe superar* el cursor del cliente de catálogo de metadatos de paquete.
+Puesto que ambos recursos se compilan en el catálogo, el cursor del cliente del catálogo que actualiza el recurso de búsqueda *no debe ir más allá* del cursor del cliente del catálogo de metadatos del paquete.
 
 #### <a name="algorithm"></a>Algoritmo
 
-Para implementar esta restricción, basta con modificar el algoritmo anterior para ser:
+Para implementar esta restricción, simplemente modifique el algoritmo anterior para que sea:
 
-1. Capturar el valor del cursor grabados desde un almacén local.
+1. Captura el valor de cursor registrado desde un almacén local.
 1. Descargar y deserializar el índice del catálogo.
-1. Buscar todas las páginas con una marca de tiempo de confirmación de catálogo *mayor* el cursor **menor o igual que el cursor de la dependencia.**
-1. Declare una lista vacía de elementos de catálogo que se va a procesar.
-1. Para cada página del catálogo hacen coincidir en el paso 3:
-   1. Descargar y deserializar la página del catálogo.
-   1. Buscar todos los elementos con una marca de tiempo de confirmación del catálogo *mayor* el cursor **menor o igual que el cursor de la dependencia.**
-   1. Agregar todos los elementos de catálogo correspondiente a la lista que se declara en el paso 4.
-1. Ordenar la lista de elementos de catálogo por marca de tiempo de confirmación.
-1. Procesar cada elemento de catálogo de secuencia:
+1. Buscar todas las páginas del catálogo con una marca de tiempo de confirmación *mayor que* el cursor **menor o igual que el cursor de la dependencia.**
+1. Declare una lista vacía de elementos de catálogo para procesar.
+1. Para cada página de catálogo que coincida con el paso 3:
+   1. Descargar y deserializar la página de catálogos.
+   1. Buscar todos los elementos del catálogo con una marca de tiempo de confirmación *mayor que* el cursor **menor o igual que el cursor de la dependencia.**
+   1. Agregue todos los elementos de catálogo coincidentes a la lista declarada en el paso 4.
+1. Ordene la lista de elementos de catálogo por marca de tiempo de confirmación.
+1. Procese cada elemento del catálogo en secuencia:
    1. Descargar y deserializar el elemento de catálogo.
-   1. Reaccionar de manera apropiada para el tipo de elemento de catálogo.
-   1. Procesar el documento de elemento de catálogo de forma específica del cliente.
-1. Registre la marca de tiempo de confirmación del último elemento catálogo como el nuevo valor del cursor.
+   1. Reaccione correctamente en el tipo de elemento de catálogo.
+   1. Procesar el documento de elemento de catálogo en un modo específico del cliente.
+1. Registra la marca de tiempo de confirmación del último elemento del catálogo como el nuevo valor del cursor.
 
-Con este algoritmo modificado, puede crear un sistema de clientes dependientes catálogo producir todas sus propios índices específicos, artefactos, etcetera.
+Con este algoritmo modificado, puede compilar un sistema de clientes de catálogo dependiente que producen sus propios índices, artefactos, etc.
