@@ -1,26 +1,26 @@
 ---
 title: Comando del paquete de la CLI de NuGet
-description: Referencia del comando del paquete Nuget. exe
+description: Referencia del comando del paquete de nuget.exe
 author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 2358cedc05520a3ec82a39aef34b6d467e44460b
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.openlocfilehash: 649c440d868c89068a069a396919b58b999369e5
+ms.sourcegitcommit: f29fa9b93fd59e679fab50d7413bbf67da3ea5b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78231167"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86451143"
 ---
-# <a name="pack-command-nuget-cli"></a>Comando pack (CLI de NuGet)
+# <a name="pack-command-nuget-cli"></a>comando Pack (CLI de NuGet)
 
-**Se aplica a: creación de** paquetes &bullet; **versiones compatibles:** 2.7 +
+**Se aplica a:** &bullet; **versiones compatibles con** la creación de paquetes: 2.7 +
 
-Crea un paquete de NuGet basado en el archivo [. nuspec](../nuspec.md) o el archivo de proyecto especificado. El comando `dotnet pack` (consulte los [comandos dotnet](../dotnet-Commands.md)) y `msbuild -t:pack` (consulte [destinos de MSBuild](../msbuild-targets.md)) se pueden usar como alternativas.
+Crea un paquete de NuGet basado en el archivo [. nuspec](../nuspec.md) o el archivo de proyecto especificado. El `dotnet pack` comando (consulte los [comandos de dotnet](../dotnet-Commands.md)) y `msbuild -t:pack` (vea [destinos de MSBuild](../msbuild-targets.md)) se puede usar como alternativa.
 
 > [!Important]
 > Use [`dotnet pack`](../dotnet-Commands.md) o [`msbuild -t:pack`](../msbuild-targets.md) para proyectos basados en [PackageReference](../../consume-packages/package-references-in-project-files.md) .
-> En mono, no se admite la creación de un paquete a partir de un archivo de proyecto. También debe ajustar las rutas de acceso no locales en el archivo `.nuspec` a las rutas de acceso de estilo Unix, ya que Nuget. exe no convierte los nombres de usuario de Windows.
+> En mono, no se admite la creación de un paquete a partir de un archivo de proyecto. También debe ajustar las rutas de acceso no locales del `.nuspec` archivo a las rutas de acceso de estilo Unix, ya que nuget.exe no convierte los nombres de usuario de Windows.
 
 ## <a name="usage"></a>Uso
 
@@ -28,32 +28,32 @@ Crea un paquete de NuGet basado en el archivo [. nuspec](../nuspec.md) o el arch
 nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 ```
 
-donde `<nuspecPath>` y `<projectPath>` especifican el `.nuspec` o el archivo de proyecto, respectivamente.
+donde `<nuspecPath>` y `<projectPath>` especifican el `.nuspec` archivo de proyecto o, respectivamente.
 
 ## <a name="options"></a>Opciones
 
 | Opción | Descripción |
 | --- | --- |
 | BasePath | Establece la ruta de acceso base de los archivos definidos en el archivo [. nuspec](../nuspec.md) . |
-| Compilar | Especifica que el proyecto debe compilarse antes de compilar el paquete. |
-| Excluir | Especifica uno o más patrones de caracteres comodín que se deben excluir al crear un paquete. Para especificar más de un patrón, repita la marca-exclude. Consulte el ejemplo que aparece a continuación. |
+| Build | Especifica que el proyecto debe compilarse antes de compilar el paquete. |
+| Exclude | Especifica uno o más patrones de caracteres comodín que se deben excluir al crear un paquete. Para especificar más de un patrón, repita la marca-exclude. Consulte el ejemplo siguiente. |
 | ExcludeEmptyDirectories | Impide la inclusión de directorios vacíos al compilar el paquete. |
-| ForceEnglishOutput | *(3.5 +)* Fuerza a Nuget. exe a ejecutarse mediante una referencia cultural invariable basada en inglés. |
+| ForceEnglishOutput | *(3.5 +)* Fuerza la ejecución de nuget.exe mediante una referencia cultural invariable basada en inglés. |
 | ConfigFile | Especifique el archivo de configuración para el comando Pack. |
-| Help | Muestra información de ayuda para el comando. |
-| IncludeReferencedProjects | Indica que el paquete compilado debe incluir los proyectos a los que se hace referencia como dependencias o como parte del paquete. Si un proyecto al que se hace referencia tiene un archivo de `.nuspec` correspondiente con el mismo nombre que el proyecto, el proyecto al que se hace referencia se agrega como una dependencia. De lo contrario, el proyecto al que se hace referencia se agrega como parte del paquete. |
-| MinClientVersion | Establezca el atributo *minClientVersion* para el paquete creado. Este valor invalidará el valor del atributo *minClientVersion* existente (si existe) en el archivo de `.nuspec`. |
-| MSBuildPath | *(4.0 +)* Especifica la ruta de acceso de MSBuild que se va a usar con el comando, que tiene prioridad sobre `-MSBuildVersion`. |
+| Ayuda | Muestra información de ayuda para el comando. |
+| IncludeReferencedProjects | Indica que el paquete compilado debe incluir los proyectos a los que se hace referencia como dependencias o como parte del paquete. Si un proyecto al que se hace referencia tiene un archivo correspondiente con `.nuspec` el mismo nombre que el proyecto, el proyecto al que se hace referencia se agrega como una dependencia. De lo contrario, el proyecto al que se hace referencia se agrega como parte del paquete. |
+| MinClientVersion | Establezca el atributo *minClientVersion* para el paquete creado. Este valor invalidará el valor del atributo *minClientVersion* existente (si existe) en el `.nuspec` archivo. |
+| MSBuildPath | *(4.0 +)* Especifica la ruta de acceso de MSBuild que se va a usar con el comando, que tiene prioridad sobre `-MSBuildVersion` . |
 | MSBuildVersion | *(3,2 +)* Especifica la versión de MSBuild que se va a usar con este comando. Los valores admitidos son 4, 12, 14, 15,1, 15,3, 15,4, 15,5, 15,6, 15,7, 15,8, 15,9. De forma predeterminada, se selecciona MSBuild en la ruta de acceso; de lo contrario, el valor predeterminado es la versión más alta instalada de MSBuild. |
-| NoDefaultExcludes | Evita la exclusión predeterminada de archivos y archivos de paquetes de NuGet que comienzan con un punto, como `.svn` y `.gitignore`. |
+| NoDefaultExcludes | Evita la exclusión predeterminada de archivos y archivos de paquetes de NuGet y carpetas que empiezan con un punto, como `.svn` y `.gitignore` . |
 | NoPackageAnalysis | Especifica que el paquete no debe ejecutar el análisis de paquetes después de crear el paquete. |
 | OutputDirectory | Especifica la carpeta en la que se almacena el paquete creado. Si no se especifica ninguna carpeta, se usa la carpeta actual. |
-| Propiedades | Debe aparecer en último lugar en la línea de comandos después de otras opciones. Especifica una lista de propiedades que invalidan los valores del archivo de proyecto. vea [propiedades comunes del proyecto de MSBuild](/visualstudio/msbuild/common-msbuild-project-properties) para nombres de propiedad. El argumento Properties aquí es una lista de pares token = valor, separados por punto y coma, donde cada aparición de `$token$` en el archivo `.nuspec` se reemplazará por el valor especificado. Los valores pueden ser cadenas entre comillas. Tenga en cuenta que para la propiedad "Configuration", el valor predeterminado es "debug". Para cambiar a una configuración de versión, use `-Properties Configuration=Release`. **En general**, las propiedades deben ser las mismas que se usaron durante el `nuget build`correspondiente, con el fin de evitar un comportamiento potencialmente extraño. |
-| Sufijo | *(3.4.4 +)* Anexa un sufijo al número de versión generado internamente, que se usa normalmente para anexar los identificadores de compilación u otros identificadores de versión preliminar. Por ejemplo, el uso de `-suffix nightly` creará un paquete con un número de versión como `1.2.3-nightly`. Los sufijos deben comenzar con una letra para evitar las advertencias, los errores y las posibles incompatibilidades con las distintas versiones de NuGet y el administrador de paquetes NuGet. |
-| Símbolos | Especifica que el paquete contiene orígenes y símbolos. Cuando se usa con un archivo de `.nuspec`, se crea un archivo de paquete NuGet normal y el paquete de símbolos correspondiente. De forma predeterminada, crea un [paquete de símbolos heredado](../../create-packages/Symbol-Packages.md). El nuevo formato recomendado para paquetes de símbolos es .snupkg. Vea [Crear paquetes de símbolos (.snupkg)](../../create-packages/Symbol-Packages-snupkg.md). |
-| Herramienta | Especifica que los archivos de salida del proyecto deben colocarse en la carpeta `tool`. |
+| Propiedades | Debe aparecer en último lugar en la línea de comandos después de otras opciones. Especifica una lista de propiedades que invalidan los valores del archivo de proyecto. vea [propiedades comunes del proyecto de MSBuild](/visualstudio/msbuild/common-msbuild-project-properties) para nombres de propiedad. El argumento Properties aquí es una lista de pares token = valor, separados por punto y coma, donde cada aparición de `$token$` en el `.nuspec` archivo se reemplazará por el valor especificado. Los valores pueden ser cadenas entre comillas. Tenga en cuenta que para la propiedad "Configuration", el valor predeterminado es "debug". Para cambiar a una configuración de versión, use `-Properties Configuration=Release` . **En general**, las propiedades deben ser las mismas que se usaron durante la compilación del proyecto correspondiente, con el fin de evitar un comportamiento potencialmente extraño. |
+| Sufijo | *(3.4.4 +)* Anexa un sufijo al número de versión generado internamente, que se usa normalmente para anexar los identificadores de compilación u otros identificadores de versión preliminar. Por ejemplo, si usa, `-suffix nightly` se creará un paquete con un número de versión como `1.2.3-nightly` . Los sufijos deben comenzar con una letra para evitar las advertencias, los errores y las posibles incompatibilidades con las distintas versiones de NuGet y el administrador de paquetes NuGet. |
+| Símbolos | Especifica que el paquete contiene orígenes y símbolos. Cuando se usa con un `.nuspec` archivo, crea un archivo de paquete NuGet normal y el paquete de símbolos correspondiente. De forma predeterminada, crea un [paquete de símbolos heredado](../../create-packages/Symbol-Packages.md). El nuevo formato recomendado para paquetes de símbolos es .snupkg. Vea [Crear paquetes de símbolos (.snupkg)](../../create-packages/Symbol-Packages-snupkg.md). |
+| Herramienta | Especifica que los archivos de salida del proyecto deben colocarse en la `tool` carpeta. |
 | Nivel de detalle | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *silenciosa*, *detallado*. |
-| Versión | Invalida el número de versión del archivo de `.nuspec`. |
+| Versión | Invalida el número de versión del `.nuspec` archivo. |
 
 Vea también [variables de entorno](cli-ref-environment-variables.md)
 
@@ -61,9 +61,9 @@ Vea también [variables de entorno](cli-ref-environment-variables.md)
 
 Algunos paquetes NuGet son útiles como dependencias de desarrollo, lo que le ayuda a crear su propia biblioteca, pero no se necesita necesariamente como dependencias reales de paquetes.
 
-El comando `pack` omitirá `package` entradas de `packages.config` que tengan el atributo `developmentDependency` establecido en `true`. Estas entradas no se incluirán como dependencias en el paquete creado.
+El `pack` comando omitirá las `package` entradas de `packages.config` que tengan el `developmentDependency` atributo establecido en `true` . Estas entradas no se incluirán como dependencias en el paquete creado.
 
-Por ejemplo, considere el siguiente archivo de `packages.config` en el proyecto de origen:
+Por ejemplo, considere el siguiente `packages.config` archivo en el proyecto de origen:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -74,7 +74,7 @@ Por ejemplo, considere el siguiente archivo de `packages.config` en el proyecto 
 </packages>
 ```
 
-Para este proyecto, el paquete creado por `nuget pack` tendrá una dependencia en `jQuery` y `microsoft-web-helpers`, pero no `netfx-Guard`.
+Para este proyecto, el paquete creado por `nuget pack` tendrá una dependencia en `jQuery` y, `microsoft-web-helpers` pero no en `netfx-Guard` .
 
 ## <a name="suppressing-pack-warnings"></a>Suprimir advertencias del paquete
 
@@ -82,7 +82,7 @@ Aunque se recomienda que resuelva todas las advertencias de NuGet durante las op
 
 Puede lograrlo de la siguiente manera: 
 
-> paquete Nuget. exe Pack. nuspec-Properties nowarn = NU5104
+> Paquete de nuget.exe Pack. nuspec-Properties nowarn = NU5104
 
 ## <a name="examples"></a>Ejemplos
 
