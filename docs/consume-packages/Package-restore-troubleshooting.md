@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: a1f9f1d03e9a6e58466fa92426bd655d5e8ed83d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: b162990eae2160961f560b6c6ee73e47cb4121d6
+ms.sourcegitcommit: f29fa9b93fd59e679fab50d7413bbf67da3ea5b3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "68860617"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86451156"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Solución de errores de restauración de paquetes
 
@@ -114,7 +114,7 @@ También puede editar estos valores directamente en el archivo `nuget.config` ap
 
 ## <a name="other-potential-conditions"></a>Otras condiciones posibles
 
-- Pueden producirse errores de compilación debido a que faltan archivos, con un mensaje que indica que use la restauración de NuGet para descargarlos. Pero al ejecutar una restauración, podría mostrarse el mensaje "Todos los paquetes ya están instalados y no hay nada que restaurar". En este caso, elimine la carpeta `packages` (al usar `packages.config`) o el archivo `obj/project.assets.json` (cuando se usa PackageReference) y vuelva a ejecutar la restauración. Si el error persiste, utilice `nuget locals all -clear` o `dotnet locals all --clear` desde la línea de comandos para borrar las carpetas *global-packages* y de memoria caché, tal y como se describe en [Administración de paquetes globales y carpetas de caché](managing-the-global-packages-and-cache-folders.md).
+- Pueden producirse errores de compilación debido a que faltan archivos, con un mensaje que indica que use la restauración de NuGet para descargarlos. Pero al ejecutar una restauración, podría mostrarse el mensaje "Todos los paquetes ya están instalados y no hay nada que restaurar". En este caso, elimine la carpeta `packages` (al usar `packages.config`) o el archivo `obj/project.assets.json` (cuando se usa PackageReference) y vuelva a ejecutar la restauración. Si el error persiste, utilice `nuget locals all -clear` o `dotnet nuget locals all --clear` desde la línea de comandos para borrar las carpetas *global-packages* y de memoria caché, tal y como se describe en [Administración de paquetes globales y carpetas de caché](managing-the-global-packages-and-cache-folders.md).
 
 - Al obtener un proyecto de control de código fuente, las carpetas de proyecto pueden establecerse en solo lectura. Cambie los permisos de carpeta e intente restaurar los paquetes otra vez.
 
