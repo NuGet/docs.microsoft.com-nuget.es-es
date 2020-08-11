@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9f427005251bc2bf7a8a79285e39b4bd49062dbf
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 45928e60033959bc8b4f43d1ef3e4c943e7ec057
+ms.sourcegitcommit: e02482e15c0cef63153086ed50d14f5b2a38f598
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428496"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473895"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Búsqueda y evaluación de paquetes NuGet para el proyecto
 
@@ -18,19 +18,31 @@ Al iniciar de cualquier proyecto de .NET, o cada vez que identifique una necesid
 
 ## <a name="finding-packages"></a>Búsqueda de paquetes
 
-Cuando visite nuget.org o abra la interfaz de usuario del Administrador de paquetes en Visual Studio, verá una lista de paquetes ordenados por total de descargas. Se muestran inmediatamente los paquetes más usados en los millones de proyectos de .NET. Hay muchas posibilidades de que al menos algunos de los paquetes incluidos en las primeras páginas sean útiles en sus proyectos.
+Cuando visite nuget.org o abra la interfaz de usuario del administrador de paquetes en Visual Studio, verá una lista de paquetes ordenados por relevancia. Se muestran los paquetes más usados en todos los proyectos de .NET. Es muy posible que algunos de estos paquetes resulten útiles para sus propios proyectos.
 
 ![Vista predeterminada de nuget.org/packages en la que muestran los paquetes más populares](media/Finding-01-Popularity.png)
 
-Observe la opción **Incluir versión preliminar** en la esquina superior derecha de la página. Cuando se activa, nuget.org muestra todas las versiones de los paquetes, incluidas las versiones beta y otras anteriores. Para mostrar solo las versiones estables, desactive la opción.
-
-En el caso de necesidades concretas, la búsqueda por etiquetas (en el Administrador de paquetes de Visual Studio o en un portal como nuget.org) es la forma más común de detectar un paquete adecuado. Por ejemplo, la búsqueda de "json" enumera todos los paquetes NuGet etiquetados con esa palabra clave y que, por tanto, tienen alguna relación con el formato de datos JSON.
+En nuget.org, observe el botón **Filtro** situado en la parte superior derecha de la página. Al hacer clic en él, el panel de búsqueda avanzada se expande para presentar las opciones de ordenación y filtrado.
 
 ![Resultados de búsqueda para "json" en nuget.org](media/Finding-02-SearchResults.png)
 
-También puede buscar mediante el identificador de paquete, si lo conoce. Vea [Sintaxis de búsqueda](#search-syntax) a continuación.
+Puede usar el filtro **Tipo de paquete** para mostrar los paquetes de un tipo específico:
+- **`All types`** : Éste es el comportamiento predeterminado. Muestra todos los paquetes independientemente de su tipo.
+- **`Dependency`** : paquetes de NuGet normales que se pueden instalar en el proyecto.
+- **`.NET tool`** : filtra las [herramientas de .NET](/dotnet/core/tools/global-tools), un paquete de NuGet que contiene una aplicación de consola.
+- **`Template`** : filtra las [plantillas de .NET](/dotnet/core/install/templates), que se pueden usar para crear proyectos mediante el comando [`dotnet new`](/dotnet/core/tools/dotnet-new).
 
-En la actualidad, los resultados de la búsqueda solo se ordenan por relevancia, por lo que generalmente querrá buscar en las primeras páginas de resultados los paquetes que se ajusten a sus necesidades, o bien refinar los términos de la búsqueda para ser más específico.
+Puede usar la opción **Ordenar por** para ordenar los resultados de la búsqueda:
+- **`Relevance`** : Éste es el comportamiento predeterminado. Ordena los resultados de acuerdo con un algoritmo de puntuación interno.
+- **`Downloads`** : ordena los resultados de la búsqueda según el número total de descargas, en orden descendente.
+- **`Recently updated`** : ordena los resultados de la búsqueda según la fecha de creación de última versión, en orden cronológico descendente.
+
+En la sección **Opciones**, podemos encontrar la casilla **`Include prerelease`** .
+Cuando se activa, nuget.org muestra todas las versiones de los paquetes, incluidas las versiones preliminares. Para mostrar solo las versiones estables, desactive la opción.
+
+Para aplicar los filtros de búsqueda, haga clic en el botón **`Apply`** . Siempre puede volver al comportamiento predeterminado; para ello, haga clic en el botón **`Reset`** .
+
+También puede usar la [sintaxis de búsqueda](#search-syntax) para filtrar por etiquetas, propietarios e identificadores de paquete.
 
 ### <a name="does-the-package-support-my-projects-target-framework"></a>¿Admite el paquete la plataforma de destino del proyecto?
 
@@ -48,13 +60,13 @@ Afortunadamente, puede determinar las plataformas admitidas a través de otros d
 
 Muchos autores de paquetes ofrecen versiones preliminares y beta mientras continúan realizando mejoras y buscan comentarios sobre las revisiones más recientes.
 
-De forma predeterminada, en nuget.org se muestran los paquetes de versión preliminar en los resultados de la búsqueda. Para buscar solamente versiones estables, desactive la opción **Incluir versión preliminar** en la esquina superior derecha de la página
+De forma predeterminada, en nuget.org se muestran los paquetes de versión preliminar en los resultados de la búsqueda. Para buscar solo las versiones estables, desactive la opción **Incluir versión preliminar** en el panel de búsqueda avanzada, al que se puede acceder con el botón **Filtro** situado en la parte superior derecha de la página.
 
 ![Casilla Incluir versión preliminar en nuget.org](media/Finding-06-include-prerelease.png)
 
 En Visual Studio, cuando se usa la CLI de NuGet, NuGet no incluye las versiones preliminares de forma predeterminada. Para cambiar este comportamiento, siga estos pasos:
 
-- **Interfaz de usuario del Administrador de paquetes en Visual Studio**: En la interfaz de usuario **Administrar paquetes NuGet**, active la casilla **Incluir versión preliminar**. Al activar o desactivar esta casilla se actualiza la interfaz de usuario del Administrador de paquetes y la lista de versiones disponibles que puede instalar.
+- **Interfaz de usuario del Administrador de paquetes en Visual Studio**: en la interfaz de usuario del **Administrador de paquetes NuGet**, active la casilla **Incluir versión preliminar**. Al activar o desactivar esta casilla se actualiza la interfaz de usuario del Administrador de paquetes y la lista de versiones disponibles que puede instalar.
 
     ![Casilla Incluir versión preliminar en Visual Studio](media/Prerelease_02-CheckPrerelease.png)
 
@@ -62,7 +74,7 @@ En Visual Studio, cuando se usa la CLI de NuGet, NuGet no incluye las versiones 
 
 - **CLI de nuget.exe**: Use el conmutador `-prerelease` con los comandos `install`, `update`, `delete` y `mirror`. Consulte la [referencia de la CLI de NuGet](../reference/nuget-exe-cli-reference.md)
 
-- **CLI de dotnet.exe**: especifica la versión preliminar exacta con el argumento `-v`. Consulte la [Referencia de dotnet add package](/dotnet/core/tools/dotnet-add-package).
+- **CLI de dotnet.exe**: especifica la versión exacta de una versión preliminar con el argumento `-v`. Consulte la [Referencia de dotnet add package](/dotnet/core/tools/dotnet-add-package).
 
 <a name="native-cpp-packages"></a>
 

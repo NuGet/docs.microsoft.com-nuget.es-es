@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 712e4c7159aa9719052330d8e45f63e18e390325
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 2fcba9dd6bbc7ff4e9b5b8b57250c399f59a1c5e
+ms.sourcegitcommit: e02482e15c0cef63153086ed50d14f5b2a38f598
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78230594"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473849"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>Creación de un paquete NuGet con la CLI de dotnet
 
@@ -111,7 +111,7 @@ Cuando ejecuta `dotnet pack` en una solución, se empaquetan todos los proyectos
 
 ### <a name="test-package-installation"></a>Prueba de instalación del paquete
 
-Antes de publicar un paquete, normalmente querrá probar el proceso de instalación de un paquete en un proyecto. Las pruebas aseguran que los archivos necesarios acaban en los lugares correctos en el proyecto.
+Antes de publicar un paquete, normalmente querrá probar el proceso de instalación de un paquete en un proyecto. Las pruebas aseguran que todos los archivos necesarios acaban en los lugares correctos en el proyecto.
 
 Puede probar las instalaciones de forma manual en Visual Studio o en la línea de comandos mediante los [pasos de instalación de paquetes](../consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package) normales.
 
