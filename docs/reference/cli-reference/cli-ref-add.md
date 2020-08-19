@@ -1,33 +1,35 @@
 ---
 title: Comando Add de la CLI de NuGet
-description: Referencia del comando Add de Nuget. exe
+description: Referencia del comando nuget.exe Add
 author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 7a72186e1dece082cd200a03849a0b12c751a645
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 89d268946243e8eae07e482db48e809a15260c38
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327862"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622907"
 ---
-# <a name="add-command-nuget-cli"></a>Comando add (CLI de NuGet)
+# <a name="add-command-nuget-cli"></a>Add (comando) (CLI de NuGet)
 
-**Se aplica a**: &bullet; **versiones compatibles**de publicación de paquetes: 3.3+
+**Se aplica a**: &bullet; **versiones compatibles**de publicación de paquetes: 3.3 +
 
 Agrega un paquete especificado a un origen de paquete no HTTP (una carpeta o ruta de acceso UNC) en un diseño jerárquico, donde se crean las carpetas para el identificador de paquete y el número de versión. Por ejemplo:
 
-    \\myserver\packages
-      └─<packageID>
-        └─<version>
-          ├─<packageID>.<version>.nupkg
-          ├─<packageID>.<version>.nupkg.sha512
-          └─<packageID>.nuspec
+```
+\\myserver\packages
+  └─<packageID>
+    └─<version>
+      ├─<packageID>.<version>.nupkg
+      ├─<packageID>.<version>.nupkg.sha512
+      └─<packageID>.nuspec
+```
 
 Al restaurar o actualizar en el origen del paquete, el diseño jerárquico proporciona un rendimiento significativamente mejor.
 
-Para expandir todos los archivos del paquete en el origen del paquete de destino, use `-Expand` el modificador. Normalmente, esto da lugar `tools` a la aparición de subcarpetas adicionales en el destino, como y. `lib`
+Para expandir todos los archivos del paquete en el origen del paquete de destino, use el `-Expand` modificador. Normalmente, esto da lugar a la aparición de subcarpetas adicionales en el destino, como `tools` y `lib` .
 
 ## <a name="usage"></a>Uso
 
@@ -35,18 +37,38 @@ Para expandir todos los archivos del paquete en el origen del paquete de destino
 nuget add <packagePath> -Source <sourcePath> [options]
 ```
 
-donde `<packagePath>` es el directorio del paquete que se va a agregar `<sourcePath>` y especifica el origen del paquete basado en carpeta al que se agregará el paquete. No se admiten los orígenes HTTP.
+donde `<packagePath>` es el directorio del paquete que se va a agregar y `<sourcePath>` especifica el origen del paquete basado en carpeta al que se agregará el paquete. No se admiten los orígenes HTTP.
 
 ## <a name="options"></a>Opciones
 
-| Opción | DESCRIPCIÓN |
-| --- | --- |
-| ConfigFile | El archivo de configuración de NuGet que se va a aplicar. Si no se especifica `%AppData%\NuGet\NuGet.Config` , se usa ( `~/.nuget/NuGet/NuGet.Config` Windows) o (Mac/Linux).|
-| Expand | Agrega todos los archivos del paquete al origen del paquete. |
-| ForceEnglishOutput | *(3.5 +)* Fuerza a Nuget. exe a ejecutarse mediante una referencia cultural invariable basada en inglés. |
-| Help | Muestra información de ayuda para el comando. |
-| NonInteractive | Suprime los mensajes de entrada o confirmaciones de usuario. |
-| Verbosity | Especifica la cantidad de detalle que se muestra en la salida: *normal*, *silenciosa*, *detallado*. |
+- **`-ConfigFile`**
+
+  El archivo de configuración de NuGet que se va a aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` se usa (Windows) o `~/.nuget/NuGet/NuGet.Config` o `~/.config/NuGet/NuGet.Config` (Mac/Linux).
+
+- **`-Expand`**
+
+  Agrega todos los archivos del paquete al origen del paquete.
+
+- **`-ForceEnglishOutput`**
+
+  *(3.5 +)* Fuerza la ejecución de nuget.exe mediante una referencia cultural invariable basada en inglés.
+Fuerza la ejecución de nuget.exe mediante una referencia cultural invariable basada en inglés.
+
+- **`-?|-help`**
+
+  Muestra información de ayuda para el comando.
+
+- **`-NonInteractive`**
+
+  Suprime los mensajes de entrada o confirmaciones de usuario.
+
+- **`-src|-Source`**
+
+   Especifica el origen del paquete, que es una carpeta o un recurso compartido UNC, al que se agregará el nupkg. No se admiten los orígenes http.
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  Especifica la cantidad de detalle que se muestra en la salida: `normal` (valor predeterminado), `quiet` o `detailed` .
 
 Vea también [variables de entorno](cli-ref-environment-variables.md)
 
