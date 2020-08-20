@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/03/2018
 ms.topic: conceptual
-ms.openlocfilehash: be7c10fb6ce60375f77e38f9b604ec33063e52fc
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 2dfbd793eee05169f051d9c8943bc065945b92da
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64498246"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622647"
 ---
 # <a name="packages-in-visual-studio-templates"></a>Paquetes en plantillas de Visual Studio
 
@@ -93,7 +93,7 @@ Si solo va a distribuir una plantilla de proyecto o elemento, y no es necesario 
 1. Modifique el elemento `<packages>` del archivo `.vstemplate` como sigue:
 
     ```xml
-    <packages repository="template"">
+    <packages repository="template">
         <!-- ... -->
     </packages>
     ```
