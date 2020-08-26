@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 45928e60033959bc8b4f43d1ef3e4c943e7ec057
-ms.sourcegitcommit: e02482e15c0cef63153086ed50d14f5b2a38f598
+ms.openlocfilehash: feb21ae1e70144491a5c0fe8f6a7be36e61d9b32
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87473895"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622996"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>Búsqueda y evaluación de paquetes NuGet para el proyecto
 
@@ -90,32 +90,41 @@ La mejor forma de evaluar la utilidad de un paquete consiste en descargarlo y pr
 
 Al mismo tiempo, usar un paquete NuGet significa tomar una dependencia en él, por lo que querrá asegurarse de que es eficaz y confiable. Como la instalación y las pruebas directas de un paquete llevan mucho tiempo, también puede obtener información sobre la calidad de un paquete con la información en la página de listado de un paquete:
 
-- *Estadísticas de descargas*: en la página de paquetes en nuget.org, en la sección **Estadísticas** se muestra el total de descargas, las descargas de la versión más reciente y el promedio diario de descargas. Los números más altos indican que muchos otros desarrolladores han tomado una dependencia en el paquete, lo que significa que ha demostrado su valor.
+- **Estadísticas de descargas**: en la página de paquetes en nuget.org, en la sección **Estadísticas** se muestra el total de descargas, las descargas de la versión más reciente y el promedio diario de descargas. Los números más altos indican que muchos otros desarrolladores han tomado una dependencia en el paquete, lo que significa que ha demostrado su valor.
 
     ![Estadísticas de descargas en la página de listado de un paquete](media/Finding-03-Downloads.png)
 
-- *Uso de GitHub*: en la página del paquete, la sección **Uso de GitHub** enumera los principales repositorios de GitHub que dependen de este paquete y que tienen un número elevado de estrellas en GitHub. El número de estrellas de un repositorio GitHub generalmente indica la popularidad del repositorio entre los usuarios de GitHub (más estrellas por lo general significan mayor popularidad). Visite la [página de Introducción de GitHub](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars) para obtener más información sobre el sistema de clasificación de estrellas y repositorios de GitHub.
+- **Usado por**: en la página del paquete, en la sección **Usado por** se enumeran los cinco paquetes más populares de NuGet.org y los repositorios de GitHub conocidos que dependen de este paquete. Los paquetes y repositorios que dependen de este paquete se pueden denominar "dependientes" de este paquete. Los paquetes y los repositorios dependientes se pueden considerar "aprobaciones" de este paquete, ya que los creadores del paquete han elegido confiar y depender de él.
+  - Un paquete dependiente debe depender de *cualquier versión* de este paquete en su *versión estable más reciente que se indique*. Esta definición garantiza que los paquetes dependientes mostrados son un reflejo actualizado de la decisión del creador del paquete de confiar en este paquete y depender de él. Los que dependen de versiones preliminares no se muestran, ya que todavía no se consideran aprobaciones de pleno derecho. Para ver ejemplos, consulte la tabla siguiente:
 
-    ![Uso de GitHub](media/GitHub-Usage.png)
+    | Versiones del paquete A | ¿El paquete A se muestra lista como dependiente del paquete B? |
+    |-|-|
+    | v1.0.0<br>v1.1.0 (última versión estable)--> Paquete B<br>v1.2.0-preview | TRUE, la versión estable más reciente depende del paquete B |
+    | v1.0.0 --> Paquete B<br>v1.1.0 (última versión estable)<br>v1.2.0-preview | FALSE, la última versión estable no depende del Paquete B |
+    | v1.0.0 --> Paquete B<br>v1.1.0 (última versión estable)<br>v1.2.0-preview --> Paquete B | FALSE, la última versión estable no depende del Paquete B |
+
+  - El número de estrellas de un repositorio GitHub generalmente indica la popularidad del repositorio entre los usuarios de GitHub (más estrellas por lo general significan mayor popularidad). Visite la [página de Introducción de GitHub](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars) para obtener más información sobre el sistema de clasificación de estrellas y repositorios de GitHub.
+
+    ![Usado por](media/Used-By-section-Humanizer.png)
 
     > [!Note]
-    > La sección de uso de GitHub de un paquete se genera de forma automática, periódicamente, sin revisión humana de repositorios individuales y solo con fines informativos para mostrarle los repositorios de GitHub que dependen del paquete y que son populares entre los usuarios de GitHub.
+    > La sección Usado por de un paquete se genera de forma automática, periódicamente, sin revisión humana de repositorios concretos y solo con fines informativos para mostrarle los paquetes de NuGet.org y los repositorios de GitHub conocidos que dependen del paquete.
 
-- *Historial de versiones*: en la página del paquete, busque en **Información** la fecha de la última actualización y examine el **Historial de versiones**. Un paquete con un mantenimiento correcto tiene actualizaciones recientes y un historial de versiones completo. Los paquetes desatendidos tienen pocas actualizaciones y a menudo no se han actualizado desde hace tiempo.
+- **Historial de versiones**: en la página del paquete, busque en **Información** la fecha de la última actualización y examine el **Historial de versiones**. Un paquete con un mantenimiento correcto tiene actualizaciones recientes y un historial de versiones completo. Los paquetes desatendidos tienen pocas actualizaciones y a menudo no se han actualizado desde hace tiempo.
 
     ![Historial de versiones en la página de listado de un paquete](media/Finding-04-VersionHistory.png)
 
-- *Instalaciones recientes*: en la página del paquete, bajo **Estadísticas**, seleccione **ver estadísticas completas**. En la página de estadísticas completas se muestran las instalaciones del paquete en las últimas seis semanas por número de versión. Un paquete que otros desarrolladores usan de forma activa normalmente es una opción más indicada que uno que no lo sea.
+- **Instalaciones recientes**: en la página del paquete, bajo **Estadísticas**, seleccione **ver estadísticas completas**. En la página de estadísticas completas se muestran las instalaciones del paquete en las últimas seis semanas por número de versión. Un paquete que otros desarrolladores usan de forma activa normalmente es una opción más indicada que uno que no lo sea.
 
-- *Soporte técnico*: en la página del paquete bajo **Información**, seleccione **Sitio del proyecto** (si está disponible) para ver qué opciones de soporte técnico ofrece el autor. Un proyecto con un sitio dedicado generalmente tiene mejor soporte técnico.
+- **Soporte técnico**: en la página del paquete bajo **Información**, seleccione **Sitio del proyecto** (si está disponible) para ver qué opciones de soporte técnico ofrece el autor. Un proyecto con un sitio dedicado generalmente tiene mejor soporte técnico.
 
-- *Historial del desarrollador*: en la página del paquete bajo **Propietarios**, seleccione un propietario para ver qué otros paquetes ha publicado. Aquellos con varios paquetes tienen más probabilidades de seguir ofreciendo soporte técnico para su trabajo en el futuro.
+- **Historial del desarrollador**: en la página del paquete bajo **Propietarios**, seleccione un propietario para ver qué otros paquetes ha publicado. Aquellos con varios paquetes tienen más probabilidades de seguir ofreciendo soporte técnico para su trabajo en el futuro.
 
-- *Contribuciones de código abierto*: muchos paquetes se mantienen en repositorios de código abierto, lo que permite a los desarrolladores que dependen directamente de ellos contribuir con correcciones de errores y mejoras de características. El historial de contribuciones de cualquier paquete también es un buen indicador de cuántos desarrolladores están implicados de forma activa.
+- **Contribuciones de código abierto**: muchos paquetes se mantienen en repositorios de código abierto, lo que permite a los desarrolladores que dependen directamente de ellos contribuir con correcciones de errores y mejoras de características. El historial de contribuciones de cualquier paquete también es un buen indicador de cuántos desarrolladores están implicados de forma activa.
 
-- *Entrevistar a los propietarios*: sin duda los nuevos desarrolladores pueden estar igual de comprometidos a crear paquetes excelentes para que los use, y es conveniente darles la oportunidad de aportar algo nuevo al ecosistema de NuGet. Con esto en mente, contacte directamente con los desarrolladores de paquetes a través de la opción **Póngase en contacto con los propietarios** bajo **Información** en la página de listado. Lo más probable es que estén encantados de trabajar con usted para satisfacer sus necesidades.
+- **Entrevistar a los propietarios**: sin duda los nuevos desarrolladores pueden estar igual de comprometidos a crear paquetes excelentes para que los use, y es conveniente darles la oportunidad de aportar algo nuevo al ecosistema de NuGet. Con esto en mente, contacte directamente con los desarrolladores de paquetes a través de la opción **Póngase en contacto con los propietarios** bajo **Información** en la página de listado. Lo más probable es que estén encantados de trabajar con usted para satisfacer sus necesidades.
 
-- *Prefijos de identificador de paquete reservados*: muchos propietarios de paquetes han solicitado y se les ha concedido un [prefijo de identificador de paquete reservado](../nuget-org/id-prefix-reservation.md). Cuando vea la marca de verificación visual junto a un identificador de paquete en [nuget.org](https://www.nuget.org/), o bien en Visual Studio, significa que el propietario del paquete ha cumplido nuestros [criterios](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria) para la reserva del prefijo de identificador. Esto significa que el propietario del paquete está siendo claro en lo que respecta a su identificación y la del paquete.
+- **Prefijos de identificador de paquete reservados**: muchos propietarios de paquetes han solicitado y se les ha concedido un [prefijo de identificador de paquete reservado](../nuget-org/id-prefix-reservation.md). Cuando vea la marca de verificación visual junto a un identificador de paquete en [nuget.org](https://www.nuget.org/), o bien en Visual Studio, significa que el propietario del paquete ha cumplido nuestros [criterios](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria) para la reserva del prefijo de identificador. Esto significa que el propietario del paquete está siendo claro en lo que respecta a su identificación y la del paquete.
 
 > [!Note]
 > Siempre debe prestar atención a los términos de licencia de un paquete, que puede ver si selecciona **Información de licencia** en la página de listado de un paquete en nuget.org. Si un paquete no especifica los términos de licencia, póngase en contacto directamente con el propietario del paquete mediante el vínculo de **contacto con los propietarios** de la página del paquete. Microsoft no le ofrece licencia para propiedad intelectual de proveedores de paquetes de terceros ni es responsable de la información proporcionada por terceros.

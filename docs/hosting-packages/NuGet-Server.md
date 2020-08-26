@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 098375b2bba13675ba5d80a27e0226dc2ee39e77
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7a806e6b586c63c701642c9e43865cb077d7999c
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79059579"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623050"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -26,7 +26,7 @@ Si tiene más preguntas sobre NuGet.Server, registre un problema en [https://git
 
 ## <a name="create-and-deploy-an-aspnet-web-application-with-nugetserver"></a>Crear e implementar una aplicación web ASP.NET con NuGet.Server
 
-1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto**, busque "Aplicación web ASP.NET (.NET Framework)" y seleccione la plantilla que corresponda para C#.
+1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto**, busque "Aplicación web ASP.NET (.NET Framework)" y seleccione la plantilla correspondiente a **C#** .
 
     ![Selección de la plantilla del proyecto web de .NET Framework](media/Hosting_00-NuGet.Server-ProjectType.png)
 

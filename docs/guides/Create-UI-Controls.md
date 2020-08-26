@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: da8c5a05311c790bf6b873bc0f1a077d3ef1db87
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e1ebf5042597693ee55d986a4f93e797c27ad30a
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73610615"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622712"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>Creación de controles de IU como paquetes NuGet
 
@@ -46,7 +46,7 @@ La estructura del archivo es la siguiente:
 ```xml
 <FileList>
   <File Reference = "your_package_file">
-    <ToolboxItems VSCategory="vs_category" BlendCategory="blend_category">
+    <ToolboxItems UIFramework="WPF" VSCategory="vs_category" BlendCategory="blend_category">
       <Item Type="type_full_name_1" />
 
       <!-- Any number of additional Items -->
@@ -61,6 +61,7 @@ donde:
 
 - *your_package_file*: nombre del archivo de control, como `ManagedPackage.winmd` ("ManagedPackage" es un nombre arbitrario usado para este ejemplo y no tiene ningún otro significado).
 - *vs_category*: etiqueta del grupo en el que debe aparecer el control en el cuadro de herramientas del diseñador de Visual Studio. Se necesita una `VSCategory` para que el control aparezca en el cuadro de herramientas.
+*ui_framework*: nombre del marco, como "WPF"; tenga en cuenta que se necesita el atributo `UIFramework` en los nodos ToolboxItems de Visual Studio 16.7 Preview 3 o superior para que el control aparezca en el cuadro de herramientas.
 - *blend_category*: etiqueta del grupo en el que debe aparecer el control en el panel Recursos del diseñador de Blend. Se necesita una `BlendCategory` para que el control aparezca en Recursos.
 - *type_full_name_n*: nombre completo de cada control, incluido el espacio de nombres (por ejemplo, `ManagedPackage.MyCustomControl`). Tenga en cuenta que el formato de puntos se usa tanto para los tipos administrados como para los tipos nativos.
 
@@ -71,7 +72,7 @@ En el ejemplo siguiente, el control implementado en `ManagedPackage.winmd` apare
 ```xml
 <FileList>
   <File Reference = "ManagedPackage.winmd">
-    <ToolboxItems VSCategory="Managed Package" BlendCategory="Managed Package">
+    <ToolboxItems UIFramework="WPF" VSCategory="Managed Package" BlendCategory="Managed Package">
       <Item Type="ManagedPackage.MyCustomControl" />
     </ToolboxItems>
   </File>
@@ -153,7 +154,7 @@ Para ver un ejemplo, vea [MyCustomControl.cs](https://github.com/NuGet/Samples/b
 > [!Note]
 > Esto se aplica solo a los controles de UWP.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Crear paquetes UWP](create-uwp-packages.md)
 - [Ejemplo de ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)
