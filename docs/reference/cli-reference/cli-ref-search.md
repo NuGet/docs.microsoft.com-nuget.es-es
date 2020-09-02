@@ -5,12 +5,12 @@ author: advay26
 ms.author: t-adtand
 ms.date: 08/17/2020
 ms.topic: reference
-ms.openlocfilehash: 35e4906960534299418cb2a17c190476708b2634
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 8d63efefb8f14c03fbe3986d8d7eebcc3eb5bcac
+ms.sourcegitcommit: 6cda91f135e58cf57a2471b0c7c4a2f748f40024
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623258"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359687"
 ---
 # <a name="search-command-nuget-cli"></a>comando Search (CLI de NuGet)
 
@@ -33,18 +33,16 @@ donde se aplican los términos de búsqueda a los nombres de paquetes, etiquetas
 | Versión preliminar | Los paquetes de versión preliminar no se incluyen de forma predeterminada, pero se pueden incluir con este argumento. | -Versión preliminar |
 | Source | Orígenes de paquetes específicos para buscar en lugar de consultar los orígenes predeterminados en __nuget.config__ | -Origen `<Source URL>`|
 | Take | Número de resultados que se van a devolver. El valor predeterminado es 20. | -Take `<positive integer>` |
-| Nivel de detalle | Nivel de detalle que se va a mostrar en el resultado. El valor predeterminado es _normal_. (Consulte la nota siguiente)  | -Nivel de detalle `<quiet\|normal\|detailed>` |
+| Nivel de detalle | Nivel de detalle que se va a mostrar en el resultado. El valor predeterminado es _normal_. (Consulte la nota siguiente)  | -Nivel de detalle `<quiet|normal|detailed>` |
 | Ayuda | Muestra información de ayuda para el comando | -Help |
 
 Vea también [variables de entorno](cli-ref-environment-variables.md)
 
-__NOTA__:
-
-Niveles de detalle:
-
-* IDENTIFICADOR de paquete _silencioso_ , versión
-* _normal_ : ID. de paquete, versión, descargas, vista previa de la descripción
-* _detallado_ : ID. de paquete, versión, descargas, Descripción completa, otra información, como la dirección URL de la consulta
+> [!NOTE] 
+> Niveles de detalle:
+> * IDENTIFICADOR de paquete _silencioso_ , versión
+> * _normal_ : ID. de paquete, versión, descargas, vista previa de la descripción
+> * _detallado_ : ID. de paquete, versión, descargas, Descripción completa, otra información, como la dirección URL de la consulta
 
 ## <a name="examples"></a>Ejemplos
 
