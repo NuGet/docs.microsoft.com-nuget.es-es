@@ -6,12 +6,12 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 2753f92601b3d8b43593762cc07cd8384646feea
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 9e25f439617a76d30880bea3c10a5d063e681a41
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622673"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238158"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a>comando de firma de confianza (CLI de NuGet)
 
@@ -46,6 +46,7 @@ Registered trusted signers:
  2.   microsoft [author]
       Certificate fingerprint(s):
         SHA256 - 3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE
+        SHA256 - AA12DA22A49BCE7D5C1AE64CC1F3D892F150DA76140F210ABD2CBFFCA2C18A27
 
  3.   myUntrustedAuthorSignature [author]
       Certificate fingerprint(s):
@@ -89,7 +90,7 @@ donde `<package(s)>` es uno o varios `.nupkg` archivos.
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_Nota_: esta opción solo agregará repositorios de confianza. 
+_Nota_ : esta opción solo agregará repositorios de confianza. 
 
 - **`-AllowUntrustedRoot`**
 
@@ -109,7 +110,7 @@ _Nota_: esta opción solo agregará repositorios de confianza.
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_Nota_: Si ya existe un firmante de confianza con el nombre especificado, el elemento de certificado se agregará a ese firmante. De lo contrario, se creará un autor de confianza con un elemento de certificado a partir de la información de certificado especificada.
+_Nota_ : Si ya existe un firmante de confianza con el nombre especificado, el elemento de certificado se agregará a ese firmante. De lo contrario, se creará un autor de confianza con un elemento de certificado a partir de la información de certificado especificada.
 
 
 - **`-AllowUntrustedRoot`**
@@ -132,7 +133,7 @@ Quita los firmantes de confianza que coinciden con el nombre especificado.
 
 Solicita la lista más reciente de certificados usados en un repositorio de confianza actual para actualizar la lista de certificados existente en el firmante de confianza.
 
-_Nota_: este gesto eliminará la lista actual de certificados y los reemplazará por una lista actualizada del repositorio.
+_Nota_ : este gesto eliminará la lista actual de certificados y los reemplazará por una lista actualizada del repositorio.
 
 ## <a name="options"></a>Opciones
 

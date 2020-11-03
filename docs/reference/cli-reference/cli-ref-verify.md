@@ -6,12 +6,12 @@ ms.author: dtivel
 ms.date: 03/06/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 2c501753a16820c5d027441001561c6b637ccda9
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 7ce08f11195437e94bfe69883ff525e9ad3a73f0
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622608"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238145"
 ---
 # <a name="verify-command-nuget-cli"></a>comando verify (CLI de NuGet)
 
@@ -19,7 +19,7 @@ ms.locfileid: "88622608"
 
 Comprueba un paquete.
 
-Todavía no se admite la comprobación de paquetes firmados en .NET Core, en mono o en plataformas que no son de Windows.
+La comprobación de paquetes firmados todavía no se admite en mono.
 
 ## <a name="usage"></a>Uso
 
@@ -31,7 +31,7 @@ donde `<package(s)>` es uno o varios `.nupkg` archivos.
 
 ## <a name="nuget-verify--all"></a>comprobación de Nuget: todo
 
-Especifica que todas las comprobaciones posibles deben realizarse en los paquetes.
+Especifica que en los paquetes se deben realizar todas las comprobaciones posibles.
 
 ## <a name="nuget-verify--signatures"></a>comprobación de Nuget: firmas
 

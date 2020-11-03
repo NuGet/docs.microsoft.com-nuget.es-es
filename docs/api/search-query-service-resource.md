@@ -6,14 +6,14 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: aed591ceba00f1820a573eacf312112db0a1c69e
-ms.sourcegitcommit: 7e9c0630335ef9ec1e200e2ee9065f702e52a8ec
+ms.openlocfilehash: 86c9d07cf90b84fffd09b04847d41772dd633b98
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85292284"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237879"
 ---
-# <a name="search"></a>Search
+# <a name="search"></a>Buscar
 
 Es posible buscar paquetes disponibles en un origen de paquete mediante la API V3. El recurso que se usa para buscar es el `SearchQueryService` recurso que se encuentra en el [Índice de servicio](service-index.md).
 
@@ -21,11 +21,11 @@ Es posible buscar paquetes disponibles en un origen de paquete mediante la API V
 
 `@type`Se usan los siguientes valores:
 
-Valor de@type                   | Notas
+Valor de @type                   | Notas
 ----------------------------- | -----
 SearchQueryService            | La versión inicial
-SearchQueryService/3.0.0-beta | Alias de`SearchQueryService`
-SearchQueryService/3.0.0-RC   | Alias de`SearchQueryService`
+SearchQueryService/3.0.0-beta | Alias de `SearchQueryService`
+SearchQueryService/3.0.0-RC   | Alias de `SearchQueryService`
 SearchQueryService/3.5.0      | Incluye compatibilidad con el `packageType` parámetro de consulta
 
 ### <a name="searchqueryservice350"></a>SearchQueryService/3.5.0
@@ -49,12 +49,12 @@ Un paquete que no aparece en la lista nunca debe aparecer en los resultados de l
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Nombre        | En     | Tipo    | Obligatorio | Notas
+Name        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
 q           | URL    | string  | no       | Términos de búsqueda que se usan para filtrar paquetes
 skip        | URL    | integer | no       | Número de resultados que se van a omitir para la paginación.
 take        | URL    | integer | no       | Número de resultados que se van a devolver, para la paginación
-prerelease  | URL    | boolean | no       | `true`o `false` determinar si se deben incluir los [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
+prerelease  | URL    | boolean | no       | `true` o `false` determinar si se deben incluir los [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
 semVerLevel | URL    | string  | no       | Una cadena de versión de SemVer 1.0.0 
 packageType | URL    | string  | no       | El tipo de paquete que se va a usar para filtrar paquetes (agregados en `SearchQueryService/3.5.0` )
 
@@ -74,7 +74,7 @@ El `packageType` parámetro se usa para filtrar aún más los resultados de la b
 Si el tipo de paquete proporcionado no es un tipo de paquete válido, tal y como se define en el [documento de tipo de paquete](https://github.com/NuGet/Home/wiki/Package-Type-%5BPacking%5D), se devolverá un resultado vacío.
 Si el tipo de paquete proporcionado está vacío, no se aplicará ningún filtro. En otras palabras, si no se pasa ningún valor al parámetro packageType, se comportará como si no se hubiera pasado el parámetro.
 
-### <a name="response"></a>Respuesta
+### <a name="response"></a>Response
 
 La respuesta es un documento JSON que contiene `take` los resultados de la búsqueda. Los resultados de la búsqueda se agrupan por identificador de paquete.
 
@@ -82,8 +82,8 @@ El objeto JSON raíz tiene las siguientes propiedades:
 
 Nombre      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
-totalHits | integer          | sí      | El número total de coincidencias, que no se tienen en cuenta `skip` y`take`
-datos      | matriz de objetos | sí      | Resultados de la búsqueda que coinciden con la solicitud
+totalHits | integer          | yes      | El número total de coincidencias, que no se tienen en cuenta `skip` y `take`
+datos      | matriz de objetos | yes      | Resultados de la búsqueda que coinciden con la solicitud
 
 ### <a name="search-result"></a>Resultado de la búsqueda
 
@@ -92,38 +92,38 @@ El objeto tiene las siguientes propiedades:
 
 Nombre           | Tipo                       | Obligatorio | Notas
 -------------- | -------------------------- | -------- | -----
-id             | string                     | sí      | Identificador del paquete coincidente.
-version        | string                     | sí      | La cadena de versión de SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
+id             | string                     | yes      | Identificador del paquete coincidente.
+version        | string                     | yes      | La cadena de versión de SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
 description    | string                     | no       | 
-versions       | matriz de objetos           | sí      | Todas las versiones del paquete que coinciden con el `prerelease` parámetro
+versions       | matriz de objetos           | yes      | Todas las versiones del paquete que coinciden con el `prerelease` parámetro
 authors        | cadena o matriz de cadenas | no       | 
 iconUrl        | string                     | no       | 
 licenseUrl     | string                     | no       | 
 owners         | cadena o matriz de cadenas | no       | 
 projectUrl     | string                     | no       | 
 registro   | string                     | no       | La dirección URL absoluta al [Índice de registro](registration-base-url-resource.md#registration-index) asociado
-summary        | string                     | no       | 
+Resumen        | string                     | no       | 
 etiquetas           | cadena o matriz de cadenas | no       | 
 title          | string                     | no       | 
 totalDownloads | integer                    | no       | Este valor se puede inferir por la suma de descargas de la `versions` matriz.
 demasiado       | boolean                    | no       | Un valor booleano JSON que indica si se [comprueba](../nuget-org/id-prefix-reservation.md) el paquete
-packageTypes   | matriz de objetos           | sí      | Los tipos de paquetes definidos por el autor del paquete (agregado en `SearchQueryService/3.5.0` )
+packageTypes   | matriz de objetos           | yes      | Los tipos de paquetes definidos por el autor del paquete (agregado en `SearchQueryService/3.5.0` )
 
-En nuget.org, un paquete comprobado es aquél que tiene un identificador de paquete que coincide con un prefijo de identificador reservado y es propiedad de uno de los propietarios del prefijo reservado. Para obtener más información, consulte la [documentación sobre la reserva de prefijos de identificador](../reference/id-prefix-reservation.md).
+En nuget.org, un paquete comprobado es aquél que tiene un identificador de paquete que coincide con un prefijo de identificador reservado y es propiedad de uno de los propietarios del prefijo reservado. Para obtener más información, consulte la [documentación sobre la reserva de prefijos de identificador](../nuget-org/id-prefix-reservation.md).
 
 Los metadatos contenidos en el objeto de resultado de la búsqueda se toman de la versión más reciente del paquete. Cada elemento de la `versions` matriz es un objeto JSON con las siguientes propiedades:
 
 Nombre      | Tipo    | Obligatorio | Notas
 --------- | ------- | -------- | -----
-@id       | string  | sí      | La dirección URL absoluta de la [hoja de registro](registration-base-url-resource.md#registration-leaf) asociada
-version   | string  | sí      | La cadena de versión de SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
-descargas | integer | sí      | El número de descargas para esta versión de paquete específica
+@id       | string  | yes      | La dirección URL absoluta de la [hoja de registro](registration-base-url-resource.md#registration-leaf) asociada
+version   | string  | yes      | La cadena de versión de SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
+descargas | integer | yes      | El número de descargas para esta versión de paquete específica
 
 La `packageTypes` matriz siempre contendrá al menos un (1) elemento. El tipo de paquete para un identificador de paquete determinado se considera como los tipos de paquetes definidos por la versión más reciente del paquete con respecto a los demás parámetros de búsqueda. Cada elemento de la `packageTypes` matriz es un objeto JSON con las siguientes propiedades:
 
 Nombre      | Tipo    | Obligatorio | Notas
 --------- | ------- | -------- | -----
-name      | string  | sí      | Nombre del tipo de paquete.
+name      | string  | yes      | Nombre del tipo de paquete.
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 

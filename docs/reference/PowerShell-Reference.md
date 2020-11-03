@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 2a82b1977265a8f8a15247759bc3de80a5efe228
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 4f8b42847cbc155393fe6d2afbe2e0857b619da3
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75385348"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93236885"
 ---
 # <a name="powershell-reference"></a>Referencia de PowerShell
 
@@ -24,19 +24,19 @@ La consola del administrador de paquetes proporciona una interfaz de PowerShell 
 
 | Comandos comunes | Descripción | Versión de NuGet |
 | --- | --- | --- |
-| [Install-Package](ps-reference/ps-ref-install-package.md) | Permite instalar un paquete y sus dependencias en el proyecto. | Todos |
-| [Update-Package](ps-reference/ps-ref-update-package.md) | Actualiza un paquete y sus dependencias, o todos los paquetes de un proyecto. | Todos |
+| [Install-Package](ps-reference/ps-ref-install-package.md) | Permite instalar un paquete y sus dependencias en el proyecto. | Todo |
+| [Update-Package](ps-reference/ps-ref-update-package.md) | Actualiza un paquete y sus dependencias, o todos los paquetes de un proyecto. | Todo |
 | [Find-Package](ps-reference/ps-ref-find-package.md) | Busca un origen de paquete mediante un identificador de paquete o palabras clave. | 3.0+ |
-| [Get-Package](ps-reference/ps-ref-get-package.md) | Recupera la lista de paquetes instalados en el repositorio local o enumera los paquetes disponibles en el origen de un paquete. | Todos |
+| [Get-Package](ps-reference/ps-ref-get-package.md) | Recupera la lista de paquetes instalados en el repositorio local o enumera los paquetes disponibles en el origen de un paquete. | Todo |
 
 | Comandos secundarios | Descripción | Versión de NuGet |
 | --- | --- | --- |
-| [Add-BindingRedirect](ps-reference/ps-ref-add-bindingredirect.md) | Examina todos los ensamblados de la ruta de acceso de salida de un proyecto y agrega redirecciones de enlace al `app.config` o `web.config` cuando sea necesario. | Todos |
+| [Add-BindingRedirect](ps-reference/ps-ref-add-bindingredirect.md) | Examina todos los ensamblados de la ruta de acceso de salida de un proyecto y agrega redirecciones de enlace al `app.config` o `web.config` cuando es necesario. | Todo |
 | [Get-Project](ps-reference/ps-ref-get-project.md) | Muestra información sobre el proyecto predeterminado o el especificado. | 3.0+ |
 | [Open-PackagePage](ps-reference/ps-ref-open-packagepage.md) | Inicia el explorador predeterminado con el proyecto, la licencia o la dirección URL de abuso del informe para el paquete especificado. | En desuso en 3.0 + |
-| [Register-TabExpansion](ps-reference/ps-ref-register-tabexpansion.md) | Registra una expansión de pestaña para los parámetros de un comando, lo que permite crear expansiones personalizadas para los valores de parámetro que se usan con frecuencia. | Todos |
+| [Register-Tabexpansion controla](ps-reference/ps-ref-register-tabexpansion.md) | Registra una expansión de pestaña para los parámetros de un comando, lo que permite crear expansiones personalizadas para los valores de parámetro que se usan con frecuencia. | Todo |
 | [Sync-Package](ps-reference/ps-ref-sync-package.md) | Obtiene la versión del paquete instalado del proyecto especificado y sincroniza la versión con el resto de proyectos de la solución. | 3.0+ |
-| [Uninstall-Package](ps-reference/ps-ref-uninstall-package.md) | Quita un paquete de un proyecto y, opcionalmente, quita sus dependencias. | Todos |
+| [Uninstall-Package](ps-reference/ps-ref-uninstall-package.md) | Quita un paquete de un proyecto y, opcionalmente, quita sus dependencias. | Todo |
 
 Para obtener ayuda completa y detallada sobre cualquiera de estos comandos en la consola de, solo tiene que ejecutar lo siguiente con el nombre de comando en cuestión:
 
@@ -44,16 +44,16 @@ Para obtener ayuda completa y detallada sobre cualquiera de estos comandos en la
 Get-Help <command> -full
 ```
 
-Todos los comandos de la consola del administrador de paquetes admiten los siguientes [parámetros de PowerShell comunes](https://go.microsoft.com/fwlink/?LinkID=113216):
+Todos los comandos de la consola del administrador de paquetes admiten los siguientes [parámetros de PowerShell comunes](/powershell/module/microsoft.powershell.core/about/about_commonparameters):
 
-- Depuración
+- Depurar
 - ErrorAction
 - ErrorVariable
 - OutBuffer
 - OutVariable
 - PipelineVariable
-- Detallado
+- Verbose
 - WarningAction
 - WarningVariable
 
-Para obtener más información, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216) en la documentación de PowerShell.
+Para obtener más información, consulte [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters) en la documentación de PowerShell.

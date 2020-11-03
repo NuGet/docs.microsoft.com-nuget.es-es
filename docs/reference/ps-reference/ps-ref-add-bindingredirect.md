@@ -1,16 +1,16 @@
 ---
-title: Referencia de PowerShell Add-BindingRedirect de NuGet
-description: Referencia del comando Add-BindingRedirect de PowerShell en la consola del administrador de paquetes NuGet en Visual Studio.
+title: Referencia de PowerShell de Add-BindingRedirect de NuGet
+description: Referencia de Add-BindingRedirect comando de PowerShell en la consola del administrador de paquetes NuGet en Visual Studio.
 author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: f5ba4bd8140fa8cac7da8bf1351ad5448671b768
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 382ba9b179428c70e3eb16db86a363e095207d61
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623128"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237262"
 ---
 # <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>Add-BindingRedirect (consola del administrador de paquetes en Visual Studio)
 
@@ -39,7 +39,7 @@ Ninguno de estos parámetros acepta caracteres comodín o de entrada de canaliza
 
 ## <a name="common-parameters"></a>Parámetros comunes
 
-`Add-BindingRedirect` admite los siguientes [parámetros comunes de PowerShell](https://go.microsoft.com/fwlink/?LinkID=113216): debug, error Action, ErrorVariable, outbuffer, outvariable, PipelineVariable, verbose, WarningAction y WarningVariable.
+`Add-BindingRedirect` admite los siguientes [parámetros comunes de PowerShell](/powershell/module/microsoft.powershell.core/about/about_commonparameters): debug, error Action, ErrorVariable, outbuffer, outvariable, PipelineVariable, verbose, WarningAction y WarningVariable.
 
 ## <a name="examples"></a>Ejemplos
 

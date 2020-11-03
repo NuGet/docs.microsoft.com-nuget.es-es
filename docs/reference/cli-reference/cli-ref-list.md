@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 91886dbbdcdb24648289d6f6efbe1f87e4099fff
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: a6a4ee434c43ad4865dba12f039b5d545a90d3c4
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623076"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238171"
 ---
 # <a name="list-command-nuget-cli"></a>List (comando) (CLI de NuGet)
 
@@ -24,7 +24,7 @@ Muestra una lista de paquetes de un origen determinado. Si no se especifica ning
 nuget list [search terms] [options]
 ```
 
-donde los términos de búsqueda opcionales filtrarán la lista mostrada. Los [términos de búsqueda](/nuget/consume-packages/finding-and-choosing-packages#search-syntax) se aplican a los nombres de los paquetes, etiquetas y descripciones de paquetes tal y como se usan en Nuget.org. 
+donde los términos de búsqueda opcionales filtrarán la lista mostrada. Los [términos de búsqueda](../../consume-packages/finding-and-choosing-packages.md#search-syntax) se aplican a los nombres de los paquetes, etiquetas y descripciones de paquetes tal y como se usan en Nuget.org. 
 
 ## <a name="options"></a>Opciones
 
