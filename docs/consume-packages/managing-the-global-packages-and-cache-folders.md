@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
 ms.openlocfilehash: e2672aa0bf57242526364639f0df74f9d1adb934
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428592"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237327"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>Administración de las carpetas de paquetes globales, de caché y temporales
 
@@ -24,7 +24,7 @@ Cada vez que instala, actualiza o restaura un paquete, NuGet administra los paqu
 | plugins-cache **4.8+** | Carpeta en la que NuGet almacena los resultados de la solicitud de notificaciones de la operación.<br/><ul><li>Windows: `%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux: `~/.local/share/NuGet/plugins-cache`</li><li>Se invalida mediante la variable de entorno NUGET_PLUGINS_CACHE_PATH.</li></ul> |
 
 > [!Note]
-> NuGet 3.5 y versiones anteriores utilizan *packages-cache* en lugar de *http-cache*, que se encuentra en `%localappdata%\NuGet\Cache`.
+> NuGet 3.5 y versiones anteriores utilizan *packages-cache* en lugar de *http-cache* , que se encuentra en `%localappdata%\NuGet\Cache`.
 
 Mediante las carpetas *global-packages* y de caché, NuGet generalmente evita descargar paquetes que ya existen en el equipo, lo que mejora el rendimiento de las operaciones de instalación, actualización y restauración. Cuando se usa PackageReference, la carpeta *global-packages* también evita mantener paquetes descargados dentro de carpetas de proyecto, donde podrían accidentalmente agregarse al control de código fuente, y reduce el impacto general de NuGet en el almacenamiento en el equipo.
 

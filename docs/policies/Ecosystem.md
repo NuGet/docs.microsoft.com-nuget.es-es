@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 31243076f36f6ff274c4377c1773ea59dda8c834
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 165587fb64be5a5f4dbfdece7dc3a1e6402b733e
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64495498"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237431"
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>Una introducción al ecosistema de NuGet
 
@@ -68,7 +68,7 @@ Se trata de herramientas y utilidades integradas en NuGet:
 
 ## <a name="training-materials-and-references"></a>Materiales de aprendizaje y referencias
 
-El uso de una herramienta o tecnología nueva suele incluir una curva de aprendizaje. Por suerte, NuGet no tiene una curva de aprendizaje complicada. De hecho, cualquiera puede [empezar a consumir paquetes](../quickstart/use-a-package.md) rápidamente.
+El uso de una herramienta o tecnología nueva suele incluir una curva de aprendizaje. Por suerte, NuGet no tiene una curva de aprendizaje complicada. De hecho, cualquiera puede [empezar a consumir paquetes](../quickstart/install-and-use-a-package-in-visual-studio.md) rápidamente.
 
 Dicho esto, la creación de paquetes (en especial de paquetes de calidad) junto con la adopción de NuGet en procesos de compilación e implementación automatizados requiere dedicar un poco más de tiempo a los recursos siguientes:
 

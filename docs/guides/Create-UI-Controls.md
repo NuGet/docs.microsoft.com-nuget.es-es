@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: e1ebf5042597693ee55d986a4f93e797c27ad30a
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 17062d83349fe1b8cd28e57dd888686a226ac9cb
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622712"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238028"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>Creación de controles de IU como paquetes NuGet
 
@@ -59,11 +59,11 @@ La estructura del archivo es la siguiente:
 
 donde:
 
-- *your_package_file*: nombre del archivo de control, como `ManagedPackage.winmd` ("ManagedPackage" es un nombre arbitrario usado para este ejemplo y no tiene ningún otro significado).
-- *vs_category*: etiqueta del grupo en el que debe aparecer el control en el cuadro de herramientas del diseñador de Visual Studio. Se necesita una `VSCategory` para que el control aparezca en el cuadro de herramientas.
-*ui_framework*: nombre del marco, como "WPF"; tenga en cuenta que se necesita el atributo `UIFramework` en los nodos ToolboxItems de Visual Studio 16.7 Preview 3 o superior para que el control aparezca en el cuadro de herramientas.
-- *blend_category*: etiqueta del grupo en el que debe aparecer el control en el panel Recursos del diseñador de Blend. Se necesita una `BlendCategory` para que el control aparezca en Recursos.
-- *type_full_name_n*: nombre completo de cada control, incluido el espacio de nombres (por ejemplo, `ManagedPackage.MyCustomControl`). Tenga en cuenta que el formato de puntos se usa tanto para los tipos administrados como para los tipos nativos.
+- *your_package_file* : nombre del archivo de control, como `ManagedPackage.winmd` ("ManagedPackage" es un nombre arbitrario usado para este ejemplo y no tiene ningún otro significado).
+- *vs_category* : etiqueta del grupo en el que debe aparecer el control en el cuadro de herramientas del diseñador de Visual Studio. Se necesita una `VSCategory` para que el control aparezca en el cuadro de herramientas.
+*ui_framework* : nombre del marco, como "WPF"; tenga en cuenta que se necesita el atributo `UIFramework` en los nodos ToolboxItems de Visual Studio 16.7 Preview 3 o superior para que el control aparezca en el cuadro de herramientas.
+- *blend_category* : etiqueta del grupo en el que debe aparecer el control en el panel Recursos del diseñador de Blend. Se necesita una `BlendCategory` para que el control aparezca en Recursos.
+- *type_full_name_n* : nombre completo de cada control, incluido el espacio de nombres (por ejemplo, `ManagedPackage.MyCustomControl`). Tenga en cuenta que el formato de puntos se usa tanto para los tipos administrados como para los tipos nativos.
 
 En escenarios más avanzados también puede incluir varios elementos `<File>` dentro de `<FileList>` cuando un único paquete contenga varios ensamblados de control. También puede tener varios nodos `<ToolboxItems>` dentro de un único elemento `<File>` si quiere organizar los controles en categorías distintas.
 
@@ -94,7 +94,7 @@ Los formatos compatibles son `.png`, `.jpg`, `.jpeg`, `.gif` y `.bmp`. El format
 
 ![Ejemplo de icono de cuadro de herramientas](https://raw.githubusercontent.com/NuGet/docs.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
 
-El fondo de color rosa se reemplaza durante el tiempo de ejecución. El color de los iconos cambia con el tema de Visual Studio y ese color de fondo no es un efecto inesperado. Para obtener más información, consulte [Imágenes e iconos para Visual Studio](https://docs.microsoft.com/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio).
+El fondo de color rosa se reemplaza durante el tiempo de ejecución. El color de los iconos cambia con el tema de Visual Studio y ese color de fondo no es un efecto inesperado. Para obtener más información, consulte [Imágenes e iconos para Visual Studio](/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio).
 
 En el ejemplo siguiente, el proyecto contiene un archivo de imagen denominado "ManagedPackage.MyCustomControl.png".
 

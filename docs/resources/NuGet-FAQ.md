@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 937a0083ca47ba5668059736a7e99f7ca88e8908
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: aae6f0474cc6e8e8aa5c269b79be6fd949d9184c
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622621"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238002"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -41,13 +41,13 @@ Para más información, vea [Búsqueda y selección de paquetes](../consume-pack
 - Visual Studio en Windows admite la [Interfaz de usuario del Administrador de paquetes](../consume-packages/install-use-packages-visual-studio.md) y la [Consola del Administrador de paquetes](../consume-packages/install-use-packages-powershell.md).
 - Visual Studio para Mac tiene características integradas de NuGet, como se describe en [Incluir un paquete NuGet en el proyecto](/visualstudio/mac/nuget-walkthrough).
 - Visual Studio Code (todas las plataformas) no tiene ninguna integración directa de NuGet. Use la [CLI de NuGet](../reference/nuget-exe-cli-reference.md) o [la CLI de dotnet](../reference/dotnet-commands.md).
-- Azure DevOps proporciona [un paso de compilación para restaurar paquetes NuGet](/vsts/build-release/tasks/package/nuget). También puede [hospedar fuentes privadas de distribución de paquetes NuGet en Azure DevOps](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish).
+- Azure DevOps proporciona [un paso de compilación para restaurar paquetes NuGet](/vsts/build-release/tasks/package/nuget). También puede [hospedar fuentes privadas de distribución de paquetes NuGet en Azure DevOps](/azure/devops/artifacts/nuget/publish).
 
 **¿Cómo puedo comprobar la versión exacta de las herramientas de NuGet que están instaladas?**
 
 En Visual Studio, use el comando **Ayuda > Acerca de Microsoft Visual Studio** y mire la versión que se muestra junto a **Administrador de paquetes NuGet**.
 
-O bien, inicie la consola del Administrador de paquetes (**Herramientas > Administrador de paquetes NuGet > Consola del Administrador de paquetes**) y escriba `$host` para ver información sobre NuGet, incluida la versión.
+O bien, inicie la consola del Administrador de paquetes ( **Herramientas > Administrador de paquetes NuGet > Consola del Administrador de paquetes** ) y escriba `$host` para ver información sobre NuGet, incluida la versión.
 
 **¿Qué lenguajes de programación son compatibles con NuGet?**
 
@@ -61,7 +61,7 @@ NuGet es totalmente compatible con una variedad de plantillas de proyecto como W
 
 **¿Cómo puedo actualizar los paquetes que forman parte de plantillas de Visual Studio?**
 
-Vaya a la pestaña **Actualizaciones** en la interfaz de usuario del Administrador de paquetes y seleccione **Actualizar todo**, o use el [comando `Update-Package`](../reference/ps-reference/ps-ref-update-package.md) desde la consola del Administrador de paquetes.
+Vaya a la pestaña **Actualizaciones** en la interfaz de usuario del Administrador de paquetes y seleccione **Actualizar todo** , o use el [comando `Update-Package`](../reference/ps-reference/ps-ref-update-package.md) desde la consola del Administrador de paquetes.
 
 Para actualizar la plantilla propiamente dicha, debe actualizar manualmente el repositorio de plantillas. Vea el [blog de Xavier Decoster](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages) sobre este tema. Tenga en cuenta que esto se realiza bajo su responsabilidad, ya que es posible que las actualizaciones manuales dañen la plantilla si la versión más reciente de todas las dependencias no es compatible entre sí.
 
@@ -103,7 +103,7 @@ Se trata de un problema conocido de cómo interactúa PowerShell con un objeto C
 
 **¿Cómo puedo mostrar el paquete en una fuente?**
 
-Vea [Creación y publicación de un paquete](../quickstart/create-and-publish-a-package.md).
+Vea [Creación y publicación de un paquete](../quickstart/create-and-publish-a-package-using-visual-studio.md).
 
 **Tengo varias versiones de la biblioteca destinadas a versiones diferentes de .NET Framework. ¿Cómo genero un único paquete que admita esto?**
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 34f7c6132ba6050e20114642932ccf29a5ec088d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7c0da38ab4059b89c9693ecbece2bc8ed1a775ec
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428628"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237950"
 ---
 # <a name="support-multiple-net-versions"></a>Compatibilidad con varias versiones de .NET
 
@@ -71,7 +71,7 @@ Tenga en cuenta que NuGet siempre selecciona estos recursos de tiempo de ejecuci
 
 Vea [Crear paquetes UWP](../guides/create-uwp-packages.md) para ver un ejemplo de cómo hacer referencia a estos archivos en el manifiesto de `.nuspec`.
 
-Asimismo, consulte [Packing a Windows store app component with NuGet](https://blogs.msdn.microsoft.com/mim/2013/09/02/packaging-a-windows-store-apps-component-with-nuget-part-2) (Empaquetado de un componente de una aplicación de la Tienda Windows con NuGet)
+Asimismo, consulte [Packing a Windows store app component with NuGet](/archive/blogs/mim/packaging-a-windows-store-apps-component-with-nuget-part-2) (Empaquetado de un componente de una aplicación de la Tienda Windows con NuGet)
 
 ## <a name="matching-assembly-versions-and-the-target-framework-in-a-project"></a>Adaptar las versiones de ensamblado y la plataforma de destino en un proyecto
 

@@ -6,11 +6,11 @@ ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
 ms.openlocfilehash: 7951b3db0cdcaee0a1eb955a5bf6fedce24c79c9
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428634"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237619"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>Cuentas individuales en nuget.org
 
@@ -28,7 +28,7 @@ Para crear una cuenta de NuGet.org, necesita una cuenta personal de Microsoft (M
 
 1. Vaya a la [página de inicio de sesión de NuGet.org](https://www.nuget.org/users/account/LogOn).
 
-1. Haga clic en el botón**Sign in with Microsoft** (Inicio de sesión con Microsoft).
+1. Haga clic en el botón **Sign in with Microsoft** (Inicio de sesión con Microsoft).
 
 1. Especifique los detalles de su cuenta Microsoft o de Azure Active Directory.
 
@@ -54,7 +54,7 @@ La autenticación en dos fases, o 2FA, es una capa de seguridad adicional que se
 
    ![Habilitación de la autenticación en dos fases](media/nuget-org-register-2fa.png)
 
-   Verá un mensaje que le indica que la próxima vez que inicie sesión en *nuget.org*, se le pedirán credenciales adicionales.
+   Verá un mensaje que le indica que la próxima vez que inicie sesión en *nuget.org* , se le pedirán credenciales adicionales.
 
 2. Para completar la autenticación en este momento, cierre la sesión y vuelva a iniciarla.
 

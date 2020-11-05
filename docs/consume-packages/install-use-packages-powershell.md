@@ -7,12 +7,12 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 42031f7b5fe4d3c1b4dbe5e1bfbf9197014e0e88
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 8b23b6cc22eff5413e317fbe619edd3d4f4716ee
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428580"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237405"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>Instalación y administración de paquetes con la consola del Administrador de paquetes en Visual Studio (PowerShell)
 
@@ -98,7 +98,7 @@ Consulte [Uninstall-Package](../reference/ps-reference/ps-ref-uninstall-package.
 
 Al desinstalar un paquete se llevan a cabo las acciones siguientes:
 
-- Se quitan las referencias al paquete del proyecto (y todos los formatos de administración que estén en uso). Las referencias ya no aparecen en el **Explorador de soluciones**. (Es posible que tenga que recompilar el proyecto para ver que se quitó de la carpeta **Bin**).
+- Se quitan las referencias al paquete del proyecto (y todos los formatos de administración que estén en uso). Las referencias ya no aparecen en el **Explorador de soluciones**. (Es posible que tenga que recompilar el proyecto para ver que se quitó de la carpeta **Bin** ).
 - Invierte los cambios realizados en `app.config` o en `web.config` cuando se instaló el paquete.
 - Quita las dependencias instaladas previamente si no queda ningún paquete que las use.
 
@@ -168,7 +168,7 @@ $profile
 C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
-Para más detalles, consulte [Perfiles de Windows PowerShell](https://technet.microsoft.com/library/bb613488.aspx).
+Para más detalles, consulte [Perfiles de Windows PowerShell](/previous-versions//bb613488(v=vs.85)).
 
 ## <a name="use-the-nugetexe-cli-in-the-console"></a>Uso de la CLI nuget.exe en la consola
 

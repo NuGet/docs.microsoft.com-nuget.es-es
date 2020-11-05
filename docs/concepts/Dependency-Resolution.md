@@ -6,17 +6,17 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428472"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237749"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Cómo resuelve NuGet las dependencias de paquetes
 
 Siempre que se instala o reinstala un paquete, lo que incluye la instalación como parte de un proceso de [restauración](../consume-packages/package-restore.md), NuGet también instala los paquetes adicionales de los que depende ese primer paquete.
 
-Es posible que esas dependencias inmediatas también tengan sus propias dependencias, lo que puede continuar hasta una profundidad arbitraria. Esto produce lo que se llama *gráfico de dependencias*, que describe las relaciones entre paquetes en todos los niveles.
+Es posible que esas dependencias inmediatas también tengan sus propias dependencias, lo que puede continuar hasta una profundidad arbitraria. Esto produce lo que se llama *gráfico de dependencias* , que describe las relaciones entre paquetes en todos los niveles.
 
 Cuando varios paquetes tienen la misma dependencia, entonces el mismo Id. de paquete puede aparecer varias veces en el gráfico, posiblemente con restricciones de versión diferentes. Pero, en un proyecto, solo se puede usar una versión de un paquete determinado, por lo que NuGet debe elegir la versión que se usa. El proceso exacto depende del formato de administración de paquetes que se usa.
 

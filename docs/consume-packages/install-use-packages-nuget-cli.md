@@ -6,11 +6,11 @@ ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
 ms.openlocfilehash: 7039dd27f2dddebc3c84e5ad35d5efec59547792
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428418"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237392"
 ---
 # <a name="manage-packages-using-the-nugetexe-cli"></a>Administración de paquetes con la CLI de nuget.exe
 
@@ -42,7 +42,7 @@ El comando [install](../reference/cli-reference/cli-ref-install.md) descarga e i
     nuget install <packageID> -OutputDirectory packages
     ```
 
-    Para instalar el paquete `Newtonsoft.json` en la carpeta *packages*, use el comando siguiente:
+    Para instalar el paquete `Newtonsoft.json` en la carpeta *packages* , use el comando siguiente:
 
     ```cli
     nuget install Newtonsoft.Json -OutputDirectory packages

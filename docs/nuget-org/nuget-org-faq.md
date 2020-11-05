@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 915f6e4cfc0b21d2b10006c62e8230720d07ce74
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7076378b53c439eef51a243fa6efcfb01b8cfa73
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428538"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237911"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet.org
 
@@ -92,7 +92,7 @@ En primer lugar, asegúrese de que está usando la versión más reciente de NuG
 
 - Instale la versión más reciente de [Fiddler](https://www.telerik.com/download/fiddler).
 - Inicie Fiddler y deshabilite la captura de tráfico mediante el menú **File > Capture Traffic** (Archivo > Capturar tráfico).
-- Quite todas las sesiones (seleccione todos los elementos en la lista y presione la tecla **Suprimir**).
+- Quite todas las sesiones (seleccione todos los elementos en la lista y presione la tecla **Suprimir** ).
 - Configure Fiddler para capturar el tráfico HTTPS activando **Decrypt HTTPS traffic** (Descifrar tráfico HTTPS) en la pestaña **HTTPS** del menú **Tools > Fiddler Options...** (Herramientas > Opciones de Fiddler).
 - Cierre Visual Studio.
 - Habilite el menú **File > Capture Traffic** (Archivo > Capturar tráfico).
@@ -124,10 +124,10 @@ Si ha olvidado qué cuenta Microsoft está asociada a la cuenta de nuget.org, si
 
 ### <a name="how-to-change-the-microsoft-account-i-use-for-nugetorg-login"></a>¿Cómo puedo cambiar la cuenta Microsoft que uso para iniciar sesión en nuget.org?
 Si quiere cambiar la cuenta Microsoft para el usuario de nuget.org, siga estos pasos. Supongamos que la cuenta Microsoft con el correo electrónico `account1@outlook.com` está asociada a la cuenta de nuget.org con el nombre de usuario `MyNuGetAccount`. Quiere cambiar el inicio de sesión a otra cuenta de Microsoft con el correo electrónico `account2@outlook.com`.
-1. Inicie sesión con la **cuenta de Microsoft asociada actualmente**, es decir, `account1@outlook.com` en la [página de inicio de sesión](https://www.nuget.org/users/account/LogOn) después de hacer clic en **Sign in with Microsoft** (Inicio de sesión con Microsoft).
+1. Inicie sesión con la **cuenta de Microsoft asociada actualmente** , es decir, `account1@outlook.com` en la [página de inicio de sesión](https://www.nuget.org/users/account/LogOn) después de hacer clic en **Sign in with Microsoft** (Inicio de sesión con Microsoft).
 1. Una vez iniciada la sesión, vaya a la página de [configuración de la cuenta](https://www.nuget.org/account).
 1. Expanda la sección **Login Account** (Cuenta de inicio de sesión). Haga clic en el botón **Change Account** (Cambiar cuenta).
-1. Se le redirigirá a la página de inicio de sesión de Microsoft. Inicie sesión con la cuenta a la quiera cambiar la asociación, es decir, `account2@outlook.com`. **Nota**: Es posible que tenga que hacer clic en **Sign out (Cerrar sesión) e iniciar sesión con otra cuenta** durante el flujo de inicio de sesión para poder iniciar sesión con otra cuenta de Microsoft.
+1. Se le redirigirá a la página de inicio de sesión de Microsoft. Inicie sesión con la cuenta a la quiera cambiar la asociación, es decir, `account2@outlook.com`. **Nota** : Es posible que tenga que hacer clic en **Sign out (Cerrar sesión) e iniciar sesión con otra cuenta** durante el flujo de inicio de sesión para poder iniciar sesión con otra cuenta de Microsoft.
 1. Si se le muestra un error similar al siguiente, vea [La cuenta de Microsoft está vinculada con otra cuenta de nuget.org](#microsoft-account-is-linked-with-another-nugetorg-account) para obtener más detalles.
     >_Failed to update the Microsoft account with "account2<account2@outlook.com>" (No se pudo actualizar la cuenta de Microsoft con "cuenta2"). This could happen if it is already linked to another NuGet account. (Esto podría suceder si ya está vinculada a otra cuenta de NuGet) Contact support for more information._ (Póngase en contacto con el servicio de soporte técnico para más información)
 
@@ -188,11 +188,11 @@ Siga los pasos de la sección [No puedo usar el inicio de sesión de Microsoft, 
 ### <a name="unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account"></a>No puedo usar el inicio de sesión de Microsoft, ¿cómo recupero mi cuenta de nuget.org?
 
 Si ha intentado usar la [asistencia para el inicio sesión](#which-microsoft-account-is-linked-to-my-nugetorg-account) y no tiene acceso a la cuenta Microsoft asociada a la cuenta de nuget.org, siga los pasos siguientes para vincular una cuenta Microsoft a la de nuget.org.
-1. **Requisito**: Necesitará acceso a una cuenta Microsoft que no esté asociada a las cuentas de nuget.org existentes. Si no tiene una, puede [crearla](https://signup.live.com).
+1. **Requisito** : Necesitará acceso a una cuenta Microsoft que no esté asociada a las cuentas de nuget.org existentes. Si no tiene una, puede [crearla](https://signup.live.com).
 2. Si ha olvidado el nombre de usuario y la contraseña de su cuenta de nuget.org, siga los [pasos para recuperar las credenciales para iniciar sesión](#how-to-recover-nugetorg-password-login).
 3. [Inicie sesión en nuget.org](https://www.nuget.org/users/account/LogOnNuGetAccount) con el inicio de sesión de usuario y contraseña.
 4. Una vez iniciada la sesión, verá aparecer un cuadro de diálogo emergente similar al siguiente. Es el cuadro de diálogo de suspensión de la contraseña.
-5. **NOTA**: Omita las instrucciones para iniciar sesión con la cuenta de Microsoft especificada. Ahora puede vincular la cuenta de nuget.org con cualquier otro inicio de sesión de Microsoft.
+5. **NOTA** : Omita las instrucciones para iniciar sesión con la cuenta de Microsoft especificada. Ahora puede vincular la cuenta de nuget.org con cualquier otro inicio de sesión de Microsoft.
 6. Haga clic en el botón **Sign in with Microsoft** (Inicio de sesión con Microsoft) e inicie sesión con la cuenta de Microsoft a la que tenga acceso, como se mencionó en el paso 1.
 7. Ahora la cuenta se vinculará a la nueva cuenta Microsoft, que a partir de ahora podrá usar para iniciar sesión en nuget.org.
 
@@ -203,7 +203,7 @@ Si ha intentado usar la [asistencia para el inicio sesión](#which-microsoft-acc
 Si quiere transformar la cuenta en una organización, y esta cuenta ya está asociada con un inicio de sesión de cuenta de Microsoft, siga los pasos indicados en la documentación para [organizaciones en nuget.org](organizations-on-nuget-org.md).
 
 Sin embargo, si la cuenta de nuget.org no está asociada ni vinculada a una cuenta Microsoft, puede seguir los pasos siguientes para transformar esta cuenta en una organización.
-1. **Requisito**: Primero debe crear una cuenta individual en nuget.org para usarla como administrador en la cuenta de organización. Si no tiene una, [cree una cuenta de nuget.org](individual-accounts.md).
+1. **Requisito** : Primero debe crear una cuenta individual en nuget.org para usarla como administrador en la cuenta de organización. Si no tiene una, [cree una cuenta de nuget.org](individual-accounts.md).
 2. Siga los [pasos para recuperar la contraseña de inicio de sesión](#how-to-recover-nugetorg-password-login) para la cuenta de nuget.org si no tiene inicio de sesión de contraseña para ella; si lo tiene, omita este paso.
 3. [Inicie sesión en nuget.org](https://www.nuget.org/users/account/LogOnNuGetAccount) con el inicio de sesión de usuario y contraseña.
 4. Una vez iniciada la sesión, verá aparecer un cuadro de diálogo emergente similar al siguiente. Es el cuadro de diálogo de suspensión de la contraseña. 
@@ -228,13 +228,13 @@ Si ve un error como el siguiente durante el flujo de inicio de sesión con el do
 
 Parece que la cuenta se ha registrado previamente como una cuenta personal de Microsoft y que funcionaba correctamente, pero ahora parece que se ha registrado como un inquilino "no administrado" en Azure Active Directory (el servicio de identidad que se usa para autenticar las cuentas de Microsoft). 
 
-Esto podría haber ocurrido si usted o alguien de la organización (con la dirección de correo electrónico @yourdomain.com) se ha registrado con uno de los servicios integrados de AAD o ha realizado un [registro de autoservicio para Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-self-service-signup), lo que crea ese inquilino "no administrado" para el dominio de la cuenta de Microsoft que se usa (en este caso, @yourdomain.com). 
+Esto podría haber ocurrido si usted o alguien de la organización (con la dirección de correo electrónico @yourdomain.com) se ha registrado con uno de los servicios integrados de AAD o ha realizado un [registro de autoservicio para Azure Active Directory](/azure/active-directory/users-groups-roles/directory-self-service-signup), lo que crea ese inquilino "no administrado" para el dominio de la cuenta de Microsoft que se usa (en este caso, @yourdomain.com). 
 
 **¿Qué puedo hacer para recuperar mi cuenta?**
 
 En este momento, en nuget.org no contamos con ninguna forma de autenticar cuentas con estas cuentas de inquilino "no administrado" en Azure Active Directory. Buscamos una mejor manera de autenticar este tipo de cuentas.
 
-Si quiere iniciar sesión en nuget.org con la cuenta Microsoft (@yourdomain.com), usted (o un administrador de la empresa), tendrá que reclamar la propiedad de AAD mediante una validación de DNS para autenticar a los usuarios con la dirección de correo electrónico "@yourdomain.com". Siga los pasos para la [adquisición de dominios como administrador](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover) que se documentan en Azure Active Directory. Una vez hecho esto, el inicio de sesión normal debería empezar a funcionar.
+Si quiere iniciar sesión en nuget.org con la cuenta Microsoft (@yourdomain.com), usted (o un administrador de la empresa), tendrá que reclamar la propiedad de AAD mediante una validación de DNS para autenticar a los usuarios con la dirección de correo electrónico "@yourdomain.com". Siga los pasos para la [adquisición de dominios como administrador](/azure/active-directory/users-groups-roles/domains-admin-takeover) que se documentan en Azure Active Directory. Una vez hecho esto, el inicio de sesión normal debería empezar a funcionar.
 
 **No me interesa hacer todo eso, ¿cuál es la otra forma de recuperar la cuenta?**
 

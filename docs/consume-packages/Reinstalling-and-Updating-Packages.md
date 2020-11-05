@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
 ms.openlocfilehash: 101c6d6b9d93da912f60c40b27559e80327154b8
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428430"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237736"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>Cómo volver a instalar y actualizar paquetes
 
@@ -23,7 +23,7 @@ La actualización y la reinstalación de paquetes se llevan a cabo como se indic
 | Método | Actualizar | Reinstalación |
 | --- | --- | --- |
 | Consola del administrador de paquetes (descrita en [Usar Update-Package](#using-update-package)) | Comando `Update-Package` | Comando `Update-Package -reinstall` |
-| Interfaz de usuario del administrador de paquetes | En la pestaña **Actualizaciones**, seleccione uno o varios paquetes y seleccione **Actualizar** | En la pestaña **Instalados**, seleccione un paquete, registre su nombre y seleccione **Desinstalar**. Vaya a la pestaña **Examinar**, busque el nombre del paquete, selecciónelo y, luego, seleccione **Instalar**. |
+| Interfaz de usuario del administrador de paquetes | En la pestaña **Actualizaciones** , seleccione uno o varios paquetes y seleccione **Actualizar** | En la pestaña **Instalados** , seleccione un paquete, registre su nombre y seleccione **Desinstalar**. Vaya a la pestaña **Examinar** , busque el nombre del paquete, selecciónelo y, luego, seleccione **Instalar**. |
 | CLI de nuget.exe | Comando `nuget update` | Para todos los paquetes, elimine la carpeta de los paquetes y ejecute `nuget install`. Para un solo paquete, elimine la carpeta del paquete y use `nuget install <id>` para volver a instalar el mismo. |
 
 > [!NOTE]
@@ -36,11 +36,11 @@ En este artículo:
 
 ## <a name="when-to-reinstall-a-package"></a>Cuándo se debe volver a instalar un paquete
 
-1. **Referencias rotas después de restaurar paquetes**: si ha abierto un proyecto y ha restaurado paquetes de NuGet, pero aún ve referencias rotas, intente volver a instalar cada uno de esos paquetes.
-1. **El proyecto está roto por culpa de archivos eliminados**: NuGet no impide que el usuario elimine elementos agregados de paquetes, por lo que resulta fácil modificar accidentalmente el contenido instalado desde un paquete e interrumpir el proyecto. Para restaurar el proyecto, vuelva a instalar los paquetes afectados.
-1. **La actualización del paquete interrumpió el proyecto**: si una actualización de un paquete interrumpe un proyecto, el error se suele deber a un paquete de dependencias que posiblemente también se haya actualizado. Para restaurar el estado de la dependencia, vuelva a instalar ese paquete en concreto.
-1. **Redestinación o actualización de un proyecto**: puede resultar útil si se ha redestinado o actualizado un proyecto y si el paquete debe volver a instalarse debido al cambio en la plataforma de destino. En NuGet se muestra un error de compilación en esos casos justo después de efectuar la redestinación del proyecto. Las advertencias de compilación posteriores le indican que es posible que se deba reinstalar el paquete. Para la actualización de proyectos, NuGet muestra un error en el registro de actualización de proyectos.
-1. **Volver a instalar un paquete durante su desarrollo**: los autores de paquetes a menudo necesitan volver a instalar la misma versión del paquete que están desarrollando para probar el comportamiento. El comando `Install-Package` no proporciona ninguna opción para forzar una reinstalación, así que es mejor que use `Update-Package -reinstall`.
+1. **Referencias rotas después de restaurar paquetes** : si ha abierto un proyecto y ha restaurado paquetes de NuGet, pero aún ve referencias rotas, intente volver a instalar cada uno de esos paquetes.
+1. **El proyecto está roto por culpa de archivos eliminados** : NuGet no impide que el usuario elimine elementos agregados de paquetes, por lo que resulta fácil modificar accidentalmente el contenido instalado desde un paquete e interrumpir el proyecto. Para restaurar el proyecto, vuelva a instalar los paquetes afectados.
+1. **La actualización del paquete interrumpió el proyecto** : si una actualización de un paquete interrumpe un proyecto, el error se suele deber a un paquete de dependencias que posiblemente también se haya actualizado. Para restaurar el estado de la dependencia, vuelva a instalar ese paquete en concreto.
+1. **Redestinación o actualización de un proyecto** : puede resultar útil si se ha redestinado o actualizado un proyecto y si el paquete debe volver a instalarse debido al cambio en la plataforma de destino. En NuGet se muestra un error de compilación en esos casos justo después de efectuar la redestinación del proyecto. Las advertencias de compilación posteriores le indican que es posible que se deba reinstalar el paquete. Para la actualización de proyectos, NuGet muestra un error en el registro de actualización de proyectos.
+1. **Volver a instalar un paquete durante su desarrollo** : los autores de paquetes a menudo necesitan volver a instalar la misma versión del paquete que están desarrollando para probar el comportamiento. El comando `Install-Package` no proporciona ninguna opción para forzar una reinstalación, así que es mejor que use `Update-Package -reinstall`.
 
 ## <a name="constraining-upgrade-versions"></a>Restringir las versiones de actualización
 
@@ -63,7 +63,7 @@ En todos los casos, use la notación que se describe en [Package versioning](../
 
 ## <a name="using-update-package"></a>Usar Update-Package
 
-Si tiene en cuenta las [consideraciones](#considerations) que se describen a continuación, puede volver a instalar fácilmente cualquier paquete con el [comando Update-Package](../reference/ps-reference/ps-ref-update-package.md) en la consola del Administrador de paquetes de Visual Studio (**Herramientas** > **Administrador de paquetes NuGet** > **Consola del Administrador de paquetes**).
+Si tiene en cuenta las [consideraciones](#considerations) que se describen a continuación, puede volver a instalar fácilmente cualquier paquete con el [comando Update-Package](../reference/ps-reference/ps-ref-update-package.md) en la consola del Administrador de paquetes de Visual Studio ( **Herramientas** > **Administrador de paquetes NuGet** > **Consola del Administrador de paquetes** ).
 
 ```ps
 Update-Package -Id <package_name> –reinstall

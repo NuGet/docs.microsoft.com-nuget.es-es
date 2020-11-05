@@ -5,12 +5,12 @@ author: rrelyea
 ms.author: rrelyea
 ms.date: 02/28/2020
 ms.topic: tutorial
-ms.openlocfilehash: 61f46f2623769927f881877cfe3f96132211b442
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 6f8037f439d627af158b6d5b7746a633b053e514
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231756"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238015"
 ---
 # <a name="create-uwp-packages-c"></a>Creación de paquetes UWP (C#)
 
@@ -22,23 +22,23 @@ En este tutorial se creará un paquete NuGet con un componente de C# de UWP (inc
 
 1. Visual Studio 2019. Instale la versión 2019 Community Edition gratuitamente desde [visualstudio.com](https://www.visualstudio.com/); también puede usar las ediciones Professional y Enterprise.
 
-1. CLI de NuGet. Descargue la versión más reciente de `nuget.exe` desde [nuget.org/downloads](https://nuget.org/downloads) y guárdela en la ubicación que prefiera (se descarga directamente el `.exe`). Después, agregue esa ubicación a la variable de entorno PATH si aún no está. [Más detalles](/nuget/reference/nuget-exe-cli-reference#windows).
+1. CLI de NuGet. Descargue la versión más reciente de `nuget.exe` desde [nuget.org/downloads](https://nuget.org/downloads) y guárdela en la ubicación que prefiera (se descarga directamente el `.exe`). Después, agregue esa ubicación a la variable de entorno PATH si aún no está. [Más detalles](../reference/nuget-exe-cli-reference.md#windows).
 
 ## <a name="create-a-uwp-windows-runtime-component"></a>Crear un componente de Windows Runtime para UWP
 
-1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto**, busque "uwp c#", seleccione la plantilla **Componente de Windows Runtime (Windows universal)** , haga clic en Siguiente, cambie el nombre a ImageEnhancer y haga clic en Crear. Cuando se le solicite, acepte los valores predeterminados para Versión de destino y Versión mínima.
+1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto** , busque "uwp c#", seleccione la plantilla **Componente de Windows Runtime (Windows universal)** , haga clic en Siguiente, cambie el nombre a ImageEnhancer y haga clic en Crear. Cuando se le solicite, acepte los valores predeterminados para Versión de destino y Versión mínima.
 
     ![Creación de un proyecto de componente de Windows Runtime para UWP](media/UWP-NewProject-CS.png)
 
-1. Haga clic con el botón derecho en el proyecto en el Explorador de soluciones, seleccione **Agregar > Nuevo elemento**, seleccione **Control basado en modelo**, cambie el nombre a AwesomeImageControl.cs y haga clic en **Agregar**:
+1. Haga clic con el botón derecho en el proyecto en el Explorador de soluciones, seleccione **Agregar > Nuevo elemento** , seleccione **Control basado en modelo** , cambie el nombre a AwesomeImageControl.cs y haga clic en **Agregar** :
 
     ![Adición de un nuevo elemento de control basado en modelo XAML al proyecto](media/UWP-NewXAMLControl-CS.png)
 
-1. Haga clic con el botón derecho en el proyecto en el Explorador de soluciones y seleccione **Propiedades.** En la página Propiedades, elija la pestaña **Compilar** y habilite **Archivo de documentación XML**:
+1. Haga clic con el botón derecho en el proyecto en el Explorador de soluciones y seleccione **Propiedades.** En la página Propiedades, elija la pestaña **Compilar** y habilite **Archivo de documentación XML** :
 
     ![Establecimiento de Generar archivos de documentación XML en Sí](media/UWP-GenerateXMLDocFiles-CS.png)
 
-1. Ahora, haga clic con el botón derecho en la *solución*, seleccione **Compilación por lotes** y active las cinco casillas de compilación del cuadro de diálogo como se muestra a continuación. Esto garantiza que, cuando realice una compilación, se generará un conjunto completo de artefactos para cada uno de los sistemas de destino compatibles con Windows.
+1. Ahora, haga clic con el botón derecho en la *solución* , seleccione **Compilación por lotes** y active las cinco casillas de compilación del cuadro de diálogo como se muestra a continuación. Esto garantiza que, cuando realice una compilación, se generará un conjunto completo de artefactos para cada uno de los sistemas de destino compatibles con Windows.
 
     ![Generación por lotes](media/UWP-BatchBuild-CS.png)
 
@@ -52,7 +52,7 @@ En este tutorial se creará un paquete NuGet con un componente de C# de UWP (inc
 Para crear el archivo `.nuspec` inicial, siga los tres pasos siguientes. En las secciones siguientes se le guiará a través de otras actualizaciones necesarias.
 
 1. Abra un símbolo del sistema y desplácese hasta la carpeta que contiene `ImageEnhancer.csproj` (será una subcarpeta por debajo de donde se encuentra el archivo de la solución).
-1. Ejecute el comando [`NuGet spec`](/nuget/reference/cli-reference/cli-ref-spec) para generar `ImageEnhancer.nuspec` (el nombre del archivo se toma del nombre del archivo `.csroj`):
+1. Ejecute el comando [`NuGet spec`](../reference/cli-reference/cli-ref-spec.md) para generar `ImageEnhancer.nuspec` (el nombre del archivo se toma del nombre del archivo `.csroj`):
 
     ```cli
     nuget spec
@@ -197,7 +197,7 @@ Ahora el archivo `.nuspec` final debería ser similar al siguiente, donde debe r
 
 ## <a name="package-the-component"></a>Empaquetar el componente
 
-Con el archivo `.nuspec` completado haciendo referencia a todos los archivos que se deben incluir en el paquete, está a punto para ejecutar el comando [`nuget pack`](/nuget/reference/cli-reference/cli-ref-pack):
+Con el archivo `.nuspec` completado haciendo referencia a todos los archivos que se deben incluir en el paquete, está a punto para ejecutar el comando [`nuget pack`](../reference/cli-reference/cli-ref-pack.md):
 
 ```cli
 nuget pack ImageEnhancer.nuspec
