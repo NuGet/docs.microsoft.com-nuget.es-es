@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: c79976c2f4ded2fba3796fb847d3c90807d7b86c
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 4cb12f439d796d583f52d657225c39418d5a4836
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80147453"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237366"
 ---
 # <a name="package-versioning"></a>Control de versiones de paquetes
 
@@ -29,9 +29,9 @@ En este tema:
 
 Un número de versión específico tiene el formato *.Revisión[-Sufijo]* , donde los componentes tienen los significados siguientes:
 
-- *VersiónPrincipal*: Cambios importantes
-- *VersiónSecundaria*: nuevas características, compatibles con versiones anteriores
-- *Revisión*: solo correcciones de errores compatibles con versiones anteriores
+- *VersiónPrincipal* : Cambios importantes
+- *VersiónSecundaria* : nuevas características, compatibles con versiones anteriores
+- *Revisión* : solo correcciones de errores compatibles con versiones anteriores
 - *-Sufijo* (opcional): un guión seguido de una cadena que denota una versión preliminar (según la [convención de Versionamiento Semántico o SemVer 1.0](https://semver.org/spec/v1.0.0.html)).
 
 **Ejemplos:**
@@ -114,7 +114,7 @@ Cuando se hace referencia a las dependencias de paquete, NuGet admite el uso de 
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | Versión mínima incluida y versión máxima excluida mezcladas |
 | (1.0)    | no válidos | no válidos |
 
-Cuando se usa el formato PackageReference, NuGet admite también el uso de una notación flotante, \*, en las partes del número de versión principal, versión secundaria, revisión y sufijo de versión preliminar. Las versiones flotantes no se admiten con el formato `packages.config`.
+Cuando se usa el formato PackageReference, NuGet admite también el uso de una notación flotante, \*, en las partes del número de versión principal, versión secundaria, revisión y sufijo de versión preliminar. Las versiones flotantes no se admiten con el formato `packages.config`. Cuando se especifica una versión flotante, la regla se resuelve como la versión más alta existente que coincide con la descripción de la versión. A continuación se muestran ejemplos de versiones flotantes y las resoluciones.
 
 > [!Note]
 > Los intervalos de versiones de PackageReference incluyen las versiones preliminares. Por diseño, las versiones flotantes no resuelven las versiones preliminares, a menos que se opte por ellas. Para ver el estado de la solicitud de características relacionadas, consulte el [problema 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297).
@@ -126,28 +126,43 @@ Especifique siempre una versión o un intervalo de versiones para las dependenci
 #### <a name="references-in-project-files-packagereference"></a>Referencias en los archivos de proyecto (PackageReference)
 
 ```xml
-<!-- Accepts any version 6.1 and above. -->
+<!-- Accepts any version 6.1 and above.
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.1" />
 
-<!-- Accepts any 6.x.y version. -->
+<!-- Accepts any 6.x.y version.
+     Will resolve to the highest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.*" />
-<PackageReference Include="ExamplePackage" Version="[6,7)" />
 
 <!-- Accepts any version above, but not including 4.1.3. Could be
-     used to guarantee a dependency with a specific bug fix. -->
+     used to guarantee a dependency with a specific bug fix. 
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="(4.1.3,)" />
 
 <!-- Accepts any version up below 5.x, which might be used to prevent pulling in a later
      version of a dependency that changed its interface. However, this form is not
-     recommended because it can be difficult to determine the lowest version. -->
+     recommended because it can be difficult to determine the lowest version. 
+     Will resolve to the smallest acceptable stable version.
+     -->
 <PackageReference Include="ExamplePackage" Version="(,5.0)" />
 
-<!-- Accepts any 1.x or 2.x version, but not 0.x or 3.x and higher. -->
+<!-- Accepts any 1.x or 2.x version, but not 0.x or 3.x and higher.
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="[1,3)" />
 
-<!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
+<!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher.
+     Will resolve to the smallest acceptable stable version. -->
 <PackageReference Include="ExamplePackage" Version="[1.3.2,1.5)" />
 ```
+
+#### <a name="floating-version-resolutions"></a>Resoluciones de versiones flotantes 
+
+| Versión | Versiones presentes en el servidor | Solución | Motivo | Notas |
+|----------|--------------|-------------|-------------|-------------|
+| * | 1.1.0 <br> 1.1.1 <br> 1.2.0 <br> 1.3.0-alpha  | 1.2.0 | Versión estable más alta. |
+| 1.1.* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.2.0-alpha | 1.1.1 | Versión estable más alta que respeta el patrón especificado.|
+| * - * | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.3.0-beta  | 1.3.0-beta | Versión más alta, incluidas las versiones no estables. | Disponible en la versión 16.6 de Visual Studio, versión 5.6 de NuGet, SDK de .NET Core de la versión 3.1.300 |
+| 1.1.* - * | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha <br> 1.1.2-beta <br> 1.3.0-beta  | 1.1.2-beta | Versión más alta que respeta el patrón e incluye las versiones no estables. | Disponible en la versión 16.6 de Visual Studio, versión 5.6 de NuGet, SDK de .NET Core de la versión 3.1.300 |
 
 **Referencias en `packages.config`:**
 
