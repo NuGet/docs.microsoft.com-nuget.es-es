@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 0edfa1f61e6b18ef38689ed2272b2c5992a46ae6
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 05fa68ad3a0b353117a14e2b3e1cdf13dc806127
+ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237853"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94550393"
 ---
 # <a name="restore-packages-using-package-restore"></a>Restauración de paquetes
 
@@ -169,7 +169,7 @@ Para restaurar los paquetes mostrados en el archivo del proyecto con PackageRefe
    Asegúrese de que la salida de MSBuild indica que la compilación se ha completado correctamente.
    
 > [!Note]
-> MSBuild tiene un modificador `-restore` que se ejecutará `Restore`, recargará el proyecto y, a continuación, lo compilará. Consulte [Restaurar y compilar con un comando de MSBuild](/nuget/reference/msbuild-targets#restoring-and-building-with-one-msbuild-command).
+> MSBuild tiene un modificador `-restore` que se ejecutará `Restore`, recargará el proyecto y, a continuación, lo compilará. Consulte [Restaurar y compilar con un comando de MSBuild](../reference/msbuild-targets.md#restoring-and-building-with-one-msbuild-command).
 
 ```cmd
 # Will restore the project, then build, since build is the default target.
