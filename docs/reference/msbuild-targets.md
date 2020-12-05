@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 16fd7b9103ef5ac335f0b2e5493dd2983b182f50
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 4a04c6dd7993fc47bcf7a6fe46236ed700a0d105
+ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623180"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96738934"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -46,15 +46,15 @@ En la tabla siguiente se describen las propiedades de MSBuild que se pueden agre
 
 Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son compatibles con MSBuild.
 
-| Valor de atributo/NuSpec | Propiedad de MSBuild | Valor predeterminado | Notas |
+| Valor de atributo/NuSpec | Propiedad de MSBuild | Predeterminado | Notas |
 |--------|--------|--------|--------|
-| Identificador | PackageId | AssemblyName | $(NombreDeEnsamblado) de MSBuild |
+| Id | PackageId | AssemblyName | $(NombreDeEnsamblado) de MSBuild |
 | Versión | PackageVersion | Versión | Esto es compatible con semver, por ejemplo, "1.0.0", "1.0.0-beta" o "1.0.0-beta-00345" |
 | VersionPrefix | PackageVersionPrefix | empty | Al establecer PackageVersion se sobrescribe PackageVersionPrefix. |
 | VersionSuffix | PackageVersionSuffix | empty | $(VersionSuffix) de MSBuild. Al establecer PackageVersion se sobrescribe PackageVersionSuffix. |
 | Authors | Authors | Nombre del usuario actual | |
 | Propietarios | N/D | No está presente en el archivo NuSpec | |
-| Title | Title | El identificador de paquete| |
+| Título | Título | El identificador de paquete| |
 | Descripción | Descripción | "Descripción del paquete" | |
 | Copyright | Copyright | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
@@ -365,7 +365,8 @@ Por ejemplo:
 1. Descarga de paquetes
 1. Escribir el archivo de activos, destinos y propiedades
 
-El `restore` destino **solo** funciona con los proyectos que usan el formato PackageReference. **No** funciona para los proyectos que usan el `packages.config` formato; use la [restauración de Nuget](../reference/cli-reference/cli-ref-restore.md) en su lugar.
+El `restore` destino funciona con los proyectos que usan el formato PackageReference.
+`MSBuild 16.5+` también tiene [compatibilidad con](#restoring-packagereference-and-packages.config-with-msbuild) el `packages.config` formato.
 
 ### <a name="restore-properties"></a>Restaurar las propiedades
 
@@ -391,7 +392,8 @@ Otra configuración de restauración puede proceder de propiedades de MSBuild en
 | RestorePackagesWithLockFile | Opta por el uso de un archivo de bloqueo. |
 | RestoreLockedMode | Ejecutar restauración en modo bloqueado. Esto significa que la restauración no volverá a evaluar las dependencias. |
 | NuGetLockFilePath | Una ubicación personalizada para el archivo de bloqueo. La ubicación predeterminada es junto al proyecto y se denomina `packages.lock.json` . |
-| RestoreForceEvaluate | Fuerza la restauración para volver a calcular las dependencias y actualizar el archivo de bloqueo sin ninguna advertencia. | 
+| RestoreForceEvaluate | Fuerza la restauración para volver a calcular las dependencias y actualizar el archivo de bloqueo sin ninguna advertencia. |
+| RestorePackagesConfig | Un modificador de participación, que restaura los proyectos con packages.config. Compatibilidad con `MSBuild -t:restore` solo. |
 
 #### <a name="examples"></a>Ejemplos
 
@@ -435,6 +437,17 @@ msbuild -t:build -restore
 ```
 
 La misma lógica se aplica a otros destinos similares a `build` .
+
+### <a name="restoring-packagereference-and-packagesconfig-with-msbuild"></a>Restaurar PackageReference y packages.config con MSBuild
+
+Con MSBuild 16,5 +, packages.config también se admiten para `msbuild -t:restore` .
+
+```cli
+msbuild -t:restore -p:RestorePackagesConfig=true
+```
+
+> [!NOTE]
+> `packages.config` restore solo está disponible con `MSBuild 16.5+` , y no con `dotnet.exe`
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 

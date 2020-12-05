@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: f91d47bdf9b957b512d3d83434693ee93de07afb
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 6e5107ac05046ea46cc819ebe2a504ba6b030634
+ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623141"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96738947"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -83,7 +83,7 @@ La versión del paquete, siguiendo el patrón *mayor.menor.revisión*. Los núme
 
 Al cargar un paquete en nuget.org, el `version` campo está limitado a 64 caracteres.
 
-#### <a name="description"></a>description
+#### <a name="description"></a>descripción
 Descripción del paquete para la presentación de la interfaz de usuario.
 
 Al cargar un paquete en nuget.org, el `description` campo está limitado a 4000 caracteres.
@@ -96,6 +96,9 @@ Al cargar un paquete en nuget.org, el `authors` campo está limitado a 4000 cara
 ### <a name="optional-metadata-elements"></a>Elementos de metadatos opcionales
 
 #### <a name="owners"></a>owners
+> [!Important]
+> los propietarios están desusados. En su lugar, use authors.
+
 Lista separada por comas de los creadores de paquetes que usan nombres de perfil en nuget.org. Esta suele ser la misma lista que en y `authors` se omite al cargar el paquete en Nuget.org. Consulte [Administración de propietarios de paquetes en Nuget.org](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg). 
 
 #### <a name="projecturl"></a>projectUrl
@@ -205,11 +208,11 @@ Para el equivalente de MSBuild, eche un vistazo a [empaquetar un archivo de imag
 Valor booleano que especifica si el cliente debe pedir al consumidor que acepte la licencia del paquete antes de instalarlo.
 
 #### <a name="developmentdependency"></a>developmentDependency
-*(2.8+)* Valor booleano que especifica si el paquete se debe marcar como una dependencia de solo desarrollo, que impide que el paquete se incluya como una dependencia en otros paquetes. Con PackageReference (NuGet 4.8 +), esta marca también significa que excluirá los recursos en tiempo de compilación de la compilación. Consulte [compatibilidad con DevelopmentDependency para PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
+*(2.8+)* Valor booleano que especifica si el paquete se debe marcar como una dependencia de solo desarrollo, que impide que el paquete se incluya como una dependencia en otros paquetes. Con PackageReference (NuGet 4.8 +) , esta marca también significa que excluirá los recursos en tiempo de compilación de la compilación. Consulte [compatibilidad con DevelopmentDependency para PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
 
 #### <a name="summary"></a>Resumen
 > [!Important]
-> `summary` está en desuso. En su lugar, use `description`.
+> `summary` está en desuso. Utilice `description` en su lugar.
 
 Descripción breve del paquete para su visualización en la interfaz de usuario. Si se omite, se usará una versión truncada de `description`.
 
@@ -319,7 +322,7 @@ Normalmente, cuando tiene un proyecto, crea el archivo `.nuspec` al principio co
 
 Con la excepción de `$configuration$`, se usan los valores del proyecto con preferencia a cualquier valor asignado al mismo token en la línea de comandos.
 
-| Token | Origen del valor | Value
+| Token | Origen del valor | Valor
 | --- | --- | ---
 | **$id $** | Archivo del proyecto | AssemblyName (title) del archivo de proyecto |
 | **$version $** | AssemblyInfo | AssemblyInformationalVersion si está presente. En caso contrario, AssemblyVersion |
@@ -365,7 +368,7 @@ Al cargar un paquete en nuget.org, cada atributo de la dependencia `id` se limit
 | compile | lib |
 | build | build (propiedades y destinos de MSBuild) |
 | nativas | nativas |
-| None | Sin carpetas |
+| ninguno | Sin carpetas |
 | todo | Todas las carpetas |
 
 Por ejemplo, las siguientes líneas indican las dependencias en `PackageA` versión 1.1.0 o posterior y en `PackageB` versión 1.x.
