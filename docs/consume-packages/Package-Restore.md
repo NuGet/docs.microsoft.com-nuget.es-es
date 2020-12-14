@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 05fa68ad3a0b353117a14e2b3e1cdf13dc806127
-ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
+ms.openlocfilehash: be68d3bd1c7dfcc5661276c0b62d46722af61a00
+ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550393"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96738960"
 ---
 # <a name="restore-packages-using-package-restore"></a>Restauración de paquetes
 
@@ -29,7 +29,7 @@ Si un paquete todavía no está instalado, NuGet primero intenta recuperarlo de 
 
 ## <a name="restore-packages"></a>Restaurar paquetes
 
-La restauración de paquetes intenta instalar todas las dependencias de paquete en el estado correcto que coincida con las referencias del paquete en el archivo de proyecto ( *.csproj* ) o el archivo *packages.config*. (En Visual Studio, las referencias aparecen en Explorador de soluciones en el nodo **Dependencias \ NuGet** o **Referencias** ).
+La restauración de paquetes intenta instalar todas las dependencias de paquete en el estado correcto que coincida con las referencias del paquete en el archivo de proyecto ( *.csproj*) o el archivo *packages.config*. (En Visual Studio, las referencias aparecen en Explorador de soluciones en el nodo **Dependencias \ NuGet** o **Referencias**).
 
 1. Si las referencias del paquete en el archivo del proyecto son correctas, use la herramienta que prefiera para restaurar los paquetes.
 
@@ -40,7 +40,7 @@ La restauración de paquetes intenta instalar todas las dependencias de paquete 
    - [Azure Pipelines](#restore-using-azure-pipelines)
    - [Azure DevOps Server](#restore-using-azure-devops-server)
 
-   Si las referencias del paquete en el archivo de proyecto ( *.csproj* ) o el archivo *packages.config* son incorrectos (no coinciden con el estado deseado después de la restauración de paquetes), debe instalar o actualizar los paquetes en su lugar.
+   Si las referencias del paquete en el archivo de proyecto ( *.csproj*) o el archivo *packages.config* son incorrectos (no coinciden con el estado deseado después de la restauración de paquetes), debe instalar o actualizar los paquetes en su lugar.
 
    En el caso de los proyectos que usan PackageReference, después de una restauración correcta, el paquete debe estar presente en la carpeta *global-packages* y el archivo `obj/project.assets.json` se vuelve a crear. En el caso de los proyectos que usan `packages.config`, el paquete debe aparecer en la carpeta del proyecto `packages`. Ahora el proyecto debería compilarse correctamente. 
 
@@ -72,7 +72,7 @@ La restauración de paquetes se produce automáticamente al crear un proyecto a 
 
 ### <a name="restore-packages-manually-using-visual-studio"></a>Restauración manual de paquetes con Visual Studio
 
-1. Habilite la restauración de paquetes; para ello, elija **Herramientas** > **Opciones** > **Administrador de paquetes NuGet**. En las opciones de **Restauración de paquetes** , seleccione **Permitir a NuGet descargar los paquetes que falten**.
+1. Habilite la restauración de paquetes; para ello, elija **Herramientas** > **Opciones** > **Administrador de paquetes NuGet**. En las opciones de **Restauración de paquetes**, seleccione **Permitir a NuGet descargar los paquetes que falten**.
 
 1. En el **Explorador de soluciones** haga clic con el botón derecho en la solución y seleccione **Restaurar paquetes NuGet**.
 
@@ -82,7 +82,7 @@ La restauración de paquetes se produce automáticamente al crear un proyecto a 
 
 ### <a name="enable-and-disable-package-restore-in-visual-studio"></a>Habilitación y deshabilitación de la restauración de paquetes en Visual Studio
 
-En Visual Studio, la Restauración de paquetes se controla principalmente a través de **Herramientas** > **Opciones** > **Administrador de paquetes NuGet** :
+En Visual Studio, la Restauración de paquetes se controla principalmente a través de **Herramientas** > **Opciones** > **Administrador de paquetes NuGet**:
 
 ![Control de la Restauración de paquetes a través de las opciones del Administrador de paquetes NuGet](media/Restore-01-AutoRestoreOptions.png)
 
@@ -147,11 +147,14 @@ NuGet dispone de dos formatos en los que un proyecto puede usar paquetes: [`Pack
 
 ## <a name="restore-using-msbuild"></a>Restauración con MSBuild
 
-Para restaurar los paquetes mostrados en el archivo del proyecto con PackageReference, utilice el comando [msbuild -t:restore](../reference/msbuild-targets.md#restore-target). Este comando está disponible solo en NuGet 4.x y versiones posteriores y en MSBuild 15.1 y versiones posteriores, que se incluyen con Visual Studio 2017 y versiones posteriores. Tanto `nuget restore` como `dotnet restore` usan este comando para los proyectos aplicables.
+Use el comando [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) para restaurar los paquetes que aparecen en el archivo del proyecto (vea [PackageReference](../../consume-packages/package-references-in-project-files.md)) y a partir de los proyectos `packages.config` de MSBuild 16.5+.
 
-1. Abra un símbolo del sistema para desarrolladores (en el cuadro **Búsqueda** , escriba **Símbolo del sistema para desarrolladores** ).
+ Este comando está disponible solo en NuGet 4.x y versiones posteriores y en MSBuild 15.1 y versiones posteriores, que se incluyen con Visual Studio 2017 y versiones posteriores.
+A partir de MSBuild 16.5+, este comando también puede restaurar proyectos basados en `packages.config` cuando se ejecutan con `-p:RestorePackagesConfig=true`.
 
-   Normalmente, es preferible iniciar el símbolo del sistema para desarrolladores de Visual Studio en el menú **Inicio** , ya que se configurará con todas las rutas de acceso necesarias para MSBuild.
+1. Abra un símbolo del sistema para desarrolladores (en el cuadro **Búsqueda**, escriba **Símbolo del sistema para desarrolladores**).
+
+   Normalmente, es preferible iniciar el símbolo del sistema para desarrolladores de Visual Studio en el menú **Inicio**, ya que se configurará con todas las rutas de acceso necesarias para MSBuild.
 
 2. Cambie a la carpeta que contiene el archivo del proyecto y escriba el siguiente comando.
 
@@ -204,9 +207,9 @@ En todos los casos, use la notación que se describe en [Package versioning](../
 
 ## <a name="force-restore-from-package-sources"></a>Restauración forzada a partir de orígenes de paquetes
 
-De forma predeterminada, las operaciones de restauración de NuGet usan paquetes de las carpetas *global-packages* y *http-cache* , que se describen en [Administración de las carpetas de paquetes globales, de caché y temporales](managing-the-global-packages-and-cache-folders.md).
+De forma predeterminada, las operaciones de restauración de NuGet usan paquetes de las carpetas *global-packages* y *http-cache*, que se describen en [Administración de las carpetas de paquetes globales, de caché y temporales](managing-the-global-packages-and-cache-folders.md).
 
-Para evitar el uso de la carpeta *global-packages* , realice una de las siguientes acciones:
+Para evitar el uso de la carpeta *global-packages*, realice una de las siguientes acciones:
 
 - Borre la carpeta con `nuget locals global-packages -clear` o `dotnet nuget locals global-packages --clear`.
 - Cambie temporalmente la ubicación de la carpeta *global-packages* antes de la operación de restauración con uno de los métodos siguientes:
@@ -222,9 +225,9 @@ Para evitar el uso de la memoria caché para los orígenes HTTP, realice una de 
 
 ## <a name="migrate-to-automatic-package-restore-visual-studio"></a>Migración a la restauración automática de paquetes (Visual Studio)
 
-En NuGet 2.6 y versiones anteriores se permitía una restauración de paquetes integrada en MSBuild, pero eso ya no es así. (Normalmente se habilitaba haciendo clic con el botón derecho en una solución en Visual Studio y seleccionando **Habilitar restauración de paquetes NuGet** ). Si el proyecto usa la restauración de paquetes integrada en MSBuild en desuso, migre a la restauración automática de paquetes.
+En NuGet 2.6 y versiones anteriores se permitía una restauración de paquetes integrada en MSBuild, pero eso ya no es así. (Normalmente se habilitaba haciendo clic con el botón derecho en una solución en Visual Studio y seleccionando **Habilitar restauración de paquetes NuGet**). Si el proyecto usa la restauración de paquetes integrada en MSBuild en desuso, migre a la restauración automática de paquetes.
 
-Los proyectos que usan la restauración de paquetes integrada en MSBuild normalmente contienen una carpeta *.nuget* con tres archivos: *NuGet.config* , *nuget.exe* y *NuGet.targets*. La presencia de un archivo *NuGet.targets* determina si NuGet seguirá usando el enfoque integrado en MSBuild, por lo que este archivo debe quitarse durante la migración.
+Los proyectos que usan la restauración de paquetes integrada en MSBuild normalmente contienen una carpeta *.nuget* con tres archivos: *NuGet.config*, *nuget.exe* y *NuGet.targets*. La presencia de un archivo *NuGet.targets* determina si NuGet seguirá usando el enfoque integrado en MSBuild, por lo que este archivo debe quitarse durante la migración.
 
 Para migrar a la restauración automática de paquetes, realice lo siguiente:
 
