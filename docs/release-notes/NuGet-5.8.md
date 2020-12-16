@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 09fb98eec79ee4ed08d85a1c557a420d6b265f11
-ms.sourcegitcommit: f4b74b500e3db9e468f11142df48d87880382267
+ms.openlocfilehash: 329fdf6479d0799ae4b15cc3493848ba2d999853
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94572836"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523438"
 ---
 # <a name="nuget-58-release-notes"></a>Notas de la versión de NuGet 5,8
 
@@ -131,7 +131,7 @@ Vehículos de distribución de NuGet:
 
 Gracias por todos los colaboradores que le han ayudado a hacer que esta versión de NuGet sea impresionante.
 
-|Quién|Incorporación|Incidencias|
+|Quién|Incorporación|Issues|
 |----|----|----|
 [omajid](https://github.com/omajid) | [3437](https://github.com/NuGet/NuGet.Client/pull/3437) | Error tipográfico en el mensaje de error. "hizo" en lugar de "administrador"- [#9662](https://github.com/NuGet/Home/issues/9662)
 [odalet](https://github.com/odalet) | [3341](https://github.com/NuGet/NuGet.Client/pull/3341) | Paquete de NuGet con informes AssemblyInformationalVersion no válidos "se requiere la descripción"- [#5548](https://github.com/NuGet/Home/issues/5548)
@@ -144,5 +144,5 @@ Gracias por todos los colaboradores que le han ayudado a hacer que esta versión
 
 ## <a name="feedback-welcome"></a>Página principal de comentarios
 
-Sus comentarios son importantes.  Si hay algún problema con esta versión, consulte los problemas de [GitHub](https://github.com/NuGet/Home/issues) y la [comunidad de desarrolladores de Visual Studio](https://developercommunity.visualstudio.com/) para ver los problemas existentes.  Para nuevos problemas en NuGet, informe de un [problema de github](hhttps://github.com/NuGet/Home/issues/new).
+Sus comentarios son importantes.  Si hay algún problema con esta versión, consulte los problemas de [GitHub](https://github.com/NuGet/Home/issues) y la [comunidad de desarrolladores de Visual Studio](https://developercommunity.visualstudio.com/) para ver los problemas existentes.  Para nuevos problemas en NuGet, informe de un [problema de github](https://github.com/NuGet/Home/issues/new).
 En el caso de problemas generales de la experiencia de NuGet, háganoslo saber a través de la opción [notificar un problema](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio) que se encuentra en su IDE favorito en **ayuda > notificar un problema**.
