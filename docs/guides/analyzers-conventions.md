@@ -1,20 +1,20 @@
 ---
 title: Formatos de analizador de .NET Compiler Platform para NuGet
 description: Convenciones para los analizadores de .NET que se empaquetan y distribuyen con paquetes NuGet que implementan una API o biblioteca.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 9de890d14747a74a13a660109a3b6812a5e08acc
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: f1e9bb96fc7acc73ec37cebcdc8015081fafb307
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237924"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523414"
 ---
 # <a name="analyzer-nuget-formats"></a>Formatos de analizadores de NuGet
 
-.NET Compiler Platform (también conocida como "Roslyn") permite a los desarrolladores crear [analizadores](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix) que examinan el árbol de sintaxis y la semántica del código mientras se escribe. Esto proporciona a los desarrolladores una manera de crear herramientas de análisis específicas del dominio, como las que podrían servir de ayuda para usar una API o biblioteca concreta. Puede encontrar más información en la wiki de GitHub [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki). Vea también el artículo [Use Roslyn to Write a Live Code Analyzer for your API](/archive/msdn-magazine/2014/special-issue/csharp-and-visual-basic-use-roslyn-to-write-a-live-code-analyzer-for-your-api) (Usar Roslyn para escribir un analizador de código dinámico para la API) en MSDN Magazine.
+.NET Compiler Platform (también conocida como "Roslyn") permite a los desarrolladores crear [analizadores](https://github.com/dotnet/roslyn/blob/master/docs/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix.md) que examinan el árbol de sintaxis y la semántica del código mientras se escribe. Esto proporciona a los desarrolladores una manera de crear herramientas de análisis específicas del dominio, como las que podrían servir de ayuda para usar una API o biblioteca concreta. Puede encontrar más información en la wiki de GitHub [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki). Vea también el artículo [Use Roslyn to Write a Live Code Analyzer for your API](/archive/msdn-magazine/2014/special-issue/csharp-and-visual-basic-use-roslyn-to-write-a-live-code-analyzer-for-your-api) (Usar Roslyn para escribir un analizador de código dinámico para la API) en MSDN Magazine.
 
 Los propios analizadores normalmente se empaquetan y distribuyen como parte de los paquetes NuGet que implementan la biblioteca o API en cuestión.
 
@@ -45,9 +45,9 @@ El uso de la carpeta `analyzers` es similar a la que se usa para [plataformas de
 
     $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
 
-- **nombre_plataforma** y **versión** : el área expuesta de API *opcional* de .NET Framework que deben ejecutar los archivos DLL incluidos. `dotnet` es actualmente el único valor válido porque Roslyn es el único host que puede ejecutar analizadores. Si no se especifica ningún destino, se supone que los archivos DLL se aplican a *todos* los destinos.
-- **lenguaje_admitido** : el lenguaje para el que se aplica el archivo DLL, uno de entre `cs` (C#), `vb` (Visual Basic) y `fs` (F#). El lenguaje indica que el analizador se debe cargar solo para un proyecto en el que se use ese lenguaje. Si no se especifica ningún lenguaje, se supone que el archivo DLL se aplica a *todos* los lenguajes que admitan analizadores.
-- **nombre_analizador** : especifica los archivos DLL del analizador. Si se necesitan archivos adicionales además de los archivos DLL, se deben incluir a través de archivos de destinos o propiedades.
+- **nombre_plataforma** y **versión**: el área expuesta de API *opcional* de .NET Framework que deben ejecutar los archivos DLL incluidos. `dotnet` es actualmente el único valor válido porque Roslyn es el único host que puede ejecutar analizadores. Si no se especifica ningún destino, se supone que los archivos DLL se aplican a *todos* los destinos.
+- **lenguaje_admitido**: el lenguaje para el que se aplica el archivo DLL, uno de entre `cs` (C#), `vb` (Visual Basic) y `fs` (F#). El lenguaje indica que el analizador se debe cargar solo para un proyecto en el que se use ese lenguaje. Si no se especifica ningún lenguaje, se supone que el archivo DLL se aplica a *todos* los lenguajes que admitan analizadores.
+- **nombre_analizador**: especifica los archivos DLL del analizador. Si se necesitan archivos adicionales además de los archivos DLL, se deben incluir a través de archivos de destinos o propiedades.
 
 
 ## <a name="install-and-uninstall-scripts"></a>Scripts de instalación y desinstalación
