@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
-ms.openlocfilehash: 0bd21c427b5b89ae9e5f1500d75e1bf63a96e828
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 749d9466976d51c7cb65332c8b149e3a30862e63
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64498231"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523396"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>Consultar todos los paquetes publicados en nuget.org
 
@@ -110,13 +110,13 @@ git clone https://github.com/NuGet/Samples.git
 
 ### <a name="catalog-sdk"></a>SDK del catálogo
 
-La forma más fácil de emplear el catálogo es usar el paquete de versión preliminar del SDK del catálogo de .NET: [NuGet.Protocol.Catalog](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog). Este paquete está disponible en la fuente de MyGet `nuget-build`, para la que se debe usar la dirección URL de origen del paquete de NuGet `https://dotnet.myget.org/F/nuget-build/api/v3/index.json`.
+La forma más fácil de consumir el catálogo es usar el paquete del SDK de catálogo de .NET en versión preliminar, `NuGet.Protocol.Catalog`, que está disponible en Azure Artifacts mediante la siguiente dirección URL de origen del paquete de NuGet: `https://pkgs.dev.azure.com/dnceng/public/_packaging/nuget-build/nuget/v3/index.json`.
 
 Puede instalar este paquete en un proyecto compatible con `netstandard1.3` o una versión posterior (por ejemplo, .NET Framework 4.6).
 
 En el [proyecto NuGet.Protocol.Catalog.Sample](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/NuGet.Protocol.Catalog.Sample) de GitHub hay un ejemplo en el que se usa este paquete.
 
-#### <a name="sample-output"></a>Resultados de ejemplo
+#### <a name="sample-output"></a>Salida de ejemplo
 
 ```output
 2017-11-10T22:16:44.8689025+00:00: Found package details leaf for xSkrape.APIWrapper.REST 1.0.2.
@@ -156,7 +156,7 @@ Para ver un ejemplo con menos dependencias en el que se muestre con más detalle
 
 La lógica principal del código está visible en el [archivo Program.cs](https://github.com/NuGet/Samples/blob/master/CatalogReaderExample/CatalogReaderExample/Program.cs).
 
-#### <a name="sample-output"></a>Resultados de ejemplo
+#### <a name="sample-output"></a>Salida de ejemplo
 
 ```output
 No cursor found. Defaulting to 11/2/2017 9:41:28 PM.
