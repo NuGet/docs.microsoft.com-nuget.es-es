@@ -1,16 +1,16 @@
 ---
 title: pack y restore de NuGet como destinos de MSBuild
 description: pack y restore de NuGet pueden trabajar directamente como destinos de MSBuild con NuGet 4.0 y versiones posteriores.
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4a04c6dd7993fc47bcf7a6fe46236ed700a0d105
-ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
+ms.openlocfilehash: 66df4e0e4739300608fd5f9e44eea5bcd00079c8
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738934"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699882"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>pack y restore de NuGet como destinos de MSBuild
 
@@ -46,15 +46,15 @@ En la tabla siguiente se describen las propiedades de MSBuild que se pueden agre
 
 Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son compatibles con MSBuild.
 
-| Valor de atributo/NuSpec | Propiedad de MSBuild | Predeterminado | Notas |
+| Valor de atributo/NuSpec | Propiedad de MSBuild | Valor predeterminado | Notas |
 |--------|--------|--------|--------|
-| Id | PackageId | AssemblyName | $(NombreDeEnsamblado) de MSBuild |
+| Identificador | PackageId | AssemblyName | $(NombreDeEnsamblado) de MSBuild |
 | Versión | PackageVersion | Versión | Esto es compatible con semver, por ejemplo, "1.0.0", "1.0.0-beta" o "1.0.0-beta-00345" |
 | VersionPrefix | PackageVersionPrefix | empty | Al establecer PackageVersion se sobrescribe PackageVersionPrefix. |
 | VersionSuffix | PackageVersionSuffix | empty | $(VersionSuffix) de MSBuild. Al establecer PackageVersion se sobrescribe PackageVersionSuffix. |
 | Authors | Authors | Nombre del usuario actual | |
 | Propietarios | N/D | No está presente en el archivo NuSpec | |
-| Título | Título | El identificador de paquete| |
+| Title | Title | El identificador de paquete| |
 | Descripción | Descripción | "Descripción del paquete" | |
 | Copyright | Copyright | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
@@ -80,7 +80,7 @@ Tenga en cuenta que las propiedades `Owners` y `Summary` de `.nuspec` no son com
 - PackageVersion
 - PackageId
 - Authors
-- Descripción
+- Description
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -256,6 +256,23 @@ Al empaquetar un archivo de licencia, debe usar la propiedad PackageLicenseFile 
 
 [Ejemplo de archivo de licencia](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample).
 
+### <a name="packing-a-file-without-an-extension"></a>Empaquetado de un archivo sin extensión
+
+En algunos escenarios, como cuando se empaqueta un archivo de licencia, puede que desee incluir un archivo sin una extensión.
+Por motivos históricos, NuGet & MSBuild tratan las rutas de acceso sin una extensión como directorios.
+
+```xml
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath=""/>
+  </ItemGroup>  
+```
+
+[Archivo sin un ejemplo de extensión](https://github.com/NuGet/Samples/blob/master/PackageLicenseFileExtensionlessExample/).
 ### <a name="istool"></a>IsTool
 
 Cuando se usa `MSBuild -t:pack -p:IsTool=true`, todos los archivos de salida, como se especifica en el escenario [Ensamblados de salida](#output-assemblies), se copian en la carpeta `tools` en lugar de la carpeta `lib`. Tenga en cuenta que esto es diferente de `DotNetCliTool`, que se especifica estableciendo `PackageType` en el archivo `.csproj`.
@@ -366,13 +383,16 @@ Por ejemplo:
 1. Escribir el archivo de activos, destinos y propiedades
 
 El `restore` destino funciona con los proyectos que usan el formato PackageReference.
-`MSBuild 16.5+` también tiene [compatibilidad con](#restoring-packagereference-and-packages.config-with-msbuild) el `packages.config` formato.
+`MSBuild 16.5+` también tiene [compatibilidad con](#restoring-packagereference-and-packagesconfig-with-msbuild) el `packages.config` formato.
+
+> [!NOTE]
+> El `restore` destino [no debe ejecutarse](#restoring-and-building-with-one-msbuild-command) en combinación con el `build` destino.
 
 ### <a name="restore-properties"></a>Restaurar las propiedades
 
 Otra configuración de restauración puede proceder de propiedades de MSBuild en el archivo de proyecto. También se pueden establecer valores desde la línea de comandos mediante el modificador `-p:` (vea los ejemplos siguientes).
 
-| Propiedad | Descripción |
+| Propiedad | Description |
 |--------|--------|
 | RestoreSources | Lista delimitada por punto y coma de orígenes de paquetes. |
 | RestorePackagesPath | Ruta de acceso de la carpeta de paquetes de usuario. |

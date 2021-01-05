@@ -1,102 +1,102 @@
 ---
-title: Notas de la versión de NuGet 5.1 RTM
-description: Notas de la versión 5.1 de NuGet incluidas nuevas características, correcciones de errores y dcr.
+title: Notas de la versión de NuGet 5,1 RTM
+description: Notas de la versión de NuGet 5,1, incluidas nuevas características, correcciones de errores y DCR.
 author: karann-msft
 ms.author: karann
 ms.date: 05/21/2019
 ms.topic: conceptual
-ms.openlocfilehash: 384145947b19af6577dc1255985df1a361c72bb5
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 2a94360dc375ba90b90c1045f4acbcfca81fea5b
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842574"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699860"
 ---
-# <a name="nuget-51-release-notes"></a>Notas de la versión 5.1 de NuGet
+# <a name="nuget-51-release-notes"></a>Notas de la versión de NuGet 5,1
 
 Vehículos de distribución de NuGet:
 
 | Versión de NuGet | Disponible en la versión de Visual Studio| Disponible en los SDK de .NET|
 |:---|:---|:---|
-| [**5.1.0**](https://nuget.org/downloads) | [Visual Studio 2019, versión 16.1](https://visualstudio.microsoft.com/downloads/) | [2.1.70X](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.30X](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
+| [**5.1.0**](https://nuget.org/downloads) | [Visual Studio 2019, versión 16.1](https://visualstudio.microsoft.com/downloads/) | [2.1.70 x](https://dotnet.microsoft.com/download/dotnet-core/2.1)<sup>1</sup>, [2.2.30 x](https://dotnet.microsoft.com/download/dotnet-core/2.2)<sup>2</sup> |
 
-<sup>1</sup>instalado con Visual Studio de 2019 con carga de trabajo de .NET Core 
+<sup>1</sup> Instalado con Visual Studio 2019 con la carga de trabajo de .NET Core 
 
-<sup>2</sup>disponible como una instalación opcional con Visual Studio de 2019 con carga de trabajo de .NET Core
+<sup>2</sup> Disponible como instalación opcional con Visual Studio 2019 con carga de trabajo de .NET Core
 
-## <a name="summary-whats-new-in-51"></a>Resumen: Novedades de 5.1
+## <a name="summary-whats-new-in-51"></a>Resumen: novedades en 5,1
 
-* Soporte técnico para omitir una inserción del paquete si ya existe para permitir una mejor integración con flujos de trabajo de CI/CD - [1630 #](https://github.com/NuGet/Home/issues/1630#issuecomment-483461100)
+* Compatibilidad para omitir una inserción de paquete si ya existe para permitir una mejor integración con flujos de trabajo de CI/CD- [#1630](https://github.com/NuGet/Home/issues/1630#issuecomment-483461100)
 
-* Visual Studio ahora ofrece un práctico vínculo a la página de la Galería de nuget.org del paquete - [#5299](https://github.com/NuGet/Home/issues/5299#issuecomment-494458510)
+* Visual Studio ahora proporciona un vínculo cómodo a la página de la galería de nuget.org del paquete: [#5299](https://github.com/NuGet/Home/issues/5299#issuecomment-494458510)
 
-* Compatibilidad con nuevos recursos de .NET Core 3.0 como [destinadas a módulos](https://github.com/dotnet/cli/issues/10006) y [módulos en tiempo de ejecución](https://github.com/dotnet/cli/issues/10007)
-  * Compatibilidad con NuGet pack y restore FrameworkReferences habilitar las referencias del paquete en tiempo de ejecución y destinatarios - [#7342](https://github.com/NuGet/Home/issues/7342)
-  * Escenario "solo descarga" de paquete de soporte técnico con PackageDownload - [7339 #](https://github.com/NuGet/Home/issues/7339)
-  * En tiempo de ejecución Exlcude y paquetes de los resultados de búsqueda y restauración de compatibilidad graph con PackageType - [7337 #](https://github.com/NuGet/Home/issues/7337)
+* Compatibilidad con nuevos recursos de .NET Core 3,0, como los [paquetes de destino](https://github.com/dotnet/cli/issues/10006) y los paquetes [en tiempo de ejecución](https://github.com/dotnet/cli/issues/10007)
+  * Paquete NuGet y restauración compatibilidad con FrameworkReferences para habilitar las referencias de paquetes en tiempo de ejecución y de destino: [#7342](https://github.com/NuGet/Home/issues/7342)
+  * Compatibilidad con el escenario de paquetes de solo descarga con PackageDownload- [#7339](https://github.com/NuGet/Home/issues/7339)
+  * Exclusión de los paquetes en tiempo de ejecución y de destino de los resultados de búsqueda & gráfico de restauración con PackageType- [#7337](https://github.com/NuGet/Home/issues/7337)
 
 ### <a name="issues-fixed-in-this-release"></a>Problemas corregidos en esta versión
 
 **Errores**
 
-* Complementos: detalles de la excepción se pierden durante la creación del complemento - [#8057](https://github.com/NuGet/Home/issues/8057)
+* Complementos: detalles de excepción perdidos durante la creación del complemento: [#8057](https://github.com/NuGet/Home/issues/8057)
 
-* PackageReference intervalo con un límite inferior exclusivo no funciona si el límite inferior está presente en uno de los orígenes. - [#8054](https://github.com/NuGet/Home/issues/8054)
+* El intervalo PackageReference con límite inferior exclusivo no funciona si el límite inferior está presente en uno de los orígenes. - [#8054](https://github.com/NuGet/Home/issues/8054)
 
-* Mejorar el mensaje IsPackableFalseError - [#8021](https://github.com/NuGet/Home/issues/8021)
+* Mejorar el [#8021](https://github.com/NuGet/Home/issues/8021) de mensajes de IsPackableFalseError
 
-* Empaqueta el archivo de bloqueo - archivo de bloqueo de regeneración cuando cambia el gráfico de proyecto: [#8019](https://github.com/NuGet/Home/issues/8019)
+* Archivo de bloqueo de paquetes: regenerar archivo de bloqueo cuando cambia el gráfico de proyecto- [#8019](https://github.com/NuGet/Home/issues/8019)
 
-* Error de Project System: Quitar paquetes de NuGet obtención automática - [#8017](https://github.com/NuGet/Home/issues/8017)
+* Error de Project System: paquetes Nuget que se quitan automáticamente: [#8017](https://github.com/NuGet/Home/issues/8017)
 
-* Agregar un destino para devolver el FrameworkReference similar a CollectPackageDownloads y CollectPackageReferences - [8005 #](https://github.com/NuGet/Home/issues/8005)
+* Agregar un destino para devolver FrameworkReference similar a CollectPackageDownloads y CollectPackageReferences- [#8005](https://github.com/NuGet/Home/issues/8005)
 
-* Caché HTTP:  No se almacena en caché RepositoryResources recursos de una forma con control de versiones - [#7997](https://github.com/NuGet/Home/issues/7997)
+* Caché HTTP: el recurso RepositoryResources no se almacena en caché de forma con control de versiones- [#7997](https://github.com/NuGet/Home/issues/7997)
 
-* Registro: no se notifican pilas de llamadas de excepción con el nivel de detalle pormenorizado - [#7955](https://github.com/NuGet/Home/issues/7955)
+* Registro: no se han detectado excepciones pilas con el nivel de detalle detallado [#7955](https://github.com/NuGet/Home/issues/7955)
 
-* Cambie todas las direcciones URL de Docs de NuGet para usar HTTPS - [7950 #](https://github.com/NuGet/Home/issues/7950)
+* Cambiar todas las direcciones URL de documentos de NuGet para usar HTTPS- [#7950](https://github.com/NuGet/Home/issues/7950)
 
-* Mejorar el mensaje de advertencia NU3024 - [7933 #](https://github.com/NuGet/Home/issues/7933)
+* Mejorar el mensaje de advertencia de NU3024: [#7933](https://github.com/NuGet/Home/issues/7933)
 
-* archivo de bloqueo no se está actualizando cuando packagereference quitado - [7930 #](https://github.com/NuGet/Home/issues/7930)
+* el archivo de bloqueo no se actualiza cuando se quita packagereference- [#7930](https://github.com/NuGet/Home/issues/7930)
 
-* Mejorar el tratamiento de casos de error al validar un elemento licenseurl y licencia de nuspec - [#7915](https://github.com/NuGet/Home/issues/7915)
+* Mejorar el control de los casos de error al validar licenseurl y el elemento License en nuspec- [#7915](https://github.com/NuGet/Home/issues/7915)
 
-* P. M. UI - haga clic en el encabezado de pestaña y haciendo clic en "Abrir ubicación del archivo" produce error - [#7913](https://github.com/NuGet/Home/issues/7913)
+* Interfaz de usuario de PM: haga clic con el botón derecho en el encabezado de pestaña y haga clic [#7913](https://github.com/NuGet/Home/issues/7913) en "abrir ubicación de archivo".
 
-* Complementos: registrar cuando se cierra el proceso del complemento - [#7907](https://github.com/NuGet/Home/issues/7907)
+* Complementos: registro cuando finaliza el proceso de complementos- [#7907](https://github.com/NuGet/Home/issues/7907)
 
-* Complementos: frecuencia de colisión alta en los valores de fecha y hora de registro - [#7899](https://github.com/NuGet/Home/issues/7899)
+* Complementos: alta frecuencia de colisión en valores de fecha y hora de registro: [#7899](https://github.com/NuGet/Home/issues/7899)
 
-* Manifest.ReadFrom produce un error en cualquier archivo nuspec con LicenseExpression - [7894 #](https://github.com/NuGet/Home/issues/7894)
+* Error de manifest. ReadFrom en cualquier archivo nuspec con LicenseExpression- [#7894](https://github.com/NuGet/Home/issues/7894)
 
-* RestoreLockedMode: NU1004 inesperado cuando ProjectReference hace referencia a un proyecto con AssemblyName personalizado - [#7889](https://github.com/NuGet/Home/issues/7889)
+* RestoreLockedMode: NU1004 inesperada cuando ProjectReference hace referencia a un proyecto con AssemblyName- [#7889](https://github.com/NuGet/Home/issues/7889) personalizado
 
-* Mensaje de error mejorado cuando se produce un error en el inicio del complemento con una excepción: [#7857](https://github.com/NuGet/Home/issues/7857)
+* Mejor mensaje de error cuando se produce un error en el inicio del complemento con una excepción: [#7857](https://github.com/NuGet/Home/issues/7857)
 
-* Cuando se realiza una restauración de NoOp, evitar *. dgspec.json escritura en el directorio obj - [#7854](https://github.com/NuGet/Home/issues/7854)
+* Al realizar una restauración de NoOp, evite * .dgspec.jsal escribir en el directorio obj [#7854](https://github.com/NuGet/Home/issues/7854)
 
-* GeneratePathProperty = true no se puede generar la propiedad en el error de coincidencia de mayúsculas - [#7843](https://github.com/NuGet/Home/issues/7843)
+* GeneratePathProperty = true no puede generar la propiedad si no coinciden [#7843](https://github.com/NuGet/Home/issues/7843)
 
-* Configuración: carácter no válido en la ruta de acceso de origen de paquete puede bloquear VS - [#7820](https://github.com/NuGet/Home/issues/7820)
+* Configuración: el carácter no válido en la ruta de acceso de origen del paquete puede bloquearse frente a [#7820](https://github.com/NuGet/Home/issues/7820)
 
-* Si se elimina el archivo de bloqueo, restauración no genera el archivo de bloqueo en NoOp - [#7807](https://github.com/NuGet/Home/issues/7807)
+* Si se elimina el archivo de bloqueo, restore no genera el archivo de bloqueo en NoOp- [#7807](https://github.com/NuGet/Home/issues/7807)
 
-* Dirección URL de licencias y las causas de licencia leer error con metadatos - [#7547](https://github.com/NuGet/Home/issues/7547)
+* La licencia y la dirección URL de la licencia provocan un error de lectura con metadatos [#7547](https://github.com/NuGet/Home/issues/7547)
 
-* Excepciones no controladas en V2FeedParser - [7523 #](https://github.com/NuGet/Home/issues/7523)
+* Excepciones no controladas en V2FeedParser- [#7523](https://github.com/NuGet/Home/issues/7523)
 
-* NuGet.exe devuelve el código de salida de cero para los argumentos no válidos - [#7178](https://github.com/NuGet/Home/issues/7178)
+* nuget.exe devuelve el código de salida cero para los argumentos no válidos- [#7178](https://github.com/NuGet/Home/issues/7178)
 
-* Actualizar errores y documentos de advertencia para reflejar los escenarios relacionados firmas - [#6498](https://github.com/NuGet/Home/issues/6498)
+* Errores de actualización y documentos de advertencia para reflejar escenarios relacionados con la firma: [#6498](https://github.com/NuGet/Home/issues/6498)
 
-* Archivo de recursos debe usar rutas de acceso relativas para habilitar proyectos mover más fácilmente - [#4582](https://github.com/NuGet/Home/issues/4582)
+* El archivo de recursos debe usar rutas de acceso relativas para permitir el movimiento de proyectos más fácilmente [#4582](https://github.com/NuGet/Home/issues/4582)
 
-**DCRs**
+**DCR**
 
-* Complementos: habilitar el registro de diagnósticos - [#7859](https://github.com/NuGet/Home/issues/7859)
+* Complementos: habilitación del registro de diagnóstico: [#7859](https://github.com/NuGet/Home/issues/7859)
 
-* Asegúrese de Tizen 6 se asignan a NetStandard 2.1 - [#7773](https://github.com/NuGet/Home/issues/7773)
+* Asignación de Tizen 6 a NetStandard 2,1- [#7773](https://github.com/NuGet/Home/issues/7773)
 
-**[Lista de todos los problemas corregidos en esta versión: 5.1 RTM](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.1")**
+**[Lista de todos los problemas corregidos en esta versión: 5,1 RTM](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.1")**
