@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: aae6f0474cc6e8e8aa5c269b79be6fd949d9184c
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: be24660d05f34242e45f223e2248b943ecc38616
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238002"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699655"
 ---
 # <a name="nuget-frequently-asked-questions"></a>Preguntas más frecuentes de NuGet
 
@@ -47,7 +47,7 @@ Para más información, vea [Búsqueda y selección de paquetes](../consume-pack
 
 En Visual Studio, use el comando **Ayuda > Acerca de Microsoft Visual Studio** y mire la versión que se muestra junto a **Administrador de paquetes NuGet**.
 
-O bien, inicie la consola del Administrador de paquetes ( **Herramientas > Administrador de paquetes NuGet > Consola del Administrador de paquetes** ) y escriba `$host` para ver información sobre NuGet, incluida la versión.
+O bien, inicie la consola del Administrador de paquetes (**Herramientas > Administrador de paquetes NuGet > Consola del Administrador de paquetes**) y escriba `$host` para ver información sobre NuGet, incluida la versión.
 
 **¿Qué lenguajes de programación son compatibles con NuGet?**
 
@@ -61,7 +61,7 @@ NuGet es totalmente compatible con una variedad de plantillas de proyecto como W
 
 **¿Cómo puedo actualizar los paquetes que forman parte de plantillas de Visual Studio?**
 
-Vaya a la pestaña **Actualizaciones** en la interfaz de usuario del Administrador de paquetes y seleccione **Actualizar todo** , o use el [comando `Update-Package`](../reference/ps-reference/ps-ref-update-package.md) desde la consola del Administrador de paquetes.
+Vaya a la pestaña **Actualizaciones** en la interfaz de usuario del Administrador de paquetes y seleccione **Actualizar todo**, o use el [comando `Update-Package`](../reference/ps-reference/ps-ref-update-package.md) desde la consola del Administrador de paquetes.
 
 Para actualizar la plantilla propiamente dicha, debe actualizar manualmente el repositorio de plantillas. Vea el [blog de Xavier Decoster](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages) sobre este tema. Tenga en cuenta que esto se realiza bajo su responsabilidad, ya que es posible que las actualizaciones manuales dañen la plantilla si la versión más reciente de todas las dependencias no es compatible entre sí.
 
@@ -149,3 +149,10 @@ Esto no es un problema al usar PackageReference, ya que cada archivo de proyecto
 
 - Agregue `https://api.nuget.org/v3/index.json` a la lista de orígenes, o bien
 - Elimine `%appdata%\.nuget\NuGet.Config` (Windows) o `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) y deje que NuGet se vuelve a crear.
+
+**He realizado la migración a PackageReference. ¿Por qué se produce un error `This project references NuGet package(s) that are missing on this computer.` en mi compilación?**
+
+En los proyectos de packages.config, cuando se instala un paquete con propiedades o destinos `build`, NuGet agrega un destino `EnsureNuGetPackageBuildImports` para comprobar que el contenido MSBuild de los paquetes se ha importado antes de la compilación.
+Si el destino (`target`) se ha modificado manualmente, es posible que NuGet no pueda detectar que es necesario quitarlo al realizar la migración.
+
+Si su proyecto es de `PackageReference` y todavía tiene este destino en el archivo del proyecto, debería poder eliminarlo de forma segura.

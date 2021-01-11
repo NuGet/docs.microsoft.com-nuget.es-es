@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 1127e7aee27d57abd5f14dd3bea82dfff3ba6d93
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237645"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699780"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
 
@@ -172,10 +172,10 @@ Las condiciones también se pueden aplicar a nivel de `ItemGroup` y se aplicará
 
 ## <a name="generatepathproperty"></a>GeneratePathProperty
 
-Esta característica está disponible con NuGet  **5.0** o una versión superior y con Visual Studio 2019  **16.0** o una versión superior.
+Esta característica está disponible con NuGet **5.0** o una versión superior y con Visual Studio 2019 **16.0** o una versión superior.
 
 A veces es conveniente hacer referencia a los archivos de un paquete desde un destino de MSBuild.
-En los proyectos basados en `packages.config`, los paquetes se instalan en una carpeta relativa al archivo del proyecto. Sin embargo, en PackageReference, los paquetes se [consumen](../concepts/package-installation-process.md) de la carpeta *global-packages* , que puede variar de una máquina a otra.
+En los proyectos basados en `packages.config`, los paquetes se instalan en una carpeta relativa al archivo del proyecto. Sin embargo, en PackageReference, los paquetes se [consumen](../concepts/package-installation-process.md) de la carpeta *global-packages*, que puede variar de una máquina a otra.
 
 Para salvar esa diferencia, NuGet ha presentado una propiedad que apunta a la ubicación desde la que se va a consumir el paquete.
 
@@ -201,14 +201,46 @@ Además, NuGet generará automáticamente las propiedades de los paquetes que co
   <Target Name="TakeAction" AfterTargets="Build">
     <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
   </Target>
-````
+```
 
 Las propiedades de MSBuild y las identidades de paquete no tienen las mismas restricciones, por lo que la identidad de paquete debe cambiarse por un nombre descriptivo de MSBuild, precedido por la palabra `Pkg`.
 Para comprobar el nombre exacto de la propiedad generada, examine el archivo [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) generado.
 
+## <a name="packagereference-aliases"></a>Alias de PackageReference
+
+En algunos casos poco comunes, los distintos paquetes contienen clases en el mismo espacio de nombres. A partir de NuGet 5.7 y Visual Studio 2019 Update 7, de forma similar a ProjectReference, PackageReference admite [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases).
+De manera predeterminada, no se proporciona ningún alias. Cuando se especifica un alias, es necesario hacer referencia a *todos* los ensamblados procedentes del paquete anotado con un alias.
+
+Puede consultar un ejemplo de uso en [NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample).
+
+En el archivo del proyecto, especifique los alias de la siguiente forma:
+
+```xml
+  <ItemGroup>
+    <PackageReference Include="NuGet.Versioning" Version="5.8.0" Aliases="ExampleAlias" />
+  </ItemGroup>
+```
+
+En el código, use los alias como se indica a continuación:
+
+```cs
+extern alias ExampleAlias;
+
+namespace PackageReferenceAliasesExample
+{
+...
+        {
+            var version = ExampleAlias.NuGet.Versioning.NuGetVersion.Parse("5.0.0");
+            Console.WriteLine($"Version : {version}");
+        }
+...
+}
+
+```
+
 ## <a name="nuget-warnings-and-errors"></a>Advertencias y errores de NuGet
 
-*Esta característica está disponible con NuGet  **4.3** o una versión superior y con Visual Studio 2017  **15.3** o una versión superior.*
+*Esta característica está disponible con NuGet **4.3** o una versión superior y con Visual Studio 2017 **15.3** o una versión superior.*
 
 En muchos escenarios de paquetes y restauración, todas las advertencias y errores de NuGet se codifican y comienzan con `NU****`. Todas las advertencias y errores de NuGet se enumeran en la documentación de [referencia](../reference/errors-and-warnings.md).
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1ae030c308b14b8884fb608c1683c8c46000b0bd
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 634c421499b06f6b62d88a95f8703614dec5ace8
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "77036908"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699754"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>¿Qué ocurre cuando se instala un paquete NuGet?
 
@@ -26,6 +26,9 @@ El proceso general es el siguiente:
    - Compruebe si el paquete (por el número de versión y el identificador exacto) ya está instalado en la carpeta *global-packages*, tal y como se describe en [Administración de paquetes globales y carpetas de caché](../consume-packages/managing-the-global-packages-and-cache-folders.md).
 
    - Si el paquete no se encuentra en la carpeta *global-packages*, intente recuperarlo de los orígenes indicados en los [archivos de configuración](../consume-packages/Configuring-NuGet-Behavior.md). En el caso de los orígenes en línea, intente primero recuperar el paquete de la memoria caché HTTP, a menos que `-NoCache` se especifique con comandos `nuget.exe` o `--no-cache` se especifique con `dotnet restore`. (Visual Studio y `dotnet add package` utilizan siempre la memoria caché). Si se usa un paquete de la memoria caché, "CACHE" aparece en la salida. La memoria caché tiene un plazo de expiración de 30 minutos.
+
+   - Si el paquete se ha especificado con una [versión flotante](../consume-packages/Package-References-in-Project-Files.md#floating-versions), o sin una versión mínima, NuGet *contactará* con todos los orígenes para determinar cuál es la mejor coincidencia.
+   Por ejemplo: `1.*`, `(, 2.0.0]`.
 
    - Si el paquete no está en la caché HTTP, intente descargarlo de los orígenes indicados en la configuración. Si se descarga un paquete, "GET" y "Aceptar" aparecen en la salida. NuGet registra el tráfico HTTP en el nivel de detalle normal.
 

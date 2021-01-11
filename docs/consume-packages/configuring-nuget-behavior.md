@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 89127203df0aa1eb24f36b8ec64c5bb4a4d59319
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e81c380eab3f1a8635e50e62811c7ae463ec3653
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428544"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699772"
 ---
 # <a name="common-nuget-configurations"></a>Configuraciones comunes de NuGet
 
@@ -21,8 +21,8 @@ El comportamiento de NuGet se controla mediante la configuración acumulada en u
 | Ámbito | Ubicación del archivo NuGet.Config | Descripción |
 | --- | --- | --- |
 | Soluciones | Carpeta actual (también denominada carpeta de soluciones) o cualquier carpeta hasta la raíz de la unidad.| En una carpeta de soluciones, la configuración se aplica a todos los proyectos de las subcarpetas. Tenga en cuenta que si se coloca un archivo de configuración en una carpeta de proyecto, no tiene ningún efecto en ese proyecto. |
-| Usuario | Windows: `%appdata%\NuGet\NuGet.Config`<br/>Mac o Linux: `~/.config/NuGet/NuGet.Config` o `~/.nuget/NuGet/NuGet.Config` (varía según la distribución del SO) | La configuración se aplica a todas las operaciones, pero se reemplaza por la configuración de nivel de proyecto. |
-| Equipo | Windows: `%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux: `$XDG_DATA_HOME`. Si `$XDG_DATA_HOME` es null o está vacío, se usará `~/.local/share` o `/usr/local/share` (varía según la distribución del SO)  | La configuración se aplica a todas las operaciones en el equipo, pero se reemplaza por cualquier configuración de nivel de proyecto o de usuario. |
+| Usuario | **Windows:** `%appdata%\NuGet\NuGet.Config`<br/>**Mac/Linux:** `~/.config/NuGet/NuGet.Config` o `~/.nuget/NuGet/NuGet.Config` (varía según la distribución del SO) <br/>Se admiten configuraciones adicionales en todas las plataformas. Estas configuraciones no se pueden editar con las herramientas. </br> **Windows:** `%appdata%\NuGet\config\*.Config` <br/>**Mac/Linux:** `~/.config/NuGet/config/*.config` o `~/.nuget/config/*.config` | La configuración se aplica a todas las operaciones, pero se reemplaza por la configuración de nivel de proyecto. |
+| Computer | **Windows:** `%ProgramFiles(x86)%\NuGet\Config`<br/>**Mac/Linux:** `$XDG_DATA_HOME`. Si `$XDG_DATA_HOME` es null o está vacío, se usará `~/.local/share` o `/usr/local/share` (varía según la distribución del SO)  | La configuración se aplica a todas las operaciones en el equipo, pero se reemplaza por cualquier configuración de nivel de proyecto o de usuario. |
 
 Notas para versiones anteriores de NuGet:
 - En NuGet 3.3 y versiones anteriores se usaba una carpeta `.nuget` para la configuración de toda la solución. Esta carpeta no se usa en NuGet 3.4 y versiones posteriores.
@@ -186,13 +186,25 @@ Archivo D. disk_drive_2/Project2/NuGet.Config:
 
 Después, NuGet carga y aplica la configuración como se indica a continuación, en función de dónde se invoque:
 
-- **Se invoca desde disk_drive_1/users/** : solo se usa el repositorio predeterminado que aparece en el archivo de configuración de nivel de usuario (A), ya que es el único archivo encontrado en disk_drive_1.
+- **Se invoca desde disk_drive_1/users/**: solo se usa el repositorio predeterminado que aparece en el archivo de configuración de nivel de usuario (A), ya que es el único archivo encontrado en disk_drive_1.
 
 - **Se invoca desde disk_drive_2/ o disk_drive_/tmp**: en primer lugar se carga el archivo de nivel de usuario (A) y después NuGet se desplaza a la raíz de disk_drive_2 y busca el archivo (B). NuGet también busca un archivo de configuración en/tmp pero no lo encuentra. Como resultado, se usa el repositorio predeterminado en nuget.org, se habilita la restauración de paquetes y los paquetes se expanden en disk_drive_2/tmp.
 
 - **Se invoca desde disk_drive_2/Project1 o disk_drive_2/Project1/Source**: primero se carga el archivo de nivel de usuario (A), después NuGet carga el archivo (B) desde la raíz de disk_drive_2, seguido del archivo (C). La configuración de (C) invalida la de (B) y (A), por lo que la `repositoryPath` donde se instalan los paquetes es disk_drive_2/Project1/External/Packages en lugar de *disk_drive_2/tmp*. Además, dado que borra (C) `<packageSources>`, nuget.org ya no está disponible como un origen, lo que solo deja `https://MyPrivateRepo/ES/nuget`.
 
-- **Se invoca desde disk_drive_2/Project2 o disk_drive_2/Project2/Source**: primero se carga el archivo de nivel de usuario (A) y después el archivo (B) y el archivo (D). Dado que `packageSources` no se borra, `nuget.org` y `https://MyPrivateRepo/DQ/nuget` están disponibles como orígenes. Los paquetes se expanden en disk_drive_2/tmp, como se especifica en (B).
+- **Se invoca desde disk_drive_2/Project2 o disk_drive_2/Project2/Source**: primero se carga el archivo de nivel de usuario (A), seguido del archivo (B) y el archivo (D). Dado que `packageSources` no se borra, `nuget.org` y `https://MyPrivateRepo/DQ/nuget` están disponibles como orígenes. Los paquetes se expanden en disk_drive_2/tmp, como se especifica en (B).
+
+## <a name="additional-user-wide-configuration"></a>Configuración adicional para todos los usuarios
+
+A partir de la versión 5.7, NuGet ha agregado compatibilidad con archivos de configuración adicional para todos los usuarios. Esto permite a los proveedores externos agregar archivos de configuración de usuario adicional sin elevación.
+Estos archivos de configuración se encuentran en la carpeta de configuración estándar de todos los usuarios en una subcarpeta `config`.
+Se tendrán en cuenta todos los archivos que terminen en `.config` o `.Config`.
+Estos archivos no se pueden editar con las herramientas estándar.
+
+| Plataforma de sistema operativo  | Configuración adicional |
+| --- | --- |
+| Windows      | `%appdata%\NuGet\config\*.Config` |
+| Mac/Linux    | `~/.config/NuGet/config/*.config` o `~/.nuget/config/*.config` |
 
 ## <a name="nuget-defaults-file"></a>Archivo de valores predeterminados de NuGet
 
@@ -207,10 +219,10 @@ El archivo `NuGetDefaults.Config` existe para especificar los orígenes de paque
 
 En esta tabla se describe dónde debe almacenarse el archivo `NuGetDefaults.Config`, según el sistema operativo de destino:
 
-| Plataforma de SO  | Ubicación de NuGetDefaults.Config |
+| Plataforma de sistema operativo  | Ubicación de NuGetDefaults.Config |
 | --- | --- |
-| Windows      | **Visual Studio 2017 o NuGet 4.x+:** `%ProgramFiles(x86)%\NuGet\Config` <br />**Visual Studio 2015 y versiones anteriores o NuGet 3.x y versiones anteriores:** `%PROGRAMDATA%\NuGet` |
-| Mac/Linux    | `$XDG_DATA_HOME` (normalmente `~/.local/share` o `/usr/local/share`, dependiendo de la distribución del SO)|
+| Windows      | **Visual Studio 2017 o NuGet 4.x+:** `%ProgramFiles(x86)%\NuGet\Config` <br />**Visual Studio 2015 y versiones anteriores o NuGet 3.x y versiones anteriores:** `%PROGRAMDATA%\NuGet` |
+| Mac o Linux:    | `$XDG_DATA_HOME` (normalmente `~/.local/share` o `/usr/local/share`, dependiendo de la distribución del SO)|
 
 ### <a name="nugetdefaultsconfig-settings"></a>Configuración de NuGetDefaults.Config
 

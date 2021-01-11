@@ -1,16 +1,16 @@
 ---
 title: Creación de un paquete NuGet con la CLI de nuget.exe
-description: Un guía detallada sobre el proceso de diseño y creación de un paquete NuGet, incluidos puntos de decisión clave como archivos y control de versiones.
+description: Guía detallada sobre el diseño y la creación de un paquete NuGet, incluidos los archivos y el control de versiones.
 author: karann-msft
-ms.author: karann
+ms.author: feaguila
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: b3e6f0efc9e2e12de186ffd4ce29d496d07d5fc4
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: ec06a8f721b7b67ddc5d72323305b9b22f292de6
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428574"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699792"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>Creación de un paquete con la CLI de nuget.exe
 
@@ -68,8 +68,8 @@ Propiedades opcionales comunes:
 - Una descripción breve de la [interfaz de usuario del Administrador de paquetes en Visual Studio](../consume-packages/install-use-packages-visual-studio.md)
 - Un Id. de configuración regional
 - URL de proyecto
-- Licencia como expresión o archivo (`licenseUrl` está en desuso; [emplee el elemento de metadatos nuspec `license`](../reference/nuspec.md#license))
-- Dirección URL del icono
+- Licencia como expresión o archivo (`licenseUrl` está en desuso; use el [elemento de metadatos nuspec `license`](../reference/nuspec.md#license) en su lugar)
+- Archivo de icono (`iconUrl` está en desuso; use el [elemento de metadatos nuspec `icon`](../reference/nuspec.md#icon) en su lugar)
 - Listas de dependencias y referencias
 - Etiquetas que ayudan en las búsquedas de galería
 
@@ -79,11 +79,11 @@ El siguiente archivo `.nuspec` es común (pero ficticio), con comentarios que de
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <!-- The identifier that must be unique within the hosting gallery -->
+        <!-- Identifier that must be unique within the hosting gallery -->
         <id>Contoso.Utility.UsefulStuff</id>
 
-        <!-- The package version number that is used when resolving dependencies -->
-        <version>1.8.3-beta</version>
+        <!-- Package version number that is used when resolving dependencies -->
+        <version>1.8.3</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Dejana Tesic, Rajeev Dey</authors>
@@ -101,8 +101,8 @@ El siguiente archivo `.nuspec` es común (pero ficticio), con comentarios que de
         <license type="expression">Apache-2.0</license>
         
 
-        <!-- The icon is used in Visual Studio's package manager UI -->
-        <iconUrl>http://github.com/contoso/UsefulStuff/nuget_icon.png</iconUrl>
+        <!-- Icon is used in Visual Studio's package manager UI -->
+        <icon>icon.png</icon>
 
         <!-- 
             If true, this value prompts the user to accept the license when
@@ -134,6 +134,7 @@ El siguiente archivo `.nuspec` es común (pero ficticio), con comentarios que de
     <!-- A readme.txt to display when the package is installed -->
     <files>
         <file src="readme.txt" target="" />
+        <file src="icon.png" target="" />
     </files>
 </package>
 ```
@@ -255,7 +256,7 @@ El comando siguiente crea un manifiesto predeterminado con marcadores de posici�
 nuget spec [<package-name>]
 ```
 
-Si se omite \<nombre_del_paquete\>, el archivo resultante es `Package.nuspec`. Si proporciona un nombre como `Contoso.Utility.UsefulStuff`, el archivo es `Contoso.Utility.UsefulStuff.nuspec`.
+Si se omite \<package-name\>, el archivo resultante es `Package.nuspec`. Si proporciona un nombre como `Contoso.Utility.UsefulStuff`, el archivo es `Contoso.Utility.UsefulStuff.nuspec`.
 
 El archivo `.nuspec` resultante contiene marcadores de posición para valores como `projectUrl`. Asegúrese de modificar el archivo antes de usarlo para crear el archivo `.nupkg` definitivo.
 
@@ -316,6 +317,7 @@ En algunos casos, es posible que quiera agregar destinos de compilación persona
 
 Los archivos en la carpeta `\build` raíz se consideran adecuados para todas las plataformas de destino. Para proporcionar archivos específicos de la plataforma, colóquelos primero en las subcarpetas adecuadas, como las siguientes:
 
+```
     \build
         \netstandard1.4
             \Contoso.Utility.UsefulStuff.props
@@ -323,6 +325,7 @@ Los archivos en la carpeta `\build` raíz se consideran adecuados para todas las
         \net462
             \Contoso.Utility.UsefulStuff.props
             \Contoso.Utility.UsefulStuff.targets
+```
 
 Después, en el archivo `.nuspec`, asegúrese de hacer referencia a estos archivos en el nodo `<files>`:
 

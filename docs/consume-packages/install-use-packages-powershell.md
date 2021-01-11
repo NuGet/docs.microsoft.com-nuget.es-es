@@ -7,18 +7,21 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 8b23b6cc22eff5413e317fbe619edd3d4f4716ee
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 31fa51bc017eaaf9306d5f267e5d4b0d7a15ec9c
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237405"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699841"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>Instalación y administración de paquetes con la consola del Administrador de paquetes en Visual Studio (PowerShell)
 
 La consola del Administrador de paquetes NuGet le permite usar [comandos de PowerShell de NuGet](../reference/powershell-reference.md) para buscar, instalar, desinstalar y actualizar paquetes NuGet. Usar la consola es necesarios cuando la interfaz de usuario del Administrador de paquetes no ofrece una manera de realizar una operación. Para usar los comandos de la CLI `nuget.exe` en la consola, consulte la sección sobre el [uso de la CLI nuget.exe en la consola](#use-the-nugetexe-cli-in-the-console).
 
 La consola está integrada en Visual Studio en Windows. No se incluye con Visual Studio para Mac ni con Visual Studio Code.
+
+> [!Important]
+> Los comandos que se enumeran aquí son específicos de la consola del administrador de paquetes de Visual Studio y difieren de los [comandos del módulo de Administración de paquetes](/powershell/module/packagemanagement/) que están disponibles en un entorno de PowerShell general. En concreto, cada entorno tiene comandos que no están disponibles en el otro entorno, y los comandos con el mismo nombre también pueden tener distintos argumentos específicos. Al usar la consola de Administración de paquetes en Visual Studio, se aplican los comandos y los argumentos que se documentan en este tema.
 
 ## <a name="find-and-install-a-package"></a>Búsqueda e instalación de un paquete
 
@@ -98,7 +101,7 @@ Consulte [Uninstall-Package](../reference/ps-reference/ps-ref-uninstall-package.
 
 Al desinstalar un paquete se llevan a cabo las acciones siguientes:
 
-- Se quitan las referencias al paquete del proyecto (y todos los formatos de administración que estén en uso). Las referencias ya no aparecen en el **Explorador de soluciones**. (Es posible que tenga que recompilar el proyecto para ver que se quitó de la carpeta **Bin** ).
+- Se quitan las referencias al paquete del proyecto (y todos los formatos de administración que estén en uso). Las referencias ya no aparecen en el **Explorador de soluciones**. (Es posible que tenga que recompilar el proyecto para ver que se quitó de la carpeta **Bin**).
 - Invierte los cambios realizados en `app.config` o en `web.config` cuando se instaló el paquete.
 - Quita las dependencias instaladas previamente si no queda ningún paquete que las use.
 
