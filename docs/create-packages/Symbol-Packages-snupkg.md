@@ -12,12 +12,12 @@ keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, comp
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: c42032f1869f4be0af44ffa8fbd5ad522f73c459
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: fbcc035a6b800617f995d3bcebd7e1764aa467b0
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80380423"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235729"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Crear paquetes de símbolos (.snupkg)
 
@@ -63,7 +63,7 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 La propiedad [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) puede tener uno de estos dos valores: `symbols.nupkg` (predeterminado) o `snupkg`. Si no se especifica la propiedad, se creará un paquete de símbolos heredado.
 
 > [!Note]
-> El formato heredado `.symbols.nupkg` todavía se admite, pero solo por motivos de compatibilidad (vea [Paquetes de símbolos heredados](Symbol-Packages.md)). El servidor de símbolos de NuGet.org solo acepta el nuevo formato de paquete de símbolos, `.snupkg`.
+> El formato heredado `.symbols.nupkg` todavía se admite, pero solo por motivos de compatibilidad como los paquetes nativos (vea [Paquetes de símbolos heredados](Symbol-Packages.md)). El servidor de símbolos de NuGet.org solo acepta el nuevo formato de paquete de símbolos, `.snupkg`.
 
 ## <a name="publishing-a-symbol-package"></a>Publicar un paquete de símbolos
 
@@ -104,6 +104,9 @@ NuGet.org tiene estas restricciones para los paquetes de símbolos:
 
 Los paquetes de símbolos publicados en NuGet.org producirán un error de validación si no se cumplen estas restricciones. 
 
+> [!NOTE]
+> Los proyectos nativos, como los de C++, generan archivos PDB de Windows en lugar de archivos PDB portátiles. Estos no son compatibles con el servidor de símbolos de NuGet.org. En su lugar, use [paquetes de símbolos heredados](Symbol-Packages.md).
+
 ### <a name="symbol-package-validation-and-indexing"></a>Validación e indexación de paquetes de símbolos
 
 Los paquetes de símbolos publicados en [NuGet.org](https://www.nuget.org/) se someten a varias validaciones, como análisis de malware. Si un paquete no supera la comprobación de validación, la página de detalles del paquete mostrará un mensaje de error. Además, los propietarios del paquete recibirán un correo electrónico con instrucciones sobre cómo corregir los problemas identificados.
@@ -130,7 +133,7 @@ El paquete de símbolos (.snupkg) tiene las siguientes características:
 5) Los siguientes campos se excluirán del archivo .nuspec del archivo .snupkg: ```authors```, ```owners```, ```requireLicenseAcceptance```, ```license type```, ```licenseUrl``` y ```icon```.
 6) No utilice el elemento ```<license>```. Se trata un .snupkg con la misma licencia que el .nupkg correspondiente.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
 Considere la posibilidad de usar el vínculo de origen para habilitar la depuración de código fuente de ensamblados .NET. Para obtener más información, vea la [guía de vínculos de origen](/dotnet/standard/library-guidance/sourcelink).
 
