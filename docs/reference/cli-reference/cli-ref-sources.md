@@ -1,16 +1,16 @@
 ---
 title: Comando orígenes de la CLI de NuGet
 description: Referencia del comando nuget.exe sources
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 73c9cea8200a1ab1937d25a9a611ae7f2a943dba
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 0e9cbdd089c5c0f66d25e7588ece504feae63f2f
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622595"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780006"
 ---
 # <a name="sources-command-nuget-cli"></a>sources (comando) (CLI de NuGet)
 

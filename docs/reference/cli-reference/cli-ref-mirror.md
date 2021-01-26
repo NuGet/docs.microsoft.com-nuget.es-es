@@ -1,16 +1,16 @@
 ---
 title: Comando de reflejo de la CLI de NuGet
 description: Referencia del comando nuget.exe Mirror
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: a7247aeb21418e78dbfe9be15c2e7cd152aa3f4a
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 6ecd5c11383f78fdaeb01090366a8ffe294b4f8b
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622972"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779174"
 ---
 # <a name="mirror-command-nuget-cli"></a>comando Mirror (CLI de NuGet)
 

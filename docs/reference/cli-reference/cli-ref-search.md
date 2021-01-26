@@ -1,16 +1,16 @@
 ---
 title: Comando de búsqueda de la CLI de NuGet
 description: Referencia del comando nuget.exe Search
-author: advay26
-ms.author: t-adtand
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/17/2020
 ms.topic: reference
-ms.openlocfilehash: 8d63efefb8f14c03fbe3986d8d7eebcc3eb5bcac
-ms.sourcegitcommit: 6cda91f135e58cf57a2471b0c7c4a2f748f40024
+ms.openlocfilehash: 6f4adcdf3981e5ec0e5e88337a8c3bcdd9158ca3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359687"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779163"
 ---
 # <a name="search-command-nuget-cli"></a>comando Search (CLI de NuGet)
 
@@ -28,7 +28,7 @@ donde se aplican los términos de búsqueda a los nombres de paquetes, etiquetas
 
 ## <a name="options"></a>Opciones
 
-| Nombre | Descripción | Uso |
+| NOMBRE | Descripción | Uso |
 | ---  |     ---     |  :-:  |
 | Versión preliminar | Los paquetes de versión preliminar no se incluyen de forma predeterminada, pero se pueden incluir con este argumento. | -Versión preliminar |
 | Source | Orígenes de paquetes específicos para buscar en lugar de consultar los orígenes predeterminados en __nuget.config__ | -Origen `<Source URL>`|
@@ -46,15 +46,15 @@ Vea también [variables de entorno](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>Ejemplos
 
-Buscar paquetes relacionados con el *registro*de orígenes predeterminados:
+Buscar paquetes relacionados con el *registro* de orígenes predeterminados:
 ```
 nuget search logging
 ```
-Busque paquetes relacionados con el *registro*con detalle detallado:
+Busque paquetes relacionados con el *registro* con detalle detallado:
 ```
 nuget search logging -Verbosity detailed
 ```
-Busque paquetes relacionados con el *registro*y muestre solo los 5 resultados principales:
+Busque paquetes relacionados con el *registro* y muestre solo los 5 resultados principales:
 ```
 nuget search logging -Take 5
 ```
@@ -62,7 +62,7 @@ Busque paquetes relacionados con *JSON*, incluidas versiones preliminares, de or
 ```
 nuget search JSON -PreRelease -Source "https://api.nuget.org/v3/index.json"
 ```
-Buscar paquetes relacionados con *JSON*desde varios orígenes y fuentes:
+Buscar paquetes relacionados con *JSON* desde varios orígenes y fuentes:
 ```
 nuget search JSON -Source "https://api.nuget.org/v3/index.json" -Source "https://other-feed-url-goes-here"
 ```

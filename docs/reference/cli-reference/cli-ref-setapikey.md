@@ -1,16 +1,16 @@
 ---
 title: Comando setapikey de la CLI de NuGet
 description: Referencia del comando nuget.exe setapikey
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: b84d4257c580f6e734c26ebfc589be27bea10c82
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 3e0c2f84e336e0a642b1b5e815e74a1fb0878467
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622816"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780013"
 ---
 # <a name="setapikey-command-nuget-cli"></a>comando setapikey (CLI de NuGet)
 
@@ -27,7 +27,7 @@ nuget setapikey <key> -Source <url> [options]
 donde `<source>` identifica el servidor y `<key>` es la clave que se va a guardar. Si `<source>` se omite, se supone que es Nuget.org. 
 
 > [!NOTE]
-> La clave de API no se utiliza para la autenticación con la fuente privada. Consulte el [ `nuget sources` comando](../cli-reference/cli-ref-sources.md) para administrar las credenciales para la autenticación con el origen.
+> La clave de API no se utiliza para la autenticación con la fuente privada. Consulte el [comando `nuget sources` ](../cli-reference/cli-ref-sources.md) a fin de administrar las credenciales para la autenticación con el origen.
 > Las claves de API se pueden obtener de los servidores de NuGet individuales. Para crear y administrar APIKeys para nuget.org, consulte [adquisición-a-API-Key](../../nuget-org/scoped-api-keys.md#acquire-an-api-key) .
 
 ## <a name="options"></a>Opciones

@@ -1,16 +1,16 @@
 ---
 title: comandos NuGet de la CLI de dotnet
 description: Una referencia corta para los comandos relacionados con NuGet mediante la interfaz de la línea de comandos de dotnet.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 87cb3c8153931a0917338de9f7001406b5e12dfc
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 5438354729ccc851bbbae6c0e7b9394d4226da52
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699826"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779996"
 ---
 # <a name="dotnet-cli-commands"></a>Comandos de la CLI dotnet
 

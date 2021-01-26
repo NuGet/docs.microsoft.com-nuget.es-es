@@ -1,16 +1,16 @@
 ---
 title: Comando de instalación de CLI de NuGet
 description: Referencia de la nuget.exe comando de extracción
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: d53a2e7f41219e68e59b195d1d5a9d1f62ad7c63
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 54a09361173ae10040433b05fcfae7304e39452e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622851"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779188"
 ---
 # <a name="push-command-nuget-cli"></a>comando de extracción (CLI de NuGet)
 
@@ -67,7 +67,7 @@ donde `<packagePath>` identifica el paquete que se va a enviar al servidor.
 
 - **`-src|-Source`**
 
-  Especifica la dirección URL del servidor. NuGet identifica un origen de carpeta local o UNC y simplemente copia el archivo allí en lugar de insertarlo mediante HTTP.  Además, a partir de NuGet 3.4.2, se trata de un parámetro obligatorio, a menos que el `NuGet.Config` archivo especifique un valor de *DefaultPushSource* (consulte [configuración del comportamiento de NuGet](../../consume-packages/configuring-nuget-behavior.md)).
+  Especifica la dirección URL del servidor. NuGet identifica un origen de carpeta local o UNC y simplemente copia el archivo allí, en lugar de insertarlo mediante HTTP.  Además, a partir de NuGet 3.4.2, se trata de un parámetro obligatorio, a menos que el `NuGet.Config` archivo especifique un valor de *DefaultPushSource* (consulte [configuración del comportamiento de NuGet](../../consume-packages/configuring-nuget-behavior.md)).
 
 - **`-SkipDuplicate`**
 

@@ -1,16 +1,16 @@
 ---
 title: Comando list de la CLI de NuGet
 description: Referencia del comando list de nuget.exe
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: d8e5c8574b44375e651f3ff1a4868681b3ce6d66
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 55ccf0d86ad6df8001e7401d430ec29cd7a154c3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699854"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780054"
 ---
 # <a name="list-command-nuget-cli"></a>List (comando) (CLI de NuGet)
 

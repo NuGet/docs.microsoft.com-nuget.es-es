@@ -1,16 +1,16 @@
 ---
 title: Comando del paquete de la CLI de NuGet
 description: Referencia del comando del paquete de nuget.exe
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 0483a75c7ee1fd851f935f44d96a417e2e86bf20
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: e2906d53119cb8c922df7d177cd686836ac50a5a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622959"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780040"
 ---
 # <a name="pack-command-nuget-cli"></a>comando Pack (CLI de NuGet)
 

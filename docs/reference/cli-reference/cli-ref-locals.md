@@ -1,16 +1,16 @@
 ---
 title: Comando variables locales de la CLI de NuGet
 description: Referencia del comando nuget.exe variables locales
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/19/2018
 ms.topic: reference
-ms.openlocfilehash: cdc2b760021ffc4a9e02edacb45beac01cc99bf1
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 25feb29c7b96c47681cedd8208b8595952d3ca49
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623063"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779197"
 ---
 # <a name="locals-command-nuget-cli"></a>comando variables locales (CLI de NuGet)
 

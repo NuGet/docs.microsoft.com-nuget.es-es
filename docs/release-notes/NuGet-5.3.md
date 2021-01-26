@@ -1,16 +1,16 @@
 ---
 title: Notas de la versión de NuGet 5,3
 description: Notas de la versión de NuGet 5,3, incluidas nuevas características, correcciones de errores y DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: ca71c5b9ef546f3ea92e55763d5059466ac3a930
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 009a219139a767ee6453305be68ccce478b0ec75
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813759"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780117"
 ---
 # <a name="nuget-53-release-notes"></a>Notas de la versión de NuGet 5,3
 
@@ -18,7 +18,7 @@ Vehículos de distribución de NuGet:
 
 | Versión de NuGet | Disponible en la versión de Visual Studio| Disponible en los SDK de .NET|
 |:---|:---|:---|
-| [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 versión 16,3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
+| [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 versión 16.3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
 | [**5.3.1**](https://nuget.org/downloads) | [Visual Studio 2019 versión 16.3.6](https://visualstudio.microsoft.com/downloads/) | [Versión futura: 3.0.101](https://dotnet.microsoft.com/download/dotnet-core/3.0) |
 
 <sup>1</sup> Instalado con Visual Studio 2019 con la carga de trabajo de .NET Core
@@ -27,9 +27,9 @@ Vehículos de distribución de NuGet:
 
 * [El icono de paquete se puede incrustar en el paquete](../reference/msbuild-targets.md#packing-an-icon-image-file), en lugar de tener una dirección URL externa. - [#352](https://github.com/NuGet/Home/issues/352)
 
-* Seguridad mejorada con seguimiento y cumplimiento de SHA para packages. config- [#7281](https://github.com/NuGet/Home/issues/7281)
+* Seguridad mejorada con seguimiento y cumplimiento de SHA para Packages.Config- [#7281](https://github.com/NuGet/Home/issues/7281)
 
-* Habilitar la degradación de paquetes de NuGet obsoletos o heredados [#2867](https://github.com/NuGet/Home/issues/2867) | [entrada de blog](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/) | [docs](../nuget-org/deprecate-packages.md)
+* Habilitar la degradación de paquetes de NuGet obsoletos o heredados [#2867](https://github.com/NuGet/Home/issues/2867)  |  [](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/)  |  [documentos](../nuget-org/deprecate-packages.md) de entrada de blog
 
 ### <a name="issues-fixed-in-this-release"></a>Problemas corregidos en esta versión
 
@@ -47,7 +47,7 @@ Vehículos de distribución de NuGet:
 
 * Mejoras de NU1403: validar todos los paquetes, incluir los valores Sha esperados/reales- [#8424](https://github.com/NuGet/Home/issues/8424)
 
-* Enumeración múltiple en `NuGetPackageManager.PreviewUpdatePackagesAsync` - [#8401](https://github.com/NuGet/Home/issues/8401)
+* Enumeración múltiple en `NuGetPackageManager.PreviewUpdatePackagesAsync`  -  [#8401](https://github.com/NuGet/Home/issues/8401)
 
 * Revertir el cambio de "público > interno" en PluginProcess- [#8390](https://github.com/NuGet/Home/issues/8390)
 
@@ -71,7 +71,7 @@ Vehículos de distribución de NuGet:
 
 * Hacer que la configuración sea leída en VS Lazy- [#8156](https://github.com/NuGet/Home/issues/8156)
 
-* La regresión en `Nuget sources add` produce "el carácter ': ', el valor hexadecimal 0x3A, no se puede incluir en un nombre" Errors- [#7948](https://github.com/NuGet/Home/issues/7948)
+* La regresión en `Nuget sources add` causa "el carácter ': ', el valor hexadecimal 0x3A, no se puede incluir en un nombre" Errors- [#7948](https://github.com/NuGet/Home/issues/7948)
 
 * Proveedores de credenciales de complemento NuGet: ocultar la ventana de proceso- [#7511](https://github.com/NuGet/Home/issues/7511)
 
@@ -87,11 +87,11 @@ Vehículos de distribución de NuGet:
 
 * Habilitar restauración en archivos. proj: [#8212](https://github.com/NuGet/Home/issues/8212)
 
-* Introduzca `NUGET_NETFX_PLUGIN_PATHS` y `NUGET_NETCORE_PLUGIN_PATHS` para admitir la configuración de ambos al mismo tiempo: [#8151](https://github.com/NuGet/Home/issues/8151)
+* Introducir `NUGET_NETFX_PLUGIN_PATHS` y `NUGET_NETCORE_PLUGIN_PATHS` para admitir la configuración de ambos al mismo tiempo: [#8151](https://github.com/NuGet/Home/issues/8151)
 
 * Habilitación de varias versiones para un PackageDownload mediante el atributo de versión: [#8074](https://github.com/NuGet/Home/issues/8074)
 
-* Opciones Add-SolutionDirectory y-PackageDirectory para el paquete Nuget. exe- [#7163](https://github.com/NuGet/Home/issues/7163)
+* Opciones Add-SolutionDirectory y-PackageDirectory para nuget.exe Pack- [#7163](https://github.com/NuGet/Home/issues/7163)
 
 **[Lista de todos los problemas corregidos en esta versión: 5,3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
 
