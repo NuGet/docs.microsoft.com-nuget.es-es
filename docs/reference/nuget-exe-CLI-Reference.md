@@ -1,16 +1,16 @@
 ---
-title: Referencia de la interfaz de la línea de comandos (CLI) de NuGet
+title: Referencia de la interfaz de Command-Line NuGet (CLI)
 description: Índice de referencia de la línea de comandos para la CLI de nuget.exe
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/23/2018
 ms.topic: reference
-ms.openlocfilehash: e9343f1fdddcf839322849925372587e685aef4a
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: a9a5fc4d3b1e0f19fa3ea249ca7759c8ebc2d12e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623154"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777700"
 ---
 # <a name="nuget-cli-reference"></a>Referencia de la CLI de NuGet
 
@@ -47,7 +47,7 @@ Comandos disponibles y aplicabilidad en la creación de paquetes, el consumo de 
 | [push](cli-reference/cli-ref-push.md) | Publicación | All | Publica un paquete en un origen del paquete. |
 | [config](cli-reference/cli-ref-config.md) | All | All | Obtiene o establece los valores de configuración de NuGet. |
 | [help or ?](cli-reference/cli-ref-help.md) | All | All | Muestra información de ayuda o ayuda para un comando. |
-| [locals](cli-reference/cli-ref-locals.md) | Consumo | 3.3 + | Muestra las ubicaciones de las carpetas *global-Packages*, *http-cache*y *temp* , y borra el contenido de esas carpetas. |
+| [locals](cli-reference/cli-ref-locals.md) | Consumo | 3.3 + | Muestra las ubicaciones de las carpetas *global-Packages*, *http-cache* y *temp* , y borra el contenido de esas carpetas. |
 | [restore](cli-reference/cli-ref-restore.md) | Consumo | 2.7+ | Restaura todos los paquetes a los que hace referencia el formato de administración de paquetes en uso. Cuando se ejecuta en mono, no se admite la restauración de paquetes con el formato PackageReference. |
 | [setapikey](cli-reference/cli-ref-setapikey.md) | Publicación, consumo | All | Guarda una clave de API para un origen de paquete determinado cuando el origen del paquete requiere una clave para el acceso. |
 | [spec](cli-reference/cli-ref-spec.md) | Creación | All | Genera un `.nuspec` archivo mediante tokens si se genera el archivo desde un proyecto de Visual Studio. |
@@ -68,7 +68,7 @@ Los distintos comandos hacen uso de varias [variables de entorno](cli-reference/
 
 Comandos de la CLI de NuGet por roles aplicables:
 
-| Role | Comandos: |
+| Role | Comandos |
 | --- | --- |
 | Consumo | `config`, `help`, `install`, `list`, `locals`, `restore`, `search`, `setapikey`, `sources`, `update` |
 | Creación | `config`, `help`, `init`, `pack`, `spec` |

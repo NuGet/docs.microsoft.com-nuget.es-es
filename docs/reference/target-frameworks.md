@@ -1,17 +1,17 @@
 ---
 title: Referencia de las plataformas de destino para NuGet
 description: Las referencias de las plataformas de destino de NuGet identifican y aíslan los componentes de un paquete que dependen de la plataforma.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 995f15ae2ad823d9c814cb7e78facddee713cc8f
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.openlocfilehash: 7671b50b84bf1447fe94e02896786d1f309425dd
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230517"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777314"
 ---
 # <a name="target-frameworks"></a>Versiones de .NET Framework de destino
 
@@ -33,7 +33,7 @@ A una plataforma normalmente se hace referencia mediante un moniker corto de la 
 
 Los clientes de NuGet admiten las plataformas indicadas en la tabla siguiente. Los equivalentes se muestran entre corchetes []. Tenga en cuenta que es posible que algunas herramientas, como `dotnet`, usen variaciones de TFM canónicos en algunos archivos. Por ejemplo, `dotnet pack` usa `.NETCoreApp2.0` en un archivo `.nuspec` en lugar de `netcoreapp2.0`. Las distintas herramientas del cliente de NuGet controlan estas variaciones sin problema, pero siempre debe usar TFM canónicos al editar archivos directamente.
 
-| nombre | Abreviatura | TFMs/TxMs |
+| Nombre | Abreviatura | TFMs/TxMs |
 | ------------- | ------------ | --------- |
 |.NET Framework | net | net11 |
 | | | net20 |
@@ -112,11 +112,11 @@ Los marcos de trabajo siguientes están en desuso. Los paquetes destinados a est
 | dotnet56 | |
 | winrt | win |
 
-## <a name="precedence"></a>Precedencia
+## <a name="precedence"></a>Prioridad
 
 Hay una serie de plataformas relacionadas y compatibles entre sí, pero no necesariamente equivalentes:
 
-| Framework | Puede usar |
+| Marco | Puede usar |
 | -- | --- |
 | uap (Plataforma universal de Windows) | win81 |
 | | wpa81 |
@@ -286,7 +286,7 @@ Las plataformas adicionales definidas por terceros proporcionan compatibilidad c
 
 Además, los paquetes de NuGet que tienen como destino Xamarin pueden usar otras plataformas definidas por Xamarin. Vea [Manually Creating NuGet Packages for Xamarin](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/) (Crear manualmente paquetes de NuGet para Xamarin).
 
-| nombre | Descripción | .NET Standard |
+| Nombre | Descripción | .NET Standard |
 | --- | --- | ---
 | monoandroid | Soporte mono para el sistema operativo Android | netstandard1.4 |
 | monotouch | Soporte mono para iOS | netstandard1.4 |

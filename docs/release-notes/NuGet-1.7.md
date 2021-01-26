@@ -1,20 +1,20 @@
 ---
 title: Notas de la versión de NuGet 1,7
 description: Notas de la versión de NuGet 1,7, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: a98da76038582202396c8da96f8eae166e6096f6
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 50eb326c5ada4f74685b07c0d1b0f84b14e547ac
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75383324"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777063"
 ---
 # <a name="nuget-17-release-notes"></a>Notas de la versión de NuGet 1,7
 
-[Notas de la versión de nuget 1,6](../release-notes/nuget-1.6.md) | notas de la [versión de Nuget 1,8](../release-notes/nuget-1.8.md)
+Notas de la [versión de NuGet 1,6](../release-notes/nuget-1.6.md)  |  [Notas de la versión de NuGet 1,8](../release-notes/nuget-1.8.md)
 
 NuGet 1,7 se lanzó el 4 de abril de 2012.
 
@@ -27,8 +27,8 @@ Nota: Si Visual Studio no le permite desinstalar la extensión (el botón Desins
 
 ## <a name="features"></a>Características
 
-### <a name="support-opening-readmetxt-file-after-installation"></a>Compatibilidad al abrir el archivo README. txt después de la instalación
-Novedad en 1,7, si el paquete incluye un archivo `readme.txt` en la raíz del paquete, NuGet abrirá automáticamente este archivo una vez que haya terminado de instalar el paquete.
+### <a name="support-opening-readmetxt-file-after-installation"></a>Compatibilidad con la apertura de readme.txt archivo después de la instalación
+Novedad en 1,7, si el paquete incluye un `readme.txt` archivo en la raíz del paquete, NuGet abrirá automáticamente este archivo una vez que haya terminado de instalar el paquete.
 
 ### <a name="show-prerelease-packages-in-the-manage-nuget-packages-dialog"></a>Mostrar paquetes de versión preliminar en el cuadro de diálogo administrar paquetes NuGet
 El cuadro de diálogo administrar paquetes NuGet ahora incluye una lista desplegable que ofrece la opción de mostrar paquetes de versión preliminar.
@@ -36,18 +36,18 @@ El cuadro de diálogo administrar paquetes NuGet ahora incluye una lista despleg
 ![Mostrar paquetes de versión preliminar](./media/prerelease-dropdown.png)
 
 ### <a name="show-package-restore-button-when-package-files-are-missing"></a>Botón Mostrar restaurar paquete cuando faltan archivos de paquete
-Al abrir la consola del administrador de paquetes o el cuadro de diálogo paquetes NuGet de administrador, NuGet comprobará si la solución actual ha habilitado el modo de restauración de paquetes y si falta algún archivo de paquete en la carpeta `packages`. Si se cumplen estas dos condiciones, NuGet le notificará y mostrará un práctico botón de restauración. Al hacer clic en este botón, se desencadena NuGet para restaurar todos los paquetes que faltan.
+Al abrir la consola del administrador de paquetes o el cuadro de diálogo paquetes NuGet de administrador, NuGet comprobará si la solución actual ha habilitado el modo de restauración de paquetes y si falta algún archivo de paquete en la `packages` carpeta. Si se cumplen estas dos condiciones, NuGet le notificará y mostrará un práctico botón de restauración. Al hacer clic en este botón, se desencadena NuGet para restaurar todos los paquetes que faltan.
 
 ![Botón restaurar paquete en el cuadro de diálogo](./media/packagerestore-dialog.png)
 
 ![Botón restaurar paquete en la consola](./media/packagerestore-console.png)
 
-### <a name="add-solution-level-packagesconfig-file"></a>Agregar archivo packages. config de nivel de solución
-En versiones anteriores de NuGet, cada proyecto tiene un archivo `packages.config` que realiza un seguimiento de los paquetes de NuGet que se instalan en ese proyecto. Sin embargo, no había ningún archivo similar en el nivel de la solución para realizar un seguimiento de los paquetes de nivel de solución. Como resultado, no había forma de restaurar paquetes de nivel de solución.
-Esta característica ahora está implementada en NuGet 1,7. El archivo de `packages.config` de nivel de la solución se coloca en la carpeta `.nuget` bajo la raíz de la solución y solo almacena los paquetes de nivel de solución.
+### <a name="add-solution-level-packagesconfig-file"></a>Agregar archivo de packages.config de nivel de solución
+En versiones anteriores de NuGet, cada proyecto tiene un `packages.config` archivo que realiza un seguimiento de los paquetes de Nuget que se instalan en ese proyecto. Sin embargo, no había ningún archivo similar en el nivel de la solución para realizar un seguimiento de los paquetes de nivel de solución. Como resultado, no había forma de restaurar paquetes de nivel de solución.
+Esta característica ahora está implementada en NuGet 1,7. El archivo de nivel de solución `packages.config` se coloca en la carpeta de la raíz de la `.nuget` solución y solo almacena los paquetes de nivel de solución.
 
-### <a name="remove-new-package-command"></a>Quitar el comando New-Package
-Debido a un uso reducido, se ha quitado el comando New-package. Se recomienda a los desarrolladores usar Nuget. exe o el práctico explorador de paquetes NuGet para crear paquetes.
+### <a name="remove-new-package-command"></a>Quitar New-Package comando
+Debido a un uso reducido, se ha quitado el comando New-Package. Se recomienda a los desarrolladores usar nuget.exe o el práctico explorador de paquetes NuGet para crear paquetes.
 
 ## <a name="bug-fixes"></a>Correcciones de errores
 NuGet 1,7 ha corregido muchos errores en torno al flujo de trabajo de restauración de paquetes y escenarios de control de código fuente y red.

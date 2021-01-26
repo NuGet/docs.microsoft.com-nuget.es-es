@@ -1,16 +1,16 @@
 ---
 title: Notas de la versión de NuGet 1,2
 description: Notas de la versión de NuGet 1,2, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 5d10d6bf27614980a144c30c3af6f9892a109061
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: af2248a41800f7641be9b77d7bb72e2a94d4ce47
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237196"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777197"
 ---
 # <a name="nuget-12-release-notes"></a>Notas de la versión de NuGet 1,2
 
@@ -18,7 +18,7 @@ Notas de la [versión de NuGet 1,0 y 1,1](../release-notes/nuget-1.1.md)  |  [No
 
 NuGet 1,2 se lanzó el 30 de marzo de 2011.
 
-## <a name="new-features"></a>Características nuevas
+## <a name="new-features"></a>Nuevas características
 
 ### <a name="framework-profile-support"></a>Compatibilidad con el perfil de Framework
 
@@ -42,8 +42,8 @@ Estos ensamblados no se incluyen en el paquete, ya que se supone que están en c
 
 |Atributo |Descripción|
 |----------------|-----------|
-|**assemblyName**|*Requerido* . Nombre del ensamblado como `System.Net` .|
-|**targetFramework**|*Opcional* . Permite especificar un marco de trabajo y un nombre de perfil (o alias) a los que se aplica este ensamblado de marco, como "net40" o "SL4". Usa el mismo formato descrito en la [compatibilidad con varias plataformas de destino](../create-packages/supporting-multiple-target-frameworks.md).|
+|**assemblyName**|*Requerido*. Nombre del ensamblado como `System.Net` .|
+|**targetFramework**|*Opcional*. Permite especificar un marco de trabajo y un nombre de perfil (o alias) a los que se aplica este ensamblado de marco, como "net40" o "SL4". Usa el mismo formato descrito en la [compatibilidad con varias plataformas de destino](../create-packages/supporting-multiple-target-frameworks.md).|
 
 ```xml
   <frameworkAssemblies>
@@ -65,6 +65,6 @@ La lista anterior era la más evidente de las muchas características que hemos 
 
 ## <a name="known-issues"></a>Problemas conocidos
 
-* **1,2 incompatibilidad de paquetes** : los paquetes compilados con la versión más reciente de la herramienta de línea de comandos, nuget.exe (> 1,2) no funcionarán con las versiones anteriores del complemento NuGet vs (como 1,1). Si se produce un mensaje de error que indica algo sobre el esquema incompatible, se produce este error. Actualice NuGet a la versión más reciente.
-* **Incompatibilidad con Nuget. Server** : Si está hospedando una fuente de Nuget interna mediante el proyecto Nuget. Server, deberá actualizar ese proyecto con la versión más reciente de Nuget. Server.
-* **Error de coincidencia de firma** : si se ha ejecutado un error durante una actualización con un mensaje que indica que no coincide la firma, primero debe desinstalar NuGet y luego instalarlo. Esto se muestra en la [Página de problemas conocidos](../release-notes/known-issues.md) , que proporciona más detalles. El problema solo afecta a los que ejecutan Visual Studio 2010 SP1 y tienen instalada una versión de NuGet 1,0 que se firmó incorrectamente. Esta versión solo está disponible en el sitio web de CodePlex durante un breve período de tiempo, por lo que este problema no debe afectar a demasiadas personas.
+* **1,2 incompatibilidad de paquetes**: los paquetes compilados con la versión más reciente de la herramienta de línea de comandos, nuget.exe (> 1,2) no funcionarán con las versiones anteriores del complemento NuGet vs (como 1,1). Si se produce un mensaje de error que indica algo sobre el esquema incompatible, se produce este error. Actualice NuGet a la versión más reciente.
+* **Incompatibilidad con Nuget. Server**: Si está hospedando una fuente de Nuget interna mediante el proyecto Nuget. Server, deberá actualizar ese proyecto con la versión más reciente de Nuget. Server.
+* **Error de coincidencia de firma**: si se ha ejecutado un error durante una actualización con un mensaje que indica que no coincide la firma, primero debe desinstalar NuGet y luego instalarlo. Esto se muestra en la [Página de problemas conocidos](../release-notes/known-issues.md) , que proporciona más detalles. El problema solo afecta a los que ejecutan Visual Studio 2010 SP1 y tienen instalada una versión de NuGet 1,0 que se firmó incorrectamente. Esta versión solo está disponible en el sitio web de CodePlex durante un breve período de tiempo, por lo que este problema no debe afectar a demasiadas personas.

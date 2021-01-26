@@ -1,16 +1,16 @@
 ---
 title: Referencia de PowerShell de Update-Package de NuGet
 description: Referencia de Update-Package comando de PowerShell en la consola del administrador de paquetes NuGet en Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: af918d11e8f976be962d52084c5eda4d53e382c6
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 159817e56d978d6432e989d2027907c0d2445222
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238041"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777381"
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Update-Package (consola del administrador de paquetes en Visual Studio)
 
@@ -18,7 +18,7 @@ ms.locfileid: "93238041"
 
 Actualiza un paquete y sus dependencias, o todos los paquetes de un proyecto, a una versión más reciente.
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 
 ```ps
 Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>]
@@ -45,7 +45,7 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | IncludePrerelease | Incluye paquetes de versión preliminar para las actualizaciones. |
 | Reinstalación | Resintalls paquetes con sus versiones instaladas actualmente. Vea [Reinstalación y actualización de paquetes](../../consume-packages/reinstalling-and-updating-packages.md). |
 | FileConflictAction | Acción que se realizará cuando se le pida que sobrescriba u omita los archivos existentes a los que hace referencia el proyecto. Los valores posibles son *overwrite, ignore, None, OverwriteAll* y *IgnoreAll* (3.0 +). |
-| DependencyVersion | La versión de los paquetes de dependencia que se va a usar, que puede ser una de las siguientes:<br/><ul><li>*Más bajo* (valor predeterminado): la versión más baja</li><li>*HighestPatch* : la versión con la revisión principal más baja, menor menor y más alta.</li><li>*HighestMinor* : la versión con el reenvío más bajo principal, más alto, más alto</li><li>*Mayor* (valor predeterminado para Update-Package sin parámetros): la versión más alta</li></ul>Puede establecer el valor predeterminado mediante la [`dependencyVersion`](../nuget-config-file.md#config-section) configuración del `Nuget.Config` archivo. |
+| DependencyVersion | La versión de los paquetes de dependencia que se va a usar, que puede ser una de las siguientes:<br/><ul><li>*Más bajo* (valor predeterminado): la versión más baja</li><li>*HighestPatch*: la versión con la revisión principal más baja, menor menor y más alta.</li><li>*HighestMinor*: la versión con el reenvío más bajo principal, más alto, más alto</li><li>*Mayor* (valor predeterminado para Update-Package sin parámetros): la versión más alta</li></ul>Puede establecer el valor predeterminado mediante la [`dependencyVersion`](../nuget-config-file.md#config-section) configuración del `Nuget.Config` archivo. |
 | ToHighestPatch | equivalente a Safe. |
 | ToHighestMinor | Restringe las actualizaciones a solo las versiones con la misma versión principal que el paquete instalado actualmente. |
 | WhatIf | Muestra lo que ocurre cuando se ejecuta el comando sin realizar realmente la actualización. |

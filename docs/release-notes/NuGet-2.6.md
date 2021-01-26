@@ -1,16 +1,16 @@
 ---
 title: Notas de la versión de NuGet 2,6
 description: Notas de la versión de NuGet 2.6.1 para WebMatrix, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 5f6504d180879f2e9140552e0d2e07e34a85a083
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 812a0e806e29c5a2141db4f2fbab4bf91b0983f9
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236987"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776830"
 ---
 # <a name="nuget-26-release-notes"></a>Notas de la versión de NuGet 2,6
 
@@ -41,7 +41,7 @@ Una de las características más solicitadas para el cliente de NuGet ha sido ad
 
 En abril de 2013, hicimos dos anuncios grandes con respecto a la compatibilidad de NuGet con XDT. La primera era que la propia biblioteca de XDT se [publicara como un paquete NuGet](https://nuget.org/packages/Microsoft.Web.Xdt) y [código abierto en Codeplex](http://xdt.codeplex.com/). Este paso habilitó el motor XDT para que lo use libremente otro software de código abierto, incluido el cliente de NuGet. El segundo anuncio fue el plan para admitir el uso del motor XDT para las transformaciones en el cliente de NuGet. NuGet 2,6 incluye esta integración.
 
-#### <a name="how-it-works"></a>Cómo funciona
+#### <a name="how-it-works"></a>Funcionamiento
 
 Para aprovechar la compatibilidad con XDT de NuGet, la mecánica es similar a la de la [característica de transformación de configuración actual](../create-packages/source-and-config-file-transformations.md).
 Los archivos de transformación se agregan a la carpeta de contenido del paquete. Sin embargo, mientras que las transformaciones de configuración usan un solo archivo para la instalación y desinstalación, las transformaciones XDT permiten un control exhaustivo sobre ambos procesos mediante los siguientes archivos:

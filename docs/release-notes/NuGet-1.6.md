@@ -1,20 +1,20 @@
 ---
 title: Notas de la versión de NuGet 1,6
 description: Notas de la versión de NuGet 1,6, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 2878d3809b2be4fb71f4e7b1a1e08e405ead44b9
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 08b1cb3736e645d6efcc33f920f521c9c0fc7507
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384142"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777017"
 ---
  # <a name="nuget-16-release-notes"></a>Notas de la versión de NuGet 1,6
 
-[Notas de la versión de nuget 1,5](../release-notes/nuget-1.5.md) | notas de la [versión de Nuget 1,7](../release-notes/nuget-1.7.md)
+Notas de la [versión de NuGet 1,5](../release-notes/nuget-1.5.md)  |  [Notas de la versión de NuGet 1,7](../release-notes/nuget-1.7.md)
 
 NuGet 1,6 se lanzó el 13 de diciembre de 2011.
 

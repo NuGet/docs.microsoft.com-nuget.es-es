@@ -1,16 +1,16 @@
 ---
 title: nuget.exe proveedores de credenciales
 description: nuget.exe proveedores de credenciales se autentican con una fuente y se implementan como archivos ejecutables de línea de comandos que siguen las convenciones específicas.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 41e3e63138351bafd5e3a56080268faef10d85a3
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 285504508fa88c96f5c7a23f15ef14d81ebc21e1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238119"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777775"
 ---
 # <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>Autenticación de fuentes con nuget.exe proveedores de credenciales
 
@@ -22,11 +22,11 @@ Consulte [consumo de paquetes de fuentes autenticadas](../../consume-packages/co
 
 nuget.exe proveedores de credenciales se pueden usar de tres maneras:
 
-- **Globalmente** : para que un proveedor de credenciales esté disponible para todas las instancias de que se `nuget.exe` ejecutan en el perfil del usuario actual, agréguelo a `%LocalAppData%\NuGet\CredentialProviders` . Es posible que tenga que crear la `CredentialProviders` carpeta. Los proveedores de credenciales se pueden instalar en la raíz de la `CredentialProviders`  carpeta o en una subcarpeta. Si un proveedor de credenciales tiene varios archivos o ensamblados, puede usar las subcarpetas para mantener organizados los proveedores.
+- **Globalmente**: para que un proveedor de credenciales esté disponible para todas las instancias de que se `nuget.exe` ejecutan en el perfil del usuario actual, agréguelo a `%LocalAppData%\NuGet\CredentialProviders` . Es posible que tenga que crear la `CredentialProviders` carpeta. Los proveedores de credenciales se pueden instalar en la raíz de la `CredentialProviders`  carpeta o en una subcarpeta. Si un proveedor de credenciales tiene varios archivos o ensamblados, puede usar las subcarpetas para mantener organizados los proveedores.
 
-- **Desde una variable de entorno** : los proveedores de credenciales se pueden almacenar en cualquier lugar y se puede acceder a ellos `nuget.exe` mediante la configuración de la `%NUGET_CREDENTIALPROVIDERS_PATH%` variable de entorno en la ubicación del proveedor. Esta variable puede ser una lista separada por punto y coma (por ejemplo, `path1;path2` ) si tiene varias ubicaciones.
+- **Desde una variable de entorno**: los proveedores de credenciales se pueden almacenar en cualquier lugar y se puede acceder a ellos `nuget.exe` mediante la configuración de la `%NUGET_CREDENTIALPROVIDERS_PATH%` variable de entorno en la ubicación del proveedor. Esta variable puede ser una lista separada por punto y coma (por ejemplo, `path1;path2` ) si tiene varias ubicaciones.
 
-- **Junto nuget.exe** : nuget.exe los proveedores de credenciales se pueden colocar en la misma carpeta que `nuget.exe` .
+- **Junto nuget.exe**: nuget.exe los proveedores de credenciales se pueden colocar en la misma carpeta que `nuget.exe` .
 
 Al cargar proveedores de credenciales, `nuget.exe` busca en las ubicaciones anteriores, en orden, para cualquier archivo denominado `credentialprovider*.exe` y, a continuación, carga esos archivos en el orden en que se encuentran. Si hay varios proveedores de credenciales en la misma carpeta, se cargan en orden alfabético.
 
@@ -70,9 +70,11 @@ Un proveedor debe hacer lo siguiente:
 
 Stdout de ejemplo:
 
-    { "Username" : "freddy@example.com",
-      "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
-      "Message"  : "" }
+```
+{ "Username" : "freddy@example.com",
+    "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
+    "Message"  : "" }
+```
 
 ## <a name="troubleshooting-a-credential-provider"></a>Solucionar problemas de un proveedor de credenciales
 

@@ -1,16 +1,16 @@
 ---
 title: Proveedores de credenciales de NuGet para Visual Studio
 description: Los proveedores de credenciales de NuGet se autentican con las fuentes implementando la interfaz IVsCredentialProvider en una extensión de Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 13b6f5abe93a17c809564265990f86f6780aa67e
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.openlocfilehash: f324f1e27e0d718571525152fcf16b55b900dbaa
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230816"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777758"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>Autenticar fuentes en Visual Studio con proveedores de credenciales de NuGet
 
@@ -19,14 +19,14 @@ Después de instalar un proveedor de credenciales de NuGet para Visual Studio, l
 
 En [el ejemplo VsCredentialProvider](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)se puede encontrar una implementación de ejemplo.
 
-En Visual Studio, NuGet usa un `VsCredentialProviderImporter` interno que también examina los proveedores de credenciales de complemento. Estos proveedores de credenciales de complemento deben ser detectables como una exportación MEF de tipo `IVsCredentialProvider`.
+En Visual Studio, NuGet usa un interno `VsCredentialProviderImporter` que también examina los proveedores de credenciales de complemento. Estos proveedores de credenciales de complemento deben ser detectables como una exportación MEF de tipo `IVsCredentialProvider` .
 
 A partir de 4.8 + NuGet en Visual Studio, también se admiten los nuevos complementos de autenticación multiplataforma, pero no son el enfoque recomendado por motivos de rendimiento.
 
 > [!Note]
 > Los proveedores de credenciales de NuGet para Visual Studio deben instalarse como una extensión de Visual Studio normal y requerirán [visual studio 2017](https://aka.ms/vs/15/release/vs_enterprise.exe) o posterior.
 >
-> Los proveedores de credenciales de NuGet para Visual Studio solo funcionan en Visual Studio (no en dotnet restore o Nuget. exe). Para los proveedores de credenciales con Nuget. exe, consulte [proveedores de credenciales de Nuget. exe](nuget-exe-Credential-providers.md).
+> Los proveedores de credenciales de NuGet para Visual Studio solo funcionan en Visual Studio (no en dotnet restore ni en nuget.exe). Para los proveedores de credenciales con nuget.exe, consulte [nuget.exe proveedores de credenciales](nuget-exe-Credential-providers.md).
 > Para los proveedores de credenciales en dotnet y MSBuild, consulte [Complementos entre plataformas NuGet](nuget-cross-platform-authentication-plugin.md)
 
 ## <a name="creating-a-nuget-credential-provider-for-visual-studio"></a>Creación de un proveedor de credenciales de NuGet para Visual Studio
@@ -35,8 +35,8 @@ La extensión de Visual Studio de NuGet 3.6 + implementa un CredentialService in
 
 Durante la adquisición de credenciales, el servicio de credenciales probará los proveedores de credenciales en el siguiente orden y se detendrán en cuanto se adquieran las credenciales:
 
-1. Las credenciales se capturarán desde los archivos de configuración de NuGet (mediante el `SettingsCredentialProvider`integrado).
-1. Si el origen del paquete está en Visual Studio Team Services, se usará el `VisualStudioAccountProvider`.
+1. Las credenciales se capturarán desde los archivos de configuración de NuGet (con el integrado `SettingsCredentialProvider` ).
+1. Si el origen del paquete está en Visual Studio Team Services, se `VisualStudioAccountProvider` usará.
 1. Todos los demás proveedores de credenciales de Visual Studio se intentarán secuencialmente.
 1. Intente usar todos los proveedores de credenciales entre plataformas de NuGet secuencialmente.
 1. Si todavía no se han adquirido credenciales, se solicitará al usuario las credenciales mediante un cuadro de diálogo de autenticación básica estándar.
@@ -62,10 +62,10 @@ En [el ejemplo VsCredentialProvider](https://github.com/NuGet/Samples/tree/maste
 
 Cada proveedor de credenciales de NuGet para Visual Studio debe:
 
-1. Determine si puede proporcionar credenciales para el URI de destino antes de iniciar la adquisición de credenciales. Si el proveedor no puede proporcionar credenciales para el origen de destino, debe devolver `null`.
+1. Determine si puede proporcionar credenciales para el URI de destino antes de iniciar la adquisición de credenciales. Si el proveedor no puede proporcionar credenciales para el origen de destino, debe devolver `null` .
 1. Si el proveedor administra las solicitudes para el URI de destino, pero no puede proporcionar credenciales, se debe producir una excepción.
 
-Un proveedor de credenciales de NuGet personalizado para Visual Studio debe implementar la interfaz `IVsCredentialProvider` disponible en el [paquete NuGet. VisualStudio](https://www.nuget.org/packages/NuGet.VisualStudio/).
+Un proveedor de credenciales de NuGet personalizado para Visual Studio debe implementar la `IVsCredentialProvider` interfaz disponible en el [paquete NuGet. VisualStudio](https://www.nuget.org/packages/NuGet.VisualStudio/).
 
 #### <a name="getcredentialasync"></a>GetCredentialAsync
 
@@ -78,4 +78,4 @@ Un proveedor de credenciales de NuGet personalizado para Visual Studio debe impl
 | bool Interactive | Si es true, el proveedor de credenciales debe suprimir todos los mensajes del usuario y usar los valores predeterminados en su lugar. |
 | CancellationToken cancellationToken | Este token de cancelación debe comprobarse para determinar si se ha cancelado la operación que solicita las credenciales. |
 
-**Valor devuelto**: un objeto de credenciales que implementa la [interfaz`System.Net.ICredentials`](/dotnet/api/system.net.icredentials?view=netstandard-2.0).
+**Valor devuelto**: un objeto de credenciales que implementa la [ `System.Net.ICredentials` interfaz](/dotnet/api/system.net.icredentials?view=netstandard-2.0).

@@ -1,16 +1,16 @@
 ---
 title: Referencia de PowerShell de Get-Project de NuGet
 description: Referencia del comando de PowerShell de GetProject en la consola del administrador de paquetes NuGet en Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 6d9e1d48c8e1838f193878cab3483b1bfba7d7f0
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 16b3ffc0a375b8027c615020243a7289520715f8
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238080"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777471"
 ---
 # <a name="get-project-package-manager-console-in-visual-studio"></a>Get-Project (consola del administrador de paquetes en Visual Studio)
 
@@ -29,7 +29,7 @@ Get-Project [[-Name] <string>] [-All] [<CommonParameters>]
 | Parámetro | Descripción |
 | --- | --- |
 | Nombre | Especifica el proyecto que se va a mostrar, que tiene como valor predeterminado el proyecto predeterminado seleccionado en la consola del administrador de paquetes. El modificador-name es opcional. |
-| Todo | Muestra información de todos los proyectos de la solución; el orden de los proyectos no es determinista. |
+| All | Muestra información de todos los proyectos de la solución; el orden de los proyectos no es determinista. |
 
 Ninguno de estos parámetros acepta caracteres comodín o de entrada de canalización.
 

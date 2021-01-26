@@ -1,26 +1,26 @@
 ---
-title: Referencia del archivo packages. config de NuGet
+title: Referencia de archivo packages.config NuGet
 description: En algunos tipos de proyecto, el archivo packages.config mantiene la lista de paquetes de NuGet usados en el proyecto.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/21/2018
 ms.topic: reference
-ms.openlocfilehash: 3665989d35d7362b30a106cf6b4ed0210619efee
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.openlocfilehash: 3e5db779f735cd42aa331f9f8a93496d32c8df54
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230584"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777627"
 ---
 # <a name="packagesconfig-reference"></a>Referencia de packages.config
 
 El archivo `packages.config` se usa en algunos tipos de proyecto para mantener la lista de paquetes a los que hace referencia el proyecto. Esto permite que NuGet restaure fácilmente las dependencias del proyecto cuando el proyecto se debe transportar a otro equipo (por ejemplo, a un servidor de compilación) sin todos estos paquetes.
 
-Si se utiliza, `packages.config` se encuentra normalmente en una raíz del proyecto. Se crea automáticamente cuando se ejecuta la primera operación de NuGet, pero también se puede crear manualmente antes de ejecutar cualquier comando, como `nuget restore`.
+Si se usa, `packages.config` normalmente se encuentra en una raíz del proyecto. Se crea automáticamente cuando se ejecuta la primera operación de NuGet, pero también se puede crear manualmente antes de ejecutar cualquier comando como `nuget restore` .
 
-Los proyectos que usan [PackageReference](../consume-packages/Package-References-in-Project-Files.md) no usan `packages.config`.
+Los proyectos que usan [PackageReference](../consume-packages/Package-References-in-Project-Files.md) no usan `packages.config` .
 
-## <a name="schema"></a>Esquema
+## <a name="schema"></a>Schema
 
 El esquema es sencillo: a continuación del encabezado XML estándar hay un nodo `<packages>` que contiene uno o varios elementos `<package>`, uno para cada referencia. Cada elemento `<package>` puede tener los siguientes atributos:
 

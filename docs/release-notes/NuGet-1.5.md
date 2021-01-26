@@ -1,20 +1,20 @@
 ---
 title: Notas de la versión de NuGet 1,5
 description: Notas de la versión de NuGet 1,5, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 940a19cdc485d611d03b52ee3102bc95a78a36bb
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: c9946f3d8cf545ec14f842c40105743c231b4b72
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75383354"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777093"
 ---
 # <a name="nuget-15-release-notes"></a>Notas de la versión de NuGet 1,5
 
-[Notas de la versión de nuget 1,4](../release-notes/nuget-1.4.md) | notas de la [versión de Nuget 1,6](../release-notes/nuget-1.6.md)
+Notas de la [versión de NuGet 1,4](../release-notes/nuget-1.4.md)  |  [Notas de la versión de NuGet 1,6](../release-notes/nuget-1.6.md)
 
 NuGet 1,5 se lanzó el 30 de agosto de 2011.
 
@@ -29,7 +29,7 @@ Para obtener más información acerca de esta característica, lea esta [entrada
 
 ### <a name="explicit-assembly-references"></a>Referencias de ensamblado explícitas
 
-Se ha agregado un nuevo elemento `<references />` que se usa para especificar explícitamente a qué ensamblados del paquete se debe hacer referencia.
+Se ha agregado un nuevo `<references />` elemento que se usa para especificar explícitamente a qué ensamblados del paquete se debe hacer referencia.
 
 Por ejemplo, si agrega lo siguiente:
 
@@ -40,18 +40,18 @@ Por ejemplo, si agrega lo siguiente:
 </references>
 ```
 
-A continuación, solo se hará referencia a los `xunit.dll` y `xunit.extensions.dll` desde la subcarpeta de [marco/perfil](../reference/nuspec.md#explicit-assembly-references) adecuada de la carpeta `lib`, aunque haya otros ensamblados en la carpeta.
+A continuación, solo se `xunit.dll` `xunit.extensions.dll` hará referencia a y desde la subcarpeta [Framework/Profile](../reference/nuspec.md#explicit-assembly-references) adecuada de la `lib` carpeta, incluso si hay otros ensamblados en la carpeta.
 
-Si se omite este elemento, se aplica el comportamiento habitual, que consiste en hacer referencia a todos los ensamblados de la carpeta `lib`.
+Si se omite este elemento, se aplica el comportamiento habitual, que consiste en hacer referencia a todos los ensamblados de la `lib` carpeta.
 
 __¿Para qué sirve esta característica?__
 
-Esta característica admite ensamblados solo en tiempo de diseño. Por ejemplo, al usar contratos de código, es necesario que los ensamblados del contrato estén junto a los ensamblados en tiempo de ejecución que aumentan para que Visual Studio pueda encontrarlos, pero el proyecto no debe hacer referencia realmente a los ensamblados del contrato y no debe copiarse en la carpeta `bin`.
+Esta característica admite ensamblados solo en tiempo de diseño. Por ejemplo, al usar contratos de código, es necesario que los ensamblados del contrato estén junto a los ensamblados en tiempo de ejecución que aumentan para que Visual Studio pueda encontrarlos, pero el proyecto no debe hacer referencia realmente a los ensamblados del contrato y no debe copiarse en la `bin` carpeta.
 
 Del mismo modo, la característica se puede usar para los marcos de pruebas unitarias, como XUnit, que necesitan que sus ensamblados de herramientas se ubiquen junto a los ensamblados en tiempo de ejecución, pero se excluyen de las referencias del proyecto.
 
 ### <a name="added-ability-to-exclude-files-in-the-nuspec"></a>Se ha agregado la capacidad de excluir archivos en el archivo. nuspec
-El elemento `<file>` dentro de un archivo de `.nuspec` se puede usar para incluir un archivo específico o un conjunto de archivos mediante un carácter comodín. Cuando se usa un carácter comodín, no hay forma de excluir un subconjunto específico de los archivos incluidos. Por ejemplo, supongamos que desea todos los archivos de texto dentro de una carpeta excepto uno específico.
+El `<file>` elemento dentro de un `.nuspec` archivo se puede utilizar para incluir un archivo específico o un conjunto de archivos mediante un carácter comodín. Cuando se usa un carácter comodín, no hay forma de excluir un subconjunto específico de los archivos incluidos. Por ejemplo, supongamos que desea todos los archivos de texto dentro de una carpeta excepto uno específico.
 
 ```xml
 <files>
@@ -81,10 +81,12 @@ Al desinstalar un paquete con dependencias, NuGet solicita que se quiten las dep
 ![Quitar paquetes dependientes](./media/remove-dependent-packages.png)
 
 
-### <a name="get-package-command-improvement"></a>mejora del comando `Get-Package`
-El comando `Get-Package` admite ahora un parámetro `-ProjectName`. Por lo tanto, el comando
+### <a name="get-package-command-improvement"></a>`Get-Package` mejora de comandos
+El `Get-Package` comando ahora admite un `-ProjectName` parámetro. Por lo tanto, el comando
 
-    Get-Package –ProjectName A
+```
+Get-Package –ProjectName A
+```
 
 enumerará todos los paquetes instalados en el proyecto A.
 
@@ -107,10 +109,10 @@ Los paquetes NuGet ahora incluyen compatibilidad con las notas de la versión. L
 
 ![Notas de la versión en la pestaña actualizaciones](./media/manage-nuget-packages-release-notes.png)
 
-Para agregar notas de la versión a un paquete, use el nuevo elemento de metadatos de `<releaseNotes />` en el archivo NuSpec.
+Para agregar notas de la versión a un paquete, use el nuevo `<releaseNotes />` elemento de metadatos en el archivo NuSpec.
 
-### <a name="nuspec-ltfiles-gt-improvement"></a>mejora de ltfiles/&gt; de. nuspec &
-El archivo `.nuspec` ahora permite un elemento `<files />` vacío, que indica a Nuget. exe que no incluya ningún archivo en el paquete.
+### <a name="nuspec-ltfiles-gt-improvement"></a>. nuspec &ltfiles/ &gt; Improvement
+El `.nuspec` archivo permite ahora `<files />` un elemento vacío, que indica nuget.exe no incluir ningún archivo en el paquete.
 
 ## <a name="bug-fixes"></a>Correcciones de errores
 NuGet 1,5 tenía un total de 107 elementos de trabajo fijos. 103 se marcaron como errores.
@@ -119,6 +121,6 @@ Para obtener una lista completa de los elementos de trabajo corregidos en NuGet 
 
 ## <a name="bug-fixes-worth-noting"></a>Las correcciones de errores merecen tener en cuenta:
 
-* [Problema 1273](http://nuget.codeplex.com/workitem/1273): se ha realizado `packages.config` el control de versiones más descriptivo al ordenar los paquetes alfabéticamente y quitar el espacio en blanco adicional.
-* [Problema 844](http://nuget.codeplex.com/workitem/844): los números de versión ahora están normalizados para que `Install-Package 1.0` funcione en un paquete con la versión `1.0.0`.
-* [Problema 1060](http://nuget.codeplex.com/workitem/1060): al crear un paquete con Nuget. exe, la marca `-Version` invalida el elemento `<version />`.
+* [Problema 1273](http://nuget.codeplex.com/workitem/1273): se ha mejorado el `packages.config` control de versiones al ordenar los paquetes alfabéticamente y quitar el espacio en blanco adicional.
+* [Problema 844](http://nuget.codeplex.com/workitem/844): los números de versión ahora están normalizados para que `Install-Package 1.0` funcione en un paquete con la versión `1.0.0` .
+* [Problema 1060](http://nuget.codeplex.com/workitem/1060): al crear un paquete mediante nuget.exe, la `-Version` marca invalida el `<version />` elemento.

@@ -1,24 +1,24 @@
 ---
 title: Notas de la versión de NuGet 1,3
 description: Notas de la versión de NuGet 1,3, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 45d5caa46d532670e370b81f675663b3c5aaaa95
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: 54eda149352810eacc1d6340ad16cec1b03194e3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825264"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777117"
 ---
 # <a name="nuget-13-release-notes"></a>Notas de la versión de NuGet 1,3
 
-[Notas de la versión de nuget 1,2](../release-notes/nuget-1.2.md) | notas de la [versión de Nuget 1,4](../release-notes/nuget-1.4.md)
+Notas de la [versión de NuGet 1,2](../release-notes/nuget-1.2.md)  |  [Notas de la versión de NuGet 1,4](../release-notes/nuget-1.4.md)
 
 NuGet 1,3 se lanzó el 25 de abril de 2011.
 
-## <a name="new-features"></a>Características nuevas
+## <a name="new-features"></a>Nuevas características
 
 ### <a name="streamlined-package-creation-with-symbol-server-integration"></a>Creación de paquetes simplificada con la integración del servidor de símbolos
 
@@ -29,29 +29,39 @@ El equipo de NuGet se asoció con el personal de [SymbolSource.org](http://www.s
 Este comando facilita la obtención de la página de proyecto de un paquete desde la consola del administrador de paquetes. También proporciona opciones para abrir la dirección URL de la licencia y la página notificar abuso del paquete.
 La sintaxis del comando es:
 
-    Open-PackagePage -Id <string> [-Version] [-Source] [-License] [-ReportAbuse] [-PassThru]
+```
+Open-PackagePage -Id <string> [-Version] [-Source] [-License] [-ReportAbuse] [-PassThru]
+```
 
-La opción `-PassThru` se utiliza para devolver el valor de la dirección URL especificada.
+La `-PassThru` opción se usa para devolver el valor de la dirección URL especificada.
 
 Ejemplos:
 
-    PM> Open-PackagePage Ninject
+```
+PM> Open-PackagePage Ninject
+```
 
 Abre un explorador en la dirección URL del proyecto especificada en el paquete Ninject.
 
-    PM> Open-PackagePage Ninject -License
+```
+PM> Open-PackagePage Ninject -License
+```
 
 Abre un explorador en la dirección URL de la licencia especificada en el paquete Ninject.
 
-    PM> Open-PackagePage Ninject -ReportAbuse
+```
+PM> Open-PackagePage Ninject -ReportAbuse
+```
 
 Abre un explorador en la dirección URL del origen del paquete actual que se usa para notificar el abuso del paquete especificado.
 
-    PM> $url = Open-PackagePage Ninject -License -WhatIf -PassThru
+```
+PM> $url = Open-PackagePage Ninject -License -WhatIf -PassThru
+```
 
 Asigna la dirección URL de la licencia a la variable, $url, sin abrir la dirección URL en un explorador.
 
-### <a name="performance-improvements"></a>Mejoras en el rendimiento
+### <a name="performance-improvements"></a>Mejoras de rendimiento
 
 NuGet 1,3 presenta muchas mejoras de rendimiento. NuGet 1,3 evita la descarga de la misma versión de un paquete varias veces mediante la inclusión de una caché por usuario local. Se puede tener acceso a la memoria caché y borrarse mediante el cuadro de diálogo Configuración del administrador de paquetes:
 
@@ -59,13 +69,13 @@ NuGet 1,3 presenta muchas mejoras de rendimiento. NuGet 1,3 evita la descarga de
 
 Otras mejoras de rendimiento incluyen la adición de compatibilidad para la compresión HTTP y la mejora de la velocidad de instalación de paquetes en Visual Studio.
 
-### <a name="visual-studio-and-nugetexe-uses-the-same-list-of-package-sources"></a>Visual Studio y Nuget. exe usan la misma lista de orígenes de paquetes
+### <a name="visual-studio-and-nugetexe-uses-the-same-list-of-package-sources"></a>Visual Studio y nuget.exe usan la misma lista de orígenes de paquetes
 
-Antes de NuGet 1,3, la lista de orígenes de paquetes usados por Nuget. exe y el complemento NuGet de Visual Studio no se almacenaban en el mismo lugar. NuGet 1,3 ahora usa la misma lista en ambos lugares. La lista se almacena en `NuGet.Config` y se almacena en la carpeta AppData.
+Antes de NuGet 1,3, la lista de orígenes de paquetes usados por nuget.exe y el Add-In NuGet de Visual Studio no se almacenaban en el mismo lugar. NuGet 1,3 ahora usa la misma lista en ambos lugares. La lista se almacena en `NuGet.Config` y se almacena en la carpeta appdata.
 
-### <a name="nugetexe-ignores-files-and-folders-that-start-with--by-default"></a>Nuget. exe omite los archivos y las carpetas que comienzan por '. ' de forma predeterminada
+### <a name="nugetexe-ignores-files-and-folders-that-start-with--by-default"></a>nuget.exe omite los archivos y carpetas que empiezan por '. ' de forma predeterminada
 
-Para que NuGet funcione bien con los sistemas de control de código fuente, como Subversion y Mercurial, Nuget. exe omite las carpetas y los archivos que empiezan por el carácter "." al crear paquetes. Esto se puede invalidar mediante dos nuevas marcas:
+Para que NuGet funcione bien con los sistemas de control de código fuente, como Subversion y Mercurial, nuget.exe omite las carpetas y los archivos que empiezan por el carácter '. ' al crear paquetes. Esto se puede invalidar mediante dos nuevas marcas:
 
 * __-NoDefaultExcludes__ se usa para invalidar esta configuración e incluir todos los archivos.
 * __-Exclude__ se usa para agregar otros archivos o carpetas para excluirlos mediante un patrón. Por ejemplo, para excluir todos los archivos con la extensión de archivo ". bak"
@@ -87,4 +97,4 @@ Para obtener una lista completa de las correcciones de errores, consulte el [seg
 ## <a name="bug-fixes-worth-noting"></a>Correcciones de errores que merece la pena mencionar
 
 * Los paquetes con archivos de origen funcionan en ambos sitios web y en proyectos de aplicación Web.
-En el caso de los sitios web, los archivos de origen se copian en la carpeta `App_Code`
+En el caso de los sitios web, los archivos de origen se copian en la `App_Code` carpeta

@@ -1,16 +1,16 @@
 ---
 title: Referencia de PowerShell de Register-TabExpansion de NuGet
 description: Referencia de Register-TabExpansion comando de PowerShell en la consola del administrador de paquetes NuGet en Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 9d5bae2878cb6bf0848bca9a5ed9af0fee61bb85
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 6ad0da0e84fc2e31499c06bde013d2a256987d9a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237158"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777458"
 ---
 # <a name="register-tabexpansion-package-manager-console-in-visual-studio"></a>Register-TabExpansion (consola del administrador de paquetes en Visual Studio)
 

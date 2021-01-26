@@ -1,16 +1,16 @@
 ---
 title: Referencia de PowerShell de Sync-Package de NuGet
 description: Referencia de Sync-Package comando de PowerShell en la consola del administrador de paquetes NuGet en Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: fc4c875b5dcb0b90e4d048daf5984ed265370090
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 4261b0a20a4fd4183f7b08096c3477e6f9d0a02d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238054"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777404"
 ---
 # <a name="sync-package-package-manager-console-in-visual-studio"></a>Sync-Package (consola del administrador de paquetes en Visual Studio)
 
@@ -37,7 +37,7 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
 | Source | La dirección URL o la ruta de acceso de la carpeta del origen del paquete que se va a buscar. Las rutas de acceso de la carpeta local pueden ser absolutas o relativas a la carpeta actual. Si se omite, `Sync-Package` busca el origen del paquete seleccionado actualmente. |
 | IncludePrerelease | Incluye paquetes de versión preliminar en la sincronización. |
 | FileConflictAction | Acción que se realizará cuando se le pida que sobrescriba u omita los archivos existentes a los que hace referencia el proyecto. Los valores posibles son *overwrite, ignore, None, OverwriteAll* y *(3.0 +)* *IgnoreAll*. |
-| DependencyVersion | La versión de los paquetes de dependencia que se va a usar, que puede ser una de las siguientes:<br/><ul><li>*Más bajo* (valor predeterminado): la versión más baja</li><li>*HighestPatch* : la versión con la revisión principal más baja, menor menor y más alta.</li><li>*HighestMinor* : la versión con el reenvío más bajo principal, más alto, más alto</li><li>*Mayor* (valor predeterminado para Update-Package sin parámetros): la versión más alta</li></ul>Puede establecer el valor predeterminado mediante la [`dependencyVersion`](../nuget-config-file.md#config-section) configuración del `Nuget.Config` archivo. |
+| DependencyVersion | La versión de los paquetes de dependencia que se va a usar, que puede ser una de las siguientes:<br/><ul><li>*Más bajo* (valor predeterminado): la versión más baja</li><li>*HighestPatch*: la versión con la revisión principal más baja, menor menor y más alta.</li><li>*HighestMinor*: la versión con el reenvío más bajo principal, más alto, más alto</li><li>*Mayor* (valor predeterminado para Update-Package sin parámetros): la versión más alta</li></ul>Puede establecer el valor predeterminado mediante la [`dependencyVersion`](../nuget-config-file.md#config-section) configuración del `Nuget.Config` archivo. |
 | WhatIf | Muestra lo que ocurre cuando se ejecuta el comando sin realizar realmente la sincronización. |
 
 Ninguno de estos parámetros acepta caracteres comodín o de entrada de canalización.

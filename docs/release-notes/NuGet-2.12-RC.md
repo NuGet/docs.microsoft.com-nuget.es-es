@@ -1,30 +1,30 @@
 ---
-title: Notas de la versión 2.12 RC de NuGet
-description: Notas de la versión de NuGet 2.12 RC incluidos problemas conocidos, correcciones de errores, características agregadas y dcr.
-author: karann-msft
-ms.author: karann
+title: Notas de la versión de NuGet 2,12-RC
+description: Notas de la versión de NuGet 2,12 RC, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 5321d5cfbb1565daa0dab54904287475cc721c4f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 049a38e9ddd1f33b6d0c87aed5ccb64c0e0d9740
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549764"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776950"
 ---
-# <a name="nuget-212-rc-release-notes"></a>Notas de la versión 2.12 RC de NuGet
+# <a name="nuget-212-rc-release-notes"></a>Notas de la versión de NuGet 2,12-RC
 
-NuGet 2.12-RC se lanzó el 22 de junio de 2016 como una actualización de la extensión de VSIX 2.12.0-rc para Visual Studio 2013.
+NuGet 2,12-RC se publicó el 22 de junio de 2016 como una actualización de 2.12.0-RC VSIX para Visual Studio 2013.
 
-### <a name="updates-in-this-release"></a>Actualizaciones de esta versión
+### <a name="updates-in-this-release"></a>Actualizaciones en esta versión
 
-* Soporte completo NetStandard y NetCoreApp para VS2013.
-* Adición de inclusión/exclusión para `.nuspec` entradas de dependencia.
-* Agregar compatibilidad para "no_proxy" especificar las excepciones de proxy.
-* TFS relacionados con las correcciones.
+* Compatibilidad completa con NetStandard y NetCoreApp para VS2013.
+* Agregando include/exclude a `.nuspec` las entradas de dependencia.
+* Agregue compatibilidad con "no_proxy" para especificar las excepciones de proxy.
+* Correcciones relacionadas con TFS.
 
-Una lista de revisiones en esta versión se puede encontrar en GitHub en el [2.12 hito](https://github.com/NuGet/Home/issues?q=milestone%3A2.12+is%3Aclosed)
+Puede encontrar una lista de las correcciones en esta versión en GitHub en el [hito 2,12](https://github.com/NuGet/Home/issues?q=milestone%3A2.12+is%3Aclosed)
 
-Descargar la extensión para:
+Descargue la extensión para:
 
 * [Visual Studio 2013](https://dist.nuget.org/visualstudio-2013-vsix/v2.12.0-rc/NuGet.Tools.vsix)

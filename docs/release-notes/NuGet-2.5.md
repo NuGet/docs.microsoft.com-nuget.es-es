@@ -1,16 +1,16 @@
 ---
 title: Notas de la versión de NuGet 2,5
 description: Notas de la versión de NuGet 2,5, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 940582d5173f5a53dcd04cf1258fc02a2439af4e
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: efcfb9767772c9e27372b4616f817656d51efed8
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237093"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776864"
 ---
 # <a name="nuget-25-release-notes"></a>Notas de la versión de NuGet 2,5
 
