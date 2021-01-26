@@ -10,12 +10,12 @@ ms.technology: ''
 description: El servicio de publicación permite a los clientes publicar paquetes de símbolos nuevos.
 keywords: Paquete de símbolos de la API de NuGet
 ms.reviewer: karann
-ms.openlocfilehash: bd4a10cc976c9d0775a63cfe61c35327c196065c
-ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
+ms.openlocfilehash: 91bb4c9ca77fd7f1ff35831e02eb4f9d65d641c5
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738882"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98773901"
 ---
 # <a name="push-symbol-packages"></a>Paquetes de símbolos de envío
 
@@ -42,7 +42,9 @@ La dirección URL base para las siguientes API es el valor de la `@id` propiedad
 
 nuget.org admite la inserción del nuevo formato de paquetes de símbolos ([snupkg](../create-packages/Symbol-Packages-snupkg.md)) mediante la siguiente API. 
 
-    PUT https://www.nuget.org/api/v2/symbolpackage
+```
+PUT https://www.nuget.org/api/v2/symbolpackage
+```
 
 Los paquetes de símbolos con el mismo identificador y versión se pueden enviar varias veces. Un paquete de símbolos se rechazará en los casos siguientes.
 - No existe un paquete con el mismo identificador y versión.
@@ -61,7 +63,7 @@ La clave de API es una cadena opaca procedente del origen del paquete por el usu
 
 El cuerpo de la solicitud para la inserciones de símbolos es igual que con el cuerpo de la solicitud de una solicitud de envío de paquete (consulte la [Introducción y eliminación de paquetes](package-publish-resource.md)). 
 
-### <a name="response"></a>Respuesta
+### <a name="response"></a>Response
 
 Código de estado | Significado
 ----------- | -------

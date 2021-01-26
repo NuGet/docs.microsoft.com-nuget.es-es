@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: f574849bf99cd4da4eefd55c3dd5a0648042f0c1
-ms.sourcegitcommit: 7e9c0630335ef9ec1e200e2ee9065f702e52a8ec
+ms.openlocfilehash: 2893e13ff7b070844a2bdd5722da3aa1f123538d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85292298"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98773966"
 ---
 # <a name="autocomplete"></a>Autocompletar
 
@@ -21,11 +21,11 @@ Es posible crear un identificador de paquete y una experiencia de autocompletar 
 
 `@type`Se usan los siguientes valores:
 
-Valor de@type                          | Notas
+Valor de @type                          | Notas
 ------------------------------------ | -----
 SearchAutocompleteService            | La versión inicial
-SearchAutocompleteService/3.0.0-beta | Alias de`SearchAutocompleteService`
-SearchAutocompleteService/3.0.0-RC   | Alias de`SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-beta | Alias de `SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-RC   | Alias de `SearchAutocompleteService`
 SearchAutocompleteService/3.5.0      | Incluye compatibilidad con el `packageType` parámetro de consulta
 
 ### <a name="searchautocompleteservice350"></a>SearchAutocompleteService/3.5.0
@@ -45,18 +45,20 @@ La primera API de autocompletar admite la búsqueda de una parte de una cadena d
 
 Un paquete con solo versiones que no figuran en la lista no aparecerá en los resultados.
 
-    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
+GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
 Nombre        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
-q           | URL    | string  | no       | Cadena que se va a comparar con los identificadores de paquete.
-skip        | URL    | integer | no       | Número de resultados que se van a omitir para la paginación.
-take        | URL    | integer | no       | Número de resultados que se van a devolver, para la paginación
-prerelease  | URL    | boolean | no       | `true`o `false` determinar si se deben incluir los [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
-semVerLevel | URL    | string  | no       | Una cadena de versión de SemVer 1.0.0 
-packageType | URL    | string  | no       | El tipo de paquete que se va a usar para filtrar paquetes (agregados en `SearchAutocompleteService/3.5.0` )
+q           | Dirección URL    | string  | no       | Cadena que se va a comparar con los identificadores de paquete.
+skip        | Dirección URL    | integer | no       | Número de resultados que se van a omitir para la paginación.
+take        | Dirección URL    | integer | no       | Número de resultados que se van a devolver, para la paginación
+prerelease  | Dirección URL    | boolean | no       | `true` o `false` determinar si se deben incluir los [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
+semVerLevel | Dirección URL    | string  | no       | Una cadena de versión de SemVer 1.0.0 
+packageType | Dirección URL    | string  | no       | El tipo de paquete que se va a usar para filtrar paquetes (agregados en `SearchAutocompleteService/3.5.0` )
 
 La consulta de autocompletar `q` se analiza de la manera definida por la implementación del servidor. nuget.org admite la consulta del prefijo de tokens de identificador de paquete, que son partes del identificador que se producen dividiendo el original por caracteres de mayúsculas y minúsculas Camel.
 
@@ -74,7 +76,7 @@ El `packageType` parámetro se usa para filtrar aún más los resultados de auto
 Si el tipo de paquete proporcionado no es un tipo de paquete válido, tal y como se define en el [documento de tipo de paquete](https://github.com/NuGet/Home/wiki/Package-Type-%5BPacking%5D), se devolverá un resultado vacío.
 Si el tipo de paquete proporcionado está vacío, no se aplicará ningún filtro. En otras palabras, si no se pasa ningún valor al `packageType` parámetro, se comportará como si no se hubiera pasado el parámetro.
 
-### <a name="response"></a>Respuesta
+### <a name="response"></a>Response
 
 La respuesta es un documento JSON que contiene `take` resultados de rellenado de forma completa.
 
@@ -82,12 +84,14 @@ El objeto JSON raíz tiene las siguientes propiedades:
 
 Nombre      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
-totalHits | integer          | sí      | El número total de coincidencias, que no se tienen en cuenta `skip` y`take`
+totalHits | integer          | sí      | El número total de coincidencias, que no se tienen en cuenta `skip` y `take`
 datos      | Matriz de cadenas | sí      | Los identificadores de paquete que coinciden con la solicitud
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-    GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+```
+GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+```
 
 ### <a name="sample-response"></a>Respuesta de muestra
 
@@ -99,21 +103,23 @@ Una vez que se detecta un identificador de paquete mediante la API anterior, un 
 
 Una versión del paquete que se ha quitado de la lista no aparecerá en los resultados.
 
-    GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+```
+GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
+```
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
 Nombre        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
-id          | URL    | string  | sí      | IDENTIFICADOR de paquete para el que se van a capturar versiones
-prerelease  | URL    | boolean | no       | `true`o `false` determinar si se deben incluir los [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
-semVerLevel | URL    | string  | no       | Una cadena de versión de SemVer 2.0.0 
+id          | Dirección URL    | string  | sí      | IDENTIFICADOR de paquete para el que se van a capturar versiones
+prerelease  | Dirección URL    | boolean | no       | `true` o `false` determinar si se deben incluir los [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
+semVerLevel | Dirección URL    | string  | no       | Una cadena de versión de SemVer 2.0.0 
 
 Si `prerelease` no se proporciona, se excluyen los paquetes de versión preliminar.
 
 El `semVerLevel` parámetro de consulta se usa para participar en los paquetes de SemVer 2.0.0. Si se excluye este parámetro de consulta, solo se devolverán las versiones de SemVer 1.0.0. Si `semVerLevel=2.0.0` se proporciona, se devolverán las versiones SemVer 1.0.0 y SemVer 2.0.0. Para obtener más información, consulte la [compatibilidad con SemVer 2.0.0 para Nuget.org](https://github.com/NuGet/Home/wiki/SemVer2-support-for-nuget.org-%28server-side%29) .
 
-### <a name="response"></a>Respuesta
+### <a name="response"></a>Response
 
 La respuesta es un documento JSON que contiene todas las versiones de paquete del identificador de paquete proporcionado, filtrando por los parámetros de consulta especificados.
 
@@ -127,7 +133,9 @@ Las versiones de paquete de la `data` matriz pueden contener metadatos de compil
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-    GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
+```
+GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
+```
 
 ### <a name="sample-response"></a>Respuesta de muestra
 

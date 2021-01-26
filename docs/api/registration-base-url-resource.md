@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 852dca8c70b09d941e844b1f7cd03b38e2192481
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 403686de42bf4dc1fa94b9dd92ca6d33f3be2183
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237528"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775291"
 ---
 # <a name="package-metadata"></a>Metadatos de paquete
 
@@ -58,9 +58,9 @@ Todas las direcciones URL encontradas en el recurso de registro admiten los mét
 
 El recurso de registro agrupa los metadatos del paquete por identificador de paquete. No es posible obtener datos sobre más de un identificador de paquete a la vez. Este recurso no proporciona ninguna manera de detectar los identificadores de paquete. En su lugar, se supone que el cliente ya conoce el identificador de paquete deseado. Los metadatos disponibles sobre cada versión del paquete varían según la implementación del servidor. Los blobs de registro del paquete tienen la siguiente estructura jerárquica:
 
-- **Índice** : el punto de entrada de los metadatos del paquete, compartido por todos los paquetes en un origen con el mismo identificador de paquete.
-- **Página** : una agrupación de versiones de paquete. El número de versiones de paquete en una página se define mediante la implementación de servidor.
-- **Hoja** : documento específico de una versión de paquete única.
+- **Índice**: el punto de entrada de los metadatos del paquete, compartido por todos los paquetes en un origen con el mismo identificador de paquete.
+- **Página**: una agrupación de versiones de paquete. El número de versiones de paquete en una página se define mediante la implementación de servidor.
+- **Hoja**: documento específico de una versión de paquete única.
 
 La dirección URL del índice de registro es predecible y la puede determinar el cliente dado un identificador de paquete y el valor del recurso `@id` de registro del índice de servicio. Las direcciones URL de las páginas de registro y las hojas se detectan examinando el índice de registro.
 
@@ -72,15 +72,17 @@ El almacenamiento de todas las versiones del paquete (hojas) en el índice de re
 
 La heurística que usa nuget.org es la siguiente: si hay 128 o más versiones de un paquete, divida las hojas en páginas de tamaño 64. Si hay menos de 128 versiones, inserta todas las hojas en el índice de registro. Tenga en cuenta que esto significa que los paquetes con las versiones 65 a 127 tendrán dos páginas en el índice, pero ambas páginas se insertarán.
 
-    GET {@id}/{LOWER_ID}/index.json
+```
+GET {@id}/{LOWER_ID}/index.json
+```
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name     | En     | Tipo    | Obligatorio | Notas
+Nombre     | En     | Tipo    | Obligatorio | Notas
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | URL    | string  | yes      | El identificador del paquete, en minúsculas
+LOWER_ID | Dirección URL    | string  | sí      | El identificador del paquete, en minúsculas
 
-El `LOWER_ID` valor es el identificador de paquete deseado en minúsculas mediante las reglas implementadas por. Método de la red [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) .
+El `LOWER_ID` valor es el identificador de paquete deseado en minúsculas mediante las reglas implementadas por. Método de la red [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true) .
 
 ### <a name="response"></a>Response
 
@@ -88,8 +90,8 @@ La respuesta es un documento JSON que tiene un objeto raíz con las siguientes p
 
 Nombre  | Tipo             | Obligatorio | Notas
 ----- | ---------------- | -------- | -----
-count | integer          | yes      | El número de páginas de registro del índice
-items | matriz de objetos | yes      | La matriz de páginas de registro
+count | integer          | sí      | El número de páginas de registro del índice
+items | matriz de objetos | sí      | La matriz de páginas de registro
 
 Cada elemento de la matriz del objeto index `items` es un objeto JSON que representa una página de registro.
 
@@ -99,12 +101,12 @@ El objeto de página de registro que se encuentra en el índice de registro tien
 
 Nombre   | Tipo             | Obligatorio | Notas
 ------ | ---------------- | -------- | -----
-@id    | string           | yes      | La dirección URL de la página de registro
-count  | integer          | yes      | El número de hojas de registro en la página
+@id    | string           | sí      | La dirección URL de la página de registro
+count  | integer          | sí      | El número de hojas de registro en la página
 items  | matriz de objetos | no       | La matriz de las hojas de registro y sus metadatos asociados
-lower  | string           | yes      | La versión más baja de SemVer 2.0.0 en la página (inclusivo)
+lower  | string           | sí      | La versión más baja de SemVer 2.0.0 en la página (inclusivo)
 primario | string           | no       | Dirección URL del índice de registro.
-upper  | string           | yes      | La versión más alta de SemVer 2.0.0 en la página (inclusiva)
+upper  | string           | sí      | La versión más alta de SemVer 2.0.0 en la página (inclusiva)
 
 Los `lower` `upper` límites y del objeto Page son útiles cuando se necesitan los metadatos de una versión de página concreta.
 Estos límites se pueden usar para capturar la única página de registro necesaria. Las cadenas de versión se adhieren a [las reglas de versión de NuGet](../concepts/package-versioning.md). Las cadenas de versión se normalizan y no incluyen los metadatos de la compilación. Como con todas las versiones del ecosistema de NuGet, la comparación de las cadenas de versión se implementa con [las reglas de prioridad de la versión de SemVer 2.0.0](https://semver.org/spec/v2.0.0.html#spec-item-11).
@@ -123,9 +125,9 @@ El objeto hoja de registro que se encuentra en una página de registro tiene las
 
 Nombre           | Tipo   | Obligatorio | Notas
 -------------- | ------ | -------- | -----
-@id            | string | yes      | La dirección URL de la hoja de registro
-catalogEntry   | object | yes      | Entrada del catálogo que contiene los metadatos del paquete
-packageContent | string | yes      | La dirección URL del contenido del paquete (. nupkg)
+@id            | string | sí      | La dirección URL de la hoja de registro
+catalogEntry   | object | sí      | Entrada del catálogo que contiene los metadatos del paquete
+packageContent | string | sí      | La dirección URL del contenido del paquete (. nupkg)
 
 Cada objeto hoja de registro representa los datos asociados a una única versión de paquete.
 
@@ -135,13 +137,13 @@ La `catalogEntry` propiedad del objeto hoja de registro tiene las siguientes pro
 
 Nombre                     | Tipo                       | Obligatorio | Notas
 ------------------------ | -------------------------- | -------- | -----
-@id                      | string                     | yes      | Dirección URL del documento que se usa para generar este objeto.
+@id                      | string                     | sí      | Dirección URL del documento que se usa para generar este objeto.
 authors                  | cadena o matriz de cadenas | no       | 
 dependencyGroups         | matriz de objetos           | no       | Las dependencias del paquete, agrupadas por la plataforma de destino
 desuso              | object                     | no       | El desuso asociado al paquete
 description              | string                     | no       | 
 iconUrl                  | string                     | no       | 
-id                       | string                     | yes      | Identificador del paquete.
+id                       | string                     | sí      | Identificador del paquete.
 licenseUrl               | string                     | no       |
 licenseExpression        | string                     | no       | 
 lista                   | boolean                    | no       | Se debe considerar como si no estuviera presente
@@ -152,7 +154,7 @@ requireLicenseAcceptance | boolean                    | no       |
 Resumen                  | string                     | no       | 
 etiquetas                     | cadena o matriz de cadena  | no       | 
 title                    | string                     | no       | 
-version                  | string                     | yes      | La cadena de versión completa después de la normalización
+version                  | string                     | sí      | La cadena de versión completa después de la normalización
 
 La propiedad del paquete `version` es la cadena de versión completa después de la normalización. Esto significa que los datos de compilación de SemVer 2.0.0 pueden incluirse aquí.
 
@@ -182,7 +184,7 @@ Cada dependencia del paquete tiene las siguientes propiedades:
 
 Nombre         | Tipo   | Obligatorio | Notas
 ------------ | ------ | -------- | -----
-id           | string | yes      | Identificador de la dependencia del paquete.
+id           | string | sí      | Identificador de la dependencia del paquete.
 range        | object | no       | El [intervalo de versiones](../concepts/package-versioning.md#version-ranges) permitido de la dependencia
 registro | string | no       | Dirección URL del índice de registro para esta dependencia.
 
@@ -194,7 +196,7 @@ Cada desuso de paquetes tiene las siguientes propiedades:
 
 Nombre             | Tipo             | Obligatorio | Notas
 ---------------- | ---------------- | -------- | -----
-principales          | Matriz de cadenas | yes      | Los motivos por los que el paquete quedó en desuso
+principales          | Matriz de cadenas | sí      | Los motivos por los que el paquete quedó en desuso
 message          | string           | no       | Detalles adicionales sobre este desuso
 alternatePackage | object           | no       | El paquete alternativo que se debe usar en su lugar
 
@@ -214,12 +216,14 @@ El objeto de paquete alternativo tiene las siguientes propiedades:
 
 Nombre         | Tipo   | Obligatorio | Notas
 ------------ | ------ | -------- | -----
-id           | string | yes      | IDENTIFICADOR del paquete alternativo
+id           | string | sí      | IDENTIFICADOR del paquete alternativo
 range        | object | no       | El [intervalo de versiones](../concepts/package-versioning.md#version-ranges)permitido o `*` si se permite cualquier versión
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-    GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
+```
+GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
+```
 
 ### <a name="sample-response"></a>Respuesta de muestra
 
@@ -238,18 +242,20 @@ Cuando `items` no se proporciona la matriz en el índice de registro, una solici
 
 Nombre   | Tipo             | Obligatorio | Notas
 ------ | ---------------- | -------- | -----
-@id    | string           | yes      | La dirección URL de la página de registro
-count  | integer          | yes      | El número de hojas de registro en la página
-items  | matriz de objetos | yes      | La matriz de las hojas de registro y sus metadatos asociados
-lower  | string           | yes      | La versión más baja de SemVer 2.0.0 en la página (inclusivo)
-primario | string           | yes      | Dirección URL del índice de registro.
-upper  | string           | yes      | La versión más alta de SemVer 2.0.0 en la página (inclusiva)
+@id    | string           | sí      | La dirección URL de la página de registro
+count  | integer          | sí      | El número de hojas de registro en la página
+items  | matriz de objetos | sí      | La matriz de las hojas de registro y sus metadatos asociados
+lower  | string           | sí      | La versión más baja de SemVer 2.0.0 en la página (inclusivo)
+primario | string           | sí      | Dirección URL del índice de registro.
+upper  | string           | sí      | La versión más alta de SemVer 2.0.0 en la página (inclusiva)
 
 La forma de los objetos hoja de registro es la misma que en el índice de registro [anterior](#registration-leaf-object-in-a-page).
 
 ## <a name="sample-request"></a>Solicitud de ejemplo
 
-    GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
+```
+GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
+```
 
 ## <a name="sample-response"></a>Respuesta de muestra
 
@@ -268,7 +274,7 @@ La hoja de registro es un documento JSON con un objeto raíz con las siguientes 
 
 Nombre           | Tipo    | Obligatorio | Notas
 -------------- | ------- | -------- | -----
-@id            | string  | yes      | La dirección URL de la hoja de registro
+@id            | string  | sí      | La dirección URL de la hoja de registro
 catalogEntry   | string  | no       | La dirección URL de la entrada del catálogo que generó estas hojas
 lista         | boolean | no       | Se debe considerar como si no estuviera presente
 packageContent | string  | no       | La dirección URL del contenido del paquete (. nupkg)
@@ -280,7 +286,9 @@ registro   | string  | no       | Dirección URL del índice de registro.
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-    GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
+```
+GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
+```
 
 ### <a name="sample-response"></a>Respuesta de muestra
 

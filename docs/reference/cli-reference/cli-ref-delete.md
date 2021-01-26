@@ -1,16 +1,16 @@
 ---
 title: Comando DELETE de la CLI de NuGet
 description: Referencia del comando nuget.exe Delete
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: bec1a778d4986a4cb7ee87e1ef8a98550c96ed57
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 96c75366ae69b34f5cd1f55feb53087b5d0ea324
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622868"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775944"
 ---
 # <a name="delete-command-nuget-cli"></a>comando DELETE (CLI de NuGet)
 

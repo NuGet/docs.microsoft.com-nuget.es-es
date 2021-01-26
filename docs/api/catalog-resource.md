@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: ffbcb8dc18542f39c32a6d84b279c8eccaf98fc3
-ms.sourcegitcommit: 7e9c0630335ef9ec1e200e2ee9065f702e52a8ec
+ms.openlocfilehash: 11485f583d6993919f6bb8acabcc87d9e4261975
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85292323"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774154"
 ---
 # <a name="catalog"></a>Catálogo
 
@@ -27,7 +27,7 @@ El **Catálogo** es un recurso que registra todas las operaciones de paquetes en
 
 `@type`Se usa el siguiente valor:
 
-Valor de@type   | Notas
+Valor de @type   | Notas
 ------------- | -----
 Catálogo/3.0.0 | La versión inicial
 
@@ -63,7 +63,9 @@ Los elementos del catálogo siempre se agregan al catálogo en un orden cronoló
 
 La solicitud siguiente captura el índice del catálogo.
 
-    GET {@id}
+```
+GET {@id}
+```
 
 El índice del catálogo es un documento JSON que contiene un objeto con las siguientes propiedades:
 
@@ -95,7 +97,9 @@ A diferencia del [recurso de metadatos del paquete](registration-base-url-resour
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-    GET https://api.nuget.org/v3/catalog0/index.json
+```
+GET https://api.nuget.org/v3/catalog0/index.json
+```
 
 ### <a name="sample-response"></a>Respuesta de muestra
 
@@ -147,7 +151,9 @@ Para obtener más información sobre lo que significa cada tipo, vea el [tipo de
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-    GET https://api.nuget.org/v3/catalog0/page2926.json
+```
+GET https://api.nuget.org/v3/catalog0/page2926.json
+```
 
 ### <a name="sample-response"></a>Respuesta de muestra
 
@@ -179,10 +185,10 @@ La `@type` propiedad es una cadena o una matriz de cadenas. Para mayor comodidad
 
 Los elementos del catálogo con el tipo `PackageDetails` contienen una instantánea de los metadatos del paquete para un paquete específico (combinación de identificador y versión). Un elemento de catálogo de detalles de paquete se genera cuando un origen de paquete encuentra alguno de los escenarios siguientes:
 
-1. Se **inserta**un paquete.
-1. **Aparece**un paquete.
+1. Se **inserta** un paquete.
+1. **Aparece** un paquete.
 1. Un paquete no está en la **lista**.
-1. Se **refluye**un paquete.
+1. Se **refluye** un paquete.
 
 Un reflujo de paquetes es un gesto administrativo que genera esencialmente una extracción falsa de un paquete existente sin cambios en el propio paquete. En nuget.org, se usa un reflujo después de corregir un error en uno de los trabajos en segundo plano que consumen el catálogo.
 
@@ -195,11 +201,11 @@ Nombre                    | Tipo                       | Obligatorio | Notas
 authors                 | string                     | no       |
 created                 | string                     | no       | Marca de tiempo de la primera vez que se creó el paquete. Propiedad fallback: `published` .
 dependencyGroups        | matriz de objetos           | no       | Las dependencias del paquete, agrupadas por la plataforma de destino ([el mismo formato que el recurso de metadatos del paquete](registration-base-url-resource.md#package-dependency-group))
-desuso             | objeto                     | no       | El desuso asociado al paquete (el[mismo formato que el recurso de metadatos del paquete](registration-base-url-resource.md#package-deprecation))
+desuso             | object                     | no       | El desuso asociado al paquete (el[mismo formato que el recurso de metadatos del paquete](registration-base-url-resource.md#package-deprecation))
 description             | string                     | no       |
 iconUrl                 | string                     | no       |
 isPrerelease            | boolean                    | no       | Indica si la versión del paquete está en versión preliminar. Se puede detectar desde `version` .
-lenguaje                | string                     | no       |
+language                | string                     | no       |
 licenseUrl              | string                     | no       |
 lista                  | boolean                    | no       | Indica si el paquete aparece o no
 minClientVersion        | string                     | no       |
@@ -210,7 +216,7 @@ packageTypes            | matriz de objetos           | no       | Los tipos de 
 projectUrl              | string                     | no       |
 releaseNotes            | string                     | no       |
 requireLicenseAgreement | boolean                    | no       | Asuma `false` si está excluido
-summary                 | string                     | no       |
+Resumen                 | string                     | no       |
 etiquetas                    | Matriz de cadenas           | no       |
 title                   | string                     | no       |
 verbatimVersion         | string                     | no       | La cadena de versión tal y como se encontró originalmente en el archivo. nuspec
@@ -235,7 +241,9 @@ La `published` marca de tiempo es la hora a la que se muestra el paquete por úl
 
 #### <a name="sample-request"></a>Solicitud de ejemplo
 
+```
 GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+```
 
 #### <a name="sample-response"></a>Respuesta de muestra
 
@@ -256,7 +264,9 @@ La `published` propiedad es la hora a la que se eliminó el paquete, que suele s
 
 #### <a name="sample-request"></a>Solicitud de ejemplo
 
+```
 GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
+```
 
 #### <a name="sample-response"></a>Respuesta de muestra
 
@@ -264,7 +274,7 @@ GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_li
 
 ## <a name="cursor"></a>Cursor
 
-### <a name="overview"></a>Información general
+### <a name="overview"></a>Introducción
 
 En esta sección se describe un concepto de cliente que, aunque no es necesariamente obligatorio por el protocolo, debe formar parte de cualquier implementación de cliente de catálogo práctico.
 

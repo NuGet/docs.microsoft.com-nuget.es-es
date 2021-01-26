@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7f641c669cdb0cc979d698f6b219cbb4f2692a2e
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 550971d77ed4b15129fdc58fef95e0cceda8d8d1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235755"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776164"
 ---
 # <a name="nuget-58-release-notes"></a>Notas de la versión de NuGet 5,8
 
@@ -34,13 +34,13 @@ Vehículos de distribución de NuGet:
 
 * Mostrar detalles de vulnerabilidad del paquete en el panel de detalles del paquete de interfaz de usuario del administrador de paquetes- [#9850](https://github.com/NuGet/Home/issues/9850)
 
-* Comprobar los paquetes de NuGet firmados con el nuevo [`dotnet nuget verify`](https://docs.microsoft.com/dotnet/core/tools/dotnet-nuget-verify) comando: [#8051](https://github.com/NuGet/Home/issues/8051)
+* Comprobar los paquetes de NuGet firmados con el nuevo [`dotnet nuget verify`](/dotnet/core/tools/dotnet-nuget-verify) comando: [#8051](https://github.com/NuGet/Home/issues/8051)
 
-* [`dotnet add package`](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package#:~:text=dotnet%20add%20package%201%20Name%202%20Synopsis%203,when%20targeting%20a%20specific%20framework.%20...%206%20Examples) admite `--prerelease` la opción para agregar la versión más reciente de un paquete, incluidas versiones preliminares: [#4699](https://github.com/NuGet/Home/issues/4699)
+* [`dotnet add package`](/dotnet/core/tools/dotnet-add-package#:~:text=dotnet%20add%20package%201%20Name%202%20Synopsis%203,when%20targeting%20a%20specific%20framework.%20...%206%20Examples) admite `--prerelease` la opción para agregar la versión más reciente de un paquete, incluidas versiones preliminares: [#4699](https://github.com/NuGet/Home/issues/4699)
 
-* Buscar paquetes en la CLI con el [`nuget.exe search`](https://docs.microsoft.com/nuget/reference/cli-reference/cli-ref-search) comando [#9704](https://github.com/NuGet/Home/issues/9704)
+* Buscar paquetes en la CLI con el [`nuget.exe search`](../reference/cli-reference/cli-ref-search.md) comando [#9704](https://github.com/NuGet/Home/issues/9704)
 
-* [`dotnet list package`](https://docs.microsoft.com/dotnet/core/tools/dotnet-list-package) el comando admite `--verbosity` la opción [#9600](https://github.com/NuGet/Home/issues/9600)
+* [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) el comando admite `--verbosity` la opción [#9600](https://github.com/NuGet/Home/issues/9600)
 
 * Habilitación de la optimización de restauración rápida No-Op para proyectos basados en PackageReference con estilo csproj en Visual Studio- [#9565](https://github.com/NuGet/Home/issues/9565)
 
@@ -155,4 +155,4 @@ Gracias por todos los colaboradores que le han ayudado a hacer que esta versión
 ## <a name="feedback-welcome"></a>Página principal de comentarios
 
 Sus comentarios son importantes.  Si hay algún problema con esta versión, consulte los problemas de [GitHub](https://github.com/NuGet/Home/issues) y la [comunidad de desarrolladores de Visual Studio](https://developercommunity.visualstudio.com/) para ver los problemas existentes.  Para nuevos problemas en NuGet, informe de un [problema de github](https://github.com/NuGet/Home/issues/new).
-En el caso de problemas generales de la experiencia de NuGet, háganoslo saber a través de la opción [notificar un problema](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio) que se encuentra en su IDE favorito en **ayuda > notificar un problema**.
+En el caso de problemas generales de la experiencia de NuGet, háganoslo saber a través de la opción [notificar un problema](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) que se encuentra en su IDE favorito en **ayuda > notificar un problema**.

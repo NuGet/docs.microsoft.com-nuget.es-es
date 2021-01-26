@@ -6,14 +6,14 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 86c9d07cf90b84fffd09b04847d41772dd633b98
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 7047dfd48b7f93756bbb1491de1b7e65da2c12b4
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237879"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775414"
 ---
-# <a name="search"></a>Buscar
+# <a name="search"></a>Search
 
 Es posible buscar paquetes disponibles en un origen de paquete mediante la API V3. El recurso que se usa para buscar es el `SearchQueryService` recurso que se encuentra en el [Índice de servicio](service-index.md).
 
@@ -45,18 +45,20 @@ La API de búsqueda permite a un cliente consultar una página de paquetes que c
 
 Un paquete que no aparece en la lista nunca debe aparecer en los resultados de la búsqueda.
 
-    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
+GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
 
 ### <a name="request-parameters"></a>Parámetros de solicitud
 
-Name        | En     | Tipo    | Obligatorio | Notas
+Nombre        | En     | Tipo    | Obligatorio | Notas
 ----------- | ------ | ------- | -------- | -----
-q           | URL    | string  | no       | Términos de búsqueda que se usan para filtrar paquetes
-skip        | URL    | integer | no       | Número de resultados que se van a omitir para la paginación.
-take        | URL    | integer | no       | Número de resultados que se van a devolver, para la paginación
-prerelease  | URL    | boolean | no       | `true` o `false` determinar si se deben incluir los [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
-semVerLevel | URL    | string  | no       | Una cadena de versión de SemVer 1.0.0 
-packageType | URL    | string  | no       | El tipo de paquete que se va a usar para filtrar paquetes (agregados en `SearchQueryService/3.5.0` )
+q           | Dirección URL    | string  | no       | Términos de búsqueda que se usan para filtrar paquetes
+skip        | Dirección URL    | integer | no       | Número de resultados que se van a omitir para la paginación.
+take        | Dirección URL    | integer | no       | Número de resultados que se van a devolver, para la paginación
+prerelease  | Dirección URL    | boolean | no       | `true` o `false` determinar si se deben incluir los [paquetes de versión preliminar](../create-packages/prerelease-packages.md)
+semVerLevel | Dirección URL    | string  | no       | Una cadena de versión de SemVer 1.0.0 
+packageType | Dirección URL    | string  | no       | El tipo de paquete que se va a usar para filtrar paquetes (agregados en `SearchQueryService/3.5.0` )
 
 La consulta `q` de búsqueda se analiza de una manera definida por la implementación del servidor. nuget.org admite el filtrado básico en [diversos campos](../consume-packages/finding-and-choosing-packages.md#search-syntax). Si no `q` se proporciona ningún paquete, se deben devolver todos los paquetes, dentro de los límites impuestos por SKIP y Take. Esto habilita la pestaña "examinar" en la experiencia de Visual Studio de NuGet.
 
@@ -82,8 +84,8 @@ El objeto JSON raíz tiene las siguientes propiedades:
 
 Nombre      | Tipo             | Obligatorio | Notas
 --------- | ---------------- | -------- | -----
-totalHits | integer          | yes      | El número total de coincidencias, que no se tienen en cuenta `skip` y `take`
-datos      | matriz de objetos | yes      | Resultados de la búsqueda que coinciden con la solicitud
+totalHits | integer          | sí      | El número total de coincidencias, que no se tienen en cuenta `skip` y `take`
+datos      | matriz de objetos | sí      | Resultados de la búsqueda que coinciden con la solicitud
 
 ### <a name="search-result"></a>Resultado de la búsqueda
 
@@ -92,10 +94,10 @@ El objeto tiene las siguientes propiedades:
 
 Nombre           | Tipo                       | Obligatorio | Notas
 -------------- | -------------------------- | -------- | -----
-id             | string                     | yes      | Identificador del paquete coincidente.
-version        | string                     | yes      | La cadena de versión de SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
+id             | string                     | sí      | Identificador del paquete coincidente.
+version        | string                     | sí      | La cadena de versión de SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
 description    | string                     | no       | 
-versions       | matriz de objetos           | yes      | Todas las versiones del paquete que coinciden con el `prerelease` parámetro
+versions       | matriz de objetos           | sí      | Todas las versiones del paquete que coinciden con el `prerelease` parámetro
 authors        | cadena o matriz de cadenas | no       | 
 iconUrl        | string                     | no       | 
 licenseUrl     | string                     | no       | 
@@ -107,7 +109,7 @@ etiquetas           | cadena o matriz de cadenas | no       |
 title          | string                     | no       | 
 totalDownloads | integer                    | no       | Este valor se puede inferir por la suma de descargas de la `versions` matriz.
 demasiado       | boolean                    | no       | Un valor booleano JSON que indica si se [comprueba](../nuget-org/id-prefix-reservation.md) el paquete
-packageTypes   | matriz de objetos           | yes      | Los tipos de paquetes definidos por el autor del paquete (agregado en `SearchQueryService/3.5.0` )
+packageTypes   | matriz de objetos           | sí      | Los tipos de paquetes definidos por el autor del paquete (agregado en `SearchQueryService/3.5.0` )
 
 En nuget.org, un paquete comprobado es aquél que tiene un identificador de paquete que coincide con un prefijo de identificador reservado y es propiedad de uno de los propietarios del prefijo reservado. Para obtener más información, consulte la [documentación sobre la reserva de prefijos de identificador](../nuget-org/id-prefix-reservation.md).
 
@@ -115,19 +117,21 @@ Los metadatos contenidos en el objeto de resultado de la búsqueda se toman de l
 
 Nombre      | Tipo    | Obligatorio | Notas
 --------- | ------- | -------- | -----
-@id       | string  | yes      | La dirección URL absoluta de la [hoja de registro](registration-base-url-resource.md#registration-leaf) asociada
-version   | string  | yes      | La cadena de versión de SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
-descargas | integer | yes      | El número de descargas para esta versión de paquete específica
+@id       | string  | sí      | La dirección URL absoluta de la [hoja de registro](registration-base-url-resource.md#registration-leaf) asociada
+version   | string  | sí      | La cadena de versión de SemVer 2.0.0 completa del paquete (podría contener metadatos de compilación)
+descargas | integer | sí      | El número de descargas para esta versión de paquete específica
 
 La `packageTypes` matriz siempre contendrá al menos un (1) elemento. El tipo de paquete para un identificador de paquete determinado se considera como los tipos de paquetes definidos por la versión más reciente del paquete con respecto a los demás parámetros de búsqueda. Cada elemento de la `packageTypes` matriz es un objeto JSON con las siguientes propiedades:
 
 Nombre      | Tipo    | Obligatorio | Notas
 --------- | ------- | -------- | -----
-name      | string  | yes      | Nombre del tipo de paquete.
+name      | string  | sí      | Nombre del tipo de paquete.
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 
-    GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
+```
+GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
+```
 
 ### <a name="sample-response"></a>Respuesta de muestra
 
