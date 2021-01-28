@@ -1,16 +1,16 @@
 ---
 title: Configurar fuentes locales de NuGet
 description: Cómo crear una fuente local para los paquetes de NuGet usando carpetas en la red local
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/06/2017
 ms.topic: conceptual
-ms.openlocfilehash: 42a5c30c058a9efb35338c1b484235b6ad111bd0
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 1eb194c9ddaee05281749c7a0420cbaf77044fe3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "68317588"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774042"
 ---
 # <a name="local-feeds"></a>Fuentes locales
 
@@ -25,11 +25,13 @@ Para habilitar el origen, agregue el nombre de la ruta de acceso (como `\\myserv
 
 El árbol jerárquico de carpetas con control de versiones tiene la siguiente estructura general:
 
-    \\myserver\packages
-      └─<packageID>
-        └─<version>
-          ├─<packageID>.<version>.nupkg
-          └─<other files>
+```
+\\myserver\packages
+  └─<packageID>
+    └─<version>
+      ├─<packageID>.<version>.nupkg
+      └─<other files>
+```
 
 NuGet crea esta estructura automáticamente al usar el comando [`nuget add`](../reference/cli-reference/cli-ref-add.md) para copiar un paquete a la fuente:
 
