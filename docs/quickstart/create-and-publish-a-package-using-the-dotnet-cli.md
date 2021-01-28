@@ -1,16 +1,16 @@
 ---
 title: Creación y publicación de un paquete NuGet con la CLI de dotnet
 description: Tutorial sobre la creación y publicación de un paquete NuGet mediante la CLI de NuGet. NET con la CLI de .NET Core (dotnet).
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: a67c8cd92304c6c4abcffbb79ddbe964664d08fb
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: cb63257c874fc4752f3b3d59db4be5996d5ab81d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237489"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775767"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>Inicio rápido: Crear y publicar un paquete (CLI de dotnet)
 
@@ -53,7 +53,7 @@ Cada paquete NuGet necesita un manifiesto que describa su contenido y sus depend
 1. Agregue las propiedades opcionales que se describen en [Propiedades de metadatos de NuGet](/dotnet/core/tools/csproj#nuget-metadata-properties).
 
     > [!Note]
-    > En el caso de los paquetes creados para consumo público, preste especial atención la propiedad **PackageTags** , dado que estas etiquetas ayudan a otros usuarios a encontrar el paquete y comprender lo que hace.
+    > En el caso de los paquetes creados para consumo público, preste especial atención la propiedad **PackageTags**, dado que estas etiquetas ayudan a otros usuarios a encontrar el paquete y comprender lo que hace.
 
 ## <a name="run-the-pack-command"></a>Ejecutar el comando pack
 
@@ -124,7 +124,7 @@ Para explorar más de lo que NuGet ofrece, seleccione los siguientes vínculos.
 - [Paquetes de versión preliminar](../create-packages/Prerelease-Packages.md)
 - [Admitir varias plataformas de destino](../create-packages/multiple-target-frameworks-project-file.md)
 - [Control de versiones del paquete](../concepts/package-versioning.md)
-- [Adición de una expresión de licencia o un archivo](../reference/msbuild-targets#packing-a-license-expression-or-a-license-file)
+- [Adición de una expresión de licencia o un archivo](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file)
 - [Creación de paquetes localizados](../create-packages/creating-localized-packages.md)
 - [Creación de paquetes de símbolos](../create-packages/symbol-packages-snupkg.md)
 - [Firma de paquetes](../create-packages/Sign-a-package.md)

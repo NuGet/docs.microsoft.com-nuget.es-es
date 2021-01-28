@@ -1,17 +1,17 @@
 ---
 title: Transformaciones de archivos de código fuente y de configuración para los paquetes NuGet
 description: Información detallada sobre la capacidad de los paquetes de NuGet para transformar archivos de código fuente y de configuración (XML) al instalarlos.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 8e3eade14c70782563ba82894f072f9b3a611923
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 5bd0e409f527fb668008204fb16ad002f4784c46
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237989"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774586"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>Transformar archivos de código fuente y de configuración
 
@@ -108,7 +108,7 @@ Como ejemplo más extenso, el paquete [Error Logging Modules and Handlers for AS
 
 Para examinar el archivo `web.config.transform` correspondiente, descargue el paquete ELMAH en el vínculo anterior, cambie la extensión del paquete de `.nupkg` a `.zip` y, luego, abra `content\web.config.transform` en el archivo ZIP.
 
-Para ver el efecto que tendrá instalar y desinstalar el paquete, cree un proyecto ASP.NET en Visual Studio (la plantilla se encuentra en **Visual C# > Web** en el cuadro de diálogo Nuevo proyecto) y seleccione una aplicación ASP.NET vacía. Abra `web.config` para ver su estado inicial. Luego, haga clic con el botón derecho en el proyecto, seleccione **Administrar paquetes NuGet** , busque ELMAH en nuget.org e instale la versión más reciente. Fíjese en todos los cambios efectuados en `web.config`. Ahora, desinstale el paquete y verá que `web.config` ha vuelto a su estado anterior.
+Para ver el efecto que tendrá instalar y desinstalar el paquete, cree un proyecto ASP.NET en Visual Studio (la plantilla se encuentra en **Visual C# > Web** en el cuadro de diálogo Nuevo proyecto) y seleccione una aplicación ASP.NET vacía. Abra `web.config` para ver su estado inicial. Luego, haga clic con el botón derecho en el proyecto, seleccione **Administrar paquetes NuGet**, busque ELMAH en nuget.org e instale la versión más reciente. Fíjese en todos los cambios efectuados en `web.config`. Ahora, desinstale el paquete y verá que `web.config` ha vuelto a su estado anterior.
 
 ### <a name="xdt-transforms"></a>Transformaciones XDT
 

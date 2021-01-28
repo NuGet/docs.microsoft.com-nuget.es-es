@@ -1,16 +1,16 @@
 ---
 title: Impacto de project.json en los autores de paquetes NuGet
 description: Información detallada sobre cómo afecta la implementación de project.json en NuGet 3.x a los autores de paquetes, como las características, el contenido y el formato de paquetes no admitidos.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 34b08f06f04efdcf7bf73efc2cbdb5a5494ae2d9
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 82b7ce7962ecccc9559ae25a8fe35a3820238049
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "69488195"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775390"
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>Impacto de project.json al crear paquetes
 

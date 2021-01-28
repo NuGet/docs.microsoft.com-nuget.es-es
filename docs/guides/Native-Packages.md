@@ -1,16 +1,16 @@
 ---
 title: Creación de paquetes nativos de NuGet
 description: Información detallada sobre cómo crear paquetes nativos de NuGet que contengan código de C++ en lugar de tener código administrado, para usarlos en proyectos de C++.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: e0ec5323f7be53bef6637ad69540a66abbf22711
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 2a95fca2ce5496512627e913273e5b66128e34c7
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "69520525"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774207"
 ---
 # <a name="creating-native-packages"></a>Crear paquetes nativos
 

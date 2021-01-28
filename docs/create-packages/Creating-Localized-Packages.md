@@ -1,16 +1,16 @@
 ---
 title: Cómo crear un paquete NuGet localizado
 description: Información detallada sobre los dos métodos para crear paquetes de NuGet localizados, ya sea incluyendo todos los ensamblados en un único paquete o publicando ensamblados independientes.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 83414a824676844f9e44eab874e5eac788d50583
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: cb3f8a9df66f259b130996822f102c27636d5d2c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73610938"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774754"
 ---
 # <a name="creating-localized-nuget-packages"></a>Creación de paquetes localizados de NuGet
 
@@ -27,34 +27,36 @@ Incluir ensamblados de recursos localizados en un único paquete suele ser el en
 
 Por ejemplo, la siguiente estructura de carpetas admite los idiomas alemán (de), italiano (it), japonés (ja), ruso (ru), chino simplificado (zh-Hans) y chino tradicional (zh-Hant):
 
-    lib
-    └───net40
-        │   Contoso.Utilities.dll
-        │   Contoso.Utilities.xml
-        │
-        ├───de
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───it
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───ja
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───ru
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───zh-Hans
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        └───zh-Hant
-                Contoso.Utilities.resources.dll
-                Contoso.Utilities.xml
+```
+lib
+└───net40
+    │   Contoso.Utilities.dll
+    │   Contoso.Utilities.xml
+    │
+    ├───de
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───it
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───ja
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───ru
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───zh-Hans
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    └───zh-Hant
+            Contoso.Utilities.resources.dll
+            Contoso.Utilities.xml
+```
 
 Puede ver que todos los idiomas aparecen debajo de la carpeta de la plataforma de destino `net40`. Si va a [admitir varias plataformas](../create-packages/supporting-multiple-target-frameworks.md), tendrá una carpeta en `lib` para cada variante.
 
@@ -92,10 +94,12 @@ De forma parecida al modo en que .NET Framework admite los ensamblados satélite
 
 Para ello, el paquete principal usa la convención de nomenclatura `{identifier}.{version}.nupkg` y contiene el ensamblado del idioma predeterminado (por ejemplo, en-US). Por ejemplo, `ContosoUtilities.1.0.0.nupkg` contendría la siguiente estructura:
 
-    lib
-    └───net40
-            ContosoUtilities.dll
-            ContosoUtilities.xml
+```
+lib
+└───net40
+        ContosoUtilities.dll
+        ContosoUtilities.xml
+```
 
 Luego, un ensamblado satélite usa la convención de nomenclatura `{identifier}.{language}.{version}.nupkg` (por ejemplo, `ContosoUtilities.de.1.0.0.nupkg`). El identificador **debe** coincidir exactamente con el del paquete principal.
 
@@ -105,11 +109,13 @@ El ensamblado satélite también **debe** declarar una versión exacta del paque
 
 Después, la estructura del paquete satélite debe incluir el ensamblado de recursos y el archivo XML de IntelliSense en una subcarpeta que coincida con `{language}` en el nombre de archivo del paquete:
 
-    lib
-    └───net40
-        └───de
-                ContosoUtilities.resources.dll
-                ContosoUtilities.xml
+```
+lib
+└───net40
+    └───de
+            ContosoUtilities.resources.dll
+            ContosoUtilities.xml
+```
 
 **Nota**: A menos que necesite referencias culturales secundarias específicas como `ja-JP`, use siempre el identificador de idioma de nivel superior, como `ja`.
 

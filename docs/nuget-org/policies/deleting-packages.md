@@ -1,18 +1,18 @@
 ---
 title: Eliminación de paquetes NuGet desde nuget.org
 description: Directivas para quitar paquetes de la lista en nuget.org; la eliminación permanente no se admite, excepto cuando los paquetes infringen otras directivas.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3abe809d76e75801c2f936aba129d27ba7b64913
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e5c62177b40162cb8b6b37b0d272fb7a945156c1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80581266"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775714"
 ---
-# <a name="deleting-packages"></a>Eliminar paquetes
+# <a name="deleting-packages"></a>Eliminación de paquetes
 
 nuget.org no admite la eliminación permanente de paquetes. Si lo hace, se interrumpirían todos los proyectos según la disponibilidad del paquete, sobre todo con los flujos de trabajo de compilación que implican la restauración del paquete.
 
@@ -36,7 +36,7 @@ Los paquetes que cumplan cualquiera de los siguientes criterios no se admiten en
 - Se usa para apropiarse de identificadores de paquetes, incluidos los paquetes que no tienen contenido productivo. Los paquetes deben contener código o bien los propietarios deben ceder el identificador a alguien que tenga un producto para enviar.
 - Trata de provocar que la galería haga algo para lo que no se ha diseñado expresamente.
 
-Si encuentra un paquete que infringe cualquiera de estos puntos, haga clic en el vínculo **Notificar abuso** en la página de detalles del paquete y envíe un informe.
+Si detecta un paquete que infringe cualquiera de los puntos anteriores, haga clic en el vínculo **Notificar abuso** en la página de detalles del paquete y envíe un informe.
 
 Tenga en cuenta que el equipo de NuGet y .NET Foundation se reservan el derecho de modificar estos criterios en cualquier momento.
 

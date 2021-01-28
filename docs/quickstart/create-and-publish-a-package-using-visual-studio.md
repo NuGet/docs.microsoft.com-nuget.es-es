@@ -1,16 +1,16 @@
 ---
 title: 'Creación y publicación de un paquete NuGet de .NET Standard: Visual Studio en Windows'
 description: Tutorial sobre la creación y publicación de un paquete NuGet de .NET Standard con Visual Studio en Windows.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/16/2019
 ms.topic: quickstart
-ms.openlocfilehash: 32dcc1d233154463e2950b1ce46554b1cb89956e
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 53f54f6723ad10fca2ed6f75290ba3829dfb9a5e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237502"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775687"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>Inicio rápido: Creación y publicación de un paquete NuGet con Visual Studio (.NET Standard, solo en Windows)
 
@@ -36,7 +36,7 @@ Es muy sencillo crear un paquete NuGet desde una biblioteca de clases de .NET St
 
 Puede usar un proyecto de biblioteca de clases .NET Standard existente para el código que quiere empaquetar o crear uno simple tal y como se indica aquí:
 
-1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto** , expanda el nodo **Visual C# > .NET Standard** , seleccione la plantilla "Biblioteca de clases (.NET Standard)", denomine el proyecto AppLogger y haga clic en **Aceptar**.
+1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto**, expanda el nodo **Visual C# > .NET Standard**, seleccione la plantilla "Biblioteca de clases (.NET Standard)", denomine el proyecto AppLogger y haga clic en **Aceptar**.
 
    > [!Tip]
    > A menos que tenga una razón para elegir otro, .NET Standard es el destino preferido para los paquetes NuGet, ya que proporciona compatibilidad con la gama más amplia de proyectos de consumo.
@@ -67,9 +67,9 @@ namespace AppLogger
     ![Propiedades del paquete NuGet en un proyecto de Visual Studio](media/qs_create-vs-01-package-properties.png)
 
     > [!Note]
-    > En el caso de los paquetes creados para consumo público, preste especial atención la propiedad **Tags** , dado que estas etiquetas ayudan a otros usuarios a encontrar el paquete y comprender lo que hace.
+    > En el caso de los paquetes creados para consumo público, preste especial atención la propiedad **Tags**, dado que estas etiquetas ayudan a otros usuarios a encontrar el paquete y comprender lo que hace.
 
-1. Asigne al paquete un identificador único y rellene las demás propiedades que quiera. Para una asignación de las propiedades de MSBuild (proyecto de estilo de SDK) a las propiedades de un archivo *.nuspec* , consulte los [destinos de paquete](../reference/msbuild-targets.md#pack-target). Para descripciones de las propiedades, consulte la [referencia del archivo .nuspec](../reference/nuspec.md). Todas las propiedades que aparecen aquí pasan al `.nuspec` manifiesto que Visual Studio crea para el proyecto.
+1. Asigne al paquete un identificador único y rellene las demás propiedades que quiera. Para una asignación de las propiedades de MSBuild (proyecto de estilo de SDK) a las propiedades de un archivo *.nuspec*, consulte los [destinos de paquete](../reference/msbuild-targets.md#pack-target). Para descripciones de las propiedades, consulte la [referencia del archivo .nuspec](../reference/nuspec.md). Todas las propiedades que aparecen aquí pasan al `.nuspec` manifiesto que Visual Studio crea para el proyecto.
 
     > [!Important]
     > Debe asignar al paquete un identificador que sea único en nuget.org o en el host que use. En este tutorial, se recomienda incluir "muestra" o "prueba" en el nombre porque el paso de publicación posterior hace que el paquete sea visible públicamente (aunque no es probable que nadie lo use realmente).
@@ -84,11 +84,11 @@ namespace AppLogger
 
 1. Establezca la configuración en **Release**.
 
-1. En el **Explorador de soluciones** , haga clic con el botón derecho en el proyecto y seleccione el comando **Empaquetar** :
+1. En el **Explorador de soluciones**, haga clic con el botón derecho en el proyecto y seleccione el comando **Empaquetar**:
 
     ![Comando pack de NuGet en el menú contextual de proyecto de Visual Studio](media/qs_create-vs-02-pack-command.png)
 
-    Si no ve el comando **Empaquetar** , es probable que el proyecto no sea un proyecto de estilo SDK y que tenga que usar la CLI de `nuget.exe`. [Migre el proyecto](../consume-packages/migrate-packages-config-to-package-reference.md) y use la CLI de `dotnet`, o consulte el artículo [Creación y publicación de un paquete de .NET Framework](create-and-publish-a-package-using-visual-studio-net-framework.md) para obtener instrucciones paso a paso.
+    Si no ve el comando **Empaquetar**, es probable que el proyecto no sea un proyecto de estilo SDK y que tenga que usar la CLI de `nuget.exe`. [Migre el proyecto](../consume-packages/migrate-packages-config-to-package-reference.md) y use la CLI de `dotnet`, o consulte el artículo [Creación y publicación de un paquete de .NET Framework](create-and-publish-a-package-using-visual-studio-net-framework.md) para obtener instrucciones paso a paso.
 
 1. Visual Studio compila el proyecto y crea el archivo `.nupkg`. Examine la ventana **Resultados** para obtener más información (similar a la siguiente), que contiene la ruta de acceso al archivo de paquete. Tenga en cuenta también que el ensamblado compilado se encuentra en `bin\Release\netstandard2.0`, ya que se adapta al destino de .NET Standard 2.0.
 
@@ -105,7 +105,7 @@ Puede configurar Visual Studio para que genere automáticamente el paquete de Nu
 
 1. En el Explorador de soluciones, haga clic con el botón derecho en el proyecto y, luego, elija **Propiedades**.
 
-2. En la pestaña **Paquete** , seleccione **Generar paquete de NuGet al compilar**.
+2. En la pestaña **Paquete**, seleccione **Generar paquete de NuGet al compilar**.
 
    ![Generación automática del paquete en la compilación](media/qs_create-vs-05-generate-on-build.png)
 
@@ -114,7 +114,7 @@ Puede configurar Visual Studio para que genere automáticamente el paquete de Nu
 
 ### <a name="optional-pack-with-msbuild"></a>(Opcional) Empaquetado con MSBuild
 
-Como alternativa al uso del comando de menú **Paquete** , NuGet 4.x y versiones posteriores y MSBuild 15.1 y versiones posteriores admiten un destino de `pack` cuando el proyecto contiene los datos de paquete necesarios. Abra un símbolo del sistema, navegue a la carpeta del proyecto y ejecute este comando. (Normalmente es preferible iniciar el "Símbolo del sistema para desarrolladores de Visual Studio" en el menú Inicio, ya que se configurará con todas las rutas de acceso necesarias para MSBuild).
+Como alternativa al uso del comando de menú **Paquete**, NuGet 4.x y versiones posteriores y MSBuild 15.1 y versiones posteriores admiten un destino de `pack` cuando el proyecto contiene los datos de paquete necesarios. Abra un símbolo del sistema, navegue a la carpeta del proyecto y ejecute este comando. (Normalmente es preferible iniciar el "Símbolo del sistema para desarrolladores de Visual Studio" en el menú Inicio, ya que se configurará con todas las rutas de acceso necesarias para MSBuild).
 
 Para obtener más información, consulte [Creación de un paquete con MSBuild](../create-packages/creating-a-package-msbuild.md).
 

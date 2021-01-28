@@ -1,16 +1,16 @@
 ---
 title: Archivo project.json de NuGet con proyectos de UWP
 description: Descripción de cómo se usa el archivo project.json para realizar el seguimiento de las dependencias de NuGet en proyectos de Plataforma universal de Windows (UWP).
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/17/2017
 ms.topic: conceptual
-ms.openlocfilehash: ac3c137dd0ba50571737093eef11c8ab0ef932b2
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 30e2272aafb5d2ea8d932e3cb0209d97c30b3209
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64494370"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98773802"
 ---
 # <a name="projectjson-and-uwp"></a>project.json y UWP
 
@@ -73,11 +73,13 @@ El comportamiento de la carpeta `lib` no ha cambiado significativamente en NuGet
 
 Un ejemplo de estructura de lib:
 
-    lib
-    ├───net40
-    │       MyLibrary.dll
-    └───wp81
-            MyLibrary.dll
+```
+lib
+├───net40
+│       MyLibrary.dll
+└───wp81
+        MyLibrary.dll
+```
 
 La carpeta `lib` contiene ensamblados que se usan en tiempo de ejecución. Para la mayoría de paquetes, solo se necesita una carpeta bajo `lib` para cada uno de los TxM de destino.
 
@@ -91,23 +93,25 @@ De manera mecánica, los ensamblados incluidos en la carpeta `ref` son los ensam
 
 La estructura de la carpeta `ref` es la misma que la de `lib`, por ejemplo:
 
-    └───MyImageProcessingLib
-         ├───lib
-         │   ├───net40
-         │   │       MyImageProcessingLibrary.dll
-         │   │
-         │   ├───net451
-         │   │       MyImageProcessingLibrary.dll
-         │   │
-         │   └───win81
-         │           MyImageProcessingLibrary.dll
-         │
-         └───ref
-             ├───net40
-             │       MyImageProcessingLibrary.dll
-             │
-             └───portable-net451-win81
-                     MyImageProcessingLibrary.dll
+```
+└───MyImageProcessingLib
+        ├───lib
+        │   ├───net40
+        │   │       MyImageProcessingLibrary.dll
+        │   │
+        │   ├───net451
+        │   │       MyImageProcessingLibrary.dll
+        │   │
+        │   └───win81
+        │           MyImageProcessingLibrary.dll
+        │
+        └───ref
+            ├───net40
+            │       MyImageProcessingLibrary.dll
+            │
+            └───portable-net451-win81
+                    MyImageProcessingLibrary.dll
+```
 
 En este ejemplo, todos los ensamblados de los directorios `ref` serían idénticos.
 
@@ -119,27 +123,29 @@ La carpeta runtimes contiene ensamblados y bibliotecas nativas que se deben ejec
 
 En el ejemplo siguiente se muestra un paquete que tiene una implementación estrictamente administrada para varias plataformas, pero que usa asistentes nativos en Windows 8, donde puede llamar a API nativas específicas de Windows 8.
 
-    └───MyLibrary
-         ├───lib
-         │   └───net40
-         │           MyLibrary.dll
-         │
-         └───runtimes
-             ├───win8-x64
-             │   ├───lib
-             │   │   └───net40
-             │   │           MyLibrary.dll
-             │   │
-             │   └───native
-             │           MyNativeLibrary.dll
-             │
-             └───win8-x86
-                 ├───lib
-                 │   └───net40
-                 │           MyLibrary.dll
-                 │
-                 └───native
-                         MyNativeLibrary.dll
+```
+└───MyLibrary
+        ├───lib
+        │   └───net40
+        │           MyLibrary.dll
+        │
+        └───runtimes
+            ├───win8-x64
+            │   ├───lib
+            │   │   └───net40
+            │   │           MyLibrary.dll
+            │   │
+            │   └───native
+            │           MyNativeLibrary.dll
+            │
+            └───win8-x86
+                ├───lib
+                │   └───net40
+                │           MyLibrary.dll
+                │
+                └───native
+                        MyNativeLibrary.dll
+```
 
 Dado el paquete anterior, sucede lo siguiente:
 
@@ -155,23 +161,25 @@ Solo se selecciona una carpeta `lib`, por lo que, si hay una carpeta específica
 
 Otra manera de usar los runtimes es enviar un paquete que sea un contenedor administrado sobre un ensamblado nativo. En este escenario se crea un paquete similar al siguiente:
 
-    └───MyLibrary
-         └───runtimes
-             ├───win8-x64
-             │   ├───lib
-             │   │   └───net451
-             │   │           MyLibrary.dll
-             │   │
-             │   └───native
-             │           MyImplementation.dll
-             │
-             └───win8-x86
-                 ├───lib
-                 │   └───net451
-                 │           MyLibrary.dll
-                 │
-                 └───native
-                         MyImplementation.dll
+```
+└───MyLibrary
+        └───runtimes
+            ├───win8-x64
+            │   ├───lib
+            │   │   └───net451
+            │   │           MyLibrary.dll
+            │   │
+            │   └───native
+            │           MyImplementation.dll
+            │
+            └───win8-x86
+                ├───lib
+                │   └───net451
+                │           MyLibrary.dll
+                │
+                └───native
+                        MyImplementation.dll
+```
 
 En este caso no hay una carpeta `lib` de nivel superior como dicha carpeta, dado que no hay ninguna implementación de este paquete que no se base en el ensamblado nativo correspondiente. Si el ensamblado administrado, `MyLibrary.dll`, fuera exactamente el mismo en ambos casos, entonces se podría colocar en una carpeta `lib` de nivel superior, pero como la falta de un ensamblado nativo no produce un error de instalación en el paquete si se instaló en una plataforma que no fuera win-x86 o win-x64, se usaría la biblioteca de nivel superior, pero no se copiaría ningún ensamblado nativo.
 

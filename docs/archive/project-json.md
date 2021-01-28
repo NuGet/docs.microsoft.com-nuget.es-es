@@ -1,16 +1,16 @@
 ---
 title: Referencia del archivo project.json para NuGet
 description: En algunos tipos de proyecto, project.json mantiene la lista de paquetes NuGet que se usan en el proyecto.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/27/2017
 ms.topic: reference
-ms.openlocfilehash: 5ecbcd4855de8ea7b6301a5e307779216baf96fc
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 6665f4f3e688cb4a3989216c8c8f1a8655b61ed8
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "69488293"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775203"
 ---
 # <a name="projectjson-reference"></a>referencia de project.json
 

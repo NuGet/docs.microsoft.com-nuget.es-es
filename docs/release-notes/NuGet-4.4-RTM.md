@@ -1,17 +1,17 @@
 ---
 title: Notas de la versión de NuGet 4.4 RTM
 description: Notas de la versión de NuGet 4.3 RTM incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 3be24a86cc92c4e6d07fcae1dc625a150f28d7b4
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 970a920a401b8a74c04d84cbad9933c54e3cd19e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64498695"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776292"
 ---
 # <a name="nuget-44-release-notes"></a>Notas de la versión de NuGet 4.4
 
@@ -183,7 +183,7 @@ No hay ninguna solución alternativa para este problema.
 
 - Agregar un destino público a NuGet.targets al que se pueda hacer referencia mediante BeforeTargets: [#4634](https://github.com/NuGet/Home/issues/4634)
 
-- Imposibilidad de crear correctamente contentFile con acciones de compilación por parte del destino del paquete: [n.º 4166](https://github.com/NuGet/Home/issues/4166)
+- El destino de pack no puede crear contentFile con acciones de compilación correctamente: [#4166](https://github.com/NuGet/Home/issues/4166)
 
 - RestoreOperationLogger.Do bloquea los subprocesos del grupo de subprocesos: [#5663](https://github.com/NuGet/Home/issues/5663)
 

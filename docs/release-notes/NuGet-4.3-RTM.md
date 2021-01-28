@@ -1,17 +1,17 @@
 ---
 title: Notas de la versión de NuGet 4.3 RTM
 description: Notas de la versión de NuGet 4.3 RTM incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 72d707cb9bacd8abbac873ee10b2fd00f233d3cc
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e9b6d15584d875f59ed64fe662944db3e37aeabb
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64496590"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780170"
 ---
 # <a name="nuget-43-release-notes"></a>Notas de la versión NuGet 4.3
 

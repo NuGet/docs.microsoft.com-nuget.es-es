@@ -1,16 +1,16 @@
 ---
 title: Creación de paquetes NuGet para Xamarin (en iOS, Android y Windows) con Visual Studio 2017 o 2019
 description: Un tutorial integral de creación de paquetes NuGet para Xamarin que usan las API nativas en iOS, Android y Windows.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/05/2019
 ms.topic: tutorial
-ms.openlocfilehash: 0cb653bad9e853d908039b3f7a94e1dd7eefdde5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: fdabeeac57ca12716f6ed2614d036f1623407b20
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78230907"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774217"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2017-or-2019"></a>Creación de paquetes para Xamarin con Visual Studio 2017 o 2019
 

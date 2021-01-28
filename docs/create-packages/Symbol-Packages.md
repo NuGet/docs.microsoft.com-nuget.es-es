@@ -1,17 +1,17 @@
 ---
 title: Creación de paquetes de símbolos heredados (.symbols.nupkg)
 description: Cómo crear paquetes de NuGet que solo contienen símbolos para admitir la depuración de otros paquetes de NuGet en Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 374e9ccfc01cd06508e76529765db3f849342222
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: d9a96986bf80aa15423d7dcee6ea3fe59255252b
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "77476274"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774550"
 ---
 # <a name="creating-legacy-symbol-packages-symbolsnupkg"></a>Creación de paquetes de símbolos heredados (.symbols.nupkg)
 
@@ -46,42 +46,48 @@ Un paquete de símbolos heredado puede tener como destino varias plataformas de 
 
 Por ejemplo, un paquete de símbolos heredado que tenga como destino .NET 4.0 y Silverlight 4 tendría este diseño:
 
-    \lib
-        \net40
-            \MyAssembly.dll
-            \MyAssembly.pdb
-        \sl40
-            \MyAssembly.dll
-            \MyAssembly.pdb
+```
+\lib
+    \net40
+        \MyAssembly.dll
+        \MyAssembly.pdb
+    \sl40
+        \MyAssembly.dll
+        \MyAssembly.pdb
+```
 
 Los archivos de código fuente se colocan en una carpeta especial independiente denominada `src`, que debe seguir la estructura relativa del repositorio de origen. Esto es así porque los archivos PDB contienen rutas de acceso absolutas a los archivos de código fuente que se usan para compilar los archivos DLL correspondientes y se deben buscar durante el proceso de publicación. Se puede quitar una ruta de acceso base (prefijo de ruta de acceso común). Por ejemplo, imagínese que tiene una biblioteca creada a partir de estos archivos:
 
-    C:\Projects
-        \MyProject
-            \Common
-                \MyClass.cs
-            \Full
-                \Properties
-                    \AssemblyInfo.cs
-                \MyAssembly.csproj (producing \lib\net40\MyAssembly.dll)
-            \Silverlight
-                \Properties
-                    \AssemblyInfo.cs
-                \MySilverlightExtensions.cs
-                \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
-
-Aparte de la carpeta `lib`, un paquete de símbolos heredado tendría que tener este diseño:
-
-    \src
+```
+C:\Projects
+    \MyProject
         \Common
             \MyClass.cs
         \Full
             \Properties
                 \AssemblyInfo.cs
+            \MyAssembly.csproj (producing \lib\net40\MyAssembly.dll)
         \Silverlight
             \Properties
                 \AssemblyInfo.cs
             \MySilverlightExtensions.cs
+            \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
+```
+
+Aparte de la carpeta `lib`, un paquete de símbolos heredado tendría que tener este diseño:
+
+```
+\src
+    \Common
+        \MyClass.cs
+    \Full
+        \Properties
+            \AssemblyInfo.cs
+    \Silverlight
+        \Properties
+            \AssemblyInfo.cs
+        \MySilverlightExtensions.cs
+```
 
 ## <a name="referring-to-files-in-the-nuspec"></a>Hacer referencia a los archivos en el archivo nuspec
 

@@ -1,22 +1,22 @@
 ---
 title: Resolución de dependencias de paquetes NuGet
 description: Obtenga más información sobre el proceso de resolución e instalación de las dependencias de un paquete NuGet en NuGet 2.x y NuGet 3.x y versiones posteriores.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 0ef309d95c6ef5437765c02791da6dab13794678
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237749"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775269"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Cómo resuelve NuGet las dependencias de paquetes
 
 Siempre que se instala o reinstala un paquete, lo que incluye la instalación como parte de un proceso de [restauración](../consume-packages/package-restore.md), NuGet también instala los paquetes adicionales de los que depende ese primer paquete.
 
-Es posible que esas dependencias inmediatas también tengan sus propias dependencias, lo que puede continuar hasta una profundidad arbitraria. Esto produce lo que se llama *gráfico de dependencias* , que describe las relaciones entre paquetes en todos los niveles.
+Es posible que esas dependencias inmediatas también tengan sus propias dependencias, lo que puede continuar hasta una profundidad arbitraria. Esto produce lo que se llama *gráfico de dependencias*, que describe las relaciones entre paquetes en todos los niveles.
 
 Cuando varios paquetes tienen la misma dependencia, entonces el mismo Id. de paquete puede aparecer varias veces en el gráfico, posiblemente con restricciones de versión diferentes. Pero, en un proyecto, solo se puede usar una versión de un paquete determinado, por lo que NuGet debe elegir la versión que se usa. El proceso exacto depende del formato de administración de paquetes que se usa.
 

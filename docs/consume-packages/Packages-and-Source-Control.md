@@ -1,16 +1,16 @@
 ---
 title: Paquetes NuGet y control de código fuente
 description: Consideraciones sobre cómo tratar los paquetes de NuGet dentro de los sistemas de control de código fuente y de control de versiones, y cómo omitir paquetes con TFVC y Git.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9d9ea10ccd32bb65ad0d62b591f5e2cb58ea3427
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 9bae65573ca49c68d07250228c1923890e0f14ac
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "69019988"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775015"
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>Omitir paquetes de NuGet en sistemas de control de código fuente
 

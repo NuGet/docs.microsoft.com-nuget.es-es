@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: f1e9bb96fc7acc73ec37cebcdc8015081fafb307
-ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
+ms.openlocfilehash: 63880b6b9bbfe6aac9cc6419d6a972062eea3495
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97523414"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774129"
 ---
 # <a name="analyzer-nuget-formats"></a>Formatos de analizadores de NuGet
 
@@ -43,7 +43,9 @@ También tenga en cuenta que, como este paquete no tiene ningún requisito espec
 
 El uso de la carpeta `analyzers` es similar a la que se usa para [plataformas de destino](../create-packages/supporting-multiple-target-frameworks.md), salvo que los especificadores en la ruta de acceso describen las dependencias del host de desarrollo en lugar del de tiempo de compilación. El formato general es el siguiente:
 
-    $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
+```
+$/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
+```
 
 - **nombre_plataforma** y **versión**: el área expuesta de API *opcional* de .NET Framework que deben ejecutar los archivos DLL incluidos. `dotnet` es actualmente el único valor válido porque Roslyn es el único host que puede ejecutar analizadores. Si no se especifica ningún destino, se supone que los archivos DLL se aplican a *todos* los destinos.
 - **lenguaje_admitido**: el lenguaje para el que se aplica el archivo DLL, uno de entre `cs` (C#), `vb` (Visual Basic) y `fs` (F#). El lenguaje indica que el analizador se debe cargar solo para un proyecto en el que se use ese lenguaje. Si no se especifica ningún lenguaje, se supone que el archivo DLL se aplica a *todos* los lenguajes que admitan analizadores.
