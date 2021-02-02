@@ -1,20 +1,20 @@
 ---
 title: Instalación y uso de un paquete NuGet en Visual Studio
 description: Tutorial sobre el proceso de instalación y uso de un paquete NuGet en un proyecto de Visual Studio.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 10bc34653d294cf70b5c91ce79a79cf6532fba1b
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 55f6a64d90ce8ca628d1ac5c68f8133872a214e0
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80147492"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775521"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>Inicio rápido: Instalación y uso de un paquete en Visual Studio (solo Windows)
 
-Los paquetes de NuGet son unidades de código reutilizable que otros desarrolladores ponen a su disposición para que los use en sus proyectos. Consulte [¿Qué es NuGet?](../What-is-NuGet.md) para obtener más información. Los paquetes se instalan en un proyecto de Visual Studio mediante el Administrador de paquetes NuGet, la [Consola del Administrador de paquetes](../consume-packages/install-use-packages-powershell) o la [CLI de dotnet](install-and-use-a-package-using-the-dotnet-cli.md). En este artículo se muestra el proceso con el conocido paquete [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) y un proyecto de Windows Presentation Foundation (WPF). El mismo proceso se aplica a cualquier otro proyecto de .NET o .NET Core.
+Los paquetes de NuGet son unidades de código reutilizable que otros desarrolladores ponen a su disposición para que los use en sus proyectos. Consulte [¿Qué es NuGet?](../What-is-NuGet.md) para obtener más información. Los paquetes se instalan en un proyecto de Visual Studio mediante el Administrador de paquetes NuGet, la [Consola del Administrador de paquetes](../consume-packages/install-use-packages-powershell.md) o la [CLI de dotnet](install-and-use-a-package-using-the-dotnet-cli.md). En este artículo se muestra el proceso con el conocido paquete [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) y un proyecto de Windows Presentation Foundation (WPF). El mismo proceso se aplica a cualquier otro proyecto de .NET o .NET Core.
 
 Una vez instalado, haga referencia al paquete en el código con `using <namespace>`, donde \<namespace\> es específico del paquete que está usando. Una vez efectuada la referencia, puede llamar al paquete a través de su API.
 
@@ -67,7 +67,7 @@ Para instalar el paquete, puede usar el Administrador de paquetes NuGet o la con
 
 1. Cuando se abra la consola, compruebe que la lista desplegable **Proyecto predeterminado** muestra el proyecto en el que quiere instalar el paquete. Si tiene un único proyecto en la solución, ya está seleccionado.
 
-    ![Buscar el paquete Newtonsoft.Json](media/QS_Use-08-Console1.png)
+    ![Selección de proyecto para el paquete](media/QS_Use-08-Console1.png)
 
 1. Escriba el comando `Install-Package Newtonsoft.Json` (vea [Install-Package](../reference/ps-reference/ps-ref-install-package.md)). La ventana de la consola muestra el resultado del comando. Los errores indican que el paquete no es compatible con la plataforma de destino del proyecto.
 

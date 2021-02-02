@@ -1,16 +1,16 @@
 ---
-title: Crear paquetes NuGet para la Plataforma universal de Windows
+title: Creación de paquetes NuGet para la plataforma UWP (C#)
 description: Un tutorial integral de creación de paquetes NuGet con un componente de Windows Runtime para la Plataforma universal de Windows en C#.
 author: rrelyea
 ms.author: rrelyea
 ms.date: 02/28/2020
 ms.topic: tutorial
-ms.openlocfilehash: 6f8037f439d627af158b6d5b7746a633b053e514
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 22df2cd6dc374ba265c79a019747191e797b774c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238015"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774286"
 ---
 # <a name="create-uwp-packages-c"></a>Creación de paquetes UWP (C#)
 
@@ -26,19 +26,19 @@ En este tutorial se creará un paquete NuGet con un componente de C# de UWP (inc
 
 ## <a name="create-a-uwp-windows-runtime-component"></a>Crear un componente de Windows Runtime para UWP
 
-1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto** , busque "uwp c#", seleccione la plantilla **Componente de Windows Runtime (Windows universal)** , haga clic en Siguiente, cambie el nombre a ImageEnhancer y haga clic en Crear. Cuando se le solicite, acepte los valores predeterminados para Versión de destino y Versión mínima.
+1. En Visual Studio, seleccione **Archivo > Nuevo > Proyecto**, busque "uwp c#", seleccione la plantilla **Componente de Windows Runtime (Windows universal)** , haga clic en Siguiente, cambie el nombre a ImageEnhancer y haga clic en Crear. Cuando se le solicite, acepte los valores predeterminados para Versión de destino y Versión mínima.
 
     ![Creación de un proyecto de componente de Windows Runtime para UWP](media/UWP-NewProject-CS.png)
 
-1. Haga clic con el botón derecho en el proyecto en el Explorador de soluciones, seleccione **Agregar > Nuevo elemento** , seleccione **Control basado en modelo** , cambie el nombre a AwesomeImageControl.cs y haga clic en **Agregar** :
+1. Haga clic con el botón derecho en el proyecto en el Explorador de soluciones, seleccione **Agregar > Nuevo elemento**, seleccione **Control basado en modelo**, cambie el nombre a AwesomeImageControl.cs y haga clic en **Agregar**:
 
     ![Adición de un nuevo elemento de control basado en modelo XAML al proyecto](media/UWP-NewXAMLControl-CS.png)
 
-1. Haga clic con el botón derecho en el proyecto en el Explorador de soluciones y seleccione **Propiedades.** En la página Propiedades, elija la pestaña **Compilar** y habilite **Archivo de documentación XML** :
+1. Haga clic con el botón derecho en el proyecto en el Explorador de soluciones y seleccione **Propiedades.** En la página Propiedades, elija la pestaña **Compilar** y habilite **Archivo de documentación XML**:
 
     ![Establecimiento de Generar archivos de documentación XML en Sí](media/UWP-GenerateXMLDocFiles-CS.png)
 
-1. Ahora, haga clic con el botón derecho en la *solución* , seleccione **Compilación por lotes** y active las cinco casillas de compilación del cuadro de diálogo como se muestra a continuación. Esto garantiza que, cuando realice una compilación, se generará un conjunto completo de artefactos para cada uno de los sistemas de destino compatibles con Windows.
+1. Ahora, haga clic con el botón derecho en la *solución*, seleccione **Compilación por lotes** y active las cinco casillas de compilación del cuadro de diálogo como se muestra a continuación. Esto garantiza que, cuando realice una compilación, se generará un conjunto completo de artefactos para cada uno de los sistemas de destino compatibles con Windows.
 
     ![Generación por lotes](media/UWP-BatchBuild-CS.png)
 

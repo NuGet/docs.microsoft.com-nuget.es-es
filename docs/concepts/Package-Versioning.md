@@ -1,17 +1,17 @@
 ---
 title: Referencia de versión del paquete NuGet
 description: Detalles exactos sobre cómo especificar números de versión e intervalos de otros paquetes de los que depende un paquete NuGet y cómo se instalan las dependencias.
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 4cb12f439d796d583f52d657225c39418d5a4836
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 5ba7860fae1037c0c0eb4c55d2df12d98b1d77cf
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237366"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775114"
 ---
 # <a name="package-versioning"></a>Control de versiones de paquetes
 
@@ -29,17 +29,19 @@ En este tema:
 
 Un número de versión específico tiene el formato *.Revisión[-Sufijo]* , donde los componentes tienen los significados siguientes:
 
-- *VersiónPrincipal* : Cambios importantes
-- *VersiónSecundaria* : nuevas características, compatibles con versiones anteriores
-- *Revisión* : solo correcciones de errores compatibles con versiones anteriores
+- *VersiónPrincipal*: Cambios importantes
+- *VersiónSecundaria*: nuevas características, compatibles con versiones anteriores
+- *Revisión*: solo correcciones de errores compatibles con versiones anteriores
 - *-Sufijo* (opcional): un guión seguido de una cadena que denota una versión preliminar (según la [convención de Versionamiento Semántico o SemVer 1.0](https://semver.org/spec/v1.0.0.html)).
 
 **Ejemplos:**
 
-    1.0.1
-    6.11.1231
-    4.3.1-rc
-    2.2.44-beta1
+```
+1.0.1
+6.11.1231
+4.3.1-rc
+2.2.44-beta1
+```
 
 > [!Important]
 > nuget.org rechaza cualquier carga de paquetes que carezca de un número de versión exacto. La versión debe especificarse en el archivo `.nuspec` o de proyecto que se usa para crear el paquete.
@@ -59,14 +61,16 @@ Dicho esto, los desarrolladores de paquetes generalmente siguen las convenciones
 
 Cuando resuelva referencias de paquete y varias versiones de paquete solo se diferencien en el sufijo, NuGet elegirá primero una versión sin sufijo y luego aplicará la prioridad a las versiones preliminares en orden alfabético inverso. Por ejemplo, se elegirían las siguientes versiones en el orden exacto mostrado:
 
-    1.0.1
-    1.0.1-zzz
-    1.0.1-rc
-    1.0.1-open
-    1.0.1-beta
-    1.0.1-alpha2
-    1.0.1-alpha
-    1.0.1-aaa
+```
+1.0.1
+1.0.1-zzz
+1.0.1-rc
+1.0.1-open
+1.0.1-beta
+1.0.1-alpha2
+1.0.1-alpha
+1.0.1-aaa
+```
 
 ## <a name="semantic-versioning-200"></a>Versionamiento Semántico 2.0.0
 
@@ -228,18 +232,15 @@ Al obtener paquetes de un repositorio durante las operaciones de instalación, r
 
 - Los ceros a la izquierda se quitan de los números de versión:
 
-        1.00 is treated as 1.0
-        1.01.1 is treated as 1.1.1
-        1.00.0.1 is treated as 1.0.0.1
+  1.00 se trata como 1.0 1.01.1 se trata como 1.1.1 1.00.0.1 se trata como 1.0.0.1
 
 - Un cero en la cuarta parte del número de versión se omitirá
 
-        1.0.0.0 is treated as 1.0.0
-        1.0.01.0 is treated as 1.0.1
-        
+  1.0.0.0 se trata como 1.0.0 1.0.01.0 se trata como 1.0.1
+
 - Se eliminarán los metadatos de la compilación 2.0.0 de SemVer.
 
-        1.0.7+r3456 is treated as 1.0.7
+  1.0.7+r3456 se trata como 1.0.7
 
 Las operaciones `pack` y `restore` normalizan las versiones siempre que sea posible. En el caso de los paquetes ya creados, esta normalización no afecta a los números de versión de los propios paquetes; solo afecta al modo en que NuGet coincide con las versiones cuando se resuelven las dependencias.
 

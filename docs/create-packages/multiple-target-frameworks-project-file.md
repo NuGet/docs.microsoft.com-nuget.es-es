@@ -1,16 +1,16 @@
 ---
 title: Compatibilidad con múltiples versiones de paquetes NuGet en el archivo del proyecto
-description: Descripción de los distintos métodos para fijar como destino varias versiones de .NET Framework desde un único paquete de NuGet.
-author: karann-msft
-ms.author: karann
+description: Descripción de los distintos métodos para fijar como destino varias versiones de .NET Framework desde un único paquete de NuGet en el archivo del proyecto.
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1d23759433efb405fa5f0035049befced2c43d6b
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: a05d053340bb2fe795991dfa5a2b95d8625dfd44
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "72380684"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774384"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>Compatibilidad con varias versiones de .NET Framework en el archivo del proyecto
 
