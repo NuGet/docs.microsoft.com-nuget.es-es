@@ -35,9 +35,10 @@
 ## [Creación de un paquete (CLI de dotnet)](create-packages/creating-a-package-dotnet-cli.md)
 ## [Creación de un paquete (CLI de nuget.exe)](create-packages/creating-a-package.md)
 ## [Creación de un paquete (MSBuild)](create-packages/creating-a-package-msbuild.md)
-## [Compatibilidad con varios marcos de destino en el archivo del proyecto](create-packages/multiple-target-frameworks-project-file.md)
+## [Procedimientos recomendados para la creación de paquetes](create-packages/Package-authoring-best-practices.md)
 ## [Compilación de un paquete de versión preliminar](create-packages/prerelease-packages.md)
 ## [Creación de un paquete de símbolos](create-packages/symbol-packages-snupkg.md)
+## [Compatibilidad con varios marcos de destino en el archivo del proyecto](create-packages/multiple-target-frameworks-project-file.md)
 ## Tareas avanzadas
 ### [Admitir varias plataformas de destino](create-packages/supporting-multiple-target-frameworks.md)
 ### [Modificación de archivos de código fuente y configuración](create-packages/source-and-config-file-transformations.md)
