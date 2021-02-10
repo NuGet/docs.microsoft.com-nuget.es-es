@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 403686de42bf4dc1fa94b9dd92ca6d33f3be2183
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 8d1ab4d1f3d75d93c30d94958fd9d1abf0742730
+ms.sourcegitcommit: af059dc776cfdcbad20baab2919b5d6dc1e9022d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775291"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99990111"
 ---
 # <a name="package-metadata"></a>Metadatos de paquete
 
@@ -80,7 +80,7 @@ GET {@id}/{LOWER_ID}/index.json
 
 Nombre     | En     | Tipo    | Obligatorio | Notas
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | Dirección URL    | string  | sí      | El identificador del paquete, en minúsculas
+LOWER_ID | URL    | string  | sí      | El identificador del paquete, en minúsculas
 
 El `LOWER_ID` valor es el identificador de paquete deseado en minúsculas mediante las reglas implementadas por. Método de la red [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true) .
 
@@ -155,6 +155,7 @@ Resumen                  | string                     | no       |
 etiquetas                     | cadena o matriz de cadena  | no       | 
 title                    | string                     | no       | 
 version                  | string                     | sí      | La cadena de versión completa después de la normalización
+vulnerabilidades          | matriz de objetos           | no       | Las vulnerabilidades de seguridad del paquete
 
 La propiedad del paquete `version` es la cadena de versión completa después de la normalización. Esto significa que los datos de compilación de SemVer 2.0.0 pueden incluirse aquí.
 
@@ -218,6 +219,15 @@ Nombre         | Tipo   | Obligatorio | Notas
 ------------ | ------ | -------- | -----
 id           | string | sí      | IDENTIFICADOR del paquete alternativo
 range        | object | no       | El [intervalo de versiones](../concepts/package-versioning.md#version-ranges)permitido o `*` si se permite cualquier versión
+
+#### <a name="vulnerabilities"></a>Puntos vulnerables
+
+Matriz de objetos `vulnerability`. Cada vulnerabilidad tiene las siguientes propiedades:
+
+Nombre         | Tipo   | Obligatorio | Notas
+------------ | ------ | -------- | -----
+advisoryUrl  | string | sí      | Ubicación del aviso de seguridad para el paquete
+severity     | string | sí      | Gravedad del aviso: "0" = bajo, "1" = moderado, "2" = alto, "3" = crítico
 
 ### <a name="sample-request"></a>Solicitud de ejemplo
 

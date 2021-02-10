@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 11485f583d6993919f6bb8acabcc87d9e4261975
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 6c04453fec9beb7b0998953384ec60694e1213c1
+ms.sourcegitcommit: af059dc776cfdcbad20baab2919b5d6dc1e9022d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774154"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99990147"
 ---
 # <a name="catalog"></a>Catálogo
 
@@ -220,6 +220,7 @@ Resumen                 | string                     | no       |
 etiquetas                    | Matriz de cadenas           | no       |
 title                   | string                     | no       |
 verbatimVersion         | string                     | no       | La cadena de versión tal y como se encontró originalmente en el archivo. nuspec
+vulnerabilidades         | matriz de objetos           | no       | Las vulnerabilidades de seguridad del paquete
 
 La propiedad del paquete `version` es la cadena de versión completa después de la normalización. Esto significa que los datos de compilación de SemVer 2.0.0 pueden incluirse aquí.
 
@@ -238,6 +239,17 @@ La `published` marca de tiempo es la hora a la que se muestra el paquete por úl
 
 > [!Note]
 > En nuget.org, el `published` valor se establece en el año 1900 cuando el paquete no está en la lista.
+
+#### <a name="vulnerabilities"></a>Puntos vulnerables
+
+Matriz de objetos `vulnerability`. Cada vulnerabilidad tiene las siguientes propiedades:
+
+Nombre         | Tipo   | Obligatorio | Notas
+------------ | ------ | -------- | -----
+advisoryUrl  | string | sí      | Ubicación del aviso de seguridad para el paquete
+severity     | string | sí      | Gravedad del aviso: "0" = bajo, "1" = moderado, "2" = alto, "3" = crítico
+
+Si la `severity` propiedad contiene valores distintos de los enumerados aquí, la gravedad del aviso se tratará como baja.
 
 #### <a name="sample-request"></a>Solicitud de ejemplo
 
@@ -274,7 +286,7 @@ GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_li
 
 ## <a name="cursor"></a>Cursor
 
-### <a name="overview"></a>Introducción
+### <a name="overview"></a>Información general
 
 En esta sección se describe un concepto de cliente que, aunque no es necesariamente obligatorio por el protocolo, debe formar parte de cualquier implementación de cliente de catálogo práctico.
 
