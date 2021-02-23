@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann
-ms.openlocfilehash: af9969df33c6bf7a62709e6e3535b8b886376e3e
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 428fd3d7b324f6eb825b17e4a87a662fbd84a2f0
+ms.sourcegitcommit: af059dc776cfdcbad20baab2919b5d6dc1e9022d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775918"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99990099"
 ---
 # <a name="package-id-prefix-reservation"></a>Reserva de prefijo de identificador de paquete
 
@@ -31,7 +31,7 @@ Cuando se reserva un prefijo en [nuget.org](https://www.nuget.org/), sucede lo s
 
 1. Cada vez que se envía un paquete a [nuget.org](https://www.nuget.org/) con un identificador que coincide con el prefijo de identificador reservado, el paquete se rechaza, a menos que proceda del propietario o propietarios que reservaron el prefijo del identificador.
 
-1. Todos los paquetes que coincidan con el prefijo de identificador reservado y que procedan de los propietarios que reservaron el prefijo de identificador tendrán un indicador visual en Visual Studio 2017 versión 15.4 o posterior y en [nuget.org](https://www.nuget.org/) que indica que el paquete tiene un prefijo de identificador reservado. Esto se aplica tanto a los envíos de paquetes nuevos como a los paquetes existentes de los propietarios. **Nota:** El indicador aparece en Visual Studio únicamente si se selecciona una única fuente como origen del paquete.
+1. Todos los paquetes que coincidan con el prefijo de identificador reservado y que procedan de los propietarios que reservaron el prefijo de identificador tendrán un indicador visual en Visual Studio 2017 versión 15.4 o posterior y en [nuget.org](https://www.nuget.org/) que indica que el paquete tiene un prefijo de identificador reservado. Esto se aplica tanto a los envíos de paquetes nuevos como a los paquetes existentes de los propietarios. **Nota:** El indicador aparece en Visual Studio únicamente si se selecciona una única fuente como origen del paquete.
 
 1. Todos los paquetes existentes que coincidan con el prefijo de identificador reservado, pero *no* pertenezcan al propietario del prefijo reservado, se mantendrán sin cambios (no se quitarán de la lista, pero tampoco tendrán un indicador visual). Además, los propietarios de estos paquetes todavía podrán enviar nuevas versiones del paquete.
 
@@ -73,23 +73,25 @@ Una vez que haya enviado la solicitud, se le notificará si se acepta o se recha
 
 ### <a name="id-prefix-reservation-criteria"></a>Criterios de reserva de prefijo de identificador
 
-Al revisar una solicitud de reserva de prefijo de identificador, el equipo de [nuget.org](https://www.nuget.org/) la evaluará conforme a los criterios siguientes. No es necesario cumplirlos todos para poder reservar un prefijo, pero la solicitud podría denegarse si no hay pruebas suficientes de que se cumplen los criterios (justificado con una explicación):
+Al revisar una solicitud de reserva de prefijo de identificador, el equipo de [NuGet.org](https://www.nuget.org) la evaluará conforme a los criterios siguientes. Tenga en cuenta que no es necesario cumplirlos todos para poder reservar un prefijo, pero la solicitud podría denegarse si no hay pruebas suficientes de que se cumplen los criterios (justificado con una explicación):
 
-1. ¿El prefijo de identificador de paquete indica de forma correcta y clara quién el propietario del paquete?
+1. ¿El prefijo de identificador de paquete indica de forma correcta y clara quién el propietario de la reserva?
 
-1. ¿El propietario del paquete [ha habilitado 2FA para su cuenta de NuGet.org](individual-accounts.md#enable-two-factor-authentication-2fa)?
-
-1. ¿Se encuentra en el prefijo de identificador de paquete un número considerable de los paquetes que ya ha enviado el propietario?
+1. ¿El propietario [ha habilitado 2FA para su cuenta de NuGet.org](individual-accounts.md#enable-two-factor-authentication-2fa)?
 
 1. ¿Es el prefijo de identificador de paquete algo común que no pertenece a ningún propietario individual u organización?
 
-1. ¿Provocaría ambigüedad y confusión en la comunidad el hecho de *no* reservar el prefijo de identificador de paquete?
+1. ¿Provocaría ambigüedad, confusión u otro tipo de daño en la comunidad el hecho de *no* reservar el prefijo de identificador de paquete?
+
+Al publicar paquetes en NuGet.org dentro de la reserva de prefijo de identificador, se deben tener en cuenta los procedimientos recomendados siguientes:
 
 1. ¿Son claras y coherentes las propiedades de identificación de los paquetes que coinciden con el prefijo de identificador de paquete? (En particular, el autor del paquete).
 
 1. ¿Tienen los paquetes una licencia? (Mediante el elemento de metadatos [license](../reference/nuspec.md#license), en lugar de licenseUrl, que está en desuso).
 
-1. Si los paquetes tienen un icono (mediante el elemento de metadatos iconUrl), ¿están usando el elemento de metadatos [icon](../reference/nuspec.md#icon) también (no es un requisito para quitar iconUrl)?
+1. Si los paquetes tienen un icono (mediante el elemento de metadatos iconUrl), ¿están usando el elemento de metadatos [icon](../reference/nuspec.md#icon) también? No es requisito quitar iconUrl, pero se deben usar los iconos insertados.
+ 
+Considere la posibilidad de revisar toda la [guía de procedimientos recomendados para la creación de paquetes](../create-packages/package-authoring-best-practices.md), además de los puntos anteriormente mencionados.
 
 ## <a name="third-party-feed-provider-scenarios"></a>Escenarios de proveedores de fuentes de terceros
 
