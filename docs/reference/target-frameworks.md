@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 7671b50b84bf1447fe94e02896786d1f309425dd
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 9172aefb48ab3e542498f5a144f1d4f381ad55bd
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777314"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859491"
 ---
 # <a name="target-frameworks"></a>Versiones de .NET Framework de destino
 
@@ -23,13 +23,17 @@ NuGet usa referencias de plataformas de destino en varios lugares para identific
 - [packages.config](../reference/packages-config.md): el atributo `targetframework` de una dependencia especifica la variante de un paquete que se va a instalar.
 
 > [!Note]
-> El código fuente del cliente de NuGet que calcula las siguientes tablas se encuentra en las siguientes ubicaciones:
-> - Nombres de plataforma admitidos: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> - Prioridad y asignación de plataformas: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> NuGet es compatible con todas las plataformas de destino .NET modernas:
+> - Para obtener una lista de las plataformas de destino más recientes, vea la documentación sobre las [plataformas de destino en los proyectos de estilo SDK](/dotnet/standard/frameworks) .
 
 ## <a name="supported-frameworks"></a>Marcos de trabajo admitidos
 
 A una plataforma normalmente se hace referencia mediante un moniker corto de la plataforma de destino o TFM. En .NET Standard esto también se generaliza a *TxM* para permitir una sola referencia a varios marcos de trabajo.
+
+> [!Note]
+> El código fuente del cliente de NuGet que calcula las siguientes tablas se encuentra en las siguientes ubicaciones:
+> - Nombres de plataforma admitidos: [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> - Prioridad y asignación de plataformas: [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 Los clientes de NuGet admiten las plataformas indicadas en la tabla siguiente. Los equivalentes se muestran entre corchetes []. Tenga en cuenta que es posible que algunas herramientas, como `dotnet`, usen variaciones de TFM canónicos en algunos archivos. Por ejemplo, `dotnet pack` usa `.NETCoreApp2.0` en un archivo `.nuspec` en lugar de `netcoreapp2.0`. Las distintas herramientas del cliente de NuGet controlan estas variaciones sin problema, pero siempre debe usar TFM canónicos al editar archivos directamente.
 

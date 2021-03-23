@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 6a68b07c42e6abf4ad57d0129fa76d7dd620145f
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 4028657862cfd56d0653b370e8344cab8392d69d
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777675"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859504"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -34,7 +34,7 @@ En este tema:
 
 - `.nuspec`No es necesario que un archivo cree paquetes para los [proyectos de estilo SDK](../resources/check-project-format.md) (normalmente, los proyectos de .net Core y .net Standard que usan el [atributo SDK](/dotnet/core/tools/csproj#additions)). (Tenga en cuenta que `.nuspec` se genera cuando se crea el paquete).
 
-   Si va a crear un paquete mediante `dotnet.exe pack` o `msbuild pack target` , le recomendamos que incluya en su lugar [todas las propiedades](../reference/msbuild-targets.md#pack-target) que suelen estar en el `.nuspec` archivo en el archivo del proyecto. Sin embargo, en su lugar, puede elegir [usar un `.nuspec` archivo para empaquetar con `dotnet.exe` o `msbuild pack target` ](../reference/msbuild-targets.md#packing-using-a-nuspec).
+   Si va a crear un paquete mediante `dotnet.exe pack` o `msbuild pack target` , le recomendamos que incluya en su lugar [todas las propiedades](../reference/msbuild-targets.md#pack-target) que suelen estar en el `.nuspec` archivo en el archivo del proyecto. Sin embargo, en su lugar, puede elegir [usar un `.nuspec` archivo para empaquetar con `dotnet.exe` o `msbuild pack target` ](../reference/msbuild-targets.md#packing-using-a-nuspec-file).
 
 - En el caso de los proyectos migrados de `packages.config` a [PackageReference](../consume-packages/package-references-in-project-files.md), `.nuspec` no es necesario un archivo para crear el paquete. En su lugar, use [msbuild-t:Pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
@@ -198,7 +198,7 @@ Por ejemplo, debe agregar lo siguiente a su archivo nuspec al crear un paquete m
 </package>
 ```
 
-[Icono de paquete de ejemplo de nuspec.](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
+[Icono de paquete de ejemplo de nuspec.](https://github.com/NuGet/Samples/tree/main/PackageIconNuspecExample)
 
 Para el equivalente de MSBuild, eche un vistazo a [empaquetar un archivo de imagen de icono](msbuild-targets.md#packing-an-icon-image-file).
 
@@ -267,7 +267,7 @@ Al cargar un paquete en nuget.org, el `title` campo está limitado a 256 caracte
 #### <a name="packagetypes"></a>packageTypes
 *(3.5+)* Colección de cero o más elementos `<packageType>` que especifican el tipo del paquete si es distinto de un paquete de dependencias tradicional. Cada tipo de paquete tiene atributos de *name* y *version*. Vea [Establecimiento de un tipo de paquete](../create-packages/set-package-type.md).
 
-#### <a name="dependencies"></a>dependencias
+#### <a name="dependencies"></a>dependencies
 Colección de cero o más elementos `<dependency>` que especifican las dependencias del paquete. Cada dependencia tiene atributos de *id*, *version*, *include* (3.x+) y *exclude* (3.x+). Vea [Dependencias](#dependencies-element) a continuación.
 
 #### <a name="frameworkassemblies"></a>frameworkAssemblies
@@ -369,13 +369,13 @@ Al cargar un paquete en nuget.org, cada atributo de la dependencia `id` se limit
 
 | Etiqueta Include o Exclude | Carpetas afectadas del destino |
 | --- | --- |
-| contentFiles | Content |
-| en tiempo de ejecución | Runtime, Resources y FrameworkAssemblies |
+| contentFiles | Contenido |
+| motor en tiempo de ejecución | Runtime, Resources y FrameworkAssemblies |
 | compile | lib |
 | build | build (propiedades y destinos de MSBuild) |
 | nativas | nativas |
 | ninguno | Sin carpetas |
-| all | Todas las carpetas |
+| todo | Todas las carpetas |
 
 Por ejemplo, las siguientes líneas indican las dependencias en `PackageA` versión 1.1.0 o posterior y en `PackageB` versión 1.x.
 
@@ -528,7 +528,7 @@ Cada elemento `<file>` especifica los siguientes atributos:
 | --- | --- |
 | **src** | Ubicación de los archivos que se deben incluir, sujeta a exclusiones especificadas por el atributo `exclude`. La ruta de acceso es relativa al archivo `.nuspec`, a menos que se especifique una ruta de acceso absoluta. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
 | **Destino** | La ruta de acceso relativa a la carpeta del paquete donde se colocan los archivos de código fuente, que debe comenzar por `lib`, `content`, `build` o `tools`. Vea [Creating a .nuspec from a convention-based working directory](../create-packages/creating-a-package.md#from-a-convention-based-working-directory) (Crear un archivo .nuspec desde un directorio de trabajo basado en convenciones). |
-| **exclude** | Una lista delimitada por punto y coma de archivos o patrones de archivo que se deben excluir de la ubicación `src`. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
+| **evitar** | Una lista delimitada por punto y coma de archivos o patrones de archivo que se deben excluir de la ubicación `src`. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
 
 ### <a name="examples"></a>Ejemplos
 
@@ -758,7 +758,7 @@ Estos archivos se especifican con un conjunto de atributos que describen cómo s
 | Atributo | Descripción |
 | --- | --- |
 | **inclui** | (Obligatorio) Ubicación de los archivos que se deben incluir, sujeta a exclusiones especificadas por el atributo `exclude`. La ruta de acceso es relativa a la `contentFiles` carpeta a menos que se especifique una ruta de acceso absoluta. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
-| **exclude** | Una lista delimitada por punto y coma de archivos o patrones de archivo que se deben excluir de la ubicación `src`. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
+| **evitar** | Una lista delimitada por punto y coma de archivos o patrones de archivo que se deben excluir de la ubicación `src`. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
 | **buildAction** | Acción de compilación que se va a asignar al elemento de contenido de MSBuild, como,,, `Content` `None` `Embedded Resource` `Compile` , etc. El valor predeterminado es `Compile` . |
 | **copyToOutput** | Un valor booleano que indica si se deben copiar los elementos de contenido en la carpeta de salida de compilación (o publicación). El valor predeterminado es false. |
 | **flatten** | Valor booleano que indica si se deben copiar los elementos de contenido en una carpeta en la salida de la compilación (true) o si se debe conservar la estructura de carpetas del paquete (false). Esta marca solo funciona cuando la marca copyToOutput está establecida en true. El valor predeterminado es false. |
