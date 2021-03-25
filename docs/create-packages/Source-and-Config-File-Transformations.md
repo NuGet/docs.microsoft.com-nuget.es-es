@@ -6,16 +6,16 @@ ms.author: jodou
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 5bd0e409f527fb668008204fb16ad002f4784c46
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 76c589b5ad034127675fb2bbf79ea97992883ebe
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774586"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859114"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>Transformar archivos de código fuente y de configuración
 
-Una **transformación de código fuente** aplica un reemplazo de tokens unidireccional en los archivos del paquete `content` o la carpeta `contentFiles` (`content` para los clientes que usan `packages.config` y `contentFiles` para `PackageReference`) cuando se instala el paquete, donde los tokens hacen referencia a las [propiedades del proyecto](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7) de Visual Studio. Esto le permite insertar un archivo en el espacio de nombres del proyecto o personalizar el código que normalmente iría en `global.asax` en un proyecto de ASP.NET.
+Una **transformación de código fuente** aplica un reemplazo de tokens unidireccional en los archivos del paquete `content` o la carpeta `contentFiles` (`content` para los clientes que usan `packages.config` y `contentFiles` para `PackageReference`) cuando se instala el paquete, donde los tokens hacen referencia a las [propiedades del proyecto](/dotnet/api/vslangproj.projectproperties) de Visual Studio. Esto le permite insertar un archivo en el espacio de nombres del proyecto o personalizar el código que normalmente iría en `global.asax` en un proyecto de ASP.NET.
 
 Las **transformaciones de archivos de configuración** le permiten modificar archivos que ya existen en un proyecto de destino, como `web.config` y `app.config`. Por ejemplo, puede que el paquete deba agregar un elemento a la sección `modules` del archivo de configuración. Esta transformación se efectúa incluyendo archivos especiales en el paquete que describe las secciones que se deben agregar a los archivos de configuración. Cuando se desinstala un paquete, esos mismos cambios se invierten, por lo que se trata de una transformación bidireccional.
 
@@ -45,7 +45,7 @@ Las **transformaciones de archivos de configuración** le permiten modificar arc
 
     Después de la instalación, NuGet reemplaza `$rootnamespace$` por `Fabrikam`, adoptando el proyecto de destino, cuyo espacio de nombres raíz es `Fabrikam`.
 
-El token `$rootnamespace$` es la propiedad de proyecto que más se suele usar; las demás aparecen en [propiedades de proyecto](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7). Tenga en cuenta, por supuesto, que algunas propiedades pueden ser específicas del tipo de proyecto.
+El token `$rootnamespace$` es la propiedad de proyecto que más se suele usar; las demás aparecen en [propiedades de proyecto](/dotnet/api/vslangproj.projectproperties). Tenga en cuenta, por supuesto, que algunas propiedades pueden ser específicas del tipo de proyecto.
 
 ## <a name="specifying-config-file-transformations"></a>Especificar transformaciones del archivo de configuración
 
@@ -113,9 +113,9 @@ Para ver el efecto que tendrá instalar y desinstalar el paquete, cree un proyec
 ### <a name="xdt-transforms"></a>Transformaciones XDT
 
 > [!Note]
-> Tal como se ha mencionado en la [sección de incidencias de compatibilidad de paquetes de los documentos para la migración de `packages.config` a `PackageReference`](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues), las transformaciones de XDT, como se describe a continuación, solo son compatibles con `packages.config`. Si se agregan los archivos siguientes al paquete, los consumidores que usan el paquete con `PackageReference` no tendrán las transformaciones aplicadas (consulte [este ejemplo](https://github.com/NuGet/Samples/tree/master/XDTransformExample) para que las transformaciones XDT funcionen con `PackageReference`).
+> Tal como se ha mencionado en la [sección de incidencias de compatibilidad de paquetes de los documentos para la migración de `packages.config` a `PackageReference`](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues), las transformaciones de XDT, como se describe a continuación, solo son compatibles con `packages.config`. Si se agregan los archivos siguientes al paquete, los consumidores que usan el paquete con `PackageReference` no tendrán las transformaciones aplicadas (consulte [este ejemplo](https://github.com/NuGet/Samples/tree/main/XDTransformExample) para que las transformaciones XDT funcionen con `PackageReference`).
 
-Puede modificar los archivos de configuración mediante la [sintaxis XDT](/previous-versions/aspnet/dd465326(v=vs.110)). También puede hacer que NuGet reemplace los tokens por [propiedades del proyecto](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7) incluyendo el nombre de la propiedad entre delimitadores `$` (no distinguen mayúsculas de minúsculas).
+Puede modificar los archivos de configuración mediante la [sintaxis XDT](/previous-versions/aspnet/dd465326(v=vs.110)). También puede hacer que NuGet reemplace los tokens por [propiedades del proyecto](/dotnet/api/vslangproj.projectproperties) incluyendo el nombre de la propiedad entre delimitadores `$` (no distinguen mayúsculas de minúsculas).
 
 Por ejemplo, el siguiente archivo `app.config.install.xdt` insertará un elemento `appSettings` en `app.config` que contendrá los valores `FullPath`, `FileName` y `ActiveConfigurationSettings` del proyecto:
 

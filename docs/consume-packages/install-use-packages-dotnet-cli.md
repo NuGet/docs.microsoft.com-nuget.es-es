@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: 38455e61bd91f115df9f27df090ba47a029f6877
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: fecf14f0f04d5063f89080b2756f988739c1412c
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622946"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859270"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>Instalación y administración de paquetes con la CLI de dotnet
 
@@ -24,7 +24,7 @@ En este artículo se muestra el uso básico de algunos de los comandos más comu
 
 - El [SDK de .NET Core](https://www.microsoft.com/net/download/), que ofrece la herramienta de línea de comandos de `dotnet`. A partir de Visual Studio 2017, la CLI de dotnet se instala automáticamente con cualquier carga de trabajo relacionada con .NET Core.
 
-## <a name="install-a-package"></a>Instala un paquete.
+## <a name="install-a-package"></a>Instalación de un paquete
 
 [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) agrega una referencia de paquete al archivo del proyecto y, después, ejecuta `dotnet restore` para instalar el paquete.
 
@@ -47,9 +47,9 @@ En este artículo se muestra el uso básico de algunos de los comandos más comu
    Puede abrir el archivo `.csproj` para ver la referencia agregada:
 
     ```xml
-   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-   </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    </ItemGroup>
     ```
 
 ## <a name="install-a-specific-version-of-a-package"></a>Instalación de una versión específica de un paquete

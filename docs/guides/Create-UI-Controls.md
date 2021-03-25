@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: 317937b4d9d773d74384b8ebfcd2146062236ac1
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 7660203ec44db75b7764767b519c9ff10dd1122e
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774327"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859088"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>Creación de controles de IU como paquetes NuGet
 
-A partir de Visual Studio 2017, puede sacar partido de las funcionalidades agregadas para los controles de UWP y WPF que se suministran en los paquetes de NuGet. En esta guía se describen estas funcionalidades en el contexto de los controles de UWP con el [ejemplo ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage). Se aplica lo mismo a los controles de WPF, a menos que se indique lo contrario.
+A partir de Visual Studio 2017, puede sacar partido de las funcionalidades agregadas para los controles de UWP y WPF que se suministran en los paquetes de NuGet. En esta guía se describen estas funcionalidades en el contexto de los controles de UWP con el [ejemplo ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/main/ExtensionSDKasNuGetPackage). Se aplica lo mismo a los controles de WPF, a menos que se indique lo contrario.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -90,7 +90,7 @@ En el ejemplo siguiente, el control implementado en `ManagedPackage.winmd` apare
 
 ## <a name="add-custom-icons-to-your-controls"></a>Agregar iconos personalizados a los controles
 
-Para mostrar un icono personalizado en el panel Recursos o en el cuadro de herramientas, agregue una imagen a su proyecto o al proyecto `design.dll` correspondiente con el nombre "Namespace.ControlName.extension" y establezca la acción de compilación en "Recurso incrustado". También debe asegurarse de que `AssemblyInfo.cs` asociado especifique el atributo ProvideMetadata: `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`. Vea esta [muestra](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20).
+Para mostrar un icono personalizado en el panel Recursos o en el cuadro de herramientas, agregue una imagen a su proyecto o al proyecto `design.dll` correspondiente con el nombre "Namespace.ControlName.extension" y establezca la acción de compilación en "Recurso incrustado". También debe asegurarse de que `AssemblyInfo.cs` asociado especifique el atributo ProvideMetadata: `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`. Vea esta [muestra](https://github.com/NuGet/Samples/blob/main/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20).
 
 Los formatos compatibles son `.png`, `.jpg`, `.jpeg`, `.gif` y `.bmp`. El formato recomendado es BMP24 en 16 por 16 píxeles.
 
@@ -158,7 +158,7 @@ En el caso de WPF, vamos a continuar con el ejemplo en el que le gustaría que e
 
 Puede insertar recursos de cadena (`.resw`) en el paquete, que el control o el proyecto UWP de consumo pueden usar. Para ello, establezca la propiedad **Acción de compilación** del archivo `.resw` en **PRIResource**.
 
-Para ver un ejemplo, vea [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs) en el ejemplo de ExtensionSDKasNuGetPackage.
+Para ver un ejemplo, vea [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/main/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs) en el ejemplo de ExtensionSDKasNuGetPackage.
 
 > [!Note]
 > Esto se aplica solo a los controles de UWP.
@@ -166,4 +166,4 @@ Para ver un ejemplo, vea [MyCustomControl.cs](https://github.com/NuGet/Samples/b
 ## <a name="see-also"></a>Consulte también
 
 - [Crear paquetes UWP](create-uwp-packages.md)
-- [Ejemplo de ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)
+- [Ejemplo de ExtensionSDKasNuGetPackage](https://github.com/NuGet/Samples/tree/main/ExtensionSDKasNuGetPackage)

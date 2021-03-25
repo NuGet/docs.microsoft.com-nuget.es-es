@@ -5,12 +5,12 @@ author: zivkan
 ms.author: zivkan
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: b32075c3f2c06c15c07d36602bdabdaee8b9405a
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: b2202946d0060e09828250d240f931044d1bf485
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "67427480"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859036"
 ---
 # <a name="select-assemblies-referenced-by-projects"></a>Selección de ensamblados a los que hacen referencia proyectos
 
@@ -21,7 +21,7 @@ Las referencias de ensamblado explícitas permiten usar un subconjunto de ensamb
 
 ## <a name="packagereference-support"></a>Compatibilidad con `PackageReference`
 
-Cuando un proyecto usa un paquete con `PackageReference` y dicho paquete contiene un directorio `ref\<tfm>\`, NuGet clasifica estos ensamblados como recursos en tiempo de compilación, mientras que los ensamblados `lib\<tfm>\` se clasifican como recursos en tiempo de ejecución. Los ensamblados de `ref\<tfm>\` no se usan en tiempo de ejecución. Esto significa que todos los ensamblados de `ref\<tfm>\` deben tener un ensamblado coincidente en el directorio `lib\<tfm>\` o en un directorio `runtime\` pertinente. En caso contrario, probablemente se producirán errores en tiempo de ejecución. Dado que los ensamblados de `ref\<tfm>\` no se usan en tiempo de ejecución, podrían ser [ensamblados de solo metadatos](https://github.com/dotnet/roslyn/blob/master/docs/features/refout.md) para reducir el tamaño del paquete.
+Cuando un proyecto usa un paquete con `PackageReference` y dicho paquete contiene un directorio `ref\<tfm>\`, NuGet clasifica estos ensamblados como recursos en tiempo de compilación, mientras que los ensamblados `lib\<tfm>\` se clasifican como recursos en tiempo de ejecución. Los ensamblados de `ref\<tfm>\` no se usan en tiempo de ejecución. Esto significa que todos los ensamblados de `ref\<tfm>\` deben tener un ensamblado coincidente en el directorio `lib\<tfm>\` o en un directorio `runtime\` pertinente. En caso contrario, probablemente se producirán errores en tiempo de ejecución. Dado que los ensamblados de `ref\<tfm>\` no se usan en tiempo de ejecución, podrían ser [ensamblados de solo metadatos](https://github.com/dotnet/roslyn/blob/main/docs/features/refout.md) para reducir el tamaño del paquete.
 
 > [!Important]
 > Si un paquete contiene el elemento `<references>` nuspec (usado por `packages.config`, como verá más abajo) y no incluye ensamblados en `ref\<tfm>\`, NuGet anunciará los ensamblados que aparecen en el elemento `<references>` nuspec como recursos en tiempo de compilación y ejecución. Esto significa que habrá excepciones en tiempo de ejecución cuando los ensamblados a los que se hace referencia necesiten cargar otro ensamblado en el directorio `lib\<tfm>\`.
@@ -42,7 +42,7 @@ Los proyectos que usan `packages.config` para administrar paquetes NuGet suelen 
 ```
 
 > [!Note]
-> El proyecto `packages.config` usa un proceso denominado [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md) para copiar los ensamblados en el directorio de salida `bin\<configuration>\`. Se copia el ensamblado del proyecto y, luego, el sistema de compilación examina el manifiesto del ensamblado en busca de los ensamblados a los que se hace referencia. Después, copia esos ensamblados y repite el proceso de forma recursiva para todos los ensamblados. Esto significa que si alguno de los ensamblados del directorio `lib\<tfm>\` no se muestra en el manifiesto de otro ensamblado como una dependencia (si el ensamblado se carga en tiempo de ejecución mediante `Assembly.Load`, MEF u otro marco de inserción de dependencias), puede que no se copie en el directorio de salida `bin\<configuration>\` del proyecto, a pesar de estar en `bin\<tfm>\`.
+> El proyecto `packages.config` usa un proceso denominado [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/main/documentation/wiki/ResolveAssemblyReference.md) para copiar los ensamblados en el directorio de salida `bin\<configuration>\`. Se copia el ensamblado del proyecto y, luego, el sistema de compilación examina el manifiesto del ensamblado en busca de los ensamblados a los que se hace referencia. Después, copia esos ensamblados y repite el proceso de forma recursiva para todos los ensamblados. Esto significa que si alguno de los ensamblados del directorio `lib\<tfm>\` no se muestra en el manifiesto de otro ensamblado como una dependencia (si el ensamblado se carga en tiempo de ejecución mediante `Assembly.Load`, MEF u otro marco de inserción de dependencias), puede que no se copie en el directorio de salida `bin\<configuration>\` del proyecto, a pesar de estar en `bin\<tfm>\`.
 
 ## <a name="example"></a>Ejemplo
 

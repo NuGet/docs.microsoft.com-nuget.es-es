@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: bac4d88c29539f9fbe7b33b44ce11d350920d365
-ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
+ms.openlocfilehash: e5dfd9f8dd0439751ddd3863cad03f3b463e1487
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97523528"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859244"
 ---
 # <a name="restore-packages-using-package-restore"></a>Restauración de paquetes
 
@@ -244,4 +244,4 @@ Para probar la restauración automática de paquetes, realice lo siguiente:
 
 ## <a name="troubleshooting"></a>Solución de problemas
 
-Vea [Solución de errores de restauración de paquetes](package-restore-troubleshooting.md).
+Vea [Solución de errores de restauración de paquetes](Package-restore-troubleshooting.md).
