@@ -5,14 +5,14 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: dcaed83ca54e3234702e963ffc2ebbde4cd75b28
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: df7c793d115622f04a148cbbc3ebf396a3e4ab69
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235768"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859192"
 ---
-# <a name="package-references-packagereference-in-project-files"></a>Referencias del paquete (PackageReference) en archivos de proyecto
+# <a name="package-references-packagereference-in-project-files"></a>Referencias de paquetes (`PackageReference`) en archivos de proyecto
 
 Las referencias de paquetes, con el nodo `PackageReference`, administran las dependencias de NuGet directamente en los archivos de proyecto (a diferencia de un archivo `packages.config` independiente). El uso de PackageReference, como así se llama, no afecta a otros aspectos de NuGet; por ejemplo, las opciones de los archivos `NuGet.config` (incluidos los orígenes de paquetes) se siguen aplicando como se explica en las [configuraciones comunes de NuGet](configuring-nuget-behavior.md).
 
@@ -211,7 +211,7 @@ Para comprobar el nombre exacto de la propiedad generada, examine el archivo [nu
 En algunos casos poco comunes, los distintos paquetes contienen clases en el mismo espacio de nombres. A partir de NuGet 5.7 y Visual Studio 2019 Update 7, de forma similar a ProjectReference, PackageReference admite [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases).
 De manera predeterminada, no se proporciona ningún alias. Cuando se especifica un alias, es necesario hacer referencia a *todos* los ensamblados procedentes del paquete anotado con un alias.
 
-Puede consultar un ejemplo de uso en [NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample).
+Puede consultar un ejemplo de uso en [NuGet\Samples](https://github.com/NuGet/Samples/tree/main/PackageReferenceAliasesExample).
 
 En el archivo del proyecto, especifique los alias de la siguiente forma:
 

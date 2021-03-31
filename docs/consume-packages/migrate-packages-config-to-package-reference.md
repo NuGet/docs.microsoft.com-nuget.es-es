@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8161f4a39d4adfdb9efb25bcb840b20b85a58e07
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: fabfd76a46a38ff26acbc6439406d99eb3f85bf4
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774785"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859166"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>Migración de packages.config a PackageReference
 
@@ -100,31 +100,27 @@ Algunos aspectos que se admitían en packages.config no se admiten en PackageRef
 
 ### <a name="installps1-scripts-are-ignored-when-the-package-is-installed-after-the-migration"></a>Los scripts "install.ps1" se omiten cuando el paquete se instala después de la migración
 
-| | |
-| --- | --- |
-| **Descripción** | Con PackageReference, los scripts de PowerShell install.ps1 y uninstall.ps1 no se ejecutan durante la instalación o desinstalación de un paquete. |
-| **Posible impacto** | Es posible que los paquetes que dependen de estos scripts para configurar algún comportamiento en el proyecto de destino no funcionen según lo esperado. |
+* **Descripción**: con PackageReference, los scripts de PowerShell install.ps1 y uninstall.ps1 no se ejecutan durante la instalación o desinstalación de un paquete.
+
+* **Impacto potencial**: es posible que los paquetes que dependen de estos scripts para configurar algún comportamiento en el proyecto de destino no funcionen según lo esperado.
 
 ### <a name="content-assets-are-not-available-when-the-package-is-installed-after-the-migration"></a>Los recursos "content" no están disponibles cuando el paquete se instala después de la migración
 
-| | |
-| --- | --- |
-| **Descripción** | Los recursos de la carpeta `content` de un paquete no se admiten con PackageReference y se omiten. PackageReference agrega compatibilidad para `contentFiles` para tener una mejor compatibilidad transitiva y contenido compartido.  |
-| **Posible impacto** | Los recursos de `content` no se copian en el proyecto y el código del proyecto que depende de la presencia de esos recursos requiere refactorización.  |
+* **Descripción**: los recursos de la carpeta `content` de un paquete no se admiten con PackageReference y se omiten. PackageReference agrega compatibilidad para `contentFiles` para tener una mejor compatibilidad transitiva y contenido compartido.
+
+* **Impacto potencial**: los recursos de `content` no se copian en el proyecto y el código del proyecto que depende de la presencia de esos recursos requiere refactorización.
 
 ### <a name="xdt-transforms-are-not-applied-when-the-package-is-installed-after-the-upgrade"></a>Las transformaciones XDT no se aplican cuando el paquete se instala después de la actualización
 
-| | |
-| --- | --- |
-| **Descripción** | Las transformaciones XDT no se admiten con PackageReference y los archivos `.xdt` se omiten al instalar o desinstalar un paquete.   |
-| **Posible impacto** | Las transformaciones XDT no se aplican a ningún archivo XML de proyecto, normalmente, `web.config.install.xdt` y `web.config.uninstall.xdt`, lo que significa que el archivo ` web.config` del proyecto no se actualiza cuando el paquete se instala o se desinstala. |
+* **Descripción**: las transformaciones XDT no se admiten con PackageReference, y los archivos `.xdt` se omiten al instalar o desinstalar un paquete.
+
+* **Impacto potencial**: las transformaciones XDT no se aplican a ningún archivo XML de proyecto, normalmente, `web.config.install.xdt` y `web.config.uninstall.xdt`, lo que significa que el archivo ` web.config` del proyecto no se actualiza cuando el paquete se instala o se desinstala.
 
 ### <a name="assemblies-in-the-lib-root-are-ignored-when-the-package-is-installed-after-the-migration"></a>Los ensamblados de la raíz lib se omiten cuando el paquete se instala después de la migración
 
-| | |
-| --- | --- |
-| **Descripción** | Con PackageReference, se omiten los ensamblados presentes en la raíz de la carpeta `lib` sin una subcarpeta específica de la plataforma de destino. NuGet busca una subcarpeta que coincida con el moniker de la plataforma de destino (TFM) correspondiente a la plataforma de destino del proyecto e instala los ensamblados coincidentes en el proyecto. |
-| **Posible impacto** | Es posible que los paquetes que no tengan una subcarpeta que coincida con el moniker de la plataforma de destino (TFM) correspondiente a la plataforma de destino del proyecto no se comporten según lo esperado después de la transición o no se puedan instalar durante la migración. |
+* **Descripción**: con PackageReference, se omiten los ensamblados presentes en la raíz de la carpeta `lib` sin una subcarpeta específica de la plataforma de destino. NuGet busca una subcarpeta que coincida con el moniker de la plataforma de destino (TFM) correspondiente a la plataforma de destino del proyecto e instala los ensamblados coincidentes en el proyecto.
+
+* **Impacto potencial**: es posible que los paquetes que no tengan una subcarpeta que coincida con el moniker de la plataforma de destino (TFM) correspondiente a la plataforma de destino del proyecto no se comporten según lo esperado después de la transición o no se puedan instalar durante la migración.
 
 ## <a name="found-an-issue-report-it"></a>¿Encontró un problema? ¡Notifíquelo!
 

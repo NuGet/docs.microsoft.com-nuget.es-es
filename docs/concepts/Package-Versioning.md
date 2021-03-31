@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 5ba7860fae1037c0c0eb4c55d2df12d98b1d77cf
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 77b96e83f8fc7afd391537d16120d037585dd379
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775114"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859205"
 ---
 # <a name="package-versioning"></a>Control de versiones de paquetes
 
@@ -116,7 +116,7 @@ Cuando se hace referencia a las dependencias de paquete, NuGet admite el uso de 
 | [1.0,2.0] | 1.0 ≤ x ≤ 2.0 | Intervalo exacto, ambos incluidos |
 | (1.0,2.0) | 1.0 < x < 2.0 | Intervalo exacto, ambos excluidos |
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | Versión mínima incluida y versión máxima excluida mezcladas |
-| (1.0)    | no válidos | no válidos |
+| (1.0)    | no válido | no válidos |
 
 Cuando se usa el formato PackageReference, NuGet admite también el uso de una notación flotante, \*, en las partes del número de versión principal, versión secundaria, revisión y sufijo de versión preliminar. Las versiones flotantes no se admiten con el formato `packages.config`. Cuando se especifica una versión flotante, la regla se resuelve como la versión más alta existente que coincide con la descripción de la versión. A continuación se muestran ejemplos de versiones flotantes y las resoluciones.
 
@@ -245,3 +245,13 @@ Al obtener paquetes de un repositorio durante las operaciones de instalación, r
 Las operaciones `pack` y `restore` normalizan las versiones siempre que sea posible. En el caso de los paquetes ya creados, esta normalización no afecta a los números de versión de los propios paquetes; solo afecta al modo en que NuGet coincide con las versiones cuando se resuelven las dependencias.
 
 Sin embargo, los repositorios de paquetes NuGet deben tratar estos valores de la misma manera que NuGet para evitar la duplicación de la versión del paquete. Por lo tanto, un repositorio que contiene la versión *1.0* de un paquete no debe hospedar también la versión *1.0.0* como un paquete independiente y diferente.
+
+## <a name="where-nugetversion-diverges-from-semantic-versioning"></a>Divergencias entre NuGetVersion y el versionamiento semántico
+
+Si quiere usar versiones de paquetes NuGet mediante programación, se recomienda encarecidamente usar el elemento [NuGet.Versioning](https://www.nuget.org/packages/NuGet.Versioning) del paquete. El método estático `NuGetVersion.Parse(string)` se puede usar para analizar las cadenas de versión, y `VersionComparer` se puede usar para ordenar las instancias de `NuGetVersion`.
+
+Si va a implementar la funcionalidad de NuGet en un lenguaje que no se ejecute en .NET, a continuación encontrará una lista de las diferencias conocidas entre `NuGetVersion` y el versionamiento semántico, así como los motivos por los que es posible que una biblioteca de versionamiento semántico existente no funcione para paquetes ya publicados en nuget.org.
+
+1. `NuGetVersion` admite un segmento de la cuarta versión, `Revision`, que será compatible con [`System.Version`](/dotnet/api/system.version), o bien un superconjunto de este. Así pues, sin incluir las etiquetas de versiones preliminares y metadatos, una cadena de versión es `Major.Minor.Patch.Revision`. De acuerdo con la normalización de versiones descrita anteriormente, si `Revision` es cero, se omite de la cadena de versión normalizada.
+2. `NuGetVersion` solo requiere que se defina el segmento principal. El resto son opcionales y equivalentes a cero. Esto significa que `1`, `1.0`, `1.0.0` y `1.0.0.0` se aceptan y son iguales.
+3. `NuGetVersion` usa comparaciones de cadenas que no distinguen mayúsculas de minúsculas para componentes de versión preliminar. Esto significa que `1.0.0-alpha` y `1.0.0-Alpha` son iguales.
