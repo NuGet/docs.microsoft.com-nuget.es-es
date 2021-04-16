@@ -70,6 +70,7 @@
 ## [Control de versiones del paquete](concepts/package-versioning.md)
 ## [Resolución de dependencias](concepts/dependency-resolution.md)
 ## [Prácticas recomendadas para una cadena de suministro de software seguro](concepts/Security-Best-Practices.md)
+## [Solución de problemas de paquetes instalados](concepts/troubleshooting-installed-packages.md)
 # Referencia
 ## [.nuspec](reference/nuspec.md)
 ## [Archivo nuget.config](reference/nuget-config-file.md)
