@@ -83,7 +83,7 @@ Vehículos de distribución de NuGet:
 
 **Diseño de solicitudes de cambio:**
 
-* Se suprime `<owners>` el elemento cuando es [redundante: #5134](https://github.com/NuGet/Home/issues/5134)
+* Se ha `<owners>` suprimido el elemento cuando es [redundante: #5134](https://github.com/NuGet/Home/issues/5134)
 
 * Registrar IntervalTrackers como eventos [ETW: #9593](https://github.com/NuGet/Home/issues/9593)
 
@@ -115,7 +115,7 @@ Gracias a todos los colaboradores que ayudaron a que esta versión de NuGet sea 
 
 * Registro del contenido del paquetehash durante el registro de restauración (durante la extracción): [#10384](https://github.com/NuGet/Home/issues/10384)
 
-* Al restaurar con un nivel de detalle normal, registre el origen desde el que se restaura un [paquete #10461](https://github.com/NuGet/Home/issues/10461)
+* Al restaurar con el nivel de detalle normal, registre desde qué origen se restaura un [paquete: #10461](https://github.com/NuGet/Home/issues/10461)
 
 **[Lista de todos los problemas corregidos en esta versión: 5.7.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=6075f5724f84579cc29a79ee)**
 

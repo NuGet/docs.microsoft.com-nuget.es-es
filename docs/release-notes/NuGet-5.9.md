@@ -1,6 +1,6 @@
 ---
 title: Notas de la versión de NuGet 5.9
-description: Notas de la versión de NuGet 5.9 que incluyen nuevas características, correcciones de errores y DCR.
+description: Notas de la versión de NuGet 5.9, incluidas nuevas características, correcciones de errores y DCR.
 author: erdembayar
 ms.author: eryondon
 ms.date: 3/11/2021
@@ -28,7 +28,7 @@ Vehículos de distribución de NuGet:
 
 ## <a name="summary-whats-new-in-59"></a>Resumen: Novedades de la versión 5.9
 
-* Agregar el elemento de menú contextual "Actualizar" para las dependencias de paquete que inicia Administrador de paquetes interfaz de usuario con paquetes preseleccionados para actualizar : [#10378](https://github.com/NuGet/Home/issues/10378)
+* Agregar el elemento de menú contextual "Actualizar" para las dependencias de paquete que inicia Administrador de paquetes interfaz de usuario con paquetes preseleccionados para actualizar: [#10378](https://github.com/NuGet/Home/issues/10378)
 
     ![Experiencia de "Actualización" del paquete con el botón derecho](media/releasenotes-59-update.png)
 
@@ -36,7 +36,7 @@ Vehículos de distribución de NuGet:
 
     ![Versión solicitada en el nivel de solución Administrador de paquetes interfaz de usuario](media/releasenotes-59-requested-version.png)
 
-* Sugerencias de paquetes de IntelliCode en la pestaña Examinar Administrador de paquetes interfaz de usuario publicada como prueba A/B: [#10053](https://github.com/NuGet/Home/issues/10053)
+* Sugerencias de paquetes de IntelliCode en la pestaña Examinar Administrador de paquetes interfaz de usuario publicada como una prueba A/B: [#10053](https://github.com/NuGet/Home/issues/10053)
 
 * `.nupkg.metadata`Extienda el archivo para incluir el origen de [instalación: #10354](https://github.com/NuGet/Home/issues/10354)
 
@@ -86,29 +86,29 @@ Vehículos de distribución de NuGet:
 
 * Advertencia de advertencia NU5128 cuando packastool con alias targetframework: [#10097](https://github.com/NuGet/Home/issues/10097)
 
-* La lógica outputPath de los destinos pack en una compilación personalizada no funciona correctamente: [#9234](https://github.com/NuGet/Home/issues/9234)
+* La lógica outputPath de los destinos de pack en una compilación personalizada no funciona [correctamente: #9234](https://github.com/NuGet/Home/issues/9234)
 
 * VS OE: almacenar en caché la instancia de IServiceBroker en el [cliente: #10141](https://github.com/NuGet/Home/issues/10141)
 
-* Convertir la creación de NuGetProjectActions para desinstalar desde la interfaz de usuario de PM en una operación [paralela: #9956](https://github.com/NuGet/Home/issues/9956)
+* Convertir la creación de NuGetProjectActions para la desinstalación desde la interfaz de usuario de PM en una operación [paralela: #9956](https://github.com/NuGet/Home/issues/9956)
 
-* Rendimiento: reducir UIDelays en GetPackageSpecsAsync para proyectos heredados y proyectos que no son de [PR: #9953](https://github.com/NuGet/Home/issues/9953)
+* Rendimiento: reduzca UIDelays en GetPackageSpecsAsync para proyectos heredados y proyectos que no son de [PR: #9953](https://github.com/NuGet/Home/issues/9953)
 
 * ``dotnet nuget push *.nupkg`` no inserta más de un archivo: [#4393](https://github.com/NuGet/Home/issues/4393)
 
-* La salida se ajusta a 80 caracteres en macOS cuando se redirige [: #10198](https://github.com/NuGet/Home/issues/10198)
+* La salida se ajusta a 80 caracteres en macOS cuando se redirige [a #10198](https://github.com/NuGet/Home/issues/10198)
 
 * Se produce un error en la restauración con -Source <Relative Path>  -  [#9406](https://github.com/NuGet/Home/issues/9406)
 
-* netcoreapp5.0-windows no realiza un recorrido de ida y vuelta y no analiza la información de la [plataforma: #10177](https://github.com/NuGet/Home/issues/10177)
+* netcoreapp5.0-windows no realiza recorridos de ida y vuelta y no analiza la información de la [plataforma: #10177](https://github.com/NuGet/Home/issues/10177)
 
-* Los proyectos de CPS personalizados requieren la funcionalidad de proyecto AssemblyReferences para restaurar. - [#8071](https://github.com/NuGet/Home/issues/8071)
+* Los proyectos de CPS personalizados requieren la funcionalidad del proyecto AssemblyReferences para restaurar. - [#8071](https://github.com/NuGet/Home/issues/8071)
 
-* La comprobación de existencia de archivos de icono y licencia siempre debe usar una comparación que distingue mayúsculas [de minúsculas: #9817](https://github.com/NuGet/Home/issues/9817)
+* La comprobación de existencia de archivos de icono y licencia siempre debe usar una comparación que distingue mayúsculas de minúsculas [#9817](https://github.com/NuGet/Home/issues/9817)
 
-* Las restauraciones dotnetCLiToolReference dificultan la razón de los proyectos no op count/uptodateprojectscount- [#10038](https://github.com/NuGet/Home/issues/10038)
+* Las restauraciones de DotnetCLiToolReference dificultan la razón sobre los proyectos no op count/uptodateprojectscount [- #10038](https://github.com/NuGet/Home/issues/10038)
 
-* Es difícil ver el cuadro de línea discontinua de formato de paquete al navegar por tabulación a través del cuadro de diálogo "Elegir formato Administrador de paquetes nuget" en Tema [oscuro: #9729](https://github.com/NuGet/Home/issues/9729)
+* Difícil ver el cuadro de línea de guiones del formato de paquete al navegar por tabulación a través del cuadro de diálogo "Elegir formato Administrador de paquetes NuGet" en Tema [oscuro: #9729](https://github.com/NuGet/Home/issues/9729)
 
 * Excluir referencias de marco transitivo de `CollectFrameworkReferences`  -  [#10314](https://github.com/NuGet/Home/issues/10314)
 
@@ -116,23 +116,23 @@ Vehículos de distribución de NuGet:
 
 * resolver la carga de ensamblados de contratos internos (corregir RPS u obtener excepción): [#9919](https://github.com/NuGet/Home/issues/9919)
 
-* Reemplace GetService por GetServiceAsync en NuGet.Clients, parte [1: #10362](https://github.com/NuGet/Home/issues/10362)
+* Reemplace GetService por GetServiceAsync en NuGet.Clients, parte 1: [#10362](https://github.com/NuGet/Home/issues/10362)
 
-* Las instalación de la CLI no deben instalar paquetes no incluidos en la [lista: #7466](https://github.com/NuGet/Home/issues/7466)
+* Las instalaciones de la CLI no deben instalar paquetes no incluidos en la [lista: #7466](https://github.com/NuGet/Home/issues/7466)
 
 * Restauración estática de grafos de msbuild: registro innecesario sobre MSBuildStartupDirectory [: #10335](https://github.com/NuGet/Home/issues/10335)
 
 * Las dependencias de proyecto de ProjectReferences marcadas como PrivateAssets no deben incluirse en la comprobación actualizada del archivo de [bloqueo: #8565](https://github.com/NuGet/Home/issues/8565)
 
-* Proyectos de SDK con datos no encontrados que no muestran errores de restauración en VS [: #10406](https://github.com/NuGet/Home/issues/10406)
+* Proyectos de SDK con datos no encontrados que no muestran errores de restauración en [VS: #10406](https://github.com/NuGet/Home/issues/10406)
 
-* NU1004 al restaurar una solución que tiene proyectos heredados y netstandard2 mixtos desde la línea cmd con LockedMode [- #9623](https://github.com/NuGet/Home/issues/9623)
+* NU1004 al restaurar una solución que tiene proyectos heredados y netstandard2 mixtos de la línea cmd con [LockedMode: #9623](https://github.com/NuGet/Home/issues/9623)
 
-* Pack incluye contenido incluido a través de paquetes de dependencia en el paquete del proyecto actual (solo proyectos basados en SDK): [#8867](https://github.com/NuGet/Home/issues/8867)
+* Pack incluye contenido incluido a través de paquetes de dependencias en el paquete del proyecto actual (solo proyectos basados en SDK): [#8867](https://github.com/NuGet/Home/issues/8867)
 
 * Agregar telemetría para los errores de la API de extensibilidad de VS de [NuGet: #10062](https://github.com/NuGet/Home/issues/10062)
 
-* Agregue GenerateRestoreGraphFile en la restauración de grafos estáticos para mejorar la capacidad de depuración.  - [#10365](https://github.com/NuGet/Home/issues/10365)
+* Agregue GenerateRestoreGraphFile en la restauración de grafos estáticos para mejorar la depuración.  - [#10365](https://github.com/NuGet/Home/issues/10365)
 
 * No se puede abrir el Administrador de paquetes [NuGet: #10336](https://github.com/NuGet/Home/issues/10336)
 
@@ -142,7 +142,7 @@ Vehículos de distribución de NuGet:
 
 * packages.config package.lock.jsen usa una plataforma de destino [incorrecta: #10257](https://github.com/NuGet/Home/issues/10257)
 
-* Codespaces: corregir la telemetría de https://github.com/NuGet/NuGet.Client/pull/3786  -  [#10439](https://github.com/NuGet/Home/issues/10439)
+* Codespaces: corrija la telemetría https://github.com/NuGet/NuGet.Client/pull/3786  -  [de #10439](https://github.com/NuGet/Home/issues/10439)
 
 * El error NU1004 desaparece al compilar la solución después de habilitar "RestoreLockedMode": [#8973](https://github.com/NuGet/Home/issues/8973)
 
@@ -152,7 +152,7 @@ Vehículos de distribución de NuGet:
 
 * La versión predeterminada es NULL después de hacer clic en un paquete en desuso en la pestaña [Examinar : #10380](https://github.com/NuGet/Home/issues/10380)
 
-* El administrador de NuGet Visual Studio recarga cuando se recupera el [foco( #4176](https://github.com/NuGet/Home/issues/4176)
+* El administrador de NuGet de Visual Studio recarga cuando se recupera el [foco: #4176](https://github.com/NuGet/Home/issues/4176)
 
 * Quitar IPackageSourceProvider2 y los tipos [relacionados: #10098](https://github.com/NuGet/Home/issues/10098)
 
@@ -160,17 +160,17 @@ Vehículos de distribución de NuGet:
 
 * CreateVersionsAsync realiza comparaciones innecesarias de NuGetVersion: [#10436](https://github.com/NuGet/Home/issues/10436)
 
-* NuGet.Client debe reemplazar el uso de ManagedImageMonikers por KnownMonikers [: #9977](https://github.com/NuGet/Home/issues/9977)
+* NuGet.Client debe reemplazar el uso de ManagedImageMonikers por KnownMonikers: [#9977](https://github.com/NuGet/Home/issues/9977)
 
 * El icono en desuso se superpone con la versión del paquete en desuso en la pestaña [Examinar : #10452](https://github.com/NuGet/Home/issues/10452)
 
-* El control de errores de PackageReference NU1604 es diferente en VS y la línea de comandos (restaurar & Administrador de paquetes interfaz de usuario): [#9289](https://github.com/NuGet/Home/issues/9289)
+* El control de errores de PackageReference NU1604 es diferente en VS y la línea de comandos (Restaurar & Administrador de paquetes IU): [#9289](https://github.com/NuGet/Home/issues/9289)
 
 * Codespaces: formateadores necesarios no registrados [: #10467](https://github.com/NuGet/Home/issues/10467)
 
 * Quitar net45 como marco de destino de NuGet.Frameworks: [#10470](https://github.com/NuGet/Home/issues/10470)
 
-* Implementación: agregue nuevas telemeciones para realizar un seguimiento de los eventos relacionados con el uso de PMC y PowerShell. - [#10142](https://github.com/NuGet/Home/issues/10142)
+* Implementación: agregue nuevas teleme entradas para realizar un seguimiento de los eventos relacionados con el uso de PMC y PowerShell. - [#10142](https://github.com/NuGet/Home/issues/10142)
 
 * Solo se muestra un paquete en la ventana Vista previa de cambios cuando hay varios paquetes disponibles para actualizar en la interfaz de usuario de Administrador de paquetes : [#10483](https://github.com/NuGet/Home/issues/10483)
 
@@ -180,7 +180,7 @@ Vehículos de distribución de NuGet:
 
 * Las casillas de la pestaña Actualizaciones no funcionan bien con los lectores de [pantalla: #10449](https://github.com/NuGet/Home/issues/10449)
 
-* La actualización en PMUI hace que la referencia de objeto no se establezca en una instancia de un [objeto : #9882](https://github.com/NuGet/Home/issues/9882)
+* La actualización en PMUI hace que la referencia de objeto no se establezca en una instancia de un objeto [: #9882](https://github.com/NuGet/Home/issues/9882)
 
 * Implementación: agregue nuevas telemeciones para realizar un seguimiento de los eventos relacionados con el seguimiento del uso de PMC y PowerShell. - [#10478](https://github.com/NuGet/Home/issues/10478)
 
@@ -223,5 +223,5 @@ Gracias a todos los colaboradores que ayudaron a que esta versión de NuGet sea 
 
 ## <a name="feedback-welcome"></a>Bienvenida a los comentarios
 
-Sus comentarios son importantes.  Si hay algún problema con esta versión, consulte nuestros problemas de [GitHub](https://github.com/NuGet/Home/issues) [y Visual Studio Developer Community](https://developercommunity.visualstudio.com/) problemas existentes.  Si hay nuevos problemas en NuGet, informe de un [problema de GitHub.](https://github.com/NuGet/Home/issues/new)
+Sus comentarios son importantes.  Si hay algún problema con esta versión, consulte los problemas de [GitHub](https://github.com/NuGet/Home/issues) [y Visual Studio Developer Community](https://developercommunity.visualstudio.com/) problemas existentes.  Si hay nuevos problemas en NuGet, informe de un [problema de GitHub.](https://github.com/NuGet/Home/issues/new)
 Para problemas generales de la experiencia [](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) de NuGet, háganoslo saber a través de la opción Notificar un problema que se encuentra en su IDE favorito en Ayuda **> notificar un problema.**

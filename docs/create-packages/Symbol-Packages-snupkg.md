@@ -12,18 +12,18 @@ keywords: Paquetes de símbolos de NuGet, depuración de paquetes de NuGet, comp
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 001637348fdd435e4ffd3a5a55e8128d1eab453c
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: a62996a28348bf95e4581af180597d72cd5aa298
+ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774571"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387340"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>Crear paquetes de símbolos (.snupkg)
 
 Una buena experiencia de depuración se basa en la presencia de símbolos de depuración, ya que proporcionan información crítica, como la asociación entre el código de origen y el compilado, los nombres de variables locales, los seguimientos de la pila, etc. Puede usar paquetes de símbolos (.snupkg) para distribuir estos símbolos y mejorar la experiencia de depuración de los paquetes NuGet.
 
-> Tenga en cuenta que el paquete de símbolos no es la única estrategia para poner los símbolos de depuración a disposición de los consumidores de la biblioteca. También es [posible `embed`](https://docs.microsoft.com/dotnet/core/deploying/single-file#include-pdb-files-inside-the-bundle) en `dll` o `exe` con la siguiente propiedad de proyecto: `<DebugType>embedded</DebugType>`
+> Tenga en cuenta que el paquete de símbolos no es la única estrategia para poner los símbolos de depuración a disposición de los consumidores de la biblioteca. También es [posible `embed`](/dotnet/core/deploying/single-file#include-pdb-files-inside-the-bundle) en `dll` o `exe` con la siguiente propiedad de proyecto: `<DebugType>embedded</DebugType>`
 
 ## <a name="prerequisites"></a>Prerequisites
 
