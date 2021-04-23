@@ -1,34 +1,34 @@
 ---
-title: Referencia de las plataformas de destino para NuGet
+title: Referencia de plataformas de destino para NuGet
 description: Las referencias de las plataformas de destino de NuGet identifican y aíslan los componentes de un paquete que dependen de la plataforma.
 author: JonDouglas
 ms.author: jodou
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 9172aefb48ab3e542498f5a144f1d4f381ad55bd
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: d7f91880096b5cbdca7447f7838634ff099c3c4c
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859491"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901725"
 ---
 # <a name="target-frameworks"></a>Versiones de .NET Framework de destino
 
 NuGet usa referencias de plataformas de destino en varios lugares para identificar y aislar de forma específica los componentes de un paquete que dependen de la plataforma:
 
-- [archivo de proyecto](../create-packages/multiple-target-frameworks-project-file.md): en el caso de los proyectos de estilo SDK, el archivo *. csproj* contiene las referencias de la plataforma de destino.
+- [archivo de proyecto:](../create-packages/multiple-target-frameworks-project-file.md)para los proyectos de estilo SDK, *.csproj* contiene las referencias de la plataforma de destino.
 - [Manifiesto .nuspec](../reference/nuspec.md): un paquete puede indicar que se incluyan distintos paquetes en un proyecto en función de la plataforma de destino del proyecto.
 - [Nombre de la carpeta .nupkg](../create-packages/creating-a-package.md#from-a-convention-based-working-directory): las carpetas que están dentro de la carpeta `lib` de un paquete se pueden denominar según la plataforma de destino, cada una de las cuales contiene los archivos DLL y otro contenido adecuado para esa plataforma.
 - [packages.config](../reference/packages-config.md): el atributo `targetframework` de una dependencia especifica la variante de un paquete que se va a instalar.
 
 > [!Note]
-> NuGet es compatible con todas las plataformas de destino .NET modernas:
-> - Para obtener una lista de las plataformas de destino más recientes, vea la documentación sobre las [plataformas de destino en los proyectos de estilo SDK](/dotnet/standard/frameworks) .
+> NuGet admite todas las plataformas de destino modernas de .NET:
+> - Para obtener una lista de las plataformas de destino más recientes, consulte la documentación [Marcos de destino en proyectos de estilo SDK.](/dotnet/standard/frameworks)
 
 ## <a name="supported-frameworks"></a>Marcos de trabajo admitidos
 
-A una plataforma normalmente se hace referencia mediante un moniker corto de la plataforma de destino o TFM. En .NET Standard esto también se generaliza a *TxM* para permitir una sola referencia a varios marcos de trabajo.
+A una plataforma normalmente se hace referencia mediante un moniker corto de la plataforma de destino o TFM. En .NET Standard se generaliza a *TxM* para permitir una única referencia a varios marcos.
 
 > [!Note]
 > El código fuente del cliente de NuGet que calcula las siguientes tablas se encuentra en las siguientes ubicaciones:
@@ -73,7 +73,7 @@ Windows Phone (SL) | wp | wp [wp7] |
 Windows Phone (UWP) | | wpa81 |
 Plataforma universal de Windows | uap | uap [uap10.0] |
 | | | uap10.0 |
-| | | UAP 10.0. xxxxx (donde 10.0. xxxxx es la versión mínima de la plataforma de destino de la aplicación de consumo) |
+| | | uap10.0.xxxxx (donde 10.0.xxxxx es la versión mínima de la plataforma de destino de la aplicación de consumo) |
 .NET Standard | netstandard | netstandard1.0 |
 | | | netstandard1.1 |
 | | | netstandard1.2 |
@@ -83,13 +83,15 @@ Plataforma universal de Windows | uap | uap [uap10.0] |
 | | | netstandard1.6 |
 | | | netstandard2.0 |
 | | | netstandard2.1 |
-Aplicación .NET core | netcoreapp | netcoreapp1.0 |
+.NET 5+ (y .NET Core) | netcoreapp | netcoreapp1.0 |
 | | | netcoreapp1.1 |
 | | | netcoreapp2.0 |
 | | | netcoreapp2.1 |
 | | | netcoreapp2.2 |
 | | | netcoreapp3.0 |
 | | | netcoreapp3.1 |
+| | net | net5.0 |
+| | | net6.0 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
@@ -128,9 +130,9 @@ Hay una serie de plataformas relacionadas y compatibles entre sí, pero no neces
 | win (Microsoft Store) | winrt |
 | | |
 
-## <a name="net-standard"></a>Estándar neto
+## <a name="net-standard"></a>NET Standard
 
-[.Net Standard](/dotnet/standard/net-standard) simplifica las referencias entre los marcos de trabajo compatibles con binarios, lo que permite que una sola plataforma de destino haga referencia a una combinación de otras. (para obtener información, vea el [manual de .NET](/dotnet/articles/standard/index)).
+[.NET Standard](/dotnet/standard/net-standard) simplifica las referencias entre marcos compatibles con binarios, lo que permite que un único marco de destino haga referencia a una combinación de otros. (para obtener información, vea el [manual de .NET](/dotnet/articles/standard/index)).
 
 La herramienta de NuGet [Get Nearest Framework](https://aka.ms/s2m3th) simula lo que usa NuGet para seleccionar una plataforma entre los muchos recursos de plataformas disponibles en un paquete en función de la plataforma del proyecto.
 
@@ -139,13 +141,13 @@ La serie de monikers `dotnet` se debe usar en NuGet 3.3 y en versiones anteriore
 ## <a name="portable-class-libraries"></a>Bibliotecas de clases portables
 
 > [!Warning]
-> **No se recomiendan las PCL**. Aunque se admiten las PCL, los autores de paquetes deben admitir .NET Standard. .NET Platform Standard es una evolución de PCL y representa la portabilidad binaria entre plataformas con un solo moniker que no está vinculado a una biblioteca estática como monikers *portable-a + b + c* .
+> **No se recomiendan las PCL**. Aunque se admiten las PCL, los autores de paquetes deben admitir .NET Standard. .NET Platform Standard es una evolución de las PCL y representa la portabilidad binaria entre plataformas mediante un solo moniker que no está vinculado a una biblioteca estática como *monikers portable-a+b+c.*
 
 Para definir una plataforma de destino que haga referencia a varias plataformas de destino secundarias, use la palabra clave `portable` para prefijar la lista de las plataformas a las que se hace referencia. Evite incluir artificialmente plataformas adicionales que no estén directamente compiladas, ya que puede provocar efectos secundarios imprevistos en esas plataformas.
 
 Las plataformas adicionales definidas por terceros proporcionan compatibilidad con otros entornos que son accesibles de este modo. Además, existen números de perfil abreviados disponibles para hacer referencia a estas combinaciones de plataformas relacionadas como `Profile#`, pero no es una práctica recomendada para usar estos números, ya que reduce la legibilidad de las carpetas y de `.nuspec`.
 
-| Número de perfil | Marcos de trabajo | Nombre completo | .NET Standard |
+| Número de perfil | Marcos | Nombre completo | .NET Standard |
  --- | --- | --- | ---
  Perfil2 | .NET Framework 4.0 | portable-net40+win8+sl4+wp7 |
  | | Windows 8.0 | |

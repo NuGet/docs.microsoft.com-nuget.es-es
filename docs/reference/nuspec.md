@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: a8a8058032b0b6c6ddcd5eed1cf22e75f0e3af72
-ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
+ms.openlocfilehash: ed865aad6f72752adcf3e3921287a20b961c4a8a
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107387418"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901816"
 ---
 # <a name="nuspec-reference"></a>Referencia de .nuspec
 
@@ -28,15 +28,15 @@ En este tema:
 - [Incluir archivos de contenido](#including-content-files)
 - [Archivos nuspec de ejemplo](#example-nuspec-files)
 
-## <a name="project-type-compatibility"></a>Compatibilidad con tipos de proyecto
+## <a name="project-type-compatibility"></a>Compatibilidad de tipos de proyecto
 
-- Use `.nuspec` con para proyectos que no son de estilo SDK que usan `nuget.exe pack` `packages.config` .
+- Use con para proyectos que no son `.nuspec` de estilo SDK que usan `nuget.exe pack` `packages.config` .
 
-- No se necesita un archivo para crear paquetes para proyectos de estilo `.nuspec` [SDK](../resources/check-project-format.md) (normalmente .NET Core y .NET Standard que usan el [atributo SDK](/dotnet/core/tools/csproj#additions)). (Tenga en cuenta `.nuspec` que se genera un al crear el paquete).
+- No se necesita un archivo para crear paquetes para proyectos de estilo `.nuspec` [SDK](../resources/check-project-format.md) (normalmente. NET Core y .NET Standard que usan el [atributo SDK](/dotnet/core/tools/csproj#additions)). (Tenga en cuenta `.nuspec` que se genera un al crear el paquete).
 
-   Si va a crear un paquete mediante o , se recomienda incluir en su lugar todas las propiedades que normalmente se encuentran en el archivo `dotnet.exe pack` en el archivo del `msbuild pack target` [](../reference/msbuild-targets.md#pack-target) `.nuspec` proyecto. Sin embargo, puede elegir usar un [archivo `.nuspec` para empaquetar mediante `dotnet.exe` o `msbuild pack target` ](../reference/msbuild-targets.md#packing-using-a-nuspec-file).
+   Si va a crear un paquete mediante o , se recomienda incluir en su lugar todas las propiedades que normalmente están en el archivo `dotnet.exe pack` `msbuild pack target` del [](../reference/msbuild-targets.md#pack-target) `.nuspec` proyecto. Sin embargo, puede elegir usar un [archivo `.nuspec` para empaquetar mediante `dotnet.exe` o `msbuild pack target` ](../reference/msbuild-targets.md#packing-using-a-nuspec-file).
 
-- Para los proyectos migrados de `packages.config` a [PackageReference](../consume-packages/package-references-in-project-files.md), no se necesita `.nuspec` un archivo para crear el paquete. En su lugar, [use msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
+- En el caso de los proyectos `packages.config` migrados de a [PackageReference,](../consume-packages/package-references-in-project-files.md)no se requiere `.nuspec` un archivo para crear el paquete. En su lugar, [use msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration).
 
 ## <a name="general-form-and-schema"></a>Esquema y forma general
 
@@ -65,7 +65,7 @@ Para tener una representación visual clara del esquema, abra el archivo de esqu
 
 ![Explorador de esquemas de Visual Studio con nuspec.xsd abierto](media/SchemaExplorer.png)
 
-Todos los nombres de elementos XML del archivo .nuspec distinguen mayúsculas de minúsculas, como es el caso de XML en general. Por ejemplo, el uso del elemento metadata `<description>` es correcto y no es `<Description>` correcto. A continuación se documenta el uso adecuado de mayúsculas y minúsculas para cada nombre de elemento.
+Todos los nombres de elementos XML del archivo .nuspec distinguen mayúsculas de minúsculas, como es el caso de XML en general. Por ejemplo, el uso del elemento de `<description>` metadatos es correcto `<Description>` y no es correcto. A continuación se documenta el uso adecuado de mayúsculas y minúsculas para cada nombre de elemento.
 
 ### <a name="required-metadata-elements"></a>Elementos de metadatos necesarios
 
@@ -81,17 +81,17 @@ Al cargar un paquete en nuget.org, `id` el campo está limitado a 128 caracteres
 #### <a name="version"></a>version
 La versión del paquete, siguiendo el patrón *mayor.menor.revisión*. Los números de versión pueden incluir un sufijo de versión preliminar, tal y como se describe en [Control de versiones de paquetes](../concepts/package-versioning.md#pre-release-versions). 
 
-Al cargar un paquete en nuget.org, `version` el campo está limitado a 64 caracteres.
+Al cargar un paquete en nuget.org, `version` el campo se limita a 64 caracteres.
 
 #### <a name="description"></a>description
 Descripción del paquete para la presentación de la interfaz de usuario.
 
-Al cargar un paquete en nuget.org, `description` el campo está limitado a 4000 caracteres.
+Al cargar un paquete en nuget.org, `description` el campo se limita a 4000 caracteres.
 
 #### <a name="authors"></a>authors
-Lista separada por comas de los autores de paquetes que coinciden con los nombres de perfil en nuget.org. Estos se muestran en la Galería de NuGet en nuget.org y los mismos autores usan para hacer referencia cruzada a los paquetes. 
+Lista separada por comas de los autores de paquetes que coinciden con los nombres de perfil de nuget.org. Estos se muestran en la Galería de NuGet en nuget.org y se usan para hacer referencia cruzada a los paquetes de los mismos autores. 
 
-Al cargar un paquete en nuget.org, `authors` el campo está limitado a 4000 caracteres.
+Al cargar un paquete en nuget.org, `authors` el campo se limita a 4000 caracteres.
 
 ### <a name="optional-metadata-elements"></a>Elementos de metadatos opcionales
 
@@ -104,7 +104,7 @@ Lista separada por comas de los creadores de paquetes que usan nombres de perfil
 #### <a name="projecturl"></a>projectUrl
 Una dirección URL de la página principal del paquete, que a menudo se muestra en las visualizaciones de la interfaz de usuario, así como en nuget.org. 
 
-Al cargar un paquete en nuget.org, `projectUrl` el campo se limita a 4000 caracteres.
+Al cargar un paquete en nuget.org, `projectUrl` el campo está limitado a 4000 caracteres.
 
 #### <a name="licenseurl"></a>licenseUrl
 > [!Important]
@@ -112,7 +112,7 @@ Al cargar un paquete en nuget.org, `projectUrl` el campo se limita a 4000 caract
 
 Una dirección URL para la licencia del paquete, que a menudo se muestra en uri como nuget.org.
 
-Al cargar un paquete en nuget.org, `licenseUrl` el campo se limita a 4000 caracteres.
+Al cargar un paquete en nuget.org, `licenseUrl` el campo está limitado a 4000 caracteres.
 
 #### <a name="license"></a>license
 
@@ -125,11 +125,11 @@ Una expresión de licencia de SPDX o una ruta de acceso a un archivo de licencia
 > [!Note]
 > NuGet.org solo acepta expresiones de licencia aprobadas por la iniciativa de código abierto o Free Software Foundation.
 
-Si el paquete tiene licencia con varias licencias comunes, puede especificar una licencia compuesta mediante la sintaxis de [expresiones SPDX versión 2.0.](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60) Por ejemplo:
+Si el paquete tiene licencia con varias licencias comunes, puede especificar una licencia compuesta mediante la sintaxis [de expresiones SPDX versión 2.0.](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60) Por ejemplo:
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-Si usa una licencia personalizada que no es compatible con las expresiones de licencia, puede empaquetar un archivo `.txt` o con el texto de la `.md` licencia. Por ejemplo:
+Si usa una licencia personalizada que no es compatible con las expresiones de licencia, puede empaquetar un archivo o con el texto `.txt` `.md` de la licencia. Por ejemplo:
 
 ```xml
 <package>
@@ -173,13 +173,13 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 Una dirección URL para una imagen de 128 x 128 con fondo de transparencia que se usará como icono para el paquete en la presentación de la interfaz de usuario. Asegúrese de que este elemento contiene la *dirección URL directa a la imagen* y no la dirección URL de una página web que contiene la imagen. Por ejemplo, para usar una imagen de GitHub, use la dirección URL del archivo sin formato como <em> https://github.com/ \<username\> / \<repository\> /raw/ \<branch\> / \<logo.png\> </em>. 
 
-Al cargar un paquete en nuget.org, `iconUrl` el campo se limita a 4000 caracteres.
+Al cargar un paquete en nuget.org, `iconUrl` el campo está limitado a 4000 caracteres.
 
 #### <a name="icon"></a>icon
 
 *Compatible con **NuGet 5.3.0** y versiones posteriores*
 
-Es una ruta de acceso a un archivo de imagen dentro del paquete, que a menudo se muestra en uri como nuget.org como icono de paquete. El tamaño del archivo de imagen está limitado a 1 MB. Los formatos de archivo admitidos incluyen JPEG y PNG. Se recomienda una resolución de imagen de 128 x 128.
+Es una ruta de acceso a un archivo de imagen dentro del paquete, que a menudo se muestra en uri como nuget.org como icono de paquete. El tamaño del archivo de imagen está limitado a 1 MB. Entre los formatos de archivo admitidos se incluyen JPEG y PNG. Se recomienda una resolución de imagen de 128 x 128.
 
 Por ejemplo, agregaría lo siguiente a nuspec al crear un paquete mediante nuget.exe:
 
@@ -198,14 +198,16 @@ Por ejemplo, agregaría lo siguiente a nuspec al crear un paquete mediante nuget
 </package>
 ```
 
-[Ejemplo nuspec de icono de paquete.](https://github.com/NuGet/Samples/tree/main/PackageIconNuspecExample)
+[Icono de paquete de ejemplo nuspec.](https://github.com/NuGet/Samples/tree/main/PackageIconNuspecExample)
 
 Para el equivalente de MSBuild, vea [Empaquetado de un archivo de imagen de icono.](msbuild-targets.md#packing-an-icon-image-file)
 
 > [!Tip]
-> Puede especificar y para `icon` mantener la compatibilidad con versiones anteriores con orígenes que no `iconUrl` admiten `icon` . Visual Studio admitirá `icon` los paquetes procedentes de un origen basado en carpetas en una versión futura.
+> Puede especificar y para mantener `icon` la compatibilidad con versiones anteriores con orígenes que no `iconUrl` admiten `icon` . Visual Studio admitirá `icon` paquetes procedentes de un origen basado en carpetas en una versión futura.
 
 #### <a name="readme"></a>Archivo Léame
+
+*Compatible con **NuGet 5.10.0 preview 2** y versiones posteriores*
 
 Al empaquetar un archivo Léame, debe usar el elemento para especificar la ruta de acceso del paquete, en relación con la `readme` raíz del paquete. Además de esto, debe asegurarse de que el archivo está incluido en el paquete. Los formatos de archivo admitidos incluyen solo Markdown (*.md*).
 
@@ -226,7 +228,7 @@ Por ejemplo, agregaría lo siguiente a nuspec para empaquetar un archivo Léame 
 </package>
 ```
 
-Para el equivalente de MSBuild, consulte [Empaquetado de un archivo Léame.](msbuild-targets.md#packagereadmefile)
+Para el equivalente de MSBuild, consulte [Empaquetado de un archivo Léame](msbuild-targets.md#packagereadmefile). 
 
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 Valor booleano que especifica si el cliente debe pedir al consumidor que acepte la licencia del paquete antes de instalarlo.
@@ -240,17 +242,17 @@ Valor booleano que especifica si el cliente debe pedir al consumidor que acepte 
 
 Descripción breve del paquete para su visualización en la interfaz de usuario. Si se omite, se usará una versión truncada de `description`.
 
-Al cargar un paquete en nuget.org, `summary` el campo está limitado a 4000 caracteres.
+Al cargar un paquete en nuget.org, `summary` el campo se limita a 4000 caracteres.
 
 #### <a name="releasenotes"></a>releaseNotes
 *(1.5+)* Descripción de los cambios efectuados en esta versión del paquete. A menudo se usa en la interfaz de usuario como la pestaña **Actualizaciones** del Administrador de paquetes de Visual Studio, en lugar de la descripción del paquete.
 
-Al cargar un paquete en nuget.org, el `releaseNotes` campo está limitado a 35 000 caracteres.
+Al cargar un paquete en nuget.org, el campo está limitado `releaseNotes` a 35 000 caracteres.
 
 #### <a name="copyright"></a>copyright
 *(1.5+)* Información de copyright del paquete.
 
-Al cargar un paquete en nuget.org, `copyright` el campo está limitado a 4000 caracteres.
+Al cargar un paquete en nuget.org, `copyright` el campo se limita a 4000 caracteres.
 
 #### <a name="language"></a>language
 Identificador de configuración regional del paquete. Vea [Creación de paquetes localizados](../create-packages/creating-localized-packages.md).
@@ -264,7 +266,7 @@ Al cargar un paquete en nuget.org, `tags` el campo está limitado a 4000 caracte
 *(3.3+)* Solo para uso interno de NuGet.
 
 #### <a name="repository"></a>repository
-Metadatos del repositorio, que consta de cuatro atributos opcionales: `type` y `url` *(4.0+)*, `branch` y y `commit` *(4.6+)*. Estos atributos le permiten asignar al repositorio que lo comcreó, con el potencial de obtener tan detallado como el nombre de rama individual y/o confirmar el hash SHA-1 que comcreó el `.nupkg` paquete. Debe ser una dirección URL disponible públicamente que un software de control de versiones pueda invocar directamente. No debe ser una página HTML, ya que está pensada para el equipo. Para vincular a la página del proyecto, use `projectUrl` el campo en su lugar.
+Metadatos del repositorio, que consta de cuatro atributos opcionales: `type` y `url` *(4.0+)* y `branch` y `commit` *(4.6+).* Estos atributos permiten asignar el al repositorio que lo creó, con el potencial de obtener tan detallado como el nombre de rama `.nupkg` individual y/o confirmar el hash SHA-1 que comcreó el paquete. Debe ser una dirección URL disponible públicamente que un software de control de versiones pueda invocar directamente. No debe ser una página HTML, ya que está pensada para el equipo. Para vincular a la página del proyecto, use `projectUrl` el campo en su lugar.
 
 Por ejemplo:
 ```xml
@@ -278,12 +280,12 @@ Por ejemplo:
 </package>
 ```
 
-Al cargar un paquete en nuget.org, el atributo se limita a 100 caracteres y el atributo se limita a `type` `url` 4000 caracteres.
+Al cargar un paquete en nuget.org, el atributo está limitado a 100 caracteres y el atributo está limitado a `type` `url` 4000 caracteres.
 
 #### <a name="title"></a>title
-Título descriptivo del paquete que se puede usar en algunas pantallas de la interfaz de usuario. (nuget.org y el Administrador de paquetes en Visual Studio no muestran el título)
+Un título descriptivo del paquete que se puede usar en algunas pantallas de la interfaz de usuario. (nuget.org y el Administrador de paquetes en Visual Studio no muestran el título)
 
-Al cargar un paquete en nuget.org, el campo se limita a 256 caracteres, pero no se usa con fines `title` de presentación.
+Al cargar un paquete en nuget.org, el campo está limitado a 256 caracteres, pero no se usa `title` con fines de presentación.
 
 #### <a name="collection-elements"></a>Elementos de colección
 
@@ -302,8 +304,8 @@ Colección de cero o más elementos `<dependency>` que especifican las dependenc
 #### <a name="contentfiles"></a>contentFiles
 *(3.3+)* Colección de elementos `<files>` que identifican archivos de contenido que se incluirán en el proyecto de consumo. Estos archivos se especifican con un conjunto de atributos que describen cómo se deben usar en el sistema del proyecto. Vea [Incluir archivos de ensamblado](#specifying-files-to-include-in-the-package) a continuación.
 
-#### <a name="files"></a>archivos 
-El nodo puede contener un nodo como un nodo relacionado con y un elemento secundario en , para especificar los archivos de ensamblado y contenido que se `<package>` `<files>` `<metadata>` `<contentFiles>` `<metadata>` incluirán en el paquete. Vea las secciones [Incluir archivos de ensamblado](#including-assembly-files) e [Incluir archivos de contenido](#including-content-files), que aparecen más adelante en este tema, para más información.
+#### <a name="files"></a>files 
+El nodo puede contener un nodo como un nodo relacionado con y un elemento secundario en , para especificar qué ensamblado y archivos de contenido se `<package>` `<files>` `<metadata>` `<contentFiles>` `<metadata>` incluirán en el paquete. Vea las secciones [Incluir archivos de ensamblado](#including-assembly-files) e [Incluir archivos de contenido](#including-content-files), que aparecen más adelante en este tema, para más información.
 
 ### <a name="metadata-attributes"></a>atributos de metadatos
 
@@ -388,7 +390,7 @@ El elemento `<dependencies>` dentro de `<metadata>` contiene cualquier número d
 | include | Lista delimitada por comas de etiquetas de inclusión/exclusión (vea más abajo) que indican la dependencia que se va a incluir en el paquete final. El valor predeterminado es `all`. |
 | exclude | Lista delimitada por comas de etiquetas de inclusión/exclusión (vea más abajo) que indican la dependencia que se va a excluir en el paquete final. El valor predeterminado es `build,analyzers` que se puede escribir en exceso. Pero `content/ ContentFiles` también se excluyen implícitamente en el paquete final que no se puede escribir en exceso. Las etiquetas especificadas con `exclude` tienen prioridad sobre las que se especifican con `include`. Por ejemplo, `include="runtime, compile" exclude="compile"` es lo mismo que `include="runtime"`. |
 
-Al cargar un paquete en nuget.org, el atributo de cada dependencia está limitado a 128 caracteres y el atributo está limitado a `id` `version` 256 caracteres.
+Al cargar un paquete en nuget.org, el atributo de cada dependencia se limita a 128 caracteres y el atributo se limita a `id` `version` 256 caracteres.
 
 | Etiqueta Include o Exclude | Carpetas afectadas del destino |
 | --- | --- |
@@ -419,7 +421,7 @@ Las líneas siguientes indican dependencias en los mismos paquetes, pero especif
 ```
 
 > [!Important]
-> Al crear un a partir de un proyecto mediante , las dependencias que existen en ese proyecto no se `.nuspec` incluyen automáticamente en el archivo `nuget spec` `.nuspec` resultante. En su lugar, `nuget pack myproject.csproj` use y obtenga el archivo *.nuspec* desde dentro del *archivo .nupkg* generado. Este *archivo .nuspec* contiene las dependencias.
+> Al crear un desde un proyecto mediante , las dependencias que existen en ese proyecto no se incluyen `.nuspec` automáticamente en el archivo `nuget spec` `.nuspec` resultante. En su lugar, `nuget pack myproject.csproj` use y obtenga el archivo *.nuspec* desde el archivo *.nupkg* generado. Este *archivo .nuspec* contiene las dependencias.
 
 ### <a name="dependency-groups"></a>Grupos de dependencia
 
@@ -435,7 +437,7 @@ El elemento `<group>` sin un atributo `targetFramework` se usa como la lista de 
 > El formato del grupo no se puede combinar con una lista plana.
 
 > [!Note]
-> El formato del [Moniker de la plataforma de destino (TFM)](../reference/target-frameworks.md) usado en la carpeta es diferente en comparación con `lib/ref` el TFM usado en `dependency groups` . Si las plataformas de destino declaradas en y la carpeta del archivo no tienen coincidencias exactas, el comando genera la advertencia `dependencies group` `lib/ref` `.nuspec` `pack` [nuget NU5128](../reference/errors-and-warnings/nu5128.md).
+> El formato del [Moniker de la plataforma de destino (TFM)](../reference/target-frameworks.md) usado en la carpeta es diferente en comparación con `lib/ref` el TFM usado en `dependency groups` . Si las plataformas de destino declaradas en y la carpeta del archivo no tienen coincidencias exactas, el comando genera la advertencia `dependencies group` `lib/ref` de `.nuspec` `pack` [NuGet NU5128](../reference/errors-and-warnings/nu5128.md).
 
 En el ejemplo siguiente se muestran diferentes variaciones del elemento `<group>`:
 
@@ -459,7 +461,7 @@ En el ejemplo siguiente se muestran diferentes variaciones del elemento `<group>
 
 ## <a name="explicit-assembly-references"></a>Referencias de ensamblado explícitas
 
-Los proyectos usan el elemento para especificar explícitamente los ensamblados a los que el proyecto de destino debe hacer `<references>` referencia al usar el `packages.config` paquete. Las referencias explícitas se suelen usar para ensamblados que solo son de tiempo de diseño. Para obtener más información, vea la página sobre [la selección de ensamblados](../create-packages/select-assemblies-referenced-by-projects.md) a los que hacen referencia los proyectos.
+Los proyectos usan el elemento para especificar explícitamente los ensamblados a los que el proyecto de destino debe hacer `<references>` referencia al usar el `packages.config` paquete. Las referencias explícitas se suelen usar para ensamblados que solo son de tiempo de diseño. Para obtener más información, vea la página sobre la selección de ensamblados a los que [hacen referencia los proyectos.](../create-packages/select-assemblies-referenced-by-projects.md)
 
 Por ejemplo, el siguiente elemento `<references>` indica a NuGet que agregue referencias solo a `xunit.dll` y `xunit.extensions.dll`, incluso si hay ensamblados adicionales en el paquete:
 
@@ -782,7 +784,7 @@ Estos archivos se especifican con un conjunto de atributos que describen cómo s
 | --- | --- |
 | **incluír** | (Obligatorio) Ubicación de los archivos que se deben incluir, sujeta a exclusiones especificadas por el atributo `exclude`. La ruta de acceso es relativa a la `contentFiles` carpeta a menos que se especifique una ruta de acceso absoluta. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
 | **Excluir** | Una lista delimitada por punto y coma de archivos o patrones de archivo que se deben excluir de la ubicación `src`. El carácter comodín `*` está permitido y el carácter comodín doble `**` implica una búsqueda de carpeta recursiva. |
-| **buildAction** | Acción de compilación que se asigna al elemento de contenido de MSBuild, como `Content` , , , , `None` `Embedded Resource` `Compile` etc. El valor predeterminado es `Compile` . |
+| **buildAction** | Acción de compilación que se asignará al elemento de contenido de MSBuild, como `Content` , , , , `None` `Embedded Resource` `Compile` etc. El valor predeterminado es `Compile` . |
 | **copyToOutput** | Valor booleano que indica si se copian elementos de contenido en la carpeta de salida de compilación (o publicación). El valor predeterminado es false. |
 | **flatten** | Valor booleano que indica si se deben copiar los elementos de contenido en una carpeta en la salida de la compilación (true) o si se debe conservar la estructura de carpetas del paquete (false). Esta marca solo funciona cuando la marca copyToOutput está establecida en true. El valor predeterminado es false. |
 
@@ -848,7 +850,7 @@ Las carpetas vacías pueden usar `.` para no proporcionar contenido para ciertas
 </package>
 ```
 
-## <a name="framework-reference-groups"></a>Grupos de referencia de marco
+## <a name="framework-reference-groups"></a>Grupos de referencia de framework
 
 *Versión 5.1+ wih PackageReference solo*
 
@@ -858,7 +860,7 @@ Al especificar un marco compartido, el paquete garantiza que todas sus dependenc
 Cada `<group>` elemento requiere un atributo y cero o más `targetFramework` `<frameworkReference>` elementos.
 
 En el ejemplo siguiente se muestra un nuspec generado para un proyecto de WPF de .NET Core.
-Tenga en cuenta que no se recomienda crear a mano elementos nuspec que contengan referencias de marco. Considere la posibilidad de [usar el](msbuild-targets.md) paquete de destinos en su lugar, que los deducirá automáticamente del proyecto.
+Tenga en cuenta que no se recomienda crear a mano elementos nuspec que contengan referencias de marco. Considere la posibilidad de [usar el](msbuild-targets.md) paquete de destinos en su lugar, que los deducirá automáticamente desde el proyecto.
 
 ```xml
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">

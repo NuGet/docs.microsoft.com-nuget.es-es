@@ -1,24 +1,24 @@
 ---
-title: Referencia de PowerShell de Get-Package de NuGet
-description: Referencia de Get-Package comando de PowerShell en la consola del administrador de paquetes NuGet en Visual Studio.
+title: Referencia de NuGet Get-Package PowerShell
+description: Referencia de Get-Package comando de PowerShell en la consola de Administrador de paquetes NuGet en Visual Studio.
 author: JonDouglas
 ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 8394f888ec3d5e57eacd351a4867173da1070ead
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 7c91faecaac2967c7a01dd81e72b9097e7bd6cae
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777500"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901738"
 ---
-# <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (consola del administrador de paquetes en Visual Studio)
+# <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (Administrador de paquetes console en Visual Studio)
 
-*En este tema se describe el comando en la [consola del administrador de paquetes](../../consume-packages/install-use-packages-powershell.md) en Visual Studio en Windows. Para el comando genérico de Get-Package de PowerShell, consulte la [referencia de PackageManagement de PowerShell](/powershell/module/packagemanagement/?view=powershell-6).*
+*En este tema se describe el comando dentro de Administrador de paquetes [Console](../../consume-packages/install-use-packages-powershell.md) en Visual Studio en Windows. Para obtener el comando Get-Package de PowerShell genérico, vea la referencia [de PackageManagement de PowerShell.](/powershell/module/packagemanagement)*
 
-Recupera la lista de paquetes instalados en el repositorio local, enumera los paquetes disponibles en un origen del paquete cuando se usa con el modificador-ListAvailable o enumera las actualizaciones disponibles cuando se usa con el modificador-Update.
+Recupera la lista de paquetes instalados en el repositorio local, enumera los paquetes disponibles desde un origen de paquete cuando se usan con el modificador -ListAvailable o enumera las actualizaciones disponibles cuando se usan con el modificador -Update.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxis
 
 ```ps
 Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
@@ -32,22 +32,22 @@ Sin parámetros, `Get-Package` muestra la lista de paquetes instalados en el pro
 
 | Parámetro | Descripción |
 | --- | --- |
-| Source | La dirección URL o la ruta de acceso de la carpeta para el paquete. Las rutas de acceso de la carpeta local pueden ser absolutas o relativas a la carpeta actual. Si se omite, `Get-Package` busca el origen del paquete seleccionado actualmente. Cuando se usa con-ListAvailable, el valor predeterminado es nuget.org. |
-| ListAvailable | Enumera los paquetes disponibles en el origen de un paquete, con el valor predeterminado nuget.org. Muestra un valor predeterminado de 50 paquetes, a menos que se especifiquen-PageSize y/o-First. |
+| Source | Dirección URL o ruta de acceso de carpeta para el paquete . Las rutas de acceso de carpeta local pueden ser absolutas o relativas a la carpeta actual. Si se omite, `Get-Package` busca en el origen del paquete seleccionado actualmente. Cuando se usa con -ListAvailable, el valor predeterminado es nuget.org. |
+| ListAvailable | Enumera los paquetes disponibles desde un origen de paquete, con el valor predeterminado nuget.org. Muestra un valor predeterminado de 50 paquetes a menos que se especifique -PageSize o -First. |
 | Actualizaciones | Enumera los paquetes que tienen una actualización disponible desde el origen del paquete. |
-| ProjectName | Proyecto desde el que se van a obtener los paquetes instalados. Si se omite, devuelve los proyectos instalados para toda la solución. |
-| Filter | Cadena de filtro que se usa para restringir la lista de paquetes aplicándolos al identificador, la descripción y las etiquetas del paquete. |
-| First | Número de paquetes que se van a devolver desde el principio de la lista. Si no se especifica, el valor predeterminado es 50. |
-| Omitir | Omite los primeros &lt; paquetes int &gt; de la lista mostrada.  |
-| AllVersions | Muestra todas las versiones disponibles de cada paquete en lugar de la versión más reciente. |
-| IncludePrerelease | Incluye paquetes de versiones preliminares en los resultados. |
-| PageSize | *(3.0 +)* Cuando se usa con-ListAvailable (obligatorio), el número de paquetes que se deben enumerar antes de dar un mensaje para continuar. |
+| ProjectName | Proyecto desde el que se obtienen los paquetes instalados. Si se omite, devuelve los proyectos instalados para toda la solución. |
+| Filtrar | Cadena de filtro que se usa para restringir la lista de paquetes al aplicarla al identificador, la descripción y las etiquetas del paquete. |
+| First | Número de paquetes que se devolverán desde el principio de la lista. Si no se especifica, el valor predeterminado es 50. |
+| Omitir | Omite los primeros paquetes &lt; int de la lista &gt; mostrada.  |
+| AllVersions | Muestra todas las versiones disponibles de cada paquete en lugar de solo la versión más reciente. |
+| IncludePrerelease | Incluye paquetes de versión preliminar en los resultados. |
+| PageSize | *(3.0+)* Cuando se usa con -ListAvailable (obligatorio), el número de paquetes que se enumerarán antes de dar una solicitud para continuar. |
 
-Ninguno de estos parámetros acepta caracteres comodín o de entrada de canalización.
+Ninguno de estos parámetros acepta caracteres comodín o entrada de canalización.
 
 ## <a name="common-parameters"></a>Parámetros comunes
 
-`Get-Package` admite los siguientes [parámetros comunes de PowerShell](/powershell/module/microsoft.powershell.core/about/about_commonparameters): debug, error Action, ErrorVariable, outbuffer, outvariable, PipelineVariable, verbose, WarningAction y WarningVariable.
+`Get-Package` admite los siguientes parámetros comunes de [PowerShell:](/powershell/module/microsoft.powershell.core/about/about_commonparameters)Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction y WarningVariable.
 
 ## <a name="examples"></a>Ejemplos
 

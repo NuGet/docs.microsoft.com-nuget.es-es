@@ -1,24 +1,24 @@
 ---
-title: Referencia de PowerShell de Install-Package de NuGet
-description: Referencia de Install-Package comando de PowerShell en la consola del administrador de paquetes NuGet en Visual Studio.
+title: Referencia de NuGet Install-Package PowerShell
+description: Referencia de Install-Package comando de PowerShell en la consola de Administrador de paquetes NuGet en Visual Studio.
 author: JonDouglas
 ms.author: jodou
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: 110b41e830636d60741b14292c17840aa5a63dfd
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: ad551b8701cfc2061f7721fb050ed9b5a4fede32
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777445"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901699"
 ---
-# <a name="install-package-package-manager-console-in-visual-studio"></a>Install-Package (consola del administrador de paquetes en Visual Studio)
+# <a name="install-package-package-manager-console-in-visual-studio"></a>Install-Package (Administrador de paquetes consola en Visual Studio)
 
-*En este tema se describe el comando en la [consola del administrador de paquetes](../../consume-packages/install-use-packages-powershell.md) en Visual Studio en Windows. Para el comando genérico de Install-Package de PowerShell, consulte la [referencia de PackageManagement de PowerShell](/powershell/module/packagemanagement/?view=powershell-6).*
+*En este tema se describe el comando dentro de [Administrador de paquetes Console](../../consume-packages/install-use-packages-powershell.md) en Visual Studio en Windows. Para obtener el comando genérico de Install-Package PowerShell, consulte la referencia [de PackageManagement de PowerShell.](/powershell/module/packagemanagement)*
 
 Instala un paquete y sus dependencias en un proyecto.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxis
 
 ```ps
 Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Source] <string>] 
@@ -26,7 +26,7 @@ Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-
     [-WhatIf] [<CommonParameters>]
 ```
 
-En NuGet 2.8 +, `Install-Package` puede degradar un paquete existente en el proyecto. Por ejemplo, si tiene instalado Microsoft. AspNet. MVC 5.1.0-RC1, el siguiente comando lo degradará a 5.0.0:
+En NuGet 2.8+, puede cambiar a una versión anterior `Install-Package` un paquete existente en el proyecto. Por ejemplo, si tiene instalado Microsoft.AspNet.MVC 5.1.0-rc1, el siguiente comando lo degradaría a 5.0.0:
 
 ```ps
 Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
@@ -36,21 +36,21 @@ Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 | Parámetro | Descripción |
 | --- | --- |
-| Identificador | Desee Identificador del paquete que se va a instalar. (*3.0 +*) El identificador puede ser una ruta de acceso o dirección URL de un `packages.config` archivo o un `.nupkg` archivo. El propio modificador-ID es opcional. |
+| Identificador | (Obligatorio) Identificador del paquete que se instalará. (*3.0+*) El identificador puede ser una ruta de acceso o una dirección URL de `packages.config` un archivo o un `.nupkg` archivo. El propio modificador -Id es opcional. |
 | IgnoreDependencies | Instale solo este paquete y no sus dependencias. |
-| ProjectName | El proyecto en el que se va a instalar el paquete, que tiene como valor predeterminado el proyecto predeterminado. |
-| Source | La dirección URL o la ruta de acceso de la carpeta del origen del paquete que se va a buscar. Las rutas de acceso de la carpeta local pueden ser absolutas o relativas a la carpeta actual. Si se omite, `Install-Package` busca el origen del paquete seleccionado actualmente. |
-| Versión | Versión del paquete que se va a instalar. el valor predeterminado es la versión más reciente. |
+| ProjectName | Proyecto en el que se va a instalar el paquete, cuyo valor predeterminado es el proyecto predeterminado. |
+| Source | Dirección URL o ruta de acceso de carpeta para el origen del paquete que se buscará. Las rutas de acceso de carpeta local pueden ser absolutas o relativas a la carpeta actual. Si se omite, `Install-Package` busca en el origen del paquete seleccionado actualmente. |
+| Versión | La versión del paquete que se instalará, con el valor predeterminado de la versión más reciente. |
 | IncludePrerelease | Tiene en cuenta los paquetes de versión preliminar para la instalación. Si se omite, solo se considerarán los paquetes estables. |
-| FileConflictAction | Acción que se realizará cuando se le pida que sobrescriba u omita los archivos existentes a los que hace referencia el proyecto. Los valores posibles son *overwrite, ignore, None, OverwriteAll* y *(3.0 +)* *IgnoreAll*. |
-| DependencyVersion | La versión de los paquetes de dependencia que se va a usar, que puede ser una de las siguientes:<br/><ul><li>*Más bajo* (valor predeterminado): la versión más baja</li><li>*HighestPatch*: la versión con la revisión principal más baja, menor menor y más alta.</li><li>*HighestMinor*: la versión con el reenvío más bajo principal, más alto, más alto</li><li>*Mayor* (valor predeterminado para Update-Package sin parámetros): la versión más alta</li></ul>Puede establecer el valor predeterminado mediante la [`dependencyVersion`](../nuget-config-file.md#config-section) configuración del `Nuget.Config` archivo. |
-| WhatIf | Muestra lo que ocurre cuando se ejecuta el comando sin realizar realmente la instalación. |
+| FileConflictAction | Acción que se debe realizar cuando se le pida que sobrescriba o ignore los archivos existentes a los que hace referencia el proyecto. Los valores *posibles son Overwrite, Ignore, None, OverwriteAll* y *(3.0+)* *IgnoreAll.* |
+| DependencyVersion | La versión de los paquetes de dependencia que se va a usar, que puede ser una de las siguientes:<br/><ul><li>*Más* bajo (valor predeterminado): la versión más baja</li><li>*HighestPatch:* la versión con la revisión más baja principal, menor menor y más alta.</li><li>*HighestMinor:* la versión con la revisión más baja principal, secundaria más alta y más alta.</li><li>*Más* alto (valor predeterminado para Update-Package sin parámetros): la versión más alta</li></ul>Puede establecer el valor predeterminado mediante la [`dependencyVersion`](../nuget-config-file.md#config-section) configuración del `Nuget.Config` archivo . |
+| WhatIf | Muestra lo que sucedería al ejecutar el comando sin realizar realmente la instalación. |
 
-Ninguno de estos parámetros acepta caracteres comodín o de entrada de canalización.
+Ninguno de estos parámetros acepta caracteres comodín o entrada de canalización.
 
 ## <a name="common-parameters"></a>Parámetros comunes
 
-`Install-Package` admite los siguientes [parámetros comunes de PowerShell](/powershell/module/microsoft.powershell.core/about/about_commonparameters): debug, error Action, ErrorVariable, outbuffer, outvariable, PipelineVariable, verbose, WarningAction y WarningVariable.
+`Install-Package` admite los siguientes parámetros comunes de [PowerShell:](/powershell/module/microsoft.powershell.core/about/about_commonparameters)Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction y WarningVariable.
 
 ## <a name="examples"></a>Ejemplos
 
