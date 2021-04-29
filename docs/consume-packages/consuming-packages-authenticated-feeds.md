@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 02/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: bb624ec6987dd5c6ee38d5bb7e01200487dd4bed
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e76fefaf4d3c86aa15cf279090c0adb8ed779aab
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231744"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901517"
 ---
 # <a name="consuming-packages-from-authenticated-feeds"></a>Uso de paquetes desde fuentes autenticadas
 
@@ -61,7 +61,7 @@ Para la instalación y la detección de estos proveedores, vea [Proveedores de c
 
 #### <a name="available-credential-providers-for-nugetexe"></a>Proveedores de credenciales disponibles para nuget.exe
 
-* [Proveedores de credenciales de Azure DevOps V2](/azure/devops/artifacts/nuget/nuget-exe?view=azure-devops#add-a-feed-to-nuget-482-or-later) o [Proveedor de credenciales de Azure Artifacts](https://github.com/microsoft/artifacts-credprovider)
+* [Proveedores de credenciales de Azure DevOps V2](/azure/devops/artifacts/nuget/nuget-exe#add-a-feed-to-nuget-482-or-later) o [Proveedor de credenciales de Azure Artifacts](https://github.com/microsoft/artifacts-credprovider)
 
 Con Visual Studio 2017, versión 15.9 y versiones posteriores, el proveedor de credenciales de Azure DevOps se integra en Visual Studio.
 Si `nuget.exe` usa MSBuild desde ese conjunto específico de herramientas de Visual Studio, el complemento se detectará automáticamente.
@@ -102,4 +102,4 @@ Para la instalación y la detección de estos proveedores, vea [Complementos mul
 
 * [Proveedor de credenciales de Azure Artifacts](https://github.com/microsoft/artifacts-credprovider)
 
-Con Visual Studio 2017 Update 9 y versiones posteriores, el proveedor de credenciales de Azure DevOps se integra en Visual Studio. No se requieren pasos adicionales.
+Con Visual Studio 2017 Update 9 y versiones posteriores, el proveedor de credenciales de Azure DevOps se integra en Visual Studio. No se necesita realizar ningún paso adicional.
