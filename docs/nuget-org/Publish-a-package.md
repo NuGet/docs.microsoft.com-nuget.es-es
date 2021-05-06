@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 5be7a4d4c31df9f2f4bda7bdb1ff9f4887108578
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 05a16d8bf609d727aba3ddbc42959a3deb97b24b
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775989"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901920"
 ---
 # <a name="publishing-packages"></a>Publicar paquetes
 
@@ -38,11 +38,9 @@ Luego, puede cargar el paquete a través del portal web nuget.org, insertarlo en
 
 1. nuget.org le indica si el nombre del paquete está disponible. Si no es así, cambie el identificador del paquete en el proyecto, vuelva a generarlo e intente cargarlo de nuevo.
 
-1. Si el nombre del paquete está disponible, se abrirá una sección **Verify** (Comprobar) en nuget.org en la que puede revisar los metadatos del manifiesto del paquete. Para cambiar cualquiera de los metadatos, modifique el proyecto (archivo de proyecto o archivo `.nuspec`), recompile, vuelva a crear el paquete y cárguelo de nuevo.
+1. Si el nombre del paquete está disponible, se abrirá una sección **Verify** (Comprobar) en nuget.org en la que puede revisar los metadatos del manifiesto del paquete. Si incluyó un [archivo Léame](/docs/nuget-org/package-readme-on-nuget-org.md) en el paquete, consulte la versión preliminar para asegurarse de que todo el contenido se representa correctamente. Para cambiar cualquiera de los metadatos, modifique el proyecto (archivo de proyecto o archivo `.nuspec`), recompile, vuelva a crear el paquete y cárguelo de nuevo.
 
-1. En **Import Documentation** (Importar documentación) puede pegar el marcado, apuntar a sus documentos con una dirección URL o cargar un archivo de documentación.
-
-1. Cuando toda la información está lista, seleccione el botón **Submit** (Enviar).
+2. Cuando toda la información está lista, seleccione el botón **Submit** (Enviar).
 
 ### <a name="command-line"></a>Línea de comandos
 

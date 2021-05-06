@@ -1,31 +1,31 @@
 ---
 title: Notas de la versión de NuGet 4.4 RTM
-description: Notas de la versión de NuGet 4.3 RTM incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
+description: Notas de la versión de NuGet 4.4 RTM, incluidos problemas conocidos, correcciones de errores, características agregadas y DCR.
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 970a920a401b8a74c04d84cbad9933c54e3cd19e
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 980afffcd4202e019ffa87de5dccf947300a9c13
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98776292"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901712"
 ---
 # <a name="nuget-44-release-notes"></a>Notas de la versión de NuGet 4.4
 
 [Visual Studio 2017 15.4 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) incluye NuGet 4.4 RTM.
 
-## <a name="summary-whats-new-in-440"></a>Resumen: Novedades de la versión 4.4.0
+## <a name="summary-whats-new-in-440"></a>Resumen: Novedades de 4.4.0
 
-## <a name="summary-whats-new-in-442"></a>Resumen: Novedades de la versión 4.4.2
+## <a name="summary-whats-new-in-442"></a>Resumen: Novedades de 4.4.2
 
-* Corrección de seguridad: Premisos demasiado amplios de los archivos creados en ~/.nuget: [n.º 7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* Corrección de seguridad: permisos demasiado amplios de los archivos creados en ~/.nuget: [n.º 7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
-## <a name="summary-whats-new-in-443"></a>Resumen: Novedades de la versión 4.4.3
+## <a name="summary-whats-new-in-443"></a>Resumen: Novedades de 4.4.3
 
-* Corrección de seguridad: Posible ruta relativa de los archivos de NUPKG por encima del directorio NUPKG: [n.º 7906](https://github.com/NuGet/Home/issues/7906)
+* Corrección de seguridad: posible ruta relativa de los archivos de NUPKG por encima del directorio NUPKG: [n.º 7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>Problemas conocidos
 
@@ -39,7 +39,7 @@ ms.locfileid: "98776292"
 
 En algunas ocasiones, la tecla Entrar no funciona en la Consola del Administrador de paquetes. Si ve esto, revise el progreso de la corrección y proporcione información útil adicional sobre los pasos de reproducción. [NuGet#4204](https://github.com/NuGet/Home/issues/4204) [NuGet#4570](https://github.com/NuGet/Home/issues/4570)
 
-#### <a name="workaround"></a>Solución
+#### <a name="workaround"></a>Solución alternativa
 
 Reinicie Visual Studio y abra la consola de Administración de paquetes antes de abrir la solución. Como alternativa, intente eliminar el archivo `project.lock.json` y restaurarlo de nuevo.
 
@@ -49,7 +49,7 @@ Reinicie Visual Studio y abra la consola de Administración de paquetes antes de
 
 El Administrador de paquetes de NuGet no muestra ni permite agregar o actualizar DotNetCLITools. [NuGet#4256](https://github.com/NuGet/Home/issues/4256)
 
-#### <a name="workaround"></a>Solución
+#### <a name="workaround"></a>Solución alternativa
 
 DotNetCLIToolReferences se debe editar manualmente en el archivo del proyecto.
 
@@ -59,7 +59,7 @@ DotNetCLIToolReferences se debe editar manualmente en el archivo del proyecto.
 
 Redestinar la versión del marco de trabajo de destino puede llevar a tener una instancia de IntelliSense incompleta, en Visual Studio. Esto sucede cuando usa PackageReferences como el formato del administrador de paquete. [NuGet#4216](https://github.com/NuGet/Home/issues/4216)
 
-#### <a name="workaround"></a>Solución
+#### <a name="workaround"></a>Solución alternativa
 
 Haga una restauración manual.
 
@@ -69,7 +69,7 @@ Haga una restauración manual.
 
 En algunas ocasiones, al usar un paquete que contiene un ensamblado con una firma no válida o cuando la versión del paquete está establecida con el valor "DateTime", la restauración automática del paquete se ejecutará en un bucle infinito (dotnet/project-system#1457).
 
-#### <a name="workaround"></a>Solución
+#### <a name="workaround"></a>Solución alternativa
 
 No hay ninguna solución alternativa para este problema.
 
@@ -83,7 +83,7 @@ No hay ninguna solución alternativa para este problema.
 
 - El destino pack de msbuild debe tener un enlace público para ejecutar destinos de usuario antes que a sí mismo: [#5143](https://github.com/NuGet/Home/issues/5143)
 
-- Característica: incorporación del modificador dependencyVersion a nuget install: [n.º 1806](https://github.com/NuGet/Home/issues/1806)
+- Característica: agregar el modificador dependencyVersion a nuget install: [#1806](https://github.com/NuGet/Home/issues/1806)
 
 - uap10.0.TODO.0 se debe asignar a .NET Standard 2.0 para NuGet: [#5684](https://github.com/NuGet/Home/issues/5684)
 
@@ -175,9 +175,9 @@ No hay ninguna solución alternativa para este problema.
 
 - [Advertencias y errores] NoWarn no fluye de manera transitiva a través de las referencias de P2P: [#5501](https://github.com/NuGet/Home/issues/5501)
 
-- Carga de solución ligera: núcleo común para la IU de IV, PM y PMC: [n.º 5057](https://github.com/NuGet/Home/issues/5057)
+- Carga de solución ligera: núcleo común para la interfaz de usuario de PM, PMC e IV: [#5057](https://github.com/NuGet/Home/issues/5057)
 
-- Carga de solución ligera: compatibilidad con PMC: [n.º 5053](https://github.com/NuGet/Home/issues/5053)
+- Carga de solución ligera: compatibilidad con PMC: [#5053](https://github.com/NuGet/Home/issues/5053)
 
 - Agregar compatibilidad para el destino de MSBuild previo a la restauración que genera Visual Studio: [#4781](https://github.com/NuGet/Home/issues/4781)
 

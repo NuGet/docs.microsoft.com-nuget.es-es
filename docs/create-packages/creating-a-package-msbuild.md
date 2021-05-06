@@ -1,16 +1,16 @@
 ---
 title: Creación de un paquete NuGet con MSBuild
-description: Un guía detallada sobre el proceso de diseño y creación de un paquete NuGet, incluidos puntos de decisión clave como archivos y control de versiones.
+description: Un guía detallada sobre el proceso de diseño y creación de un paquete NuGet con MSBuild, incluidos puntos de decisión clave como archivos y control de versiones.
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 48741668af932a532240f2796a9bf5d490ee8e35
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 18e0da335f65fde99d035388b95f35160757ee84
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774438"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901465"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>Creación de un paquete NuGet con MSBuild
 
@@ -39,7 +39,7 @@ Además, si va a empaquetar proyectos que no son de estilo SDK y que usan Packag
 
 - `PackageOutputPath`, la carpeta de salida para el paquete generado al llamar al paquete.
 
-En Visual Studio, puede establecer estos valores en las propiedades del proyecto (haga clic con el botón derecho en el proyecto en el Explorador de soluciones, elija **Propiedades** y seleccione la pestaña **Paquete**). También puede establecer estas propiedades directamente en los archivos del proyecto ( *.csproj*).
+En Visual Studio, puede establecer estos valores en las propiedades del proyecto (haga clic con el botón derecho en el proyecto en el Explorador de soluciones, elija **Propiedades** y seleccione la pestaña **Paquete**). También puede establecer estas propiedades directamente en los archivos del proyecto (*.csproj*).
 
 ```xml
 <PropertyGroup>
@@ -177,7 +177,7 @@ Una vez haya creado un paquete, que es un archivo `.nupkg`, puede publicarlo en 
 
 Es posible que también quiera ampliar las funcionalidades del paquete o admitir otros escenarios, como se describe en los temas siguientes:
 
-- [Empaquetado y restauración de NuGet como destinos de MSBuild](../reference/msbuild-targets.md)
+- [pack y restore de NuGet como destinos de MSBuild](../reference/msbuild-targets.md)
 - [Control de versiones del paquete](../concepts/package-versioning.md)
 - [Admitir varias plataformas de destino](../create-packages/multiple-target-frameworks-project-file.md)
 - [Transformaciones de archivos de origen y configuración](../create-packages/source-and-config-file-transformations.md)

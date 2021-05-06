@@ -5,18 +5,18 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 12d12d5294a474c4d3e4f5d3cad468bb515d21d5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: a3d2504528249f3545e2eb5d9bce7713029638db
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "67426950"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901595"
 ---
 # <a name="scoped-api-keys"></a>Claves de API con ámbito
 
 Si quiere que NuGet sea un entorno más seguro para la distribución de paquetes, puede controlar las claves de API mediante la adición de ámbitos.
 
-La funcionalidad de proporcionar un ámbito para las claves de API le permite controlar mejor las API. Puede:
+La funcionalidad de proporcionar un ámbito para las claves de API le permite controlar mejor las API. Puede hacer lo siguiente:
 
 - Crear diversas claves de API con ámbito que se pueden usar para varios paquetes con diferentes períodos de expiración.
 - Obtener claves de API de forma segura.
@@ -49,7 +49,7 @@ En el ejemplo siguiente, tiene una clave de API denominada `Contoso service CI` 
 
 Si trabaja en varios paquetes y tiene una gran lista de paquetes que administrar, puede optar por usar patrones globales para seleccionar varios paquetes juntos. Por ejemplo, si le interesa conceder ámbitos específicos a una clave para todos los paquetes cuyo identificador empiece por `Fabrikam.Service`, especifique `fabrikam.service.*` en el cuadro de texto **Patrón global**.
 
-![Crear claves de API](media/scoped-api-keys-glob-pattern.png)
+![Creación de claves de API: 2](media/scoped-api-keys-glob-pattern.png)
 
 El uso de patrones globales para determinar los permisos de la clave de API también se aplica a los paquetes nuevos que coinciden con el patrón global. Por ejemplo, si intenta insertar un nuevo paquete denominado `Fabrikam.Service.Framework`, puede hacerlo con la clave creada anteriormente, ya que el paquete coincide con el patrón global `fabrikam.service.*`.
 
@@ -57,19 +57,19 @@ El uso de patrones globales para determinar los permisos de la clave de API tamb
 
 Por cuestiones de seguridad, las claves recién creadas nunca se muestran en pantalla y solo están disponibles mediante el botón **Copiar**. Además, la clave tampoco es accesible después de actualizar la página.
 
-![Crear claves de API](media/scoped-api-keys-obtain-keys.png)
+![Creación de claves de API: 3](media/scoped-api-keys-obtain-keys.png)
 
 ## <a name="edit-existing-api-keys"></a>Edición de las claves de API existentes
 
 Es probable que le interese actualizar los permisos de clave y los ámbitos sin cambiar la clave en sí misma. Si tiene una clave con ámbitos específicos para un solo paquete, puede optar por aplicar los mismos ámbitos a uno o varios paquetes.
 
-![Crear claves de API](media/scoped-api-keys-edit.png)
+![Creación de claves de API: 4](media/scoped-api-keys-edit.png)
 
 ## <a name="refresh-or-delete-existing-api-keys"></a>Actualización o eliminación de claves de API existentes
 
 El propietario de la cuenta puede decidir actualizar la clave, en cuyo caso el permiso (en los paquetes), el ámbito y la expiración siguen siendo los mismos, pero se emite una nueva clave que hace que la antigua no se pueda usar. Esto es útil para administrar claves obsoletas o cuando existe la posibilidad de que se produzca una fuga en las claves de API.
 
-![Crear claves de API](media/scoped-api-keys-refresh.png)
+![Creación de claves de API: 5](media/scoped-api-keys-refresh.png)
 
 También puede eliminar estas claves si ya no son necesarias. Al eliminar una clave, se quita y ya no puede usarse.
 

@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 64b28c29ae3b533bde7c8f41dd38a4ab0a5afef7
-ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
+ms.openlocfilehash: c0622520a325000d5fcb8fb884cb509ee4b641f4
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550380"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901907"
 ---
 # <a name="signing-nuget-packages"></a>Firma de paquetes NuGet
 
@@ -19,9 +19,9 @@ Los paquetes firmados permiten llevar a cabo las comprobaciones pertinentes para
 
 ## <a name="get-a-code-signing-certificate"></a>Obtención de un certificado de firma de código
 
-Se pueden obtener certificados válidos de una gran variedad de entidades de certificación públicas, como [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3), [DigiCert](https://www.digicert.com/code-signing/), [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate), [Global Sign](https://www.globalsign.com/en/code-signing-certificate/), [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php), [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml), etc. La lista completa de entidades de certificación de confianza para Microsoft se puede consultar en [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list).
+Los certificados válidos se pueden obtener de una entidad de certificación pública como [DigiCert,](https://www.digicert.com/code-signing/) [Global Sign,](https://www.globalsign.com/en/code-signing-certificate/) [Comodo,](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php) [Certum,](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml)etc. La lista completa de entidades de certificación de confianza para Windows se puede obtener en [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list).
 
-Si quiere realizar una prueba, también puede usar un certificado de emisión propia. Sin embargo, los paquetes firmados con certificados propios no se admiten en NuGet.org. Obtenga más información sobre [cómo crear un certificado de prueba](#create-a-test-certificate).
+Si quiere realizar una prueba, también puede usar un certificado de emisión propia. Sin embargo, los paquetes firmados mediante certificados de emisión propia no se aceptan en NuGet.org. Más información sobre la [creación de un certificado de prueba](#create-a-test-certificate).
 
 ## <a name="export-the-certificate-file"></a>Exportación del archivo de certificado
 
@@ -51,7 +51,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 
 ## <a name="register-the-certificate-on-nugetorg"></a>Registro del certificado en NuGet.org
 
-Para publicar un paquete firmado, primero debe registrar el certificado en NuGet.org. Necesitará el certificado como archivo `.cer` en un formato binario DER.
+Para publicar un paquete firmado, primero debe registrar el certificado con NuGet.org. Necesita el certificado como un archivo `.cer` en un formato DER binario.
 
 1. [Inicie sesión](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) en NuGet.org.
 1. Vaya a `Account settings` (o, si quiere registrar el certificado con una cuenta de organización, a `Manage Organization` **>** `Edit Organization`).
@@ -59,14 +59,14 @@ Para publicar un paquete firmado, primero debe registrar el certificado en NuGet
 1. Busque el archivo del certificado que ha exportado anteriormente y selecciónelo.
   ![Certificados registrados](../reference/media/registered-certs.png)
 
-**Nota:**
+**Note**
 * Un usuario puede enviar varios certificados, del mismo modo que varios usuarios pueden registrar el mismo certificado.
 * Una vez que un usuario haya registrado un certificado, el resto de envíos de paquetes que realice **deberán** estar firmados con uno de los certificados. Consulte [Administración de los requisitos de firma de paquetes en NuGet.org](#manage-signing-requirements-for-your-package-on-nugetorg).
 * Los usuarios también pueden eliminar un certificado registrado de la cuenta. Una vez que el certificado se haya eliminado, los paquetes firmados con dicho significado no se podrán enviar. Los paquetes existentes no se verán afectados.
 
 ## <a name="publish-the-package"></a>Publicar el paquete
 
-Ahora ya puede publicar el paquete en NuGet.org. Consulte [Publicar paquetes](../nuget-org/Publish-a-package.md).
+Ahora ya puede publicar el paquete en NuGet.org. Consulte [Publicación de paquetes](../nuget-org/Publish-a-package.md).
 
 ## <a name="create-a-test-certificate"></a>Creación de un certificado de prueba
 
