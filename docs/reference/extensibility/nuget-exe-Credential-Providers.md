@@ -1,71 +1,71 @@
 ---
 title: nuget.exe proveedores de credenciales
-description: nuget.exe proveedores de credenciales se autentican con una fuente y se implementan como archivos ejecutables de línea de comandos que siguen las convenciones específicas.
+description: nuget.exe proveedores de credenciales se autentican con una fuente y se implementan como ejecutables de línea de comandos que siguen convenciones específicas.
 author: JonDouglas
 ms.author: jodou
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 285504508fa88c96f5c7a23f15ef14d81ebc21e1
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 4f0a5a2355b34c39a435d24691a3f8ea10ee9c00
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777775"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323835"
 ---
-# <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>Autenticación de fuentes con nuget.exe proveedores de credenciales
+# <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>Autenticación de fuentes con nuget.exe de credenciales
 
-En, `3.3` se agregó compatibilidad con la versión para `nuget.exe` proveedores de credenciales específicos. Desde entonces, se agregó la compatibilidad de versiones con `4.8` [proveedores de credenciales](NuGet-Cross-Platform-Authentication-Plugin.md) que funcionan en todos los escenarios de línea de comandos ( `nuget.exe` , `dotnet.exe` , `msbuild.exe` ).
+En la `3.3` versión, se agregó compatibilidad con proveedores `nuget.exe` de credenciales específicos. Desde entonces, en la versión se ha agregado compatibilidad con proveedores de credenciales que funcionan en todos los escenarios de línea `4.8` [](NuGet-Cross-Platform-Authentication-Plugin.md) de comandos ( , `nuget.exe` , `dotnet.exe` `msbuild.exe` ).
 
-Consulte [consumo de paquetes de fuentes autenticadas](../../consume-packages/consuming-packages-authenticated-feeds.md#nugetexe) para obtener más información sobre todos los enfoques de autenticación para `nuget.exe`
+Consulte [Consumo de paquetes de fuentes autenticadas](../../consume-packages/consuming-packages-authenticated-feeds.md#nugetexe) para obtener más detalles sobre todos los enfoques de autenticación para `nuget.exe`
 
-## <a name="nugetexe-credential-provider-discovery"></a>nuget.exe detección de proveedores de credenciales
+## <a name="nugetexe-credential-provider-discovery"></a>nuget.exe de proveedor de credenciales
 
 nuget.exe proveedores de credenciales se pueden usar de tres maneras:
 
-- **Globalmente**: para que un proveedor de credenciales esté disponible para todas las instancias de que se `nuget.exe` ejecutan en el perfil del usuario actual, agréguelo a `%LocalAppData%\NuGet\CredentialProviders` . Es posible que tenga que crear la `CredentialProviders` carpeta. Los proveedores de credenciales se pueden instalar en la raíz de la `CredentialProviders`  carpeta o en una subcarpeta. Si un proveedor de credenciales tiene varios archivos o ensamblados, puede usar las subcarpetas para mantener organizados los proveedores.
+- **Globalmente:** para que un proveedor de credenciales esté disponible para todas las instancias de que se ejecutan en el perfil del usuario `nuget.exe` actual, agrégrelo a `%LocalAppData%\NuGet\CredentialProviders` . Es posible que tenga que crear la `CredentialProviders` carpeta . Los proveedores de credenciales se pueden instalar en la raíz de la `CredentialProviders`  carpeta o dentro de una subcarpeta. Si un proveedor de credenciales tiene varios archivos o ensamblados, puede usar subcarpetas para mantener los proveedores organizados.
 
-- **Desde una variable de entorno**: los proveedores de credenciales se pueden almacenar en cualquier lugar y se puede acceder a ellos `nuget.exe` mediante la configuración de la `%NUGET_CREDENTIALPROVIDERS_PATH%` variable de entorno en la ubicación del proveedor. Esta variable puede ser una lista separada por punto y coma (por ejemplo, `path1;path2` ) si tiene varias ubicaciones.
+- **Desde una variable de entorno:** los proveedores de credenciales se pueden almacenar en cualquier lugar y ser accesibles estableciendo la variable de `nuget.exe` entorno en la ubicación del `%NUGET_CREDENTIALPROVIDERS_PATH%` proveedor. Esta variable puede ser una lista separada por punto y coma (por ejemplo, ) si `path1;path2` tiene varias ubicaciones.
 
-- **Junto nuget.exe**: nuget.exe los proveedores de credenciales se pueden colocar en la misma carpeta que `nuget.exe` .
+- **Junto con nuget.exe**: nuget.exe proveedores de credenciales se pueden colocar en la misma carpeta que `nuget.exe` .
 
-Al cargar proveedores de credenciales, `nuget.exe` busca en las ubicaciones anteriores, en orden, para cualquier archivo denominado `credentialprovider*.exe` y, a continuación, carga esos archivos en el orden en que se encuentran. Si hay varios proveedores de credenciales en la misma carpeta, se cargan en orden alfabético.
+Al cargar proveedores de credenciales, busca en las ubicaciones anteriores, en orden, cualquier archivo denominado y, a continuación, carga esos archivos en el orden `nuget.exe` `credentialprovider*.exe` en que se encuentran. Si existen varios proveedores de credenciales en la misma carpeta, se cargan en orden alfabético.
 
-## <a name="creating-a-nugetexe-credential-provider"></a>Creación de un proveedor de credenciales nuget.exe
+## <a name="creating-a-nugetexe-credential-provider"></a>Creación de un proveedor nuget.exe credenciales
 
-Un proveedor de credenciales es un ejecutable de línea de comandos, denominado en el formulario `CredentialProvider*.exe` , que recopila entradas, adquiere las credenciales según corresponda y, a continuación, devuelve el código de estado de salida adecuado y la salida estándar.
+Un proveedor de credenciales es un ejecutable de línea de comandos, denominado con el formato , que recopila entradas, adquiere las credenciales según corresponda y, a continuación, devuelve el código de estado de salida adecuado y la salida `CredentialProvider*.exe` estándar.
 
 Un proveedor debe hacer lo siguiente:
 
-- Determine si puede proporcionar credenciales para el URI de destino antes de iniciar la adquisición de credenciales. En caso contrario, debe devolver el código de estado 1 sin credenciales.
-- No modificar `Nuget.Config` (por ejemplo, establecer las credenciales).
-- Controle la configuración del proxy HTTP por su cuenta, ya que NuGet no proporciona información del proxy al complemento.
-- Para devolver las credenciales o los detalles del error, `nuget.exe` Escriba un objeto de respuesta JSON (consulte a continuación) en stdout, usando la codificación UTF-8.
-- Opcionalmente, puede emitir un registro de seguimiento adicional a stderr. No se debe escribir ningún secreto en stderr, ya que en los niveles de detalle "normal" o "detailed", estos seguimientos se repiten por NuGet en la consola.
-- Los parámetros inesperados se deben omitir, lo que proporciona compatibilidad con versiones posteriores de NuGet.
+- Determine si puede proporcionar credenciales para el URI de destino antes de iniciar la adquisición de credenciales. Si no es así, debe devolver el código de estado 1 sin credenciales.
+- No modificar `NuGet.Config` (por ejemplo, establecer credenciales allí).
+- Controle la configuración del proxy HTTP por sí mismo, ya que NuGet no proporciona información de proxy al complemento.
+- Devuelva credenciales o detalles de error a escribiendo un objeto de respuesta JSON (consulte a continuación) en `nuget.exe` stdout, mediante la codificación UTF-8.
+- Opcionalmente, emita un registro de seguimiento adicional a stderr. Nunca se debe escribir ningún secreto en stderr, ya que en los niveles de detalle "normal" o "detallado" estos seguimientos se repiten mediante NuGet en la consola.
+- Se deben omitir los parámetros inesperados, lo que proporciona compatibilidad con versiones futuras de NuGet.
 
 ### <a name="input-parameters"></a>Parámetros de entrada
 
 | Parámetro o modificador |Descripción|
 |----------------|-----------|
-| Uri {valor} | El URI de origen del paquete que requiere credenciales.|
+| Uri {value} | URI de origen del paquete que requiere credenciales.|
 | NonInteractive | Si está presente, el proveedor no emite mensajes interactivos. |
-| IsRetry | Si está presente, indica que este intento es un reintento de un intento con error previamente. Los proveedores suelen usar esta marca para asegurarse de que omiten cualquier caché existente y solicitan nuevas credenciales si es posible.|
-| Nivel de detalle {valor} | Si está presente, uno de los siguientes valores: "normal", "Quiet" o "detailed". Si no se proporciona ningún valor, el valor predeterminado es "normal". Los proveedores deben utilizar esto como indicación del nivel de registro opcional que se va a emitir en el flujo de error estándar. |
+| IsRetry | Si está presente, indica que este intento es un reintento de un intento con error anterior. Normalmente, los proveedores usan esta marca para asegurarse de que omiten cualquier caché existente y solicitan nuevas credenciales si es posible.|
+| Nivel de detalle {value} | Si está presente, uno de los siguientes valores: "normal", "silencioso" o "detallado". Si no se proporciona ningún valor, el valor predeterminado es "normal". Los proveedores deben usarlo como indicación del nivel de registro opcional que se va a emitir al flujo de errores estándar. |
 
 ### <a name="exit-codes"></a>Códigos de salida
 
 | Código |Resultado | Descripción |
 |----------------|-----------|-----------|
-| 0 | Correcto | Las credenciales se adquirieron correctamente y se escribieron en stdout.|
+| 0 | Correcto | Las credenciales se han adquirido correctamente y se han escrito en stdout.|
 | 1 | ProviderNotApplicable | El proveedor actual no proporciona credenciales para el URI especificado.|
-| 2 | Error | El proveedor es el proveedor correcto para el URI especificado, pero no puede proporcionar las credenciales. En este caso, nuget.exe no volverá a intentar la autenticación y se producirá un error. Un ejemplo típico es cuando un usuario cancela un inicio de sesión interactivo. |
+| 2 | Error | El proveedor es el proveedor correcto para el URI especificado, pero no puede proporcionar credenciales. En este caso, nuget.exe reintentar la autenticación y se producirá un error. Un ejemplo típico es cuando un usuario cancela un inicio de sesión interactivo. |
 
 ### <a name="standard-output"></a>Salida estándar
 
 | Propiedad |Notas|
 |----------------|-----------|
-| Nombre de usuario | Nombre de usuario para las solicitudes autenticadas.|
-| Contraseña | Contraseña para las solicitudes autenticadas.|
+| Nombre de usuario | Nombre de usuario de las solicitudes autenticadas.|
+| Contraseña | Contraseña para solicitudes autenticadas.|
 | Message | Detalles opcionales sobre la respuesta, que solo se usan para mostrar detalles adicionales en casos de error. |
 
 Stdout de ejemplo:
@@ -76,16 +76,16 @@ Stdout de ejemplo:
     "Message"  : "" }
 ```
 
-## <a name="troubleshooting-a-credential-provider"></a>Solucionar problemas de un proveedor de credenciales
+## <a name="troubleshooting-a-credential-provider"></a>Solución de problemas de un proveedor de credenciales
 
-En la actualidad, NuGet no proporciona una compatibilidad muy directa para la depuración de proveedores de credenciales personalizados. el [problema 4598](https://github.com/NuGet/Home/issues/4598) está realizando el seguimiento de este trabajo.
+En la actualidad, NuGet no proporciona mucha compatibilidad directa para depurar proveedores de credenciales personalizados. [El problema 4598 hace](https://github.com/NuGet/Home/issues/4598) un seguimiento de este trabajo.
 
 También puede hacer lo siguiente:
 
 - Ejecute nuget.exe con el `-verbosity` modificador para inspeccionar la salida detallada.
-- Agregue mensajes de depuración a `stdout` en los lugares adecuados.
-- Asegúrese de que está usando nuget.exe 3,3 o superior.
-- Adjunte el depurador al iniciar con este fragmento de código:
+- Agregue mensajes de depuración `stdout` a en los lugares adecuados.
+- Asegúrese de que usa nuget.exe 3.3 o posterior.
+- Adjunte el depurador al inicio con este fragmento de código:
 
     ```cs
     while (!Debugger.IsAttached)

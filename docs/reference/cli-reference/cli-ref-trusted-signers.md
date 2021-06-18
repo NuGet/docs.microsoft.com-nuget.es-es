@@ -1,23 +1,23 @@
 ---
-title: Comando de firma de confianza de CLI de NuGet
-description: Referencia del comando nuget.exe los firmadores de confianza
+title: Comando de firmantes de confianza de la CLI de NuGet
+description: Referencia del comando nuget.exe de firmantes de confianza
 author: patbel
 ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 9dd3fe3786c824c4a0a1cb252aa50cfc4458a483
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: a5f3564af8b96dfa673d2252aea2e77a79c184a4
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859426"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323595"
 ---
-# <a name="trusted-signers-command-nuget-cli"></a>comando de firma de confianza (CLI de NuGet)
+# <a name="trusted-signers-command-nuget-cli"></a>Comando trusted-signers (CLI de NuGet)
 
-**Se aplica a:** &bullet; **versiones compatibles con** el consumo de paquetes: 4.9.1 +
+**Se aplica a: consumo** de &bullet; **paquetes Versiones admitidas:** 4.9.1+
 
-Obtiene o establece los firmantes de confianza para la configuración de NuGet. Para obtener más uso, consulte [configuraciones comunes de NuGet](../../consume-packages/configuring-nuget-behavior.md). Para obtener más información sobre el aspecto del esquema de nuget.config, consulte la [Referencia del archivo de configuración de NuGet](../nuget-config-file.md).
+Obtiene o establece firmantes de confianza en la configuración de NuGet. Para un uso adicional, consulte [Configuraciones comunes de NuGet.](../../consume-packages/configuring-nuget-behavior.md) Para más información sobre el aspecto nuget.config esquema de configuración, consulte la referencia del archivo [de configuración de NuGet](../nuget-config-file.md).
 
 ## <a name="usage"></a>Uso
 
@@ -25,13 +25,13 @@ Obtiene o establece los firmantes de confianza para la configuración de NuGet. 
 nuget trusted-signers <list|add|remove|sync> [options]
 ```
 
-Si `list|add|remove|sync` no se especifica ninguno de, el comando tomará el valor predeterminado `list` .
+Si no se `list|add|remove|sync` especifica ninguno, el comando tendrá como valor predeterminado `list` .
 
-## <a name="nuget-trusted-signers-list"></a>lista de firmantes de confianza de Nuget
+## <a name="nuget-trusted-signers-list"></a>lista de firmantes de confianza de nuget
 
-Enumera todos los firmantes de confianza de la configuración. Esta opción incluirá todos los certificados (con huellas digitales y algoritmos de huellas digitales) que tenga cada firmante. Si un certificado tiene una anterior `[U]` , significa que la entrada del certificado se ha `allowUntrustedRoot` establecido como `true` .
+Enumera todos los firmantes de confianza de la configuración. Esta opción incluirá todos los certificados (con la huella digital y el algoritmo de huella digital) que tiene cada firmante. Si un certificado tiene un `[U]` anterior, significa que la entrada del certificado se `allowUntrustedRoot` ha establecido como `true` .
 
-A continuación se muestra un ejemplo de salida de este comando:
+A continuación se muestra una salida de ejemplo de este comando:
 
 ```cli
 $ nuget trusted-signers
@@ -55,47 +55,47 @@ Registered trusted signers:
         
 ```
 
-## <a name="nuget-trusted-signers-add-options"></a>inicios de sesión de confianza de Nuget Add [Options]
+## <a name="nuget-trusted-signers-add-options"></a>los firmantes de confianza de nuget agregan [opciones]
 
-Agrega un firmante de confianza con el nombre especificado a la configuración. Esta opción tiene distintos gestos para agregar un autor o repositorio de confianza.
+Agrega un firmante de confianza con el nombre especificado a la configuración. Esta opción tiene distintos gestos para agregar un repositorio o un autor de confianza.
 
 ## <a name="options-for-add-based-on-a-package"></a>Opciones para agregar basadas en un paquete
 
 ```cli
-nuget trusted-signers add <package(s)> -Name <name> [options]
+nuget trusted-signers add <package> -Name <name> [options]
 ```
 
-donde `<package(s)>` es uno o varios `.nupkg` archivos.
+donde `<package>` es un archivo `.nupkg` firmado.
 
 - **`-Author`**
 
-  Especifica que la firma del autor de los paquetes debe ser de confianza.
+  Especifica que la firma del autor del paquete firmado debe ser de confianza.
 
 - **`-AllowUntrustedRoot`**
 
-  Especifica si se debe permitir que el certificado para el firmante de confianza se encadene a una raíz que no es de confianza.
+  Especifica si se debe permitir que el certificado del firmante de confianza se encadena a una raíz que no es de confianza.
 
 - **`-Owners`**
 
-  Lista separada por punto y coma de propietarios de confianza para restringir aún más la confianza de un repositorio. Solo es válido cuando se usa la `-Repository` opción.
+  Lista separada por punto y coma de propietarios de confianza para restringir aún más la confianza de un repositorio. Solo es válido cuando se usa la `-Repository` opción .
 
 - **`-Repository`**
 
-  Especifica que la firma del repositorio o la contrafirma de los paquetes deben ser de confianza.
+  Especifica que la firma o contrafirma del repositorio del paquete firmado debe ser de confianza.
 
-`-Author` `-Repository` No se admite proporcionar ni al mismo tiempo.
+No se `-Author` admite proporcionar y al mismo `-Repository` tiempo.
 
-## <a name="options-for-add-based-on-a-service-index"></a>Opciones para agregar basándose en un índice de servicio
+## <a name="options-for-add-based-on-a-service-index"></a>Opciones para agregar basadas en un índice de servicio
 
 ```cli
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_Nota_: esta opción solo agregará repositorios de confianza. 
+_Nota:_ Esta opción solo agregará repositorios de confianza. 
 
 - **`-AllowUntrustedRoot`**
 
-  Especifica si se debe permitir que el certificado para el firmante de confianza se encadene a una raíz que no es de confianza.
+  Especifica si se debe permitir que el certificado del firmante de confianza se encadena a una raíz que no es de confianza.
 
 - **`-Owners`**
 
@@ -103,7 +103,7 @@ _Nota_: esta opción solo agregará repositorios de confianza.
 
 - **`-ServiceIndex`**
 
-  Especifica el índice de servicio V3 del repositorio en el que se va a confiar. Este repositorio tiene que admitir el recurso de firmas de repositorio. Si no se proporciona, el comando buscará un origen de paquete con el mismo `-Name` y obtendrá el índice de servicio desde allí.
+  Especifica el índice de servicio V3 del repositorio de confianza. Este repositorio tiene que admitir el recurso de firmas de repositorio. Si no se proporciona, el comando buscará un origen de paquete con el mismo y `-Name` obtiene el índice de servicio desde allí.
 
 ## <a name="options-for-add-based-on-the-certificate-information"></a>Opciones para agregar en función de la información del certificado
 
@@ -111,40 +111,40 @@ _Nota_: esta opción solo agregará repositorios de confianza.
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_Nota_: Si ya existe un firmante de confianza con el nombre especificado, el elemento de certificado se agregará a ese firmante. De lo contrario, se creará un autor de confianza con un elemento de certificado a partir de la información de certificado especificada.
+_Nota:_ Si ya existe un firmante de confianza con el nombre especificado, el elemento de certificado se agregará a ese firmante. De lo contrario, se creará un autor de confianza con un elemento de certificado a partir de la información de certificado determinada.
 
 
 - **`-AllowUntrustedRoot`**
 
-  Especifica si se debe permitir que el certificado para el firmante de confianza se encadene a una raíz que no es de confianza.
+  Especifica si se debe permitir que el certificado del firmante de confianza se encadena a una raíz que no es de confianza.
 
 - **`-CertificateFingerprint`**
 
-  Especifica una huella digital de certificado de un certificado con el que se deben firmar los paquetes firmados. Una huella digital de certificado es un hash del certificado. El algoritmo hash utilizado para calcular este hash debe especificarse en la `FingerprintAlgorithm` opción.
+  Especifica las huellas digitales de un certificado con el que se deben firmar los paquetes firmados. Una huella digital de certificado es un hash del certificado. El algoritmo hash utilizado para calcular este hash debe especificarse en la `FingerprintAlgorithm` opción .
 
 - **`-FingerprintAlgorithm`**
 
-  Especifica el algoritmo hash que se usa para calcular la huella digital del certificado. Tiene como valor predeterminado `SHA256`. Los valores admitidos son `SHA256` , `SHA384` y `SHA512` .
+  Especifica el algoritmo hash utilizado para calcular la huella digital del certificado. Su valor predeterminado es `SHA256`. Los valores admitidos `SHA256` son y `SHA384` `SHA512` .
 
-## <a name="nuget-trusted-signers-remove--name-name"></a>Remove-Name de firma de confianza de Nuget \<name\>
+## <a name="nuget-trusted-signers-remove--name-name"></a>los firmantes de confianza de nuget quitan -Name \<name\>
 
-Quita los firmantes de confianza que coinciden con el nombre especificado.
+Quita los firmantes de confianza que coincidan con el nombre especificado.
 
-## <a name="nuget-trusted-signers-sync--name-name"></a>sincronización de inicio de sesión de confianza de Nuget: nombre \<name\>
+## <a name="nuget-trusted-signers-sync--name-name"></a>nuget trusted-signers sync -Name \<name\>
 
-Solicita la lista más reciente de certificados usados en un repositorio de confianza actual para actualizar la lista de certificados existente en el firmante de confianza.
+Solicita la lista más reciente de certificados usados en un repositorio de confianza actualmente para actualizar la lista de certificados existente en el firmante de confianza.
 
-_Nota_: este gesto eliminará la lista actual de certificados y los reemplazará por una lista actualizada del repositorio.
+_Nota:_ Este gesto eliminará la lista actual de certificados y los reemplazará por una lista actualizada del repositorio.
 
 ## <a name="options"></a>Opciones
 
 - **`-ConfigFile`**
 
-  El archivo de configuración de NuGet que se va a aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` se usa (Windows) o `~/.nuget/NuGet/NuGet.Config` o `~/.config/NuGet/NuGet.Config` (Mac/Linux).
+  Archivo de configuración de NuGet que se va a aplicar. Si no se especifica, `%AppData%\NuGet\NuGet.Config` se usa (Windows) `~/.nuget/NuGet/NuGet.Config` o o `~/.config/NuGet/NuGet.Config` (Mac/Linux).
 
 - **`-ForceEnglishOutput`**
 
-  Fuerza la ejecución de nuget.exe mediante una referencia cultural invariable basada en inglés.
+  Fuerza nuget.exe ejecutar mediante una referencia cultural invariable basada en inglés.
 
 - **`-?|-help`**
 
@@ -156,11 +156,11 @@ _Nota_: este gesto eliminará la lista actual de certificados y los reemplazará
 
 - **`-NonInteractive`**
 
-  Suprime los mensajes de entrada o confirmaciones de usuario.
+  Suprime las solicitudes de confirmación o entrada del usuario.
 
 - **`-Verbosity [normal|quiet|detailed]`**
 
-  Especifica la cantidad de detalle que se muestra en la salida: `normal` (valor predeterminado), `quiet` o `detailed` .
+  Especifica la cantidad de detalles que se muestra en la salida: `normal` (valor predeterminado), `quiet` o `detailed` .
 
 
 ## <a name="examples"></a>Ejemplos
