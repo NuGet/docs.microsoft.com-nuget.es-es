@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: f1c7c4ce2872e18b1ed35ccbf3355a6192ab4a9c
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 0bd14104695a15d2e4c65a13b271143809c4ba8a
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775026"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323627"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>Solución de errores de restauración de paquetes
 
@@ -31,7 +31,7 @@ Si está usando Visual Studio, primero habilite la restauración del paquete com
 
 ![Habilitar la restauración de paquetes de NuGet en Herramientas/Opciones](../consume-packages/media/restore-01-autorestoreoptions.png)
 
-Esta configuración también puede cambiarse en el archivo `NuGet.config`; vea la sección [Consentimiento](#consent). Si el proyecto es uno anterior que usa la restauración de paquetes integrada de MSBuild, puede que tenga que [migrar](package-restore.md#migrate-to-automatic-package-restore-visual-studio) a la restauración automática de paquetes.
+Esta configuración también puede cambiarse en el archivo `NuGet.Config`; vea la sección [Consentimiento](#consent). Si el proyecto es uno anterior que usa la restauración de paquetes integrada de MSBuild, puede que tenga que [migrar](package-restore.md#migrate-to-automatic-package-restore-visual-studio) a la restauración automática de paquetes.
 
 <a name="missing"></a>
 
@@ -46,7 +46,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 Este error se produce cuando se intenta compilar un proyecto que contiene referencias a uno o varios paquetes NuGet, pero estos paquetes no están actualmente instalados en el equipo ni en el proyecto.
 
-- Cuando se usa el formato de administración [PackageReference](package-references-in-project-files.md), este error puede deberse a una migración de packages.config a PackageReference y se debe [quitar manualmente](../resources/NuGet-FAQ.md#working-with-packages) del archivo del proyecto.
+- Cuando se usa el formato de administración [PackageReference](package-references-in-project-files.md), este error puede deberse a una migración de packages.config a PackageReference y se debe [quitar manualmente](/nuget/resources/nuget-faq#working-with-packages) del archivo del proyecto.
 - Cuando se usa [packages.config](../reference/packages-config.md), el error indica que el paquete no está instalado en la carpeta `packages` en la raíz de la solución.
 
 Esta situación se suele producir cuando obtiene el código fuente del proyecto del control de código fuente u otra descarga. Los paquetes se suelen omitir desde el control de código fuente o las descargas porque se pueden restaurar desde fuentes de paquete como nuget.org (vea [Omitir paquetes de NuGet en sistemas de control de código fuente](Packages-and-Source-Control.md)). Si se incluyen, se provocaría el sobredimensionamiento del repositorio o se crearían archivos .zip innecesariamente grandes.

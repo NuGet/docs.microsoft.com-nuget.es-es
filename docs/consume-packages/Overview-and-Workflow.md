@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 92968236262f891106ab2d4cd3ba399f1644400b
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: d1d6df3bcc36d8a78fcee97099b301c9ffc440d9
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859218"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323640"
 ---
 # <a name="package-consumption-workflow"></a>Flujo de trabajo de consumo de paquetes
 
@@ -39,7 +39,7 @@ La [restauración de paquetes](../consume-packages/package-restore.md) usa la in
 
 A veces es necesario volver a instalar los paquetes que ya están incluidos en un proyecto, que también podrían volver a instalar las dependencias. Esto resulta sencillo con el comando `nuget reinstall` o la consola del Administrador de paquetes NuGet. Para más información, vea [Reinstalación y actualización de paquetes](../consume-packages/reinstalling-and-updating-packages.md).
 
-Por último, el comportamiento de NuGet se controla con los archivos `Nuget.Config`. Se pueden usar varios archivos para centralizar determinados valores a niveles diferentes, como se explica en [Configuración del comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md).
+Por último, el comportamiento de NuGet se controla con los archivos `NuGet.Config`. Se pueden usar varios archivos para centralizar determinados valores a niveles diferentes, como se explica en [Configuración del comportamiento de NuGet](../consume-packages/configuring-nuget-behavior.md).
 
 ## <a name="ways-to-install-a-nuget-package"></a>Formas de instalar un paquete NuGet
 

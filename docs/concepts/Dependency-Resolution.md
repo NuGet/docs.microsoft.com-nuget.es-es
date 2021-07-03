@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0ef309d95c6ef5437765c02791da6dab13794678
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 69adbbad20debf2e53f247e85d638b3226c0491d
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775269"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323757"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>Cómo resuelve NuGet las dependencias de paquetes
 
@@ -55,7 +55,7 @@ Cuando una aplicación especifica un número de versión exacto, como 1.2, que n
 
 #### <a name="floating-versions"></a>Versiones flotantes
 
-Se especifica una versión de dependencia flotante con el carácter \*. Por ejemplo, `6.0.*`. Esta especificación de versión dice "usar la versión 6.0.x más reciente"; `4.*` significa "usar la versión 4.x más reciente". Usar una versión flotante reduce los cambios en el archivo del proyecto, a la vez que se mantiene actualizado con la versión más reciente de una dependencia.
+Se especifica una versión de dependencia flotante con el carácter \*. Por ejemplo, `6.0.*`. Esta especificación de versión dice "usar la versión 6.0.x más reciente"; `4.*` significa "usar la versión 4.x más reciente". El uso de una versión flotante reduce los cambios en el archivo de proyecto, al mismo tiempo que se mantiene actualizado con la versión más reciente de una dependencia.
 
 Cuando se usa una versión flotante, NuGet resuelve la versión más alta de un paquete que coincide con el patrón de versión. Por ejemplo, `6.0.*` obtiene la versión más alta de un paquete que empieza por 6.0:
 
@@ -102,7 +102,7 @@ Con `packages.config`, las dependencias de un proyecto se escriben en `packages.
 
 Con `packages.config`, NuGet intenta resolver los conflictos de dependencias durante la instalación de cada paquete individual. Es decir, si se está instalando el Paquete A y depende del Paquete B, y el Paquete B ya aparece en `packages.config` como una dependencia de algo más, NuGet compara las versiones del Paquete B que se solicitan e intenta buscar una versión que satisfaga todas las restricciones de versión. En concreto, NuGet selecciona la versión *principal.secundaria* más baja que cumpla las dependencias.
 
-De forma predeterminada, NuGet 2.8 busca la versión de revisión más antigua (vea [Notas de la versión de NuGet 2.8](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)). Puede controlar esta configuración mediante el atributo `DependencyVersion` de `Nuget.Config` y el modificador `-DependencyVersion` en la línea de comandos.  
+De forma predeterminada, NuGet 2.8 busca la versión de revisión más antigua (vea [Notas de la versión de NuGet 2.8](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)). Puede controlar esta configuración mediante el atributo `DependencyVersion` de `NuGet.Config` y el modificador `-DependencyVersion` en la línea de comandos.  
 
 El proceso de `packages.config` para resolver dependencias se complica en gráficos de dependencias más grandes. En cada instalación de un paquete nuevo es necesario recorrer el gráfico completo y aumenta la posibilidad de conflictos de versiones. Cuando se produce un conflicto, la instalación se detiene, lo que deja el proyecto en un estado indeterminado, especialmente con posibles modificaciones del propio archivo de proyecto. Esto no supone un problema al usar otros formatos de administración de paquetes.
 

@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5224a4f5be519e1d72285562c1611d047582f7de
-ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
+ms.openlocfilehash: d032b69f6eb4cbd3687ca60190c15aed9b7a4d79
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2021
-ms.locfileid: "107901569"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323900"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>Cuentas individuales en nuget.org
 
@@ -75,4 +75,4 @@ La autenticación en dos fases, o 2FA, es una capa de seguridad adicional que se
 
 ## <a name="delete-a-nugetorg-account"></a>Eliminación de una cuenta de nuget.org
 
-Para obtener ayuda con las tareas adicionales relacionadas con las cuentas, como la eliminación de una cuenta de nuget.org, vea [Administración de cuentas de nuget.org](nuget-org-faq.md#nugetorg-account-management).
+Para obtener ayuda con las tareas adicionales relacionadas con las cuentas, como la eliminación de una cuenta de nuget.org, vea [Administración de cuentas de nuget.org](/nuget/nuget-org/nuget-org-faq#nuget.org-account-management).
