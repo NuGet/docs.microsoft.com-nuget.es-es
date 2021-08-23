@@ -1,18 +1,18 @@
 ---
-title: Notas de la versión de NuGet 5.10
-description: Notas de la versión de NuGet 5.10, incluidas nuevas características, correcciones de errores y DCR.
+title: NuGet de la versión 5.10
+description: Notas de la versión NuGet 5.10, incluidas nuevas características, correcciones de errores y DCR.
 author: zkat
 ms.author: kmarchan
 ms.date: 6/11/2021
 ms.topic: conceptual
-ms.openlocfilehash: 666eda5803b540dc18a9310f61c92dc74ff2089e
-ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
+ms.openlocfilehash: 80a372074604f5c0073f78927b84de00e78acc74
+ms.sourcegitcommit: 5f706c62c97b78bbe3d8c7e95659976535fe486f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2021
-ms.locfileid: "112356504"
+ms.lasthandoff: 08/23/2021
+ms.locfileid: "122726956"
 ---
-# <a name="nuget-510-release-notes"></a>Notas de la versión de NuGet 5.10
+# <a name="nuget-510-release-notes"></a>NuGet de la versión 5.10
 
 Vehículos de distribución de NuGet:
 
@@ -23,13 +23,13 @@ Vehículos de distribución de NuGet:
 <sup>1 Instalado</sup> con Visual Studio 2019 con carga de trabajo de .NET Core
   
 > [!NOTE]
-> Visual Studio 16.10, MSBuild 16.10 y .NET 5.0.300+ NuGet.exe 5.10 o posterior.
+> Visual Studio 16.10, MSBuild 16.10 y .NET 5.0.300+ requiere NuGet.exe 5.10 o posterior.
 
 ## <a name="summary-whats-new-in-510"></a>Resumen: Novedades de la versión 5.10
 
 * Firma: implemente el comando dotnet trusted-signers [- #8053](https://github.com/NuGet/Home/issues/8053)
 
-* Hacer que la validación predeterminada esté deshabilitada en Linux, pero habilitada de forma predeterminada en [Windows: #10713](https://github.com/NuGet/Home/issues/10713)
+* Hacer que la validación predeterminada esté deshabilitada en Linux, pero habilitada de forma predeterminada en Windows - [#10713](https://github.com/NuGet/Home/issues/10713)
 
 * Agregar una variable ENV para la comprobación de firma de paquetes en .NET 5+ Linux/MAC: [#10742](https://github.com/NuGet/Home/issues/10742)
 
@@ -39,7 +39,7 @@ Vehículos de distribución de NuGet:
 
 ### <a name="issues-fixed-in-this-release"></a>Problemas corregidos en esta versión
 
-* Suprimir el <requireLicenseAcceptance> elemento al empaquetar un [proyecto: #5133](https://github.com/NuGet/Home/issues/5133)
+* Suprimir el `<requireLicenseAcceptance>` elemento al empaquetar un [proyecto: #5133](https://github.com/NuGet/Home/issues/5133)
 
 * [CPVM] La advertencia de versión preliminar debe mostrarse en la cli de [dotnet: #10226](https://github.com/NuGet/Home/issues/10226)
 
@@ -49,15 +49,15 @@ Vehículos de distribución de NuGet:
 
 * Interfaz de usuario de PM: mejorar el rendimiento de la instalación de paquetes en el nivel de [solución: #10210](https://github.com/NuGet/Home/issues/10210)
 
-* Reemplace GetService por GetServiceAsync en cualquier lugar de NuGet.Clients: [#3784](https://github.com/NuGet/Home/issues/3784)
+* Reemplace GetService por GetServiceAsync en todas NuGet. Clientes: [#3784](https://github.com/NuGet/Home/issues/3784)
 
 * NuGet.exe de rendimiento del paquete con `..` la ruta de acceso [relativa: #5016](https://github.com/NuGet/Home/issues/5016)
 
 * El rendimiento del "paquete nuget" disminuye con niveles crecientes en las rutas de acceso de [origen: #5706](https://github.com/NuGet/Home/issues/5706)
 
-* NuGet no genera errores al empaquetar nuspec con archivos duplicados. - [#6941](https://github.com/NuGet/Home/issues/6941)
+* NuGet error al empaquetar nuspec con archivos duplicados. - [#6941](https://github.com/NuGet/Home/issues/6941)
 
-* Paquete NuGet "El dateTimeOffset especificado no se puede convertir en una marca de tiempo de archivo [ZIP": #7001](https://github.com/NuGet/Home/issues/7001)
+* NuGet "El valor dateTimeOffset especificado no se puede convertir en una marca de tiempo de archivo [ZIP": #7001](https://github.com/NuGet/Home/issues/7001)
 
 * Las marcas de tiempo del archivo del paquete empaquetado se desplazan por la zona [horaria: #7395](https://github.com/NuGet/Home/issues/7395)
 
@@ -69,9 +69,9 @@ Vehículos de distribución de NuGet:
 
 * La interfaz de usuario de PM no puede mostrar un color de fondo distintivo entre los orígenes de paquetes seleccionados y los que mantienen el [puntero: #9538](https://github.com/NuGet/Home/issues/9538)
 
-* El lector de pantalla no lee la casilla para seleccionar los proyectos en los que se va a [instalar : #9578](https://github.com/NuGet/Home/issues/9578)
+* La casilla para seleccionar los proyectos en los que se va a instalar no se lee mediante el lector de [pantalla: #9578](https://github.com/NuGet/Home/issues/9578)
 
-* La selección predeterminada del menú desplegable Versiones del panel de detalles debe ser Installed/LatestStable on Installed/Updates tabs - [#9887](https://github.com/NuGet/Home/issues/9887)
+* La selección predeterminada del menú desplegable Versiones del panel de detalles debe ser Installed/LatestStable (Instalar/LatestStable) en las pestañas Installed/Updates (Instalado/Actualizaciones) [- #9887](https://github.com/NuGet/Home/issues/9887)
 
 * Quite la cuenta de solución alternativa para algunos SDK de .NET 5 informe TargetPlatformMoniker de ` ,Version= `  -  [#9913](https://github.com/NuGet/Home/issues/9913)
 
@@ -79,7 +79,7 @@ Vehículos de distribución de NuGet:
 
 * VersionRange no puede analizar intervalos de un solo [dígito: #10342](https://github.com/NuGet/Home/issues/10342)
 
-* El administrador de soluciones de VS produce una excepción null para durante la [depuración: #10352](https://github.com/NuGet/Home/issues/10352)
+* El administrador de soluciones de VS inicia una excepción null para durante la [depuración: #10352](https://github.com/NuGet/Home/issues/10352)
 
 * Traslado de mensajes de excepción de la CLI a archivos de recursos de [cadena: #10392](https://github.com/NuGet/Home/issues/10392)
 
@@ -93,9 +93,9 @@ Vehículos de distribución de NuGet:
 
 * No tener ningún orígenes habilitado impide que se muestre la interfaz de usuario de PM [#10541](https://github.com/NuGet/Home/issues/10541)
 
-* Los metadatos del paquete (detalles, desuso) a veces no se extraen nuget.org en CodeSpaces - [#10549](https://github.com/NuGet/Home/issues/10549)
+* Los metadatos del paquete (detalles, desuso) a veces no se extraen de nuget.org en CodeSpaces - [#10549](https://github.com/NuGet/Home/issues/10549)
 
-* Se produce un error en la inicialización de PMUI con una excepción durante la sesión [de depuración: #10559](https://github.com/NuGet/Home/issues/10559)
+* Se produce un error en la inicialización de PMUI con una excepción durante la sesión de [depuración: #10559](https://github.com/NuGet/Home/issues/10559)
 
 * La restauración de nuget produce un error de comprobación de integridad del paquete big endian sistema: [#10567](https://github.com/NuGet/Home/issues/10567)
 
@@ -109,7 +109,7 @@ Vehículos de distribución de NuGet:
 
 * Agregar firmantes de confianza tiene argumentos incoherentes: [#10647](https://github.com/NuGet/Home/issues/10647)
 
-* Vs2019 v16.9.0: al cambiar las pestañas de NuGet Administrador de paquetes de "Actualizaciones" a "Instalado" no se actualiza el marco. - [#10654](https://github.com/NuGet/Home/issues/10654)
+* Vs2019 v16.9.0: Cambiar las pestañas de NuGet Administrador de paquetes de "Actualizaciones" a "Instalado" no actualiza el marco. - [#10654](https://github.com/NuGet/Home/issues/10654)
 
 * Quite la "v" del número de versión en PMUI - [#10677](https://github.com/NuGet/Home/issues/10677)
 
@@ -123,11 +123,9 @@ Vehículos de distribución de NuGet:
 
 * Nuget bloquea un subproceso de grupo de subprocesos en un método asincrónico que realiza una llamada sincrónica al subproceso de interfaz de [usuario: #10775](https://github.com/NuGet/Home/issues/10775)
 
-* Tools -> Options -> NuGet Administrador de paquetes string is truncated - [#10779](https://github.com/NuGet/Home/issues/10779)
-
 * `PackageLoadContext.GetInstalledAndTransitivePackagesAsync` es código no encontrado y daña el [rendimiento: #10790](https://github.com/NuGet/Home/issues/10790)
 
-* Uso del icono incrustado en paquetes del SDK de [NuGet: #10795](https://github.com/NuGet/Home/issues/10795)
+* Uso del icono incrustado en NuGet paquetes del [SDK: #10795](https://github.com/NuGet/Home/issues/10795)
 
 * Actualización de la lista de licencias de [SPDX: #10806](https://github.com/NuGet/Home/issues/10806)
 
@@ -137,13 +135,13 @@ Vehículos de distribución de NuGet:
   
 ### <a name="community-contributions"></a>Contribuciones de la comunidad
 
-Gracias a todos los colaboradores que ayudaron a que esta versión de NuGet sea impresionante.
+Gracias a todos los colaboradores que ayudaron a que este NuGet lanzamiento sea impresionante.
 
 |Quién|Prs|Issues|
 |----|----|----|
 [z](https://github.com/louis-z) | [3991](https://github.com/NuGet/NuGet.Client/pull/3991) | VersionRange no puede analizar intervalos de un solo [dígito: #10342](https://github.com/NuGet/Home/issues/10342)
-[omajid](https://github.com/omajid) | [3860](https://github.com/NuGet/NuGet.Client/pull/3860) | NuGet.Client build.sh está roto: [#10139](https://github.com/NuGet/Home/issues/10139)
-[Nirmal4G](https://github.com/Nirmal4G) | [3623](https://github.com/NuGet/NuGet.Client/pull/3623) | NuGet.Client build.sh está roto: [#10139](https://github.com/NuGet/Home/issues/10139)
+[omajid](https://github.com/omajid) | [3860](https://github.com/NuGet/NuGet.Client/pull/3860) | NuGet. El build.sh cliente está [roto: #10139](https://github.com/NuGet/Home/issues/10139)
+[Nirmal4G](https://github.com/Nirmal4G) | [3623](https://github.com/NuGet/NuGet.Client/pull/3623) | NuGet. El build.sh cliente está [roto: #10139](https://github.com/NuGet/Home/issues/10139)
 [BlackGad](https://github.com/BlackGad) | [3953](https://github.com/NuGet/NuGet.Client/pull/3953) | El rendimiento del "paquete nuget" disminuye con niveles crecientes en las rutas de acceso de [origen: #5706](https://github.com/NuGet/Home/issues/5706)
 [BlackGad](https://github.com/BlackGad) | [3953](https://github.com/NuGet/NuGet.Client/pull/3953) | NuGet.exe problema de rendimiento del paquete con . ruta de acceso [relativa: #5016](https://github.com/NuGet/Home/issues/5016)
 [marcin-yunsjunto](https://github.com/marcin-krystianc) | [3940](https://github.com/NuGet/NuGet.Client/pull/3940) | CPVM: problemas de simultaneidad en el algoritmo de recorrido del [grafo: #10598](https://github.com/NuGet/Home/issues/10598)
@@ -151,5 +149,5 @@ Gracias a todos los colaboradores que ayudaron a que esta versión de NuGet sea 
 
 ## <a name="feedback-welcome"></a>Bienvenida a los comentarios
 
-Sus comentarios son importantes.  Si hay algún problema con esta versión, consulte los problemas de [GitHub](https://github.com/NuGet/Home/issues) [Visual Studio Developer Community](https://developercommunity.visualstudio.com/) problemas existentes.  Si hay nuevos problemas en NuGet, informe de un [problema de GitHub.](https://github.com/NuGet/Home/issues/new)
-Para problemas generales de la experiencia [](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) de NuGet, háganoslo saber a través de la opción Notificar un problema que se encuentra en su IDE favorito en Ayuda **> notificar un problema.**
+Sus comentarios son importantes.  Si hay algún problema con esta versión, consulte los problemas de GitHub [y](https://github.com/NuGet/Home/issues) Visual Studio [desarrolladores Community](https://developercommunity.visualstudio.com/) problemas existentes.  Para los nuevos problemas de NuGet, informe de un [GitHub problema .](https://github.com/NuGet/Home/issues/new)
+Para obtener NuGet problemas de experiencia general, [](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) háganoslo saber a través de la opción Notificar un problema que se encuentra en su IDE favorito en Ayuda **> notificar un problema**.
