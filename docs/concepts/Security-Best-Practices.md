@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: e0f235d99e41e23a4551fbf7577f6c42e3381f5b
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 4575d4779ed90150cec667489c85875b7fb87a8d
+ms.sourcegitcommit: 5f706c62c97b78bbe3d8c7e95659976535fe486f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859231"
+ms.lasthandoff: 08/23/2021
+ms.locfileid: "122726982"
 ---
 # <a name="best-practices-for-a-secure-software-supply-chain"></a>Prácticas recomendadas para una cadena de suministro de software seguro
 
@@ -124,7 +124,7 @@ Para obtener más información sobre las alertas de Dependabot y las actualizaci
 
 Cuando se usan varias fuentes de origen de NuGet públicas y privadas, se puede descargar un paquete desde cualquiera de ellas. Para asegurarse de que la compilación es predecible y segura contra ataques conocidos, como la [confusión de dependencias](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610), un procedimiento recomendado consiste en conocer de qué fuentes concretas proceden los paquetes. Puede usar una fuente única o una fuente privada con funciones ascendentes para la protección.
 
-Para obtener más información sobre cómo proteger las fuentes de paquetes, vea [3 formas de mitigar los riesgos al usar fuentes de paquetes privadas](https://azure.microsoft.com/en-us/resources/3-ways-to-mitigate-risk-using-private-package-feeds/).
+Para obtener más información sobre cómo proteger las fuentes de paquetes, vea [3 formas de mitigar los riesgos al usar fuentes de paquetes privadas](https://azure.microsoft.com/resources/3-ways-to-mitigate-risk-using-private-package-feeds/).
 
 ### <a name="client-trust-policies"></a>Directivas de confianza de cliente
 
