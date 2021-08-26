@@ -6,16 +6,16 @@ ms.author: chgill
 ms.date: 02/23/2021
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: a5d68329128c9e9d047fe10e08ce41f1ae0895b4
-ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
+ms.openlocfilehash: ac0e89c1f5ef9eb19c29646bcc76bcb0b460c5cd
+ms.sourcegitcommit: adb261dd4b2a8cd75447f7b5ea6a9e5a1a54d61d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2021
-ms.locfileid: "107902236"
+ms.lasthandoff: 08/16/2021
+ms.locfileid: "122209948"
 ---
 # <a name="package-readme-on-nugetorg"></a>Léame del paquete en NuGet.org
 
-[Incluya un archivo Léame en el paquete NuGet](https://docs.microsoft.com/nuget/reference/msbuild-targets#packagereadmefile) para que los detalles del paquete sean más completos e informativos para los usuarios.
+[Incluya un archivo Léame en el paquete NuGet](/nuget/reference/msbuild-targets#packagereadmefile) para que los detalles del paquete sean más completos e informativos para los usuarios.
 
 Este es probablemente uno de los primeros elementos que los usuarios verán cuando consulten la página de detalles del paquete en NuGet.org y es esencial para causar una buena impresión.
 
@@ -36,7 +36,7 @@ Tenga en cuenta que los archivos Léame de alta calidad pueden tener una amplia 
 
 ## <a name="preview-your-readme"></a>Vista previa del archivo Léame
 
-Para obtener una vista previa del archivo Léame antes de que se use en NuGet.org, cargue el paquete mediante [Portal web: use la pestaña Upload Package (Cargar paquete) en nuget.org](https://docs.microsoft.com/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg) y desplácese hacia abajo hasta la sección "Archivo Léame" de la versión preliminar de metadatos. Debe tener el siguiente aspecto:
+Para obtener una vista previa del archivo Léame antes de que se use en NuGet.org, cargue el paquete mediante [Portal web: use la pestaña Upload Package (Cargar paquete) en nuget.org](/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg) y desplácese hacia abajo hasta la sección "Archivo Léame" de la versión preliminar de metadatos. Debe tener el siguiente aspecto:
 
 ![Versión preliminar del archivo Léame](media\readme-upload-preview.PNG)
 
@@ -48,6 +48,7 @@ Debido a problemas de seguridad y privacidad, NuGet.org restringe los dominios d
 NuGet.org permite representar todas las imágenes, incluidas las notificaciones, de los siguientes dominios de confianza:
 * api.bintray.com
 * api.codacy.com
+* app.codacy.com
 * api.codeclimate.com
 * api.dependabot.com
 * api.travis-ci.com
@@ -59,6 +60,7 @@ NuGet.org permite representar todas las imágenes, incluidas las notificaciones,
 * bettercodehub.com
 * buildstats.info
 * camo.githubusercontent.com
+* cdn.jsdelivr.net
 * ci.appveyor.com
 * circleci.com
 * codecov.io
@@ -68,6 +70,7 @@ NuGet.org permite representar todas las imágenes, incluidas las notificaciones,
 * github.com/.../workflows/.../badge.svg
 * gitlab.com
 * img.shields.io
+* i.imgur.com
 * isitmaintained.com
 * opencollective.com
 * raw.github.com
